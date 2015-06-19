@@ -1,0 +1,39 @@
+﻿// ==========================
+// UNSUBSCRIBE NL STYLE
+// ==========================
+
+$emailWrapperHeight: 70px;
+$pageMargin: 30px;
+$textInputWidth: 48%;
+$btnPadding: 20px;
+
+
+#unsubscribeNewsletterSuccess {
+	margin: $pageMargin 0;
+}
+
+.unsubscribeNewsletterForm form {
+	margin: $pageMargin 0;
+	@include pie-clearfix;
+
+	p {padding-top: 10px;}
+
+	#UnsubscribeNewsletterViewModel_Email_Wrapper {margin-top: $pageMargin;}
+}
+
+.validation-summary-errors {
+	font-size: $size-medium;
+}
+
+.buttonsRow {
+
+	height: $form-input-height;
+
+	button {
+		@extend .primary;
+	}
+}
+
+#newsletterBanners img {
+	display: none;
+}

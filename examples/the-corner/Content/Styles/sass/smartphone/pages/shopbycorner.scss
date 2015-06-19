@@ -1,0 +1,42 @@
+// ========================
+// ITEM PAGE STYLES
+// ========================
+@import "variables";
+@import "fonts";
+
+.listWrapper {
+
+	position: relative;
+	text-align: center;
+	border-top: 1px solid #fff;
+
+	h1 {
+		font-size: $size-grand-rem;
+		color: $white;
+		background-color: $black;
+		padding: 5px 0;
+		html.RU & {
+			@extend %knockout;
+		}
+	}
+
+	a {
+		color: $white;
+		text-transform: uppercase;
+		display: block;
+		background-color: $color-dark;
+		font-size: $size-expanse-rem;
+		@extend %knockout;
+		padding: 25px 0;
+		margin-bottom: 1px;
+
+		/* fix per visualizzare il knockout nel sito mobile russo solo per gli stilisti*/
+		html.RU & {
+			@extend %knockout;
+		}
+	}
+
+	.value {
+		display: none;
+	}
+}

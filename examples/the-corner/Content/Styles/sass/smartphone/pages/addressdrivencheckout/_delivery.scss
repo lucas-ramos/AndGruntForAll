@@ -1,0 +1,282 @@
+// =============
+// DELIVERY PAGE
+// =============
+
+#deliveryContent {
+	@extend %lato;
+	background-color: $color-background;
+	font-size: $size-tiny-rem;
+}
+
+%whiteline-separated-section {
+	border-bottom: 10px solid $white;
+}
+
+#giftOption {
+	@extend %whiteline-separated-section;
+	background-color: $color-extra;
+	padding-bottom: 15px;
+}
+
+.selectAddressWrapper, .deliveryMethodsWrapper {
+	@extend %whiteline-separated-section;
+	padding-bottom: 25px;
+}
+
+.giftSectionSubTitle {
+	font-size: $size-small-rem;
+	margin-bottom: 20px;
+}
+
+#userAddressesWrap {
+	.loadAddressTitle {
+		display: none;
+	}
+
+}
+
+.addNewAddressButtonWithForm  {
+	button {
+		@extend .secondary;
+		width: 100%;
+		margin-top: 20px;
+	}
+
+	&.selected {
+		button {
+			display: none;
+		}
+	}
+}
+
+#ShippingAddressViewModel_BillingAsShipping_Wrapper {
+	display: none;
+}
+
+.fastCheckoutSection {
+	@include pie-clearfix;
+	margin-top: 20px;
+
+	.SaveInMyAccount {
+		@include pie-clearfix;
+	}
+
+	.title {
+		display: none;
+	}
+
+	.fieldLabel {
+		display: block;
+		float:left;
+		line-height: 21px;
+		font-size: $size-mini-rem;
+		max-width: 85%;
+	}
+
+	.fieldValue {
+		float: left;
+		margin-right: 10px;
+	}
+}
+
+#deliverySelectionBlock {
+	@extend %lato-bold;
+	font-size: $size-medium-rem;
+	text-transform: uppercase;
+
+	.deliveryInformation {
+		display:none;
+	}
+
+	.deliveryMethod  {
+		@include pie-clearfix;
+		padding: 20px 0;
+
+		&.disabled {
+			> * {
+				@include opacity(0.5);
+			}
+		}
+
+		&:not(:first-child) {
+			border-top: 1px solid $color-light;
+		}
+	}
+
+	.description, .originalValue, .expressGuaranteed {
+		display: none;
+	}
+
+	.radioButton {
+		float:left;
+		margin-right: 15px;
+	}
+
+	label {
+		float: left;
+		max-width: 75%;
+
+		:not(.JP) & {
+			@include appendDash;
+		}
+	}
+
+	.valueToPay {
+		float: left;
+		margin-left: 4px;
+	}
+}
+
+#deliveryMethodsInfoWrap .deliveryInfo {
+	display: none;
+	background-color: $color-extra;
+	padding: 20px 10px;
+	line-height: $size-expanse-rem;
+}
+
+.nextPageButton {
+	@extend .primary;
+}
+
+#ShippingAddressViewModel_PostalCode_Wrapper {
+	@include pie-clearfix;
+
+	.separator {
+		float:left;
+	}
+	
+	input {
+		&.zipCode1 {
+			width: 48%;
+			float:left;
+		}
+
+		&.zipCode2 {
+			width: 48%;
+			float:right;
+		}
+
+		&.zipCode1, &.zipCode2 {
+			padding: {
+				right: 0;
+				left: 0;
+			}
+		}
+	}
+
+	.separator {
+		display:none;
+	}
+
+	.findZip {
+		display: none;
+
+		.JP & {
+			display: block;
+			float: left;
+			width: 100%;
+			font-size: $size-small-rem;
+
+			text-align: right;
+			padding: 16px 0 20px;
+		}
+	}
+}
+
+
+#giftWrapping {
+	#GiftDataFormViewModel_ContactReceiver_Wrapper {
+		@include pie-clearfix;
+	}
+
+	.originalValue, .valueToPay {
+		display: none;
+	}
+
+	.checkBox {
+		float:left;
+		margin-right: 20px;
+	}
+
+	.giftInfoBox {
+		display:none;
+	}
+
+	.giftOptionWrapper {
+		line-height: 21px;
+		margin: 10px 0;
+
+		.giftInfoButton {
+			display:inline;
+			margin-left: 10px;
+		}
+
+		&.selected {
+			#GiftDataFormViewModel_Message_Wrapper, #GiftDataFormViewModel_ContactReceiver_Wrapper {
+				display: block;
+			}
+		}
+
+		&.sendEmail {
+			#GiftDataFormViewModel_Email_Wrapper {
+				display: block;
+			}
+		}
+
+		textarea {
+			width: 98%;
+			height: 70px;
+		}	
+	}
+}
+
+#GiftDataFormViewModel_IsSelected_Wrapper  {
+	width: 60%;
+	display:inline;
+
+	& div {
+		display:inline;
+	}
+}
+
+#GiftDataFormViewModel_Message_Wrapper {
+	margin-top: 10px;
+
+	.description {
+		line-height: $size-medium-rem;
+		padding-bottom: 10px;
+	}
+}
+
+#GiftDataFormViewModel_Message_Wrapper, #GiftDataFormViewModel_ContactReceiver_Wrapper, #GiftDataFormViewModel_Email_Wrapper {
+	display: none;
+}
+
+#GiftDataFormViewModel_ContactReceiver_Wrapper {
+	.fieldLabel {
+		display: block;
+		float: left;
+		width: 80%;
+	}
+}
+
+#ShippingAddressViewModel_CountryCode_Wrapper {
+	@include fake-input-field-smartphone;
+}
+
+.uiLayer-giftDataForm {
+	.mfp-content {
+		font-size: $size-medium-rem;
+	}
+}
+
+#returnBtn {
+	padding: 17px;
+	margin-bottom: 10px;
+
+	.button {
+		@extend %button-tertiary;
+		width: 100%;
+		text-align: center;
+	}
+}

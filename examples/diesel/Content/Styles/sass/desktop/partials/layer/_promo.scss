@@ -1,0 +1,132 @@
+// Promotions
+
+#utilityBar{
+	.headerPromoWrapper {
+		visibility: hidden;
+		background:$black;
+	    width: 100%;
+	    margin: auto;
+	    z-index: $z-index-overlayer;
+		#promoWrapperTop {
+			@include microClearfix;
+			overflow: hidden;
+			height: 32px;
+			width: 100%;
+			margin: 0 auto;
+			.promotions {
+				width: 100%;
+				margin: 0 auto;
+				text-align: center;
+				@include microClearfix;
+				cursor: pointer;
+				ul {
+					display: block;					
+					li.promotionEntry {
+						color: $white;
+						@include H3Style('header');
+						.shortDescription {
+							width: 100%;
+							margin: 0 auto;
+							display: block;
+							height: 32px;
+							line-height: 32px;
+							text-transform: uppercase;
+						}
+						.longDescription { display: none; }
+					}			
+				}
+			}
+			.owl-stage-outer{z-index: $z-index-minicart;}		
+			.owl-controls {
+				position: relative;
+				top: -24px;
+				@include microClearfix;
+				.movePrev, .moveNext {
+					display: inline-block;
+					cursor: pointer;
+					position:relative;
+					z-index: $z-index-cookie;
+				}
+				.movePrev { float: left; } 
+				.moveNext { float: right; }
+			}
+		}
+	}
+}
+
+#promoWrapperLayer {
+	section { margin: 20px auto 50px auto;}
+	@include microClearfix;
+	visibility: hidden;
+	text-align: center;
+	overflow: hidden;
+	width: 100%;	
+    background-color: $black;
+    color: $white;
+	.promotions {
+		li.promotionEntry {
+			width:100%;
+		  	text-transform: none;
+		  	@include bodyStyle('header');
+		  	color:$white;
+		  	.longDescription {	width: 100%; }
+		  	.shortDescription { display:none; }
+		}	
+	}
+	.icon-close{
+		border: solid 2px $white;
+		height: 34px;
+		position: absolute;
+		bottom: 0;
+		margin: 0px;
+		left: 46.5%;
+		width: 34px;
+		background-position: 5px 4px;
+		display: none;
+	}
+	&.open .icon-close{
+		display: block;
+	}
+}
+
+
+@media #{$mediaQueryDesktopCommon} {
+	#utilityBar{
+		.headerPromoWrapper {
+			background:$white;
+			//width: 50%;
+			#promoWrapperTop {
+				width: 100%;
+				.shortDescription { color:$gray-txt; }
+				.movePrev, .moveNext { color: $black; }		
+				&.activeSection {
+					.shortDescription { text-decoration: underline; }
+				}
+			}
+			&.activeSectionContainer {background:$white;}
+		}
+	}	
+	
+	#promoWrapperLayer {
+		section{ 
+			min-height:60px;
+			margin: 25px auto;
+		}
+		.promotions li.promotionEntry { 
+			.shortDescription { 
+				display: block; 
+				text-transform: uppercase;
+				font-weight: bold;
+			}
+			.longDescription { padding-top : 13px; }
+		}
+		.icon-close{
+			border: none;
+			position: relative;
+			margin: 7px auto;
+			bottom: 83%;
+			left: 47%;
+			z-index: $mfp-z-index-base; //sopra close menu
+		}
+	}
+}

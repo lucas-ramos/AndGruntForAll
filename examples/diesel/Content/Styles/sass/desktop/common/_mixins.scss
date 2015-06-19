@@ -1,0 +1,338 @@
+// ======
+// MIXINS
+// ======
+
+//@import "compass/css3";
+@import "desktop/common/typography";
+
+// Generic input
+@mixin inputGeneric {
+	box-shadow: none;
+	-webkit-border-radius: 0px;
+	border-radius: 0px;
+	background-color: transparent;
+	border: 1px solid $medium-gray-txt;
+	height: 33px;
+	width: 100%;
+	text-indent: 6px;
+	font-size: 12px;
+	line-height: 29px;
+}
+
+// Generic button, can be used both with <button/> and <a class="button"/>
+@mixin button($showIcon, $color-buttons-background, $color-buttons-text, $color-buttons-background-hover, $color-buttons-text-hover) {
+	text-decoration: none;
+	// box-sizing: content box crea errori su iOs: con borderbox la height deve comprendere 
+	// eventuali margin e padding che altrimenti vengono inseriti all''interno del box
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	cursor: pointer;
+	border: none;
+	display: inline-block;
+	margin: auto;
+	background-color: $color-buttons-background;
+	color: $color-buttons-text;
+	text-align: center;
+	&:hover,&.active {
+		background-color: $color-buttons-background-hover;
+		color: $color-buttons-text-hover;
+		text-decoration: none;
+	}
+	&:disabled {
+		//background-color: #999;
+	}
+	.icon {
+		@if ($showIcon) {
+			display: inline-block;
+			vertical-align: middle;
+		} @else {
+			display: none;
+		}
+	}
+	.text {
+		display: inline-block;
+		vertical-align: middle;
+	}
+}
+
+// Editorial template CTA
+@mixin ctabutton {
+	@include franklin;
+	font-size: 18px;
+	display: inline-block;
+	min-width: 130px;
+	height: 40px;
+	line-height: 38px;
+	margin: 10px 5px 0;
+	padding: 0 5px;
+	color: $white;
+	&:hover, &:active {
+		text-shadow: none;
+	}
+	a {
+		display: block;
+		&:hover, &:active {
+			text-shadow: none;
+		}
+	}
+}
+@mixin ctabutton1 {
+	@include ctabutton;
+	border: 3px solid $white;
+	text-shadow: 0px 0px 2px $blackDiesel;
+	&:hover, &:active {
+		background-color: $white;
+		color: $blackDiesel;
+	}
+	a {
+		color: $white;
+		&:hover, &:active {
+			background-color: $white;
+			color: $blackDiesel;
+		}
+	}
+}
+@mixin ctabutton2 {
+	@include ctabutton;
+	border: 3px solid $blackDiesel;
+	text-shadow: 0px 0px 2px $white;
+	&:hover, &:active {
+		background-color: $blackDiesel;
+		color: $white;
+	}
+	a {
+		color: $blackDiesel;
+		&:hover, &:active {
+			background-color: $blackDiesel;
+			color: $white;
+		}
+	}
+}
+
+
+// UTILS
+
+// Image replacement as a mixin
+
+@mixin imageReplacement {
+	background-color: transparent;
+	border: 0;
+	overflow: hidden;
+	&.ielt8 {
+		text-indent: -9999px;
+	}
+	&:before {
+		content: "";
+		display: block;
+		width: 0;
+		height: 150%;
+	}
+}
+
+// Wrap in parenthesis
+
+@mixin wrapInParenthesis {
+	&:before {
+		content: '(';
+	}
+	&:after {
+		content: ')'
+	}
+}
+
+// Append colon
+
+@mixin appendColon {
+	&:after {
+		content: ":";
+	}
+	body.fr &:after {
+		content: " :";
+	}
+}
+
+// Clearfix
+
+@mixin microClearfix {
+	&:before,
+	&:after {
+		content: ' ';
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+// Opacity
+
+@mixin opacity ($opacity) {
+	opacity: $opacity;
+	$opacity-ie: $opacity * 100;
+	filter: alpha(opacity=$opacity-ie); //IE8
+
+}
+
+// box-shadow for menumobile
+@mixin boxShadowMenuMobile(){
+	-webkit-box-shadow: inset -6px 0px 15px -5px rgba(0,0,0,0.4);
+    -moz-box-shadow: inset -6px 0px 15px -5px rgba(0,0,0,0.4);
+    box-shadow: inset -6px 0px 15px -5px rgba(0,0,0,0.4);
+}
+
+// Hack for smoother transition
+
+@mixin smoothTransition() {
+	-webkit-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	transform: translateZ(0);
+}
+
+// Momentum scrolling for devices
+
+@mixin nativeScroll {
+	-webkit-overflow-scrolling: touch;
+	-ms-overflow-scrolling: touch;
+	overflow-scrolling: touch;
+	overflow-y: scroll;
+
+	/*
+	&::-webkit-scrollbar-track	{
+		// background-color: ;
+	}
+
+	&::-webkit-scrollbar	{
+		// width: 12px;
+	}
+
+	&::-webkit-scrollbar-thumb	{
+		// background-color: ;
+	}
+	*/
+}
+
+// ANIMATIONS
+
+// Keyframes mixin
+
+@mixin keyframes($name) {
+	@-webkit-keyframes #{$name} {
+		@content;
+	}
+	@keyframes #{$name} {
+		@content;
+	}
+}
+
+// MIXINS NEW DIESEL //
+
+@mixin reset_icon_cyc($resetBorder: false) {
+	content: '';
+	width: 0;
+	height: 0;
+	position: inherit;
+	bottom: auto;
+	right: auto;
+	top: auto;
+	bottom: auto;
+	@if $resetBorder == true {
+		border: none medium;
+	}
+}
+
+@mixin arrow($direction, $color, $sizeBase , $sizeLati){
+	$side: $sizeLati +px;
+	$base: $sizeBase + px;
+	
+	#{width}: 0;
+  	#{height}: 0;
+  	#{position}: relative;
+  	#{display}: block;
+  	#{margin}: 0 auto;
+	
+	@if $direction == "left"{
+		border-top: $side solid transparent;
+		border-right: $base solid $color;
+		border-bottom: $side solid transparent;
+	}@else if $direction == "right"{
+		border-top: $side solid transparent;
+		border-bottom: $side solid transparent;
+		border-left: $base solid $color;
+	}@else if $direction == "up"{
+		border-left: $side solid transparent;
+		border-right: $side solid transparent;
+		border-bottom: $base solid $color;
+	}@else if $direction == "down"{
+		border-left: $side solid transparent;
+		border-right: $side solid transparent;
+		border-top: $base solid $color;
+	}		
+}
+
+// Placeholders
+%arrow_bottom { @include arrow("down", $black, 10 , 20); }
+
+[class^="arrow-down"],
+[class*=" arrow-down"] {
+	@extend %arrow_bottom;
+}
+
+
+@mixin customSelect($colorText, $colorTextHover, $colorBackgroundHover) {
+	position: relative;
+	font-size: 15px;
+	margin-top: 20px;
+	padding:0;
+
+	&.open {
+		ul {
+			@include opacity(1);
+			z-index: 1;
+			//pointer-events: all;
+		}
+	}
+
+	ul {
+		@include opacity(0);
+		width: 110px;
+		position: absolute;
+		top: 0;
+		padding: 28px 0;
+		text-align: center;
+		background-color: $greyDiesel;
+		z-index: -1;
+		//pointer-events: none;
+	}
+
+	li {
+		padding: 8px 0;
+		cursor: pointer;
+		color: $colorText;
+		background-color: $white;
+
+		&:hover {
+			color: $colorTextHover;
+			background-color: $colorBackgroundHover;
+		}
+
+		&.selected {
+			background-color: #1a1a1a;
+			color: $white;
+		}
+	}
+}
+
+ // ADDS BROWSER PREFIX TO THE PROPERTY
+ @mixin css3-prefix($property, $value) {
+   -webkit-#{$property}: #{$value};
+    -khtml-#{$property}: #{$value};
+      -moz-#{$property}: #{$value};
+       -ms-#{$property}: #{$value};
+        -o-#{$property}: #{$value};
+           #{$property}: #{$value};
+}
+
+// CROSS BROWSER TRANSFORM
+@mixin transform($params) {
+	@include css3-prefix('transform', $params);
+}

@@ -1,0 +1,266 @@
+// ===============
+// USER MY PROFILE 
+// ===============
+
+
+/* REGOLE FORM COMUNI IN TUTTI I PAESI */
+#profileFormWrapper{
+
+	form {
+		@extend .column-12; 
+		@extend .omega;
+	}
+
+	.fieldRow.text{
+		.fieldLabel {display: none;}
+	}
+
+	.fieldRow.Gender, .fieldRow.BirthDate {
+
+		.fieldLabel label {
+			font-size: $size-small;
+			padding-bottom: 30px;
+			display: inline-block;
+		}
+	}
+	label { color: $color-light; }
+}
+
+.changeEmailPasswordContainer {
+
+	.emailFieldContainer, .passwordFieldContainer {
+
+		.icon, .label, .value {display: none;}
+	}
+
+	button {
+
+		@extend button.tertiary;
+		&.editUserPasswordButton  {padding-bottom: 20px;}
+	}
+}
+
+#ProfileViewModel_Gender_Wrapper {
+
+	@extend .column-6;
+
+	/* RADIO WOMEM/MEN */
+
+	.radioButtonBox {
+
+		font-size: $size-grand;
+		@extend .column-3;
+
+		&.U {
+			@extend .column-3; 
+			@extend .omega; 
+		}
+
+		.radioIcon {float: left;}
+		
+		.text {
+			margin-left: 5px;
+			cursor: pointer;
+		}
+	}
+}
+
+.selectInput_wrapper {
+	float: left;
+	width: 32%;
+
+	&:nth-child(3) {
+		margin: 0 1%;
+	}
+}
+
+#ProfileViewModel_BirthDate_Wrapper {
+
+	@extend .column-6; 
+	@extend .omega;
+	
+	.listTitle { display: none; }
+
+	.field-validation-error{ height: 0px; }
+}
+
+
+/* REGOLE FORM SPECIFICHE PER UN GRUPPO DI PAESI (tutti tranne JP) */
+#profileFormWrapper.formGeneric{
+
+	#ProfileViewModel_Name_Wrapper {
+
+		@extend .column-6;
+	}
+
+	#ProfileViewModel_Surname_Wrapper {
+
+		@extend .column-6;
+		@extend .omega;
+	}
+}
+
+/* REGOLE FORM SPECIFICHE UN PAESE */
+#profileFormWrapper.formJP{
+
+	#ProfileViewModel_Name_Wrapper {
+
+		@extend .column-6;
+		@extend .omega;
+	}
+
+	#ProfileViewModel_Surname_Wrapper {
+
+		@extend .column-6;
+	}
+
+	#ProfileViewModel_FuriganaName_Wrapper {
+
+		@extend .column-6; 
+		@extend .omega;
+	}
+	#ProfileViewModel_FuriganaSurname_Wrapper {
+
+		@extend .column-6;
+	}
+
+}
+
+/* PRIVACY DISCALIMER */
+
+.allowPrivacy {
+
+	clear: both;
+	margin: 20px 0 11px 0;
+	display: block;
+}
+
+.privacyContainer .privacy, .allowPrivacy .text{
+	
+	color: $color-light;
+	font-size: $size-small;
+	line-height: 1.2em;
+	@extend %helvetica;
+	display: block;
+}
+
+
+.privacyContainer .privacy{margin-top: 205px;}
+
+
+/* CHECKBOX PRIVACY */
+.acceptFlags {
+
+	font-size: $size-midsmall;
+	@extend %helvetica;
+	margin-top: 20px;
+
+	.flag { 
+
+		display: inline-block; 
+		width: 100%;
+		height: 40px;
+
+		.description {
+
+			color: $color-light;
+			margin: 4px 0 10px 0;
+			line-height: 1.2em;
+		}
+	}
+
+	.flagContent {
+
+		width: 30px;
+		display: inline-block;
+		float: left;
+	}
+	
+	.fieldRow.checkbox label {display: none;}
+}
+
+/* CTA SAVE FORM */
+.buttonsRow {
+
+	@extend .column-3;
+	@extend .omega;
+	float: right;
+	
+	button {
+
+		@extend button.primary;
+		width: 100%;
+		padding: 0 20px;
+		margin-bottom: 20px;
+	}
+}
+
+/* LABEL TO HIDE */
+
+label[for="RegistrationViewModel_YooxLetter"],
+label[for="RegistrationViewModel_DataProfiling"],
+label[for="RegistrationViewModel_Name"],
+label[for="RegistrationViewModel_FuriganaName"],
+label[for="RegistrationViewModel_Surname"],
+label[for="RegistrationViewModel_FuriganaSurname"],
+label[for="RegistrationViewModel_Email"],
+label[for="RegistrationViewModel_Password"],
+label[for="ProfileViewModel_FuriganaName"],
+label[for="ProfileViewModel_FuriganaSurname"],
+.mandatory,
+.day .selectTitle,
+.month .selectTitle,
+.year .selectTitle,
+.passwordInputWrapper .passwordLength,
+.passwordStrengthContainer, 
+.securePasswordInfo,
+.req,
+.editPersonalData
+{
+	display:none;
+}
+
+
+.uiLayer-editUserEmailButton, .uiLayer-editUserPasswordButton {
+	.mfp-content {
+
+		h2{
+			color: $white; 
+			padding-bottom: 20px; 
+			width: 380px; 
+			font-size: $size-big;
+		}
+		input {width: 380px;}
+
+		.buttonsRow {
+
+			width: 380px;
+			display: inline-block;
+			float: none;
+		}
+
+		.oldEmail {
+
+			font-size: $size-large; 
+			padding-bottom: 20px;
+			
+			.text:after { content: ': ';}
+		}
+
+		.fieldLabel { display: none; }
+
+		.field-validation-error { color: saturate( $red, 80% )  }
+	}
+}
+
+.serverSideErrors{
+
+	margin-bottom: 15px;
+	width: 380px;
+	color: saturate( $red, 80% );
+	font-size: $size-medium; 
+}
+
+.updateSuccessful {
+	font-size: $size-medium;
+}

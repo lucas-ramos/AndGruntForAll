@@ -1,0 +1,406 @@
+// da rivedere la struttura per le media query 
+
+@mixin bodyStyle($section){
+	@if $section == "header" or $section == "footer" or $section == "item"{
+		@include trade;
+		font-size: 13px;
+		color: $blackDiesel;
+		letter-spacing: 0.075em;
+		line-height: 1.4;
+		text-transform: none;
+	}
+	@else if $section == "search"{
+		@include trade;
+		font-size: 14px;
+		color: $searchBlack;
+		letter-spacing:0.1em;
+		@media #{$mediaQueryTablet}{
+			font-size: 12px;
+		}
+	}
+    @else if $section == "menu" {
+		@include trade;
+		font-size: 13px;
+		color: $blackDiesel;
+		letter-spacing:0.1em;
+	}
+}
+
+@mixin H7Style($section){
+	@include trade;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	color: $gray-txt;
+	@if $section == "header" or $section == "footer"{
+		font-size: 13px;
+		@media #{$mediaQueryDesktopCommon}{
+			font-size: 12px;
+			letter-spacing: 0.1em;
+		}
+	}
+	@if $section == "item"{
+		font-size: 9px;
+	}
+	@else if $section == "menu" {
+		font-size: 13px;
+		color: $blackDiesel;
+    }
+}
+
+@mixin H6Style($section){
+	@if $section == "header" or $section == "footer"{
+		@include trade;
+		font-size: 14px;
+		color: $blackDiesel;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		@media #{$mediaQueryDesktopCommon}{	
+			font-size: 13px;
+			letter-spacing: 0.1em;
+			text-transform: none;
+		}
+	}
+	@else if $section == "search"{
+		@include trade;
+		font-size: 11px;
+		color:$searchBlack;
+		letter-spacing: 0.075em;
+		@media #{$mediaQueryDesktopCommon}{	
+			font-size: 12px;
+		}
+	}
+	@else if $section == "item"{
+		@include trade;
+		font-size: 10px;
+		color:$gray-txt;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		line-height: 1.3;
+		font-weight: normal;
+		@media #{$mediaQueryDesktopCommon}{	
+			line-height: 1.6;
+		}
+	}
+  	@else if $section == "menu"{
+		@include trade;
+		font-size: 14px;
+		color:$blackDiesel;
+		letter-spacing: 0.05em;
+		font-weight: normal;
+		@media #{$mediaQueryTablet}{	
+			font-size: 13px;
+		}
+	    @media #{$mediaQueryDesktopCommon}{	
+			font-size: 13px;
+		}
+	}
+}
+
+@mixin H5Style($section){
+	@if $section == "header" or $section == "footer"{
+		@include trade;
+		font-size: 11px;
+		color: $blackDiesel;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		@media #{$mediaQueryDesktopCommon}{
+			@include franklin;
+			letter-spacing: 0.075em;
+		}
+		@media #{$mediaQueryTablet}{
+			font-size: 12px;
+		}
+		@media #{$mediaQueryDesktop}{
+			font-size: 14px;
+		}
+	}
+	@else if $section == "search"{
+		@include franklin;
+		font-size: 14px;
+		color:$searchBlack;
+		letter-spacing: 0.075em;
+	}
+	@else if $section == "item"{
+		@include trade;
+		color: $blackDiesel;
+		font-size: 11px;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		line-height:1.3em;
+		font-weight: bold;
+		@media #{$mediaQueryDesktop}{
+			line-height: 1.6;
+		}
+	}
+}
+
+@mixin H4Style($section){
+	@if $section == "header" or $section == "footer"{
+		@include franklin;
+		font-size: 12px;
+		color: $blackDiesel;
+		letter-spacing: 0.075em;
+		text-transform: uppercase;
+		@media #{$mediaQueryTablet}{
+			font-size: 13px;
+		}
+		@media #{$mediaQueryDesktop}{
+			font-size: 15px;
+			letter-spacing: 0.075em;
+		}
+	}
+	@else if $section == "search"{
+		@include franklin;
+		font-size: 14px;
+		color:$searchBlack;
+		letter-spacing: 0.075em;
+		@media #{$mediaQueryDesktopCommon}{
+			font-size: 18px;
+		}
+	}
+	@else if $section == "item"{
+		@include franklin;
+		color: $gray-txt;
+		font-size: 12px;
+		text-transform: uppercase;
+		letter-spacing: 0.075em;
+		font-weight: normal;
+		@media #{$mediaQueryTablet}{
+			font-size: 14px;
+		}
+		@media #{$mediaQueryDesktop}{
+			font-size: 14px;
+			letter-spacing: 0.12em;
+		}
+	}
+}
+
+@mixin H3Style($section){
+	@if $section == "header" or $section == "footer"{
+		@include franklin;
+		font-size: 14px;
+		letter-spacing: 0.075em;
+		text-transform: uppercase;
+		@media #{$mediaQueryTablet}{
+			font-size: 14px;
+		}
+		@media #{$mediaQueryDesktop}{
+			font-size: 16px;
+			letter-spacing: 0.075em;
+		}
+	}
+	@else if $section == "search"{
+		@include franklin;
+		font-size: 24px;
+		color:$searchBlack;
+		letter-spacing: 0.1em;
+		@media #{$mediaQueryTablet}{
+			letter-spacing: 0.075em;
+		}
+		@media #{$mediaQueryDesktop}{
+			font-size: 28px;
+		}
+	}
+	@else if $section == "item"{
+		@include franklin;
+		font-size: 14px;
+		text-transform: uppercase;
+		letter-spacing: 0.075em;
+		@media #{$mediaQueryDesktop}{
+			letter-spacing: 0.12em;
+			font-size: 16px;
+		}
+	}
+	@else if $section == "menu" {
+		@include franklin;
+		font-size: 14px;
+		color: $blackDiesel;
+		letter-spacing: 0.075em;
+		@media #{$mediaQueryTablet}{
+			font-size: 15px;
+		}
+	}
+}
+
+@mixin H2Style($section){
+	@include franklin;
+	font-size: 18px;
+	@if $section == "header" or $section == "footer"{
+		color: $blackDiesel;
+		letter-spacing: 0.075em;
+		text-transform: uppercase;
+		@media #{$mediaQueryTablet}{
+			font-size: 14px;
+		}
+		@media #{$mediaQueryDesktop}{
+			font-size: 18px;
+			letter-spacing: 0.1em;
+		}
+	}
+	@else if $section == "search"{
+		color:$searchBlack;
+		letter-spacing: 0.1em;
+		@media #{$mediaQueryTablet}{
+			font-size: 24px;
+		}
+		@media #{$mediaQueryDesktop}{
+			font-size: 32px;
+			letter-spacing: 0.075em;
+		}
+	}
+	@else if $section == "item"{
+		font-size: 16px;
+		letter-spacing: 0.075em;
+		line-height: 1.3em;
+		@media #{$mediaQueryTablet}{
+			font-size: 18px;
+		}
+		@media #{$mediaQueryDesktop}{
+			font-size: 20px;
+			line-height: 1.5em;
+			text-transform: uppercase;
+		}
+	}
+    @else if $section == "menu"{
+		font-size: 18px;
+		letter-spacing: 0.075em;
+		line-height: 1;
+    	text-transform: none;
+		@media #{$mediaQueryTablet}{
+			font-size: 18px;
+		}
+		@media #{$mediaQueryDesktop}{
+			font-size: 20px;
+			line-height: 1.5em;
+		}
+	}
+}
+
+@mixin H1Style($section){
+	@include franklin;
+	@if $section == "header" or $section == "footer"{		
+		font-size: 24px;
+		color: $blackDiesel;
+		letter-spacing: 0.075em;
+		text-transform: uppercase;
+		@media #{$mediaQueryTablet}{
+			font-size: 20px;
+		}
+		@media #{$mediaQueryDesktop}{
+			font-size: 24px;
+		}
+	}
+	@else if $section == "search"{
+		font-size: 30px;
+		color:$searchBlack;
+		letter-spacing: 0.05em;
+		@media #{$mediaQueryTablet}{
+			font-size: 42px;
+			letter-spacing: 0.075em;
+		}
+		@media #{$mediaQueryDesktop}{
+			font-size: 44px;
+			letter-spacing: 0.075em;
+		}
+	}
+	@else if $section == "item"{
+		font-size: 24px;
+		color: $blackDiesel;
+		letter-spacing: 0.075em;
+		@media #{$mediaQueryDesktopCommon}{
+			font-size: 32px;
+		}
+	}
+}
+@mixin P5Style($section){
+	@if $section == 'product'{
+		@include trade;
+		font-size:10px;
+		color:$searchBlack;
+		letter-spacing: 0.075em;
+		@media #{$mediaQueryTablet}{
+			font-size: 14px;
+		}
+		@media #{$mediaQueryDesktop}{
+			font-size: 13px;
+		}
+	}
+}
+@mixin P4bStyle($section){
+	@if $section == 'product'{
+		@include trade;
+		font-size:11px;
+		color:$searchBlack;
+		letter-spacing: 0.050em;
+		@media #{$mediaQueryTablet}{
+			font-size: 13px;
+		}
+	}
+}
+@mixin P4aStyle($section){
+	@if $section == 'product'{
+		@include franklin;
+		font-size:12px;
+		color:$searchBlack;
+		letter-spacing: 0.075em;
+		@media #{$mediaQueryTablet}{
+			font-size: 16px;
+		}
+		@media #{$mediaQueryDesktop}{
+			font-size: 14px;
+		}
+	}
+}
+@mixin P3Style($section){
+	@if $section == 'product'{
+		@include trade;
+		font-size:9px;
+		color:$searchBlack;
+		letter-spacing: 0.050em;
+		@media #{$mediaQueryDesktopCommon}{
+			font-size: 10px;
+		}
+	}
+}
+@mixin P2Style($section){
+	@if $section == 'product'{
+		@include trade;
+		font-size:10px;
+		color:$searchBlack;
+		letter-spacing: 0.075em;
+		@media #{$mediaQueryTablet}{
+			font-size: 13px;
+		}
+		@media #{$mediaQueryDesktop}{
+			font-size: 16px;
+		}
+	}
+}
+@mixin P1Style($section){
+	@if $section == 'product'{
+		@include franklin;
+		font-size:10px;
+		color:$searchBlack;
+		letter-spacing: 0.075em;
+		@media #{$mediaQueryTablet}{
+			font-size: 13px;
+		}
+		@media #{$mediaQueryDesktop}{
+			font-size: 16px;
+		}
+	}
+}
+@mixin PriceSale($section){
+	@if $section == "item"{
+		@include trade;
+		font-size: 12px; 
+		letter-spacing: 0.05em;
+		line-height: 25px;
+		@media #{$mediaQueryTablet}{
+			font-size: 14px;
+		}
+		@media #{$mediaQueryDesktop}{
+			font-size: 16px;
+		}
+	}
+}

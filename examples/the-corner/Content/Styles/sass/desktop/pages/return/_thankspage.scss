@@ -1,0 +1,127 @@
+// ===========
+// THANKS PAGE
+// ===========
+
+$delivery-step-url : "//media.yoox.biz/ytos/resources/THECORNER/img/return/";
+
+
+.head {
+	text-align: center;
+	h3 {
+		margin-bottom: 5px;
+	}
+}
+
+.instructions{
+
+    .JP &, .VN &, .RU &, .IN &, .ID &, .MY &, .SG & , .PH & , .TH & , .TW & , .CN & , .AU & , .HK & , .NZ & {display:none;} //In queste nazioni il servizio di corriere è differente
+
+	margin-top: 20px;
+	@include pie-clearfix;
+
+	h2{
+		text-align: center;
+		margin-bottom: 20px; 
+		height: 50px;
+		line-height: 50px;
+	}
+
+	.steps{
+
+		
+		h3{
+			font-size: $size-big;
+			margin-bottom: 10px;
+		}
+		p{
+			font-size: $size-medium;
+		}
+		.lostLabel a{
+			font-size: $size-medium;
+			margin-top: 10px;
+			display: block;
+		}
+	}
+}
+
+.step {
+	text-align: center;
+	vertical-align: top;
+	background-color: $color-ultra;
+	height: 242px;
+
+	.icon{
+		display: inline-block;
+		margin-bottom: 20px;
+		background-repeat: no-repeat;
+	}
+
+	.inner {
+		position: relative;
+		top: 50%;
+		transform: 	translateY(-50%)
+	}
+}
+
+
+.step1 {
+	.inner {
+		//margin-top: 11px;
+	}
+	.icon {
+		background-image: url($delivery-step-url + "delivery-step1.png");
+		width: 52px;
+		height: 34px;
+	}
+}
+
+.step2 {
+	.inner {
+		//margin-top: 25px;
+	}
+	.icon {
+		background-image: url($delivery-step-url + "delivery-step2.png");
+		width: 38px;
+		height: 29px;
+	}
+}
+
+.step3 {
+	.inner {
+		//margin-top: 24px;
+	}
+
+	.icon {
+		background-image: url($delivery-step-url + "delivery-step3.png");
+		width: 64px;
+		height: 29px;
+	}
+}
+
+.returnInfo{
+
+	> h3 {
+		text-align: center;
+		margin: 20px 0;
+	}
+	margin-top: 20px;
+
+
+	.allInfo{
+		p{
+			margin-top: 5px;
+		}
+	}
+}
+
+.shoppingLinkBox{
+	margin: 30px 0;
+}
+
+.mfp-content .inner{
+	font-size: $size-medium;
+}
+
+.lostPopupBody{
+	display: none;
+}

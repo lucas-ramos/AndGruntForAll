@@ -1,0 +1,289 @@
+[
+	{
+		"Controller" : "Common",
+		"Scripts": [
+			"/Vendor/jquery.prettyselect.js",
+			"/Vendor/jquery.bxslider.js",
+			"/Vendor/jquery.nicescroll.js",
+			"/Vendor/jquery.placeholder-enhanced.min.js",
+			"/Vendor/jquery.smartloadingbar.js",
+			"/Modules/site/preQtipConfig.js",
+			"/Vendor/jquery.qtip.js",
+			"/Modules/site/manageLoadingAnimationOnAjaxCalls.js",
+			"/Modules/site/loadingOverlayController.js",
+			"/Modules/site/loadingBarController.js",
+			"/Modules/site/manipulateCartElemsInSite.js",
+			"/Modules/site/prettySelect.js",
+			"/Modules/site/placeholderEnhanced.js",
+			"/Modules/site/sortItemInMenuLayer.js",
+			"/Modules/site/menuLayer.js",			
+			"/Modules/site/findAsYouType.js",
+			"/Modules/site/manageContainerMinHeight.js",
+			"/Modules/site/headerLayer.js",
+			"/Modules/site/logoutController.js",
+			"/Modules/site/ccareLayer.js",
+			"/Modules/site/customizeMagnificpopup.js",
+			"/Modules/site/shoppingbagLayer.js",
+			"/Modules/site/wishlistLayerSlider.js",
+			"/Modules/site/overrideNewsletterLayer.js",
+			"/Modules/site/secureTransactionLink.js",
+			"/Scopes/site.js" 
+		]
+	},
+	{
+		"Controller" : "Countries",
+		"Scripts": [
+			"/Modules/countries/onSelectCountryForceValidation.js",
+			"/Scopes/countries.js"
+		]
+	},
+	{
+		"Controller" : "ShopByCorner",
+		"Scripts": [
+			"/Modules/shopbycorner/hoverlayer.js",
+			"/Modules/shopbycorner/searchInCorners.js",
+			"/Modules/shopbycorner/fixViewAll.js",
+			"/Scopes/shopbycorner.js"
+		]
+	},
+	{
+		"Controller" : "StyleStories",
+		"Scripts": [
+			"/Modules/stylestories/initSliders.js",
+			"/Modules/stylestories/tabs.js",
+			"/Modules/stylestories/scrollListener.js",
+			"/Scopes/stylestories.js"
+		]
+	},
+	{
+		"Controller" : "ArchiveVideo",
+		"Scripts": [
+			"/Modules/archivevideo/gridVideo.js",
+			"/Modules/archivevideo/mainVideo.js",
+			"/Scopes/archivevideo.js"
+		]
+	},
+	{
+		"Controller" : "Shared",
+		"Scripts": []
+	},
+	{
+		"Controller" : "Home",
+		"Scripts": [
+			"/Modules/home/hpSlider.js",
+			"/Modules/home/styleRadarSlider.js",
+			"/Modules/home/scrollToSection.js",
+			"/Scopes/home.js"
+		]
+	},
+	{
+		"Controller" : "Subhome",
+		"Scripts": [
+			"/Scopes/subhome.js"
+		]
+	},
+	{
+		"Controller" : "user",
+		"Scripts": [
+			"/Scopes/Areas/account.js"
+		]
+	},
+	{
+		"Controller" : "AddressBook",
+			"Scripts": [
+			"/Modules/Account/AddressBook/handlerInputForm.js",
+			"/Scopes/Areas/account.js"
+		]
+	},
+	{
+		"Controller" : "Overview",
+		"Scripts": [
+			"/Modules/Account/Overview/miniWishlist.js",
+			"/Modules/Account/Overview/fixOrdersHeader.js",
+			"/Scopes/Areas/account.js"
+		]
+	},
+	{
+		"Controller" : "Orders",
+		"Scripts": [
+			"/Modules/Account/Orders/orderSearch.js",
+			"/Modules/Account/Orders/orderOpenDetail.js",
+			"/Scopes/Areas/account.js"
+		]
+	},
+	{
+		"Controller" : "Myreturn",
+		"Scripts": [
+			"/Modules/Account/Myreturn/removeLabel.js",
+			"/Scopes/Areas/account.js"
+		]
+	},
+	{
+		"Controller" : "CreditCardWallet",
+		"Scripts": [
+			"/Modules/Account/CreditCardWallet/showHideAddCard.js",
+			"/Scopes/Areas/account.js"
+		]
+	},
+	{
+		"Controller" : "WishList",
+		"Scripts": [
+			"/Modules/Account/Wishlist/fixHeight.js",
+			"/Modules/Account/Wishlist/lastArticle.js",
+			"/Scopes/Areas/account.js"
+		]
+	},
+	{
+		"Controller" : "Premiere",
+		"Scripts": [
+			"/Modules/Account/Premiere/showHideCorners.js",
+			"/Modules/Account/Premiere/premiereSlider.js",
+			"/Scopes/Areas/account.js"
+		]
+	},
+	{
+		"Controller" : "Selection",
+		"Scripts": [
+			"/Modules/return/selection/hideShowLabel.js",
+			"/Scopes/Areas/return.js"
+		]
+	},
+	{
+		"Controller" : "Refund",
+		"Scripts": [
+			"/Modules/return/refund/hideShowIban.js",
+			"/Modules/return/refund/distinguishCreditCard.js",
+			"/Scopes/Areas/return.js"
+		]
+	},
+	{
+		"Controller" : "Search",
+		"Scripts": [
+			"/Vendor/lazyload.js",
+			"/Modules/search/leftFiltersHideShow.js",
+			"/Modules/search/manageLazyload.js",
+			"/Modules/search/filtersTicks.js",
+			"/Modules/search/nicescrollSetting.js",
+			"/Modules/search/goToTop.js",
+			"/Modules/search/sizeRefinementHelper.js",
+			"/Modules/search/switchOutfitProduct.js",
+			"/Modules/search/findPageNumber.js",
+			"/Modules/search/resetHandler.js",
+			"/Modules/search/singleDesignerHandler.js",
+			"/Modules/search/topBannerTrendHandler.js",
+			"/Modules/search/breadcrumbs.js",
+			"/Modules/search/zeroItemsInSearch.js",
+			"/Modules/search/setBannerMenuColor.js",
+			"/Modules/search/addToPremiere.js",
+			"/Modules/search/emptySearchSlider.js",
+			"/Modules/search/viewAllRemoverFromSeasons.js",
+			"/Modules/search/dispatchChangeEventOnSortSelect.js",
+			"/Modules/search/removeNumitems.js",
+			"/Scopes/search.js"
+		]
+	},
+	{
+		"Controller" : "OnlyForYou",
+		"Scripts": [
+            "/Vendor/lazyload.js",
+			"/Modules/search/manageLazyload.js",
+			"/Modules/search/goToTop.js",
+			"/Modules/search/switchOutfitProduct.js",
+			"/Modules/search/viewAllRemoverFromSeasons.js",
+			"/Modules/search/dispatchChangeEventOnSortSelect.js",
+			"/Scopes/onlyforyou.js"
+		]
+	},
+	{
+		"Controller" : "Item",
+		"Scripts": [
+			"/Vendor/mouseFollow.js",
+			"/Modules/item/tabOpeningHandler.js",
+			"/Modules/item/itemMicroLink.js",
+			"/Modules/item/sizeConversionTrigger.js",
+			"/Modules/item/notValidSelection.js",
+			"/Modules/item/niceScrollSpecs.js",
+			"/Modules/item/ie8_addOmegaOnRelated.js",
+			"/Modules/item/triggerRelatedTitle.js",
+			"/Modules/item/sizeGuideWatch.js",
+			"/Modules/item/triggerZoomOnClick.js",
+            "/Modules/item/manageItemSizeColorLabels.js",
+			"/Modules/item/sizeHalfCheckInCountry.js",
+			"/Scopes/item.js"
+		]
+	},
+	{
+		"Controller" : "Cart",
+		"Scripts": [
+			"/Modules/addressdrivencheckout/noPromotionalBrands.js",
+			"/Modules/addressdrivencheckout/faqAccordionManagement.js",
+			"/Modules/addressdrivencheckout/checkoutLoadingOverlayHandler.js",
+			"/Modules/addressdrivencheckout/cart/oldCartSlider.js",
+			"/Modules/addressdrivencheckout/niceScrollOnLongText.js",
+			"/Modules/addressdrivencheckout/cart/showSalesTax.js",
+			"/Modules/addressdrivencheckout/cart/wishlistSectionSlider.js",
+			"/Scopes/Areas/checkout.js",
+			"/Scopes/cart.js"
+		]
+	},
+	{
+		"Controller" : "Checkmail",
+		"Scripts": [
+			"/Modules/addressdrivencheckout/faqAccordionManagement.js",
+			"/Modules/addressdrivencheckout/niceScrollOnLongText.js",
+			"/Modules/addressdrivencheckout/checkoutLoadingOverlayHandler.js",
+			"/Scopes/Areas/checkout.js",
+			"/Scopes/checkmail.js"
+		]
+	},
+	{
+		"Controller" : "Delivery",
+		"Scripts": [
+			"/Modules/addressdrivencheckout/faqAccordionManagement.js",
+			"/Modules/addressdrivencheckout/checkoutLoadingOverlayHandler.js",
+			"/Modules/addressdrivencheckout/loadingOverlayOnEdit.js",
+			"/Modules/addressdrivencheckout/delivery/showGiftLabels.js",
+			"/Modules/addressdrivencheckout/delivery/deliveryMethodsLabels.js",
+			"/Modules/addressdrivencheckout/delivery/whyTelephone.js",
+			"/Modules/addressdrivencheckout/zipCodeToUppercase.js",
+			"/Modules/addressdrivencheckout/userDataWrapper.js",
+			"/Modules/addressdrivencheckout/niceScrollOnLongText.js",
+			"/Modules/addressdrivencheckout/showFastCheckout.js",
+			"/Scopes/Areas/checkout.js",
+			"/Scopes/delivery.js"
+		]
+	},
+	{
+		"Controller" : "Confirmation",
+		"Scripts": [
+			"/Modules/addressdrivencheckout/faqAccordionManagement.js",
+			"/Modules/addressdrivencheckout/noPromotionalBrands.js",
+			"/Modules/addressdrivencheckout/userDataWrapper.js",
+			"/Modules/addressdrivencheckout/zipCodeToUppercase.js",
+			"/Modules/addressdrivencheckout/loadingOverlayOnEdit.js",
+			"/Modules/addressdrivencheckout/checkoutLoadingOverlayHandler.js",
+			"/Modules/addressdrivencheckout/confirmation/modifyPaymentType.js",
+			"/Modules/addressdrivencheckout/confirmation/hideOthersPaymentType.js",
+			"/Modules/addressdrivencheckout/confirmation/organizeCardInfo.js",
+			"/Modules/addressdrivencheckout/confirmation/codCN.js",
+			"/Modules/addressdrivencheckout/showFastCheckout.js",
+			"/Modules/addressdrivencheckout/niceScrollOnLongText.js",
+			"/Scopes/Areas/checkout.js",
+			"/Scopes/confirmation.js"
+		]
+	},
+	{
+		"Controller" : "LegalArea",
+		"Scripts": [
+			"/Modules/help/printButton.js",
+			"/Scopes/Areas/help.js"
+		]
+	},
+	{
+		"Controller" : "landing",
+		"Scripts": [
+			"/Modules/landing/irisvanherpen.js",
+			"/Scopes/landing.js"
+		]
+	}
+]

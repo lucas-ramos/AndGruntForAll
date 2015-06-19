@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 18.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="close" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;" xml:space="preserve" color="#fff" fill="#fff">
+<g>
+	<g>
+		<rect x="8.941" y="1.573" transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 24.1421 10)" width="2.117" height="16.853"/>
+		<path d="M4.79,4L16,15.21L15.21,16L4,4.79L4.79,4 M4.79,2.586L4.083,3.293l-0.79,0.79L2.586,4.79l0.707,0.707l11.21,11.21
+			l0.707,0.707l0.707-0.707l0.79-0.79l0.707-0.707l-0.707-0.707L5.497,3.293L4.79,2.586L4.79,2.586z"/>
+	</g>
+	<g>
+		<rect x="1.573" y="8.941" transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 24.1421 10)" width="16.853" height="2.117"/>
+		<path d="M15.21,4L16,4.79L4.79,16L4,15.21L15.21,4 M15.21,2.586l-0.707,0.707l-11.21,11.21L2.586,15.21l0.707,0.707l0.79,0.79
+			l0.707,0.707l0.707-0.707l11.21-11.21l0.707-0.707l-0.707-0.707l-0.79-0.79L15.21,2.586L15.21,2.586z"/>
+	</g>
+</g>
+</svg>

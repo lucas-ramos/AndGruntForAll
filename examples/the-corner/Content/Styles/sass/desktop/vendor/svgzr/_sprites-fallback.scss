@@ -1,0 +1,221 @@
+@import 'compass/utilities/sprites';
+@import 'desktop-fallback/*.png';
+
+// Helper for svg fallbacks (ie8 and lower/unsupported browsers)
+@mixin fallback($fileName){
+	.no-svg &, .ielt9 & {
+		@include desktop-fallback-sprite($fileName);
+		width: desktop-fallback-sprite-width($fileName);
+		height: desktop-fallback-sprite-height($fileName);
+	}
+}
+
+
+%svg-alert-icon {
+    @include fallback(alert-icon);
+}
+
+%svg-arrow-circle-big-right {
+    @include fallback(arrow-circle-big-right);
+}
+
+%svg-arrow-circle-down {
+    @include fallback(arrow-circle-down);
+}
+
+%svg-arrow-circle-left {
+    @include fallback(arrow-circle-left);
+}
+
+%svg-arrow-circle-right {
+    @include fallback(arrow-circle-right);
+}
+
+%svg-arrow-circle-up {
+    @include fallback(arrow-circle-up);
+}
+
+%svg-arrow-down {
+    @include fallback(arrow-down);
+}
+
+%svg-arrow-left {
+    @include fallback(arrow-left);
+}
+
+%svg-arrow-right {
+    @include fallback(arrow-right);
+}
+
+%svg-arrow-thin-left {
+    @include fallback(arrow-thin-left);
+}
+
+%svg-arrow-thin-right {
+    @include fallback(arrow-thin-right);
+}
+
+%svg-arrow-up {
+    @include fallback(arrow-up);
+}
+
+%svg-arrow-white-left {
+    @include fallback(arrow-white-left);
+}
+
+%svg-arrow-white-right {
+    @include fallback(arrow-white-right);
+}
+
+%svg-arrow-zoom-left {
+    @include fallback(arrow-zoom-left);
+}
+
+%svg-arrow-zoom-right {
+    @include fallback(arrow-zoom-right);
+}
+
+%svg-ccare-icon-box {
+    @include fallback(ccare-icon-box);
+}
+
+%svg-ccare-icon-lock {
+    @include fallback(ccare-icon-lock);
+}
+
+%svg-ccare-icon-tc {
+    @include fallback(ccare-icon-tc);
+}
+
+%svg-ccare-mail {
+    @include fallback(ccare-mail);
+}
+
+%svg-ccare-manichino {
+    @include fallback(ccare-manichino);
+}
+
+%svg-ccare-telephone-big {
+    @include fallback(ccare-telephone-big);
+}
+
+%svg-ccare-telephone {
+    @include fallback(ccare-telephone);
+}
+
+%svg-checkbox-15x15-checked {
+    @include fallback(checkbox-15x15-checked);
+}
+
+%svg-checkbox-15x15-unchecked {
+    @include fallback(checkbox-15x15-unchecked);
+}
+
+%svg-circle-logo {
+    @include fallback(circle-logo);
+}
+
+%svg-cross-11x11-ebebeb {
+    @include fallback(cross-11x11-ebebeb);
+}
+
+%svg-cross-18x18-999 {
+    @include fallback(cross-18x18-999);
+}
+
+%svg-cross-30x30-666 {
+    @include fallback(cross-30x30-666);
+}
+
+%svg-cross {
+    @include fallback(cross);
+}
+
+%svg-input-invalid {
+    @include fallback(input-invalid);
+}
+
+%svg-input-valid {
+    @include fallback(input-valid);
+}
+
+%svg-lens-24x24 {
+    @include fallback(lens-24x24);
+}
+
+%svg-lens-50x50 {
+    @include fallback(lens-50x50);
+}
+
+%svg-logo-r {
+    @include fallback(logo-r);
+}
+
+%svg-logo {
+    @include fallback(logo);
+}
+
+%svg-mail-icon {
+    @include fallback(mail-icon);
+}
+
+%svg-shoppingbag {
+    @include fallback(shoppingbag);
+}
+
+%svg-social-facebook {
+    @include fallback(social-facebook);
+}
+
+%svg-social-googleplus {
+    @include fallback(social-googleplus);
+}
+
+%svg-social-instagram {
+    @include fallback(social-instagram);
+}
+
+%svg-social-pinterest {
+    @include fallback(social-pinterest);
+}
+
+%svg-social-share-douban {
+    @include fallback(social-share-douban);
+}
+
+%svg-social-share-facebook {
+    @include fallback(social-share-facebook);
+}
+
+%svg-social-share-googleplus {
+    @include fallback(social-share-googleplus);
+}
+
+%svg-social-share-pinterest {
+    @include fallback(social-share-pinterest);
+}
+
+%svg-social-share-tumblr {
+    @include fallback(social-share-tumblr);
+}
+
+%svg-social-share-twitter {
+    @include fallback(social-share-twitter);
+}
+
+%svg-social-share-weibo {
+    @include fallback(social-share-weibo);
+}
+
+%svg-social-tumblr {
+    @include fallback(social-tumblr);
+}
+
+%svg-social-twitter {
+    @include fallback(social-twitter);
+}
+
+%svg-social-youtube {
+    @include fallback(social-youtube);
+}
+

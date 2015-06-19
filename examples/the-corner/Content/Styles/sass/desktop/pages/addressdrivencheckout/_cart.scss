@@ -1,0 +1,13 @@
+// =========
+// CART PAGE
+// =========
+
+@import "Desktop/Partials/addressdrivencheckout/cart/emptyCart";
+@import "Desktop/Partials/addressdrivencheckout/cart/fullCart";
+@import "Desktop/Partials/addressdrivencheckout/cart/oldCart";
+
+#smartLoadingBar {
+	.slow, .fast {
+		background-color: $white;
+	}
+}

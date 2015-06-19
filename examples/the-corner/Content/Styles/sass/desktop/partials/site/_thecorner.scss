@@ -1,0 +1,104 @@
+/* ==========================================================================
+   thecorner.com base mood & style
+   ========================================================================== */
+
+%language-exception-sizes {
+	&.RU, &.UA {font-size:8px;}
+	&.JP {font-size:9px;}
+	&.CN {font-size:9px;}
+}
+
+html {
+	min-width: $site-minimum-width; //fix spaziatura bianca destra su resize
+	font-size: 10px;
+
+	@extend %language-exception-sizes;
+}
+
+body {
+	position: relative;
+    @include zindex(body);
+	-webkit-font-smoothing: antialiased;
+	overflow-y: scroll; //corregge bug chrome: la scrollbar che scompariva
+
+	@extend %knockout;
+	@extend %language-exception-sizes;
+}
+
+
+/* ==========================================================================
+   Basic HTML tags
+   ========================================================================== */
+
+h1, h2, h3 {
+   @extend %knockout-bold;
+}
+
+h4, h5, h6 {
+   @extend %knockout;
+}
+
+
+h1 { }
+
+h2 {
+  font-size: $size-giant;
+  .CN &,
+  .JP &
+    { font-size:$size-massive; }
+}
+
+h3 {
+  font-size: $size-huge;
+  .CN &,
+  .JP &
+    { font-size:$size-big; }
+}
+
+h4 { font-size: $size-big; }
+
+h5 { font-size: $size-large; }
+
+h6 { font-size: $size-medium; }
+
+#{headings()} {
+   color: $color-dark;
+   text-transform: uppercase;
+
+   &.inverse {
+      color: $white;
+   }
+}
+
+strong {
+	@extend %knockout-bold;
+}
+
+p {
+    font-size: $size-medium;
+
+    &.inverse {
+        color: $white;
+    }
+}
+
+a, .link {
+    text-decoration: none;
+    color: $color-dark;
+    cursor: pointer;
+
+    &:hover {
+        color: $black;
+    }
+}
+
+/*Servono a lazyload per gestire la visualizzazione delle immagini ancora non caricate*/
+img:not([src]) {
+	visibility: hidden;
+}
+@-moz-document url-prefix() {
+    img:-moz-loading {
+        visibility: hidden;
+    }
+}
+/*Servono a lazyload per gestire la visualizzazione delle immagini ancora non caricate*/

@@ -1,0 +1,167 @@
+// MENU
+$layerMenu-linkBottom-height: 45px;
+$layerMenu-content-verticalBorder: 20px;
+$layerMenu-content-height: 300px - ($layerMenu-content-verticalBorder * 2);
+
+.headerLine.third {
+	position: relative;
+}
+
+// nascondo il menù del gender non adatto (viene rimosso in js, ma almeno così non facciamo "scatti" di transizione visibili a schermo
+body[data-gender="D"] #mainMenu > [data-target-gender="U"],
+body[data-gender="U"] #mainMenu > [data-target-gender="D"]{
+	display: none;
+}
+
+#mainMenu {
+	position: static;
+	a {
+		display: block;
+	}
+	// menu primo livello
+	.level-1 > ul {
+		@include pie-clearfix;
+
+		> li {
+			float: left;
+			margin: 0 10px 0 0;
+
+			.CN & {
+				margin: 0 6px 0 0;
+			}
+
+			> a:first-child, > div:first-child {
+				padding: 0 10px;
+
+				.RU & {
+					padding: 0 2px;
+				}
+
+				> .text {
+					font-size: $size-midlarge;
+					text-transform: uppercase;
+					color: $black;
+					position: relative;
+					top: 3px;
+
+					.CN & {
+						font-size: $size-midsmall;
+					}
+				}
+			}
+
+			&:hover, &.showMenuLayer {
+				background-color: $color-ultra;
+			}
+
+			&.tcpromotionsw, &.tcpromotionsm, &.tcsalesw, &.tcsalesm {
+				@extend %knockout-bold;
+			}
+		}
+	}
+
+	// layerMenu
+	.level-2 {
+		display: none;
+		overflow: hidden;
+		> ul {
+			@include min-height($layerMenu-content-height);
+			@include container;
+			margin-top: 20px;
+			margin-bottom: 20px;
+			@include floatingSameHeight('.level-3');
+			.menuItemSet {
+				@extend .column-3;
+				&.omega .level-3 {
+					@extend .omega;
+				}
+				.level-3 {
+					margin-left: 10px;
+					padding-right: 18px;
+
+					.CN &{
+						margin-left: 5px;
+						padding-right: 0;
+					}
+
+					border-right: 1px solid $color-extra;
+					color: $color-dark;
+
+					.text {
+						font-size: $size-midlarge;
+						line-height: 1.7;
+					}
+					a:hover .text {
+						color: $color-medium;
+					}
+
+					.title {
+						@extend %knockout-bold;
+						height: 37px;
+						.text {
+							font-size: $size-grand;
+							line-height: .9em;
+							text-transform: uppercase;
+						}
+						a:hover .text {
+							color: $color-dark;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.linkBottom {
+		width: 100%;
+		border:	solid $color-extra;
+		border-width: 1px 0 0;
+		height: $layerMenu-linkBottom-height;
+		div{
+			padding-left: 7px;
+			h5 {
+				line-height: $layerMenu-linkBottom-height;
+				float: left;
+			}
+			%svg-arrow-right{
+				top: 12px;
+				position: relative;
+				line-height: 1;
+				float: left;
+				margin-left: 7px;
+			}
+		}
+	}
+
+	.layerMenuQtip {
+		background-color: $color-ultra;
+		border-width: 0 0 1px 0;
+	}
+}
+
+// MENU
+
+
+
+
+//GIFT GUIDE
+
+#mainMenu .level-1 ul li[data-target-code="giftguide"] { 
+
+	border-left: 2px solid $color-top;
+	border-right: 2px solid $color-top;
+
+	&:hover, &.showMenuLayer {
+		border-left: 2px solid $gold;
+		border-right: 2px solid $gold;
+	}
+
+	> a:first-child .text{ color: $gold-text; }
+	
+}
+
+#qtip-giftguide{
+	border-top: 2px solid $gold !important;
+	top: 35px !important;
+	.title.menuItem .text{ color: $gold-text; }
+} 

@@ -1,0 +1,24 @@
+/* Changing Susy default global settings */
+/*
+$susy: (
+	columns: 12, // Tells Susy to use 12 columns
+	gutters: 1/4, // Tells Susy dimension of empty space between an element's boundaries and the element's content
+	gutter-position: after,
+	container: auto, // Tells Susy that the container has a max-width of 1120px
+	global-box-sizing: border-box
+);*/
+/* #### SELECT stilizzate (selectize) come ad es. Taglia/Colore #### */
+/* line 273, D:/Code/Stores/yTos-DIESEL/yTos.Web.DIESEL/Content/Styles/sass/desktop/common/_mixins.scss */
+[class^="arrow-down"],
+[class*=" arrow-down"] {
+  width: 0;
+  height: 0;
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 10px solid #000;
+}
+
+/*# sourceMappingURL=countries.css.map */

@@ -1,0 +1,43 @@
+
+// BANNER IN ACCOUNT HEADER
+// -----------------------------------
+
+
+#crossBanner {
+	margin: $gutter-width auto;
+}
+.banner-slot {
+	$banner-slot-width: 442px;
+	$banner-slot-height: 190px;
+
+	position: relative;
+
+	.banner-text {
+		width: $banner-slot-width;
+		display: block;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-top: -$banner-slot-height/2;
+		margin-left: -$banner-slot-width/2;
+		border: 2px solid $white;
+		background: $white;
+		text-align: center;
+	}
+
+
+	h1 {
+		font-size: $size-huge;
+		margin: 10px 0;
+	}
+
+	.line3 {
+		@extend .button;
+		@extend .secondary;
+
+		width: 167px;
+		margin: 10px auto;
+	}
+
+
+}

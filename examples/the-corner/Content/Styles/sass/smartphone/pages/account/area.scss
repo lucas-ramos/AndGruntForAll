@@ -1,0 +1,50 @@
+// ==========================
+// ACCOUNT AREA SHARED STYLES
+// ==========================
+@import "variables";
+@import "fonts";	
+@import "Smartphone/callToActions";
+
+@import "Smartphone/Partials/sprites";
+@import "smartphone/vendor/svgzr/sprites-svg";
+
+h2 {
+	font-size: $size-massive-rem;
+}
+
+p {
+	text-align: center;
+	font-size: $size-expanse-rem; //carlo dice: brutto!
+}
+
+.accountHeader {
+	margin-top: 20px;
+}
+
+#container {
+	background-color: $color-background;
+	padding: 19px 0;
+
+	.serverSideErrors {
+		margin-bottom: 5px;
+	}
+}
+
+#overview {
+	@import "overview";
+}
+
+#wishlist {
+	@import "wishlist";
+}
+
+#unsubscribeNewsletter {
+	@import "unsubscribeNewsletter";
+}
+
+
+#user {
+	&.login { @import "login"; }
+	&.register { @import "register"; }
+	&.thankyouregistration { @import "thankyouregistration"; }
+}

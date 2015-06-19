@@ -1,0 +1,778 @@
+// =========
+// VARIABLES
+// =========
+@import "compass/utilities/general/clearfix";
+@import "compass/css3";
+
+// COMPASS SYSTEM VARIABLES
+// ------------------------
+
+// SUPPORT
+
+$experimental-support-for-mozilla: false;
+$experimental-support-for-opera: false;
+$experimental-support-for-svg: true;
+$experimental-support-for-webkit: true;
+$legacy-support-for-safari: false;
+$legacy-support-for-mozilla: false;
+$legacy-support-for-ie: true;
+$legacy-support-for-ie6: false;
+$legacy-support-for-ie7: false;
+$legacy-support-for-ie8: true;
+$legacy-support-for-ie9: true;
+$legacy-support-for-ie10: true;
+
+$legacy-support-for-mozilla: false;
+
+
+// CDN SERVER PATH VARIABLES
+// ------------------------
+
+$cdn-server-general: "//cdns3.yoox.biz/ytos/resources/THECORNER";
+$cdn-server-secure: "//media.yoox.biz/ytos/resources/THECORNER";
+
+
+// Susy Settings
+// ------------------------
+$total-columns: 12;
+$column-width: 74px;
+$gutter-width: 10px;
+$grid-padding: 6px;
+$base-font-size: 10px;
+$container-style: static;
+$grid-width: 998px;
+
+
+// LAYOUT
+
+$inline-block-alignment: top;
+
+// DEFAULT TRANSITION DURATION AND FUNCTION
+
+$default-transition-duration: .5s;
+$default-transition-function: ease;
+
+// COLORS
+// ------
+
+// COLOR DEFINITION
+
+// Colors: for text and background
+$color-top: #F6F6F6;
+$color-ultra: #EBEBEB;
+$color-extra: #CCC;
+$color-light: #999;
+$color-medium: #666;
+$color-dark: #333;
+$color-deep: #262626;
+
+// Non conventional colors
+$black: #000;
+$white: #FFF;
+$red: #900000; //#B43535; Danilo dice: "fai un poco come ti pare" 
+$gold: #CAB17E;
+$gold-text: #9C8555;
+
+
+$color-highlights: #f7f5de;
+$color-background: $color-ultra;
+
+
+
+
+// FORMS
+// -----
+$form-input-height: 38px;
+$form-input-border: 1px;
+$form-checkbox-width: 21px;
+$form-checkbox-height: $form-checkbox-width;
+$form-checkbox-line-height: 16px;
+
+$form-radiobutton-width: 17px;
+$form-radiobutton-height: $form-radiobutton-width;
+
+$form-select-height: 38px;
+
+$input-cursor-height: 24px;
+$input-label-min-height: 24px;
+$input-margin-bottom: 20px;
+$input-height: $input-label-min-height + $form-input-height + ($form-input-border * 2);
+$input-totalHeight: $input-height + $input-margin-bottom;
+
+
+
+
+// PRETTYSELECT VARIABLES
+// -----
+$prettyselect-select-height: $form-input-height + 2px;
+$prettyselect-option-height: $form-input-height + 3px;
+
+
+
+
+
+
+// FONTS
+// -----
+// PER USARE I FONT ESTENDERE LA CLASSI CORRETTE:
+//
+// @extend %knockout;
+//
+// @extend %knockout-bold;
+//
+// @extend %helvetica;
+//
+// @extend %helvetica-bold;
+
+
+// HEADINGS FONT-SIZES
+$size-kaiju: 8em; 		// h1 size
+$size-giant: 4em; 		// h2 size
+$size-massive: 3em;
+$size-huge: 2.8em;		// h3 size
+$size-mega: 2.6em;
+$size-jumbo: 2.5em;
+$size-super: 2.4em;
+$size-major: 2.3em;
+$size-grand: 2.2em;
+$size-big: 2em;			// h4 size
+
+// PARAGRAPH FONT-SIZES
+$size-expanse: 1.9em;
+$size-large: 1.8em;		// h5 size
+$size-midlarge: 1.7em;
+$size-medium: 1.6em;	// h6 size and p size
+$size-midsmall: 1.5em;
+$size-small: 1.4em;
+$size-smaller: 1.3em;
+$size-tiny: 1.2em;
+$size-mini: 1.1em;
+$size-base: 1em;
+
+// HEADINGS REM FONT-SIZES
+$size-giant-rem: 4rem; 		// h2 size
+$size-massive-rem: 3rem;
+$size-huge-rem: 2.8rem;		// h3 size
+$size-jumbo-rem: 2.5rem;
+$size-super-rem: 2.4rem;
+$size-major-rem: 2.3rem;
+$size-grand-rem: 2.2rem;
+$size-big-rem: 2rem;			// h4 size
+
+// PARAGRAPH REM FONT-SIZES
+$size-expanse-rem: 1.9rem;
+$size-large-rem: 1.8rem;		// h5 size
+$size-midlarge-rem: 1.7rem;
+$size-medium-rem: 1.6rem;	// h6 size and p size
+$size-midsmall-rem: 1.5rem;
+$size-small-rem: 1.4rem;
+$size-smaller-rem: 1.3rem;
+$size-tiny-rem: 1.2rem;
+$size-mini-rem: 1.1rem;
+$size-base-rem: 1rem;
+$size-reduced-rem: 0.9rem;
+
+
+
+
+
+
+
+
+
+
+
+// CALL TO ACTIONS
+// -----
+
+// DESKTOP
+$button-height: 40px !default;
+
+// SMARTPHONE
+$mobile-button-vertical-padding: 26px;
+$mobile-button-horizontal-padding: 12%;
+$mobile-button-class-width: 100% - 2*($mobile-button-horizontal-padding);
+$mobile-button-width: 100%;
+
+
+
+
+
+
+
+
+
+
+// SITE DIMENSIONS
+// -----
+
+// DESKTOP
+
+// Site
+$site-minimum-width: 1081px;
+
+// Header
+$header-firstline-height: 32px;
+$header-secondline-height: 44px;
+$header-thirdline-height: 33px;
+$header-thirdline-border: 2px;
+$header-height: $header-firstline-height + $header-secondline-height + $header-thirdline-height + $header-thirdline-border;
+$login-layer-height: 175px;
+$cart-layer-height: 280px;
+$wishlist-layer-height: 260px;
+
+$menu-textsearch-height: 25px;
+$menu-textsearch-width: 175px;
+
+
+
+
+// SMARTPHONE
+$mobile-row-height: 37px;
+$header-firstline-height-mobile: 31px;
+
+
+
+// Z-INDEXES
+/*
+    zindex
+    Mixin di definizione e utilizzo degli z-index.
+
+    La lista $indexes è crescente dall'alto al basso, e i suoi elementi andranno espressi al momento dell'uso del mixin.
+    Ovviamente l'uso da farne è di tipo semantico, per evitare l'espressione di numeri casuali all'interno dei vari css.
+
+*/
+$indexes:
+	body,
+	input,
+	input-elems,
+
+	affiliation-content,
+	affiliation-label,
+
+	sr-hidden-image,
+	sr-shown-image,
+
+	style-stories-menu,
+
+	prettyselect-drop,
+
+	searchresult-banner-logo,
+	searchresult-banner-description,
+
+	layer-cookieLaw,
+	layer-shopByCorner,
+
+	header,
+	header-fayt,
+	headerLayer,
+	headerLayerCross,
+	headerLayerLoading,
+
+	magnificPopup,
+
+	item-zoom,
+	item-zoom-elems,
+
+	layer-ccare,
+
+	loading-bar, //must be always on top
+	loading-overlay; //must be always on top
+
+
+@mixin zindex($identifier) {
+
+	$zindex: index($indexes, $identifier);
+
+	@if ($zindex != false) {
+		z-index: $zindex;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+// UTILS
+// -----
+
+// Image replacement as a mixin
+
+@mixin imageReplacement($text-indent:100%) {
+	border: 0;
+	text-indent: $text-indent;
+	white-space: nowrap;
+	overflow: hidden;
+	padding: 0;
+	display: block;
+}
+
+// Wrap in parenthesis 
+
+@mixin wrapInParenthesis {
+	&:before {
+		content: '(';
+	}
+	&:after {
+		content: ')'
+	}
+}
+
+// Append colon
+
+@mixin appendColon {
+	&:after {
+		content: ":";
+	}
+
+	.FR &:after {
+		content: " :";
+	}
+}
+// Append dash
+@mixin appendDash {
+	&:after {
+		content: "\00A0-\00A0";
+	}
+}
+
+// Momentum scrolling for devices
+
+@mixin nativeScroll {
+	-webkit-overflow-scrolling: touch;
+	-moz-overflow-scrolling: touch;
+	-ms-overflow-scrolling: touch;
+	overflow-scrolling: touch;
+	overflow-y: scroll;
+}
+
+/* effetto height:100% sugli elementi flottanti */
+@mixin floatingSameHeight($child: '> div') {
+	overflow: hidden;
+	& #{$child} {
+		padding-bottom: 999px;
+		margin-bottom: -999px;
+	}
+}
+
+// Centra orizzonalmente e verticalmente un oggetto rispetto al primo genitore con position relative o absolute
+// width e height NON sono obbligatorie.
+@mixin absoluteCenter($width: false, $height: false){
+	@if $height != false {
+		height: $height;
+	}
+	@if $width != false {
+		width: $width;
+	}
+	margin: auto;
+	position: absolute;
+	top: 0; left: 0; bottom: 0; right: 0;
+}
+
+
+// PLACEHOLDER
+// ----------
+
+@mixin input-placeholder {
+	&::-webkit-input-placeholder {
+		@content;
+	}
+
+	&::-moz-placeholder {
+		@content;
+	}
+
+	&:-ms-input-placeholder {
+		@content;
+	}
+}
+
+
+
+
+
+// FAKE INPUT
+// ----------
+// Mixin to make an element just as if it were a (disabled) input field
+
+// DESKTOP
+@mixin fake-input-field-desktop () {
+
+	$input-padding: ($form-input-height - $input-cursor-height)/2;
+
+	@include opacity(0.7);
+
+	background-color: $color-top;
+	border: 1px solid $color-extra;
+	color: $color-light;
+	display: block;
+	font-size: $size-medium;
+	height: $input-cursor-height;
+	line-height: $input-cursor-height;
+
+	padding: {
+		top: $input-padding;
+		bottom: $input-padding;
+	}
+
+	text-indent: 5px;
+	text-transform: uppercase;
+}
+
+// SMARTPHONE
+@mixin fake-input-field-smartphone () {
+	display: block;
+	width: 76%;
+	height: 20px;
+	line-height: 20px;
+	padding: 26px 12%;
+	text-align: center;
+	background-color: $white;
+	@extend %knockout;
+	@include opacity(0.7);
+	font-size: $size-expanse-rem;
+}
+
+
+
+
+
+
+// ANIMATIONS
+// ----------
+
+// Keyframes mixin
+
+@mixin keyframes($name) {
+	@-webkit-keyframes #{$name} {
+		@content;
+	}
+	@keyframes #{$name} {
+		@content;
+	}
+}
+
+
+
+
+
+
+
+// TRIANGLES. BECAUSE YES.
+// ----------
+
+@mixin triangle($color: #000, $width: 1em, $height: 1em,  $angle: 0) {
+	
+  // offset 45deg to make each side start at 0
+  $deg: $angle + 45;
+  // if units, remove units
+  @if unit($deg) == deg {
+  	$deg: $deg / 1deg;
+  }
+  // shift to be on a scale from 0 to 90.
+  @while $deg > 90 {
+  	$deg: $deg - 90;
+  }
+  @while $deg < 0 {
+  	$deg: $deg + 90;
+  }
+  // Get a ratio of 90 to multiply by.
+  $deg: $deg / 90;
+
+  // make sure metrics are reset
+  display: block;
+  width: 0;
+  height: 0;
+  border: 0 solid transparent;
+
+  // run through sides
+  @if $angle <= 45 or $angle > 315 {
+  	border-bottom-color: $color;
+  	border-width: 0 ($width * abs($deg - 1)) $height ($width * $deg);
+  }
+  @if $angle > 45 and $angle <= 135 {
+  	border-left-color: $color;
+  	border-width: ($height * $deg) 0 ($height * abs($deg - 1)) $width;
+  }
+  @if $angle > 135 and $angle <= 225 {
+  	border-top-color: $color;
+  	border-width: $height ($width * $deg) 0 ($width * abs($deg - 1));
+  }
+  @if $angle > 225 and $angle <= 315 {
+  	border-right-color: $color;
+  	border-width: ($height * abs($deg - 1)) $width ($height * $deg) 0;
+  }
+}
+
+// Used to render dialogs as spikes of a balloon.
+// Use it on the father/container (the actual balloon) element
+@mixin transformInDialog (
+$direction: "top",
+$height: 20px,
+$base-factor: 2,
+$background-color: red,
+$parent-width: 0,
+$parent-height: 0,
+$border-width: 0,
+$border-color: black
+){
+
+	$width: $height * $base-factor;
+
+	position: relative;
+	border: $border-width solid $border-color;
+	background-color: $background-color;
+
+	&::after, &::before {
+		content: "";
+		position: absolute;
+
+		width: 0;
+		height: 0;
+
+		border: {
+			style: solid;
+			color: transparent;
+		}
+	}
+
+	&::after {
+
+		@if $direction == "top" or $direction == "bottom" {
+
+			border: {
+				right: {
+					width: $width / 2;
+				}
+
+				left: {
+					width: $width / 2;
+				}
+			}
+
+			@if $parent-width != 0 {
+				left: ($parent-width / 2) - ($width / 2);
+			}
+
+		} @else if $direction == "left" or $direction == "right" {
+
+			border: {
+				top: {
+					width: $width / 2;
+				}
+
+				bottom: {
+					width: $width / 2;
+				}
+			}
+
+			@if $parent-height != 0 {
+				top: ($parent-height / 2) - ($width / 2);
+			}
+
+		}
+
+		@if $direction == "top" {
+
+			border: {
+				bottom: {
+					width: $height;
+					color: $background-color;
+				}
+
+				top: {
+					width: 0;
+				}
+			}
+
+			top: -$height;
+
+		} @else if $direction == "right" {
+
+			border: {
+				left: {
+					width: $height;
+					color: $background-color;
+				}
+
+				right: {
+					width: 0;
+				}
+			}
+
+			right: -$height;
+
+		} @else if $direction == "bottom" {
+
+			border: {
+				top: {
+					width: $height;
+					color: $background-color;
+				}
+
+				bottom: {
+					width: 0;
+				}
+			}
+
+			bottom: -$height;
+
+		} @else if $direction == "left" {
+
+			border: {
+				right: {
+					width: $height;
+					color: $background-color;
+				}
+
+				left: {
+					width: 0;
+				}
+			}
+
+			left: -$height;
+
+		}
+	}
+
+	@if $border-width > 0 {
+
+		$width: $width + ($border-width * 2);
+		$height: $height + ($border-width);
+		$background-color: $border-color;
+
+		&::before {
+
+			@if $direction == "top" or $direction == "bottom" {
+
+				border: {
+					right: {
+						width: $width / 2;
+					}
+
+					left: {
+						width: $width / 2;
+					}
+				}
+
+				@if $parent-width != 0 {
+					left: ($parent-width / 2) - ($width / 2);
+				}
+
+			} @else if $direction == "left" or $direction == "right" {
+
+				border: {
+					top: {
+						width: $width / 2;
+					}
+
+					bottom: {
+						width: $width / 2;
+					}
+				}
+
+				@if $parent-height != 0 {
+					top: ($parent-height / 2) - ($width / 2);
+				}
+
+			}
+
+			@if $direction == "top" {
+
+				border: {
+					bottom: {
+						width: $height;
+						color: $background-color;
+					}
+
+					top: {
+						width: 0;
+					}
+				}
+
+				top: -$height;
+
+			} @else if $direction == "right" {
+
+				border: {
+					left: {
+						width: $height;
+						color: $background-color;
+					}
+
+					right: {
+						width: 0;
+					}
+				}
+
+				right: -$height;
+
+			} @else if $direction == "bottom" {
+
+				border: {
+					top: {
+						width: $height;
+						color: $background-color;
+					}
+
+					bottom: {
+						width: 0;
+					}
+				}
+
+				bottom: -$height;
+
+			} @else if $direction == "left" {
+
+				border: {
+					right: {
+						width: $height;
+						color: $background-color;
+					}
+
+					left: {
+						width: 0;
+					}
+				}
+
+				left: -$height;
+
+			}
+		}
+	}
+}
+
+
+@mixin mediaquery-ipad {
+
+	/* comportamento per iPad  */
+	@media only screen and (device-width : 768px) and (device-height : 1024px) {
+		@content;
+
+	}
+
+
+
+}
+
+@mixin setCheckboxInline {
+	@include pie-clearfix;
+	.fieldValue {
+		float: left;
+		margin-right: 10px;
+	}
+	.fieldLabel {
+		float: left;
+		line-height: $form-checkbox-height;
+		label {
+			line-height: $form-checkbox-height;
+		}
+	}
+
+}

@@ -1,0 +1,40 @@
+﻿// ================
+// STYLE RADAR SLIDER IN HOME PAGE
+// ================
+
+#bottomSection {
+	$arrow-dimension: 25px;
+
+	img {
+		display: block;
+		margin: auto;
+	}
+
+	h4 {
+		@extend %knockout-bold;
+		text-align: center;
+	}
+
+	.bx-next, .bx-prev {
+		top: 50%;
+	}
+
+	.bx-prev {
+		left: -($arrow-dimension + 5px);
+		@extend %svg-arrow-circle-left;
+	}
+
+	.bx-next {
+		right: -($arrow-dimension + 5px);
+		@extend %svg-arrow-circle-right;
+	}
+
+}
+
+.minisearch-wrapper {
+	padding: 30px 6px 40px;
+}
+
+.minisearch-product {
+	float: left;
+}

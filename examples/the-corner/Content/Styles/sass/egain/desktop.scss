@@ -1,0 +1,722 @@
+// ================
+// EGAIN DESKTOP CSS
+// TO BE DEPLOYED IN [ftpegain]/Dev_SS_External/layout/tc-crm-2.0/css
+// TO BE EDITED IN \yTos-THECORNER\yTos.Web.THECORNER\Content\Styles\sass\egain
+// ================
+
+@import "variables";
+@import "fonts";
+@import "Desktop/callToActions";
+@import "Desktop/Partials/susyClasses";
+
+@import "Desktop/Partials/egain/backToTop";
+@import "Desktop/Partials/egain/feedback";
+
+@import "Desktop/vendor/svgzr/sprites-svg";
+
+$crm-title-width: 332px;
+$crm-title-margin-right: 10px;
+$crm-search-container-width: 998px - $crm-title-width - $crm-title-margin-right;
+
+#description1 { height: auto; }
+
+.size-medium {
+	font-size: 16px;
+	font-size: $size-medium-rem;
+}
+
+#crm-wrapper {
+	@extend .centralColumn;
+	@include transition(padding 0.8s ease);
+	@extend %knockout;
+
+	padding-top: $header-height;
+
+	&.loginLayerOpen {
+		padding-top: $header-height + $login-layer-height;
+	}
+	&.cartLayerOpen {
+		padding-top: $header-height + $cart-layer-height;
+	}
+	&.wishlistLayerOpen {
+		padding-top: $header-height + $wishlist-layer-height;
+	}
+}
+
+// TITLE
+#crm-title {
+	width: $crm-title-width;
+	margin-right: $crm-title-margin-right;
+	float: left;
+
+	h1 {
+		background-color: $black;
+		font-size: $size-super;
+		margin-left: 6px;
+		padding: {
+			left: 15px;
+			right: 15px;
+		}
+	}
+
+	a {
+		color: $white;
+	}
+}
+
+// SEARCHBAR
+.crm-search-container {
+	float: left;
+	width: $crm-search-container-width;
+
+	form {
+		@extend .column-5;
+		@extend .omega;
+		float: right;
+		position: relative;
+	}
+}
+
+#searchString {
+	float: left;
+	width: 100%;
+	border: 1px solid $color-extra;
+	color: $color-light;
+	background-color: $color-ultra;
+
+	.RU & {
+		font-size: $size-big;
+	}
+	
+}
+
+#searchBtn {
+	@include imageReplacement;
+	@extend %svg-lens-24x24;
+
+	text-indent: 150%;
+	cursor: pointer;
+	position: absolute;
+	top: 8px;
+	right: 7px;
+	background-color: transparent;
+}
+
+// TITLE / SEARCH
+#crm-title, .crm-search-container {
+	margin: {
+		top: 15px;
+		bottom: 15px;
+	};
+}
+
+#crm-title h1, .crm-search-container {
+	padding: {
+		top: 15px;
+		bottom: 15px;
+	}
+}
+
+// CONTENT
+#crm-container  {
+	@extend .centralColumn;
+	float: left;
+	margin-bottom: 15px;
+
+	form {
+		//margin: 10px 0;
+
+		[type="submit"] {
+			@extend .button;
+			@extend .primary;
+		}
+	}
+}
+
+// SIDE MENU
+#crm-menu {
+	@extend .column-4;
+	text-transform: uppercase;
+	color: $color-medium;
+
+	.crm-contacts {
+		display: block;
+	}
+}
+
+.crm-menu-main {
+	li {
+		margin-bottom: 5px;
+
+		a {
+			@extend .button;
+			@extend .secondary;
+			padding: 3px 15px;
+			color: $color-medium;
+			text-align: left;
+			font-size: $size-super;
+
+			.RU & {
+				font-size: $size-large;
+			}
+		}
+	}
+}
+
+.crm-menu-secondary {
+	background-color: $color-ultra;
+	padding: 15px 0;
+
+	li {
+		border-top: solid 1px $color-extra;
+
+		&:first-child {
+			border-top: none;
+		}
+	}
+
+	a {
+		@extend .size-medium;
+		line-height: 2em;
+		padding-left: 5px;
+		color: $color-medium;
+
+		&::before {
+			content: '> ';
+		}
+
+		&:hover {
+
+			.text {
+				border-bottom: 1px solid $color-medium;
+			}
+		}
+	}
+}
+
+.crm-menu-level-0 {
+	margin: 0 15px;
+}
+
+.crm-menu-level-1 {
+	display: none;
+}
+
+// contacts in menu
+.crm-contacts {
+	display: none;
+
+	border-bottom: $white solid 2px;
+
+	h1 {
+		display: none;
+	}
+
+	ul {
+		@include pie-clearfix;
+		background-color: $color-ultra;
+		padding-top: 15px;
+		padding-bottom: 15px;
+		text-align: center;
+	}
+
+	li.email {
+		@extend .column-2;
+	}
+
+	li.phone {
+		@extend .column-2;
+		@extend .omega;
+	}
+
+	li:hover {
+		@include opacity(0.7);
+	}
+
+	a {
+		&, &:hover {
+			color: $color-medium;
+		}
+
+		.text {
+			display: block;
+			font-size: $size-big;
+		}
+
+		.icon {
+			display: block;
+			margin: auto;
+		}
+	}
+
+	.email  {
+		.icon {
+			@extend %svg-ccare-mail;
+		}
+	}
+
+	.phone {
+		.icon {
+			@extend %svg-ccare-telephone-big;
+		}
+	}
+
+
+	.r3 {
+		color: $color-light;
+	}
+}
+
+
+#crm-main {
+	@extend .column-8;
+	@extend .omega;
+	color: $color-medium;
+
+	> * { //non avendo un wrapper...
+		margin-left: 5px;
+	}
+
+	.shippingReturns {
+		@include pie-clearfix;
+		margin-top: -5px;
+		margin-bottom: 30px;
+
+		h2 {
+			display: none;
+		}
+
+		.contribution {
+			float: left;
+			width: 100%;
+			padding: 14px 0 6px;
+			border-bottom: 1px solid $color-light;
+		}
+
+		.FeesWarning {
+			float: left;
+			margin-top: 10px;
+		}
+
+		.ShippingCostsRange {
+			float: left;
+			margin-top: 16px;
+		}
+
+		.text {
+			float: left;
+		}
+
+		.costs {
+			float: right;
+		}
+	}
+}
+
+.crm-article-content {
+	font-size: $size-midlarge;
+
+	p {
+		font-size: 100%;
+		margin-top: 10px;
+	}
+
+	br {
+		margin-top: 7px;
+		display: block;
+		content: "";
+	}
+
+	a {
+		@extend %knockout-bold;
+		color: $black;
+
+		&:hover {
+			color: $color-light;
+		}
+	}
+
+	img {
+		display: block;
+		margin: 10px auto 5px;
+	}
+}
+
+.crm-widget-hr {
+	hr {
+		border: {
+			style: solid;
+			width: 6px;
+			color: $color-extra;
+			top-width: 0;
+			left-width: 0;
+			right-width: 0;
+		}
+
+		-webkit-margin: {
+			before: 0;
+			after: 0;
+			start: 0;
+			end: 0;
+		}
+	}
+}
+
+.crm-widget-hr-thin {
+	display: none;
+}
+
+.crm-see-more {
+	@extend .button;
+	@extend .secondary;
+	width: 100%;
+	padding: 0px;
+	margin: 10px 0;
+
+	a {
+		&, &:hover {
+			color: $color-medium;
+		}
+	}
+}
+
+.crm-seemore {
+	margin-top: 10px;
+
+	h2 {
+		font-size: $size-big;
+	}
+}
+
+.crm-article-welcome {
+	font-size: $size-medium;
+
+	.RU & {
+		font-size: $size-midsmall;
+	}
+
+	header  {
+		h1 {
+			font-size: $size-super;
+		}
+	}
+
+	> p > a {
+		@extend %knockout-bold;
+
+		&:hover {
+			color: $color-light;
+		}
+	}
+
+	p:nth-last-child(3) {
+		text-align: right;
+		margin-top: 10px;
+
+		.JP & {
+			text-align: left;
+		}
+	}
+
+	p {
+		font-size: $size-small;
+	}
+}
+
+.crm-article {
+	color: $color-medium;
+	margin: 15px 0 20px;
+	border-bottom: 6px solid $color-extra;
+	padding-bottom: 20px;
+
+	header {
+		h1 {
+			font-size: $size-super;
+			margin: 10px 0;
+
+			a {
+				color: $color-dark;
+
+				&:hover {
+					color: $black;
+				}
+			}
+		}
+	}
+
+	ul > li {
+		@extend .size-medium;
+	}
+
+	.crm-icons {
+		li {
+			@extend .button;
+			@extend .secondary;
+			margin: 10px 0;
+			font-size: $size-smaller;
+
+			a {
+				color: $color-medium;
+			}
+		}
+	}
+
+	.article-2562 {
+		@extend .button;
+		@extend .secondary;
+		margin: 20px 0 10px;
+		font-size: $size-smaller;
+
+		a {
+			color: $color-medium;
+		}
+	}
+
+	form {
+		margin-bottom: 20px;
+	}
+
+	footer {
+		> section:not(.crm-widget-feedback-stars) {
+
+			li {
+				margin: 5px 20px;
+			}
+
+			a {
+				&::before {
+					content: "> ";
+				}
+
+				&:hover {
+					color: $color-light;
+				}
+			}
+		}
+	}
+}
+
+.crm-section-index {
+	font-size: $size-medium;
+
+	.RU & {
+		font-size: $size-small;
+	}
+
+	h1 {
+		font-size: $size-super;
+	}
+
+	header {
+		margin-bottom: 10px;
+	}
+
+	nav {
+		margin-bottom: 20px;
+	}
+
+	li {
+		padding: 6px 20px;
+
+		&:before {
+			content: "> "
+		}
+	}
+
+	a {
+		font-size: $size-mini;
+		color: $color-medium;
+		border-bottom: 1px solid $color-medium;
+
+		&:hover {
+			color: $black;
+			border: none;
+		}
+	}
+}
+
+.crm-form-field {
+	margin: 10px 0;
+
+	.text {
+		@extend .size-medium;
+	}
+
+	.form-error-message {
+		@extend .size-medium;
+		color: $red;
+	}
+
+	[type="file"] /deep/ [type="button"] { //to manipulate shadow dom
+		@include __buttonGen(false); 	// tocca.
+		@include __secondaryGen;		// tocca.
+		font-size: 16px; 				// eh, oh, ancora grazie.
+	}
+}
+
+#legalContainer > footer .newsletterLink { //nascondo il pulsante per l'apertura del layer della newsletter
+	display: none;
+}
+
+// TABLES
+table {
+	border-bottom: 1px solid $color-extra;
+	width: 100% !important;
+	margin: 5% 0 !important;
+	tbody > tr:first-child {
+		td {
+			text-align: center;
+			strong {
+				text-align: center;
+				@extend %knockout;
+			}
+
+		}
+	}
+	tr {
+		border-bottom: 1px solid $color-extra !important;
+		&:nth-of-type(odd) {
+			background: $white;
+		}
+		td {
+			margin: 0;
+			padding: 1% 0;
+			width: auto !important;
+			text-align: center;
+			vertical-align: middle;
+			p {
+				span {font-size: 10px !important;}
+			} 
+
+		}
+
+	}
+}
+
+
+// EMPTY SEARCH RESULT
+#searchResults {
+	.empty {
+		font-size: $size-giant;
+		margin: 60px auto;
+		width: 60%;
+		text-align: center;
+	}
+}
+
+
+
+
+/*** POPUP ***/
+.mfp-content {
+	color: $white;
+	max-width: 80%;
+	h1 {
+		color: $white;
+		font-size: $size-medium;
+	}
+	header {
+		h1 {
+			font-size: $size-super;
+			margin: 10px 0;
+			a {
+				color: $color-dark;
+
+				&:hover {
+					color: $black;
+				}
+			}
+		}
+		p {
+			font-size: $size-midlarge;
+		}
+	}
+	.crm-article {
+		font-size: $size-small;
+		color: $white;
+		border-bottom: 3px solid $color-extra;
+		float: left;
+		width: 100%;
+		position: relative;
+
+		.crm-article-content {
+			font-size: $size-smaller;
+			float: left;
+			width: 70%;
+		}
+		a {
+			@extend .button;
+			@extend .secondary;
+			margin: 10px 0 0;
+			float: right;
+			bottom: 10px;
+			position: absolute;
+			right: 0;
+		}
+	}
+	.crm-overlay-buttons {
+		button {
+			float: left;
+			@extend .button;
+			@extend .secondary;
+			&.crm-button-submit {
+				float: right;
+				@extend .primary;
+			}
+		}
+	}
+}
+
+// eccezioni specifiche
+.RU {
+	.eg-article-2110, .eg-article-2113 {
+		table {
+			font-weight: normal !important; //perdonami padre perche' so quello che faccio
+		}
+	}
+}
+
+
+
+.eg-home { //home page
+
+	.RU & {
+
+		.crm-article-content {
+			font-size: inherit;
+		}
+
+		.crm-icons li a {
+			font-size: 1.4em;
+		}
+
+	}
+	
+}
+
+.eg-escalation { //contact form
+
+	h2 {
+		padding-top: 20px;
+	}
+
+	p {
+		font-size: inherit;
+	}
+
+	.RU & { 
+		h2 {
+			font-size: 3.5em
+		}
+		.crm-article {
+			font-size: $size-medium;
+		}
+
+		.prettyselect-drop {
+			text-transform: uppercase;
+		}
+		
+	}
+		
+}
+

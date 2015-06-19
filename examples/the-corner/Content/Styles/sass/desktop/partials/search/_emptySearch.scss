@@ -1,0 +1,67 @@
+﻿.svg-arrow-circle-left {
+	@extend %svg-arrow-circle-left;
+}
+.svg-arrow-circle-right {
+	@extend %svg-arrow-circle-right;
+}
+
+#emptySearch {
+	padding-top: 30px;
+	text-align: center;
+
+	h2 {
+		margin: 30px 0;
+	}
+
+	.minisearch-product {
+		float: left;
+		@extend .column-3;
+
+		img {
+			display: block;
+			margin: 0 auto;
+		}
+
+		&:last-child {
+			@extend .omega;
+		}
+	}
+
+	$arrow-dimension: 25px;
+	.bx-next, .bx-prev {
+		top: 50%;
+		position: absolute;
+	}
+
+	
+	.bx-prev {
+		left: -30px;
+	}
+
+	.bx-next {
+		right: -20px; // il margine...
+	}
+
+	.button {
+		margin: 30px 0;
+	}
+
+	.departmentsContainer {
+		@include pie-clearfix;
+		.col {
+			@extend .column-3;
+			&:last-child {
+				@extend .omega;
+			}
+		}
+
+		a {
+			font-size: $size-large;
+			color: $color-light;
+			text-transform: capitalize;
+		}
+
+		.value { display: none; }
+	}
+}
+

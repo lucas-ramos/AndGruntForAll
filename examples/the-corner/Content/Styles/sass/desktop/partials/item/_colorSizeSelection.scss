@@ -1,0 +1,156 @@
+// =====
+// COLOR SIZE SELECTION
+// =====
+
+$color-size-container-width: 89.5%;
+
+.colorSizeContainer {
+	@include pie-clearfix;
+	$color-size-margin: 1%;
+
+	$color-size-width: (100% - $color-size-margin) / 2;
+
+	&.withSizeGuide {
+		width: $color-size-container-width; 
+		float: left;
+	}
+
+	.colors, .sizes {
+		float: left;
+		width: $color-size-width;
+	}
+
+	.colors {
+		margin-right: $color-size-margin;
+	}
+
+    .prettyselect-label {
+        padding: 0 5px;
+       }
+
+    .selectSize {
+
+	    &.sizeSelected {
+		    .halfSize & {@extend %lato; font-size: 0.8em;}
+	    }
+
+        .prettyselect-label {
+            font-size:inherit;
+		    .value {		
+			    float: left;
+		    }
+		    .label {
+			    float: left;
+                line-height: 41px;
+		    }
+
+	    }
+
+        .prettyselect-drop {
+             white-space: normal;
+             font-size: $size-small;
+
+             .halfSize & {@extend %lato; font-size: $size-mini;}
+
+             .JP & {
+                font-size: $size-smaller;
+             }
+             .RU & {
+                font-size: $size-tiny;
+                text-transform: uppercase;
+             }
+
+             li {
+                 padding: 0 5px;
+             }
+        }
+
+
+        &.shortLabel .prettyselect-label { 
+            font-size: $size-midlarge;
+        }
+        &.mediumLabel .prettyselect-label {
+            .value {		
+			    width: 17%;
+                font-size: $size-midlarge;
+		    }
+		    .label {
+			    width: 80%;
+                font-size: $size-midlarge;
+                text-align: center;
+		    }
+        }
+        &.largeLabel .prettyselect-label{
+            .value {
+                font-size: $size-midlarge;
+                width: 17%;
+            }
+            .label {
+                font-size: $size-mini;
+                width: 80%;
+                text-align: center;       
+            }
+        }
+        &.veryLargeLabel .prettyselect-label {
+            .value {
+                width: 17%;
+                font-size: $size-midlarge;
+            }
+            .label {
+                font-size: $size-base;
+                width: 80%;
+                text-align: center;
+            }
+        }
+        &.largeSizeLabel .prettyselect-label {
+            .value {
+                font-size: $size-midlarge;
+                width: 30%;
+            }
+            .label {
+                font-size: $size-mini;
+                width: 67%;
+                text-align: center;
+                line-height: 40px;
+
+                .DE &, .RU & {
+                    word-wrap: break-word;
+                    white-space: normal;
+                    line-height: 12px;
+                    text-align: center;
+                    padding: 9px 0;
+                    width: 60%;
+                }
+
+                .CN &, .JP & {
+                    font-size: $size-tiny;
+                }
+
+            }
+        }
+
+    }
+
+    //Gio: non so se è un comportamento che voglio come globale. Lo scopriremo solo vivendo
+	[data-prettyselect-elements="1"] {
+
+		// pointer-events: none; //quest'istruzione basterebbe se non fosse ie8 uncompliant
+		// per mantenere la compliancy dobbiamo sporcare con quanto segue:
+		cursor: default;
+		.prettyselect-drop {
+			border: none;
+
+			li {
+				display: none;
+			}
+		}
+		// fin qui è sporco; quanto segue va bene invece per ogni stagione
+
+		.prettyselect-label {
+			background-image: none;
+			white-space: normal;
+		}
+	}
+
+
+}

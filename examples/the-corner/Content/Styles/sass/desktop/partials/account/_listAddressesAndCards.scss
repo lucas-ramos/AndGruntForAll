@@ -1,0 +1,127 @@
+// =========================================================
+// STYLES SHARED BETWEEN ADDRESS BOOK AND CREDIT CARD WALLET
+// =========================================================
+
+
+// ADDRESS LIST GRID
+// -----------------------
+
+#addressbook, #creditcardwallet{
+
+
+	.container {
+		@include pie-clearfix;
+		@extend .column-12;
+		@extend .omega;
+		border-bottom: 1px solid $color-extra;
+		padding: 20px 0;
+		color: $color-dark;
+		margin-bottom: 10px;
+		@extend %helvetica;
+
+		&:last-child {
+			border-bottom: none;
+		}
+		
+		.inner {
+
+			@extend .column-9;
+			font-size: $size-medium;
+			
+			.defaultMessage .text {
+				@extend %knockout-bold;
+			}
+
+			.defaultAlert, .notDefaultMessage {
+				@extend .column-3;
+				.text{
+					margin-bottom: 10px;
+					display: block;
+				}
+			}
+			
+			.notDefaultMessage .text{ @include opacity(0); }
+
+			.userAddress{
+				@extend .column-6;
+				.addressName {
+					@extend .column-2;
+				}
+				.addressDetails{
+					@extend .column-5;
+					.address, .email{
+						display: block;
+					}
+				}
+			}
+			
+		}
+
+		.buttonsRow {
+
+			@extend .column-3;
+			@extend .omega;
+			margin-top: 25px;
+
+			button {
+				@extend .secondary;
+				width: 114px; 
+				display: inline-block;
+				margin-right: 10px; 
+				&.delete {
+					@extend .omega;
+				}
+			}		
+			
+		}
+	}
+
+}
+
+// CARDS LIST GRID
+// -----------------------
+
+#creditcardwallet{
+
+	.container {
+
+		.inner {
+
+			.defaultAlert, .notDefaultMessage {
+				@extend .column-12;
+				@extend .omega;
+			}
+
+			.expiredAlert {
+				@extend %knockout-bold; 
+				color: $red;
+			}
+
+			.cardData, .cardHolderData {
+				@extend .column-3;
+			}
+
+			.cardData {
+				.cardType .label, .cardNumber .label, .cardNumber .hiddenNumbers {display: none;}
+				.cardType .value {float: left; margin-right: 5px;}
+				.cardNumber .value:before { content: ' - ';}
+			}
+
+			.cardHolderData {
+				h1, .cardHolderName .label, .cardHolderAddress .label {display: none;}
+
+				.cardHolderAddress {
+					html.JP & {
+						.address, .zipcode, .city, .province {display: none;}
+					}
+					html.IE &, html.HK {
+						.zipcode {display: none;}
+					}
+				}
+				.address {display: block;}
+			}
+		}
+
+	}
+
+}

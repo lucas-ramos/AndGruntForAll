@@ -1,0 +1,109 @@
+// ==============
+// THANK YOU PAGE
+// ==============
+
+
+.mainSection{
+	margin-top: 40px;
+}
+
+.thankyouWrapper{
+	border-top: 1px solid $color-dark;
+
+	.orderTitle{
+		color: $color-dark;
+		margin-top: 31px;
+	}
+	.orderDetails{
+		color: $color-light;
+		margin-top: 40px;
+	}
+	.orderDesc{
+		color: $color-light;
+		margin-top: 5px;
+		margin-bottom: 40px;
+		text-transform: none;
+		line-height: 25px;
+		@extend %knockout;
+	}
+	.orderControl{
+		border-top: 1px solid $color-dark;
+		padding-top: 40px;
+		line-height: 20px;
+		margin-top: 110px;
+		@extend %helvetica;
+		color: $color-medium;
+
+		.orderNumber{
+			color: $color-dark;
+			@extend %knockout-bold;
+		}
+		.myOrders, .overview{
+			color: $color-dark;
+			@extend %knockout-bold;
+		}
+
+		strong {
+			font-size: $size-grand;
+		}
+	}
+
+	ul {
+		@extend %helvetica;
+		font-size: $size-large;
+	}
+}
+
+.adviceFormWrapper{
+	background-color: $color-ultra;
+	color: $color-medium;
+	min-height: 550px;
+
+	.adviceFormContainer{
+		color: $color-medium;
+		padding: 10px;
+
+		.adviceTitle{
+			margin-top: 20px;
+			color: $color-medium;
+		}
+
+		.adviceDescription{
+			margin-top: 20px;
+			line-height: 20px;
+			@extend %helvetica;
+		}
+
+		.adviceForm{
+			margin: 20px 0 15px 0;
+		}
+
+		#AdviceViewModel_Category_Wrapper {
+			.fieldValue{
+				border: 1px solid $color-extra;
+			}
+		}
+
+		textarea{
+			height: 150px;
+			font-size: $size-medium;
+		}
+
+		button{
+			@extend .primary;
+			margin: 0 auto;
+		}
+	}
+}
+
+.fieldLabel{
+	display: none;
+}
+
+.adviceForm {
+	.success {
+		font-size: $size-medium;
+		@extend %helvetica;
+		line-height: 20px;
+	}
+}

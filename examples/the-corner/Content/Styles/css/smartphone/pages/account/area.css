@@ -1,0 +1,724 @@
+@charset "UTF-8";
+/* effetto height:100% sugli elementi flottanti */
+@font-face {
+  font-family: 'KnockoutLight';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.svg#KnockoutLight") format("svg");
+}
+@font-face {
+  font-family: 'KnockoutRegular';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.svg#KnockoutRegular") format("svg");
+}
+@font-face {
+  font-family: 'HelveticaCondensedLight';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.svg#KnockoutRegular") format("svg");
+}
+@font-face {
+  font-family: 'HelveticaCondensedBold';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.svg#KnockoutRegular") format("svg");
+}
+@font-face {
+  font-family: 'LatoRegular';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.svg#LatoRegular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'LatoBold';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.svg#LatoBold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+.RU button, .RU .button, .RU #user.thankyouregistration .gotoshopping a, #user.thankyouregistration .gotoshopping .RU a, .RU #overview .order, #overview .RU .order, .RU #overview .addressList .container, #overview .addressList .RU .container, .RU #overview .creditCardsList .container, #overview .creditCardsList .RU .container, .RU #overview #profileContainer .content, #overview #profileContainer .RU .content, .RU #user.register .registrationForm .privacyContainer, #user.register .registrationForm .RU .privacyContainer, .RU #user.register .registrationForm .acceptFlags, #user.register .registrationForm .RU .acceptFlags, #overview .wishlistItem .info .color, #overview .wishlistItem .info .size, #wishlist .wishlistItem .info .color, #wishlist .wishlistItem .info .size {
+  font-family: Arial, Verdana, sans-serif;
+}
+
+.RU #overview .wishlistItem .info .brandName, #overview .wishlistItem .info .RU .brandName, .RU #overview .wishlistItem .info .microCategory, #overview .wishlistItem .info .RU .microCategory, .RU #overview .wishlistItem .info .discounted, #overview .wishlistItem .info .RU .discounted, .RU #overview .defaultMessage, #overview .RU .defaultMessage, .RU #wishlist .wishlistItem .info .brandName, #wishlist .wishlistItem .info .RU .brandName, .RU #wishlist .wishlistItem .info .microCategory, #wishlist .wishlistItem .info .RU .microCategory, .RU #wishlist .wishlistItem .info .discounted, #wishlist .wishlistItem .info .RU .discounted, .RU #overview .cardType .value, #overview .cardType .RU .value, .RU #overview .addressName, #overview .RU .addressName, .RU #overview .userInfo .label, #overview .userInfo .RU .label, .RU #overview .orderNumber .label, #overview .orderNumber .RU .label {
+  font-family: Arial, Verdana, sans-serif;
+  font-weight: bold;
+}
+
+button, .button, #user.thankyouregistration .gotoshopping a {
+  font-family: KnockoutLight, Arial, Verdana, sans-serif;
+  font-weight: normal;
+}
+.JP button, .JP .button, .JP #user.thankyouregistration .gotoshopping a, #user.thankyouregistration .gotoshopping .JP a {
+  font-family: KnockoutLight, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+}
+.CN button, .CN .button, .CN #user.thankyouregistration .gotoshopping a, #user.thankyouregistration .gotoshopping .CN a {
+  font-family: KnockoutLight, HelveticaCondensedLight, Arial, "Microsoft YaHei", "Microsoft YaHei Regular", SimHei, "SimHei Regular", sans-serif;
+}
+
+#overview .wishlistItem .info .brandName, #overview .wishlistItem .info .microCategory, #overview .wishlistItem .info .discounted, #overview .defaultMessage, #wishlist .wishlistItem .info .brandName, #wishlist .wishlistItem .info .microCategory, #wishlist .wishlistItem .info .discounted {
+  font-family: KnockoutRegular, Arial, Verdana, sans-serif;
+  font-weight: normal;
+}
+.JP #overview .wishlistItem .info .brandName, #overview .wishlistItem .info .JP .brandName, .JP #overview .wishlistItem .info .microCategory, #overview .wishlistItem .info .JP .microCategory, .JP #overview .wishlistItem .info .discounted, #overview .wishlistItem .info .JP .discounted, .JP #overview .defaultMessage, #overview .JP .defaultMessage, .JP #wishlist .wishlistItem .info .brandName, #wishlist .wishlistItem .info .JP .brandName, .JP #wishlist .wishlistItem .info .microCategory, #wishlist .wishlistItem .info .JP .microCategory, .JP #wishlist .wishlistItem .info .discounted, #wishlist .wishlistItem .info .JP .discounted {
+  font-family: KnockoutRegular, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+}
+.CN #overview .wishlistItem .info .brandName, #overview .wishlistItem .info .CN .brandName, .CN #overview .wishlistItem .info .microCategory, #overview .wishlistItem .info .CN .microCategory, .CN #overview .wishlistItem .info .discounted, #overview .wishlistItem .info .CN .discounted, .CN #overview .defaultMessage, #overview .CN .defaultMessage, .CN #wishlist .wishlistItem .info .brandName, #wishlist .wishlistItem .info .CN .brandName, .CN #wishlist .wishlistItem .info .microCategory, #wishlist .wishlistItem .info .CN .microCategory, .CN #wishlist .wishlistItem .info .discounted, #wishlist .wishlistItem .info .CN .discounted {
+  font-family: KnockoutLight, HelveticaCondensedLight, Arial, "Microsoft YaHei", "Microsoft YaHei Regular", SimHei, "SimHei Regular", sans-serif;
+}
+
+#overview .order, #overview .addressList .container, #overview .creditCardsList .container, #overview #profileContainer .content, #user.register .registrationForm .privacyContainer, #user.register .registrationForm .acceptFlags {
+  font-family: LatoRegular, Arial, Verdana, sans-serif;
+  font-weight: normal;
+}
+.JP #overview .order, #overview .JP .order, .JP #overview .addressList .container, #overview .addressList .JP .container, .JP #overview .creditCardsList .container, #overview .creditCardsList .JP .container, .JP #overview #profileContainer .content, #overview #profileContainer .JP .content, .JP #user.register .registrationForm .privacyContainer, #user.register .registrationForm .JP .privacyContainer, .JP #user.register .registrationForm .acceptFlags, #user.register .registrationForm .JP .acceptFlags {
+  font-family: LatoRegular, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+}
+
+#overview .cardType .value, #overview .addressName, #overview .userInfo .label, #overview .orderNumber .label {
+  font-family: LatoBold, Arial, Verdana, sans-serif;
+  font-weight: normal;
+}
+.JP #overview .cardType .value, #overview .cardType .JP .value, .JP #overview .addressName, #overview .JP .addressName, .JP #overview .userInfo .label, #overview .userInfo .JP .label, .JP #overview .orderNumber .label, #overview .orderNumber .JP .label {
+  font-family: LatoBold, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+}
+
+/* ==========================================================================
+   CALL TO ACTIONS
+   Use with:
+
+	@extend button				(extends button rules)
+	@extend .secondary			(extends .secondary rules)
+	@extend button.secondary	(extends .secondary rules, not button's)
+	@extend .ugly-button		(extends .ugly-button rules)
+
+	NOTE: THESE ARE CLASSES.
+	THEY WILL BE REPLICATED FOR EACH TIME THEY'RE INCLUDED.
+	Include this only when is necessary.
+	Include this in scss PARENTS ONLY.
+
+	========================================================================== */
+button {
+  text-align: center;
+  cursor: pointer;
+  display: block;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  font-size: 1.9rem;
+  padding: 26px 12%;
+  border: 0;
+  outline: none;
+  width: 100%;
+}
+
+.button, #user.thankyouregistration .gotoshopping a {
+  text-align: center;
+  cursor: pointer;
+  display: block;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  font-size: 1.9rem;
+  padding: 26px 12%;
+  border: 0;
+  outline: none;
+  width: 76%;
+}
+
+button.primary, #overview .wishlistItem button.addItem, #overview button.addItem, #wishlist .wishlistItem button.addItem, #unsubscribeNewsletter .buttonsRow button, #user.login .loginForm button, #user.register .buttonsRow button, .button.primary, #overview .button.addItem, #overview #user.thankyouregistration .gotoshopping a.addItem, #user.thankyouregistration .gotoshopping #overview a.addItem, #wishlist .wishlistItem .button.addItem, #wishlist .wishlistItem #user.thankyouregistration .gotoshopping a.addItem, #user.thankyouregistration .gotoshopping #wishlist .wishlistItem a.addItem, #user.login .loginForm button.button, #user.register .buttonsRow button.button, #user.thankyouregistration .gotoshopping a.primary {
+  background-color: #000;
+  color: #FFF;
+}
+button.secondary, #overview .wishlistItem button.removeItemFromWishList, #wishlist .wishlistItem button.removeItemFromWishList, .button.secondary, #overview .wishlistItem .button.removeItemFromWishList, #wishlist .wishlistItem .button.removeItemFromWishList, #user.thankyouregistration .gotoshopping a {
+  background-color: #CCC;
+  color: #FFF;
+}
+button.disabled, button[disabled], .button.disabled, #user.thankyouregistration .gotoshopping a.disabled, .button[disabled], #user.thankyouregistration .gotoshopping a[disabled] {
+  background-color: #FFF;
+  color: #EBEBEB;
+  cursor: default;
+}
+
+.sprites-creditcards-sprite, .sprites-creditcards-alipay, .sprites-creditcards-americanexpress, #overview .cardIcon.AmericanExpress, .sprites-creditcards-americanexpress_big, .sprites-creditcards-cartebleue, #overview .cardIcon.CarteBleue, .sprites-creditcards-cartebleue_big, .sprites-creditcards-cartebleuevisa_big, .sprites-creditcards-discover, .sprites-creditcards-discover_big, .sprites-creditcards-jcb, #overview .cardIcon.JCB, .sprites-creditcards-jcb_big, .sprites-creditcards-maestro, #overview .cardIcon.Switch, .sprites-creditcards-maestro_big, .sprites-creditcards-mastercard, #overview .cardIcon.Mastercard, .sprites-creditcards-mastercard_big, .sprites-creditcards-payease, .sprites-creditcards-paypal, .sprites-creditcards-paypal_big, .sprites-creditcards-postepay, .sprites-creditcards-postepay_big, .sprites-creditcards-visa, #overview .cardIcon.Visa, .sprites-creditcards-visa_big {
+  background-image: url('/Content/Styles/generated_images/sprites-creditcards-s9068ad9ed7.png');
+  background-repeat: no-repeat;
+}
+
+.sprites-smartphone-sprite, .sprites-smartphone-wechat-qrcode {
+  background-image: url('/Content/Styles/generated_images/sprites-smartphone-scb09bb9be0.png');
+  background-repeat: no-repeat;
+}
+
+.sprites-creditcards-alipay {
+  background-position: 0 0;
+  height: 30px;
+  width: 177px;
+}
+
+.sprites-creditcards-americanexpress, #overview .cardIcon.AmericanExpress {
+  background-position: 0 -30px;
+  height: 42px;
+  width: 57px;
+}
+
+.sprites-creditcards-americanexpress_big {
+  background-position: 0 -72px;
+  height: 70px;
+  width: 96px;
+}
+
+.sprites-creditcards-cartebleue, #overview .cardIcon.CarteBleue {
+  background-position: 0 -142px;
+  height: 42px;
+  width: 57px;
+}
+
+.sprites-creditcards-cartebleue_big {
+  background-position: 0 -184px;
+  height: 70px;
+  width: 96px;
+}
+
+.sprites-creditcards-cartebleuevisa_big {
+  background-position: 0 -254px;
+  height: 70px;
+  width: 96px;
+}
+
+.sprites-creditcards-discover {
+  background-position: 0 -324px;
+  height: 42px;
+  width: 57px;
+}
+
+.sprites-creditcards-discover_big {
+  background-position: 0 -366px;
+  height: 70px;
+  width: 96px;
+}
+
+.sprites-creditcards-jcb, #overview .cardIcon.JCB {
+  background-position: 0 -436px;
+  height: 42px;
+  width: 57px;
+}
+
+.sprites-creditcards-jcb_big {
+  background-position: 0 -478px;
+  height: 70px;
+  width: 96px;
+}
+
+.sprites-creditcards-maestro, #overview .cardIcon.Switch {
+  background-position: 0 -548px;
+  height: 42px;
+  width: 57px;
+}
+
+.sprites-creditcards-maestro_big {
+  background-position: 0 -590px;
+  height: 70px;
+  width: 96px;
+}
+
+.sprites-creditcards-mastercard, #overview .cardIcon.Mastercard {
+  background-position: 0 -660px;
+  height: 42px;
+  width: 57px;
+}
+
+.sprites-creditcards-mastercard_big {
+  background-position: 0 -702px;
+  height: 70px;
+  width: 96px;
+}
+
+.sprites-creditcards-payease {
+  background-position: 0 -772px;
+  height: 30px;
+  width: 100px;
+}
+
+.sprites-creditcards-paypal {
+  background-position: 0 -802px;
+  height: 42px;
+  width: 57px;
+}
+
+.sprites-creditcards-paypal_big {
+  background-position: 0 -844px;
+  height: 70px;
+  width: 96px;
+}
+
+.sprites-creditcards-postepay {
+  background-position: 0 -914px;
+  height: 42px;
+  width: 57px;
+}
+
+.sprites-creditcards-postepay_big {
+  background-position: 0 -956px;
+  height: 70px;
+  width: 96px;
+}
+
+.sprites-creditcards-visa, #overview .cardIcon.Visa {
+  background-position: 0 -1026px;
+  height: 42px;
+  width: 57px;
+}
+
+.sprites-creditcards-visa_big {
+  background-position: 0 -1068px;
+  height: 70px;
+  width: 96px;
+}
+
+.sprites-smartphone-wechat-qrcode {
+  background-position: 0 0;
+  height: 150px;
+  width: 150px;
+}
+
+#overview .bx-prev {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20width%3D%2221%22%20height%3D%2221%22%20viewBox%3D%220%200%20400%20400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Ccircle%20fill%3D%22%23EBEBEB%22%20cx%3D%22200%22%20cy%3D%22200%22%20r%3D%22200%22%2F%3E%3Cpath%20fill%3D%22%23666%22%20d%3D%22M93.054%20200l-.027.025L227.81%20334.807l35.165-35.164L163.33%20200l99.643-99.642-35.164-35.165-134.783%20134.78%22%2F%3E%3C%2Fsvg%3E");
+  width: 21px;
+  height: 21px;
+  background-repeat: no-repeat;
+}
+
+#overview .bx-next {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20width%3D%2221%22%20height%3D%2221%22%20viewBox%3D%220%200%20400%20400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Ccircle%20fill%3D%22%23EBEBEB%22%20cx%3D%22199.782%22%20cy%3D%22200.453%22%20r%3D%22200%22%2F%3E%3Cpath%20fill%3D%22%23666%22%20d%3D%22M301.755%20200.427l-134.78-134.78-35.165%2035.164%2099.64%2099.643-99.64%2099.643%2035.163%2035.163%20134.782-134.782-.026-.025%22%2F%3E%3C%2Fsvg%3E");
+  width: 21px;
+  height: 21px;
+  background-repeat: no-repeat;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+p {
+  text-align: center;
+  font-size: 1.9rem;
+}
+
+.accountHeader {
+  margin-top: 20px;
+}
+
+#container {
+  background-color: #EBEBEB;
+  padding: 19px 0;
+}
+#container .serverSideErrors {
+  margin-bottom: 5px;
+}
+
+#overview .wishlistItem {
+  padding: 20px;
+  border-top: 5px solid #CCC;
+}
+#overview .wishlistItem:first-child {
+  border: none;
+}
+#overview .wishlistItem.soldout {
+  opacity: 0.5;
+}
+#overview .wishlistItem.soldout .color, #overview .wishlistItem.soldout .size {
+  display: none;
+}
+#overview .wishlistItem .microCategory, #overview .wishlistItem .wishListInsertedDate, #overview .wishlistItem .size, #overview .wishlistItem .color {
+  display: block;
+}
+#overview .wishlistItem .wishListInsertedDate {
+  display: none;
+}
+#overview .wishlistItem .inner {
+  *zoom: 1;
+}
+#overview .wishlistItem .inner:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#overview .wishlistItem .item {
+  float: left;
+}
+#overview .wishlistItem .image {
+  display: block;
+}
+#overview .wishlistItem .info {
+  float: left;
+  font-size: 1.6rem;
+  margin: 0.5em;
+}
+#overview .wishlistItem .info .brandName, #overview .wishlistItem .info .microCategory, #overview .wishlistItem .info .discounted {
+  font-size: 1.8rem;
+}
+#overview .wishlistItem .info .color, #overview .wishlistItem .info .size {
+  font-size: 1.3rem;
+}
+#overview .wishlistItem .info .color .classFamily, #overview .wishlistItem .info .size .classFamily {
+  margin: 0 0 0 2%;
+}
+#overview .wishlistItem .info .soldoutFakeButton {
+  margin: 5% 0 0;
+}
+#overview .wishlistItem .info .full {
+  color: #666;
+  margin: 0 5px 0 0;
+}
+#overview .wishlistItem .actions {
+  margin: 10px 0;
+  *zoom: 1;
+}
+#overview .wishlistItem .actions:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#overview .wishlistItem .actions .addToCart {
+  margin: 10px 0  0;
+}
+.JP #overview .wishlistItem .actions .addToCart {
+  font-size: 1.7rem;
+}
+#overview .wishlistItem .actions .soldoutFakeButton {
+  margin: 10px 0  0;
+}
+.RU #overview .wishlistItem .actions, .JP #overview .wishlistItem .actions {
+  font-size: 0.8em;
+}
+#overview .wishlistItem .info .label {
+  margin-right: 5px;
+}
+#overview .wishlistItem .info .label:after {
+  content: ":";
+}
+.FR #overview .wishlistItem .info .label:after {
+  content: " :";
+}
+#overview .wishlistItem .removeItemFromWishList {
+  float: left;
+}
+#overview .wishlistItem .addItem {
+  float: right;
+}
+#overview #ordersContainer, #overview #addressBookContainer, #overview #cardWalletContainer, #overview #profileContainer, #overview #wishListContainer {
+  padding: 15px 0 25px;
+}
+#overview .order, #overview .addressList .container, #overview .creditCardsList .container, #overview #profileContainer .content {
+  font-size: 1.3rem;
+  background-color: #FFF;
+  border-bottom: 1px solid #CCC;
+  margin-bottom: 10px;
+  padding: 16px 20px;
+}
+#overview .creditCardsList .container {
+  position: relative;
+}
+.CN #overview #cardWalletContainer {
+  display: none;
+}
+#overview .colButtons,
+#overview .customerCareBtn,
+#overview .buttonsRow,
+#overview .shippingCountryAlertContainer,
+#overview .wishlistItem .itemAdditionalInfos,
+#overview .removeItemFromWishList,
+#overview .cardHolderData,
+#overview .cardType .label,
+#overview .cardNumber .label,
+#overview .notDefaultMessage {
+  display: none;
+}
+#overview h3 {
+  margin: 10px 0;
+}
+#overview section .button, #overview section #user.thankyouregistration .gotoshopping a, #user.thankyouregistration .gotoshopping #overview section a {
+  margin-top: 10px;
+}
+#overview .addItem {
+  width: 100%;
+}
+#overview .userInfo .label:after, #overview .size .label:after, #overview .cardExpire .label:after {
+  content: ":";
+}
+.FR #overview .userInfo .label:after, .FR #overview .size .label:after, .FR #overview .cardExpire .label:after {
+  content: " :";
+}
+#overview .expiredAlert {
+  color: #900000;
+}
+#overview .cardIcon {
+  position: absolute;
+  right: 20px;
+}
+#overview .bx-wrapper {
+  position: relative;
+}
+#overview .bx-wrapper .wishlistItem {
+  padding: 12px 0;
+  border: 0;
+  background-color: #FFF;
+}
+#overview .bx-wrapper .wishlistItem .actions .addToCart {
+  float: none;
+  width: 94%;
+  margin-left: auto;
+  margin-right: auto;
+}
+#overview .bx-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  margin-top: -10.5px;
+}
+#overview .bx-next, #overview .bx-prev {
+  border: 0;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 0;
+  display: block;
+}
+#overview .bx-next {
+  float: right;
+}
+#overview .bx-prev {
+  float: left;
+}
+
+#wishlist .wishlistItem {
+  padding: 20px;
+  border-top: 5px solid #CCC;
+}
+#wishlist .wishlistItem:first-child {
+  border: none;
+}
+#wishlist .wishlistItem.soldout {
+  opacity: 0.5;
+}
+#wishlist .wishlistItem.soldout .color, #wishlist .wishlistItem.soldout .size {
+  display: none;
+}
+#wishlist .wishlistItem .microCategory, #wishlist .wishlistItem .wishListInsertedDate, #wishlist .wishlistItem .size, #wishlist .wishlistItem .color {
+  display: block;
+}
+#wishlist .wishlistItem .wishListInsertedDate {
+  display: none;
+}
+#wishlist .wishlistItem .inner {
+  *zoom: 1;
+}
+#wishlist .wishlistItem .inner:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#wishlist .wishlistItem .item {
+  float: left;
+}
+#wishlist .wishlistItem .image {
+  display: block;
+}
+#wishlist .wishlistItem .info {
+  float: left;
+  font-size: 1.6rem;
+  margin: 0.5em;
+}
+#wishlist .wishlistItem .info .brandName, #wishlist .wishlistItem .info .microCategory, #wishlist .wishlistItem .info .discounted {
+  font-size: 1.8rem;
+}
+#wishlist .wishlistItem .info .color, #wishlist .wishlistItem .info .size {
+  font-size: 1.3rem;
+}
+#wishlist .wishlistItem .info .color .classFamily, #wishlist .wishlistItem .info .size .classFamily {
+  margin: 0 0 0 2%;
+}
+#wishlist .wishlistItem .info .soldoutFakeButton {
+  margin: 5% 0 0;
+}
+#wishlist .wishlistItem .info .full {
+  color: #666;
+  margin: 0 5px 0 0;
+}
+#wishlist .wishlistItem .actions {
+  margin: 10px 0;
+  *zoom: 1;
+}
+#wishlist .wishlistItem .actions:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#wishlist .wishlistItem .actions .addToCart {
+  margin: 10px 0  0;
+}
+.JP #wishlist .wishlistItem .actions .addToCart {
+  font-size: 1.7rem;
+}
+#wishlist .wishlistItem .actions .soldoutFakeButton {
+  margin: 10px 0  0;
+}
+.RU #wishlist .wishlistItem .actions, .JP #wishlist .wishlistItem .actions {
+  font-size: 0.8em;
+}
+#wishlist .wishlistItem .info .label {
+  margin-right: 5px;
+}
+#wishlist .wishlistItem .info .label:after {
+  content: ":";
+}
+.FR #wishlist .wishlistItem .info .label:after {
+  content: " :";
+}
+#wishlist .wishlistItem .removeItemFromWishList {
+  float: left;
+}
+#wishlist .wishlistItem .addItem {
+  float: right;
+}
+#wishlist .wishlistItem {
+  margin-bottom: 20px;
+}
+#wishlist .uiLayer-uiConfirmationAlert .message .text {
+  font-size: 1.9rem;
+}
+#wishlist .centralColumn {
+  margin: 0;
+}
+#wishlist .subtitle {
+  margin: 0 10px 10px;
+}
+#wishlist .empty {
+  margin: 20px 0;
+}
+.JP #wishlist .uiLayer-uiConfirmationAlert .buttonsRow .text {
+  font-size: 1.5rem;
+}
+
+#unsubscribeNewsletter #unsubscribeNewsletterSuccess {
+  margin: 20px 0;
+}
+#unsubscribeNewsletter .newsletterForm form {
+  margin: 20px 0;
+  *zoom: 1;
+}
+#unsubscribeNewsletter .newsletterForm form:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#unsubscribeNewsletter .validation-summary-errors {
+  font-size: 1.6em;
+}
+#unsubscribeNewsletter .buttonsRow {
+  float: left;
+  height: 38px;
+  padding: 16px 10px;
+}
+#unsubscribeNewsletter .buttonsRow button {
+  padding: 0 10px;
+}
+#unsubscribeNewsletter #UnsubscribeNewsletterViewModel_Email_Wrapper {
+  width: 70%;
+  float: left;
+  height: 70px;
+}
+
+#user.login p {
+  padding-bottom: 19px;
+}
+#user.login .loginForm #passwordRecoveryLink {
+  display: none;
+}
+#user.register .descr_reg {
+  padding-bottom: 20px;
+}
+#user.register .selectInput_wrapper {
+  width: 33%;
+  float: left;
+}
+#user.register .selectInput_wrapper:nth-child(2) {
+  width: 34%;
+}
+#user.register .selectInput_wrapper select {
+  background-position: 92% center;
+  padding-right: 30%;
+}
+#user.register #RegistrationViewModel_BirthDate_Wrapper, #user.register #RegistrationViewModel_BirthDate_Wrapper .fieldValue {
+  *zoom: 1;
+}
+#user.register #RegistrationViewModel_BirthDate_Wrapper:after, #user.register #RegistrationViewModel_BirthDate_Wrapper .fieldValue:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#user.register #RegistrationViewModel_BirthDate_Wrapper .fieldValue {
+  margin-bottom: 20px;
+}
+#user.register .validation-summary-errors {
+  margin: 20px 0;
+}
+#user.register .radioButtonBox {
+  width: 46%;
+}
+#user.register .fieldRow.radioGroup {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+#user.register .fieldRow.radioGroup .field-validation-error {
+  color: #900000;
+  font-size: 1.3rem;
+  text-indent: 0;
+  top: 20px;
+  height: auto;
+  width: auto;
+}
+#user.register .acceptFlags .checkbox {
+  width: 21px;
+  float: left;
+}
+#user.register .acceptFlags .flag {
+  margin: 10px 0;
+  min-height: 21px;
+}
+#user.register .acceptFlags .description {
+  margin-left: 40px;
+}
+#user.register .acceptFlags .fieldRow {
+  margin: 0px;
+}
+#user.register .flagContent {
+  float: left;
+}
+#user.register .buttonsRow button {
+  width: 100%;
+}
+#user.register .privacyContainer {
+  max-height: 130px;
+}
+.JP #user.register .registrationForm .privacyContainer, .JP #user.register .registrationForm .acceptFlags, .JP #user.register .docomo {
+  font-size: 1.2rem;
+}
+#user.register .registrationForm .privacyContainer, #user.register .registrationForm .acceptFlags {
+  margin: 10px 0;
+  overflow: auto;
+  font-size: 1.1rem;
+}
+.JP #user.register .docomo {
+  margin: 20px 0;
+  display: block;
+}
+#user.thankyouregistration #registrationSuccessfullContent ul {
+  font-size: 1.6em;
+}
+#user.thankyouregistration .gotoshopping a {
+  margin: 10px 0;
+}

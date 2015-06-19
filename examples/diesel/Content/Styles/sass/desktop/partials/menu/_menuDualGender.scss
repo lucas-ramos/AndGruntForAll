@@ -1,0 +1,736 @@
+// Vars and mixins inclusion
+@import "compass/reset/utilities";
+@import "desktop/common/normalize";
+@import "desktop/common/variables";
+@import "desktop/common/mixins";
+@import "desktop/vendor/grids/susy";
+
+$section : "header";
+
+#menuContainer {
+	[data-parent-id="denim"], [data-parent-id="dbg"],
+	[data-parent-id="sale"],[data-parent-id="kids"],
+	[data-parent-id="new_in"]{
+		@include microClearfix();
+		> ul {
+			@include span(10 of 12 no-gutters wide);
+			margin: 0 span(1);
+			> li{	// gli li di primo livello sono due: uomo e donna
+				border-top: 3px solid $blackDiesel;
+				margin-bottom: 20px;
+				a{	// tutti i link
+					height: 40px;
+					line-height: 40px;
+					display: block;
+				}
+				> a, > div{ // solo uomo e donna (e kids)
+					@include H2Style($section);
+					border-bottom: 1px solid $greyDiesel;
+					line-height: 40px;
+					&:last-child{
+						border-bottom: 0px;
+					}
+				}
+			}
+			.level-2:not([data-parent-id="sale_salekids"]) .menuItemSet:last-child .accordionElement{
+				border-bottom: 0px;
+			}
+			.level-3{
+				li{
+					&.accordionElement{
+						border-bottom: 1px solid $greyDiesel;
+						display: block;
+					}
+					.accordionContent, &.viewalldbg{
+						height: 40px;
+						line-height: 40px;
+						@include H3Style($section);
+						.icon{
+							// dentro icon.scss
+						}
+					}
+					&.viewalldbg{
+						background-color: $greyDBG;
+						a{
+							color: $white;
+							@include franklin;
+							line-height: 45px;
+							.icon{
+								// dentro icon.scss
+								top: 9px;
+							}
+						}
+					}
+				}
+			}
+			.level-4 ul{
+				margin: 0 0 15px 35px;
+				li{
+					&.viewall{
+						a{
+							@include H7Style($section);
+							color: $blackDiesel;
+							.icon{
+								// dentro icon.scss
+							}
+						}
+					}
+					a{
+						@include H6Style($section);
+						text-transform: none;
+					}
+				}
+			}
+		}
+	}
+	&.dbg{
+		background-color: $greyDBG;
+		[data-parent-id="dbg"]{
+			> ul {
+				> li{
+					border-top: 3px solid $white;
+					> a, > div{
+						color: $white;
+					}
+				}
+				.level-3{
+					ul > li > a{
+						color: $white;
+					}
+				}
+				.level-4 ul li{
+					a{
+						color: $white;
+					}
+					&.viewall a{
+						color: $white;
+						.icon{
+							// dentro icon.scss
+						}
+					}
+				}
+			} 
+		}
+	}
+	&.sale{
+		#titleSecondLevelMenu{
+			background-color: $red;
+		}
+		ul .level-3 li.accordionElement:last-child{
+			border-bottom: 0px;
+		}
+	}
+	[data-parent-id="kids"]{
+		> ul .level-4{
+			&[data-parent-id$='kidsbaby'] ul,
+			&[data-parent-id$='kidsjunior'] ul{
+				margin: 0px;
+			}
+			.level-5 ul{
+				margin: 0 0 15px 35px;
+				li:last-child a{
+					border-bottom: 1px solid $greyDiesel;
+				}
+			}
+		}
+		.menuItemSet.shop_by .level-5{
+			div{
+				height: 40px;
+				line-height: 40px;
+				@include H3Style($section);
+			}
+			.level-6 ul li:last-child a{
+				border-bottom: 0px;
+			}
+		}
+	}
+	[data-parent-id="sale"]  > ul .level-4 ul .level-5 ul{
+		margin-left: 0px;
+	}	
+}
+
+@media #{$mediaQueryDesktopCommon} {
+	#menuContainer {
+		[data-parent-id="denim"], [data-parent-id="dbg"],
+		[data-parent-id="sale"],[data-parent-id="kids"],
+		[data-parent-id="new_in"]{
+			> ul{
+				@include span(12 of 12);
+				 > li{
+				 	@include span(50% no-gutters);
+					display: inline-block;
+					border-right: 1px solid $blackDiesel;
+					margin-bottom: 0px;
+					&:last-child{
+						border-right: 1px solid transparent; // FIX DI UN PIXEL PER LE IMG
+					}
+					> a{
+						width: 100%;
+						@include H1Style($section);
+						border: 0px;
+						padding: 9px 0 0 20px;
+						display: inline-block;
+					}
+				}
+				.level-2{
+					.menuItemSet{
+						padding: 10px 0px 15px 20px;
+						@include microClearfix();
+						&.shop_by{
+							background-color: $greyDiesel;
+						}
+					}
+				}
+				.level-3 ul > li > a{
+					@include H2Style($section);
+				}
+				ul .level-4 ul{
+					margin: 0px;
+					> li > a {
+						height: 30px;
+						line-height: 30px;
+						@include H6Style($section);
+						font-size: 12px !important; // altrimenti le voci lunghe a 640 non ci stanno
+					}
+				}
+			}
+			ul .level-4 ul li.viewall a .icon{
+				left: -3px;
+			}
+		}
+		[data-parent-id="new_in"]{
+			ul .level-2 .menuItemSet{
+				&.shop_by{
+					background-color: $white;
+				}
+				&.stories{
+					background-color: $greyDiesel;
+				}
+			}
+		}
+		[data-parent-id="denim"]{
+			.level-2{
+				.menuItemSet{
+					li{
+						&[data-target-code="shop_by_fit"],
+						&[data-target-code="shop_by_wash_story"]{
+							display: inline-block;
+						}
+						&[data-target-code="shop_by_wash_story"]{
+							border-left: 1px solid $greyDiesel;
+							padding-left: 20px;
+						}
+					}
+				}
+			}
+			ul .level-4 ul{
+				> li > a {
+					font-size: 11px !important; // altrimenti le voci lunghe a 640 non ci stanno
+					letter-spacing: 0.08em;
+				}
+			}
+		}
+		[data-parent-id="dbg"]{
+			ul .level-2 .menuItemSet{
+				&.highlights{
+					background-color: $greyDBG;
+					margin-top: 0px;
+					color: $white;
+					.level-4 ul > li > a{
+						color: $white;
+					}
+				}
+				li[data-target-code="shoesaccessories"]{
+					border-left: 1px solid $greyDiesel;
+					padding-left: 20px;
+				}
+			}
+			.level-3 .menuItemSet[data-target-code="shoesaccessories"]{
+				border-left: 1px solid $greyDiesel;
+				padding-left: 20px;
+			}
+		}
+		[data-parent-id="kids"]{
+			> ul > li > div{
+				width: 100%;
+				@include H1Style($section);
+				border: 0px;
+				padding: 9px 0 0 20px;
+			}
+			.level-2{
+				padding: 0px;
+				ul li.menuItemSet{
+					padding: 0 0 20px 20px;
+					&.kidsbaby ul > li{
+						@include span(6 of 12 no-gutters wide);
+						display: inline-block;
+						&:last-child{
+							@include span(6 of 12 last);
+							float: left;
+						}
+						&[data-target-code="kidsbaby"]{
+							border-right: 1px solid $light-gray-border;
+						}
+						> a{
+							padding-left: 20px;
+						}
+						.level-4 ul > li{
+							@include span(1 of 1);
+							&.menuItemSet:not(.shop_by){
+								padding-bottom: 20px;
+							}
+							&.menuItemSet.shop_by .level-5 li div span.text{
+								padding-left: 20px;
+							}
+						}
+					}
+					&.shop_by{
+						background-color: $white;
+						padding: 0px;
+						.level-4 .menuItemSet{
+							.shop_by{
+								background-color: $greyDiesel;
+								padding-top: 10px;
+								.level-5 ul li{
+									padding: 0px 0px 20px 20px;
+								}
+								.level-6 ul li a {
+									padding-left: 0px;
+								}
+							}
+						}
+					}
+					&.highlights{
+						padding: 0;
+						li.highlights{
+							padding: 20px 0 20px 15px;
+							div{
+								@include H2Style($section);
+							}
+						}
+					}
+				}
+			}
+			> ul .level-4 .level-5 ul{
+				margin: 0px;
+				li:last-child a{
+					border-bottom: 0px;
+				}
+			}
+		}
+		[data-parent-id="sale"]{
+			>ul {
+				> li{
+					border-top: 3px solid $red;
+					@include span(4 of 12 no-gutters wide);
+					&:last-child{
+						@include span(4 of 12 last);
+						float: left;
+					}
+					> div{
+						@include H1Style($section);
+						border-bottom: 0px;
+						padding: 9px 0 0 20px;
+					}
+				}
+				.level-2{
+					padding: 0px;
+					.menuItemSet{
+						padding-top: 0px;
+						&.viewalldbg{
+							position: absolute;
+							bottom: 0;
+							padding: 0px;
+							@include span(4 of 12 no-gutters wide);
+							li.viewalldbg{
+								padding-left: 15px;
+								border-right: 1px solid $blackDiesel;
+							}
+						}
+						.level-4 ul > li{
+							margin-top: 0px;
+							padding-left: 0px;
+						}
+					}
+				}
+				.level-3 ul > li > div{
+					@include H2Style($section);
+				}
+			}
+			/* gestione immagini */
+			.salekids span.image{
+				position: absolute;
+			    bottom: 0;
+			    right: 0;
+			}
+		}
+
+		/* gestione immagini */
+		[data-parent-id="new_in"]{	// ha lo slider!
+			> ul .level-2{
+				position: relative;
+				.menuItemSet.stories{
+					padding: 0;
+					position: absolute;
+					top: -40px;
+					right: 0;
+					.level-3 > li > div{
+						span.text{
+							position: absolute;
+							top: 200px;
+							padding-left: 20px;
+						}
+					}
+					.level-4 li{
+						span.image{
+							display: block;
+							img{
+								width: 100%;
+							}
+						}
+						span.text{
+							display: block;
+							text-align: center;
+							position: absolute;
+							bottom: 20px;
+							left: 20px;
+						}
+						&.slick-slide{
+							a{
+								display: inline;
+							}
+						}
+					}
+				}
+			}
+		}
+		[data-parent-id="dbg"]{
+			ul .level-2 .menuItemSet.highlights{
+				padding: 0;
+				.level-3 [data-target-code="highlights"]{
+					position: relative;
+					span.text{
+						padding-left: 20px;
+					}
+					span.image{
+						display: block;
+						position: relative;
+						img{
+							width: 100%;
+						}
+					}
+					.level-4{
+						padding-bottom: 25px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media #{$mediaQueryTablet}{
+	#menuContainer {
+		[data-parent-id="new_in"]{
+			ul .level-2 .menuItemSet{
+				&.shop_by{
+					@include span(6 of 12 no-gutters wide);
+				}
+				&.stories{
+					@include span(6 of 12 last);
+					float: left;
+					border-left: 1px solid $greyDBG;
+				}
+			}
+		}
+		[data-parent-id="denim"]{
+			.level-2{
+				.menuItemSet{
+					li{
+						&[data-target-code="shop_by_fit"],
+						&[data-target-code="shop_by_wash_story"]{
+							@include span(3 of 6 no-gutters);
+						}
+					}
+				}
+			}
+			> ul ul .level-4 ul > li a{
+				letter-spacing: 0.0em; // se no a 640 non ci sta
+			}
+		}
+		[data-parent-id="dbg"]{
+			ul .level-2 .menuItemSet{
+				&.denimclothing{
+					@include microClearfix();
+					ul li{
+						@include span(6 of 12 no-gutters wide);
+						display: inline-block;
+						&:last-child{
+							@include span(6 of 12 last);
+							float: left;
+						}
+						.level-4 ul li{
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+
+		/* gestione immagini */
+		[data-parent-id="kids"], [data-parent-id="denim"]{
+			> ul .level-4 ul li{
+				&.menuItemSet{
+					padding: 0;
+				}
+				img{
+					display: none;
+				}
+			}
+		}
+		[data-parent-id="kids"], [data-parent-id="denim"]{
+			.level-3 [data-target-code="highlights"]{
+				height: 185px; // altezza fissa da psd
+				overflow: hidden;
+				span.image{
+					position: relative;
+					height: 185px;
+					float: right;
+					top: -20px;
+				    img{
+				    	height: 185px;
+				    }
+				}
+				.level-4{
+					position: absolute;
+					span.image{
+						display: none;
+					}
+				}
+			}
+		}
+		[data-parent-id="denim"]{
+			> ul .level-2 .menuItemSet.highlights{
+				padding: 0;
+				.level-3 [data-target-code="highlights"]{
+					span.image{
+						top: 0;
+					}
+					span.text{
+						display: block;
+						padding: 10px 0 0 20px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media #{$mediaQueryDesktop} {
+	#menuContainer {
+		[data-parent-id="denim"], [data-parent-id="dbg"],
+		[data-parent-id="sale"],[data-parent-id="kids"],
+		[data-parent-id="new_in"]{
+			.menuWithOpacity{
+				&.inactive{
+					opacity: 0.7;
+				}
+				&:active{
+					opacity: 1;
+				}
+			}
+		}
+		[data-parent-id="new_in"]{
+			ul .level-2 .menuItemSet{
+				&.shop_by{
+					@include span(2 of 6 no-gutters wide);
+				}
+				&.stories{
+					@include span(4 of 6 last);
+				}
+			}
+		}
+		[data-parent-id="denim"]{
+			.level-2 .menuItemSet{
+				&.shop_by_fit{
+					@include span(4 of 6 no-gutters wide);
+					li{
+						&[data-target-code="shop_by_fit"],
+						&[data-target-code="shop_by_wash_story"]{
+							@include span(1 of 2 no-gutters);
+						}
+					}
+				}
+				&.shop_by{
+					@include span(2 of 6 last);
+				}
+				&.highlights{
+					clear: both;
+					padding: 0px;
+					.level-3 > ul > li span.text{
+						display: none;
+					}
+					.level-4 > ul > li{
+						span.text{
+							display: block;
+							text-align: center;
+						}
+						@include span(2 of 6 no-gutters wide);
+						&:last-child{
+							@include span(2 of 6 last);
+							float: left;
+						}
+					}
+				}
+			}
+			.level-3 ul > li > div{
+				font-size: 14px;
+				letter-spacing: 0.075em;
+			}
+			> ul ul .level-4 ul > li > a{
+				letter-spacing: 0.03em;	// corretto perchè a 1024 si spaccavano le voci
+			}
+		}
+		[data-parent-id="dbg"]{
+			.level-2 .menuItemSet{
+				&.denimclothing{
+					@include span(4 of 6 no-gutters wide);
+					li{
+						&[data-target-code="denimclothing"],
+						&[data-target-code="shoesaccessories"]{
+							@include span(1 of 2 no-gutters);
+						}
+					}
+				}
+				&.shop_by{
+					@include span(2 of 6 last);
+				}
+				&.highlights{
+					clear: both;
+				}
+			}
+		}
+		[data-parent-id="kids"]{
+			.level-2 ul li.menuItemSet{
+				&.highlights{
+					clear: both;
+					padding: 0px;
+					li.highlights{
+						padding: 0px;
+					}
+					.level-3 > ul > li span.text{
+						display: none;
+					}
+					.level-4 > ul > li{
+						span.text{
+							display: block;
+							text-align: center;
+						}
+					}
+				}
+				&.kidsbaby ul > li > .level-5 a{
+					padding-left: 0px;
+				}
+			}
+		}
+		[data-parent-id="sale"]{
+			.level-2 .menuItemSet{
+				&.denimclothing{
+					li{
+						&[data-target-code="denimclothing"],
+						&[data-target-code="shoesaccessories"]{
+							@include span(1 of 2 no-gutters);
+						}
+						&[data-target-code="shoesaccessories"]{
+							border-left: 1px solid $greyDiesel;
+    						padding-left: 20px;
+						}
+					}
+				}
+			}
+			> ul .level-3 li.viewalldbg a .icon{
+				// dentro icon.scss
+				top: 7px;
+			}
+			.salekids span.image{
+				
+			}
+		}
+
+		// corretto perchè a 1024 si spaccavano le voci (jeans&abbigliamento/scarpe&accessori)
+		[data-parent-id="dbg"]{
+			> ul .level-3 ul > li > a{
+				line-height: 20px; 
+				margin: 10px 5px 10px 0;
+			}
+			> ul .level-3 ul > li.shop_by > div{
+				margin-bottom: 20px;
+			}
+		}
+		[data-parent-id="sale"] > ul .level-3 ul > li:not(.viewalldbg) > a{
+			line-height: 20px; 
+			margin: 11px 0;
+		}
+		[data-parent-id="dbg"] > ul ul .level-4 ul > li > a, 
+		[data-parent-id="sale"] > ul ul .level-4 ul > li:not(.viewalldbg) > a{
+			margin: 0px;
+		}
+
+		/* gestione immagini */
+		[data-parent-id="kids"], [data-parent-id="denim"] .level-2 .menuItemSet.highlights{
+			.level-3 [data-target-code="highlights"]{
+				span.image{
+					display: none;
+				}
+				.level-4 > ul{
+					> li{
+						width: 33.333333%; // con susy non veniva bene
+						display: inline-block;
+						float: left;
+						a{
+							height: 100%;
+							span.text{
+								height: 50px; // altezza fissa da psd
+								line-height: 50px;
+							}
+							span.image{
+								display: block;
+								img{
+									width: 100%;
+								}
+							}
+							span.icon{
+								display: none;
+							}
+						}
+					}
+				}
+			}
+		}
+		[data-parent-id="dbg"] ul .level-2 .menuItemSet.highlights{
+			.level-3 [data-target-code="highlights"]{
+				span.image{
+					float: right;
+					width: 63%;
+				}
+				.level-4{
+					padding-bottom: 25px;
+				}
+			}
+		}
+	}
+}
+
+// riposizionato su una riga al wide screen (jeans&abbigliamento/scarpe&accessori)
+@media #{$mediaQueryWideScreen}{
+	body:not(.fr) #menuContainer {
+		[data-parent-id="dbg"] > ul .level-3 ul > li > a,
+		[data-parent-id="sale"] > ul .level-3 ul > li:not(.viewalldbg) > a{
+			line-height: 40px;
+			margin: 0px;
+			letter-spacing: 0.08em;
+		}
+		[data-parent-id="dbg"] > ul .level-3 ul > li.shop_by > div{
+			margin-bottom: 0px;
+		}
+	}
+}

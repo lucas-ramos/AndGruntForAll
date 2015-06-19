@@ -1,0 +1,135 @@
+// =========================
+// CAD PAGE STYLES
+// =========================
+@import "compass/css3";
+
+@import "variables";
+@import "fonts";
+@import "Smartphone/callToActions";
+
+@import "Smartphone/Partials/sprites";
+@import "Smartphone/vendor/svgzr/sprites-svg";
+
+
+#container {
+	margin:0;
+}
+
+.serverSideErrors {
+	padding: 10px 0;
+}
+
+.checkoutPageTitle {
+	padding: 20px 25px 10px;
+}
+
+.miniTitle {
+	color: $black;
+	font-size: $size-big-rem;
+	padding: 23px 10px;
+}
+
+#cartRecap {
+	padding: 10px 0;
+	font-size: $size-tiny-rem;
+	@extend %lato;
+	line-height: 22px;
+	text-align: center;
+
+	.cartTotal {
+		background-color: $color-highlights;
+		@extend %lato-bold;
+		font-size: $size-small-rem;
+		padding: 8px 0;
+
+		.label {
+			text-transform: uppercase;
+		}
+	}
+
+	.totalPrices {
+		display: inline;
+		margin-left: 5px;
+	}
+
+	.itemsInCart {
+		display: inline;
+		margin-right: 5px;
+	}
+
+	a {
+		color: $black;
+		text-transform: uppercase;
+	}
+
+	.salesTaxesDescrPopup {
+		display:none;
+	}
+}
+
+
+.free .currency {
+	display:none;
+}
+
+
+#cart
+{
+	@import "smartphone/pages/addressdrivencheckout/cart";
+}
+
+
+#checkmail
+{
+	@import "smartphone/pages/addressdrivencheckout/checkmail";
+}
+
+
+#delivery
+{
+	@import "smartphone/pages/addressdrivencheckout/delivery";
+}
+
+
+#confirmation
+{
+	@import "smartphone/pages/addressdrivencheckout/confirmation";
+}
+
+
+#thankyou
+{
+	@import "smartphone/pages/addressdrivencheckout/thankyou";
+}
+
+#waittobuy
+{
+	@import "smartphone/pages/addressdrivencheckout/waittobuy";
+}
+
+#waitFrame
+{
+	@import "smartphone/pages/addressdrivencheckout/waitFrame";
+}
+/*Popup session*/
+.sessionLogin {
+	
+	.logoutBox a {
+		display:block;
+	}
+
+	.submit {
+		margin-top: 10px;
+		@extend .primary;
+		width: 100%;
+	}
+}
+
+#noPromoBrands {
+	padding:20px;
+	font-size: $size-medium-rem;
+
+	.mfp-close {
+		margin:10px;
+	}	
+}

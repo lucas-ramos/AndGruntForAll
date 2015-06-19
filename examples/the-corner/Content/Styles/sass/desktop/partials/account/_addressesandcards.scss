@@ -1,0 +1,123 @@
+// =========================================================
+// STYLES SHARED BETWEEN ADDRESS BOOK AND CREDIT CARD WALLET
+// =========================================================
+
+@mixin cardsOrAddressesContainer {
+
+	/* Style of the "view all" link in account overview */
+
+	.viewAllLink {
+		margin-top: 30px;
+		display: block;
+	}
+}
+
+@mixin cardsOrAddressesList {
+
+	/* Styles for the list of addresses AND the list of cards */
+
+	width: 310px;
+
+	.container {
+		margin-bottom: 40px;
+		@include clearfix;
+	}
+
+	.icon {
+		float: left;
+		margin-right: 10px;
+	}
+
+	.buttonsRow {
+		.edit, .delete {
+			color: $color-light;
+			text-decoration: underline;
+			cursor: pointer;
+		}
+		.delete {
+			margin-left: 30px;
+		}
+	}
+
+	.storedDataCount {
+		margin-bottom: 34px
+	}
+
+	.defaultMessage {
+		color: green;
+	}
+
+}
+
+@mixin cardsList {
+
+	/* Styles for the list of cards only */
+
+	.cardUserData {
+		display: none;
+	}
+
+	.label, .value {
+		display: block;
+	}
+
+	.label {
+		text-transform: uppercase;
+	}
+
+	.text {
+		margin-left: 60px;
+	}
+
+	.value {
+		color: $color-light;
+	}
+
+	.expiredAlert {
+		color: darkred;
+	}
+
+}
+
+@mixin addressesList {
+
+	/* Styles for the list of addresses only */
+
+	.icon {
+		//@include retina-sprite("pin", $site-sprite, $site-sprite2x);
+	}
+
+	.text {
+		margin-left: 26px;
+	}
+
+	.shippingCountryAlert {
+		position: relative;
+
+		.text {
+			position: absolute;
+			left: 50px;
+			top: 4px;
+			display: none;
+		}
+
+		.icon {
+			//@include retina-sprite("info", $site-sprite, $site-sprite2x);
+			width: 32px;
+			height: 32px;
+			display: block;
+			overflow: hidden;
+		}
+	}
+
+}
+
+@mixin specificPagesListCount {
+
+	/* Styles for the cards count and the addresses count in specific pages style */
+
+	.storedDataCount {
+		color: $color-light;
+		font-size: 15px;
+	}
+}

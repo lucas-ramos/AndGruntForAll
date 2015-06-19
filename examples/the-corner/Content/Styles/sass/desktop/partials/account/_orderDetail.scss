@@ -1,0 +1,178 @@
+// ORDER DETAILS ROWS
+// -----------------------------------
+
+
+
+.orderDetailsWrapper {
+	padding-top: 25px;
+	@extend .column-12;
+	@extend .omega;
+
+	.close {right: 36px; position: absolute;  @extend button.secondary;}
+	
+	.orderStatus {
+
+		.container{
+			padding-bottom: 20px;
+			@extend %knockout;
+			.value {color: $black;}
+		}
+
+		html.CN &, html.JP & { .orderStatusDetail {width: 90%;} }
+	}
+	
+	.orderHeader {
+		text-transform: uppercase;
+		@extend .column-12;
+		@extend .omega;
+		border-bottom: 3px solid $color-medium;
+		color: $color-medium;
+		font-size: $size-large;
+		margin-bottom: 10px;
+		padding: 10px 0;
+		text-align: center;
+		@extend %knockout-bold;
+
+		.articleDescription,.articleSelectedOptions {@extend .column-4;}
+		.articleDescription {text-align: center;}
+		.quantity, .price {@extend .column-2; @extend .omega;}
+		.price {text-align: center;}
+	}
+
+	.item {
+		border-bottom: 1px solid $color-extra;
+		@extend .column-12; @extend .omega;
+		color: $color-dark;
+		font-size: $size-medium;
+		padding-top: 10px;
+		margin-bottom: 10px;
+		text-align: center;
+
+		.articleSelectedOptions, .quantity, .priceRaw {@extend %helvetica; padding-top: 15px;}
+
+		.articleSelectedOptions .label {display: none;}
+		.articleSelectedOptions{
+			.title {
+				@include appendColon;
+			}
+		}
+
+		.description, .articleSelectedOptions {@extend .column-4;}
+		.quantity, .priceRaw {@extend .column-2; @extend .omega;}
+		.priceRaw {
+
+			&.discounted{
+				.full {text-decoration: line-through; margin-right: 8px;}
+			}
+		}
+
+
+		.description {
+			
+			padding-bottom: 10px;
+
+			.image, .info {@extend .column-2; @extend .omega;}
+
+			.brand { @extend %knockout-bold; @extend .column-2; font-size: $size-tiny;}
+			.macroCategory {display: none;}
+			.microCategory {@extend .column-2; @extend %helvetica;}
+		}
+	}
+
+	.deliveryDetails, .contactUsContainer, .paymentDeliveryContainer {
+		text-align: right;
+		color: $color-dark;
+		font-size: $size-medium;
+		margin-bottom: 10px;
+	}
+	
+	.deliveryDetails {
+		h3 {
+			font-size: $size-tiny; 
+			display: inline-block;
+			margin-bottom: 10px;
+		}
+		.names, .address {@extend %helvetica;}
+		.address {border-bottom: 1px solid $color-extra; padding-bottom: 10px;}
+	}
+
+	.contactUsContainer {display: none;}
+
+	.paymentDeliveryContainer {
+		border-bottom: 1px solid $color-extra;
+		@include pie-clearfix;
+
+		.orderDetailRecap {
+			font-size: $size-tiny;
+			
+			.subtotalContainer,
+			.deliveryContainer,
+			.paymentContainer,
+			.taxesContainer,
+			.orderTotalContainer {
+				@extend .column-12;
+				@extend .omega;
+				margin-bottom: 10px;
+
+				.text {
+					@extend .column-9; 
+					.title { margin-right: 10px;}
+					.deliveryType, .deliveryTimes{
+						color: $color-light;
+					}
+					.deliveryType {
+						margin: 0;
+						&:after { content: ' - ';}
+					}
+				}
+				.price{
+					
+					@extend .omega;
+
+					&.free {
+						.currency {display: none;}
+					}
+				}
+			}
+
+			.orderTotalContainer {
+				@extend %knockout-bold;
+				font-size: 1.4em;
+				text-transform: uppercase;
+			}
+			.paymentContainer .paymentType{
+					color: $color-light;
+			}
+		}
+	}
+}
+
+#ordersList{
+
+	.colCustomerCare, .colValue, .colButtons .close {display: none;}
+	.colDate, .colNumber { @extend .column-2; min-height: 30px;}
+
+	.colStatus {@extend .column-3;}
+	.colReturn {
+		@extend .column-3; 
+	}
+	.colButtons {
+		@extend .column-2; 
+		@extend .omega;
+		.open {
+			position: absolute; 
+			right: 30px; 
+			@extend button.secondary; }
+	}
+
+	// OTHER STUFF - ERRORS STYLING
+	// -----------------------------------
+
+	#listItems .error {
+		color: $red;
+		text-align: center;
+		padding: 10px;
+		font-size: $size-medium;
+	}
+}
+

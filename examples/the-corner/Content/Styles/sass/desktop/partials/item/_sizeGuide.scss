@@ -1,0 +1,51 @@
+// =====
+// SIZE GUIDE LAYER
+// =====
+
+.uiLayer-sizeGuideLink {
+
+	.mfp-content {
+		width: 400px; 
+	}
+
+	h2 {
+		color: $white;
+	}
+	
+	.sizeGuide {
+		> div {
+			font-size: $size-medium;
+			margin: 10px 0;
+		}
+	}
+
+	table {
+		width: 100%;
+		text-align: center;
+		margin: 20px 0 10px;
+	}
+
+	thead {
+		@extend %knockout-bold;
+		border-bottom: 3px solid $color-light;
+
+		td {
+			font-size: $size-big;
+		}
+	}
+
+	tbody {
+		td {
+			font-size: $size-large;
+		}
+	}
+
+	tr {
+		border-bottom: 1px solid $color-light;
+	}
+
+	td {
+		width: 50%;
+		line-height: 1.8;
+	}
+}

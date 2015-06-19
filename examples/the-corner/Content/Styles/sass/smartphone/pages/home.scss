@@ -1,0 +1,90 @@
+// ===============================
+// HOME PAGE STYLES
+// ===============================
+@import "variables";
+@import "fonts";
+@import "Smartphone/menus";
+@import "Smartphone/Partials/susyClasses";
+
+
+/*SPLASH PAGE*/
+#splash.page {	
+	display: block;
+	position: relative;
+	min-height: 346px;
+}
+
+#genderNav {
+	position: absolute;
+	top: 50%;
+	margin-top: -55px; // per il centramento orizzontale
+	width: 100%;
+
+	a {
+		display: block;
+		border: 5px solid $white;
+		width: 200px;
+		color: $white;
+		margin: 0 auto;
+		font-size: $size-jumbo-rem;
+		@extend %knockout-bold;
+		text-align: center;
+		padding: 0.6rem 0;
+		text-transform: uppercase;
+
+		&:first-child {
+			margin-bottom: 30px;
+		}
+
+		&:active, &:hover {
+			background: $white;
+			color: $black;
+		}
+	}
+}
+/*SPLASH PAGE*/
+
+
+
+#homeU, #homeD {
+	.banner-slot {
+		a, img {
+			display: block;
+		}
+	}
+}
+
+img {
+	width: 100%;
+}
+
+.page {
+	background: $black;
+	display: none;
+}
+
+.bannerBottom {
+	@include pie-clearfix;
+
+	.banner-slot {
+		width: 50%;
+		float: left;
+	}
+}
+
+.level-1 {
+	display: none;
+	
+	li {
+		a {
+			@extend .menuSingleLine;
+			background-color: $color-medium;
+			border-bottom: 1px solid $color-top;
+		}
+	}
+
+	.style_stories { //su smartphone non deve vedersi
+		display: none;
+	}
+}
+

@@ -1,0 +1,271 @@
+// HEADER
+// ------
+
+
+
+// THECORNER.COM LOGO
+
+header {
+	@include pie-clearfix;
+	background: $black;
+
+	a, .link, a:hover {
+		color: $white;
+	}
+}
+
+#logo {
+	display: block;
+	background: $black;
+	text-align: center;
+
+	float: left;
+	margin-left: 19px;
+	padding: 18px 0;
+
+	svg {
+		display: block;
+	}
+
+	g {
+		fill: $white;
+	}
+}
+
+#toolbar {
+	float: right;
+
+	%icon-commons {
+		$x-padding: 13px;
+
+		border-left: 1px solid $color-medium;
+		display: block;
+		padding: {
+			right: $x-padding;
+			left: $x-padding;
+		}
+		background-position-x: $x-padding;
+	}
+
+	%wishlist-icon {
+		$y-padding: 14px;
+
+		@extend %svg-icon-wishlist;
+		@extend %icon-commons;
+		padding: {
+			top: $y-padding;
+			bottom: 13px;
+		}
+		background-position-y: $y-padding;
+	}
+
+	%cart-icon {
+		$y-padding: 9px;
+
+		@extend %svg-icon-shoppingbag;
+		@extend %icon-commons;
+		padding: {
+			top: $y-padding;
+			bottom: 11px;
+		}
+		background-position-y: $y-padding;
+	}
+
+	.userSection {
+		float: left;
+	}
+
+	.loginButton {
+		a {
+			@extend %wishlist-icon;
+		}
+
+		.text {
+			display: none;
+		}
+	}
+
+	.mainCartLink {
+		float: left;
+
+		a {
+			@extend %cart-icon;
+		}
+
+		.inner {
+			position: relative;
+		}
+
+		.text {
+			display: none;
+		}
+
+		.count {
+			@extend %lato;
+			color: $black;
+			font-size: $size-tiny-rem;
+			text-align: center;
+			width: 16px;
+			position: absolute;
+			left: 18px;
+			top: 20px;
+		}
+	}
+
+	.registerButton {
+		display: none;
+	}
+
+	.userLogged {
+		li {
+			&.wishListLink {
+				@include imageReplacement();
+
+				a {
+					@extend %wishlist-icon;
+				}
+			}
+
+			&:not(.wishListLink) {
+				display: none;
+			}
+		}
+	}
+}
+//MINI CART
+
+$close-cross-margin: 10px;
+
+#miniCartWrapper {
+	float: left;
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+
+	.closeCross {
+		@extend %svg-closeX-cartlayer;
+		position: absolute;
+		top: 0;
+		right: 0;
+		margin: $close-cross-margin;
+	}
+}
+
+#miniCart {
+	background-color: $color-background;
+	width: 100%;
+	text-align: center;
+	overflow: hidden;
+	max-height: 0;
+	@include transition(all 750ms ease);
+
+	> .inner {
+		@extend .centralColumn;
+		padding-top: ($close-cross-margin*2) + $svg-closeX-cartlayer-height;
+		padding-bottom: 17px;
+		position: relative;
+	}
+
+	&[data-items="1"],
+	&[data-items="2"],
+	&[data-items="3"] {
+		.bx-controls {
+			display: none;
+		}
+	}
+
+	&.open {
+		max-height: 999px;
+		border-bottom: 1px solid $color-extra;
+	}
+
+	.title, .info, .cartTotal {
+		display: none;
+	}
+
+	.proceedWithCheckoutLink, .goToCartLink {
+		@extend .button;
+		margin: 3px 0;
+	}
+
+	.proceedWithCheckoutLink {
+		@extend .primary;
+	}
+
+	.goToCartLink {
+		@extend .secondary;
+	}
+
+	.bx-viewport {
+		margin-bottom: 10px;
+	}
+
+	.bx-prev, .bx-next {
+		@include imageReplacement;
+		position: absolute;
+		top: 50%;
+		margin-top: -($svg-arrow-circle-left-height/2);
+	}
+
+	.bx-prev {
+		@extend %svg-arrow-circle-left;
+		left: 0;
+	}
+
+	.bx-next {
+		@extend %svg-arrow-circle-right;
+		right: 0;
+	}
+
+	.items {
+		@include pie-clearfix;
+		li, img {
+			width: 87px;
+		}
+	}
+
+	.dataContainer {
+		display: none;
+	}
+
+	.carouselContainer {
+		position: relative;
+	}
+
+
+}
+
+//PROMOTIONAL ENGINE
+#headerPromotions {
+	background-color: $white;
+	max-height: $header-firstline-height-mobile;
+	overflow: hidden;
+
+	.promotions {
+		@extend .centralColumn;
+		overflow: hidden;
+
+		ul {
+			@extend %lato-bold;
+			text-transform: uppercase;
+			text-align: center;
+			font-size: $size-reduced-rem;
+
+			.RU & {
+				font-size: $size-mini-rem;
+			}
+
+			.JP &, .CN & {
+				font-size: $size-midlarge-rem;
+			}
+		}
+
+		li {
+			padding: 10px 0;
+		}
+
+		.shortDescription {
+			display: none;
+		}
+	}
+}

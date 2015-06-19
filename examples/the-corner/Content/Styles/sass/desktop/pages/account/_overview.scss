@@ -1,0 +1,266 @@
+// ================
+// ACCOUNT OVERVIEW 
+// ================
+
+
+// OVERVIEW ADJUSTS
+// ---------------------
+
+.RU h4 {
+	font-weight: bold;
+}
+
+#ordersContainer {
+	.colCustomerCare {
+		display: none;
+	}
+
+	.colButtons {
+		display: none;
+	}
+
+	.order {
+		margin-bottom: 10px;
+	}
+	#listHeader {
+		display: none;
+	}
+}
+
+#addressBookContainer {
+	.buttonsRow, .addressIndex,.shippingCountryAlert,
+	.notDefaultMessage, .defaultMessage, .shippingCountryAlertMessage  {
+		display: none;
+	}
+
+	.container {
+		float: left;
+		width: 100%;
+		margin: 0 0 10px;
+	}
+
+	.userAddress {
+		margin-bottom: 10px;
+	}
+
+	.addressDetails {
+		span {
+			display: block;
+			float: left;
+			margin-right: 5px;
+			&.zipcode, &.email, &.phone {
+				clear: both;
+			}
+		}
+	}
+
+	.defaultAlert {
+		margin: 5px 0 ;
+	}
+
+
+
+
+}
+
+#sidebar > section {
+	border-bottom: 1px solid $color-ultra;
+	padding: 20px 0;
+	clear: both;
+	float: left;
+	width: 100%;
+
+	&:first-child {
+		padding-top: 0;
+	}
+
+	.button {
+		clear: both;
+	}
+}
+
+.sidebar-content {
+	@extend %helvetica;
+	font-size: $size-midsmall;
+	color: $color-medium;
+	line-height: $size-smaller;
+	margin: 10px 0;
+
+	.backToShop a {
+		margin-top: 15px;
+		font-size: $size-mini;
+		@extend .button;
+		@extend .secondary;
+	}
+}
+
+#cardWalletContainer {
+
+	.expiredAlert {
+		color: $red;
+	}
+
+	.buttonsRow, .defaultMessage, .cardHolderData h1, .notDefaultMessage, .cardHolderName, .cardHolderAddress {
+		display: none;
+	}
+
+	.container {
+		margin: 10px 0;
+		cursor: pointer;
+
+		&:hover {
+			background-color: $color-ultra;
+		}
+	}
+
+	.CN & {
+		display: none;
+	}
+
+	.ES & { 
+		a { font-size: $size-midsmall;}
+	}
+
+}
+
+
+#wishlistPremiere{
+	p {
+		color: $color-medium;
+		margin-bottom: 10px;
+	}
+	section {
+		margin-bottom: 10px;
+	}
+	
+}
+
+#wishListContainer {
+
+	.button {
+		margin-top: 10px;
+	}
+
+	.soldout, .wishListInsertedDate, .color, .checkBox, .itemAdditionalInfos  {
+		display: none;
+	}
+
+	.bx-wrapper {
+		position: relative;
+
+	}
+
+	.bx-controls {
+		position: absolute;
+		top: 45%;
+		width: 100%;
+	}
+	
+
+	.bx-next, .bx-prev {
+		display: block;
+		@include imageReplacement;
+	}
+
+	.bx-next {
+		@extend %svg-arrow-circle-right;
+		float: right;
+		margin-right: 5px;
+	}
+
+	.bx-prev {
+		@extend %svg-arrow-circle-left;
+		float: left;
+		margin-left: 5px;
+	}
+
+	.priceUpdater {
+		margin-top: 5px;
+		height: 32px;
+	}
+
+	.discounted.price{
+		float: left;
+		width: 100%;
+		margin-bottom: 5px;
+	}
+}
+
+#premiereContainer {
+	p{
+		margin-top: 10px;
+	}
+
+	.lowerpart { display: none; }
+}
+
+.listPremieres {
+	@include pie-clearfix;
+
+	margin-bottom: 15px;
+	
+	.premiere {
+		@extend .column-3;
+	}
+	.premiere:nth-child(3n) {
+		@include omega-margin; //due to ie8
+	}
+}
+
+
+.wishListItems {
+	@include pie-clearfix;
+	overflow: hidden;
+
+	.wishlistItem {
+		@include nth-omega(3n);
+	}
+
+	.wishlistItem .inner{
+		min-height: 515px;
+		overflow-x: hidden;
+	}
+
+	.info{
+		margin-top: 20px;
+	}
+}
+
+.item-wrapper {
+	float: left;
+}
+
+
+
+.userOrders {
+
+	.text {
+		@include appendColon;
+	}
+
+	.orderNumber .label {
+		@extend %knockout-bold;
+	}
+}
+
+.userInfo, .size, .cardExpire {
+	.label {
+		@include appendColon;
+	}
+}
+
+.cardNumber, .cardType {
+	.label {
+		display: none;
+	}
+}
+
+.returnBtn {
+	display:none;
+}
+
+html.JP & {
+	button, .button {
+		font-size: 1.2em;
+	}
+}

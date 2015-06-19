@@ -1,0 +1,10 @@
+
+// eccezzioni per webview della nativa
+.nativeApplication {
+	#siteFooter, #siteHeader{
+		display: none !important;
+	}
+	.backToShoppingButton{
+		display: none;
+	}
+}

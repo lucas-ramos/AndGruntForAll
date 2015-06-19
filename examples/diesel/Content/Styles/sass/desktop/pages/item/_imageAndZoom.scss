@@ -1,0 +1,288 @@
+#item { 
+	background-color:$itemBackground; 
+	&.dbg { background-color:$backgroundDBG;}
+}
+#siteHeader{ background-color:$white; }
+#titleItem {
+	text-align: center;
+	margin: 8px 0;
+	overflow: hidden;
+	background-color: $white;
+    background-color: rgba(255, 255, 255, 0.5);
+    .productName { 
+    	margin: 8px 0; 
+    	@include H1Style('item');
+    }
+	.categoryName { 
+		margin-bottom: 8px; 
+		@include H2Style('item');
+	}
+	#logoDBG{
+		display: none;
+		text-align: center;
+		img{
+			margin: 10px auto;
+		}
+	}
+	.dbg &{
+		background-color: transparent;
+		color: $white;
+		.productName{
+			color: $white;
+		}
+		#logoDBG{
+			display: block;
+		}
+	}
+}
+#itemMainImage { display:none;}
+#altImgWrapper { 
+	position:relative; 
+	.alternativeImages  { background-color: $white;}
+}
+article.item {
+	margin: 0 10px;
+	position:relative;
+	min-height: 800px;
+	.slick-dots {   
+	    position: absolute;
+	    width: 9%;
+	    height: 30%;
+	    padding: 0;
+	    margin: 0;
+	    right: 5%;
+	    bottom: 0px;
+	    text-align: center;
+	}
+	.slick-slider { margin-bottom: 0; }
+	.slick-slide {
+		background-color:$white;
+		img { width: 100%; }
+	}
+	.slick-dots li button:before { font-size: 50px; }
+	.slick-dots {
+		li { 
+			button {
+				display: block;
+				width: 12px;
+				height: 12px;
+				margin: 5px 7px;
+				-webkit-border-radius: 20px;
+				-moz-border-radius: 20px;
+				border-radius: 20px;
+			    border: 1px solid $black;
+			}
+			&.slick-active button { background-color:$black; }
+		}
+	}
+}
+#zoomLayer {
+    background: $white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: $zoomImage;
+    height: 100%;
+    width: 100%;
+    display: none;
+     .zoomImageContainer {
+	    position: relative;
+	    top: 0;
+	    left: 0;
+	    right: 0;
+	    bottom: 0;
+	    cursor: move;
+	    height: 100%;
+	    width: 100%;
+	}
+	.icon-close {
+		position: absolute;
+	    display: block;
+	    right: 20px;
+	    top: 20px;
+	    z-index: $upZoom;
+	}
+}
+#wrapper.show .itemSidebar { z-index:$upZoom; }
+#altImgAll { 
+	display:none; 
+	li { list-style:none;}
+}
+#breadcrumbs { display:none; }
+#goTo { display:none;}
+
+#altImgAll{
+	.slick-list {
+		border-top: 1px solid $light-gray-border;
+		border-bottom: 1px solid $light-gray-border;
+	}
+	.slick-slider {
+		.slick-prev {
+			top: -20px;
+		    left: 41%;
+		}
+		.slick-next {
+		    right: 40%;
+		    bottom: -20px;
+		    top: auto;
+		}
+		button { margin-top: 0;}
+	}
+}
+
+@media #{$mediaQueryDesktopCommon}{ 
+	#wrapper.show .itemSidebar { z-index:$mfp-z-index-base; }
+	#titleItem { display:none; }
+	#breadcrumbs {
+		display:block;
+		padding: 12px 25px;
+		text-transform: uppercase;
+	}
+	#altImgWrapper .slick-dots { display:none!important; }
+	#altImgWrapper {
+		width: 75%;
+		float: left;
+	}	               
+	.imageBox { 
+		position: relative;
+		#buttonZoom {
+		    overflow: hidden;
+			.icon-zoom {			    
+			    display: block;
+			    text-align: center;		    
+			}
+		}
+		#altImgAll { 
+			display: block;
+			//overflow: hidden;
+			img {
+				width: 41px;//come il bottone sopra
+			    margin-top: 5px;
+			}
+			li.selected img {border-bottom: 6px solid $black;}
+		}
+	}
+	article.item {
+		@include span(9 no-gutters);
+		margin: 0;
+		.slick-slide img {
+			height: auto;
+			width: 100%;
+		}
+	}
+	#containerItem { 
+		margin : 10px 45px 3px;
+    	overflow: hidden;
+	}
+	#functionImage { background-color: $white; }
+
+	.dbg #titleItem #logoDBG{
+		display: none;
+	}
+}
+
+@media #{$mediaQueryDesktop}{
+	.imageBox { 
+		@include span(8 last wide); 
+		#altImgAll { 
+		    width: 14%; 
+			display: block;
+			float: left;    
+			position: absolute;
+		    right: 0;
+		    bottom: 35px;
+		    img {		    	
+			    float: right;
+			    margin-right: 22px;
+		    }
+		}
+		#buttonZoom {
+			margin-top: 22px;
+			position: absolute;
+			width: 25%;
+			top: 0;
+		    right: 0;
+		    .icon-zoom {
+		    	float: right;
+		    	margin-right: 22px;
+		    }
+		}
+	}
+	#containerItem { background-color: $white; }
+	#wrapper.show {
+		div.zoom {
+			top: 84px;
+			left: 0;
+			width: 75%;
+			.icon-close { display:none; }
+		}
+		#altImgAll img { 
+			margin-right: 21px; }
+		.icon-close { right: 40px; }
+		.imageBox #altImgAll, .imageBox #buttonZoom { z-index:$upZoom; }
+	}
+	#goTo {
+		@include opacity (0.5);
+		display: block;
+		width: 14%;
+		background-color: $gray-bg-dark;
+		text-align: center;
+		margin: 0 auto;
+		.label { 
+			padding-top:7px;
+			color: $white;
+			line-height: 13px;
+			text-transform: uppercase;
+		}
+		span{display: block;}
+		.icon-arrow-down-white { margin: 0 auto 5px;}
+	}
+}
+
+@media #{$mediaQueryTablet}{
+	#functionImage {
+	    width: 15%;
+	    height: 100%;
+	    float: left;		
+	}
+	#altImgAll { 
+		margin: 30px 0; 
+		img { margin:0 auto;}
+	}
+	#wrapper.show {		
+		#functionImage { 
+			z-index:$upZoom; 
+			position:absolute;
+			top:60px;;
+			right: 15px;
+			width: 10%; 
+			background-color:transparent;
+			#buttonZoom { display:none; }
+		}
+		#zoomLayer {
+			div.close {
+				position: absolute;
+				display: block;
+				right: 20px;
+				top: 20px;
+				z-index: 10;
+				width: 36px;
+				height: 35px;
+				.icon-close{
+					top:0;
+					right:0;
+				}
+			}
+		}		
+		.imageBox , article.item { position: initial; }
+		#altImgAll {
+			position: absolute;
+		    right: 0;
+		}
+		.imageBox #altImgAll img { margin-right: 5px; }
+	}
+	#altImgWrapper { width: 85%; }
+
+	.imageBox #buttonZoom { margin-top:12px; }
+	#buttonZoom .icon-zoom { margin:0 auto; }
+}

@@ -1,0 +1,174 @@
+﻿// ================
+// TOP AND MIDDLE SLIDER IN HOME PAGE
+// ================
+
+
+$wrapper: 998px;
+$slide-width: 998px;
+$firstline-slide-height: 411px;
+$secondline-slide-height: 411px;
+
+
+// BXSLIDER GENERAL RULES
+.has-slider {
+	.bx-wrapper {
+		position: relative;
+	}
+
+	// BX-COMMANDS
+	.bx-prev, .bx-next {
+		color: transparent;
+		cursor: pointer;
+
+		display: block;
+		position: absolute;
+		top: 0;
+
+		@include transition(opacity 0.2s ease-out);
+	}
+
+}
+
+.banner-slider {
+	overflow: hidden;
+	text-align: center;
+
+	.sliderImg {
+		height: 411px;
+
+		&:hover .imgHoverText {
+			opacity: 1;
+		}
+
+		html.desktop & {
+			p{
+				@include transition(all 0.3s ease);
+				opacity: 0;
+			}
+
+			:hover {
+				p{
+					color: green;
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	.imgHoverText {
+		@include transition(opacity 0.3s ease-in-out);
+		background-color: rgba(0,0,0,0.6);
+		opacity: 0;
+		height: 100%;
+
+		h2, h3, h4, p {
+			text-align: left;
+			width: 70%;
+			margin-left: 10px;
+		}
+		h2{
+			padding-top: 70px;
+			line-height: 0.8em;
+		}
+
+
+	}
+
+	
+
+	.bx-prev, .bx-next, .opacityFiller {
+		height: $secondline-slide-height;
+	}
+
+	.bx-next {
+		right: -2000px;
+	}
+
+
+	.bx-prev {
+		left: -2000px;
+	}
+
+	.opacityFiller {
+		@include opacity(0.8);
+
+		&:hover {
+			@include opacity(0.9);
+		}
+
+		&.max-opacity {
+			@include opacity(0.98);
+		}
+	}
+
+	.arrow {
+		background-position: center;
+		border-style: solid;
+		border-color: $color-light;
+		position: absolute;
+		top: 50%;
+		margin-top: -35px;
+		width: 30px;
+		height: 50px;
+		background-color: $white;
+
+		@include transition(opacity 0.2s ease);
+		@include opacity(0);
+
+		&.visible{
+			@include opacity(1);
+		}
+	}
+
+	.bx-prev {
+		.arrow  {
+			border-width: 2px 0 2px 2px;
+			right: 0;
+		}
+	}
+
+	.bx-next {
+		.arrow  {
+			border-width: 2px 2px 2px 0;
+			left: 0;
+		}
+	}
+
+	.opacityFiller {
+		background-color: $white;
+		width: 100%;
+		@include transition(opacity 0.2s ease-out);
+	}
+
+	.bx-prev, .bx-next {
+		width: 2000px;
+	} 
+}
+
+.bx-viewport{
+	float: left;
+	margin-right: 4px;
+
+	a {
+		display: block;
+		position: relative;
+	}
+}
+
+.largeElem {
+
+	width: 998px;
+	height: 411px;
+}
+
+.mediumElem {
+	float: left;
+	width:662px;
+	height: 411px;
+}
+
+.smallElem {
+	float: left;
+	width: 336px;
+	height: 411px;
+}

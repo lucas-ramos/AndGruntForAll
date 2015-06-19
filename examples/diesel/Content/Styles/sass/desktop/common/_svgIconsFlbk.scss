@@ -1,0 +1,306 @@
+@import 'compass/utilities/sprites';
+@import "desktop/svg-fallback/*.png";
+
+// Helper for svg fallbacks (ie8 and lower/unsupported browsers)
+@mixin svg-fallback($fileName) {
+	.no-svg &, 
+	.ielt9 & {
+		@include svg-fallback-sprite($fileName);
+		width: svg-fallback-sprite-width($fileName);
+		height: svg-fallback-sprite-height($fileName);
+	}
+}
+
+
+%svg-Carousel_arrow-flbck {
+    @include svg-fallback(Carousel_arrow);
+}
+
+%svg-Close-flbck {
+    @include svg-fallback(Close);
+}
+
+%svg-Close_box-flbck {
+    @include svg-fallback(Close_box);
+}
+
+%svg-Close_white-flbck {
+    @include svg-fallback(Close_white);
+}
+
+%svg-Phone-flbck {
+    @include svg-fallback(Phone);
+}
+
+%svg-Play-flbck {
+    @include svg-fallback(Play);
+}
+
+%svg-Play_1slot-flbck {
+    @include svg-fallback(Play_1slot);
+}
+
+%svg-Search-flbck {
+    @include svg-fallback(Search);
+}
+
+%svg-Share-flbck {
+    @include svg-fallback(Share);
+}
+
+%svg-Wishlist-flbck {
+    @include svg-fallback(Wishlist);
+}
+
+%svg-WishlistRed-flbck {
+    @include svg-fallback(WishlistRed);
+}
+
+%svg-Zoom-flbck {
+    @include svg-fallback(Zoom);
+}
+
+%svg-anchor-flbck {
+    @include svg-fallback(anchor);
+}
+
+%svg-arrow_menu_big_left_white-flbck {
+    @include svg-fallback(arrow_menu_big_left_white);
+}
+
+%svg-arrow_menu_big_up_white-flbck {
+    @include svg-fallback(arrow_menu_big_up_white);
+}
+
+%svg-arrow_menu_footer-flbck {
+    @include svg-fallback(arrow_menu_footer);
+}
+
+%svg-arrow_menu_footer_black-flbck {
+    @include svg-fallback(arrow_menu_footer_black);
+}
+
+%svg-arrow_menu_footer_down_black-flbck {
+    @include svg-fallback(arrow_menu_footer_down_black);
+}
+
+%svg-arrow_menu_footer_down_white-flbck {
+    @include svg-fallback(arrow_menu_footer_down_white);
+}
+
+%svg-arrow_menu_footer_left_white-flbck {
+    @include svg-fallback(arrow_menu_footer_left_white);
+}
+
+%svg-arrow_menu_footer_up_white-flbck {
+    @include svg-fallback(arrow_menu_footer_up_white);
+}
+
+%svg-arrow_menu_little_down_black-flbck {
+    @include svg-fallback(arrow_menu_little_down_black);
+}
+
+%svg-arrow_menu_little_down_white-flbck {
+    @include svg-fallback(arrow_menu_little_down_white);
+}
+
+%svg-arrow_menu_right_black-flbck {
+    @include svg-fallback(arrow_menu_right_black);
+}
+
+%svg-arrow_menu_right_white-flbck {
+    @include svg-fallback(arrow_menu_right_white);
+}
+
+%svg-arrow_right-flbck {
+    @include svg-fallback(arrow_right);
+}
+
+%svg-arrow_small-flbck {
+    @include svg-fallback(arrow_small);
+}
+
+%svg-arrow_small_utility-flbck {
+    @include svg-fallback(arrow_small_utility);
+}
+
+%svg-arrow_small_utility_down_black-flbck {
+    @include svg-fallback(arrow_small_utility_down_black);
+}
+
+%svg-arrow_small_utility_down_blackdiesel-flbck {
+    @include svg-fallback(arrow_small_utility_down_blackdiesel);
+}
+
+%svg-arrow_small_utility_down_gray-flbck {
+    @include svg-fallback(arrow_small_utility_down_gray);
+}
+
+%svg-arrow_small_utility_down_white-flbck {
+    @include svg-fallback(arrow_small_utility_down_white);
+}
+
+%svg-arrow_small_utility_gray-flbck {
+    @include svg-fallback(arrow_small_utility_gray);
+}
+
+%svg-arrow_small_utility_left_black-flbck {
+    @include svg-fallback(arrow_small_utility_left_black);
+}
+
+%svg-arrow_small_utility_left_gray-flbck {
+    @include svg-fallback(arrow_small_utility_left_gray);
+}
+
+%svg-arrow_small_utility_left_white-flbck {
+    @include svg-fallback(arrow_small_utility_left_white);
+}
+
+%svg-arrow_small_utility_right_black-flbck {
+    @include svg-fallback(arrow_small_utility_right_black);
+}
+
+%svg-arrow_small_utility_right_gray-flbck {
+    @include svg-fallback(arrow_small_utility_right_gray);
+}
+
+%svg-arrow_small_utility_right_white-flbck {
+    @include svg-fallback(arrow_small_utility_right_white);
+}
+
+%svg-arrow_small_utility_up_gray-flbck {
+    @include svg-fallback(arrow_small_utility_up_gray);
+}
+
+%svg-arrow_small_utility_white-flbck {
+    @include svg-fallback(arrow_small_utility_white);
+}
+
+%svg-bag_country_selector-flbck {
+    @include svg-fallback(bag_country_selector);
+}
+
+%svg-bag_country_selector_white-flbck {
+    @include svg-fallback(bag_country_selector_white);
+}
+
+%svg-bag_happy_black-flbck {
+    @include svg-fallback(bag_happy_black);
+}
+
+%svg-bag_happy_red-flbck {
+    @include svg-fallback(bag_happy_red);
+}
+
+%svg-bag_happy_white-flbck {
+    @include svg-fallback(bag_happy_white);
+}
+
+%svg-bag_regular_black-flbck {
+    @include svg-fallback(bag_regular_black);
+}
+
+%svg-bag_regular_white-flbck {
+    @include svg-fallback(bag_regular_white);
+}
+
+%svg-burger-flbck {
+    @include svg-fallback(burger);
+}
+
+%svg-checkbox_checked-flbck {
+    @include svg-fallback(checkbox_checked);
+}
+
+%svg-checkbox_unchecked-flbck {
+    @include svg-fallback(checkbox_unchecked);
+}
+
+%svg-dropdown_utility-flbck {
+    @include svg-fallback(dropdown_utility);
+}
+
+%svg-email-flbck {
+    @include svg-fallback(email);
+}
+
+%svg-email_black-flbck {
+    @include svg-fallback(email_black);
+}
+
+%svg-facebook_black-flbck {
+    @include svg-fallback(facebook_black);
+}
+
+%svg-facebook_white-flbck {
+    @include svg-fallback(facebook_white);
+}
+
+%svg-google_plus_black-flbck {
+    @include svg-fallback(google_plus_black);
+}
+
+%svg-google_plus_white-flbck {
+    @include svg-fallback(google_plus_white);
+}
+
+%svg-instagram_black-flbck {
+    @include svg-fallback(instagram_black);
+}
+
+%svg-instagram_white-flbck {
+    @include svg-fallback(instagram_white);
+}
+
+%svg-phone_black-flbck {
+    @include svg-fallback(phone_black);
+}
+
+%svg-pinterest_black-flbck {
+    @include svg-fallback(pinterest_black);
+}
+
+%svg-pinterest_white-flbck {
+    @include svg-fallback(pinterest_white);
+}
+
+%svg-product_confessional-flbck {
+    @include svg-fallback(product_confessional);
+}
+
+%svg-radio_selected-flbck {
+    @include svg-fallback(radio_selected);
+}
+
+%svg-radio_unselected-flbck {
+    @include svg-fallback(radio_unselected);
+}
+
+%svg-tumbler_black-flbck {
+    @include svg-fallback(tumbler_black);
+}
+
+%svg-tumblr_black-flbck {
+    @include svg-fallback(tumblr_black);
+}
+
+%svg-tumblr_white-flbck {
+    @include svg-fallback(tumblr_white);
+}
+
+%svg-twitter_black-flbck {
+    @include svg-fallback(twitter_black);
+}
+
+%svg-twitter_white-flbck {
+    @include svg-fallback(twitter_white);
+}
+
+%svg-youtube_black-flbck {
+    @include svg-fallback(youtube_black);
+}
+
+%svg-youtube_white-flbck {
+    @include svg-fallback(youtube_white);
+}
+

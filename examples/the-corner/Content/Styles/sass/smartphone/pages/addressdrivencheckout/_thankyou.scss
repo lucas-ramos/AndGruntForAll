@@ -1,0 +1,95 @@
+// ==============
+// THANK YOU PAGE
+// ==============
+
+.thankyouWrapper{
+	.orderTitle{
+		color: $black;
+		font-size: $size-massive-rem;
+		text-align: center;
+		@extend %knockout-bold;
+		padding: 19px 0;
+	}
+	.orderDesc, .orderDetails, .orderControl {
+		@extend %plain;
+		font-size: $size-smaller-rem;
+		color: $color-dark;
+		text-transform: none;
+	}
+	.orderDesc{
+		margin: 1em 0;
+	}
+	.orderDetails{
+		margin-top: 1em;
+
+		.orderNumber{
+			color: $color-dark;
+			font-weight: bold;
+		}
+	}
+	.orderControl{
+		border-top: 1px solid $color-dark;
+		padding-top: 20px;
+		line-height: 20px;
+		margin-top: 20px;
+	}
+}
+
+.adviceFormWrapper{
+	background-color: $color-ultra;
+	color: $color-medium;
+	margin: 10px 0;
+
+	.adviceFormContainer{
+		color: $color-medium;
+		padding: 10px;
+
+		.adviceTitle{
+			margin-top: 10px;
+			color: $color-medium;
+		}
+
+		.adviceDescription{
+			margin-top: 10px;
+		}
+
+		.adviceForm{
+			margin-top: 10px;
+		}
+
+		#AdviceViewModel_Category_Wrapper .field-validation-error{
+			right: 20px;
+		}
+
+		#AdviceViewModel_Category_Wrapper {
+			width: 100%;
+			.fieldValue select{
+				width: 100%;
+			}
+			.fieldLabel{
+				margin-bottom: 5px;
+			}
+		}
+
+		#AdviceViewModel_Message_Wrapper .fieldLabel{
+			margin-bottom: 5px;
+		}
+
+		textarea{
+			width: 97.7%;
+			height: 150px;
+		}
+
+		button{
+			width: 100%;
+			@extend .primary;
+			margin: 0 auto;
+		}
+	}
+}
+
+.adviceForm {
+	.success {
+		font-size: $size-medium-rem;
+	}
+}

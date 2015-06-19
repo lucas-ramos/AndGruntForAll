@@ -1,0 +1,27 @@
+// FOOTER CN
+// ------
+
+.contentFooterCn {
+	.labelsCn, .loghiCn {
+		> div {
+			margin-top: 10px;
+			font-size: $size-medium;
+		}
+	}
+}
+
+.weibo {
+	.icon {
+		width: 89px;
+		height: 28px;
+		background-repeat: no-repeat;
+		background-image: url("http://ytos-resources-eu-west-1-183330696032.s3.amazonaws.com/ytos/resources/THECORNER/cn/weibo.png");
+		float:right;
+	}
+}
+
+// sovrascrittura della regola generale
+.CN .footerListContainer li a .icon {
+	margin-left: 5px;
+}
+

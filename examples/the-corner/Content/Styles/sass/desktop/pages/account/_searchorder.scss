@@ -1,0 +1,262 @@
+// ============
+// SEARCH ORDER 
+// ============
+
+//@import "Desktop/Partials/account/orderDetail";
+
+#accountTitle h4, #accountNavigationMenu, #crossBanner {
+	display: none;
+}
+
+.searchOrderForm {
+	margin-bottom: 30px;
+
+	.field-validation-container {
+		top: 5px;
+	}
+
+	.validation-summary-errors {
+		position: absolute;
+		top: 100px;
+		font-size: $size-medium;
+		color: $color-medium;
+	}
+
+	.buttonsRow {
+		margin-top: 35px;
+	}
+
+	button.submit {
+		@extend .primary;
+		width: 20%; 
+	}
+
+	button.close {
+		@extend .secondary;
+		width: 170px;
+	}
+}
+
+#OrderInfoNoAuthViewModel_OrderNumber_Wrapper, #returnDetailsFormViewModel_ReturnNumber_Wrapper {
+	.fieldLabel {
+		margin-bottom: 10px;
+	}
+}
+
+#OrderInfoNoAuthViewModel_OrderNumber_Wrapper {
+	margin: 20px 0 0;
+
+	/*
+	Gio: nella my return la dimensione è 1.6em (size-medium).
+	Decidere quale usare su entrambi e tenere uniformato di conseguenza
+
+	.fieldLabel {
+		font-size: $size-big;
+	}
+	*/
+
+	.req {
+		display: none;
+	}
+}
+
+#OrderInfoNoAuthViewModel_OrderNumber {
+	width: 996px; //fix bug #0162324, removing the space occupied by lateral borders
+}
+
+.orderDetailsWrapper {
+	padding-top: 25px;
+	@extend .column-12;
+	@extend .omega;
+}
+
+.close {
+	right: 4px;
+	position: absolute;
+	@extend button.secondary;
+}
+
+.orderStatus {
+	.container {
+		padding-bottom: 20px;
+		@extend %knockout;
+	}
+
+	.value {
+		color: $black;
+	}
+
+	.details {
+		font-size: $size-medium;
+		color: $color-medium;
+	}
+}
+
+.orderStatusDetail {
+	.CN &, .JP & {
+		width: 90%;
+	}
+}
+
+.orderHeader {
+	text-transform: uppercase;
+	@extend .column-12;
+	@extend .omega;
+	border-bottom: 3px solid $color-medium;
+	color: $color-medium;
+	font-size: $size-large;
+	margin-bottom: 10px;
+	padding: 10px 0;
+	text-align: center;
+	@extend %knockout-bold;
+
+	.articleDescription, .articleSelectedOptions {
+		@extend .column-4;
+	}
+
+	.articleDescription {
+		text-align: center;
+	}
+
+	.quantity, .price {
+		@extend .column-2;
+	}
+
+	.price {
+		text-align: center;
+	}
+}
+
+.item {
+	border-bottom: 1px solid $color-extra;
+	@extend .column-12;
+	@extend .omega;
+	color: $color-dark;
+	font-size: $size-medium;
+	padding-top: 10px;
+	margin-bottom: 10px;
+	text-align: center;
+
+	.articleSelectedOptions, .quantity, .priceRaw {
+		@extend %helvetica;
+		padding-top: 15px;
+	}
+
+	.description, .articleSelectedOptions {
+		@extend .column-4;
+	}
+
+	.quantity, .priceRaw {
+		@extend .column-2;
+	}
+
+	.priceRaw.discounted {
+		.full {
+			text-decoration: line-through;
+			margin-right: 8px;
+		}
+	}
+
+	.description {
+		padding-bottom: 10px;
+	}
+
+	.image, .info {
+		@extend .column-2;
+	}
+
+	.brand {
+		@extend %knockout-bold;
+		@extend .column-2;
+		font-size: $size-tiny;
+	}
+
+	.macroCategory {
+		display: none;
+	}
+
+	.microCategory {
+		@extend .column-2;
+		@extend %helvetica;
+	}
+
+	.title {
+		@include appendColon;
+	}
+}
+
+.deliveryDetails, .paymentDeliveryContainer {
+	text-align: right;
+	color: $color-dark;
+	font-size: $size-medium;
+	margin-bottom: 10px;
+}
+
+.deliveryDetails {
+	h3 {
+		font-size: $size-tiny;
+		display: inline-block;
+		margin-bottom: 10px;
+	}
+}
+
+.names, .address {
+	@extend %helvetica;
+}
+
+.address {
+	border-bottom: 1px solid $color-extra;
+	padding-bottom: 10px;
+}
+
+.contactUsContainer {
+	display: none;
+}
+
+.paymentDeliveryContainer {
+	border-bottom: 1px solid $color-extra;
+	@include pie-clearfix;
+}
+
+.orderDetailRecap {
+	font-size: $size-tiny;
+
+	> div {
+		@extend .column-12;
+		margin-bottom: 10px;
+	}
+
+	.text {
+		@extend .column-9;
+	}
+
+	.price {
+		@extend .column-3;
+	}
+
+	.title {
+		margin-right: 10px;
+	}
+}
+
+.deliveryType, .deliveryTimes {
+	color: $color-light;
+}
+
+.deliveryType {
+	margin-right: 5px;
+	&:after {
+		content: "-";
+		margin-left: 8px;
+	}
+}
+
+.orderTotalContainer {
+	@extend %knockout-bold;
+	font-size: 1.4em;
+	text-transform: uppercase;
+}
+
+.paymentType {
+	color: $color-light;
+}

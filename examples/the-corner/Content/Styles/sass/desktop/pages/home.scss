@@ -1,0 +1,83 @@
+// ================
+// HOME PAGE STYLES
+// ================
+@import "variables";
+@import "fonts";
+@import "Desktop/Partials/sprites";
+@import "Desktop/Partials/susyClasses";
+@import "Desktop/vendor/svgzr/sprites-svg";
+@import "Desktop/vendor/svgzr/sprites-fallback";
+
+$wrapper: 998px;
+$slide-width: 998px;
+$firstline-slide-height: 500px;
+$secondline-slide-height: 508px;
+
+.svg-arrow-thin-left {
+	@extend %svg-arrow-thin-left;
+}
+
+.svg-arrow-thin-right {
+	@extend %svg-arrow-thin-right;
+}
+
+.svg-arrow-circle-left {
+	@extend %svg-arrow-circle-left;
+}
+
+.svg-arrow-circle-right {
+	@extend %svg-arrow-circle-right;
+}
+
+
+
+// BXSLIDER GENERAL RULES
+.has-slider {
+	.bx-wrapper {
+		position: relative;
+	}
+
+	// BX-COMMANDS
+	.bx-prev, .bx-next {
+		color: transparent;
+		cursor: pointer;
+
+		display: block;
+		position: absolute;
+		top: 0;
+
+		@include transition(opacity 0.2s ease-out);
+	}
+
+}
+
+.wholeWidth {
+	$wholewidth-height: 40px;
+
+	margin-bottom: 4px;
+
+	height: $wholewidth-height;
+	line-height: $wholewidth-height;
+
+	border-style: solid;
+	border-width: 1px 0;
+	text-align: center;
+	cursor: pointer;
+
+	&.primary {
+		background-color: $black;
+		border-color: $black;
+		color: $white;
+	}
+
+	&.secondary {
+		background-color: $color-ultra;
+		border-color: $color-extra;
+		color: $color-dark;
+	}
+}
+
+@import "Desktop/Partials/Home/promoTablet";
+@import "Desktop/Partials/Home/homesliders";
+@import "Desktop/Partials/Home/styleradar";
+@import "Desktop/Partials/Home/cCareBand";

@@ -1,0 +1,532 @@
+/* effetto height:100% sugli elementi flottanti */
+@font-face {
+  font-family: 'KnockoutLight';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.svg#KnockoutLight") format("svg");
+}
+@font-face {
+  font-family: 'KnockoutRegular';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.svg#KnockoutRegular") format("svg");
+}
+@font-face {
+  font-family: 'HelveticaCondensedLight';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.svg#KnockoutRegular") format("svg");
+}
+@font-face {
+  font-family: 'HelveticaCondensedBold';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.svg#KnockoutRegular") format("svg");
+}
+@font-face {
+  font-family: 'LatoRegular';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.svg#LatoRegular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'LatoBold';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.svg#LatoBold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+.column-1 {
+  width: 74px;
+  float: left;
+  margin-right: 10px;
+}
+
+.column-2 {
+  width: 158px;
+  float: left;
+  margin-right: 10px;
+}
+
+.column-3, #manifesto aside {
+  width: 242px;
+  float: left;
+  margin-right: 10px;
+}
+
+.column-4 {
+  width: 326px;
+  float: left;
+  margin-right: 10px;
+}
+
+.column-5 {
+  width: 410px;
+  float: left;
+  margin-right: 10px;
+}
+
+.column-6 {
+  width: 494px;
+  float: left;
+  margin-right: 10px;
+}
+
+.column-7 {
+  width: 578px;
+  float: left;
+  margin-right: 10px;
+}
+
+.column-8 {
+  width: 662px;
+  float: left;
+  margin-right: 10px;
+}
+
+.column-9, #manifesto .description {
+  width: 746px;
+  float: left;
+  margin-right: 10px;
+}
+
+.column-10 {
+  width: 830px;
+  float: left;
+  margin-right: 10px;
+}
+
+.column-11 {
+  width: 914px;
+  float: left;
+  margin-right: 10px;
+}
+
+.column-12 {
+  width: 998px;
+  float: left;
+  margin-right: 10px;
+}
+
+.prefix-1 {
+  padding-left: 84px;
+}
+
+.prefix-2 {
+  padding-left: 168px;
+}
+
+.prefix-3 {
+  padding-left: 252px;
+}
+
+.prefix-4 {
+  padding-left: 336px;
+}
+
+.prefix-5 {
+  padding-left: 420px;
+}
+
+.prefix-6 {
+  padding-left: 504px;
+}
+
+.prefix-7 {
+  padding-left: 588px;
+}
+
+.prefix-8 {
+  padding-left: 672px;
+}
+
+.prefix-9 {
+  padding-left: 756px;
+}
+
+.prefix-10 {
+  padding-left: 840px;
+}
+
+.prefix-11 {
+  padding-left: 924px;
+}
+
+.omega, #manifesto .description {
+  margin-right: 0 !important;
+}
+
+.centralColumn {
+  *zoom: 1;
+  width: 998px;
+  padding-left: 6px;
+  padding-right: 6px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  position: relative;
+}
+.centralColumn:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.svgfallback-sprite {
+  background-image: url('/Content/Styles/generated_images/svgfallback-s163386ba73.png');
+  background-repeat: no-repeat;
+}
+
+.sprites-desktop-sprite, .sprites-desktop-checkMark, .sprites-desktop-checkWhite, .sprites-desktop-cinesina, .sprites-desktop-fb_btn, .sprites-desktop-giftPackage, .sprites-desktop-giftPackageChina, .sprites-desktop-gplus_btn, .sprites-desktop-kaixin_btn, .sprites-desktop-pinit_btn, .sprites-desktop-plusone_btn, .sprites-desktop-seal, .sprites-desktop-small_i, .sprites-desktop-tweet_btn, .sprites-desktop-twitter_btn, .sprites-desktop-weiboo_btn {
+  background-image: url('/Content/Styles/generated_images/sprites-desktop-s6783407e58.png');
+  background-repeat: no-repeat;
+}
+
+.sprites-creditcards-sprite, .sprites-creditcards-alipay, .sprites-creditcards-americanexpress, .sprites-creditcards-americanexpress_big, .sprites-creditcards-cartebleue, .sprites-creditcards-cartebleue_big, .sprites-creditcards-cartebleuevisa_big, .sprites-creditcards-discover, .sprites-creditcards-discover_big, .sprites-creditcards-jcb, .sprites-creditcards-jcb_big, .sprites-creditcards-maestro, .sprites-creditcards-maestro_big, .sprites-creditcards-mastercard, .sprites-creditcards-mastercard_big, .sprites-creditcards-payease, .sprites-creditcards-paypal, .sprites-creditcards-paypal_big, .sprites-creditcards-postepay, .sprites-creditcards-postepay_big, .sprites-creditcards-visa, .sprites-creditcards-visa_big {
+  background-image: url('/Content/Styles/generated_images/sprites-creditcards-s9068ad9ed7.png');
+  background-repeat: no-repeat;
+}
+
+.sprites-desktop-checkMark {
+  background-position: 0 0;
+  height: 15px;
+  width: 15px;
+}
+
+.sprites-desktop-checkWhite {
+  background-position: 0 -15px;
+  height: 15px;
+  width: 15px;
+}
+
+.sprites-desktop-cinesina {
+  background-position: 0 -30px;
+  height: 91px;
+  width: 119px;
+}
+
+.sprites-desktop-fb_btn {
+  background-position: 0 -121px;
+  height: 20px;
+  width: 45px;
+}
+.sprites-desktop-fb_btn:hover, .sprites-desktop-fb_btn.fb_btn-hover {
+  background-position: 0 -141px;
+}
+
+.sprites-desktop-giftPackage {
+  background-position: 0 -161px;
+  height: 96px;
+  width: 112px;
+}
+
+.sprites-desktop-giftPackageChina {
+  background-position: 0 -257px;
+  height: 88px;
+  width: 74px;
+}
+
+.sprites-desktop-gplus_btn {
+  background-position: 0 -345px;
+  height: 20px;
+  width: 20px;
+}
+.sprites-desktop-gplus_btn:hover, .sprites-desktop-gplus_btn.gplus_btn-hover {
+  background-position: 0 -365px;
+}
+
+.sprites-desktop-kaixin_btn {
+  background-position: 0 -385px;
+  height: 19px;
+  width: 19px;
+}
+.sprites-desktop-kaixin_btn:hover, .sprites-desktop-kaixin_btn.kaixin_btn-hover {
+  background-position: 0 -404px;
+}
+
+.sprites-desktop-pinit_btn {
+  background-position: 0 -423px;
+  height: 20px;
+  width: 40px;
+}
+.sprites-desktop-pinit_btn:hover, .sprites-desktop-pinit_btn.pinit_btn-hover {
+  background-position: 0 -443px;
+}
+
+.sprites-desktop-plusone_btn {
+  background-position: 0 -463px;
+  height: 20px;
+  width: 32px;
+}
+.sprites-desktop-plusone_btn:hover, .sprites-desktop-plusone_btn.plusone_btn-hover {
+  background-position: 0 -483px;
+}
+
+.sprites-desktop-seal {
+  background-position: 0 -503px;
+  height: 54px;
+  width: 105px;
+}
+
+.sprites-desktop-small_i {
+  background-position: 0 -557px;
+  height: 16px;
+  width: 2px;
+}
+
+.sprites-desktop-tweet_btn {
+  background-position: 0 -573px;
+  height: 20px;
+  width: 59px;
+}
+.sprites-desktop-tweet_btn:hover, .sprites-desktop-tweet_btn.tweet_btn-hover {
+  background-position: 0 -593px;
+}
+
+.sprites-desktop-twitter_btn {
+  background-position: 0 -613px;
+  height: 20px;
+  width: 62px;
+}
+.sprites-desktop-twitter_btn:hover, .sprites-desktop-twitter_btn.twitter_btn-hover {
+  background-position: 0 -633px;
+}
+
+.sprites-desktop-weiboo_btn {
+  background-position: 0 -653px;
+  height: 19px;
+  width: 21px;
+}
+.sprites-desktop-weiboo_btn:hover, .sprites-desktop-weiboo_btn.weiboo_btn-hover {
+  background-position: 0 -672px;
+}
+
+.sprites-creditcards-alipay {
+  background-position: 0 0;
+  height: 30px;
+  width: 177px;
+}
+
+.sprites-creditcards-americanexpress {
+  background-position: 0 -30px;
+  height: 42px;
+  width: 57px;
+}
+
+.sprites-creditcards-americanexpress_big {
+  background-position: 0 -72px;
+  height: 70px;
+  width: 96px;
+}
+
+.sprites-creditcards-cartebleue {
+  background-position: 0 -142px;
+  height: 42px;
+  width: 57px;
+}
+
+.sprites-creditcards-cartebleue_big {
+  background-position: 0 -184px;
+  height: 70px;
+  width: 96px;
+}
+
+.sprites-creditcards-cartebleuevisa_big {
+  background-position: 0 -254px;
+  height: 70px;
+  width: 96px;
+}
+
+.sprites-creditcards-discover {
+  background-position: 0 -324px;
+  height: 42px;
+  width: 57px;
+}
+
+.sprites-creditcards-discover_big {
+  background-position: 0 -366px;
+  height: 70px;
+  width: 96px;
+}
+
+.sprites-creditcards-jcb {
+  background-position: 0 -436px;
+  height: 42px;
+  width: 57px;
+}
+
+.sprites-creditcards-jcb_big {
+  background-position: 0 -478px;
+  height: 70px;
+  width: 96px;
+}
+
+.sprites-creditcards-maestro {
+  background-position: 0 -548px;
+  height: 42px;
+  width: 57px;
+}
+
+.sprites-creditcards-maestro_big {
+  background-position: 0 -590px;
+  height: 70px;
+  width: 96px;
+}
+
+.sprites-creditcards-mastercard {
+  background-position: 0 -660px;
+  height: 42px;
+  width: 57px;
+}
+
+.sprites-creditcards-mastercard_big {
+  background-position: 0 -702px;
+  height: 70px;
+  width: 96px;
+}
+
+.sprites-creditcards-payease {
+  background-position: 0 -772px;
+  height: 30px;
+  width: 100px;
+}
+
+.sprites-creditcards-paypal {
+  background-position: 0 -802px;
+  height: 42px;
+  width: 57px;
+}
+
+.sprites-creditcards-paypal_big {
+  background-position: 0 -844px;
+  height: 70px;
+  width: 96px;
+}
+
+.sprites-creditcards-postepay {
+  background-position: 0 -914px;
+  height: 42px;
+  width: 57px;
+}
+
+.sprites-creditcards-postepay_big {
+  background-position: 0 -956px;
+  height: 70px;
+  width: 96px;
+}
+
+.sprites-creditcards-visa {
+  background-position: 0 -1026px;
+  height: 42px;
+  width: 57px;
+}
+
+.sprites-creditcards-visa_big {
+  background-position: 0 -1068px;
+  height: 70px;
+  width: 96px;
+}
+
+#top-header {
+  margin-top: 30px;
+}
+#top-header h2, #top-header h4 {
+  text-align: center;
+}
+#top-header h4 {
+  width: 50%;
+  margin: 0 auto;
+}
+
+section {
+  display: block;
+}
+
+#video-main {
+  height: 540px;
+  margin-top: 20px;
+}
+#video-main img {
+  margin: 0 auto;
+  display: block;
+  cursor: pointer;
+}
+
+#filters {
+  border-top: 1px solid #CCC;
+  height: 50px;
+}
+#filters .filters-container {
+  height: 50px;
+}
+#filters .filters-container li {
+  float: left;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 4px 10px;
+  text-align: center;
+  font-size: 1.6em;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: #666;
+  margin: 18px 0;
+}
+#filters .filters-container li:hover, #filters .filters-container li .selected {
+  background-color: #666;
+  color: #FFF;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+}
+
+#grid {
+  height: 200px;
+  background-color: #ffcc66;
+}
+
+#view-more {
+  border-top: 1px solid #CCC;
+  border-bottom: 1px solid #CCC;
+  height: 50px;
+  text-align: right;
+}
+#view-more .label_more, #view-more .moreWrapper .label_top {
+  display: block;
+  line-height: 50px;
+  font-size: 1.8em;
+  background-color: #EBEBEB;
+  padding-left: 20px;
+  padding-right: 20px;
+  cursor: pointer;
+  float: right;
+  color: #666;
+}
+#view-more .label_more svg {
+  padding-left: 15px;
+}
+
+#manifesto {
+  padding-top: 20px;
+  padding-bottom: 70px;
+}
+#manifesto aside h2 {
+  color: #666;
+  padding-bottom: 20px;
+}
+#manifesto aside .claims {
+  border-right: 1px solid #CCC;
+  color: #666;
+}
+#manifesto aside .claims .claim1 {
+  font-size: 2.0em;
+  padding-bottom: 100px;
+  display: block;
+}
+#manifesto aside .claims .claim2 {
+  font-size: 1.8em;
+}
+#manifesto .description {
+  padding-top: 62px;
+  font-size: 1.8em;
+}
+#manifesto .description em {
+  font-style: italic;
+}

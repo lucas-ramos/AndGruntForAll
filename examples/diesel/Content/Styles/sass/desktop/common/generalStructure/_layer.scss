@@ -1,0 +1,146 @@
+@import "desktop/partials/layer/promo";
+@import "desktop/partials/layer/cookie";
+@import "desktop/partials/layer/cyc";
+@import "desktop/partials/layer/user";
+@import "desktop/partials/layer/help";
+@import "desktop/partials/layer/search";
+
+/*
+* SPECIFICHE COMMON LAYER
+*/
+
+.layerWrapper {  
+    position:relative; 
+    &.layerOpen{
+        border-top: 4px solid;
+        clear:both;
+        //position:relative;
+        z-index: $z-index-layer;
+        .icon-close {                
+            &.top{ display: none; }  
+            &.bottom { 
+                display: block;
+                margin: 7px auto;
+            }
+        }
+    }
+    .layer{
+        height: 0px;
+        overflow:hidden;
+        * { z-index: $z-index-layer; }
+    } 
+}
+
+#overlay .icon{
+    display: none;
+}
+
+.container {
+    z-index:$z-index-headerElement; 
+    position: relative;
+}
+.ie9 #pushContainer.menuOpen {
+    margin-left:90%;
+}
+
+@media #{$mediaQueryDesktopCommon}{
+    
+    .layerWrapper {   
+        &.layerOpen{
+            .icon-close {
+                &.top{
+                    position: absolute;
+                    display: block;
+                    right: 20px;
+                    top: 20px;
+                }
+            }
+        }
+    }
+
+    #overlay{
+        &.visible{ 
+            display:block;
+            position: fixed;
+            left: 0;
+            top: 73px;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); //NO OPACITY !!
+            // -> altrimenti la x su tablet prende l'opacity e si schiarisce
+            z-index: $z-index-overlayer;
+            &.navBarScrolling{
+                top: 50px;
+            }
+        }
+    }   
+    .layerWrapper {   
+        &.layerOpen{
+            border-bottom: 1px solid $light-gray-border;
+        }
+    }
+    .layerWrapper.over{
+        position:relative;
+        top: 50px; 
+        left:0;
+        width:100%;       
+        overflow: hidden;
+        #cartWrapperLayer {
+            .emptyCart{
+                height: 100%;
+                background:green;
+            }
+            .miniCart{
+                position:absolute;
+                width: 100%;
+                height:400px;
+                background:$white;
+                z-index: $z-index-minicart;
+            }
+        }
+        #home &, #subhome &{   // nei casi in cui è fixed
+            top: 100px;
+        }
+    }
+}
+
+@media #{$mediaQueryDesktop}{
+    #overlay.visible{ top: 33px; }
+    .layerWrapper.over{
+        top: 0px;
+        #home &, #subhome &{   // nei casi in cui è fixed
+            top: 51px;
+        } 
+    }
+}
+
+//in funzione alle richieste del partner i layer solo in mobile si aprono sotto al logo senza spingere il contenuto del body
+//per ora ho separato questa parte di codice in attesa di direttive supreme
+@media #{$mediaQueryMobile}{
+    .layerWrapper {
+        position: absolute;
+        top: 65px;
+        width:100%;
+        
+		&.fixedLayer {
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;			
+			position: fixed;
+			overflow:hidden;			
+		}
+        &.layerOpen {
+            border-top: none medium;
+            z-index: $zoomImage;
+            .icon-close {
+                &.top{
+                    position: absolute;
+                    display: block;
+                    right: 10px;
+                    top: 10px;
+                }
+            }
+        }
+    }
+}

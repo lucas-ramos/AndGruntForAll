@@ -1,0 +1,46 @@
+// ===========================================================
+// MAIN SITE FILE, INCLUDED IN EVERY PAGE OF ECOMMERCE SECTION 
+// ===========================================================
+
+// Compass
+
+
+
+// Vendor elements
+@import "Vendor/reset";
+@import "Vendor/magnific";
+
+
+
+// Commons
+@import "variables";
+@import "fonts";
+@import "Smartphone/callToActions";
+@import "Smartphone/menus"; // vengono fatte delle extend, non si può portare in Site
+
+
+// Libraries
+@import "Smartphone/Partials/sprites";
+@import "Smartphone/Partials/susyClasses";
+@import "Smartphone/Vendor/svgzr/sprites-svg";
+
+
+
+// Site.scss-only partials
+@import "Site/helpers";
+@import "Smartphone/Partials/Site/thecorner";
+@import "Smartphone/Partials/Site/prices";
+@import "Smartphone/Partials/Site/back";
+@import "Smartphone/Partials/Site/loading";
+@import "Smartphone/Partials/Site/forms";
+@import "Smartphone/Partials/Site/magnificPopup";
+
+
+
+// Sections
+@import "Smartphone/Partials/Site/header";
+@import "Smartphone/Partials/Site/footer";
+
+
+// Specific pages
+@import "Smartphone/Pages/404";

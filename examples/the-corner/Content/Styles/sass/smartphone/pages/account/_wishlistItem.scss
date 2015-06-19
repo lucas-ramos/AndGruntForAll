@@ -1,0 +1,109 @@
+// =============
+// WISHLIST SINGLE ITEM
+// =============
+
+.wishlistItem {
+	padding: 20px;
+	border-top: 5px solid $color-extra;
+
+	&:first-child {
+		border: none;
+	}
+
+	&.soldout {
+		opacity: 0.5;
+
+		.color, .size {
+			display: none;
+		}
+	}
+
+	.microCategory, .wishListInsertedDate, .size, .color {
+		display: block;
+	}
+	.wishListInsertedDate {
+		display: none;
+	}
+	.inner {
+		@include pie-clearfix;
+	}
+	.item {
+		float: left;
+	}
+
+	.image {
+		display: block;
+		
+	}
+
+	.info {
+		float: left;
+		font-size: $size-medium-rem;
+		margin: 0.5em;
+
+		.brandName, .microCategory, .discounted {
+			@extend %knockout-bold;
+			font-size: $size-large-rem;
+		}
+
+		.color, .size {
+			@extend %plain;
+			font-size: $size-smaller-rem;
+
+			.classFamily {
+				margin: 0 0 0 2%;
+			}
+		}	
+
+		.soldoutFakeButton {
+			margin: 5% 0 0;
+		}
+
+
+		.full {
+			color: $color-medium;
+			margin: 0 5px 0 0;
+		}
+	}
+
+	.actions {
+		margin: 10px 0;
+		@include pie-clearfix;
+
+		.addToCart {
+			margin: 10px 0  0;
+
+			.JP & {
+				font-size: $size-midlarge-rem;
+			}
+		}
+
+		.soldoutFakeButton {
+			margin: 10px 0  0;
+		}
+
+		.RU &, .JP & {
+			font-size: 0.8em;
+		}
+	}
+
+	.info {
+		.label {
+			@include appendColon;
+			margin-right: 5px;
+		}
+	}
+
+	.removeItemFromWishList {
+		@extend .secondary;
+		float: left;
+	}
+
+	.addItem {
+		@extend .primary;
+	}
+
+	.addItem {
+		float: right;
+	}
+}

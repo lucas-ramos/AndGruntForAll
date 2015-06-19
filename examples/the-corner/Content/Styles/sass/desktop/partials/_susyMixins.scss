@@ -1,0 +1,57 @@
+// =====
+// SUSY GRIDS MIXINS
+// =====
+
+// Usage: @import this partial only if you need to @include the "column"s or the "omega" mixins.
+// Otherwise, just @import _susyClasses.scss
+
+// If possible, prefer @extend-ing classes over @include-ing mixins
+
+@import "Desktop/Vendor/susy";
+
+$omega-float: $from-direction ;
+
+
+// DO NOT USE THESE. EVER.
+@mixin ___column_gen($i) {
+	@include span-columns($i);
+}
+
+@mixin ___prefix_gen($i){
+	@include prefix($i);
+}
+
+@mixin  ___omega_gen {
+	margin-right: 0 !important;
+}
+
+
+// USE THESE ONLY IF STRICTLY NECESSARY.
+// IF NOT STRICTLY NECESSARY, USE CLASSES (susyClasses.scss)
+// BY EXTENDING THEM OR DIRECTLY USING THEM IN DOM
+@mixin column-1 { @include ___column_gen(1); }
+@mixin column-2 { @include ___column_gen(2); }
+@mixin column-3 { @include ___column_gen(3); }
+@mixin column-4 { @include ___column_gen(4); }
+@mixin column-5 { @include ___column_gen(5); }
+@mixin column-6 { @include ___column_gen(6); }
+@mixin column-7 { @include ___column_gen(7); }
+@mixin column-8 { @include ___column_gen(8); }
+@mixin column-9 { @include ___column_gen(9); }
+@mixin column-10 { @include ___column_gen(10); }
+@mixin column-11 { @include ___column_gen(11); }
+@mixin column-12 { @include ___column_gen(12); }
+
+@mixin prefix-1 { @include ___prefix_gen(1); }
+@mixin prefix-2 { @include ___prefix_gen(2); }
+@mixin prefix-3 { @include ___prefix_gen(3); }
+@mixin prefix-4 { @include ___prefix_gen(4); }
+@mixin prefix-5 { @include ___prefix_gen(5); }
+@mixin prefix-6 { @include ___prefix_gen(6); }
+@mixin prefix-7 { @include ___prefix_gen(7); }
+@mixin prefix-8 { @include ___prefix_gen(8); }
+@mixin prefix-9 { @include ___prefix_gen(9); }
+@mixin prefix-10 { @include ___prefix_gen(10); }
+@mixin prefix-11 { @include ___prefix_gen(11); }
+
+@mixin omega-margin { @include ___omega_gen; }

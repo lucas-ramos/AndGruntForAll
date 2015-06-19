@@ -1,0 +1,15 @@
+﻿// ===========================================================
+// SPRITES PARTIAL
+// ===========================================================
+
+// ---------- !!! ---------- //
+// IMPORTANT DISCLAIMER:
+// DO NOT @import THIS PARTIAL IN OTHER PARTIALS.
+// Use it always on the first .scss parent that will have his generated .css (such as: home, site, etc)
+// ---------- !!! ---------- //
+
+
+@import "sprites-creditcards/*.png";
+@import "sprites-smartphone/*.png";
+@include all-sprites-creditcards-sprites(true);
+@include all-sprites-smartphone-sprites(true);

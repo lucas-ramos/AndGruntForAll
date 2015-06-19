@@ -1,0 +1,225 @@
+$section: "footer";
+
+// NEWSLETTER LAYER
+
+.uiLayer-newsletterLink {
+	.mfp-content {
+	  width: 300px;
+	  top: 40px;
+		vertical-align: top;
+    .inner{
+      padding: 0;
+      text-align: center;
+      .newsletterForm{
+        form{
+          padding-top: 30px;
+          h2{
+            @include H2Style($section);
+            height: 50px;
+            line-height: 55px;
+            border-bottom: 1px solid $greyDiesel;
+            margin: 0;
+            .ru &{
+              font-size: 12px;
+            }
+          }
+          .description{
+            @include bodyStyle($section);
+            margin: 30px auto;
+            width: 70%;
+          }
+          #NewsletterViewModel_Email_Wrapper{
+            width: 90%;
+            margin: 0 auto;
+            .iOs &{
+              input{
+                width: 90%; //fix iOs
+              }
+              .field-validation-error{
+                margin-left: 15px;
+              }
+            }
+          }
+          #NewsletterViewModel_Gender_Wrapper{
+            margin: 15px auto 20px auto;
+            width: 100%;
+            @include microClearfix;
+            .fieldLabel{
+              @include bodyStyle($section);
+              text-transform: uppercase;
+              margin-bottom: 15px;
+            }
+            .fieldValue{
+              width: 80%;
+              margin: 0 auto;
+              .radioButtonBox{
+                width: 50%;
+                display: inline-block;
+                float: left;
+                padding-top: 5px;
+                label{
+                  @include H3Style($section);
+                  width: 80%;
+                  float: left;
+                  text-align: center;
+                  line-height: 22px;
+                }
+              }
+            }
+          }
+          .disclaimer{
+            @include bodyStyle($section);
+            width: 80%;
+            margin: 0 auto 20px auto;
+            a{
+              color: $black;
+              text-decoration: underline;
+            }
+          }
+          .buttonsRow{
+            padding-bottom: 40px;
+            button.submit{
+              width: 90%;
+              height: 36px;
+              float:none;
+              @include button(false, $blackDiesel, $white, $blackDiesel, $white);
+              box-sizing: border-box;
+              @include H3Style($section);
+            }
+          }
+        }
+      }
+      #subscribeNewsletterSuccess{
+        height: 350px;
+        padding-top: 100px;
+        h2{
+          @include H2Style($section);
+          padding: 10px;
+        }
+        p{
+          padding: 10px;
+        }
+        .validation-summary-errors, p{
+          @include bodyStyle($section);
+        }
+      }
+      button.mfp-close{ // sovrascrittura perchè su mobile la x era incliccabile
+        background-size: 20px 20px;
+        background-position: 10px;
+        height: 40px;
+        width: 40px;
+        right: 15px;
+      }
+    }
+	}
+}
+
+@media #{$mediaQueryDesktopCommon} {
+  .uiLayer-newsletterLink {
+    .mfp-content {
+      .inner{
+        .newsletterForm{
+          form{
+            padding-top: 0px;
+            h2{
+              @include H3Style($section);
+              padding-top: 0px;
+              .ru & {
+                font-size: 20px;
+              }
+            }
+            #NewsletterViewModel_Email_Wrapper{
+              width: 60%;
+              .iOs & {
+                input{
+                  width: 100%;
+                }
+                .field-validation-error{
+                  margin-left: 0px;
+                }
+              }
+            }
+            #NewsletterViewModel_Gender_Wrapper{
+              width: 60%;
+              margin: 15px auto;
+              @include microClearfix;
+              .fieldLabel{
+                float: left;
+                display: inline-block;
+                width: 30%;
+                text-align: left;
+                @include H7Style($section);
+                color: $blackDiesel;
+                line-height: 22px;
+                margin: 5px 0 0 0 ;
+              }
+              .fieldValue{
+                width: 100%;
+                .radioButtonBox{
+                  width: 30%;
+                  margin-left: 5%;
+                  text-align: right;
+                  label{
+                    text-align: left;
+                    margin-left: 10px;
+                    width: 70%;
+                  }
+                }
+              }
+            }
+            .disclaimer{
+              width: 70%;
+            }
+            .buttonsRow{
+              button.submit{
+                width: 60%;
+              }
+            }
+          }
+        }
+        button.mfp-close{ // sovrascrittura perchè su mobile la x era incliccabile
+          height: 20px;
+          width: 20px;
+          background-position: 0px;
+          right: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media #{$mediaQueryTablet} {
+  .uiLayer-newsletterLink {
+    .mfp-content {
+      width: 605px;
+      top: 210px;
+    }
+  }
+}
+
+@media #{$mediaQueryDesktop} {
+  .uiLayer-newsletterLink {
+    .mfp-content {
+      width: 650px;
+      top: 170px;
+      .inner{
+        .newsletterForm{
+          h2{
+            font-size: 20px;
+          }
+          .fieldValue{
+            label{
+              text-align: center;
+            }
+          }
+          #NewsletterViewModel_Gender_Wrapper{
+            margin: 15px auto;
+          }
+          button{
+            height: 40px;
+          }
+        }
+      }
+    }
+  }
+}

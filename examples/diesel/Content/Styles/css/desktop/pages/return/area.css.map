@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": ";;;;;;;;;;;AAgRA;sBAAc;EA1Bb,KAAQ,EAAE,CAAC;EACT,MAAS,EAAE,CAAC;EACZ,QAAW,EAAE,QAAQ;EACrB,OAAU,EAAE,KAAK;EACjB,MAAS,EAAE,MAAM;EAelB,WAAW,EAAE,sBAAuB;EACpC,YAAY,EAAE,sBAAuB;EACrC,UAAU,EAAE,eAAkB",
+"sources": ["../../../../sass/desktop/common/_mixins.scss"],
+"names": [],
+"file": "area.css"
+}

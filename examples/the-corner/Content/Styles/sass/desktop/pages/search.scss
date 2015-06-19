@@ -1,0 +1,42 @@
+﻿// =========================
+// SEARCH RESULT PAGE STYLES
+// =========================
+@import "compass/css3";
+
+@import "variables";
+@import "fonts";
+@import "Desktop/callToActions";
+
+@import "Desktop/Partials/susyClasses";
+
+@import "Desktop/vendor/svgzr/sprites-svg";
+
+.svg-circle-logo {
+	@extend %svg-circle-logo;
+}
+
+// TOP BANNERS
+@import "Desktop/Partials/search/bannersOnTop";
+
+// TOP REFINEMENTS
+@import "Desktop/Partials/search/topBar";
+
+// LEFT REFINEMENTS
+@import "Desktop/Partials/search/leftFilters";
+
+// CENTRAL AREA
+#topPaginationWrap, #middleSectionWrap, #bottomPaginationWrap {
+	@include pie-clearfix;
+}
+
+// CENTRAL PAGINATION BARS
+@import "Desktop/Partials/search/centralPaginations";
+
+// ITEMS IN SEARCH RESULT
+@import "Desktop/Partials/search/centralItems";
+
+// COURTESY SECTION FOR ITEMS NOT FOUND
+@import "Desktop/Partials/search/centralCourtesy";
+
+// EMPTY SEARCH RESULT
+@import "Desktop/Partials/search/emptySearch";

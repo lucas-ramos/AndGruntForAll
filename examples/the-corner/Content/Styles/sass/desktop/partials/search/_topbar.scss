@@ -1,0 +1,151 @@
+﻿$topbar-height: $prettyselect-select-height;
+
+%rounded-buttons {
+	display: inline;
+	padding: 3px 15px;
+	margin: 2px;
+	border-radius: 35px;
+	background-color: $color-ultra;
+	color: $color-dark;
+	cursor: pointer;
+
+	&.selected {
+		background-color: $color-dark;
+		color: $color-ultra;
+	}
+}
+
+#topbar {
+	line-height: $topbar-height;
+	border-width: 1px 0;
+	border-style: solid;
+	border-color: $color-ultra;
+	text-transform: uppercase;
+
+	.RU & {
+		font-size: 0.9em;  //Gio: proportioning, not a font redefinition
+	}
+}
+
+/*
+	Disattivo la select se ho uno o zero elementi
+*/
+#selectSeasonWrap {
+	// casi in "forse", lasciarli commentati per ora, da valutare dopo modifica F31 (http://bugtracker/view.php?id=182328)
+	.prettyselect-wrap[data-prettyselect-elements='1'],
+	//.prettyselect-wrap[data-prettyselect-elements='2'],
+	.prettyselect-wrap[data-prettyselect-elements='0']
+	{
+		cursor: text;
+
+		.prettyselect-label {
+			$margin: 9px;
+			$height: $topbar-height - ($margin*2);
+
+			pointer-events: none; //Gio: not ie8 compliant, just sayin'
+			background-color: $white;
+			background-image: none;
+			cursor: text;
+
+			font-size: $size-medium;
+			border-right: 1px solid $color-ultra;
+
+			height: $height;
+			margin: ($margin - 1px) 0 ($margin + 1px); //font centering reasons
+			line-height: $height + 1px; //font centering reasons
+		}
+
+		.prettyselect-drop {
+			display: none;
+		}
+	}
+}
+
+#orderByWrap  {
+	.fieldRow {
+		margin-bottom: 0;
+		min-height: 0px;
+	}
+
+	.prettyselect-drop {
+
+		.ES & {
+			font-size: $size-small;
+		}
+
+		.RU & {
+			font-size: $size-mini; //this is what you get for having a huge copy
+
+			li {
+				padding: 0 8px;
+			}
+		}
+		.JP & {
+			font-size: $size-small;
+		}
+	}
+}
+
+#itemCountWrap, #itemsPerPageWrap {
+	float: left;
+	font-size: $size-medium;
+
+	div {
+		display: inline;
+	}
+}
+
+#itemCountWrap {
+	min-width: 94px;
+	margin-right: 10px;
+
+	.totalResultsCount {
+		@extend %knockout-bold;
+	}
+}
+
+#itemsPerPageWrap {
+	ul, li {
+		display: inline;
+	}
+
+	.listTitle {
+		display: none;
+	}
+
+	li {
+		@extend %rounded-buttons;
+
+		&.selected {
+			a {
+				color: $color-ultra;
+			}
+		}
+	}
+}
+
+#imgTypeWrap {
+	font-size: $size-medium;
+	height: $topbar-height;
+
+	[data-dept="tcnewarrivalsm"] &, [data-dept="tcnewarrivalsw"] &, &.invisible {
+		visibility: hidden;
+	}
+
+	.JP & {
+		font-size: $size-small;
+	}
+
+	.miniTitle {
+		@include appendColon;
+		margin-right: 2px;
+	}
+
+	.imgTypeBtn {
+		@extend %rounded-buttons;
+	}
+}
+
+li[data-value="Ranking"] {
+	display: none;
+}

@@ -1,0 +1,23 @@
+// =========================
+// RETURN AREA SHARED STYLES
+// =========================
+
+@import "desktop/common/variables";
+@import "desktop/common/mixins";	
+
+/*CALL PARTIAL*/
+#searchorder main {
+	@import "searchorder";
+}
+
+#selection {
+	@import "selection";
+}
+
+#refund {
+	@import "refund";
+}
+
+#thankspage {
+	@import "thankspage";
+}

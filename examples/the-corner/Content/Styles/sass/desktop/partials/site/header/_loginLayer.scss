@@ -1,0 +1,77 @@
+// loginLayer
+// ------
+
+#headerLoginLayer {
+	.loginContent {
+		border-right: 2px solid $color-extra;
+		height: 140px;
+
+		h3 {
+			margin-bottom: 22px;
+		}
+		.loginLayerTitle {
+		   font-size: $size-huge;
+			margin-bottom: 22px;
+		}
+		.loginLayerDescription {
+			display: none;
+		}
+	}
+
+	.loginForm {
+		@extend .column-8; @extend .omega;
+		position: relative;
+
+		min-height: $form-input-height + 40px;
+	}
+
+	[data-ytos-input-container] {
+		@extend .column-3;
+
+		.fieldLabel {
+			display: none; //since we need the internal placeholder
+		}
+	}
+
+	.buttonsRow { //maybe it's too generic?
+		@extend .column-2;
+		@extend .omega;
+
+		button {
+			font-size: $size-super;
+			@extend .column-2;
+			@extend .omega;
+			@extend button.primary;
+		}
+	}
+
+	.registrationContent{
+		margin-left: 11px;
+	}
+
+	.registerButton {
+		font-size: $size-super;
+		text-transform: uppercase;
+		line-height: 40px;
+		margin-top: 10px;
+
+		&, a, .icon {
+			float: left;
+		}
+
+		.icon {
+			@extend %svg-arrow-circle-big-right;
+		}
+
+		.text {
+			margin-left: 10px;
+
+			.RU & {
+				font-size: 0.7em;
+			}
+		}
+	}
+}
+#loginSuccessfullMessage {
+	display: none;
+}

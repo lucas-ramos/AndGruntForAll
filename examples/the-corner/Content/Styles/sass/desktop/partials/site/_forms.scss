@@ -1,0 +1,220 @@
+// =====
+// FORMS
+// =====
+
+
+
+
+@import "forms/prettyselect";
+@import "Desktop/vendor/svgzr/sprites-checkbox-svg";
+@import "Desktop/vendor/svgzr/sprites-checkbox-fallback";
+@import "Desktop/vendor/svgzr/sprites-radiobutton-svg";
+@import "Desktop/vendor/svgzr/sprites-radiobutton-fallback";
+
+
+
+.fieldRow {
+	margin-bottom: $input-margin-bottom;
+	min-height: $form-input-height + ($form-input-border * 2) + $input-label-min-height;
+	&.label {
+		.labelFieldValue {
+			font-size: $size-large;
+			height: $form-input-height + 2px;
+			line-height: $form-input-height + 2px;
+		}
+	}
+}
+
+.fieldValue {
+	position: relative;
+}
+
+.fieldLabel {
+	line-height: $size-medium;
+	font-size: $size-medium;
+}
+
+.field-validation-container {
+	position:relative;
+}
+
+.field-validation-error {
+	color: $red;
+	font-size: $size-medium;
+	margin-top: 2px;
+}
+
+textarea {
+	width: 100%;
+	outline: none;
+	resize: none;
+	height: 100px;
+	padding: {
+		left: 0;
+		right: 0;
+	}
+}
+
+
+
+input {
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+input:-webkit-autofill {
+	-webkit-box-shadow: 0 0 0px 1000px $white inset;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+	@extend %knockout;
+	position: relative; //?
+	width: 100%;
+	border: 1px solid $color-extra;
+	font-size: $size-grand;
+	color: $color-medium;
+	background-color: $white;
+	outline: none;
+	-webkit-border-radius: none;
+
+	$input-padding: ($form-input-height - $input-cursor-height)/2;
+
+	padding-bottom: $input-padding;
+	padding-top: $input-padding;
+	height: $input-cursor-height;
+	line-height: $input-cursor-height;
+	text-indent: 5px;
+	@include border-radius(0px);
+}
+
+select {
+	height: 40px; //visible only on tablets, and only in checkout
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="password"] {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	* [data-ytos-zipcodejp].valid & {
+
+	}
+	//Icone validazione campi
+	* [data-ytos-zipcodejp].invalid ~ &, &.invalid {
+		//small
+//		background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNS4wLjIsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4yIg0KCSB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBoZWlnaHQ9IjI4cHgiIHdpZHRoPSIyOHB4Ig0KCSB2aWV3Qm94PSIwIDcwIDU1MCA0MDAiPg0KPGcgZmlsbD0iIzAwMCI+DQogICAgPHBhdGggZmlsbD0iIzkwMDAwMCIgZD0iTTAsMHYzNTBoMzUwVjBIMHogTTI0MC4xNzMsMjc0LjYzN2wtNjQuMTcxLTY0LjE2OGwtNjQuMTcxLDY0LjE3NmwtMzQuNDY3LTM0LjQ4OGw2NC4xNTUtNjQuMTY0bC02NC4xNjQtNjQuMTYgbDM0LjQ4OC0zNC40NjdsNjQuMTU0LDY0LjE0NWw2NC4xNDQtNjQuMTU0bDM0LjQ5NSwzNC40NzNsLTY0LjE1NCw2NC4xNmw2NC4xNjIsNjQuMTUxTDI0MC4xNzMsMjc0LjYzN3oiLz4NCjwvZz4NCjwvc3ZnPg==);
+				@extend %svg-input-invalid;
+				width: 100%;
+				height: $input-cursor-height;
+
+		//large, NECESSITA' FUTURA
+		//background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjIiIGhlaWdodD0iMjhweCIgd2lkdGg9IjI4cHgiIHZpZXdCb3g9IjAgMCAzNTAgMzUwIj4NCjxnIGZpbGw9IiM5MDAiPg0KICAgIDxwYXRoIGQ9Ik0wLDB2MzUwaDM1MFYwSDB6IE0yNDAuMTczLDI3NC42MzdsLTY0LjE3MS02NC4xNjhsLTY0LjE3MSw2NC4xNzZsLTM0LjQ2Ny0zNC40ODhsNjQuMTU1LTY0LjE2NGwtNjQuMTY0LTY0LjE2IGwzNC40ODgtMzQuNDY3bDY0LjE1NCw2NC4xNDVsNjQuMTQ0LTY0LjE1NGwzNC40OTUsMzQuNDczbC02NC4xNTQsNjQuMTZsNjQuMTYyLDY0LjE1MUwyNDAuMTczLDI3NC42Mzd6Ii8+DQo8L2c+DQo8L3N2Zz4=);
+	}
+
+	* [data-ytos-zipcodejp].valid ~ &, &.valid {
+		//small
+//		background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNS4wLjIsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4yIg0KCSB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBoZWlnaHQ9IjI4cHgiIHdpZHRoPSIyOHB4Ig0KCSB2aWV3Qm94PSIwIDcwIDU1MCA0MDAiPg0KPGcgZmlsbD0iIzAwMCI+DQogICAgPHBhdGggZmlsbD0iIzAwMCIgZD0iTTAsMHYzNTBoMzUwVjBIMHogTTE0Ni4zODMsMjY0LjAxNGwtODEuNDc2LTgxLjQ5OGwzNC42OS0zNC42OTdsNDYuNzgyLDQ2Ljc5M0wyNTQuMzg3LDg2LjYwNyBsMzQuNzA2LDM0LjY4NEwxNDYuMzgzLDI2NC4wMTR6Ij48L3BhdGg+DQo8L2c+DQo8L3N2Zz4=);
+		@extend %svg-input-valid;
+		width: 100%;
+		height: $input-cursor-height;
+
+		//large, NECESSITA' FUTURA
+		//background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjIiIGhlaWdodD0iMjhweCIgd2lkdGg9IjI4cHgiIHZpZXdCb3g9IjAgMCAzNTAgMzUwIj4NCjxnIGZpbGw9IiMwMDAiPg0KICAgIDxwYXRoIGQ9Ik0wLDB2MzUwaDM1MFYwSDB6IE0xNDYuMzgzLDI2NC4wMTRsLTgxLjQ3Ni04MS40OThsMzQuNjktMzQuNjk3bDQ2Ljc4Miw0Ni43OTNMMjU0LjM4Nyw4Ni42MDcgbDM0LjcwNiwzNC42ODRMMTQ2LjM4MywyNjQuMDE0eiIvPg0KPC9nPg0KPC9zdmc+);
+	}
+
+	* [data-ytos-zipcodejp].invalid ~ &, * [data-ytos-zipcodejp].valid ~ &, &.valid, &.invalid {
+		background-repeat: no-repeat;
+		// compatibilita' con ie8
+		html.ielt9 & {
+			width: 100%;
+			background: none;
+			height: $input-cursor-height;
+		}
+		//small
+		background-position: right 10px;
+
+		//large, NECESSITA' FUTURA
+		//background-position: right;
+	}
+}
+
+
+// Campi obbligatori
+.mandatory {
+	color: $color-light;
+	margin: 5px 0 10px 0;
+	font-size: 10px;
+}
+
+//Errori serverside
+.serverSideErrors  {
+	color: $red;
+	font-size: $size-medium;
+}
+
+
+
+.checkBox {
+
+	position: relative;
+	display: block;
+
+	input[type="checkbox"] {
+
+		width: $form-checkbox-width;
+		height: $form-checkbox-height;
+		opacity: 0; //non supportata su ie8, quindi autofallback (non modificare)
+		@include zindex(input);
+		cursor: pointer;
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		& ~ .checkboxIcon {
+			@extend %svg-checkbox-21x21-unchecked;
+			display: block;
+		}
+
+		&:checked ~ .checkboxIcon {
+			@extend %svg-checkbox-21x21-checked;
+			display: block;
+		}
+
+	}
+}
+
+.radioButton {
+	position: relative;
+	display: block;
+
+	input[type="radio"] {
+
+		width: 17px;
+		height: 17px;
+		opacity: 0; //non supportata su ie8, quindi autofallback (non modificare)
+		@include zindex(input);
+		cursor: pointer;
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		& ~ .radioIcon {
+			@extend %svg-radio-unchecked;
+			display: block;
+		}
+
+		&:checked ~ .radioIcon {
+			@extend %svg-radio-checked;
+			display: block;
+		}
+	}
+
+}

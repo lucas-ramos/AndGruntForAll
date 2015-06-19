@@ -1,0 +1,115 @@
+/* ==========================================================================
+   CALL TO ACTIONS
+   Use with:
+
+	@extend button				(extends button rules)
+	@extend .secondary			(extends .secondary rules)
+	@extend button.secondary	(extends .secondary rules, not button's)
+	@extend .ugly-button		(extends .ugly-button rules)
+
+	NOTE: THESE ARE CLASSES.
+	THEY WILL BE REPLICATED FOR EACH TIME THEY'RE INCLUDED.
+	Include this only when is necessary.
+	Include this in scss PARENTS ONLY.
+
+	========================================================================== */
+// Generic button, can be used both with <button/> and <a class="button"/>
+
+// THESE ARE USED ONLY FOR BUTTON GEN
+// DO NOT USE THESE (except evaluated exception)
+@mixin __buttonGen($isClassButton: false) {
+	border-style: solid;
+	border-width: 1px;
+	cursor: pointer;
+	display: block;
+	font-size: $size-medium;
+	@extend %knockout;
+	@include transition(all 0.2s ease);
+	outline: none;
+	text-align: center;
+	text-transform: uppercase;
+	padding: {
+		left: 15px;
+		right: 15px;
+	}
+
+	@if $isClassButton == false {
+		height: $button-height;
+	} @else {
+		line-height: $button-height;
+		height: $button-height - 2;
+	}
+}
+
+@mixin __primaryGen {
+	background-color: $black;
+	color: $white;
+	border-color: $black;
+
+	&:hover {
+		background-color: $color-light;
+		border-color: $color-light;
+	}
+}
+
+@mixin __secondaryGen {
+	background-color: $color-ultra;
+	color: $color-dark;
+	border-color: $color-extra;
+
+	&:hover {
+		background-color: $white;
+	}
+}
+
+@mixin __tertiaryGen {
+	// queste sono le action scritte in testo sottolineato
+	background: none;
+	border: 0;
+	height: auto;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	text-transform: none;
+	text-decoration: underline;
+}
+
+@mixin __disabledGen {
+	background-color: $white;
+	color: $color-ultra;
+	border-color: $color-ultra;
+	cursor: default;
+
+	&:hover {
+		background-color: $white;
+		border-color: $color-ultra;
+	}
+}
+
+button {
+	@include __buttonGen($isClassButton: false);
+}
+
+.button {
+	@include __buttonGen($isClassButton: true);
+}
+
+button, .button {
+	
+	&.primary {
+		@include __primaryGen;
+	}
+
+	&.secondary {
+		@include __secondaryGen;
+	}
+
+	&.tertiary {
+		@include __tertiaryGen;
+	}
+
+	&.disabled, &[disabled] {
+		@include __disabledGen;
+	}
+}
+

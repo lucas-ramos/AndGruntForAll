@@ -1,0 +1,133 @@
+// =====================
+// MY ORDERS PAGE STYLES
+// =====================
+
+.main p {
+	color: $color-medium; 
+	font-size: $size-medium; 
+	display: block;
+}
+
+// SEARCH ORDERS FORM
+// -----------------------------------
+
+#orderSearchWrapper {
+	@extend .column-6;
+	margin-bottom: 30px;
+	position: relative;
+
+	.title {
+		color: $color-light;
+		font-size: $size-medium;
+		padding-bottom: 10px;
+		display: block;
+	}
+
+	input {
+		background-color: $color-ultra; 
+	}
+
+	.search-icon {
+		@extend %svg-lens-24x24;
+		display: block;
+		position: absolute;
+		top: 8px;
+		right: 8px;
+	}
+}
+
+
+// ORDERS ROW
+// -----------------------------------
+
+.orderDate, .orderNumber, .orderStatus, .orderReturn, .orderButtons {font-size: $size-large; color: $color-medium;}
+
+.returnBtn a {
+	@extend .button;
+	@extend .secondary;
+	width: 105px;
+}
+
+
+#ordersList {
+	@extend .column-12;
+	margin-bottom: 25px;
+
+	.orderNotFound{
+		margin-top: 20px;
+		display: inline-block;
+		text-align: center;
+		@extend .column-12;
+	}
+
+	.OrderCountZero {
+		margin-top: 20px;
+		font-size: $size-medium; 
+		color: $color-medium;
+	}
+
+	.backToShop {
+		@extend .column-3;
+		
+		text-align: center;
+
+		a {
+			@extend .button;
+			@extend .tertiary;
+		}
+	}
+
+	#listHeader {
+		@extend .column-12;
+		@extend .omega;
+		border-bottom: 6px solid $color-medium;
+		text-align: center;
+		text-transform: uppercase;
+		padding-bottom: 10px;
+		@extend %knockout-bold;
+
+		.colValue, .colCustomerCare {display: none;}
+		
+		.colDate, .colNumber{ @extend .column-2;}
+		.colDate {text-align: center;}
+
+		.colStatus {@extend .column-3;}
+		.colReturn {
+			@extend .column-3; 
+			@extend .omega; 
+		}
+		.colButtons {
+			@extend .column-2;
+			@extend .omega; 
+			@include opacity(0);
+		}
+	}
+
+	#listItems {
+		@extend .column-12;
+		@extend .omega;
+
+		.order {
+			height: 40px; 
+			line-height: 40px; 
+			padding: 25px 0; 
+			text-align: center;
+			@extend .column-12;
+			@extend .omega;
+			max-width: 998px;
+			position: relative;
+			cursor: pointer;
+
+			&:hover {background-color: $color-ultra;}
+		}
+
+		.orderStatus {@extend %knockout-bold;}
+		.orderDate {text-align: center;}
+	}
+}
+
+.payNowBtn {
+	@extend .button;
+	@extend .secondary;
+
+}

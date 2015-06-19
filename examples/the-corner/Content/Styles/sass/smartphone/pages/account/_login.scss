@@ -1,0 +1,18 @@
+// =================
+// LOGIN PAGE STYLES
+// =================
+
+
+p {
+	padding-bottom: 19px;
+}
+
+.loginForm  {
+	#passwordRecoveryLink {
+		display: none;
+	}
+
+	button {
+		@extend .primary;
+	}
+}

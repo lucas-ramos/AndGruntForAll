@@ -1,0 +1,185 @@
+// =====
+// FORMS
+// =====
+
+// button, .button {
+// 	@include button;
+// }
+
+button, input, select {
+	outline: none;
+}
+
+textarea {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 0;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="password"],
+select, 
+// IE FIX 
+input[type="text"] .placeholder,
+input[type="tel"] .placeholder,
+input[type="email"] .placeholder,
+input[type="password"] .placeholder,
+select .placeholder {
+	@include inputGeneric;
+	position: relative;
+	margin:5px 0; 
+	@include trade; 
+	color:#191919;
+	font-size: 12px;
+	text-transform: uppercase;
+}
+
+select {
+	min-height: 30px;
+}
+label { 
+	
+}
+
+/* validazione */
+.field-validation-container {
+	position: relative;
+}
+input.invalid{
+	color: $redDiesel;
+	border:1px solid $redDiesel;
+	&::-webkit-input-placeholder{
+		color: $redDiesel !important;
+	}
+	&:-moz-placeholder{
+		color: $redDiesel !important;
+	}
+	&::-moz-placeholder{ //for newer versions of Firefox
+		color: $redDiesel !important;
+	} 
+	&:-ms-input-placeholder{
+		color: $redDiesel !important;
+	}
+	&[placeholder]{
+		color: $redDiesel !important;
+	}
+}
+.field-validation-error{
+	color: $redDiesel;
+	font-size: 11px;
+	@include trade;
+	text-align: left;
+	text-transform: uppercase;
+	span.icon{
+		display: none;
+	}
+}
+.validation-summary-errors{
+	color: $redDiesel;
+	font-size: 11px;
+	@include trade;
+	text-transform: uppercase;
+	span.icon{
+		display: none;
+	}
+
+}
+
+// Campi obbligatori
+.mandatory {
+	color: $medium-gray-txt;
+	font-size: 10px;
+}
+
+// generico form
+form .fieldRow {
+		.fieldLabel{
+			label{
+			//si vede solo il placeholder
+			display: none;
+		}
+	}
+	&.radioGroup{
+		.fieldLabel{
+			label{
+				@include trade; 
+				color:#191919;
+				font-size: 12px;
+				display: block;
+			}
+		}
+	}
+}
+
+// radio - checkbox
+.radioButtonBox{
+	.radioButton {
+	    position: relative;
+	    display: inline-block;
+	    float: left;
+	    input[type="radio"] {
+	        width: 20px;
+	        height: 20px;
+	        opacity: 0; // ie8 non prende opacity quindi tiene lo style dei suoi input che è uguale alle nostre svg
+	        cursor: pointer;
+	        position: absolute;
+	        top: 0;
+	        left: 0;
+	        & ~ .radioIcon {
+	            @extend %svg-radio_unselected;
+	            display: block;
+	        }
+	        &:checked ~ .radioIcon{
+	            @extend %svg-radio_selected;
+	            display: block;
+	        }
+	    }
+	}
+	label{
+		float: right;
+	}
+}
+
+// tutti i form che hanno le 3 select della data
+.BirthDate {
+	.fieldValue {
+		@include microClearfix;
+		.selectInput_wrapper {
+			width: 32%;
+			position: relative;
+			float: left;
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+
+	}
+}
+
+// data di scadenza della carta 2 select affiancate
+.ExpirationDate{
+	.fieldValue {
+		@include microClearfix;
+		.selectInput_wrapper {
+			width: 49%;
+			position: relative;
+			float: left;
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+
+	}
+}
+
+
+.iOs input[type="text"],
+.iOs input[type="email"],
+.iOs input[type="password"]{
+  font-size: 16px !important;  // previene lo zoom sui form su ios
+  padding-top: 10px !important;
+}

@@ -1,0 +1,21 @@
+@import 'compass/utilities/sprites';
+@import 'desktop-checkbox-fallback/*.png';
+
+// Helper for svg fallbacks (ie8 and lower/unsupported browsers)
+@mixin desktop-checkbox-fallback($fileName){
+	.no-svg &, .ielt9 & {
+		@include desktop-checkbox-fallback-sprite($fileName);
+		width: desktop-checkbox-fallback-sprite-width($fileName);
+		height: desktop-checkbox-fallback-sprite-height($fileName);
+	}
+}
+
+
+%svg-checkbox-21x21-checked {
+    @include desktop-checkbox-fallback(checkbox-21x21-checked);
+}
+
+%svg-checkbox-21x21-unchecked {
+    @include desktop-checkbox-fallback(checkbox-21x21-unchecked);
+}
+

@@ -1,0 +1,76 @@
+// ============================================
+// BASE STYLES (STYLES SHARED ACROSS ALL PAGES)
+// ============================================
+// Gestione del box-sizing: border-box su tutti gli elementi, in modo che il padding e i bordi di quell'elemento non aumenteranno più la sua larghezza
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html { background:$white; }
+
+html.fixedLayer, body.fixedLayer {
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+
+body.lock {
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+a {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+img { display: block; }
+
+fieldset {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+textarea { resize: vertical; }
+
+button, .button {
+	& a{
+		color: $white;
+		text-decoration: none;
+	}
+}
+
+// css class to show a button like a link
+.buttonToLink {
+	padding: 0;
+	color: $black;
+	background: transparent;
+	&:hover,
+	&:focus{
+		color: $black;
+		background: transparent;
+		text-decoration: underline;
+	}
+}
+
+@media #{$mediaQueryMobile} {
+	#pushContainer{
+		height: 100%;
+		left: 0;
+		-webkit-transition: all 0.5s;
+	    -moz-transition: all 0.5s;
+	    transition: all 0.5s;
+	}
+	#navBar{
+		-webkit-transform: translate3d(-90%, 0px, 0px);
+    	transform: translate3d(-90%, 0px, 0px);
+    }
+}

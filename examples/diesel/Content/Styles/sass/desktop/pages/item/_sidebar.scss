@@ -1,0 +1,908 @@
+$section : "item";
+
+/*##### RESET - DA RIMUOVERE/MODIFICARE ##### */
+.zoom, .backTo, .prevNext{
+	display:none;
+}
+.menuContainer{ /* In attesa di risolvere la questione menu */
+	height:auto !important;
+}
+/* ############################### */
+
+h1.productMax, .infoBox{
+	@include H2Style($section);
+}
+
+h5.productMicro, h5.chooseColour, h5.fieldCopy, h5.pageAnchors, 
+.selectColor .selectionTitle, .colorsBox, .priceBox span, .addBox{
+	@include H5Style($section);
+}
+h4.findInstore, .price, .sizeInfo, .wishList, .share{
+	color : $blackDiesel;
+}
+h4.flag, div.promo.generic, .promo.generic .shortDescription{
+	@include H4Style($section);
+}
+.buttonBox button, .sizes.wrap button {
+	@include H3Style($section);
+	background: $blackDiesel;
+}
+div.modelFabricColor span{
+	@include H6Style($section);
+}
+.price, .markdown{
+	@include PriceSale($section);
+}
+.colorSizeContainer {
+	.selectionLabel .text, li .sizeValue{
+		@include H5Style($section);
+	}
+}
+
+#wrapper{
+	height:auto;
+	min-height:auto;
+}
+
+#containerUnderLayer{
+	border-bottom:$greyDiesel solid 1px;
+	&.fixed{
+		background:$white;
+		position:fixed;
+		width: 100%;
+	}
+}
+.itemSidebar{
+	position:relative;
+	width:100%;
+	top:0px;
+	bottom:0px;
+}
+.itemBox{
+	width: 100%;
+	background:$white;
+	&.fixed{
+		position:fixed;
+		bottom:0px;
+	}
+	.selectSize {
+		li.disabled .sizeValue {
+			color: $greyDiesel;
+		}
+		li.selected .sizeValue {
+			color:$white;
+		}
+	}
+	.selectColor li.disabled {
+		@include opacity(0.5);
+	}
+	.item{
+		@include franklin;
+		position:relative;
+		width:100%;
+		margin:0;
+		height: $itemConsoleHeight;		
+	}
+	.price.full{
+		display: block;
+		clear:both;
+	}
+	.price.discounted span, .markdown{
+		color: $redDiesel;
+	}
+	.buttonBox > *, .sizeGuidelink, .promo, .flag, .productMax, .bottomLinks,
+	.productMicro, .modelFabricColor{
+		display: none;
+	}
+	.buttonBox{
+		position:relative;
+		
+		.selectionError {
+			display: none;
+			position: absolute;
+			
+			padding: 16px;
+			background-color: $blackDiesel;
+			font-size: 16px;
+			text-transform: uppercase;
+			color: #999;
+			z-index:$z-index-closeMenu;
+			&.selectSizeAlert{
+				top: -112px;
+				left: 28%;
+				& ~ .arrow.size {
+					@include arrow("left", $blackDiesel, 10, 20);
+					display: none;
+					position:absolute;
+					
+					top:-104px;
+					left:22%;
+					z-index: $z-index-body;
+				}
+				&.active ~ .arrow.size {
+					display: block;
+				}
+			}
+			&.selectColorAlert{
+				top: -66px;
+				left: 17%;
+				& ~ .arrow.color {
+					@include arrow("down", $blackDiesel, 10, 20);
+					display: none;
+					position:absolute;
+					
+					top:-11px;
+					left:17%;
+					z-index: $z-index-body;
+				}
+				&.active ~ .arrow.color {
+					display: block;
+				}
+			}
+			&.active {
+				display: block;
+			}
+
+			&:after {
+				position: absolute;
+				bottom: -12px;
+				left: 42%;
+				color: $greyDiesel;
+			}
+		}
+	}
+}
+.addToWish {    
+    button {
+    	@extend %svg-Wishlist;
+        width: 100%;
+        background-size: 20px 20px;
+        background-position: center;
+        background-color: transparent;
+        
+        border: 0;
+        text-indent: -9999px;
+    }
+}
+.itemSocialShare {    
+    .openItemShare {
+    	@extend %svg-Share;
+        height: 100%;
+        width: 100%;
+        cursor: pointer;
+        border: 0;
+        background-size: 20px 20px;
+        background-position: center;
+        background-color: transparent;
+    }
+    
+    &.open {
+        ul.share {
+            display: block;
+        }
+        .closeItemShare {
+            display: block;
+        }
+    }
+    
+    .closeItemShare {
+        display: none;
+        background-color: transparent;
+        border: 0;
+        position: absolute;
+        top: -95px;
+        right: 5px;
+        z-index: $zoomImage;
+    }
+
+    ul.share {
+        display: none;
+        position: absolute;
+        height: 100px;
+        width: 100%;
+        left: 0;
+        padding: 30px 10px;
+        top: -100px;
+        z-index: $mfp-z-index-base;
+        
+        background: $black;
+        color: $white;
+        
+        text-align: center;
+        
+        li {
+            width: 24%;
+            padding: 0;
+            height: 37px;
+            border: 0;
+            display: inline-block;
+        }
+    }
+    
+    .text {
+        display: none;
+    }
+
+    .icon {
+        display: inline-block;
+        background-color: $gray-txt;
+        border-radius: 50%;
+        background-position: center;
+        background-size: 20px;
+        &:hover {
+            opacity: .7;
+        }
+    }
+}
+.selectColor [class^="icon-arrow"].disabled{
+	display:none;
+}
+@media #{$mediaQueryMobile} {	
+	.itemBox{
+		.selectSize { 
+			@include customSelect($black, $white, #ccc);
+			width:100%;
+			margin-top: 0;
+			border-top: $greyDiesel solid 1px;
+        	&.oneOption {
+        		.selectionLabel{
+					display: none;
+	        	}
+        		ul{
+	            	opacity: 1;
+	            	top:0;
+	            	border:none;
+	            	z-index: $z-index-body;
+	            	li.selected{
+	            		background:$white;
+	            		.sizeValue{
+	            			color: $blackDiesel;
+	            		}
+	            	}
+	            }
+	        }
+			.selectionTitle{
+				display: none;
+			}
+		    .selectionLabel {
+		    	height: $selectizeHeight;
+				line-height: $selectizeHeight;
+				text-align: left;
+		        .icon {
+					font-size: 6px;
+					position: absolute;
+			    	height: $selectizeHeight;
+					line-height: $selectizeHeight;
+					top: 0;
+					right: 10px;
+					display: none;
+				}     
+				.open & .icon{
+					display: none;
+				}
+				.text {
+					margin-left: 10%;
+					line-height: $selectizeHeight;
+					display: inline-block;
+					left: -13px !important;
+					&.empty {
+						display: inline-block;
+						width: 18px;
+						height: 4px;
+						border-top: 1px solid $black;
+					}
+					&.empty,&.oneSize {
+						font-size: 16px;
+						left: 4px !important;
+					}
+					&.oneSize {
+						margin-top: 10px !important;
+					}
+				}
+			}
+			ul {
+				/* la lista deve attaccarsi al box come se fossero un solo oggetto */
+	            position:relative;
+				opacity:initial;
+				z-index: initial;
+	            bottom: 0;
+	            height: 100%;
+	            text-align: left;
+	            width: 100%;
+	        	padding: 0 !important;
+	            border-top:none;
+	            li{
+	            	background:$white;
+	            	.sizeValue{
+	            		margin-left:10%;
+	            	}
+	            }
+	        }
+			&.eventualeClasseCheCiFaCapireSeEsisteLaDoppiaTagliaW{
+				@include span(isolate 10 at 2 of 23 wide);
+			}
+			&.eventualeClasseCheCiFaCapireSeEsisteLaDoppiaTagliaH{
+				@include span(isolate 10 at 12 of 23 wide);
+			}
+		}
+		.selectColor {
+			padding-top:5px;
+			padding-bottom:18px;
+			background:$white;
+			position:relative;
+			.selectionTitle{
+				text-align: center;
+				height:30px;
+				line-height: 30px;
+				position:relative;
+				background:$white;
+				z-index:$z-index-body;
+			}
+			.selectionLabel{
+				position:absolute;
+				width: 100%;
+				height:18px;
+				bottom:0px;
+				border:none;
+				.text{
+					display: block;
+					width: 45%;
+					line-height:18px;
+					margin:auto;
+					text-align: center;
+					background:$gray-txt;
+					color:$white;
+				}
+			}
+			ul{
+				padding-top: 5px;
+				li{ 
+					.description, .rgbColor{
+						display: none;
+					}
+					img{
+						width:100%;
+					}
+				}
+				&:not(.owl-carousel){
+					li{
+						display: inline-block;
+						width:18%;
+						&:not(:last-child){
+							margin-right:2%;
+						}
+					}
+				}
+				&.owl-carousel{
+					@include microClearfix();
+					position:relative;
+				}
+			}
+			.owl-controls {
+				@include microClearfix();
+				position:absolute;
+				width: 100%;
+				top:-22px;
+				span{
+					display: block;
+					width: 14px;
+					height: 14px;
+				}
+			}
+			.owl-nav{
+				@include microClearfix();
+				height: 14px;
+				.owl-prev{
+					@include span(isolate 1 at 2 of 12 wide);
+				}
+				.owl-next{
+					@include span(isolate 1 at 11 of 12 wide);
+				}
+			}
+		}
+		.colors.wrap, .sizes.wrap, .infos.wrap {
+			@include microClearfix();
+			
+			position:absolute;
+			width: 100%;
+			background: $white;
+			height: 0px;
+			overflow: hidden; 
+			bottom: $itemConsoleHeight;
+		}
+		.sizes.wrap {
+			&.visible-choice{
+				.selectSize{
+					height: 100%;
+				}
+				ul:not(.hasOneSelection){
+		            overflow: scroll;
+		        }
+			}
+			button{
+				@include button(false, $blackDiesel, $white, $greyDiesel, $blackDiesel);
+				position:absolute;
+				bottom: 0;
+				width: 100%;
+				text-align: center;
+				border:none;
+				height: $itemLabelsHeight;
+				width: 100%;
+				margin:0 auto;
+				z-index: $z-index-body;
+			}
+		}
+		.itemBoxPrice{
+			display: none;
+		}
+		.mobileBottomConsole{
+			@include microClearfix();
+			& > div{
+				height: 48px;
+				line-height: 48px;
+				text-align: center;
+				text-transform: uppercase;
+				overflow: hidden;
+				&.icon-close-white{
+					background-color: $blackDiesel;
+					background-position:center;
+					color:transparent;
+				}
+			}
+			.infoBox{
+				@include span(isolate 2 at 1 of 12 wide);
+				border: $blackDiesel solid 1px;
+				text-transform: none;
+			}		
+			.colorsBox{ 
+				@include span(isolate 3 at 3 of 12 wide);
+				border: $greyDiesel solid 1px;
+				border:1px 1px 0 0;
+			}
+			.priceBox{
+				@include span(isolate 3 at 6 of 12 wide);
+				border: $greyDiesel solid 1px;
+				border:1px 0 1px 0;
+				span{ 
+					font-size:12px;
+					font-weight: bold; 
+				}
+			}
+			.addBox{
+				@include span(isolate 4 at 9 of 12 wide);
+				background-color: $blackDiesel;
+				color: $white;
+			}
+		}
+	}
+}
+
+@media #{$mediaQueryDesktopCommon} {
+	.promo.generic, .promo.generic .shortDescription{
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	#wrapper{
+		@include microClearfix();				
+		@include container();
+		@include bodyStyle($section);
+		border-top: solid 1px $greyDiesel;
+
+		.updater{ /* override _base.scss */
+			display: block;
+		}
+	}
+	#containerUnderLayer{
+		border-bottom: none; /* override */
+	}
+	main{
+		@include span(12);
+	}
+	div.itemSidebar{	
+		width: auto; /* override */
+		@include microClearfix();
+		@include span(last 3 wide); 
+		right: 0; 
+		position: absolute;
+		background:$white;
+	}
+	.itemBox {
+		position:absolute;
+		&.fixed{
+			@include span(last 3 wide);
+			bottom:auto;
+			z-index: $z-index-body;
+		}
+		.buttonBox button, .sizeGuidelink, .promo, .flag, .productMax, .bottomLinks,
+		.productMicro, .modelFabricColor {
+			display: block;   /* override */
+		}
+		.item{
+			position:initial; /* override */
+			height: auto; 	  /* override */
+			color : $blackDiesel;
+			text-align: center;
+			border-bottom: solid 1px $greyDiesel;
+		}	
+		h1.productMax{
+			margin-top:40px;
+			margin-bottom: 0;
+			.modelName{
+				display: inline;
+			}
+		}
+		h4.flag{
+			margin-top:20px;
+			margin-bottom:-29px;
+		}
+		h5.productMicro{
+			margin-top:0;
+			margin-bottom:2px;
+		}
+		h5.selectedColour, h3.addButton{
+			color:$white;
+		}
+		div.modelFabricColor span.label{
+			margin-right: 2px;
+		}
+		.sale{
+			color:$red;
+		}
+		.promo.generic {
+			@include span(isolate 20 at 3 of 24 wide);
+			float:none;
+			margin-top: 3px;
+			.longDescription{
+				display: none;
+			}
+		}
+		.selectedCombination{
+			margin-top:10px;
+		}
+		.bottomLinks{
+			margin-top:40px;
+			padding-top:10px;
+			border-top: solid 1px $greyDiesel;
+		}
+		
+		.wrap {
+			@include microClearfix();
+			position: relative;
+			margin-bottom: 10px;
+			&.colors {
+				margin-top:25px;
+				padding-bottom:22px;
+				border-top: 1px solid $greyDiesel;
+				border-bottom: 1px solid $greyDiesel;
+			}
+			&.sizes{
+				padding-bottom:0px;
+			}
+			&.infos{
+				margin-bottom:0px;
+			}
+			button.addItem {
+				display: none;
+			}
+		}
+		div.sizeGuidelink{
+			@include franklin;
+			@include span(isolate 10 at 2 of 12 wide);
+			text-align: left;
+		}
+		a.sizeGuideLink{
+			border-color:transparent;
+			span.text{
+				font-size: 12px;
+				text-transform: uppercase;
+				text-decoration: underline;
+			}
+			span:not(.text){
+				display: none;
+			}
+		}
+		.selectSize { 
+			@include customSelect($black, $white, #ccc);
+			@include span(isolate 20 at 3 of 24 wide);
+        	&.oneOption {
+	        	.selectionLabel .text{
+					visibility: hidden;
+	        	}
+				.icon{
+					display: none;
+				}
+				ul{
+	            	opacity: 1;
+	            	top:0;
+	            	border-top:solid 1px;
+	            	z-index: $z-index-body;
+	            	li.selected{
+	            		background:$white;
+	            		.sizeValue{
+	            			color: $blackDiesel;
+	            		}
+	            	}
+	            }
+	        }
+			.selectionTitle{
+				display: none;
+			}
+		    .selectionLabel {
+		    	height: $selectizeHeight;
+				line-height: $selectizeHeight;
+				border: $gray-txt solid 1px;
+				text-align: left;
+		        .icon {
+					font-size: 6px;
+					position: absolute;
+			    	height: $selectizeHeight;
+					line-height: $selectizeHeight;
+					top: 0;
+					right: 10px;
+				}     
+				.text {
+					margin-left: 10%;
+					line-height: $selectizeHeight;
+					display: inline-block;
+					left: -13px !important;
+					&.empty {
+						display: inline-block;
+						width: 18px;
+						height: 4px;
+						border-top: 1px solid $black;
+					}
+					&.empty,&.oneSize {
+						font-size: 16px;
+						left: 4px !important;
+					}
+					&.oneSize {
+						margin-top: 10px !important;
+					}
+				}
+			}
+			ul {
+				/* la lista deve attaccarsi al box come se fossero un solo oggetto */
+	            top: $selectizeHeight - 1;
+	            text-align: left;
+	            width: 100%;
+	        	padding: 0 !important;
+				border: $gray-txt solid 1px;
+	            border-top:none;
+	            li{
+	            	background:$white;
+	            	.sizeValue{
+	            		margin-left:10%;
+	            	}
+	            }
+	        }
+			&.eventualeClasseCheCiFaCapireSeEsisteLaDoppiaTagliaW{
+				@include span(isolate 10 at 2 of 23 wide);
+			}
+			&.eventualeClasseCheCiFaCapireSeEsisteLaDoppiaTagliaH{
+				@include span(isolate 10 at 12 of 23 wide);
+			}
+		}
+		.selectColor {
+			.selectionTitle{
+				margin: 10px auto;
+			}
+			.selectionLabel{
+				position:absolute;
+				width: 100%;
+				height:20px;
+				bottom:0px;
+				border:none;
+				.text{
+					display: inline-block;
+					width: auto;
+					padding-right: 5px;
+					padding-left: 5px;
+					line-height:20px;
+					margin:auto;
+					background:$gray-txt;
+					color:$white;
+				}
+			}
+			ul{
+				li{
+					cursor:pointer;
+				}
+				&:not(.owl-carousel){
+					li{
+						display: inline-block;
+						width:18%;
+						&:not(:last-child){
+							margin-right:2%;
+						}
+					}
+				}
+				&.owl-carousel{
+					@include microClearfix();
+					position:relative;
+				}
+			}
+			.owl-controls {
+				@include microClearfix();
+				position:absolute;
+				width: 100%;
+				top:-27px;
+			}
+			.owl-nav{
+				@include microClearfix();
+			}	
+			.owl-prev, .owl-next{
+				height: 17px;
+			}
+			.owl-prev{
+				@include span(isolate 1 at 2 of 12 wide);
+			}
+			.owl-next{
+				@include span(isolate 1 at 11 of 12 wide);
+			}
+			[class^="icon-arrow"]:not(.disabled){
+				display: block;
+				width: 14px;
+				height: 17px;
+				background-position: center;
+			}
+			li{ 
+				.description, .rgbColor{
+					display: none;
+				}
+				img{
+					width:100%;
+				}
+			}
+		}
+		.buttonBox {
+			@include microClearfix();
+			width: 100%;
+		    float:none;
+		    padding-top: 2px;
+		    margin-bottom:15px;
+			border:0;
+			button {
+				@include button(false, $blackDiesel, $white, $greyDiesel, $blackDiesel);
+				@include span(isolate 20 at 3 of 24 wide);
+				display: block;
+				height: 37px;
+				border:0px;
+				padding-left: 0;
+				padding-right:0;
+				&.addItemToWishList {
+					display: block;
+					color: $black;
+					border-color: $black;
+					padding: 12px 5px;
+				}
+				&.addItem {
+					line-height: 37px;
+					text-align: center;
+				}
+			}
+			.selectionError {
+				background-color: $greyDiesel;
+				&.selectSizeAlert{
+					left: initial; /* mantenere quest'ordine */
+					@include span(isolate 18 at 4 of 24 wide);
+					.ru &{
+						@include span(isolate 24 at 1 of 24 wide);
+					}
+					top: -104px;
+					z-index:$z-index-closeMenu;
+					& ~ .arrow.size{
+						@include arrow("down", $greyDiesel, 10, 20);
+						display: none;
+						position:absolute;
+
+						top:-43px;
+						left:14%;
+					}
+					&.active ~ .arrow.size {
+						display: block;
+					}
+				}
+				&.selectColorAlert{
+					left: initial; /* mantenere quest'ordine */
+					@include span(isolate 18 at 4 of 24 wide);
+					top: -90px;
+					z-index:6;
+					&.active ~ .arrow.color {
+						display: block;
+					}
+					& ~ .arrow.color{
+						left:initial; /* mantenereqes'ordine */
+						@include arrow("up", $greyDiesel, 10, 20);
+						@include span(isolate 2 at 12 of 24 wide);
+						border-top: none;
+						display: none;
+						position:absolute;
+						top:-102px;
+					}
+				}
+			}
+		}
+	}	
+	#siteFooter{
+		position:relative;
+	}
+
+	.wishlistAndShareButtons ul{
+		margin-top:0px;
+	}
+	.mobileBottomConsole{
+		display: none
+	}
+}
+
+@media #{$mediaQueryDesktop}{
+	.mobLabel{
+		display: none;
+	}
+	.modelFabricColor{
+		margin-bottom: 8px;
+	}
+	div.itemSidebar{
+		top:84px;
+	}
+	.itemSocialShare {
+	    ul.share {
+	        padding: 34px 10px;
+	        li {
+	            width: 23%;
+	        }
+	    }
+	}
+}
+
+@media #{$mediaQueryTablet}{
+	#containerUnderLayer{
+		height: 101px;
+	}
+	div.itemSidebar{
+		top:166px;	
+	}
+	.itemBox{
+		h4.flag{
+			margin-top:30px;
+			margin-bottom:-14px;
+		}
+		h1.productMax{
+			margin-top:22.5px;
+			margin-bottom: 0;
+			.modelName{
+				display: inline;
+			}
+		}
+		.selectColor{
+			.owl-controls{
+				top:-25px;
+				.owl-prev, .owl-next{
+					height: 15px;
+				}
+				[class^="icon-arrow"]:not(.disabled){
+					height:15px;
+				}
+			}
+		}
+		.itemBoxPrice{
+			margin-top: 18px;
+			margin-bottom:5px;
+			.discounted{
+				margin-bottom:3px;
+			}
+		}
+		a.sizeGuideLink span.text{
+			font-size: 11px;
+		}
+	}
+	.itemSocialShare {
+	    ul.share {
+	        padding: 34px 10px;
+	        li {
+	            width: 23%;
+	        }
+	    }
+	}
+}

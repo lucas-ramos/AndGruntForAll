@@ -1,0 +1,95 @@
+// =======================
+// HELP AREA SHARED STYLES
+// =======================
+@import "variables";
+@import "fonts";
+@import "Desktop/callToActions";
+@import "desktop/Partials/susyMixins";
+
+main {
+	margin: 21px 0;
+}
+
+h2 {
+	height: 71px;
+	line-height: 71px;
+
+	.RU & { font-size:  3.8em; }
+
+	&.inverse {
+		background: $color-dark;
+	}  
+}
+
+#legalMenu {
+
+	.RU & { font-size: 0.6em; } //hack bloody hack. Se avete un idea migliore plz implementatela
+	
+	h2 {
+		text-indent: 15px;
+	}
+
+	a {
+		font-size: $size-big;
+		text-transform: uppercase;
+		color: $color-light;
+		display: block;
+		margin: 5px 0;
+		background-color: $color-ultra;
+		height: 47px;
+		line-height: 47px;
+		border: 1px solid $color-light;
+		text-indent: 15px;
+
+		.CN &, .JP & {
+			font-size: $size-midlarge;
+		}
+
+		&.selected, &:hover {
+			color: $black;
+			border-color: $black;
+		}
+	}
+
+}
+
+article {
+	@extend %helvetica;
+	margin-bottom: 20px;
+
+	.inner {
+		border-left: 1px solid $color-light;
+		padding-left: $gutter-width;
+	}
+
+	h2 {
+		.RU & {
+			font-size: 3.4em; //non standard ma funziona e si vede bene
+		}
+	}
+
+	p {
+		margin: 0 0 $gutter-width 0;
+
+		.CN &, .JP & {
+			line-height: 20px;
+		}
+	}
+
+	td {
+		padding: 5px;
+	}
+
+	ul {
+		list-style: square;
+		padding-left: 15px;
+	}
+
+}
+
+
+.generatedPdf {
+	@extend .button;
+	@extend .secondary;
+	display: block;
+}

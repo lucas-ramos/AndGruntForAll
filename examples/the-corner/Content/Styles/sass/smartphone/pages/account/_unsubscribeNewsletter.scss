@@ -1,0 +1,43 @@
+﻿// ==========================
+// UNSUBSCRIBE NL STYLE
+// ==========================
+
+
+$emailWrapperHeight: 70px;
+$pageMargin: 20px;
+$textInputWidth: 70%;
+$btnPadding: 10px;
+
+
+#unsubscribeNewsletterSuccess {
+	margin: $pageMargin 0;
+}
+
+.newsletterForm  form {
+	margin: $pageMargin 0;
+	@include pie-clearfix;
+}
+
+// questa regola e' probabilmente replicata.
+// Lascio un commento per dire, a chi fara' questa sezione, di eliminarla e vedere se cambia qualcosa.
+.validation-summary-errors {
+	font-size: $size-medium;
+}
+
+.buttonsRow {
+
+	float: left;
+	height: $form-input-height;
+	padding: ($emailWrapperHeight - $form-input-height) / 2  10px;
+
+	button {
+		@extend button.primary;
+		padding: 0 $btnPadding;
+	}
+}
+
+#UnsubscribeNewsletterViewModel_Email_Wrapper {
+	width: $textInputWidth;
+	float: left;
+	height: $emailWrapperHeight;
+}

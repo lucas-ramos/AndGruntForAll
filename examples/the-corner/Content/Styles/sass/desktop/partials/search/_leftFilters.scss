@@ -1,0 +1,260 @@
+﻿
+#filterContainer {
+	.title {
+		$title-height: 36px; //debug
+		line-height: $title-height; //debug
+		height: $title-height; //debug
+	}
+
+	h3 {
+		float: left;
+		font-size: 3.6em;
+
+		html.JP & {font-size: 3.2em;}
+	}
+
+
+	// rotating crosses
+
+	.blackCross {
+
+		// in ie8 and lower you can't compress the menus
+		.ielt9 & {
+			display: none;
+		}
+
+		// configurable options
+		$cross-container: 22px; //meglio se divisibile per due
+		$cross-thickness: 6px;  //meglio se divisibile per due
+		$rotation-time: 0.5s;
+
+		// semi-configurable options
+		$parent-height: 36px;
+
+		// not configurable options
+		$rotation-angle: -45deg;
+		$rotation-end-angle: -180deg;
+		$cross-margin-top: ($parent-height/2) - ($cross-container/2);
+
+		float: left;
+		margin-top: $cross-margin-top;
+		margin-left: 10px;
+		cursor: pointer;
+
+		.cross {
+			width: $cross-container;
+			height: $cross-container;
+
+			@include transform(rotate($rotation-angle));
+			@include transition(transform $rotation-time ease-in);
+
+			// to activate:
+			// $('.blackCross').find('.cross').[add/remove]Class('.rotateCross');
+			&.rotateCross {
+				@include transform(rotate($rotation-end-angle));
+			}
+		}
+
+		.piece {
+			position: absolute;
+			left: ($cross-container/2) - ($cross-thickness/2);
+
+			width: $cross-thickness;
+			height: $cross-container;
+
+			background-color: $black;
+		}
+
+		.horizontal {
+			@include transform(rotate(90deg));
+		}
+	}
+
+	// end of rotating crosses
+
+
+
+
+	.subtitle {
+		font-size: $size-midlarge;
+		margin-bottom: 10px;
+	}
+
+	// COMMON RULES
+	.refinements {
+		text-transform: uppercase;
+		overflow-y: auto; //if nicescroll has overriding problems, we might want to set this to !important
+
+		.isTextSearch & li.disabled {
+			display: none;
+		}
+	}
+
+	.refinement {
+		margin: 0 0 20px;
+	}
+
+	// the viewall filter must be hidden, since it's the "default" case
+	[data-ytos-button="viewall"] {
+		display: none;
+	}
+}
+
+// SIZE FILTERS
+.refinementsize {
+	li {
+		a {
+			color: $color-dark;
+		}
+
+		&:hover, &.selected {
+			background-color: $color-dark;
+
+			a {
+				color: $white;
+			}
+		}
+	}
+}
+
+// SIZE SECTION
+.size-refinement {
+
+	.refinementsWrapper {
+		padding-bottom:7px;
+	}
+
+	.refinements {
+		font-size: $size-large;
+		line-height: $size-large;
+	}
+
+	.guide {
+		color: $color-medium;
+
+		&:hover {
+			color: $black;
+		}
+	}
+
+	li {
+		cursor: pointer;
+		float: left;
+		width: 24%; //default case / fallback
+		margin-right: 1%;
+		margin-bottom: 2px;
+		background-color: $color-ultra;
+		text-align: center;
+
+		&.lastElem {
+			margin-top: 7px;
+			width: 99%;
+		}
+	}
+
+	.guide {
+		font-size: $size-midlarge;
+	}
+}
+
+.refinementsize, .refinementcolor, .refinementmacro {
+	.disabled {
+		display: none;
+	}
+}
+
+// DESIGNER/MACRO/COLOR FILTERS
+.refinementbrand, .refinementcolor, .refinementmacro {
+	a {
+		display: block;
+		color: $color-medium;
+		position: relative;
+		margin-left: 25px;
+		line-height: 1;
+		padding: 4px 0;
+
+		&:hover {
+			color: $black;
+		}
+	}
+}
+
+// PLACEHOLDERS CLASSES (not compiled)
+%___FlagUnchecked {
+	position: absolute;
+	top: 3px;
+	left: -25px;
+	@extend %svg-checkbox-15x15-unchecked;
+}
+
+%___FlagChecked {
+	@extend %svg-checkbox-15x15-checked;
+}
+
+// DESIGNER/COLOR TICKS
+.refinementbrand, .refinementcolor {
+	li {
+		> a {
+			// white square left to the filter
+			.flag {
+				@extend %___FlagUnchecked;
+			}
+		}
+
+		&.selected {
+			> a {
+				// checked square left to the filter
+				.flag {
+					@extend %___FlagChecked;
+				}
+			}
+		}
+	}
+}
+
+// MACRO MICRO TICKS
+.refinementmacro {
+	.Macro, .Micro {
+		> a {
+			// white square left to the filter
+			.flag {
+				@extend %___FlagUnchecked;
+			}
+		}
+
+		&.selected {
+			> a {
+				// checked square left to the filter
+				.flag {
+					@extend %___FlagChecked;
+				}
+			}
+		}
+	}
+}
+
+// DESIGNER/MACRO/COLOR SECTIONS
+.other-refinement {
+	.subtitle {color: $color-dark;}
+	.refinementsWrapper {
+		padding: 10px 10px 7px;
+		background: $color-ultra;
+		border-bottom: 1px solid $color-extra;
+	}
+
+	.refinements {
+		font-size: $size-medium;
+		max-height: 192px;
+
+		line-height: $size-midsmall;
+	}
+}
+
+// MACRO/MICRO SECTION
+.refinementmacro {
+	> li {
+		> ul {
+			margin-left: 22px;
+		}
+	}
+}

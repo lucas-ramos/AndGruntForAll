@@ -1,0 +1,38 @@
+﻿/***************************************************************************************/
+/* COMMON QTIP		      								                               */
+/***************************************************************************************/
+
+.commonQtip {
+	font-size: 100%;
+	line-height: 1;
+
+	border-color: $color-extra;
+	border-width: 1px;
+	border-style: solid;
+	background-color: $white;
+	max-width: none;
+
+	.qtip-content {
+//		padding: 8px;
+		padding: 0;
+
+	}
+
+}
+
+/***************************************************************************************/
+/* COMMON QTIP		      								                               */
+/***************************************************************************************/
+
+
+
+.thecornerToolTip {
+
+	max-width: 222px;
+
+	.qtip-content {
+		font-size: $size-small;
+		padding: 10px;
+
+	}
+}

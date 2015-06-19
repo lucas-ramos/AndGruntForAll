@@ -1,0 +1,373 @@
+
+#userWrapperLayer {
+	background-color:$white;
+	.button,.submit{
+		width: 100%;
+	}
+	.innerLayer { 
+		overflow: hidden; 
+		display: flex;
+		flex-direction:column;
+	}
+	.colInner { padding: 20px; }
+	.registrationContainer{
+		background-color:$greyDiesel;
+		order:1;
+		h2{ @extend .loginLayerTitle; }
+		p, li{ 	@include bodyStyle('header');	}
+		.advantagesBody{
+			@extend p;
+			margin:0 0 0 15px;
+			li:before{
+		 		@include listStyle();
+			}
+		}
+		.buttonsRow{
+			margin-bottom:40px;
+			float: left;
+			width: 100%;
+		}
+	}
+	.userLogged{
+		background-color: $white;
+	}
+	.dcodeContainer{
+		order:3;
+		padding:20px;
+		h3{  @extend .loginLayerTitle;}
+		.wrapperDcode {@include bodyStyle('header');}
+		ul {margin: 15px 0;}
+		li:before{ 
+			@include bodyStyle('header');
+			@include listStyle();			
+		}
+	}
+	.boxLayer{ 
+		width: 100%;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	.accountTitle{ 	
+		@include H1Style('header');
+		margin:20px 20px 0 20px;
+		border-bottom: 3px solid;
+		padding-bottom: 15px;
+	}
+	.loggedLayer{
+		.accountTitle { 
+			display: block;
+			//margin: 0;
+			//padding: 5px 0 0 0;
+			//border:none;
+			//text-align: center;
+			margin-bottom: 20px;
+		}
+		.welcome { display: none;}
+		.userContainer{
+			.colInner { padding: 0;}
+			li {
+				background-color: $greyDiesel;
+				padding: 5px 10px;
+				border:1px solid #fff;
+				a{
+					color: $black;
+				}
+				&.wishList .icon{
+					display: none;
+				}
+			}
+		}
+		.dcodeContainer { padding: 0;}
+		
+	}
+	.loginContainer { background-color: $white; }
+	.userLogged{
+		 @include bodyStyle('header');
+		 a{
+		 	@include H7Style('header');
+		 }
+	}
+}
+.yellow{
+	background: yellow;
+	width:100%;
+	height: 300px;
+}
+#passwordRecoveryLink { 
+	margin:10px 0;	
+	order:1;
+	.text{
+		text-decoration: underline;
+		@include H7Style('header');
+	}
+}
+.promotionContainer{
+	.longDescription{ display: none; }
+	.promotions { @include bodyStyle('header'); }
+}
+.button,.submit{
+	@include button(false,$white,$black,$black,$white);
+	float: left;
+	border:2px solid $black;
+	padding: 10px;
+	@include H3Style('header');
+}	
+.loginLayerTitle {
+		@include H2Style('header');
+		margin: 0 0 20px 0;
+}
+.loginContainer{ 
+	order:0; 
+	background-color: $white;
+}
+.loginLayerDescription { @include bodyStyle('header'); }	
+.loginForm{ 
+	margin-top: 24px; 
+	display: flex;
+	flex-direction:column;
+}
+.buttonsRow{ 
+	order: 0;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+.buttonToLink{
+	@include button(false,$white,$black,$white,$black);
+	text-transform: uppercase;
+	width: 100%;
+	@extend label;
+}
+.loginWelcomeMessage,
+.customMyAccountMenu{ 
+	cursor: pointer;
+}
+.recoveryPasswordForm{
+	button{
+		@include button(false,$white,$black,$black,$white);
+		float: left;
+		border:2px solid $black;
+		padding: 10px;
+		@include H3Style('header');
+	}
+	.close{ display: none; }
+	.buttonsRow{ margin-top: 10px; }
+	h1{ 
+		@include H1Style($section);
+		text-align: center;
+		line-height: 55px;
+		border-bottom: 1px solid $greyDiesel;
+		margin: 0;
+	}
+	p{  
+		@include bodyStyle($section);  
+		margin:15px 0;
+	}
+}
+#SendPasswordRecoveryMailSuccessful{
+	@include bodyStyle($section);
+	padding: 20px;
+}
+.uiLayer-getRecoveryPassword{
+	.mfp-content{ width: 300px;}
+	.inner{ float: left; }
+}
+#popUpEmailDifferentCountry{
+	p { @include bodyStyle($section);  }
+	.title { 
+		@include H1Style('header'); 
+		margin-top:20px;
+	}
+	a{ 
+		text-decoration: underline;
+		@include H7Style('header');
+	}
+}
+.fixedLayer .userSection {
+	height: 100%;
+	padding-bottom: 40px;
+	@include nativeScroll;
+}
+
+@media #{$mediaQueryDesktopCommon}{
+	#userWrapperLayer {
+		.loggedLayer .accountTitle { border:none;}
+		.loginLayerTitle {
+			@include H1Style('header');
+			margin: 0 0 20px 0;
+		}
+		.innerLayer{ display: block; }
+		#passwordRecoveryLink { 
+			float: right; 
+			margin-top: 30px;
+		}
+		.registrationContainer{			
+			p,li{ 	@include H6Style('header');	}
+		}
+		.loginContainer{
+			.loginLayerDescription { @include H6Style('header'); }	
+			.loginForm{
+				display: block;
+			}
+		}
+		.red{
+			background-color: $redDiesel;
+			max-width: 221px;
+			height: 221px;
+			width: 43%;
+		}
+		.yellow {
+			width: 60%;
+			height: 380px;
+			float: left;
+		}
+		.col2{
+			width: 47%;
+			float: left;
+		}
+		.button,.submit{ 
+			min-width: 33%;
+			width:auto; 
+		}
+		.containerMyPromo{
+			float: left;
+			width: 40%;
+		}
+		.dcodeContainer{ padding:0 }
+		.loggedLayer{
+			.userContainer{ 
+				.colInner{ padding: 20px;}
+				.accountTitle{
+					text-align: left;
+					margin: 0 0 20px 0;
+					padding: 0;
+				}
+				.logout {
+					float: left;
+					a{ 
+						color: $black;
+						font-weight: bold;
+						line-height: 21px;
+					}
+					.text{
+						float: left;
+					}
+					.icon-right{
+						float: left;
+						display: block;
+					}
+				}
+				li {
+					background: none;
+					padding: 0;
+					border:none;
+					a{
+						color: $gray-txt;
+					}
+				}
+			}
+			.dcodeContainer{
+				.red { 
+					float: left;
+					margin: 0 10px 0 0 ;
+				}
+			}
+		}
+	}
+	.boxLayer{ 
+		float: left;	
+		border:1px solid $borderBox;
+	}
+	
+	.accountTitle{ display: none }
+}
+
+@media #{$mediaQueryTablet}{
+	#userWrapperLayer{
+		.registrationContainer{ 
+			width: 50%;
+			min-height: 430px;
+		}
+		.loginContainer{ 
+            width:50%; 
+            float:right;
+            min-height: 430px;
+		}
+		.userContainer { width:30%; }
+		.dcodeContainer { 
+			width: 100%; 
+			.col2 { padding: 20px 0; }
+		}
+		.col2 { 
+			float: right; 
+			width:70%;
+		}
+		.red { 
+			float: left; 
+			width:25%;
+		}
+		.loggedLayer{
+			.userContainer{
+				width:30%;
+				float: right;
+				min-height: 382px;
+				li{
+					margin:15px 0;
+				}	
+				.logout { margin: 0;}
+			}
+		}
+		.promotionContainer{
+			float: right;
+			width: 70%;
+			min-height: 340px;
+		}
+	}
+}
+@media #{$mediaQueryDesktop}{
+	.button,.submit{
+		width: auto;
+	}
+	#userWrapperLayer{
+		.dcodeContainer { 
+			float: left;
+			background-color: $greyDiesel;
+		}
+		.loginContainer,
+		.registrationContainer,
+		.userContainer,
+		.promotionContainer { 
+			float: right; 
+		}
+		.red { 
+			float: right;
+			margin-left: 10px;
+			width:35%;
+		}
+		.userContainer{
+			li { margin:5px 0;}
+		}
+		.col2{ padding: 20px 0 20px 20px;}
+		.col3{ 
+			width: 33.33%;	
+		}
+		input{
+			width: 70%;
+		}
+		.boxLayer{	min-height: 430px; 	}
+		.loggedLayer{
+			.promotionContainer { width: 40%; }
+			.dcodeContainer { width: 40%; }
+			.userContainer { width:20%;}
+			.logout{
+				.box{
+					margin-top: 20px;
+				}
+			}
+			.boxLayer{ min-height: 382px;}
+		}
+	}
+	.uiLayer-getRecoveryPassword{
+		.mfp-content{ width: 500px;}
+	}
+
+}

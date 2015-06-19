@@ -1,0 +1,36 @@
+// ===========================================================
+// MAIN SITE FILE, INCLUDED IN EVERY PAGE OF ECOMMERCE SECTION 
+// ===========================================================
+
+$graceful-usage-threshold: 5;
+$critical-usage-threshold: 1; 
+
+
+
+// Vars and mixins inclusion
+@import "compass/reset/utilities";
+@import "desktop/common/normalize";
+@import "desktop/common/variables";
+@import "desktop/common/mixins";
+
+//style dei plugin
+@import "desktop/vendor/selectize";
+@import "desktop/vendor/owlslider";
+@import "desktop/vendor/slick";
+@import "desktop/vendor/slick-theme";
+@import "desktop/vendor/grids/susy";
+@import "desktop/vendor/mCustomScrollbar";
+
+// Sprites
+@import "desktop/common/svgIconsSprite";
+@import "desktop/common/sprites";
+
+// Code production
+@import "desktop/common/fonts";
+@import "desktop/common/base";
+@import "desktop/common/forms";
+@import "desktop/common/magnificPopup";
+@import "desktop/common/magnificPopup_custom";
+@import "desktop/common/icon";
+@import "desktop/common/generalStructure";
+

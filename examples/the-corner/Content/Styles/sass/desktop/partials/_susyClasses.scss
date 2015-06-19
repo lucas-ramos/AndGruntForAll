@@ -1,0 +1,60 @@
+// =====
+// SUSY GRIDS CLASSES
+// =====
+
+// Usage: @import this partial wherever you need to @extend the "column" classes.
+
+// An @import of this partial is already done in site.scss, which is sufficient for just using these classes in DOM;
+// therefore, if you don't intend to @extend, don't @import this file.
+
+// If possible, prefer @extend-ing classes over @include-ing mixins
+
+@import "susyMixins";
+
+
+// USE THESE AS .column-N IN DOM, OR IN FORM OF
+// @extend .column-N
+
+@for $i from 1 through $total-columns {
+
+	.column-#{$i} {
+		@include ___column_gen($i);
+	}
+
+}
+
+
+
+
+// USE THESE AS .prefix-N IN DOM, OR IN FORM OF
+// @extend .prefix-N
+
+@for $i from 1 through ($total-columns - 1) {
+
+	.prefix-#{$i} {
+		@include ___prefix_gen($i);
+	}
+
+}
+
+
+
+
+// USE THIS AS .omega IN DOM, OR IN FORM OF
+// @extend .omega
+
+.omega {
+	@include omega-margin;
+}
+
+
+
+
+// STANDARD CENTRAL COLUMN
+// Always use this to contain grid and other contents
+
+.centralColumn {
+	@include container;
+	display: block;
+	position: relative;
+}

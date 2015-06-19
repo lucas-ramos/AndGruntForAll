@@ -1,0 +1,284 @@
+﻿
+#banner-designer{
+	img {
+		display: block;
+	}
+}
+
+
+
+#banner-designer-menu{
+	.centralColumn{
+		@include clearfix;
+		.banner-slot{
+			float: left;
+			margin-right: 4px;
+			&[data-isLast="True"]{
+				margin-right: 0;
+			}
+			img{
+				display: block;
+			}
+		}
+	}
+}
+
+
+.banner-trend {
+	$banner-trend-lateral-gap: 10px;
+	$trend-button-height: 30px;
+
+	@include transition(max-height 1s ease-in-out);
+
+	overflow: hidden;
+	position: relative;
+	max-height: 283px;
+
+	.banner-item {
+		height: 558px;
+	}
+
+	.banner-text {
+		margin: 20px $banner-trend-lateral-gap 0;
+		width: 326px;
+		float: left;
+		position: relative;
+	}
+
+	h2, h3 {
+		line-height: 0.9em;
+	}
+
+	h4 {
+		text-transform: none;
+	}
+
+	.line3 {
+		margin-top: 20px;
+	}
+
+	img {
+		position: absolute;
+		display: block;
+	}
+
+	.trend-menu-wrap {
+		position: absolute;
+		top: 300px;
+		left: 0;
+		right: 0;
+		@include transition(opacity 0.2s ease);
+		@include transition-delay(0s);
+		@include opacity(0);
+	}
+
+	.level-0 {
+		margin-left: 10px;
+	}
+
+	.leaf {
+		a {
+			@include opacity(0.5);
+			font-size: $size-big;
+			line-height: 1.3;
+
+			&:hover {
+				@include opacity(1);
+			}
+		}
+	}
+
+	.trend-button-wrapper {
+		@include opacity(0.8);
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: -1px;
+	}
+
+	.trend-button {
+		cursor: pointer;
+		line-height: $trend-button-height;
+		background-color: $white;
+		border: 1px solid $color-light;
+		padding: 0 10px;
+		float: left;
+
+		&.less {
+			display: none;
+		}
+
+		.icon, .text {
+			float: left;
+		}
+
+		.text {
+			margin: 0 7px;
+			text-transform: uppercase;
+		}
+
+		.icon {
+			@extend %svg-arrow-down;
+			margin: 2px 0;
+		}
+	}
+
+	&.open {
+		max-height: 558px;
+
+		.trend-menu-wrap {
+			@include transition-delay(1s);
+			@include opacity(1);
+		}
+
+		.trend-button {
+			&.more {
+				display: none;
+			}
+
+			&.less {
+				display: block;
+			}
+
+			.icon {
+				@extend %svg-arrow-up;
+			}
+		}
+	}
+}
+
+#banner-designer-desc {
+	$logo-top-spacing: 20px;
+	$logo-height: 45px;
+	$desc-line-height: 1.2;
+	$desc-column-width: 499px;
+
+	position: relative;
+	overflow: hidden;
+	max-height: 280px;
+
+	[data-slot="01_TOP"]{
+		img {
+			display: block;
+		}
+	}
+
+	[data-slot="LOGO_SR"], .descWrapper {
+		position: absolute;
+		left: 0;
+		right: 0;
+	}
+
+	[data-slot="LOGO_SR"] {
+		top: $logo-top-spacing;
+		@include zindex(searchresult-banner-logo);
+	}
+
+	[data-item="LOGO_SR"] {
+		width: $desc-column-width;
+		background-repeat: no-repeat;
+		margin-left: 20px;
+	}
+
+	.descWrapper {
+		top: 0;
+		bottom: 0;
+	}
+
+	.descColumn {
+		height: 100%;
+	}
+
+	.description {
+		// @include opacity(0.7);
+		width: $desc-column-width;
+		height: 100%;
+		background-color: $white;
+		@include zindex(searchresult-banner-description);
+	}
+
+	.bd_text_scroll {
+		padding-top: $logo-top-spacing + $logo-height;
+		margin: 0 20px;
+	}
+
+	.bd_text_bottomBorder {
+		height: $size-medium * $desc-line-height * 7.5; //alto quattro righe e mezzo
+	}
+
+	.bd_text {
+		height: $size-medium * $desc-line-height * 7; //alto quattro righe
+		padding-right: 15px;
+		overflow: hidden;
+
+		p {
+			line-height: $desc-line-height;
+		}
+	}
+
+
+	.addToFavorites {
+		$height: $svg-circle-logo-height - 2px;
+
+		position: absolute;
+		bottom: 20px;
+		margin-left: 10px;
+		height: $height + 1px;
+
+		> div {
+			float: left;
+		}
+
+		.savePremiereButton {
+			// @include opacity(0);
+			// @include transition (opacity .2s linear 2s);
+			display: block;
+			text-decoration: underline;
+			background-color: transparent;
+			border: 0;
+
+			float: left;
+			line-height: $height;
+
+			// margin-left: 15px;
+			padding: 0 10px;
+
+			// @include transformInDialog($direction: "left",
+			// $height: 10px,
+			// $background-color: $white,
+			// $parent-height: $height,
+			// $border-width: 1px,
+			// $border-color: $color-light);
+
+			.text {
+				text-transform: uppercase;
+			}
+		}
+
+		button.addPremiere {
+			@extend .tertiary;
+			
+			line-height: $height;
+			
+			text-transform: uppercase;
+		}
+
+		.message {
+			.text {
+				font-size: $size-medium;
+			}
+		}
+
+		%svg-circle-logo {
+			cursor: pointer;
+		}
+
+		&:hover {
+			.savePremiereButton {
+				cursor: pointer;
+				// @include opacity(1);
+				// @include transition-delay(0s);
+			}
+		}
+	}
+}

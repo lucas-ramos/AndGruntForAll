@@ -1,0 +1,108 @@
+// ============================
+// MAGNIFIC POPUP CUSTOM STYLES
+// ============================
+
+@import "compass/css3";
+@import "compass/utilities/general/clearfix";
+
+$section : "header";
+
+// CUSTOM TRANSITIONS
+// ------------------
+
+.uiLayer {
+	// overlay at start
+	&.mfp-bg {
+		opacity: 0;
+		@include transition(opacity .3s);
+
+		/* overlay animate in */
+		&.mfp-ready {
+			opacity: 0.8;
+		}
+		/* overlay animate out */
+		&.mfp-removing {
+			opacity: 0;
+		}
+
+	}
+
+	&.mfp-wrap {
+		/* content at start */
+		.mfp-content {
+			opacity: 0;
+			@include transform(scale(1.08));
+			@include transition(all .5s);
+		}
+		/* content animate in */
+		&.mfp-ready .mfp-content {
+			@include transform(scale(1));
+			opacity: 1;
+		}
+		/* content animate out */
+		&.mfp-removing .mfp-content {
+			@include transform(scale(.95));
+			opacity: 0;
+		}
+	}
+}
+
+
+// CUSTOM CLOSE BUTTON
+// -------------------
+
+.mfp-close {
+	cursor: pointer;
+}
+
+
+// CUSTOM LAYER CONTENT
+// --------------------
+
+// DEFAULTs
+
+.uiLayer {
+	.mfp-content {
+		max-width: 990px;
+	}
+	.inner {
+		background: white;
+		padding: 20px;
+	}
+}
+
+
+// OTHER COUNTRIES LAYER
+
+.uiLayer-otherCountriesLayer {
+	.mfp-content {
+		max-width: 350px;
+	}
+}
+
+.otherCountriesLayer {
+	@include bodyStyle($section);
+	max-width: 350px;
+	padding: 20px 20px 0;
+
+	.intro{
+		margin: 0 0 15px;	
+	}
+
+	.privacy {
+		margin: 15px 0;
+	}
+
+	.fieldRow {
+		margin: 0 0 10px;
+	}
+
+	button{
+		@include button(false,$white,$black,$black,$white);
+		text-transform: uppercase;
+		float: none;
+		border:2px solid $black;
+		padding: 10px;
+		margin: 10px 0 0;
+	}
+}

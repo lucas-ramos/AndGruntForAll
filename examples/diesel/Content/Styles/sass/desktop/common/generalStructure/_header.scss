@@ -1,0 +1,790 @@
+@import "layer";
+
+@include all-flagSprite-sprites;
+@include all-flagSprite2x-sprites;
+
+$section : "header";
+
+#utilityBar{
+    > div{
+        display: none;
+    }
+}
+
+#topBar{
+    height: 33px;
+    overflow: hidden;
+    background-color: $white;
+    width: 100%;
+    #home &.topBarClose,
+    #subhome &.topBarClose{
+        position: absolute !important; // l'important è per windowsPhone per vincere sul position fixed in home
+    }
+
+    #secondaryNav{
+        float: right;
+        width: 25%;
+        height: 33px;
+        @include microClearfix();
+        .mainCartLink, .searchContainer, .wishlistContainer{
+            display: inline-block;
+            float: left;
+            padding: 0;
+            height: 100%;
+            text-align: center;
+        }
+        .mainCartLink{
+            margin:0;
+            padding:0;
+            width: 50%;
+            &:hover, &.activeSection{
+                background: $black;
+                div.inner {
+                    border-right: 1px solid $black;
+                    span.count{
+                        color: $white;
+                    }
+                }
+            }
+            div.inner{
+                width: 100%;
+                height: 20px;
+                margin-top: 6px;
+                border-right: 1px solid $light-gray-border;
+                a{
+                    display: block;
+                }
+                span{
+                    display: inline-block;
+                }
+                span.count, span.text{
+                    display: none;
+                }
+                span.count{
+                    font-size: 10px;
+                    display: inline-block;
+                    position: relative;
+                    bottom: 5px;
+                }
+            }
+        }
+        .searchContainer{
+            width: 50%;
+            .search{
+                margin-top: 6px;
+                span { 
+                    display: none;
+                }
+                .icon-search{
+                    display: block;
+                    margin: 0 auto;
+                }
+            }
+        }
+        .wishlistContainer{
+            width: 33.3%;
+            .wishList{
+                border-right: 1px solid $light-gray-border;
+                margin-top: 6px;
+                margin-left: 10%;
+                height: 20px;
+            }
+            .icon, .countItemsInWishList{
+                display: inline-block;
+                float: left;
+            }
+            &:hover .icon{
+                @extend %svg-WishlistRed;
+            }
+            .countItemsInWishList{
+                margin-left: 3px;
+                .counterInner{
+                    .number{
+                        color: $red;
+                        font-size: 10px;
+                        display: inline-block;
+                        position: relative;
+                        left: 1px;
+                        top: 2px;
+                        .firefox  & {top: -1px;}                
+                    }
+                    &.noItems .number{
+                        display: none;
+                    }
+                }
+            }
+        }
+        .loggedUser &{
+            width: 36%;
+            .mainCartLink, .searchContainer{
+                width: 33.3%;
+            }
+        }
+    }
+}
+
+#icoNav{
+    float: left;
+    width: 9%;
+    display: inline-block;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    .icon {
+        @extend %svg-burger;
+        background-size: 20px;
+        display: inline-block;
+        margin: 6px auto;
+        text-indent: -9999px;
+        padding: 0 ;
+    }
+}
+#logoDiesel{
+    display: inline-block;
+    float: left;
+    padding-top: 9px;
+    a{
+        display: block;
+        img {
+            width: 114px;
+        }
+    }
+}
+
+#navBar{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    .container{
+        width: 90%;
+        height: 100%;
+        background-color: $white;
+        @include boxShadowMenuMobile();
+        overflow: auto;
+        nav{
+            margin: 0;
+            width: 100%;
+            top: 40px;
+            left:0;
+            .mainNavContainer{
+                position: relative;
+                margin: 0 auto;
+                .level-0{
+                    padding-top: 25px;
+                    li{
+                        height: 41px;
+                        a, div{
+                            color: inherit;
+                            text-align: center;
+                            @include H3Style($section);
+                            line-height: 38px;
+                            border-bottom: 2px solid $light-greyDiesel;
+                            width: 90%;
+                            margin: 0 auto;
+                            display: block;
+                            @include microClearfix();
+                        }
+                        .icon{
+                            @extend %svg-arrow_menu_right_black;
+                            background-size: 12px;
+                            display: inline-block;
+                            float: right;
+                            position: relative;
+                            top: 12px;
+                        }
+                        .text{
+                            display: inline-block;
+                            float: left;
+                            position: relative;
+                            top: 1px;
+                        }
+                        &:last-child{
+                            a, div {
+                                border-bottom: 0px;
+                            } 
+                        }
+                        &.selected, &.hasSelectedChild{
+                            margin-top: -3px;
+                            a, div {
+                                background-color: $blackDiesel;
+                                color: $white;
+                                border-bottom: 0px;
+                                width: 100%;
+                                padding-left: 5%;
+                                height: 41px;
+                            }
+                            .icon{
+                                @extend %svg-arrow_menu_right_white;
+                                right: 5%;
+                            }
+                        }
+                        &.sale{
+                            a, div {
+                                color: $red;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+#topInnerMenuMobile{
+    top: 0;
+    height: 50px;
+    width: 100%;
+    left:0;
+    background-color: $light-greyDiesel;
+    @include boxShadowMenuMobile();
+    @include container();
+
+    //VIVA LA DUPLICAZIONE ... VIVA IL FULL RESPONSIVE!!!!
+    .column {
+        display: table;
+        height: 50px;
+        text-transform: uppercase;
+        cursor: pointer;
+        >div{
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+            position: relative;
+            color: $blackDiesel;
+            @include H4Style('header');
+            //.shippingCountry  {border-right:1px solid $light-gray-border;}
+            //.userNotLogged , .userLogged{border-left:1px solid $light-gray-border;}
+        }
+        &.ship, &.store {border-right:1px solid $light-gray-border;}
+    }
+    .ship{
+        @include span(4 at 1 of 12 no-gutters wide);                
+        .shippingCountry  {
+            position: relative;
+            height: 25px;
+        }
+        .value {display:none;}
+        .icon-small-bottom {
+            position: absolute;
+            right: 10px;
+            top: 9px;
+            body.mobile.Safari &{ top:11px; }
+        }
+        span.icon{
+            display: inline-block;
+            position: absolute;
+            z-index: 0;
+            bottom: 0px;
+            left: 45%;
+            .no-touch & , .windowsPhone &{background-size: inherit;} 
+        }
+    }
+    .store{ @include span(4 of 12 no-gutters wide); }
+    .log { 
+        @include span(4 of 12 last);
+        a{color: $blackDiesel;} 
+        .slash{display:none;}
+    } 
+}
+
+#menuContainer{
+    display: none;
+    width: 90%;
+    //height: calc(100% - 40px); da js
+    background-color: $white;
+    top: 0;
+    left: 0;
+    position: absolute;
+    margin-top: 50px;
+    -webkit-transform: translate3d(-200%, 0, 0);
+    -moz-transform: translate3d(-200%, 0, 0);
+    -ms-transform: translate3d(-200%, 0, 0);
+    -o-transform: translate3d(-200%, 0, 0);
+    transform: translate3d(-200%, 0, 0);
+    -webkit-transition: 300ms all ease;
+    -moz-transition: 300ms all ease;
+    -o-transition: 300ms all ease;
+    -ms-transition: 300ms all ease;
+    transition: 300ms all ease;
+    overflow: auto;
+    @include boxShadowMenuMobile();
+    .level-1{
+        display: none;
+    }
+    #titleSecondLevelMenu{
+        background-color: $blackDiesel;
+        height: 41px;
+        @include H2Style($section);
+        color: $white;
+        margin-bottom: 35px;
+        text-align: center;
+        line-height: 43px;
+        width: 95%;
+        margin: 0 auto 35px auto;
+        .ru &, .es &{
+            font-size: 14px;
+        }
+    }
+    .tabLateralFooter{
+        display: none;
+    }
+    .iOs &{
+       height: calc(100% - 50px);
+       height: 100%; // fix per ipod4 
+    }
+}
+
+#closeMenu{
+    display: none;
+    background-color: transparent;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 10%;
+    height: 100%;
+    z-index: $z-index-closeMenu;
+}
+
+/* header sticky in home and subhome */
+#containerUnderLayer.stickyNavBar{
+    #topBar{
+        position: fixed;
+        z-index: $z-index-headerElement;
+    }
+    &.navBarScrolling #topBar{
+        top: 0px;
+    }
+}
+
+@media #{$mediaQueryDesktopCommon} {
+    #utilityBar{                    
+        @include container();//susy contenitore padre
+        height: 33px;
+        > div {
+            display: inline-block;
+            @include H4Style($section);
+            .jp & {
+                font-size: 11px;
+            }
+        }
+        .cycStore {
+            @include span(isolate 3 at 1 of 12 wide);            
+            position: relative;
+            .cntLink{ @include span(5 of 12 no-gutters wide); }
+            .cntStore { @include span(7 of 12 last); }            
+            .cycLink {                
+                padding-left:25px; 
+                .center {position: relative;}
+                .shippingCountry{
+                    line-height:15px;
+                    height: 15px;
+                    .text:after { content: ":"; }
+                    .icon {
+                        box-shadow: 0px 0px 2px $light-black-border; 
+                        display: inline-block;                        
+                        position: absolute;
+                        left: 53px;
+                        top: 1px;
+                        z-index:0;
+                        body.desktop & , body.tablet & {background-size: inherit;} 
+                        body.desktop.Safari & , body.tablet.Safari &{ top:3px; }
+                    }
+                    .value { display: none; }
+                } 
+            }            
+            .storeLink { padding-left:20px;}
+            &.active .cycLink {border:none;}
+            .shippingCountry , .icon-small-bottom { display: inline-block; }
+            .icon-small-bottom { 
+                position: absolute;
+                top: -2px;
+                left: 68px;
+                body.desktop.Safari &{ top:0; }
+            }
+            .center { border-right: 1px solid $light-gray-border; }
+        }
+        .cnt { 
+            height: 33px;
+            cursor: pointer;
+            display: table;
+            .middle {
+                display: table-cell;
+                vertical-align: middle;
+            }
+        }
+        .headerPromoWrapper {
+            @include span(isolate 6 at 4 wide);
+            > div { padding: 0 25px; }
+            .shortDescription, .longDescription {@include H7Style($section);}
+        }            
+        .loginHelp {
+            text-align:right;
+            position: relative;
+            @include span(isolate 3 at 10 last);  
+            .cntAccount , .ctnLoginRegistration{ @include span(7 of 12 no-gutters wide); }
+            .cntHelp{ @include span(5 of 12 last); }
+            .customMyAccountMenu {
+                text-align: right;
+                padding-right: 25px; 
+                .loginButton { 
+                    display: inline-block; 
+                    a { color: $black; }
+                }                
+            }
+            &.active .customMyAccountMenu {border:none;}
+            .helpLink { 
+                padding-right:25px; 
+                .center { border-left: 1px solid $light-gray-border; }
+            }
+        }
+        .active {
+            &.loginHelp .helpLink .center {border-left:none;}
+            &.cycStore .center {border-right:none;}
+            .activeSectionContainer { 
+                background-color: $black; 
+                .activeSection a , .activeSection span  { color:$white; }
+            }
+        }
+    }
+
+    #containerUnderLayer{
+        position: relative;
+        z-index: $z-index-navBar;
+        background-color: $white;
+        /* header sticky in home and subhome */
+        &.stickyNavBar{
+            position: fixed;
+            width: 100%;
+            #topBar{
+                position: relative;
+                width: 100%;
+                z-index: 0;
+            }
+            &.navBarScrolling{
+                top: 0px;
+                #topBar{
+                    top: 0;
+                }
+            }
+        }
+    }
+
+    #topBar{
+        height: 51px;//comprende bordo superiore
+        border-top: 1px solid $greyDiesel;
+        #secondaryNav{
+            width: 16.5%;
+            height: 50px;
+            .mainCartLink div.inner, .searchContainer .search, .wishlistContainer .wishList{
+                margin-top: 15px;
+            }
+            .loggedUser &{
+                width: 20%;
+            }
+        }
+    }
+
+    #icoNav{
+        display: none;
+    }
+
+    #logoDiesel{
+        margin-left: 25px;
+        padding-top: 18px;
+        img {
+            width: 16.5%;
+        }
+    }
+
+    #navBar{
+        display: block !important;  //si perde col resize da mobile
+        width: 100%;
+        top: 50px;
+        .container{
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+            overflow: inherit;
+            width: 100%;
+            height: 50px;
+            nav{
+                .mainNavContainer{
+                    .level-0{
+                        padding-top: 0px;
+                        ul{
+                            @include microClearfix();
+                            margin: 0 auto;
+                            width: auto;
+                            li{
+                                float: left;
+                                display: inline-block;
+                                text-align: center;
+                                padding: 0 7px;
+                                height: 50px;
+                                a, div{
+                                    @include H4Style($section);
+                                    border-bottom: 0;
+                                    margin: 0;
+                                    display: inline;
+                                    .icon{
+                                        display: none;
+                                    }
+                                    .fr &, .ru &, .de & , .es &{
+                                        font-size: 15px;
+                                    }
+                                }
+                                .text{
+                                    line-height: 54px;
+                                }
+                                &.selected, &.hasSelectedChild{
+                                    margin-top: 0px;
+                                    a, div {
+                                        background-color: $white;
+                                        color: $black;
+                                        border-bottom: 0px;
+                                        padding: 0;
+                                        height: auto;
+                                    }
+                                }
+                                &.visible{
+                                    background-color: $blackDiesel;
+                                    a, div{
+                                        color: $white;
+                                    }
+                                    &#sale{
+                                        background-color: $red;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #topInnerMenuMobile{
+        display: none;
+    }
+
+    #menuContainer{
+
+        -webkit-transform: translate3d(0, 0, 0) !important;
+        -moz-transform: translate3d(0, 0, 0) !important;
+        -ms-transform: translate3d(0, 0, 0) !important;
+        -o-transform: translate3d(0, 0, 0) !important;
+        transform: translate3d(0, 0, 0) !important;
+        -webkit-transition: none !important;
+        -moz-transition: none !important;
+        -o-transition: none !important;
+        -ms-transition: none !important;
+        transition: none !important;
+
+        display: block;
+        height: inherit;
+        margin-top: 100px;
+        width: 100%;
+        #titleSecondLevelMenu{
+            display: none !important;
+        }
+    }
+
+    .touch{
+        #overlay.visible .icon{
+            position: absolute;
+            left: 49.2%;
+            border: 2px solid $white;
+            width: 26px;
+            height: 26px;
+            background-size: 22px 22px;
+        }
+        .brakPointCommon #overlay.visible .icon{
+            left: 49.5%;
+        }
+    }
+}
+
+@media #{$mediaQueryTablet} {
+    #utilityBar {
+        margin-top:33px; //per mettere le promo in prima riga
+        &.notPromo { margin-top:0px;}
+        > div { 
+            @include H5Style($section); 
+            .jp & {
+                font-size: 11px;
+            }
+        }               
+        .cycStore {  
+            width: 30%;
+            .cntLink { 
+                @include span(8 of 14 no-gutters wide); 
+                .cycLink {
+                    padding-left: 20px;
+                    .shippingCountry {
+                        .value { display:none; }
+                        .text { 
+                            float:left; 
+                            line-height: 17px;
+                        }
+                        .icon { 
+                            float:right; 
+                            left:45px;
+                            top:2px;
+                        }
+                    }
+                }
+            }  
+            .storeLink  { padding-left:10px;}
+            .icon-small-bottom { display:none; }  
+            .cntStore { @include span(6 of 14 last); }  
+        }            
+        .loginHelp {
+            .customMyAccountMenu { padding-right: 10px; }
+            .helpLink { padding-right: 20px; }
+                width: 30%;
+                float: right;
+                margin: 0;
+        }
+        .headerPromoWrapper {
+            //per mettere le promo in prima riga
+            position: absolute;
+            top: 0;
+            width: 100%;
+            left: 0;
+            margin: 0;
+        }
+    }
+
+    #navBar .container { padding-left: 20px; }
+
+    // fix safari ipad
+    .touch.tablet #topBar #secondaryNav .wishlistContainer .countItemsInWishList .counterInner .number{
+        top: -1px;
+    }
+
+    #logoDiesel { margin-left: 20px; }
+
+}
+
+@media #{$mediaQueryDesktop} {
+    #navBar{
+        width: 67%;
+        left: 16.5%;
+        top: 1px;
+        .container nav .mainNavContainer{
+            .level-0{
+                ul{
+                    display: table; // fa centrare in automatico il menu
+                    li{
+                        padding: 0 9px;
+                        a, div{
+                            @include H2Style($section);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // solo desktop e solo home/subhome
+    #home, #subhome{
+        #containerUnderLayer, #navBar .container, #topBar{
+            background-color: rgba(255, 255, 255, 0.5); //NO OPACITY !!
+        }
+        #navBar .container{
+            background-color: transparent;
+        }
+    }
+
+    #menuContainer{
+        margin-top: 51px;
+        #home &{
+            margin-top: 50px;
+        }
+    }
+
+    #topBar #secondaryNav{
+        .searchContainer{
+            width: 58%;
+            height: 100%;
+            .search{
+                height: 22px;
+                margin-left: 16%;
+                .fr &{
+                    margin-left: 15%;
+                }
+                span.text{
+                    display: inline-block;
+                    padding-top: 4px;
+                    margin-left: 6px;
+                    .fr &{
+                        font-size: 12px;
+                        margin-left: 0px;
+                    }
+                    .ru & {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+        .wishlistContainer .countItemsInWishList .counterInner .number{
+            font-size: 12px;
+            left: -1px;
+            //top: 2px;
+            .touch.tablet &{
+                top: -1px;
+            }
+        }
+        .mainCartLink{
+            width: 42%;
+            div.inner span.count{
+                font-size: 12px;
+                bottom: 4px;
+            }
+        }
+        .loggedUser &{
+            width: 17%;
+            .mainCartLink, .wishlistContainer{
+                width: 25%;
+            }
+            .searchContainer{
+                width: 50%;
+                .search{
+                    margin-left: 10%;
+                }
+            }
+        }
+        .fr.loggedUser & .searchContainer .search{
+            margin-left: 4%;
+        }
+    }
+}
+
+@media #{$mediaQueryWideScreen}{
+    #topBar{
+        #secondaryNav{
+            .searchContainer .search{
+                margin-left: 24%;
+            }
+            .loggedUser & .searchContainer .search{
+                margin-left: 24%;
+            }
+            .fr.loggedUser & .searchContainer .search{
+                margin-left: 10%;
+            }
+            .ru.loggedUser & .searchContainer .search{
+                margin-left: 14%;
+            }
+        }
+
+        #navBar{
+            .container nav .mainNavContainer{
+                .level-0 ul li{
+                    padding: 0 13px;
+                }
+            }
+        }
+    }
+}

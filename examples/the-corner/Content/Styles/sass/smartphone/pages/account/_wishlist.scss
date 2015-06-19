@@ -1,0 +1,34 @@
+// =============
+// WISHLIST PAGE
+// =============
+
+@import "wishlistItem";
+
+.wishlistItem {
+	margin-bottom: 20px;
+}
+
+.uiLayer-uiConfirmationAlert {
+	.message .text {
+		font-size: $size-expanse-rem;
+	}
+}
+
+.centralColumn {
+	margin: 0;
+}
+.subtitle {
+	margin: 0 10px 10px;
+}
+
+
+.empty {
+	margin: 20px 0;
+}
+
+
+.JP & {
+	 .uiLayer-uiConfirmationAlert .buttonsRow .text {
+		font-size: $size-midsmall-rem;
+	}
+}

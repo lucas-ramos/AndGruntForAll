@@ -1,0 +1,99 @@
+// =======================
+// HELP AREA SHARED STYLES
+// =======================
+@import "compass/utilities/general/clearfix";
+
+@import "variables";
+@import "fonts";
+@import "Smartphone/callToActions";
+@import "Smartphone/menus";
+
+
+.RU h2 {
+	font-size: 2rem;
+}
+
+#container {
+	h2 {
+		word-break: break-word;
+		line-height: 3.7rem;
+	}
+}
+
+
+#legalMenu {
+	h2.inverse {
+		padding: 20px 0;
+		color: $color-dark;
+		background-color: $white;
+	}
+
+	a {
+		@extend .menuSingleLine;
+		background-color: $color-ultra;
+		border-bottom: 1px solid $color-top;
+
+		&.selected {
+			background-color: $color-medium;
+			color: $color-ultra;
+		}
+	}
+
+	nav {
+		//scalo le dimensioni per le lingue con titoli lunghi
+		.US &, .GB &, .RU & { font-size: 0.9em; }
+		.RU & { font-size: 0.7em; }
+	}
+}
+
+
+
+#legalarea {
+	article {
+		margin: 30px 0;
+		@extend %helvetica;
+
+		h2 {
+			margin-bottom: 20px;
+
+			.JP & {
+				font-size: $size-major-rem;
+			}
+		}
+
+		p {
+			margin: 10px 0;
+		}
+
+		td {
+			padding: 5px;
+		}
+
+		ul {
+			list-style: square;
+			padding-left: 15px;
+		}
+	}
+}
+
+
+
+.GB, .US, .DE, .ES {
+	.printButton {
+		font-size: 1.3em;
+	}
+}
+
+
+
+
+.printButton {
+	display: none;
+}
+
+.generatedPdf {
+	@extend .button;
+	@extend .button.secondary;
+	display: block;
+}
+

@@ -1,0 +1,439 @@
+$section : "header";
+
+// Gestione placeholder specifici per il cyc, per evitare di scrivere mille volte le stesse cose
+
+%columnTitle {
+	@include H1Style($section);
+	line-height: 22px;
+	margin: 0 0 25px 0;
+}
+
+%arrow_down_black_cyc {
+	content: '';
+	width: 0;
+	height: 0;
+	position: absolute;
+	top: 26px;
+	right: 0;
+	border-style: solid;
+	border-width: 6px 6px 0 6px;
+	border-color: $black transparent transparent transparent;
+}
+
+%arrow_up_black_cyc {
+	content: '';
+	width: 0;
+	height: 0;
+	position: absolute;
+	top: 26px;
+	right: 0;
+	border-style: solid;
+	border-width: 0 6px 6px 6px;
+	border-color: transparent transparent $black transparent;
+}
+
+%single-nation-style {
+	li {
+		margin-bottom: 8px;
+
+		a {
+			display: inline-block;
+			width: 100%;
+			padding: 5px 8px;
+
+			@include H6Style($section);
+
+			.icon { 
+				@extend %svg-bag_country_selector;
+				display: inline-block;	
+				//width: 14%;
+				background-size: 16px;
+				line-height: 16px;
+				vertical-align: top;
+				padding-right: 1%;				
+			}
+
+			.text {
+				display: inline-block;
+				width: 80%;
+				body.desktop.Safari &{
+					width: 79%;
+    				padding-top: 1px;
+				}
+			}
+		}
+
+		&.selected {
+			background-color: $black;
+
+			a { 
+				color: $white; 
+
+				.icon {
+					@extend %svg-bag_country_selector_white;
+				}				
+			}
+		}
+	}
+}
+
+%store-nations-style {
+	.nations {
+		h4 {
+			@include H2Style($section);
+			margin: 0 0 15px;
+			line-height: 1;
+		}
+
+		ul {
+			margin: 0 0 15px;
+			@extend %single-nation-style;
+		}
+	}
+}
+
+%explore-nations-style {	
+	.nations {
+		@extend %single-nation-style;
+
+		li {
+			//margin-bottom: 8px;
+			padding: 0;
+			border-top: none medium;
+
+			a {
+				padding: 5px 0;
+
+				.icon {
+					display: none;
+					background-image: none;
+					width: 0;
+					height: 0;
+					line-height: 1;
+					vertical-align: baseline;
+					padding: 0;
+					margin: 0;
+				}
+
+				.text {
+					width: 100%;
+				}
+			}
+		}
+	}
+}
+
+
+// Mobile first, creo lo stile da utilizzare prima con il mobile
+
+#countryWrapperLayer {
+	@include microClearfix();				
+	@include container();
+
+	@include bodyStyle($section);
+
+	.wrapper {
+		@include span(12);
+
+		-webkit-transform: translate3d(0,0,0);
+		-webkit-transform: translateZ(0);
+
+		// Gestione stile per il mobile con layer in posizione fixed 
+		.fixedLayer & {
+			height: 100%;
+			padding-bottom: 40px;
+			@include nativeScroll;
+		}
+
+		background-color: $white;
+		
+		#storesContent, #exploreContent, #infoContent {
+			@include span(12);
+		}
+
+		.cycColumn {
+			padding: 20px 25px;
+
+			@extend %store-nations-style;
+
+			.columnTitle {
+				@extend %columnTitle;
+				display: none;
+				
+				&.mobile {
+					display: block;
+					border-bottom: 3px solid $black;
+					padding-bottom: 15px;
+				}		
+			}
+
+			.subTitle {
+				display: none;
+
+				&.mobile {
+					display: block;
+					@include H6Style($section);
+
+					.shippingCountry .text {
+						text-transform: none;
+
+						&:after {
+							content: ":";
+							display: inline-block;
+						}
+					}
+
+					.shippingCountry .value {
+						display: block;
+						background-color: $black;
+						color: $white;
+						margin: 5px 0 0;
+						padding: 5px;
+					}
+				}
+			}
+			
+			.countryTitle {
+				display: none;
+
+				&.mobile {
+					@include H2Style($section);
+					display: block;
+					padding: 30px 0 15px;
+
+					&:after {
+						content: ":";
+						display: inline-block;
+					}
+				}
+			}
+
+			.nations {
+				> li {
+					padding: 0;
+					border-top: 2px solid $greyDiesel;
+
+					h4 {
+						position: relative;
+						margin: 0;
+						padding: 20px 0;
+
+						&:after {
+							@extend %arrow_down_black_cyc;
+						}
+					}
+
+					&.open {
+						h4:after {
+							@extend %arrow_up_black_cyc;
+						}
+					}
+
+					> ul {
+						display: none;
+					}
+				}
+			}
+		}
+
+		#exploreContent {
+			.cycColumn {
+				@extend %explore-nations-style;
+				padding: 0 25px 20px;
+
+				h4 { 
+					display: block;
+					border-top: 3px solid $black;
+				}
+			}
+		}
+		
+		#infoContent {
+			background-color: $greyDiesel;
+
+			.cycColumn {
+				display: table;
+				min-height: 50px;
+				width: 100%;
+				padding: 10px 25px;
+
+				.infoTitle {
+					@include H6Style($section);
+					display: table-cell;
+					vertical-align: middle;
+					text-transform: none;
+
+					.link {
+						text-decoration: underline;
+						cursor: pointer;
+					}
+				}
+			}
+		}
+	}
+}
+
+// Poi creo lo stile da utilizzare sia per il desktop, che per il tablet in landscape
+
+@media #{$mediaQueryDesktopCommon} {
+	#countryWrapperLayer {
+		.wrapper {
+			background-color: $greyDiesel;
+
+			.cycColumn {
+				padding: 20px 25px;
+
+				.columnTitle {			
+					display: block;
+					border-top: none medium;
+					
+					&.mobile {
+						display: none;
+					}
+
+					&:after {
+						content: ":";
+						display: inline-block;
+					}
+				}
+
+				.subTitle.mobile {
+					display: none;
+				}
+
+				.countryTitle.mobile {
+					display: none;
+				}
+
+				.nations {
+					> li {
+						padding: 0;
+						border-top: none medium;
+
+						h4 {
+							margin: 0 0 15px;
+							padding: 0;
+
+							&:after {
+								@include reset_icon_cyc(true);
+							}
+						}
+
+						> ul {
+							display: block !important;
+						}
+					}
+				}
+			}
+			
+			#storesContent {
+				@include span(9.5 no-gutters);
+				background-color: $white;
+
+				.nations {
+					@include microClearfix();
+
+					.america, .asia {
+						width: 19%;
+						padding-right: 1%;
+					}
+
+					.europe {
+						float: right;
+						width: 80%;
+						margin-left: 20%;
+						margin-top: -193px;
+
+						ul {
+							-moz-column-count: 4;
+							-webkit-column-count: 4;
+							column-count: 4;
+						}
+
+						// Eccezione per la lista delle nazioni sotto ie9
+						.ielt10 & {
+							ul {
+								@include microClearfix();
+								overflow: hidden;
+
+								li {
+									float: left;
+									width: 25%;
+								}
+							}
+						}
+					}
+				}
+			}
+
+			#exploreContent {
+				@include span(last 2.5 wide);
+
+				.cycColumn {
+					padding: 20px 25px;
+
+					h4 { 
+						display: none;
+					}
+					
+					.nations {
+						display: block !important;
+					}
+				}
+			}
+
+			#infoContent {
+				@include span(12);
+				border-top: 1px solid $white;
+			}
+		}
+	}
+}
+
+// Poi creo lo stile da utilizzare solo per il tablet in portrait
+
+@media #{$mediaQueryTablet} {
+	#countryWrapperLayer {
+		.wrapper {
+			#storesContent {
+				.nations {
+					@include microClearfix();
+
+					-moz-column-count: 3;
+					-webkit-column-count: 3;
+					column-count: 3;
+
+					// Resetto tutti gli stili che ho inserito per il desktop/tablet(landscape)
+					.america, .asia {
+						width: auto;
+						padding: 0;
+					}
+
+					.europe {
+						float: none;
+						width: auto;
+						margin: 0;
+
+						ul {
+							-moz-column-count: auto;
+							-webkit-column-count: auto;
+							column-count: auto;
+						}
+
+						.ielt10 & {
+							ul {
+								@include microClearfix();
+								overflow: auto;
+
+								li {
+									float: none;
+									width: auto;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

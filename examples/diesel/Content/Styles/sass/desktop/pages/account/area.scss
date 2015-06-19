@@ -1,0 +1,52 @@
+// ==========================
+// ACCOUNT AREA SHARED STYLES
+// ==========================
+
+@import "desktop/common/variables";
+@import "desktop/common/mixins";
+
+// IMPORTS BY SECTION
+// ---------------------
+
+@import "creditcardwallet";
+@import "addressbook";
+@import "orders";
+@import "wishlist";
+
+
+
+/*PARTIAL CALL*/
+#overview {
+	@import "overview";
+}
+
+#wishlist {
+	@import "wishlist";
+}
+
+#addressbook {
+	@import "addressbook";
+}
+
+#creditcardwallet {
+	@import "creditcardwallet";
+}
+
+#user {
+	&.profile { @import "profile"; }
+	&.login { @import "login"; }
+	&.register { @import "register"; }
+	&.thankyouregistration { @import "thankyouregistration"; }
+}
+
+#myreturn {
+	@import "myreturn";
+}
+
+#orders {
+	@import "orders";
+}
+
+#searchorder {
+	@import "searchorder";
+}

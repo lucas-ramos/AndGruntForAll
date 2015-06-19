@@ -1,0 +1,33 @@
+$textsearch-height: 52px;
+$textsearch-button-width: 60px;
+
+#textsearch {
+
+	form {
+		@include pie-clearfix;
+		position: relative;
+	}
+
+	input[type="text"]	{
+		box-sizing: border-box;
+		height: $textsearch-height;
+		line-height: $textsearch-height;
+		padding-left: $textsearch-button-width;
+		background: $color-ultra;
+		border: none;
+		text-align: left;
+		width: 100%;
+	}
+
+	button[type="submit"] {
+		@extend %svg-search;
+		@include imageReplacement;
+		position: absolute;
+		height: $textsearch-height;
+		width: $textsearch-button-width;
+		top: 0;
+		left: 0;
+		background-position: center center;
+		background-color: $color-ultra;
+	}
+}

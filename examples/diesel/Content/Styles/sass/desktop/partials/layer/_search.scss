@@ -1,0 +1,28 @@
+#layerSearch{
+	background: #00f;
+}
+
+@media #{$mediaQueryDesktopCommon}{
+	
+}
+@media #{$mediaQueryTablet}{
+
+}
+@media #{$mediaQueryDesktop}{
+	.search{
+    	@include franklin();
+    	letter-spacing: 0.075em;
+    	color: $blackDiesel;    	
+    	span { 
+    		text-transform: uppercase;
+    		font-size: 15px;
+    		display: block;
+    		float: left;
+    	}
+    	.closeText { display: none;}
+	    &.open{
+	        .closeText{ display: block; }
+	        .text { display: none; }
+	    }
+	}
+}

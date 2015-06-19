@@ -1,0 +1,167 @@
+// =================
+// USER REGISTRATION
+// =================
+
+
+
+
+.descr_reg {
+	color: $color-light;
+	margin: 5px 0 15px;
+}
+
+.docomo {
+	padding-bottom: 10px;
+	float: left;
+	font-size: $size-tiny;
+}
+
+.registrationForm {
+	position: relative;
+	padding-top: 20px;
+	margin-bottom: 20px;
+	.validation-summary-errors {
+		position: absolute;
+		top: 0;
+		left: 0;
+		color: $red;
+		font-size: $size-medium;
+	}
+	.passwordRecoveryLink {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		@extend .secondary;
+		@extend .column-3;
+		@extend .omega;
+	}
+	.buttonsRow {
+		float: right;
+		margin-right: 1.5%;
+		button {
+			@extend .column-3;
+			@extend .omega;
+			@extend .primary;
+		}
+	}
+	.privacyContainer, .acceptFlags {
+		margin-bottom: 10px;
+	}
+	form {
+		@include pie-clearfix;
+	}
+	.fieldRow {
+		float: left;
+		width: 48%;
+		margin-right: 2%;
+		&.radioGroup, &.select {
+			.fieldLabel {
+				font-size: $size-grand;
+				color: $color-light;
+				margin-bottom: 15px;
+			}
+		}
+		&.checkbox {
+			float: none;
+			width: auto;
+			margin-right: 0;
+			@include pie-clearfix;
+			margin-bottom: 0;
+			.fieldValue {
+				float: left;
+				margin-right: 10px;
+			}
+			.fieldLabel {
+				float: left;
+				width: 95%;
+				line-height: $form-checkbox-height;
+				font-size: $size-medium;
+				color: $color-light;
+				@extend %helvetica;
+
+			}
+
+		}
+	}
+
+	#RegistrationViewModel_PasswordConf_Wrapper {
+		width: 100%;
+		margin-right: 0;
+		.fieldValue {
+			width: 48%;
+			margin-right: 2;
+		}
+	}
+
+	#RegistrationViewModel_BirthDate_Wrapper {
+		width: 50%;
+		margin-right: 0;
+		.fieldValue {
+			@include pie-clearfix;
+		}
+		.selectInput_wrapper {
+			float: left;
+			width: 31%;
+			margin-right: 2%;
+
+			select{
+				height: 40px;
+				font-size: $size-large; 
+			}
+		}
+	}
+	.fieldRow.radioGroup {
+		.fieldValue {
+			@include pie-clearfix;
+		}
+	}
+	.radioButtonBox {
+		float: left;
+		width: 50%;
+		.input {
+			@include pie-clearfix;
+		}
+		.radioButton {
+			float: left;
+			margin-right: 10px;
+			position: relative;
+			top: ($form-input-height / 2) - ($form-radiobutton-height / 2); //centra il radio sulla dimensione di un input field
+		}
+		label {
+			float: left;
+			line-height: $form-input-height; // centra la label sulla dimensione di un input field
+			width: 85%;
+			font-size: $size-grand;
+			color: $color-light;
+		}
+	}
+	.privacyContainer {
+		clear: both;
+		font-size: $size-tiny;
+		line-height: $size-smaller;
+		color: $color-light;
+		@extend %helvetica;
+	}
+}
+
+/* LABEL TO HIDE */
+.fieldRow {
+	.selectTitle {
+		display: none;
+	}
+	&.text, &.password {
+
+
+		.fieldLabel {
+			display: none;
+		}
+	}
+}
+.passwordStrengthContainer, .securePasswordInfo, .mandatory, .passwordLength, .flag.yLetter .description, .flag.dataProfiling .description {
+	display: none;
+}
+
+/* Il benedetto asterischino */
+.req {
+	display: none;
+}

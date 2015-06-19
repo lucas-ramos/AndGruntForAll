@@ -1,0 +1,159 @@
+﻿// ================
+// EMPTY CART
+// ================
+
+.emptyCartWrap {
+	@include pie-clearfix;
+	margin: 35px 0;
+}
+
+.emptyCartContentWrap {
+	padding: 52px 0;
+	border-top: 1px solid $color-light;
+	border-bottom: 1px solid $color-light;
+}
+
+
+.empty-cart-banners {
+  @include pie-clearfix;
+  margin-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid $color-light;
+
+	& .banner-slot {
+		float:left;
+	}
+
+	& .banner-slot:first-child {
+		margin-right: 9px;
+
+		& +.banner-slot {
+			margin-right: 10px;
+		}
+	}
+
+}
+
+
+.noItems {
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+
+.backToShopBtnContainer .button {
+	@extend .secondary;
+	width: 222px;
+	margin: 0 auto;
+}
+
+
+.wishListContainer {
+	display: none;
+	
+	.removeItemFromWishList, .color, .wishListInsertedDate, .itemAdditionalInfos, .actions {
+		display:none;
+	}
+
+	.viewWishlistBtnWrap a {
+		display: block;
+	}
+
+	.wishListItems  {
+		@include pie-clearfix;
+		height:auto;
+		overflow: hidden;
+		text-align: center;
+		@extend %helvetica;
+
+		.microCategory, .color, .size {
+			font-size: $size-midsmall;
+			color:$color-medium
+		}
+
+		.addToCart  {
+			@extend .primary;
+			font-size: $size-small;
+			margin: 5px auto;			
+			height: 30px;
+			padding-left: 5px;
+			padding-right: 5px;
+			width: 100%;
+			line-height:$size-mini;
+		}
+
+		.fakeButton {
+			line-height: 40px;
+		}
+
+		.brandName, .price {
+			font-size: $size-midsmall;
+			color: $color-medium;
+			@extend %knockout-bold;
+		}	
+					
+	}
+
+
+	.wishlistItem {
+		@extend .column-2;
+		overflow:hidden;
+
+		&:first-child + .wishlistItem + .wishlistItem + .wishlistItem {
+			margin: 0;
+		}
+
+		img {
+			width: 100%;
+		}
+
+		.info {
+			margin-top: 10px;
+		}
+
+	}
+
+	.button {
+		margin-top: 30px;
+		
+	}
+
+	h3 {
+		color: $color-medium;
+		text-align: center;
+		padding: 30px 0;
+	}
+
+	.bx-wrapper {
+		position: relative;
+	}
+
+	.bx-controls-direction {
+
+		$arrow-dimension: 25px;
+
+		position: absolute;
+		top: 40%;
+		width: 100%;
+
+		.bx-prev {
+			position: absolute;
+			left: 0;
+
+			@include svg-fallback(circleArrow_left);
+		}
+
+		.bx-next {
+			position: absolute;
+			right: 0;
+
+			@include svg-fallback(circleArrow_right);
+		}
+
+		.circleArrow {
+			height: $arrow-dimension;
+			width: $arrow-dimension;
+		}
+	}
+
+}

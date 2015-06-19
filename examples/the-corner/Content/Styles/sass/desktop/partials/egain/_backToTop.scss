@@ -1,0 +1,26 @@
+.crm-back-top {
+	background-color: $color-ultra;
+	margin: 15px 0;
+	text-transform: uppercase;
+	text-decoration: underline;
+	@extend .size-medium;
+	text-align: right;
+	display: block;
+	line-height: 2.5em;
+
+	.text {
+		color: $color-dark;
+		margin-right: 25px;
+	}
+
+	display: none;
+}
+
+.crm-widget-backtop {
+	@extend .crm-back-top;
+
+	a {
+		color: $color-dark;
+		margin-right: 25px;
+	}
+}

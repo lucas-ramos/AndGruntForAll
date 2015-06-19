@@ -1,0 +1,32 @@
+// ========
+// PRICES 
+//
+//
+// NON TOCCARE A MENO DI NON SAPERE COSA SI STA FACENDO.
+//
+//
+// ========
+.priceUpdater {
+	.price {
+		@extend %knockout-bold;
+
+		&.full {
+			@extend %knockout;
+			text-decoration: line-through;
+			margin-right: 10px;
+		}
+
+		&.discounted {
+			@extend %knockout-bold;
+		}
+
+		&.free .currency {
+			display: none;
+		}
+	}
+}
+
+/* One markdown to rule them all */
+.markdown {
+	display:none;
+}

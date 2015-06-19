@@ -1,0 +1,33 @@
+// ===========================
+// CHECKOUT AREA SHARED STYLES
+// ===========================
+
+@import "desktop/common/variables";
+@import "desktop/common/mixins";
+
+
+/*PARTIAL CALL*/
+
+#cart {	
+	@import "cart";
+}
+
+#checkmail {
+	@import "checkmail";
+}
+
+#confirmation {
+	@import "confirmation";
+}
+
+#delivery {
+	@import "delivery";
+}
+
+#payment {
+	@import "payment";
+}
+
+#thankyou {
+	@import "thankyou";
+}

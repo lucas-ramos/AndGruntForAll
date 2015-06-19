@@ -1,0 +1,477 @@
+// Vars and mixins inclusion
+@import "compass/reset/utilities";
+@import "desktop/common/variables";
+@import "desktop/common/mixins";
+@import "desktop/vendor/grids/susy";
+
+$section: "header";
+
+#menuContainer [data-parent-id="lifestyle_living"] {
+    @include microClearfix();
+    @include H2Style($section);
+    text-transform: uppercase;
+    line-height: 1;
+    
+    a {
+        .text {
+            text-transform: none;
+        }
+    }
+    
+    .field_img,
+    .field_img_1,
+    .field_img_2,
+    .field_img_3 {
+        display: none;
+    }
+    
+    .view_all {
+        padding: 14px 0;
+        a {
+            @include H7Style($section);
+            color: $black;
+            text-transform: uppercase;
+        }
+        .text {
+            text-transform: uppercase;
+        }
+    }
+    
+    .level-3,
+    .level-4 {
+        @include H6Style($section);
+        padding: 0;
+        min-height: auto;
+        a {
+            display: block;
+            margin-bottom: 26px;
+        }
+        .icon {
+            display: none;
+        }
+        .view_all {
+            .icon {
+                display: inline-block;
+            }
+        }
+    }
+
+    .level-3 .accordionContent .icon{
+        margin-top: 0px;
+        &.iconOpenAccordion{
+            margin-top: -7px;
+        }
+    }
+    
+    .level-4 {
+        text-transform: none;
+    }
+    
+    > ul {
+        @include span(10 of 12 no-gutters wide);
+        margin: 0 span(1);
+        .level-4 ul {
+            padding: 14px 0 0 35px;
+        }
+        > li {
+            margin: 0 0 26px;
+            padding-top: 13px;
+            border-top: 3px solid $blackDiesel;
+            .level-3 {
+                @include H3Style($section);
+ 
+                > ul li {
+                    padding: 14px 0;
+                    min-height: 26px;
+                    li {
+                        .icon {
+                            display: none;
+                        }
+                    }
+                }
+                a {
+                    margin: 0;
+                }
+                &.accorionElement{
+                    display: block;
+                    .accordionContent{
+                        display: block;
+                    }
+                }
+            }
+            
+            &[data-target-code="shopby"] {
+                .level-3 {
+                    margin-top: 18px;
+                    
+                    > ul li {
+                        .icon {
+                            display: none;
+                        }
+                    }
+                }
+            }
+            &[data-target-code="explore"] {
+                .level-3 {
+                    margin-top: 14px;
+                    > ul li {
+                        border-top: 1px solid $greyDiesel;
+                        li {
+                            border: 0;
+                        }
+                    }
+                }
+            }
+            &[data-target-code="collections_level_hidden_mobile"],
+            &[data-target-code="highlights_level_hidden_mobile"] {
+                > div:first-child {
+                    display: none;
+                }
+                
+                .field_img {
+                    display: block;
+                    .field_img {
+                        display: none;
+                    }
+                }
+                
+                .level-2 {
+                    margin: 0;
+                    
+                    > ul li {
+                        border: 0;
+                        .view_all {
+                            padding-bottom: 0;
+                        }
+                        .view_all .icon.iconOpenAccordion {
+                            -ms-transform: none;
+                            -webkit-transform: none;
+                            transform: none;
+                        }
+                    }
+                    .level-3 {
+                        margin-top: 0;
+                        li:first-child {
+                            padding-top: 0;
+                        }
+                    }
+                }
+                .level-3{
+                    > .accordionContent .icon{
+                        display: none;
+                    }
+                    > ul > li {
+                        padding: 0;
+                    }
+                }
+                
+                .level-4 {
+                    margin-top: 18px;
+                }
+            }
+        }
+    }
+}
+
+@media #{$mediaQueryDesktopCommon} {
+    #menuContainer [data-parent-id="lifestyle_living"] {
+        @include H1Style($section);
+        border-top: 3px solid $blackDiesel;
+        
+        > ul {
+            @include microClearfix();
+            @include span(12);
+            
+            > li {
+                margin: 0;
+                padding: 0;
+                border: 0;
+                
+                > div {
+                    padding: 20px 0 0 20px;
+                }
+                .level-2 {
+                    padding: 0 0 0 20px;
+                }
+                
+                .level-3 {
+                    @include H2Style($section);
+                    
+                    > ul {
+                        > li {
+                            padding: 20px 0 0;
+                        }
+                        li {
+                            min-height: auto;
+                            padding: 20px 0 0;                            
+                            .icon {
+                                border: 0;
+                            }
+                        }
+                    }
+                }
+                
+                &[data-target-code="shopby"] {
+                    @include span(3 of 12 no-gutters wide);
+                    
+                    .level-3 {
+                        margin-top: 0;
+                    }
+                }
+                
+                &[data-target-code="explore"] {
+                    @include span(9 of 12 last);
+                    
+                    &:before {
+                        content: " ";
+                        display: block;
+                        position: absolute;
+                        height: 494px;
+                        border-left: 1px solid $light-gray-border;
+                    }
+                    
+                    .level-3 {
+                        margin: 0;
+                        
+                        > ul {
+                            li {
+                                padding: 20px 0 0;
+                                border: 0;
+                            }
+                            > li {
+                                @include span(3 of 9 no-gutters);
+                                padding-bottom: 30px;
+
+                                &:nth-child(3),
+                                &:nth-child(6) {
+                                    @include span(3 of 9 last);
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                &[data-target-code="collections_level_hidden_mobile"] {
+                    @include span(6 of 12 no-gutters);
+                    padding: 25px 0 23px 0;
+                    background-color: $greyDiesel;
+                    
+                    .level-2 .level-3 li li:first-child {
+                        padding-top: 20px;
+                    }
+                    
+                    .level-3 > ul > li {
+                        position: relative;
+                        @include span(6 of 12 no-gutters);
+                    }
+                    
+                    .level-4 {
+                        margin-top: 0;
+                    }
+                    
+                    .view_all {
+                        position: absolute;
+                        right: -106px;
+                        top: -20px;
+                    }
+                }
+                
+                &[data-target-code="highlights_level_hidden_mobile"] {
+                    @include span(6 of 12 last wide);
+                    position: relative;
+                    padding: 25px 0 0 0;
+                    border-top: 1px solid $light-gray-border;
+
+                    .level-2 .level-3 .level-4 li:first-child {
+                        padding-top: 19px;
+                    }
+                    
+                    .level-4 {
+                        margin-top: 0;
+                    }
+                    
+                    .field_img .field_img {
+                        display: block;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        
+                        .text {
+                            display: none;
+                        }
+                        img {
+                            @include span(3 of 6 last wide);
+                        }
+                    }
+                }
+            }
+            
+            .level-4 ul {
+                padding: 0;
+            }
+        }
+        
+        .view_all {
+            padding: 20px 0;
+            
+            .icon {
+                margin-top: 8px;
+            }
+        }
+    }
+}
+
+@media #{$mediaQueryDesktop} {
+    #menuContainer [data-parent-id="lifestyle_living"] {
+        
+        .field_img,
+        .field_img_1,
+        .field_img_2,
+        .field_img_3 {
+            display: block;
+            
+            &.menuItem .text {
+                display: none;
+            }
+        }
+        
+        > ul {
+            > li {
+                position: relative;
+                min-height: 620px;
+                
+                > div {
+                    padding: 25px 0 0 25px;
+                }
+                
+                img {
+                    width: 100%;
+                    max-height: 176px;
+                }
+                
+                .level-2 {
+                    padding-left: 25px;
+                }
+                
+                .level-3 > ul li {
+                    padding-top: 15px;
+                    
+                    &:first-child {
+                        padding-top: 20px;
+                    }
+                }
+                
+                .view_all {
+                    padding: 25px 0 0;
+                    
+                    .icon {
+                        margin-top: 11px;
+                    }
+                }
+
+                &[data-target-code="shopby"] {                    
+                    @include span(16.6% no-gutters wide);
+                    
+                    img {
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                    }
+                }
+                
+                &[data-target-code="explore"] {
+                    @include span(50.2% no-gutter);
+                    
+                    &:before {
+                        height: 100%;
+                    }
+
+                    .level-3 {                       
+                        > ul {
+                            > li {
+                                &:nth-child(7) {
+                                    @include span(1 of 1 wide);
+                                    padding: 0 0 35px;
+                                }
+                            }
+                            li {
+                                padding-top: 15px;
+                            }
+                        }
+                    }
+                    
+                    .menuItemSet.field_img_1 {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        
+                        .level-3  {
+                            li {
+                                width: 33.3333%;
+                                position: relative;
+                                padding: 0;
+                                border: 0;
+                            }
+                        }
+                    }
+                }
+                
+                &[data-target-code="collections_level_hidden_mobile"] {
+                    @include span(16.6% no-gutter);
+                    
+                    .level-3 {
+                        font-size: 24px;
+                        
+                        > ul {
+                            > li {
+                                width: 100%;
+                            }
+                            
+                            li.view_all {
+                                padding-top: 25px;
+                            }
+                        }
+                    }
+
+                    .view_all {
+                        position: relative;
+                        right: auto;
+                        top: auto;
+                    }
+                }
+                
+                &[data-target-code="highlights_level_hidden_mobile"] {
+                    @include span(16.6% no-gutter);
+                    padding: 0;
+                    border: 0;
+                    
+                    .level-2 {
+                        padding: 0;
+                    }
+                    .level-3 {
+                        font-size: 24px;
+                    }
+                    
+                    .level-3 {
+                        > ul > li:nth-child(2) {
+                            margin: 25px 0 0 25px;
+                        }
+                    }
+                    
+                    .field_img .field_img {
+                        position: relative;
+                        .text {
+                            display: none;
+                        }
+                        img {
+                            width: 100%;
+                            float: none;
+                            max-height: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,33 @@
+/* effetto height:100% sugli elementi flottanti */
+#container {
+  *zoom: 1;
+}
+#container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#container .sideMenu {
+  background: #666;
+  float: left;
+  width: 200px;
+}
+#container .sideMenu ul {
+  padding-left: 10px;
+}
+#container .sideMenu .level-0 > ul {
+  padding-left: 0;
+}
+#container .sideMenu .level-0 > ul > li > div:first-child {
+  padding: 10px;
+}
+#container .sideMenu a {
+  display: block;
+  padding: 10px;
+}
+#container .sideMenu a:hover {
+  background-color: #666;
+}
+#container main {
+  margin-left: 200px;
+}

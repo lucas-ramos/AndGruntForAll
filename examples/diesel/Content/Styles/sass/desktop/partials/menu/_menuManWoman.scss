@@ -1,0 +1,425 @@
+// Vars and mixins inclusion
+@import "compass/reset/utilities";
+@import "desktop/common/normalize";
+@import "desktop/common/variables";
+@import "desktop/common/mixins";
+@import "desktop/vendor/grids/susy";
+
+$section : "header";
+
+#menuContainer {
+	[data-parent-id="uomo"], [data-parent-id="donna"] {
+		> ul {
+			@include span(10 of 12 no-gutters wide);
+			margin: 0 span(1);
+
+			> li {
+				margin-bottom: 20px;
+
+				> a, > div {
+					@include H2Style($section);
+					line-height: 40px;
+
+					&:first-child {
+						display: none;
+					}
+				}
+			}
+		}
+
+		.level-3 {
+			li {
+				&.accordionElement {
+					border-top: 1px solid $greyDiesel;
+				}
+
+				.accordionContent {
+					position: relative;
+					display: block;
+					@include H3Style($section);
+
+					.icon {
+						@extend %svg-arrow_menu_little_down_black;
+						display: inline-block;
+						background-size: 12px;
+						background-position: 8px 4px;
+						width: 20px;
+						height: 20px;
+						position: absolute;
+						right: 0;
+						top: 0;
+						left: auto;
+						bottom: 0;
+						margin: auto 0;
+					}
+
+					.icon.iconOpenAccordion {
+						@include transform(rotate(180deg));
+						background-position: 0px 2px;						
+					}
+				}
+			}
+		}
+
+		.level-4 ul {
+			margin: 0 0 15px 35px;
+
+			li {
+				&.listColumns {
+					> ul {
+						margin: 0;
+					}
+				}
+
+				&.viewall {
+					a {
+						@include H7Style($section);
+						display: block;
+						position: relative;
+						.text {
+							display: inline-block;
+							margin-left: 12px;
+							color: #000;
+						}
+					}
+				}
+
+				a {
+					@include H6Style($section);
+					text-transform: none;
+				}
+			}
+		}
+	}
+}
+
+@media #{$mediaQueryDesktopCommon} {
+	#menuContainer {
+		[data-parent-id="uomo"], [data-parent-id="donna"] {
+			@include microClearfix();
+			background-color: $greyDiesel;
+			border-top: 3px solid $black;
+
+			> ul {
+				@include span(12);
+				margin: 0;
+
+				> li {
+					border-top: none medium;
+					margin-bottom: 0;
+
+					> a, > div {
+						@include H1Style($section);
+						display: block;
+						border-bottom: none medium;
+						line-height: 1;
+
+						&:first-child {
+							display: block;
+						}
+					}
+				}
+			}
+
+			.level-2 > ul {
+				@include microClearfix();
+
+				> li > a, 
+				> li > div {
+					@include H2Style($section);
+				}
+			}
+
+			.level-3 > ul {
+				> li > a:not(.level-4), 
+				> li > div:not(.level-4) {
+					@include H2Style($section);
+					display: block;
+					margin-bottom: 25px;
+				}
+			}
+
+			.level-4 > ul {
+				margin: 0;
+
+				> li > a,
+				> li > div {
+					@include H6Style($section);
+					display: block;
+					margin-bottom: 25px;
+				}
+
+				li[data-target-code="shopbylook"] > a, 
+				li[data-target-code="shopbylook"] > div {
+					font-weight: bold;
+				}
+			}
+
+			[data-parent-id$="apparel"] {
+				background-color: $white;
+
+				> ul {
+					@include microClearfix();
+
+					> li {
+						position: relative;
+
+						&:last-child {
+							&:before {
+								content: '';
+								border-left: 1px solid $light-gray-border;
+								position: absolute;
+								height: 90%;
+								left: -25px;
+								top: 5px;
+							}
+						}
+					}
+				}
+				
+				.level-4 {
+					> ul {
+						@include microClearfix();
+						position: relative;
+
+						li {
+							&.listColumns {
+								@include microClearfix();
+
+								> ul {
+									float: left;
+									width: 50%;
+									margin: 0;
+
+									> li {
+										> a, > div {
+											@include H6Style($section);
+											display: block;
+											margin-bottom: 25px;
+										}
+									}
+								}
+							}
+
+							&.viewall {
+								@include microClearfix();
+								width: 100%;
+
+								.text {
+									display: inline-block;
+									text-transform: uppercase;
+									color: $black;
+								}
+							}
+						}
+					}
+				}
+			}
+
+			[data-parent-id$="shopby"] {
+				ul > li {
+					position: relative;
+				}
+			}
+
+			[data-parent-id$="highlights"] {
+				background-color: $white;
+			}
+		}
+	}
+}
+
+@media #{$mediaQueryTablet} {
+	#menuContainer {
+		[data-parent-id="uomo"], [data-parent-id="donna"] {
+			[data-parent-id$="apparel"] {
+				@include span(12);
+				padding: 20px 25px;
+
+				> ul > li {
+					@include span(6 of 12);
+
+					&:last-child {
+						@include span(last 6 of 12);
+						padding-left: 12px;
+
+						&:before {
+							left: -15px;				
+						}
+					}
+				}
+			}
+
+			[data-parent-id$="shopby"] {
+				@include span(6 of 12 no-gutters);
+				border-top: 1px solid $light-gray-border;
+				padding: 20px 25px;
+			}
+
+			[data-parent-id$="highlights"].level-3 {
+				@include span(last 6 of 12 wide);
+				border-top: 1px solid $light-gray-border;
+				padding: 20px 25px;
+			}
+		}
+
+		[data-target-code="uomo"], [data-target-code="donna"] {
+			@include microClearfix();
+
+			> div {
+				@include span(12);
+
+				&:first-child {
+					background-color: $white;
+					padding: 20px 25px 10px 25px;
+				}
+			}
+		}
+
+		/* gestione immagini */
+		[data-parent-id="uomo"], [data-parent-id="donna"]{
+			.menuItemSet.highlights .level-3{
+				padding: 0;
+				[data-target-code="highlights"]{
+					span.text{
+						padding: 20px 0 0 25px;
+    					display: block;
+					}
+					span.image{
+						width: 50%;
+					    float: right;
+					    position: relative;
+					    img{
+					    	width: 100%;
+					    }
+					}
+				}
+				.level-4 > ul > li{
+					span.text{
+						padding-top: 0px;
+					}
+					img{
+						display: none;
+					}
+				}
+			}
+			.menuItemSet.highlights, .menuItemSet.shop_by{
+				.level-4 > ul > li > a{
+					margin-bottom: 20px;
+				}
+			}
+		}
+	}
+}
+
+@media #{$mediaQueryDesktop} {
+	#menuContainer {
+		[data-parent-id="uomo"], [data-parent-id="donna"] {
+			[data-parent-id$="apparel"] {
+				@include span(66.67% no-gutters);
+				padding: 20px gutter(8) 20px 25px;
+
+				> ul {
+					@include microClearfix();
+
+					> li {
+						@include span(50% no-gutters);
+						&:last-child{
+							padding-left: 25px;
+							&:before {
+								left: 0px;
+							}
+						}
+					}
+				}
+			}
+
+			[data-parent-id$="shopby"] {
+				@include span(33.33% no-gutters);
+				padding: 20px 25px 20px gutter(8);
+			}
+
+			[data-parent-id$="highlights"].level-3 {
+				@include span(12);
+				border-top: 1px solid $light-gray-border;
+				padding: 0;
+				margin: 0;
+
+				> ul {
+					@include microClearfix();	
+
+					> li {
+						> div {
+							margin-bottom: 0;
+
+							&:first-child {
+								display: none;
+							}
+						}
+					}
+				}
+
+				.level-4 ul li {
+
+					@include span(33.33% no-gutters);
+
+					a {
+						display: table;
+						width: 100%;
+						margin: 0;
+
+						@include H6Style($section);
+
+						.icon {
+							display: none;
+						}
+
+						.text {
+							@include span(last 7 of 12);
+							display: table-cell;
+							vertical-align: middle;
+							text-align: center;
+							float: none;
+							padding: 0 10px;
+						}
+					}				
+				}
+			}
+		}
+
+		[data-target-code="uomo"], [data-target-code="donna"] {
+			@include microClearfix();
+
+			> div {
+				@include span(12);
+
+				&:first-child {
+					@include span(66.67% no-gutters);
+					@include post(33.33% no gutters);
+					background-color: $white;
+					padding: 20px gutter(8) 10px 25px;
+				}
+			}
+		}
+
+		/* gestione immagini */
+		[data-parent-id="uomo"], [data-parent-id="donna"]{
+			.menuItemSet.highlights .level-3{
+				img{
+					display: none;
+				}
+				.level-4 > ul > li{
+					margin-right: 0px;
+					span.image, span.text{
+						@include span(50% no-gutters);
+						float: none;
+					}
+					img{
+						width: 100%;
+						display: block;
+					}
+				}
+			}
+		}
+	}
+}

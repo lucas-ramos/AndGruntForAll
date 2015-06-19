@@ -1,0 +1,225 @@
+$section : "header";
+
+#helpWrapperLayer {
+	display: none;
+}
+
+@media #{$mediaQueryDesktopCommon} {
+	#helpWrapperLayer {
+		@include microClearfix();				
+		@include container();
+
+		@include bodyStyle($section);
+
+		display: block;
+		padding: 0;
+		.wrapper {
+			@include span(12);
+			min-height: 390px;
+			background-color: $greyDiesel;
+			padding: 0;
+
+			#faqContent, #contactContent {
+				background-color: $white;
+			}
+
+			#faqContent {
+				@include span(isolate 6 at 4 of 12 wide);
+				border-left: 1px solid $greyDiesel;
+				min-height: 390px;
+			}
+
+			#helpContent {
+				@include span(isolate 3 at 10 of 12 last);
+				min-height: 390px;
+			}
+
+			#contactContent {
+				@include span(isolate 3 at 1 of 12 wide);
+			}
+
+			.helpColumn {
+				text-align: left;
+				padding: 20px 25px;
+				min-height: 370px;
+
+				h2 {
+					@include H1Style($section);
+					line-height: 22px;
+					margin: 0 0 20px 0;
+
+					.ru & {
+						font-size: 16px;
+						font-weight: bold;
+					}
+					.es &, .jp &{ width: 90%;}
+				}
+
+				.subTitle { margin: 0; }
+
+				a { color: $blackDiesel; }
+				.grayText, .phoneNumber span { color: $gray-txt; }
+				ul li {
+					margin-bottom: 20px;
+
+					&.triangleBullet:before {
+						content: "";
+						position: relative;
+						border-color: transparent #111;
+						border-style: solid;
+						border-width: 0.35em 0 0.35em 0.45em;
+						display: inline-block;
+						height: 0;
+						width: 0;
+						margin: 0 3px 0 0;
+					}
+				}
+
+				.buttonsRow {
+					margin: 0;
+					padding: 15px 0 10px; 
+
+					.button {
+						@include H3Style($section);
+						float: none;
+						min-width: 300px;
+
+						&:hover, &:focus {
+							color: $white;
+						}
+					}
+				}
+			}
+
+			div.contactBox {
+				> div {
+					@include microClearfix();
+					margin: 0 0 30px;
+
+					&.last {
+						margin: 0;
+						padding: 0;
+					}
+				}
+
+				.image {
+					@include span(first 2 no-gutters);
+					padding-top: 1px;
+				}
+
+				.text {
+					@include span(last 10 wide);
+					padding: 0 0 0 4px;
+
+					.ru & {
+						line-height: 18px;
+					}
+
+					p:first-child {
+						@include franklin;
+						padding-bottom: 2px;
+						font-size: 18px;
+
+						.ru & {
+							padding-bottom: 8px;
+							font-size: 15px;
+							font-weight: bold;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media #{$mediaQueryTablet} {
+	#helpWrapperLayer {
+		display: block;
+		.wrapper {
+			#faqContent {
+				margin-left: 0;
+				margin-right: 0;
+				border-left: none medium;
+
+				@include span(first 8 no-gutters);
+			}
+
+			#helpContent {
+				margin-left: 0;
+				margin-right: 0;
+				background-color: $greyDiesel;
+				@include span(last 4 wide);
+			}
+
+			#contactContent {
+				margin-left: 0;
+				margin-right: 0;
+				border-top: 1px solid $greyDiesel;
+				
+				@include span(12);
+
+				.helpColumn { 
+					min-height: 0;
+					h2 {
+						margin: 0 0 20px;
+					}
+				}
+			}
+
+			.helpColumn { 
+				min-height: 335px;
+				position: relative;
+
+				.buttonsRow {
+					margin: 0;
+					padding: 0;
+					position: absolute;
+					top: 10px;
+					right: 10px;
+
+					.button {
+						max-width: 150px;
+						min-width: 0;
+					}
+				}
+			}
+
+			div.contactBox {
+				@include microClearfix();
+				margin: 0 0 15px;
+
+				> div {
+					margin: 0;
+					padding: 0 0 0 20px;
+
+					@include span(4 no-gutters);
+
+					&:first-child {
+						padding: 0;
+					}
+
+					&.emailBox {
+						@include span(last 4 wide);
+					}
+				}
+
+				.text {
+					p:first-child {
+						.ru & {
+							padding-bottom: 4px;
+						}
+					}
+				}
+			}
+
+		}
+	}
+}
+
+@media #{$mediaQueryDesktop} { 
+	#helpWrapperLayer {
+		.wrapper {
+			#faqContent , #helpContent , #contactContent{ min-height: 450px;}
+		}
+	}
+}

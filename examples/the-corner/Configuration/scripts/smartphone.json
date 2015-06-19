@@ -1,0 +1,107 @@
+[
+	{
+		"Controller" : "Common",
+		"Scripts": [
+			"/Vendor/jquery.bxslider.js",
+			"/Modules/Site/shoppingbagLayer.js",
+			"/Modules/Site/showWechat.js",
+			"/Modules/Site/manageLoadingAnimationOnAjaxCalls.js",
+			"/Modules/Site/logoutController.js",
+			"/Scopes/site.js"
+		]
+	},
+	{
+		"Controller" : "Shared",
+		"Scripts": []
+	},
+	{
+		"Controller" : "Countries",
+		"Scripts": [
+			"/Modules/Countries/selectCountries.js",
+			"/Scopes/countries.js"
+		]
+	},
+	{
+		"Controller" : "Home",
+		"Scripts": [
+			"/Modules/Home/genderNavigation.js",
+			"/Scopes/home.js"
+		]
+	},
+	{
+		"Controller" : "Overview",
+		"Scripts": [
+			"/Modules/Account/Overview/miniWishlist.js",
+			"/Scopes/Areas/account.js"
+		]
+	},
+	{
+		"Controller" : "ShopByCorner",
+		"Scripts": [
+			"/Modules/shopbycorner/searchInCorners.js",
+			"/Scopes/shopbycorner.js"
+		]
+	},
+	{
+		"Controller" : "Search",
+		"Scripts": [
+			"/Vendor/lazyload.js",
+            "/Modules/Search/toggleFilters.js",
+            "/Modules/Search/biggerItems.js",
+            "/Modules/Search/findPageNumber.js",
+            "/Modules/Search/oddItemsFiller.js",
+			"/Modules/Search/backToTop.js",
+			"/Modules/Search/zeroItemsInSearch.js",
+			"/Modules/Search/hideSortByRanking.js",
+			"/Modules/Search/manageLazyload.js",
+			"/Scopes/search.js"
+		]
+	},
+	{
+		"Controller" : "Item",
+		"Scripts": [
+			"/Modules/item/sizeColorSelect.js",
+			"/Modules/item/triggerRelatedTitle.js",
+			"/Scopes/item.js"
+		]
+	},
+	{
+		"Controller" : "Cart",
+		"Scripts": [
+			"/Modules/Checkout/hideAppliedCoupon.js",
+			"/Modules/Checkout/noPromotionalBrands.js",
+			"/Modules/Checkout/cart/oldCartSlider.js",
+			"/Scopes/Areas/Checkout/cart.js"
+		]
+	},
+	{
+		"Controller" : "Delivery",
+		"Scripts": [
+			"/Scopes/Areas/Checkout/delivery.js"
+		]
+	},
+	{
+		"Controller" : "Confirmation",
+		"Scripts": [
+			"/Modules/Checkout/hideNewCCForm.js",
+			"/Modules/Checkout/showNewCCForm.js",
+			"/Modules/Checkout/hideAppliedCoupon.js",
+			"/Modules/Checkout/noPromotionalBrands.js",
+			"/Modules/Checkout/payingWithCreditCardManager.js",
+			"/Modules/Checkout/showNewBillingForm.js",
+			"/Modules/Checkout/switchFastCheckout.js",
+			"/Modules/Checkout/toogleBillingFormManager.js",
+			"/Modules/Checkout/codCN.js",
+			"/Scopes/Areas/Checkout/confirmation.js"
+		]
+	},
+	{
+		"Controller" : "landing",
+		"Scripts": [
+			"/Modules/landing/irisvanherpen.js",
+			"/Scopes/landing.js"
+		]
+	}
+]
+
+

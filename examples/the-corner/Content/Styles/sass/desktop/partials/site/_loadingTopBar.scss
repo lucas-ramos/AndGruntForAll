@@ -1,0 +1,45 @@
+﻿/*
+ * SmartLoadingBar v1.0
+ * (c) 2014, 2015 Giorgio d'Agostino
+ */
+
+#smartLoadingBar {
+	$slow-loading: 30s;
+	$fast-loading: 0.5s;
+	$fade-out-time: 0.5s;
+	$fade-out-delay: $fast-loading;
+
+	@include transition(opacity $fade-out-time ease-in $fade-out-delay);
+	@include opacity(1);
+	width: 100%;
+	@include zindex(loading-bar);
+
+	&, .slow, .fast {
+		position: fixed;
+		top: 0;
+		left: 0;
+		height: 2px;
+	}
+
+	.slow, .fast {
+		background-color: $black;
+		width: 0%;
+	}
+
+	&.load {
+		.slow {
+			@include transition(width $slow-loading ease);
+			width: 100%;
+		}
+	}
+
+	&.finish {
+		@include opacity(0);
+
+		.fast {
+			@include transition(width $fast-loading ease);
+			width: 100%;
+		}
+	}
+}
+

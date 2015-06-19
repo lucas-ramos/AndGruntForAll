@@ -1,0 +1,259 @@
+// =========================
+// CREDIT CARD WALLET STYLES
+// =========================
+
+
+// CCARD LIST AND BOXES
+// -----------------------
+
+input[type="checkbox"] {
+	width: 25px;
+	height: 25px;
+}
+
+.main .inner p{color: $color-medium;}
+
+
+// ADD CARD
+// -------------
+#addCard {
+	
+	button {
+		@extend .primary;
+		@extend .column-3;
+		margin: 25px 0;
+		
+		&.addCreditCardButton {
+			float: right;
+			height: $button-height + 2;
+
+			html.ES & { width: 285px; }
+		}
+	}
+
+	.fieldLabel label {display: none;}
+	h3 {padding-bottom: 20px;}
+
+	.addCreditCardForm {
+		.addNewTitle {display: none;}
+	}
+}
+#ccwalletSelectCard {
+
+	.req {display: none;}
+
+	.content {
+		@include pie-clearfix;
+		.fieldRow {
+			@extend .column-6;
+		}
+	}
+
+}
+
+#lockedFields {
+	.privacy {
+		@extend .column-12;
+		color: $color-light;
+		font-size: 1.15em;//uso 1.15em per arrivarre ai 16px desiderati
+	}
+	.fastCheckout {display: none;}
+}
+
+#ccwalletCardData {
+
+	@extend .column-12;
+
+	.content {
+		.secureServer {display: none;}
+		.mandatory, .label {display: none;}
+	}
+
+	#CreditCardViewModel_Number_Wrapper {
+		@extend .column-6;
+
+		html.RU &{
+			.field-validation-container .field-validation-error {
+				position: relative;
+			}
+		}
+	}
+
+	#CreditCardViewModel_ExpirationDate_Wrapper {
+		@extend .column-12;
+		.fieldValue {display: inline-block;}
+
+		.month .selectTitle, .year .selectTitle {display: none;}
+
+		.month {@extend .column-6;}
+		.year {@extend .column-6; @extend .omega;}
+	}
+}
+
+
+#ccwalletUserData {
+
+	.invoiceInstr {display: none;}
+
+	.content .latinCharactersAlert .text {color: $color-light; font-size: $size-medium;}
+
+	#CreditCardViewModel_Surname_Wrapper, #CreditCardViewModel_Address_Wrapper {
+		@extend .column-6;
+	}
+
+	#CreditCardViewModel_Name_Wrapper, #CreditCardViewModel_ZipCode_Wrapper {
+		@extend .column-6; @extend .omega;
+	}
+
+	#CreditCardViewModel_City_Wrapper {
+		@extend .column-12;
+		input {@extend .column-6}
+
+		.fieldValue {display: inline-block;}
+	}
+
+	#CreditCardViewModel_HolderIsoCountry_Wrapper {
+		@extend .column-6;
+	}
+
+	#CreditCardViewModel_Province_Wrapper {
+		@extend .column-6; @extend .omega;
+	}
+}
+
+#CreditCardViewModel_HolderIsoCountry_Wrapper {
+	.JP & { //and that's how's done
+		.prettyselect-wrap {
+			cursor: default;
+
+			&:before {
+				content: "";
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				@include opacity(0);
+			}
+		}
+
+		.prettyselect-label {
+			background-color: $white;
+			background-image: none;
+		}
+	}
+}
+
+#CreditCardViewModel_IsPreferred_Wrapper {
+	@extend .column-12;
+
+	padding-top: 40px;
+	clear: both;
+
+	.fieldValue {			
+		@extend .column-1;
+		width: 30px;
+		text-align: left;
+		margin-right: 0;
+	}
+
+	.fieldLabel label {				
+		color: $color-light;
+		font-size: $size-small;
+		display: block;
+		@extend .column-5; @extend .omega;
+	}
+}
+
+#creditCardForm {
+	margin-top: 25px;
+	@extend .column-12;
+
+	.buttonsRow {
+		@extend .column-8;
+
+		.submit, .close {@extend .column-3;}
+		.close {@extend button.secondary;}
+
+	}
+} 
+
+
+// EDIT CARD
+// -------------
+.editCreditCardForm {
+	.title {display: none;}
+
+	.cardType {
+		label {display: none;}
+	}
+
+	.inputContainer {
+		label {display: none;}
+		span {font-size: $size-medium; color: $color-medium; font-size: $size-midlarge; height: 40px; line-height: 40px;}
+	}
+
+	
+
+}
+
+#ccwalletFields {
+	.privacyContainer {clear: both; color: $color-light; font-size: $size-small;}
+}
+#cardDateWrapper {
+	margin-bottom: 0;
+	@extend .column-12;
+	padding-top: 20px;
+
+	.month .selectTitle, .year .selectTitle {display: none;}
+
+	.month .year {@extend .column-6;}
+}
+
+
+
+.cardCountry_JP {
+	.cardHolderAddress {
+		.address, .city, .zipcode, .province {
+			display: none;
+		}
+	}
+}
+
+
+.cardCountry_IE, .cardCountry_HK {
+	.cardHolderAddress {
+		.zipcode {
+			display: none;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+// CARD ICONS
+// -------------
+.cardIcon {
+	display: block;
+	float: left;
+	margin-right: 10px;
+	cursor: pointer;
+}
+
+.AmericanExpress	{@extend 	.sprites-creditcards-americanexpress;}
+.Visa 				{@extend 	.sprites-creditcards-visa;}
+.Mastercard 		{@extend 	.sprites-creditcards-mastercard;}
+.JCB 				{@extend 	.sprites-creditcards-jcb;}
+.Alipay 			{@extend 	.sprites-creditcards-alipay;}
+.PayEase 			{@extend 	.sprites-creditcards-payease;}
+.Discover 			{@extend 	.sprites-creditcards-discover;}
+.Paypal 			{@extend 	.sprites-creditcards-paypal;}
+.PostePay 			{@extend 	.sprites-creditcards-postepay;}
+.Switch 			{@extend 	.sprites-creditcards-maestro;}
+.CarteBleue 		{@extend 	.sprites-creditcards-cartebleue;}

@@ -1,0 +1,510 @@
+@mixin standardIcon(){
+	width: 20px;
+    height: 20px;
+    background-size: 20px 20px;
+}
+
+@mixin bigIcon(){
+	width: 32px;
+    height: 32px;
+    background-size: 32px 32px;
+}
+
+@mixin smalIcon(){
+	width: 15px;
+    height: 15px;
+    background-size: 15px 15px;
+}
+
+[class^="icon-"],
+[class*="icon-"],
+[class^="icon"],
+[class*="icon"] {
+	z-index: $mfp-z-index-base;        
+	cursor: pointer;
+	@include standardIcon();
+}
+
+[class^="icon-close"],
+[class*="icon-close"] {
+	@extend %svg-Close;
+}
+
+/*
+* ARROW : PROMO , 
+*/
+.mobile {
+	[class^="icon-arrow-left"],
+	[class*="icon-arrow-left"]{
+		@extend %svg-arrow_small_utility_left_white;
+	}		
+	[class^="icon-arrow-right"],
+	[class*="icon-arrow-right"] {
+		@extend %svg-arrow_small_utility_right_white;
+	}
+}
+
+[class^="icon-arrow-left"],
+[class*="icon-arrow-left"] {
+	@extend %svg-arrow_small_utility_left_gray;
+	@include smalIcon();
+}
+
+[class^="icon-arrow-right"],
+[class*="icon-arrow-right"] {
+	@extend %svg-arrow_small_utility_right_gray;
+	@include smalIcon();
+}
+
+[class^="icon-close top white"],
+[class*="icon-close top white"],
+[class^="icon-close bottom white"],
+[class*="icon-close bottom white"],
+[class^="icon-close-white"],
+[class*="icon-close-white"] {
+	@extend %svg-Close_white;
+}
+
+[class^="icon-small-bottom"],
+[class*="icon-small-bottom"] {
+	@extend %svg-arrow_menu_little_down_black;
+	@include smalIcon();
+}
+
+.activeSectionContainer {
+	[class^="icon-small-bottom "],
+	[class*="icon-small-bottom "] {
+		@extend %svg-arrow_menu_big_up_white ;	
+	}
+}
+
+[class^="icon-right"],
+[class*="icon-right"] {
+	@extend %svg-arrow_right;
+}
+
+[class^="icon-email-helpLayer"],
+[class*="icon-email-helpLayer"]{
+	@extend %svg-email_black;
+	display: inline-block;
+	@include bigIcon();
+}
+
+[class^="icon-phone-helpLayer"],
+[class*="icon-phone-helpLayer"]{
+	@extend %svg-phone_black;
+	display: inline-block;
+	@include bigIcon();
+	cursor: default;
+}
+
+[class^="icon-search"],
+[class*="icon-search"] {
+	@extend %svg-Search;
+	@include standardIcon();
+}
+
+[class^="icon-wishlist"],
+[class*="icon-wishlist"] {
+	@extend %svg-Wishlist;
+	display: none;
+	&.red{
+		@extend %svg-WishlistRed;
+		@include standardIcon();
+	}
+}
+
+[class^="icon-mainCartLink"],
+[class*="icon-mainCartLink"],
+.mainCartLink {
+	.icon {
+		background-position: 10% 40%;
+	}
+	.cartlinkitems0 .icon{
+		@extend %svg-bag_regular_black;
+	}
+	&:hover, &.activeSection{ 
+		.cartlinkitems0 .icon{
+			@extend %svg-bag_regular_white;
+		}
+	}
+	.cartlinkitems1 .icon{
+		@extend %svg-bag_happy_black;
+	}
+	&:hover, &.activeSection{
+		.cartlinkitems1 .icon{
+			@extend %svg-bag_happy_white;
+		}
+	}
+	//temporaneamente
+	.cartlinkitems2to4 .icon{
+		@extend %svg-bag_regular_black;
+	}
+}
+.colorSizeContainer .wrap {
+	.selectionLabel .icon{
+		@extend %svg-arrow_small_utility_down_blackdiesel;
+		z-index: $z-index-overlayer;
+		background-size: 15px 15px;
+		background-position:center;
+	}
+	.open .selectionLabel .icon{
+		@extend %svg-arrow_small_utility_down_black;
+	}
+}
+.selectColor .owl-controls {
+	span{
+		background-size:14px 14px;
+	}
+	[class^="icon-arrow-left"],
+	[class*="icon-arrow-left"] {
+		@extend %svg-arrow_small_utility_left_black;
+	}
+	[class^="icon-arrow-right"],
+	[class*="icon-arrow-right"] {
+		@extend %svg-arrow_small_utility_right_black;
+	}
+}
+/* menu mobile icon */
+[class^="icon-arrow-big-mainTab"],
+[class*="icon-arrow-big-mainTab"]{
+	@extend %svg-arrow_menu_big_left_white;
+	display: inline-block;
+	position: absolute;
+	left: 25px;
+	margin-top: 9px;
+}
+
+[class^="icon-arrow-little-secondTab"],
+[class*="icon-arrow-little-secondTab"],
+#menuContainer [data-parent-id="denim"] .level-3 .accordionContent .icon,
+#menuContainer [data-parent-id="dbg"] .level-3 .accordionContent .icon,
+#menuContainer [data-parent-id="kids"] .level-3 .accordionContent .icon,
+#menuContainer [data-parent-id="sale"] .level-3 .accordionContent .icon,
+#menuContainer [data-parent-id="new_in"] .level-3 .accordionContent .icon,
+#menuContainer [data-parent-id="lifestyle_living"] .level-3 .accordionContent .icon{
+	@extend %svg-arrow_menu_little_down_black;
+	display: inline-block;
+	position: absolute;
+	right: 11%;
+	margin-top: 14px;
+	background-size: 12px;
+	&.iconOpenAccordion{
+		-ms-transform: rotate(180deg); /* IE 9 */
+    	-webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+    	transform: rotate(180deg);
+    	right: 13.1%; // su monitor simulato mobile
+    	margin: 8px 0 0 0;
+    	.iOs &{
+    		right: 13.6%;
+    	}
+    	.android &{
+    		right: 13.2%;
+    	}
+    	.landscape &{
+    		right: 12.4%;
+    	}
+	}
+}
+#menuContainer.dbg [data-parent-id="dbg"] .level-3 .accordionContent .icon{
+	@extend %svg-arrow_menu_little_down_white;
+}
+#menuContainer ul .level-4 ul li.viewall a .icon,
+#menuContainer [data-parent-id="sale"] .level-3 .viewalldbg a .icon ,
+#menuContainer [data-parent-id="lifestyle_living"] .view_all span.icon,
+#menuContainer [data-parent-id="uomo"] .view_all span.icon
+{
+	@extend %svg-arrow_menu_right_black;
+	display: inline-block;
+	background-size: 12px 12px;
+	position: relative;
+	top: 9px;
+	left: -3px;
+	@media #{$mediaQueryDesktopCommon}{
+		left: 0;
+	}
+}
+#menuContainer [data-parent-id="sale"] .level-3 .viewalldbg a .icon,
+#menuContainer.dbg [data-parent-id="dbg"] ul .level-4 ul li.viewall a .icon{
+	@extend %svg-arrow_menu_right_white;
+}
+
+/* select, checkbox*/
+.boxFilter .selectize-control.single .selectize-input:after{
+	@extend %svg-arrow_small_utility_down_blackdiesel;
+	background-size: 12px;
+	width: 12px;
+	height: 12px;
+	margin-top: -6px;
+	border: none;
+	.firefox & {
+		margin-top: -4px;
+	}
+}
+.boxFilter .selectize-control.single .selectize-input.dropdown-active:after{
+	@extend %svg-arrow_small_utility_down_blackdiesel;
+	background-size: 12px;
+	width: 12px;
+	height: 12px;
+	margin-top: -6px;
+	border: none;
+	-ms-transform: rotate(180deg); /* IE 9 */
+	-webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+	transform: rotate(180deg);
+	.firefox & {
+		margin-top: -4px;
+	}
+}
+#containerFilter .refinements .flag{
+	@extend %svg-checkbox_unchecked;
+	background-size: 20px;
+	width:30px;
+	height: 30px;
+	display: block;
+	margin-top: 7px;
+	float: left;
+}
+#containerFilter .refinements .selected .flag{
+	@extend %svg-checkbox_checked;
+	background-size: 20px;
+	width:30px;
+	height: 30px;
+	display: block;
+	margin-top: 7px;
+	float: left;
+}
+.boxFilterFake .arrowDown{
+	@extend %svg-arrow_small_utility_down_black;
+	height: 32px;
+	background-size: 22px 46px;
+	display: block;
+	float: right;	
+	margin-right: 2%;		
+}
+.boxRefinementsContainer.open .boxFilterFake .arrowDown{
+	@extend %svg-arrow_small_utility_down_black;
+	height: 32px;
+	background-size: 22px 46px;
+	display: block;
+	float: right;	
+	margin-right: 2%;
+	margin-top: 12px;
+	-ms-transform: rotate(180deg); /* IE 9 */
+	-webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+	transform: rotate(180deg);
+	-webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+}
+.slick-slider .icon-prev{
+	@extend %svg-arrow_small_utility_left_white;
+	@include standardIcon();
+	display: block;
+	margin: 0 0 0 7px;
+}
+.slick-slider .icon-next{
+	@extend %svg-arrow_small_utility_left_white;
+	-ms-transform: rotate(180deg); /* IE 9 */
+	-webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+	transform: rotate(180deg);
+	display: block;
+	margin: 0 0 0 10px;
+	@include standardIcon();
+}
+.breadcrumbsFiltri .icon{
+	@extend %svg-Close_white;
+    height: 20px;
+    width: 20px;
+    display: block;
+    float: right;
+  	  margin: -1px 10px 2px 10px;
+ 	background-size: 19px;
+}
+//-----------------------------------------------
+//-- ICONE SOCIAL
+//-----------------------------------------------
+       
+.facebook .icon {
+    @extend %svg-facebook_black;
+	body.tablet &, body.desktop &{
+		@extend %svg-facebook_white;
+	}
+	body.tablet .footerSticky &, body.desktop .footerSticky &{
+		@extend %svg-facebook_black;
+	}
+}
+
+.twitter .icon {
+    @extend %svg-twitter_black;
+	body.tablet &, body.desktop &{
+		@extend %svg-twitter_white;
+	}
+	body.tablet .footerSticky &, body.desktop .footerSticky &{
+		@extend %svg-twitter_black;
+	}
+}
+
+.googleplus .icon {
+    @extend %svg-google_plus_black;
+	body.tablet &, body.desktop &{
+		@extend %svg-google_plus_white;
+	}
+	body.tablet .footerSticky &, body.desktop .footerSticky &{
+		@extend %svg-google_plus_black;
+	}
+}
+
+.pinterest .icon {
+    @extend %svg-pinterest_black;
+	body.tablet &, body.desktop &{
+		@extend %svg-pinterest_white;
+	}
+	body.tablet .footerSticky &, body.desktop .footerSticky &{
+		@extend %svg-pinterest_black;
+	}
+}
+
+.instagram .icon{
+	@extend %svg-instagram_black;
+	body.tablet &, body.desktop &{
+		@extend %svg-instagram_white;
+	}
+	body.tablet .footerSticky &, body.desktop .footerSticky &{
+		@extend %svg-instagram_black;
+	}
+}
+.youtube .icon{
+	@extend %svg-youtube_black;
+	body.tablet &, body.desktop &{
+		@extend %svg-youtube_white;
+	}
+	body.tablet .footerSticky &, body.desktop .footerSticky &{
+		@extend %svg-youtube_black;
+	}
+}
+
+.tumblr .icon{
+	@extend %svg-tumblr_black;
+	body.tablet &, body.desktop &{
+		@extend %svg-tumblr_white;
+	}
+	body.tablet .footerSticky &, body.desktop .footerSticky &{
+		@extend %svg-tumblr_black;
+	}
+}
+
+.itemSocialShare {
+    .closeItemShare {
+        @extend %svg-Close_white;
+        height: 20px;
+        width: 20px;
+    }
+    .icon{
+    	height: 37px !important;
+		width: 37px !important;
+    }
+    .facebook .icon {
+		@extend %svg-facebook_white;
+	}
+
+	.twitter .icon {
+	    @extend %svg-twitter_white;
+	}
+
+	.googleplus .icon {
+	    @extend %svg-google_plus_white;
+	}
+
+	.pinterest .icon {
+	    @extend %svg-pinterest_white;
+	}
+	@media #{$mediaQueryTablet}{
+		.icon{
+	    	height: 32px !important;
+			width: 32px !important;
+	    }
+	}
+} 
+
+
+/*
+* ITEM : ICONA + PER ZOOM , ARROW PER THUMBS , X CHIUSURA ZOOM
+*/
+[class^="icon-zoom"],
+[class*="icon-zoom"] {
+	@extend %svg-Zoom;
+	width: 41px;
+    height: 41px;
+    background-size: 41px 41px;
+}
+
+#altImgAll {
+	.slick-next{
+		@extend %svg-arrow_small_utility_down_gray;
+	}
+	.slick-prev{
+		@extend %svg-arrow_small_utility_up_gray;
+	}
+}
+
+[class^="icon-arrow-down-white"],
+[class*="icon-arrow-down-white"]{
+	@extend %svg-arrow_small_utility_down_white;
+}
+
+.show{
+	[class^="icon-zoom"],
+	[class*="icon-zoom"] {
+		@extend %svg-Close_box;
+		width: 41px;
+	    height: 41px;
+	    background-size: 41px 41px;
+	}
+}	
+
+#zoomLayer{
+	[class^="icon-close"],
+	[class*="icon-close"] {
+		@extend %svg-Close_box;
+		width: 41px;
+	    height: 41px;
+	    background-size: 41px 41px;	
+	}
+}
+
+.mobile #zoomLayer {
+	[class^="icon-close"],
+	[class*="icon-close"] {
+		@extend %svg-Close;
+	}
+}
+
+// item infoTab
+#item .renderInfo .infoTabs li{
+	.icon-arrow{
+		@extend %svg-arrow_small_utility_down_gray;
+		display: inline-block;
+	    position: relative;
+	    background-size: 12px 12px;
+	    top: 1px;
+	    float: right;
+	    @media #{$mediaQueryDesktopCommon}{
+			top: 4px;
+		}
+		@media #{$mediaQueryDesktop}{
+			background-position: 9px 0;
+		}
+	}
+	&.open .icon-arrow{
+		@extend %svg-arrow_small_utility_down_blackdiesel;
+		-ms-transform: rotate(180deg); /* IE 9 */
+		-webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+		transform: rotate(180deg);
+		top: -7px;
+		right: 8px;
+		@media #{$mediaQueryDesktop}{
+			right: 0px;
+			background-position: 0 0;
+		}
+	}
+}

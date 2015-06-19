@@ -1,0 +1,20 @@
+{
+	"bitwise":true,
+	"browser": true,
+	"curly":true,
+	"eqeqeq":true,
+	"es3":true,
+	"forin": true,
+	"boss": true,
+	"immed": false,
+	"laxbreak": false,
+	"lastsemic": true,
+	"latedef":true,
+	"multistr":true,
+	"newcap": true,
+	"noempty":true,
+	"nonew":true,
+	"smarttabs":true,
+	"maxerr": 50,
+	"maxdepth": 2
+}

@@ -1,0 +1,45 @@
+﻿// ================
+// TOP AND MIDDLE SLIDER IN HOME PAGE
+// ================
+
+#promoTabletWrapper {
+
+	.promoTablet{
+
+		.bannerElem {
+
+			display: block;
+
+			.textWrapper{
+
+				margin-left: 10px;
+				width: 340px;
+				position: relative;
+				h4{
+					top: 10px;
+					position: absolute;
+				}
+				h2{
+					padding-top: 30px;
+					html.CN & {line-height: 1.4em;}
+					html.JP & {line-height: 1em;}
+				}
+				h3{
+					margin-top: 3px;
+					text-transform: none;
+		                        html.JP &{font-size: 2.2}// mi dispiace ma è inevitabile questa eccezione
+					//html.CN &, html.JP &, html.RU & {line-height: 1.2em;}
+				}
+				h5{
+					margin-top: 10px;
+					text-transform: none;
+					//html.CN &, html.JP &, html.RU &{line-height: 1.2em;}
+				}
+
+			}
+
+		}
+
+	}
+	
+}

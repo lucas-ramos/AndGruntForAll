@@ -1,0 +1,75 @@
+﻿@import "variables";
+@import "fonts";
+@import "Desktop/callToActions";
+@import "Desktop/Partials/susyClasses";
+
+
+$i:2;
+$videoWidth: 998px;
+$videoHeight: 695px;
+
+
+#landing.irisvanherpen{
+
+	#videoWrapper {
+		width: $videoWidth;
+		height: $videoHeight;
+		.coverImag{
+			width: $videoWidth;
+			height: $videoHeight;
+			position: absolute;
+			cursor: pointer;
+			background-image: url("//ytos-resources-eu-west-1-183330696032.s3.amazonaws.com/ytos/resources/THECORNER/landing/iris-van-herpen/irisvideo_desk_uk.jpg?v={$i}");
+			.CN &{background-image: url("//ytos-resources-eu-west-1-183330696032.s3.amazonaws.com/ytos/resources/THECORNER/landing/iris-van-herpen/irisvideo_desk_cn.jpg?v={$i}");}
+			.DE &{background-image: url("//ytos-resources-eu-west-1-183330696032.s3.amazonaws.com/ytos/resources/THECORNER/landing/iris-van-herpen/irisvideo_desk_de.jpg?v={$i}");}
+			.ES &{background-image: url("//ytos-resources-eu-west-1-183330696032.s3.amazonaws.com/ytos/resources/THECORNER/landing/iris-van-herpen/irisvideo_desk_es.jpg?v={$i}");}
+			.FR &{background-image: url("//ytos-resources-eu-west-1-183330696032.s3.amazonaws.com/ytos/resources/THECORNER/landing/iris-van-herpen/irisvideo_desk_fr.jpg?v={$i}");}
+			.IT &{background-image: url("//ytos-resources-eu-west-1-183330696032.s3.amazonaws.com/ytos/resources/THECORNER/landing/iris-van-herpen/irisvideo_desk_it.jpg?v={$i}");}
+			.JP &{background-image: url("//ytos-resources-eu-west-1-183330696032.s3.amazonaws.com/ytos/resources/THECORNER/landing/iris-van-herpen/irisvideo_desk_jp.jpg?v={$i}");}
+			.RU &{background-image: url("//ytos-resources-eu-west-1-183330696032.s3.amazonaws.com/ytos/resources/THECORNER/landing/iris-van-herpen/irisvideo_desk_ru.jpg?v={$i}");}
+			.GB &{background-image: url("//ytos-resources-eu-west-1-183330696032.s3.amazonaws.com/ytos/resources/THECORNER/landing/iris-van-herpen/irisvideo_desk_uk.jpg?v={$i}");}
+		}
+		.videoContainer{
+			width: $videoWidth;
+			height: $videoHeight;
+		}
+	}
+	.disclaimer1{
+		padding: 40px;
+		color: $color-medium;
+		font-size: $size-medium;
+		line-height: 26px;
+		text-align: center;
+		@extend %lato;
+		.RU &{ font-size: 2em; }
+	}
+	.bodyWrapper{
+		width: 998px;
+		height: 2425px;
+		display: block;
+		background-image: url("//ytos-resources-eu-west-1-183330696032.s3.amazonaws.com/ytos/resources/THECORNER/landing/iris-van-herpen/iris_bgdesk.jpg?v={$i}");
+		.disclaimer2{
+			width: 340px;
+  			height: 375px;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			color: $color-medium;
+			font-size: 2.0em;
+  			line-height: 35px;
+  			letter-spacing: 4px;
+			padding-left: 40px;
+			text-transform: uppercase;
+			@extend %lato;
+			.DE &{ font-size: 1.8em; }
+			.FR &{ font-size: 1.8em; }
+		}
+	}
+	.btnShop{
+		@extend .button;
+		@extend .primary;
+		height: 65px;
+		line-height: 65px;
+		@extend %lato;
+	}
+}

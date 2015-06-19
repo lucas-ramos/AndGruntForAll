@@ -1,0 +1,363 @@
+
+@import "Smartphone/partials/addressdrivencheckout/cart/oldCart";
+
+
+.cartButtonsWrapper {
+	margin: 20px 0;
+}
+
+
+.backToShoppingButton {
+	a {
+		@extend %button-tertiary;
+		display: block;
+		text-align: center;
+	}
+}
+
+
+.emptyCartWrap {
+	h2 {
+		@extend %lato;
+		text-transform: none;
+		padding: 30px 25px;
+		font-size: $size-grand-rem;
+	}
+
+	.backToShoppingButton {
+		a {
+			@extend button;
+			@extend .primary;
+			text-decoration: none;
+			width: auto;
+		}
+	}
+	margin-bottom: 66px;
+}
+
+
+.noItemsFooter {
+	position: relative;
+	bottom: 0;
+	right: 0;
+	left: 0;
+}
+
+
+.nextPageButton {
+	@extend .primary;
+	width: 100%;
+	margin: 10px 0 17px;
+}
+
+.brandName {
+	@extend %lato-bold;
+}
+
+// hack per via della last item available che non ha classe. Parlare con Antonio Rinaldi in merito per farsela mettere (16/02/2015)
+.desc > div:not(.brandName):not(.microCategory):not(.size):not(.color):not(.priceUpdater):not(.editItemQuantity) {
+	font-size: $size-tiny-rem;
+	font-style: italic;
+	margin-top: 10px;
+}
+
+.brandName, .microCategory, .size, .color, .priceUpdater, .editItemQuantity {
+	font-size: $size-small-rem;
+	display: block;
+	line-height: 2rem;
+}
+
+/* stili comuni anche per l'oldcart */
+.microCategory, .size, .color, .priceUpdater, .editItemQuantity  {
+	.label {
+		@include appendColon;
+		margin-right: 5px;
+	}
+}
+
+.size {
+	margin-top: 10px;
+}
+/* end stili comuni anche per l'oldcart */
+
+
+
+%halfColumn {
+	width: 48%;
+	float: left;
+}
+
+/* questo è common con il oldcart */
+.priceUpdater {
+
+	.price {
+		display: block;
+	}
+	.discounted {
+		@extend %lato-bold;
+	}
+}
+
+.itemRow {
+	padding: 10px 0;
+	margin-bottom: 20px;
+
+	&.lastItem .increase {
+		display:none;				
+	}
+
+	.inner-article {
+		@include pie-clearfix;
+	}
+
+	.image {
+		@extend %halfColumn;
+
+		a {
+			display: block;
+		}
+		img {
+			width: 100%;
+		}
+	}
+
+
+
+	.desc {
+		@extend %halfColumn;
+		@extend %lato;
+	}
+
+	.deleteItem {
+		@extend %button-tertiary;
+		margin-top: 15px;
+
+		.text {
+			padding-right: 5px;
+		}
+	}
+
+	.disabled {
+		display: none;
+	}
+
+	.editItemQuantity {
+		@include pie-clearfix;
+
+		button {
+			@extend %resetButton;
+			margin: 0 5px;
+		}
+
+		button, .quantity, .label {
+			float: left;
+		}
+
+		.text {
+			display: none;
+		}
+
+		.icon {
+			display: block;
+		}
+
+		.increase .icon {
+			@extend %svg-plus-icon;
+		}
+
+		.decrease .icon {
+			@extend %svg-minus-icon;
+		}
+	}
+}
+
+%dark-section {
+	background-color: $color-background;
+}
+
+$dark-section-padding: 23px 3% 21px;
+
+#subtotal {
+	@extend %lato-bold;
+	@extend %dark-section;
+	text-transform: uppercase;
+	font-size: $size-medium-rem;
+
+	.ProductSubtotal {
+		@include pie-clearfix;
+		padding: $dark-section-padding;
+		margin: 0 5%;
+		border-bottom: 1px solid $color-extra;
+	}
+
+	.label {
+		float: left;
+	}
+
+	.totalPrices {
+		float: right;
+	}
+}
+
+#coupon {
+	@extend %dark-section;
+	padding: $dark-section-padding;
+
+	h4 {
+		@extend %lato-bold;
+		font-size: $size-small-rem;
+		display: inline;
+		margin-right: 10px;
+	}
+
+	.bannedBrands {
+		display: inline;
+		font-size: $size-small-rem;
+		line-height: 24px;
+
+		& div {
+			display: inline;
+		}
+	}
+
+	.couponTitle {
+		text-align: center;
+		margin-bottom: 3px;
+	}
+}
+
+
+.bannedBrandsLink {
+	@extend %lato;
+	margin-top: 15px;
+	font-size: $size-tiny-rem;
+	text-align: center;
+}
+
+.coupon {
+	button {
+		@extend .primary;
+		width: 100%;
+	}
+
+	.couponApplied {
+		display:none;
+	}
+
+	.couponCode {
+		@include fake-input-field-smartphone;
+	}
+}
+
+
+#promotions {
+	margin: 20px 0;
+	font-size: $size-medium-rem;
+
+	.shortDescription {
+		display: none;
+	}
+
+}
+
+%cartInfoBaseLine {
+	font-size: $size-small-rem;
+	text-align: left;
+	text-transform: uppercase;
+	@extend %lato-bold;
+}
+
+.cartInfo {
+	h3, p {
+		@extend %cartInfoBaseLine;
+	}
+
+	.deliveryTimeInfo {
+		font-size: 1rem;
+	}
+}
+
+%half-spaced-label {
+	float: left;
+	max-width: 50%;
+}
+
+.paymentMethod {
+	.label {
+		width: 100%;
+	}
+
+	.text {
+		@extend %half-spaced-label;
+	}
+}
+
+.deliveryInfo {
+	@extend %half-spaced-label;
+
+	span {
+		display: block;
+	}
+}
+
+#totals {
+	margin: 10px 0;
+	@include pie-clearfix;	
+	@extend %cartInfoBaseLine;
+
+	.row {
+		@include pie-clearfix;
+		border-bottom: 1px solid $color-extra;
+		padding: 23px 3%;
+	}
+
+	.row-total {
+		background-color: $color-highlights;
+	}
+
+	.label {
+		float: left;
+	}
+	.totalPrices {
+		float: right;
+		max-width: 50%;
+	}
+
+	.salesTaxesDescrPopup {
+		display:none;
+	}
+
+	.price  {
+		float: right;
+	}
+}
+
+#nextPrev {
+	margin-bottom: 30px;
+}
+
+#salesterm {
+	margin: 50px 0 25px;
+	background-color: $color-background;
+	padding: 10px;
+
+	h4 {
+		@extend %lato-bold;
+		font-size: $size-mini-rem;
+		margin-bottom: 10px;
+		padding-bottom: 5px;
+		border-bottom: 1px solid $color-light;
+	}
+
+	p {
+		@extend %lato;
+		font-size: $size-mini-rem;
+		max-height: 250px;
+		overflow: auto;
+	}
+}
+
+// uniformità stile popup
+.mfp-content {
+	font-size: $size-medium-rem;
+}

@@ -1,0 +1,240 @@
+// ========================
+// ITEM PAGE STYLES
+// ========================
+@import "variables";
+@import "fonts";
+@import "Desktop/Partials/susyClasses";
+@import "Desktop/vendor/svgzr/sprites-svg";
+
+main {
+	margin: 30px 0;
+}
+
+$search-field-height: 69px;
+
+.svg-lens-50x50 {
+	@extend %svg-lens-50x50;
+}
+
+
+.searchFieldContainer {
+
+	width: 100%;
+	position:relative;
+	background-color: $color-ultra;
+	height:$search-field-height;	
+	border-bottom: 20px solid $white;
+
+	input[type='text'] {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		width: 98%;
+		padding: 0 1%;
+		height:$search-field-height;
+		line-height:$search-field-height;
+		border: none;
+		font-size: 4em;
+		color: $color-medium;
+		background: transparent;
+		outline: none;
+		text-transform: lowercase;
+		
+		&[role="suggestion"] {
+			color: $color-extra;
+
+			.ielt9 & {
+				display:none;
+			}
+
+		}
+
+		&:focus {
+			outline: 1px solid $color-light;
+		}
+		/* 
+		@include input-placeholder {
+			text-transform: none;
+		}
+		 */
+	}
+
+	.icon {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+	}
+}
+
+
+
+
+.multibrand  {
+
+	$banner-height: 200px;
+	$banner-height-open: 340px;
+
+	h3 {
+		height: $search-field-height;
+	}
+
+	.banner-slot {
+		height: $banner-height;
+		margin: 5px 0;
+		cursor: pointer;
+		display: block;
+		overflow: hidden;
+		@include transition(height .5s linear);
+
+		a {
+			position: relative;
+			display: block;
+		}
+		
+		img {
+			@include transition(top 0s linear 0.5s);
+			display: block;
+			position: relative;
+			top: 0px;
+		}
+
+		&:hover {
+			height: $banner-height-open;
+
+			img {
+				@include transition-delay(0s);
+				top: -200px;
+			}
+		}
+	}
+
+	.banner-text {
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		font-size: $size-huge;
+		line-height: 0.9em;
+		@extend %knockout-bold;
+	}
+
+	.viewAll {
+		top: 300px;
+		position: absolute;
+		width: 100%;
+		padding: 0;
+	}
+}
+
+
+
+@include mediaquery-ipad {
+	.multibrand  .banner-slot {
+		height: 300px;
+
+		img {
+			top: -200px;
+		}
+	}
+}
+
+.corner {
+	h3 {
+		padding: 10px 0 0 10px;
+		//@extend %knockout-bold;
+	}
+
+	.viewMore {
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		display: none;
+		border:0;
+	}
+}
+
+
+.letter {
+	margin: 10px 0 30px;
+
+	h1 {
+		font-size: $size-huge;
+		color: $color-dark;
+	}
+}
+
+.col {
+	@extend .column-3;
+
+	&[data-column="2"] {
+		@extend .omega;
+	}
+
+	a {
+		font-size: $size-medium;
+		color: $color-medium;
+		text-transform: uppercase;
+
+		&:hover {
+			color: $black;
+		}
+	}
+
+	ul {
+		margin: 1em 0;
+	}
+
+	li {
+		margin: 4px 0;
+
+		&.lighter a {
+			color: $color-ultra;
+		}
+	}
+
+	.value {
+		display: none;
+	}
+}
+
+.listWrapper {
+	position: relative;
+	overflow: hidden;
+}
+
+.listWrapper-inner {
+	position: relative;
+	top: 0px;
+	left: 0px;
+	@include transition( top .5s linear );
+}
+
+[hoverlayer-cointainer] {
+	position: relative;
+}
+
+.hoverlayer {
+	position: absolute;
+	width: 270px;
+	background: $white;
+	border: 1px solid $color-extra;
+	@include zindex(layer-shopByCorner);
+	@include transition( top 0.1s linear, left 0.2s linear  );
+	@include box-shadow(0px 0px 5px 0px rgba(0, 0, 0, 0.2));
+
+	.banner-item img {
+		margin: 0 auto;
+		display: block;
+	}
+}
+
+/*
+[hoverlayer-cointainer] {
+	.hoverlayer { display: none; }
+
+	&:hover {
+		.hoverlayer { display: block; }
+	}
+}*/
+
+

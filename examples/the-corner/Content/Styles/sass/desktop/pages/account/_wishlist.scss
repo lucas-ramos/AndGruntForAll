@@ -1,0 +1,98 @@
+// =============
+// WISHLIST PAGE
+// =============
+
+
+// main c'è per evitare che i bottoni dei layer vengano coinvolti
+main {
+
+	.firstLine, .secondLine {
+		@include pie-clearfix;
+		margin: 10px 0;
+		@extend .omega;
+	}
+	
+	.firstLine {
+		height: 40px;
+	}
+
+	.secondLine {
+		width: 100%;
+		.actions {
+			float: right;
+		}
+		.button, button {
+			float: left;
+		}
+	}
+
+	.buttonsRow {
+		@include pie-clearfix;
+		margin-bottom: 10px;
+
+		button, .button {
+			@extend .secondary;
+			margin-left: 10px;
+				
+			// brutto, ma per fare vincere la disabilità quando c'è
+			&.disabled {
+				display: none;
+			}
+		}
+	}
+	
+}
+
+
+.wishlistItem {
+	@include nth-omega(4n);
+}
+
+
+/* first line */
+.orderItemsInWishList {
+	.label {
+		float: left;
+		display: block;
+		font-size: $size-large;
+		text-transform: uppercase;
+		color: $color-medium;
+		line-height: 40px;
+		margin-right: 10px;
+	}
+	.select {
+		width: 242px;
+		float: left;
+		display: block;
+	}
+}
+
+.toggleSelectAllItemsInWishListButton  {
+	float: right;
+}
+
+
+/* second Line */
+.buttonsRow .secondLine .actions button.addSelectedWishListItemsToCart {
+	@extend .primary;
+}
+
+.RU &, .FR & {
+	.buttonsRow .secondLine {
+		button, .button {		
+			padding: 0 2px;
+			font-size: 1.3em;
+		}
+	}
+}
+
+.removeAllItemsFromWishList{
+	height: 38px;
+}
+
+.classFamily {
+	display: none;
+}
+.removeAllItemsFromWishList  {
+	display: none;
+}

@@ -1,0 +1,38 @@
+@import "desktop/partials/menu/menuManWoman";
+@import "desktop/partials/menu/menuDualGender";
+@import "desktop/partials/menu/menuLiving";
+
+$section : "header";
+
+#menuContainer {
+	@include microClearfix();				
+	@include container();
+
+	@include bodyStyle($section);
+
+	.level-2 {
+		ul > li > a {
+			@include H2Style($section);
+		}
+	}
+
+	.level-3 {
+		ul > li > a {
+			@include H6Style($section);
+		}
+	}
+	img{
+		display: none;
+	}
+}
+
+@media #{$mediaQueryDesktopCommon} {
+	#menuContainer {
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		box-shadow: none;
+		img{
+			display: block;
+		}
+	}
+}

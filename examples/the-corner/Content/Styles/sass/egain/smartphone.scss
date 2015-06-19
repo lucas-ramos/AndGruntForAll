@@ -1,0 +1,418 @@
+// ================
+// EGAIN SMARTPHONE CSS
+// TO BE DEPLOYED IN [ftpegain]/Dev_SS_External/layout/tc-crm-2.0/css
+// TO BE EDITED IN \yTos-THECORNER\yTos.Web.THECORNER\Content\Styles\sass\egain
+// ================
+
+@import "variables";
+@import "fonts";
+@import "Smartphone/callToActions";
+
+@import "Smartphone/Partials/egain/backToTop";
+@import "Smartphone/Partials/egain/feedback";
+
+@import "Smartphone/vendor/svgzr/sprites-svg";
+
+body.contactForm {
+	.crm-contacts, .menuShow, .showHide,
+	.crm-menu-main, .crm-menu-secondary {
+		display: none !important;
+	}
+}
+
+#headerContainer {
+	display: none;
+}
+
+.crm-widget-hr, hr {
+	display: none;
+}
+
+#crm-wrapper {
+	margin: 0 10px;
+
+	header {
+		background: none;
+	}
+
+	.crm-section-index header {
+		background-color: $color-ultra;
+	}
+
+	h1 {
+		text-align: center;
+		font-size: $size-massive-rem;
+
+		a {
+			color: $black;
+		}
+	}
+
+	p {
+		margin: 0;
+	}
+
+	input[type="text"], input[type="password"], input[type="email"], input[type="tel"] {
+		padding: 8px 12%;
+		border-bottom: 1px solid $color-extra;
+		margin-bottom: 20px;
+	}
+
+	textarea {
+		width: 98%;
+	}
+
+	.crm-form-field-attachments {
+		line-height: 36px;
+	}
+
+	.crm-form-field-topic {
+		margin: 0 0 13px;
+	}
+}
+
+#crm-title {
+	h1 {
+		font-size: $size-giant-rem;
+		padding-top: 10px;
+	}
+}
+
+.crm-section-index {
+	margin-bottom: 20px;
+	border-bottom: 4px solid $color-extra;
+	padding-bottom: 20px;
+
+	header {
+		padding: 15px;
+		margin: 10px 0;
+	}
+
+	h1 {
+		font-size: $size-huge-rem;
+	}
+
+	p {
+		text-align: center;
+		font-size: $size-large-rem;
+	}
+
+	a {
+		font-size: $size-midlarge-rem;
+	}
+}
+
+#crm-main {
+	font-size: $size-medium-rem;
+}
+
+.contribution {
+	margin: 10px 0;
+	.label {
+		font-weight: bold;
+	}
+}
+
+
+/* SEARCH */
+#searchString {
+	width: 60%;
+	float: left;
+	height: 39px;
+}
+
+#searchBtn {
+	width: 12%;
+	@extend %button-tertiary;
+	@extend %svg-search;
+	@include imageReplacement;
+	display: inline-block;
+	top: 20px;
+	position: relative;
+	float: right;
+}
+
+.crm-search-container {
+	margin-bottom: 20px;
+	border-bottom: 3px solid $black;
+
+	form {
+		@include pie-clearfix;
+	}
+}
+/* END SEARCH */
+
+
+/* MENU MAIN */
+.menuShow {
+	@extend .button;
+	@extend .primary;
+	margin: 5px 0 20px;
+	display: block;
+	.arrow {
+		float: right;
+		@include triangle( $white, 24px, 12px, 0 );
+		@include transform(rotate(180deg));
+	}
+
+	&.open {
+		.arrow {
+			@include triangle( $white, 24px, 12px, 0 );
+			@include transform(rotate(0deg));
+		}
+	}
+}
+.showHide {
+	display: none;
+}
+.crm-menu-main {
+	a {
+		@extend .button;
+		@extend .secondary;
+		margin: 5px 0;
+	}
+}
+
+.crm-menu-secondary {
+	.crm-menu-level-0 {
+		margin: 20px 0;
+
+		> li > a {
+			@extend .button;
+			@extend .secondary;
+			margin-bottom: 5px;
+		}
+	}
+
+	.crm-menu-level-1 {
+		display: none;
+	}
+}
+/* END MENU MAIN */
+
+.crm-contacts {
+	display: none;
+
+	a {
+		@extend .button;
+		@extend .secondary;
+		margin: 5px 0;
+	}
+}
+
+#crm-menu {
+	#browsetopic_jsp &, #articleappearance_jsp & {
+		display: none;
+	}
+
+	.crm-contacts {
+		display: block;
+	}
+}
+
+.crm-article {
+	margin-bottom: 20px;
+	border-bottom: 3px solid $color-extra;
+	padding-bottom: 20px;
+
+	header {
+		h1 {
+			font-size: $size-super-rem;
+			padding-top: 10px;
+			line-height: 1em;
+		}
+	}
+
+	section:not(.crm-widget-feedback-stars) { //sezione "articoli correlati" (selettore per separare dalla sezione feedback)
+		ul {
+			padding: 3px 12px;
+		}
+
+		li::before {
+			content: '> ';
+		}
+
+		a {
+			font-size: $size-small-rem;
+			border-bottom: 1px solid $color-light;
+		}
+	}
+}
+
+.crm-article-content {
+	margin: 5px 0 20px;
+}
+
+.crm-widget-feedback-stars { //sezione feedback
+	$title-width: 40%;
+	$stars-width: 100% - $title-width;
+
+	@include pie-clearfix;
+	background-color: $color-light;
+	text-align: center;
+	margin-bottom: 20px;
+
+	> div {
+		float: left;
+		width: 100%;
+		color: $white;
+		padding-right: 0 !important; //ringraziate quelli di egain
+		padding: 6px 0;
+	}
+
+	.title {
+		float: left;
+		width: $title-width;
+		padding-top: 1px;
+	}
+
+	ul {
+		float: left;
+		width: $stars-width;
+
+		.one-star {
+			@include opacity(0.5);
+		}
+
+		&:hover {
+			.one-star {
+				@include opacity(1);
+			}
+		}
+	}
+
+	li {
+		float: left;
+		width: 33%;
+
+		&:hover {
+			~ li {
+				.one-star {
+					@include opacity(0.5);
+				}
+			}
+		}
+	}
+
+	a {
+		@include imageReplacement;
+		@extend %svg-star;
+		display: block;
+		margin: auto;
+	}
+}
+
+.crm-seemore {
+	h2 {
+		font-size: $size-big-rem;
+		color: $color-medium;
+	}
+}
+
+.crm-back-top {
+	@extend .button;
+	@extend .secondary;
+	font-size: $size-midsmall-rem;
+	margin-top: 15px;
+	height: 30px;
+	line-height: 32px;
+	text-align: center;
+}
+
+// TABLES
+table {
+	border-bottom: 1px solid $color-extra;
+	width: 100% !important;
+	margin: 5% 0 !important;
+	tbody > tr:first-child {
+		td {
+			font-size: $size-small-rem;
+			text-align: center;
+			strong {
+				text-align: center;
+				@extend %knockout;
+			}
+
+		}
+	}
+	tr {
+		border-bottom: 1px solid $color-extra !important;
+		&:nth-of-type(odd) {
+			background: $white;
+		}
+		td {
+			margin: 0;
+			padding: 1% 0;
+			width: auto !important;
+			text-align: center;
+			vertical-align: middle;
+			padding: 1% 0;
+			p {
+				span {font-size: 10px !important;}
+			} 
+
+		}
+
+	}
+}
+
+
+/*** POPUP ***/
+.mfp-content {
+	color: $white;
+	h1 {
+		color: $white;
+		font-size: $size-medium;
+	}
+	header {
+		background: transparent;
+		border-bottom: 1px solid $color-extra;
+		margin: 0 0 20px;
+		padding: 0 0 20px;
+		h1 {
+			font-size: $size-massive;
+			margin: 10px 0;
+			a {
+				color: $color-dark;
+
+				&:hover {
+					color: $black;
+				}
+			}
+		}
+		p {
+			font-size: $size-midlarge;
+		}
+	}
+	.crm-article {
+		font-size: $size-small;
+		color: $white;
+		border-bottom: 3px solid $color-extra;
+		float: left;
+		width: 100%;
+		position: relative;
+
+		.crm-article-content {
+			font-size: $size-smaller;
+			float: left;
+			width: 70%;
+		}
+	}
+	.crm-overlay-buttons {
+		button {
+			width: 100%;
+			@extend .button;
+			@extend .secondary;
+			&.crm-button-submit {
+				@extend .primary;
+				margin: 10px 0 0;
+			}
+		}
+	}
+	a {
+		@extend .button;
+		@extend .secondary;
+		margin: 10px 0 0;
+		float: left;
+	}
+}

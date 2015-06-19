@@ -1,0 +1,1 @@
+..\..\..\YGrunt\node_modules\.bin\grunt.cmd --gruntfile GruntFile.js %*

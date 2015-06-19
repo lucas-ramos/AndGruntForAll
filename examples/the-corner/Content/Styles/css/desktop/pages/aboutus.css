@@ -1,0 +1,366 @@
+@charset "UTF-8";
+/* effetto height:100% sugli elementi flottanti */
+@font-face {
+  font-family: 'KnockoutLight';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.svg#KnockoutLight") format("svg");
+}
+@font-face {
+  font-family: 'KnockoutRegular';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.svg#KnockoutRegular") format("svg");
+}
+@font-face {
+  font-family: 'HelveticaCondensedLight';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.svg#KnockoutRegular") format("svg");
+}
+@font-face {
+  font-family: 'HelveticaCondensedBold';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.svg#KnockoutRegular") format("svg");
+}
+@font-face {
+  font-family: 'LatoRegular';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.svg#LatoRegular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'LatoBold';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.svg#LatoBold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+.RU button, .RU .button {
+  font-family: Arial, Verdana, sans-serif;
+}
+
+button, .button {
+  font-family: KnockoutLight, Arial, Verdana, sans-serif;
+  font-weight: normal;
+}
+.JP button, .JP .button {
+  font-family: KnockoutLight, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+}
+.CN button, .CN .button {
+  font-family: KnockoutLight, HelveticaCondensedLight, Arial, "Microsoft YaHei", "Microsoft YaHei Regular", SimHei, "SimHei Regular", sans-serif;
+}
+
+/* ==========================================================================
+   CALL TO ACTIONS
+   Use with:
+
+	@extend button				(extends button rules)
+	@extend .secondary			(extends .secondary rules)
+	@extend button.secondary	(extends .secondary rules, not button's)
+	@extend .ugly-button		(extends .ugly-button rules)
+
+	NOTE: THESE ARE CLASSES.
+	THEY WILL BE REPLICATED FOR EACH TIME THEY'RE INCLUDED.
+	Include this only when is necessary.
+	Include this in scss PARENTS ONLY.
+
+	========================================================================== */
+button {
+  border-style: solid;
+  border-width: 1px;
+  cursor: pointer;
+  display: block;
+  font-size: 1.6em;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  outline: none;
+  text-align: center;
+  text-transform: uppercase;
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 40px;
+}
+
+.button {
+  border-style: solid;
+  border-width: 1px;
+  cursor: pointer;
+  display: block;
+  font-size: 1.6em;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  outline: none;
+  text-align: center;
+  text-transform: uppercase;
+  padding-left: 15px;
+  padding-right: 15px;
+  line-height: 40px;
+  height: 38px;
+}
+
+button.primary, .button.primary {
+  background-color: #000;
+  color: #FFF;
+  border-color: #000;
+}
+button.primary:hover, .button.primary:hover {
+  background-color: #999;
+  border-color: #999;
+}
+button.secondary, .button.secondary {
+  background-color: #EBEBEB;
+  color: #333;
+  border-color: #CCC;
+}
+button.secondary:hover, .button.secondary:hover {
+  background-color: #FFF;
+}
+button.tertiary, .button.tertiary {
+  background: none;
+  border: 0;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  text-transform: none;
+  text-decoration: underline;
+}
+button.disabled, button[disabled], .button.disabled, .button[disabled] {
+  background-color: #FFF;
+  color: #EBEBEB;
+  border-color: #EBEBEB;
+  cursor: default;
+}
+button.disabled:hover, button[disabled]:hover, .button.disabled:hover, .button[disabled]:hover {
+  background-color: #FFF;
+  border-color: #EBEBEB;
+}
+
+.column-1 {
+  width: 74px;
+  float: left;
+  margin-right: 10px;
+}
+
+.column-2 {
+  width: 158px;
+  float: left;
+  margin-right: 10px;
+}
+
+.column-3 {
+  width: 242px;
+  float: left;
+  margin-right: 10px;
+}
+
+.column-4 {
+  width: 326px;
+  float: left;
+  margin-right: 10px;
+}
+
+.column-5 {
+  width: 410px;
+  float: left;
+  margin-right: 10px;
+}
+
+.column-6 {
+  width: 494px;
+  float: left;
+  margin-right: 10px;
+}
+
+.column-7 {
+  width: 578px;
+  float: left;
+  margin-right: 10px;
+}
+
+.column-8 {
+  width: 662px;
+  float: left;
+  margin-right: 10px;
+}
+
+.column-9 {
+  width: 746px;
+  float: left;
+  margin-right: 10px;
+}
+
+.column-10 {
+  width: 830px;
+  float: left;
+  margin-right: 10px;
+}
+
+.column-11 {
+  width: 914px;
+  float: left;
+  margin-right: 10px;
+}
+
+.column-12 {
+  width: 998px;
+  float: left;
+  margin-right: 10px;
+}
+
+.prefix-1 {
+  padding-left: 84px;
+}
+
+.prefix-2 {
+  padding-left: 168px;
+}
+
+.prefix-3 {
+  padding-left: 252px;
+}
+
+.prefix-4 {
+  padding-left: 336px;
+}
+
+.prefix-5 {
+  padding-left: 420px;
+}
+
+.prefix-6 {
+  padding-left: 504px;
+}
+
+.prefix-7 {
+  padding-left: 588px;
+}
+
+.prefix-8 {
+  padding-left: 672px;
+}
+
+.prefix-9 {
+  padding-left: 756px;
+}
+
+.prefix-10 {
+  padding-left: 840px;
+}
+
+.prefix-11 {
+  padding-left: 924px;
+}
+
+.omega {
+  margin-right: 0 !important;
+}
+
+.centralColumn {
+  *zoom: 1;
+  width: 998px;
+  padding-left: 6px;
+  padding-right: 6px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  position: relative;
+}
+.centralColumn:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*Mixin*/
+#big-image {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  margin-bottom: 34px;
+}
+#big-image .text {
+  position: absolute;
+  top: 34px;
+  left: 0;
+}
+
+#big-image h2 {
+  margin-left: 20px;
+}
+
+.manifesto {
+  margin: 0 0 20px 0;
+  font-size: 1.5em;
+}
+
+.manifesto ul {
+  margin-top: 20px;
+  padding-left: 35px;
+}
+.manifesto ul li {
+  list-style: disc;
+  margin-top: 5px;
+}
+
+.intro {
+  width: 50%;
+  margin-top: 20px;
+  margin-left: 20px;
+  line-height: 1.4em;
+}
+
+.areaCinaWrapper {
+  margin: 4px auto;
+  position: relative;
+  line-height: 2.4em;
+}
+.areaCinaWrapper .column {
+  width: 33%;
+  float: left;
+  display: block;
+  height: 120px;
+  padding-bottom: 10px;
+}
+.areaCinaWrapper .column .box {
+  background-color: #EBEBEB;
+  width: 325px;
+  height: 120px;
+  float: left;
+  position: relative;
+}
+.areaCinaWrapper .column .box .logo1, .areaCinaWrapper .column .box .logo2, .areaCinaWrapper .column .box .logo4 {
+  top: 10px;
+  border-right: 1px solid #CCC;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+}
+.areaCinaWrapper .column .box .logo1 .logo1_content, .areaCinaWrapper .column .box .logo4 .logo4_content {
+  top: 25px;
+  position: absolute;
+  left: 30px;
+}
+.areaCinaWrapper .column .box .logo2 {
+  left: 20px;
+}
+.areaCinaWrapper .column .box .logo2 .logo2_content {
+  top: 25px;
+  position: absolute;
+  left: -7px;
+}
+.areaCinaWrapper .column .box.pos2 {
+  width: 180px;
+  height: 20px;
+  top: -90px;
+  left: 120px;
+}
+.areaCinaWrapper .column .box.pos2 h4, .areaCinaWrapper .column .box.pos2 h5 {
+  color: #000;
+}
+.areaCinaWrapper .column.last .pos2 {
+  left: 140px;
+}

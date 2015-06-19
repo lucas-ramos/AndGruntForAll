@@ -1,0 +1,241 @@
+// CARTLAYER
+// ------
+
+#miniCart {
+	$leftSideWrapper-width: 756px;
+	@include pie-clearfix;
+	height: $cart-layer-height - $contentWrapper-padding-top - $contentWrapper-padding-bottom;
+
+	.Total {
+		position: relative;
+		
+		.label {
+			float: left;
+			font-size: $size-smaller;
+			.JP & { font-size: $size-base; line-height: $size-smaller; }
+		}
+	
+		.totalPrices {
+			float: right;
+			font-size: $size-smaller;
+		}					
+		.totalPrices, .label {
+			@extend %knockout-bold;
+			text-transform: uppercase;
+			color: $black;
+			margin-bottom: 7px;
+
+		}
+
+		.salesTaxesDescr {
+					display: none;
+				}
+
+		.salesTaxesDescrPopup {
+			position: absolute;
+			top: 1.3em;
+			cursor: pointer;
+			text-decoration: underline;
+		}
+
+				 
+	}
+
+	.dataContainer {
+		margin-top: 10px;
+
+		> div {
+			padding: 3px 0;
+			.US & { padding: 2px 0; }
+
+			color: $color-medium;
+			font-size: $size-medium;
+			@extend %knockout;
+		}
+
+		.price.free {
+			.currency {
+				display: none;
+			}
+		}
+
+		.dataRow {
+			@include pie-clearfix;
+
+			.dataRowLabel {
+				float: left;
+				.JP & {
+					font-size: 0.9em;
+					line-height: 1.5em;
+				}
+			}
+
+
+			.dataRowContent {
+				float: right;
+
+				.JP & {
+					font-size: 0.9em;
+					line-height: 1.5em;
+				}
+
+				// per la spedizione
+				.deliveryType, .valueToPay {
+					display: inline;
+				}
+
+				// per il tipo di pagamento
+				.payment .label {
+					display: none;
+				}
+			}
+		}
+
+		.salesTax {
+			display: none;
+
+			.US & {
+				display: block;
+			}
+		}
+
+		.selectedDeliveryMethod {
+			.description {
+				display: none;
+			}
+		}
+
+		> .cartTotal {
+			@include pie-clearfix;
+
+			.label {
+				float: left;
+			}
+
+			.price {
+				float: right;
+			}
+		}
+	}
+
+	.leftSideWrapper {
+		@include pie-clearfix;
+		width: $leftSideWrapper-width;
+		float: left;
+	}
+
+	// ITEMS
+	.items {
+		width: $leftSideWrapper-width;
+		float: left;
+	}
+
+	li {
+		@extend .column-3;
+		float: left;
+		background-color: $white;
+		min-height: 144px;
+
+		.inner {
+			margin: 10px;
+			@include pie-clearfix;
+
+			a {
+				float: left;
+			}
+		}
+	}
+
+	img {
+		width: 90px;
+	}
+
+	.info {
+		float: left;
+		margin-left: 3px;
+		max-width: 128px;
+
+		.JP & {
+			margin-left: 0;
+		}
+
+		.microCategory, .color, .size, .quantity, .modelName {
+			display: block;
+			font-size: $size-midsmall;
+			color: $color-light;
+			clear: both;
+			padding: 1px 0;
+			max-width: 120px;
+
+			.label {
+				@include appendColon;
+				margin-right: 3px;
+			}
+		}
+
+		.price {
+			display: block;
+			font-size: $size-large;
+			color: $black;
+			clear: both;
+			padding: 1px 0;
+
+			.label {
+				display: none;
+			}
+
+			.price {
+				font-size: 100%;
+				display: block;
+			}
+		}
+
+		.remove {
+			display: none;
+		}
+	}
+
+	.brandName {
+		@extend %knockout-bold;
+		font-size: $size-medium;
+		color: $color-dark;
+	}
+
+	// BX CONTROLS
+	.bx-controls-direction {
+		@include pie-clearfix;
+		margin-top: 20px;
+	}
+
+	.bx-next {
+		float: right;
+
+	}
+
+	.bx-prev {
+		float: left;
+		display: none;
+	}
+
+	// DATA AND BUTTONS WRAPPER
+	.dataAndButtonsWrapper {
+		@extend .column-3;
+		@extend .omega;
+		margin-top: 20px;
+	}
+
+	.goToCartLink, .proceedWithCheckoutLink {
+		@extend .button;
+		width: 210px;
+		float: right;
+		margin-top: 10px;
+	}
+
+	.goToCartLink {
+		@extend .secondary;
+	}
+
+	.proceedWithCheckoutLink {
+		@extend .primary;
+	}
+}

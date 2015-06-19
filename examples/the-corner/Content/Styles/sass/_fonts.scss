@@ -1,0 +1,149 @@
+// ================
+// THE SITE's FONTS
+// ================
+
+$CDN_FONTS_PATH: '#{$cdn-server-secure}/font';
+
+
+@font-face {
+    font-family: 'KnockoutLight';
+	src: url('#{$CDN_FONTS_PATH}/knoc29jl.eot');
+    src: url('#{$CDN_FONTS_PATH}/knoc29jl.eot?#iefix') format('embedded-opentype'),
+		 url('#{$CDN_FONTS_PATH}/knoc29jl.woff2') format('woff2'),
+		 url('#{$CDN_FONTS_PATH}/knoc29jl.woff') format('woff'),
+         url('#{$CDN_FONTS_PATH}/knoc29jl.ttf') format('truetype'),
+         url('#{$CDN_FONTS_PATH}/knoc29jl.svg#KnockoutLight') format('svg');
+}
+
+@font-face {
+    font-family: 'KnockoutRegular';
+	src: url('#{$CDN_FONTS_PATH}/knock49l.eot');
+    src: url('#{$CDN_FONTS_PATH}/knock49l.eot?#iefix') format('embedded-opentype'),
+		 url('#{$CDN_FONTS_PATH}/knock49l.woff2') format('woff2'),
+		 url('#{$CDN_FONTS_PATH}/knock49l.woff') format('woff'),
+         url('#{$CDN_FONTS_PATH}/knock49l.ttf') format('truetype'),
+         url('#{$CDN_FONTS_PATH}/knock49l.svg#KnockoutRegular') format('svg');
+}
+
+@font-face {
+    font-family: 'HelveticaCondensedLight';
+	src: url('#{$CDN_FONTS_PATH}/helvetica_condensed_light-webfont.eot');
+	src: url('#{$CDN_FONTS_PATH}/helvetica_condensed_light-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('#{$CDN_FONTS_PATH}/helvetica_condensed_light-webfont.woff2') format('woff2'),
+		 url('#{$CDN_FONTS_PATH}/helvetica_condensed_light-webfont.woff') format('woff'),
+         url('#{$CDN_FONTS_PATH}/helvetica_condensed_light-webfont.ttf') format('truetype'),
+         url('#{$CDN_FONTS_PATH}/helvetica_condensed_light-webfont.svg#KnockoutRegular') format('svg');
+}
+
+@font-face {
+    font-family: 'HelveticaCondensedBold';
+	src: url('#{$CDN_FONTS_PATH}/helvetica_condensed_bold-webfont.eot');
+	src: url('#{$CDN_FONTS_PATH}/helvetica_condensed_bold-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('#{$CDN_FONTS_PATH}/helvetica_condensed_bold-webfont.woff2') format('woff2'),
+		 url('#{$CDN_FONTS_PATH}/helvetica_condensed_bold-webfont.woff') format('woff'),
+         url('#{$CDN_FONTS_PATH}/helvetica_condensed_bold-webfont.ttf') format('truetype'),
+         url('#{$CDN_FONTS_PATH}/helvetica_condensed_bold-webfont.svg#KnockoutRegular') format('svg');
+}
+
+@font-face {
+    font-family: 'LatoRegular';
+	src: url('#{$CDN_FONTS_PATH}/lato-regular-webfont.eot');
+	src: url('#{$CDN_FONTS_PATH}/lato-regular-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('#{$CDN_FONTS_PATH}/lato-regular-webfont.woff2') format('woff2'),
+		 url('#{$CDN_FONTS_PATH}/lato-regular-webfont.ttf') format('truetype'),
+         url('#{$CDN_FONTS_PATH}/lato-regular-webfont.svg#LatoRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'LatoBold';
+	src: url('#{$CDN_FONTS_PATH}/lato-bold-webfont.eot');
+	src: url('#{$CDN_FONTS_PATH}/lato-bold-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('#{$CDN_FONTS_PATH}/lato-bold-webfont.woff2') format('woff2'),
+		 url('#{$CDN_FONTS_PATH}/lato-bold-webfont.ttf') format('truetype'),
+         url('#{$CDN_FONTS_PATH}/lato-bold-webfont.svg#LatoBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// NON USARE QUESTE VARIABILI
+$_font-plain: Arial, Verdana, sans-serif;
+$_japanese-fonts: 'メイリオ',Meiryo,'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','ＭＳ Ｐゴシック', sans-serif;
+$_chinese-fonts: KnockoutLight, HelveticaCondensedLight, Arial, 'Microsoft YaHei', 'Microsoft YaHei Regular',SimHei,'SimHei Regular', sans-serif;
+
+$_knockout: KnockoutLight, $_font-plain;
+$_knockout-bold: KnockoutRegular, $_font-plain;
+$_helvetica: HelveticaCondensedLight, $_font-plain;
+$_helvetica-bold: HelveticaCondensedBold, $_font-plain;
+$_lato: LatoRegular, $_font-plain;
+$_lato-bold: LatoBold, $_font-plain;
+
+$_knockout-jp: KnockoutLight, $_japanese-fonts;
+$_knockout-bold-jp: KnockoutRegular, $_japanese-fonts;
+$_lato-jp: LatoRegular, $_japanese-fonts;
+$_lato-bold-jp: LatoBold, $_japanese-fonts;
+
+
+// FONT CLASSES
+// ------
+
+%plain {
+	font-family: $_font-plain;
+}
+
+%plain-bold {
+	font-family: $_font-plain;
+	font-weight: bold;
+}
+
+%knockout {
+	font-family: $_knockout;
+	font-weight: normal;
+
+	.JP & { font-family: $_knockout-jp;}
+	.CN & { font-family: $_chinese-fonts; }
+	.RU & { @extend %plain; }
+}
+
+%knockout-bold {
+	font-family: $_knockout-bold;
+	font-weight: normal;
+
+	.JP & { font-family: $_knockout-bold-jp; }
+	.CN & { font-family: $_chinese-fonts; }
+	.RU & { @extend %plain-bold; }
+}
+
+%helvetica  {
+	font-family: $_helvetica;
+	font-weight: normal;
+
+	.CN &,
+	.RU &  { @extend %plain; }
+}
+
+%helvetica-bold {
+	font-family: $_helvetica-bold;
+	font-weight: normal;
+
+	.CN & { @extend %plain; }
+	.RU & { @extend %plain-bold; }
+}
+
+%lato {
+	font-family: $_lato;
+	font-weight: normal;
+
+	.JP & { font-family: $_lato-jp; }
+	.RU & { @extend %plain; }
+}
+
+%lato-bold {
+	font-family: $_lato-bold;
+	font-weight: normal;
+
+	.JP & { font-family: $_lato-bold-jp; }
+	.RU & { @extend %plain-bold; }
+}

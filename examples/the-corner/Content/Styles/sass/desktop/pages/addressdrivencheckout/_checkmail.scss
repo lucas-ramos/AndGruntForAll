@@ -1,0 +1,210 @@
+// ==============
+// CHECKMAIL PAGE
+// ==============
+
+
+.mainTitle {
+	padding: 23px 0;
+}
+
+.registration .btnRegisterNow, .passwordStrengthContainer, .securePasswordInfo, .allowPrivacy, .acceptFlags .description, .passwordRecoveryLink  {
+	display:none;
+}
+
+.docomo {
+	padding-bottom: 10px;
+	float: left;
+	font-size: $size-tiny;
+	line-height: 1.4em;
+}
+
+.serverSideErrors {
+	padding-bottom: 10px;
+}
+
+label {
+	text-transform: uppercase;
+	color: $color-medium;
+	@extend %knockout;
+	font-size: $size-tiny;
+}
+
+.mandatory {
+	position: absolute;
+	bottom: 0px;
+	@extend %helvetica;
+	font-size: $size-small;
+}
+
+.login {
+	position: relative;
+
+	.coSectionContent {
+		background-color: $color-ultra;
+	}
+}
+
+.registration {
+	position: relative;
+}
+
+.coSectionContent {
+
+	.topDescription {
+		@extend %helvetica;
+		color: $color-light;
+		font-size: $size-small;
+		line-height: $size-small;
+		margin-bottom: 10px;
+		min-height: 76px;
+
+		.title {
+			margin-bottom: 5px;
+			text-transform: uppercase;
+			color: $color-medium;
+			@extend %knockout;
+			font-size: $size-small;
+
+			.JP &{
+				display: none;
+			}
+		}
+	}
+}
+
+
+#passwordRecoveryLink button {
+	border: none;
+	background: none;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	text-transform: none;
+	text-decoration: underline; 
+	color: $color-light;
+	@extend %helvetica;
+	font-size: $size-small;
+	height: 20px;
+}
+
+.coSectionContent .buttonsRow {
+	padding-bottom: 40px;
+	padding-top: 10px;
+
+	button {
+		@extend .primary;
+		width: 100%;
+		font-size: $size-big;
+	}
+
+}
+
+.radioButtonBox{
+	margin: 0;
+	width: 49%;
+	float: left;
+
+	&.selected {
+		background-color: $color-extra;
+	}
+	
+	.input {
+		padding: 10px;
+	}
+
+	.radioButton {
+		float: left;
+	}
+
+	label {
+		margin-left: 10px;
+		font-size: $size-large;
+		color: $black;
+		@extend %knockout-bold;
+	}
+
+	&.D {
+		margin-right: 2%;
+	}
+}
+
+.privacyContainer {
+	color: $color-light;
+	font-size: $size-tiny;
+	@extend %helvetica;
+	padding: 10px 0;
+	border-bottom: 1px solid $color-extra;
+
+	.privacy {
+		height: 55px;
+		overflow: hidden;
+		padding-right: 12px;
+		font-size: $size-mini;
+		line-height: 15px;
+	}
+
+}
+
+.acceptFlags {
+	margin-top: 20px;
+	
+	.fieldValue {
+		float:left;
+	}
+
+	.fieldLabel {
+		margin-left: 30px;		
+		font-size: $size-smaller;
+		line-height: 15px;
+
+		label {
+			@extend %helvetica;
+			font-size: $size-base;
+		}
+	}
+}
+
+.registrationForm  .validation-summary-errors {
+	color: $red;
+	font-size: $size-medium;
+
+	position: relative;
+	top: -35px;
+}
+
+.passwordInputWrapper {
+	position: relative;
+
+	.passwordLength {
+		display: none;
+	}
+}
+
+
+#RegistrationViewModel_BirthDate_Wrapper  {
+	display: block;
+
+	.fieldValue {
+		@include pie-clearfix;
+		padding-top: 10px;
+	}
+	
+	.selectTitle {
+		display:none;
+	}
+
+	.selectInput_wrapper {
+		width: 32%;
+		float: left;
+
+		&:nth-of-type(2) {
+			margin: 0 2%; // margini a quello in mezzo
+		}
+	}
+}
+
+
+
+#RegistrationViewModel_Gender_Wrapper .fieldValue {
+	@include pie-clearfix;
+}

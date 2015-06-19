@@ -1,0 +1,80 @@
+$section : "header";
+
+/* COOKIE LAYER */
+.cookiewLawLayer{
+    position: absolute;
+    top: 0;
+    z-index: $z-index-cookie;
+    background-color: $black;
+    width: 100%;
+    .cookieLawWrapper{
+        @include bodyStyle($section);
+        color: $white;
+        padding: 20px 10px;
+        text-align: center;
+        .cookieLawContent{
+            span.title{
+                display: none;
+            }
+            padding-bottom: 20px;
+            a{
+                color: $white;
+                text-decoration: underline;
+            }
+        }
+        button{
+            @include button(false, $blackDiesel, $white, $blackDiesel, $white);
+            @include H3Style($section);
+            border: 2px solid $white;
+            width: 95%;
+            height: 30px;
+            line-height: 26px;
+        }
+    }
+}
+
+@media #{$mediaQueryDesktopCommon} {
+   .cookiewLawLayer{
+        .cookieLawWrapper{
+            padding: 15px; 
+            @include microClearfix;
+            .cookieLawContent, button{
+                display: inline-block;
+                float: left;
+            }
+            .cookieLawContent{
+                width: 62%;
+                padding: 0 2% 0 0;
+                text-align: left;
+            }
+            button{
+                width: 15%;
+                position: absolute;
+                top: 30%;
+                right: 4%;
+            }
+        }
+    } 
+}
+
+@media #{$mediaQueryTablet} {
+   .cookiewLawLayer{
+        .cookieLawWrapper{
+            padding: 15px;
+        }
+    } 
+}
+
+@media #{$mediaQueryDesktop} {
+    .cookiewLawLayer{
+        .cookieLawWrapper{
+            padding: 20px 30px 25px 30px;
+            button{
+                border: 3px solid $white;
+                height: 40px;
+                top: 25%;
+                right: 2%;
+            }
+        }
+    }
+}

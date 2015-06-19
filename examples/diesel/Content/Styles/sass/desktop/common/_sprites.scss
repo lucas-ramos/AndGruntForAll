@@ -1,0 +1,165 @@
+@import "desktop/flagSprite/*.png";
+@import "desktop/flagSprite2x/*.png";
+
+$flagSpriteMap: sprite-map("desktop/flagSprite/*.png", $spacing: 10px);
+$flagSpriteMap2x: sprite-map("desktop/flagSprite2x/*.png", $spacing: 20px);
+
+// Sprite for customizing flags's elements
+// usage: @include flag-sprite(customelementfilename);
+@mixin flag-sprite($name) {
+	@include use-sprite($name, $flagSpriteMap, $flagSpriteMap2x);
+}
+
+// NUOVE SPRITES
+@mixin use-sprite($sprite, $spriteMap, $spriteMap2x, $renderStandardResolution: true, $render2xResolution: true) {
+
+	background-repeat: no-repeat;
+	//overflow: hidden;
+	//display: block;
+
+	@if ($renderStandardResolution) {
+		background-image: sprite-url($spriteMap);
+		background-position: sprite-position($spriteMap, $sprite);
+		height: image-height(sprite-file($spriteMap, $sprite));
+		width: image-width(sprite-file($spriteMap, $sprite));
+	}
+
+	@if ($render2xResolution) {
+		@media (-webkit-min-device-pixel-ratio: 2),
+		(-o-min-device-pixel-ratio: 3/2),
+		(min--moz-device-pixel-ratio: 2),
+		(min-device-pixel-ratio: 2),
+		(min-resolution: 144dppx) {
+			background-image: sprite-url($spriteMap2x);
+			background-size: (image-width(sprite-path($spriteMap2x)) / 2) (image-height(sprite-path($spriteMap2x)) / 2);
+			background-position: round(nth(sprite-position($spriteMap2x, $sprite), 1) / 2) round(nth(sprite-position($spriteMap2x, $sprite), 2) / 2);
+			height: image-height(sprite-file($spriteMap2x, $sprite)) / 2;
+			width: image-width(sprite-file($spriteMap2x, $sprite)) / 2;
+		}
+	}
+}
+
+.shippingCountry {
+	&.ad .icon {
+		@include flag-sprite(ad);
+	}
+	&.al .icon {
+		@include flag-sprite(al);
+	}
+	&.at .icon {
+		@include flag-sprite(at);
+	}
+	&.be .icon {
+		@include flag-sprite(be);
+	}
+	&.bg .icon {
+		@include flag-sprite(bg);
+	}
+	&.ca .icon {
+		@include flag-sprite(ca);
+	}
+	&.ch .icon {
+		@include flag-sprite(ch);
+	}
+	&.cz .icon {
+		@include flag-sprite(cz);
+	}
+	&.de .icon {
+		@include flag-sprite(de);
+	}
+	&.dk .icon {
+		@include flag-sprite(dk);
+	}
+	&.ee .icon {
+		@include flag-sprite(ee);
+	}
+	&.es .icon {
+		@include flag-sprite(es);
+	}
+	&.fi .icon {
+		@include flag-sprite(fi);
+	}
+	&.fr .icon {
+		@include flag-sprite(fr);
+	}
+	&.gb .icon {
+		@include flag-sprite(gb);
+	}
+	&.gr .icon {
+		@include flag-sprite(gr);
+	}
+	&.hr .icon {
+		@include flag-sprite(hr);
+	}
+	&.hu .icon {
+		@include flag-sprite(hu);
+	}
+	&.ie .icon {
+		@include flag-sprite(ie);
+	}
+	&.il .icon {
+		@include flag-sprite(il);
+	}
+	&.it .icon {
+		@include flag-sprite(it);
+	}
+	&.jp .icon {
+		@include flag-sprite(jp);
+	}
+	&.lt .icon {
+		@include flag-sprite(lt);
+	}
+	&.lu .icon {
+		@include flag-sprite(lu);
+	}
+	&.lv .icon {
+		@include flag-sprite(lv);
+	}
+	&.me .icon {
+		@include flag-sprite(me);
+	}
+	&.mk .icon {
+		@include flag-sprite(mk);
+	}
+	&.nl .icon {
+		@include flag-sprite(nl);
+	}
+	&.no .icon {
+		@include flag-sprite(no);
+	}
+	&.pl .icon {
+		@include flag-sprite(pl);
+	}
+	&.pt .icon {
+		@include flag-sprite(pt);
+	}
+	&.ro .icon {
+		@include flag-sprite(ro);
+	}
+	&.rs .icon {
+		@include flag-sprite(rs);
+	}
+	&.ru .icon {
+		@include flag-sprite(ru);
+	}
+	&.se .icon {
+		@include flag-sprite(se);
+	}
+	&.si .icon {
+		@include flag-sprite(si);
+	}
+	&.sk .icon {
+		@include flag-sprite(sk);
+	}
+	&.tr .icon {
+		@include flag-sprite(tr);
+	}
+	&.us .icon {
+		@include flag-sprite(us);
+	}
+	&.za .icon {
+		@include flag-sprite(za);
+	}
+}
+
+

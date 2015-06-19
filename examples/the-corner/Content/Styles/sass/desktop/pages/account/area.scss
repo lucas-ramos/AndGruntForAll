@@ -1,0 +1,136 @@
+// ==========================
+// ACCOUNT AREA SHARED STYLES
+// ==========================
+@import "variables";
+@import "fonts";	
+@import "Desktop/callToActions";
+@import "Desktop/Partials/susyClasses";
+@import "Desktop/Partials/susyMixins";
+
+@import "Desktop/Partials/sprites"; //DEPRRECATO: cancellare asap
+@import "Desktop/vendor/svgzr/sprites-svg";
+
+@import "Desktop/Partials/account/accountBanners";
+@import "Desktop/Partials/account/wishlistItem";
+@import "Desktop/Partials/account/orderDetail";
+@import "Desktop/Partials/account/layerBox";
+@import "Desktop/Partials/account/listAddressesAndCards";
+
+#container main {min-height: 200px;}
+
+#accountTitle {
+	margin: 20px auto;
+
+	h2, h4 {
+		display: inline;
+	}
+
+	h4 {
+		color: $color-light;
+		margin-left: 10px;
+		text-transform: none;
+	}
+}
+
+// Menu header in Account pages
+#accountNavigationMenu {
+
+	width: 100%;
+	background: $color-ultra;
+	line-height: 36px;
+	font-size: 2em;
+	text-transform: uppercase;
+
+	.JP & { font-size: $size-midsmall; }
+	
+	li {
+		text-align: center;
+	}
+
+	a {
+		color: $color-light;
+		white-space: nowrap;
+		
+		&:hover {
+			color: $black;
+		}
+	}
+
+	.selected {
+		position: relative;
+		a { color: $black; }
+	}
+
+	.selected:before {
+		@include triangle(  $white ,   12px , 6px ,  0  );
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		margin-left: -5px;
+		content: '';
+	}
+
+	.CN & .creditCard  {
+		display: none;
+	}
+}
+
+.subtitle {
+	margin: 18px 0;
+	color: $color-medium;
+	font-size: $size-medium;
+}
+
+
+#accountNavigationContainer {
+	margin-bottom: $gutter-width;
+}
+
+#overview {
+	@import "overview";
+}
+
+#wishlist {
+	@import "wishlist";
+}
+
+#addressbook {
+	@import "addressbook";
+}
+
+#creditcardwallet {
+	@import "creditcardwallet";
+}
+
+#user {
+	&.profile { @import "profile"; }
+	&.login { @import "login"; }
+	&.register { @import "register"; }
+	&.thankyouregistration { @import "thankyouregistration"; }
+}
+
+#myreturn {
+	@import "myreturn";
+}
+
+#orders {
+	@import "orders";
+}
+
+
+#searchorder {
+	@import "searchorder";
+}
+
+
+#unsubscribenewsletter {
+	@import "unsubscribeNewsletter";
+}
+
+#premiere {
+	@import "premiere";
+}
+
+#passwordrecovery {
+	@import "passwordrecovery";
+}

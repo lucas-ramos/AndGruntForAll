@@ -1,0 +1,116 @@
+// ==============
+// SELECTION PAGE
+// ==============
+
+
+
+.selectReturnDesc{
+	margin-bottom: 30px;
+	color: $color-light;
+}
+
+.purchasedItemsTable{
+
+	.macro{
+		display: none;
+	}
+
+	.cell.returnType {
+		text-align: left;
+	}
+
+	.returnType .option {
+		margin: 5px 0;	
+		.radioButton{
+			display: inline-block;
+		}
+		.text{
+			cursor: pointer;
+			margin-left: 5px;
+		}
+	}
+
+	.productRow{
+		margin-bottom: 30px;
+	}
+}
+
+.changeBox{
+	margin-top: 30px;
+	@include pie-clearfix; 
+
+	h2{
+		font-size: $size-large;
+		margin-bottom: 10px;
+
+	}
+	h3{
+		font-size: $size-large;
+		@extend %knockout-bold;
+		color: $color-light;
+		text-transform: none;
+	}
+	ul{
+		margin-bottom: 15px;
+		.radioButton{
+			width: 20px;
+			display: inline-block;
+		}
+		label{
+			color: $color-light;
+			font-size: $size-small;
+			@extend %helvetica;
+			line-height: 20px;
+			position: relative;
+			top: 3px;
+		}
+	}
+
+}
+
+
+.ordersVisibilityBox {
+	font-size: $size-medium;
+}
+
+
+
+.motivationListBox {
+	position: relative;
+@include pie-clearfix;
+
+	> .clearfix {
+		float: left;
+	}
+
+	.motivationListContainer, .imageContainer {
+		float: right;
+	}
+
+	.imageContainer {
+		margin-right: 20px;
+	}
+}
+
+
+
+.ordersVisibilityBox {
+	margin-bottom: 20px;
+}
+
+/* MESSAGE */
+.keepedAllAlert{
+	color: $color-light;
+	display: none;
+
+	p{font-size: $size-super;}
+
+	// carlo dice: questa è una merda bella e buona non ci dovebbe essere un A ma un button
+	// ma per amore di chiudere sto cazzo di progetto non lo dirò a quelli della F31
+	a[href="/"] {
+		@extend .button;
+		@extend .primary;
+		margin-top: 20px;
+		width: 170px;
+	}
+}

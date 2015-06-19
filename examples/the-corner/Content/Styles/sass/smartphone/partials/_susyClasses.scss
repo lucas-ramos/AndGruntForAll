@@ -1,0 +1,10 @@
+// =====
+// BASIC GRIDS
+// =====
+
+// STANDARD - classe colonna centrale: da utilizzare sempre, sia per contenere la griglia che gli altri contenuti
+.centralColumn {
+	margin: 0 10px;
+	display: block;
+	@include pie-clearfix;
+}

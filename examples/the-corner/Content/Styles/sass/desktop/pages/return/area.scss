@@ -1,0 +1,130 @@
+// =========================
+// RETURN AREA SHARED STYLES
+// =========================
+
+@import "variables";
+@import "fonts";	
+@import "Desktop/callToActions";
+@import "Desktop/Partials/susyClasses";
+@import "Desktop/Partials/susyMixins";
+
+/* SIDEBAR */
+
+
+main > .centralColumn {
+	margin-top: 20px;
+}
+
+#returnTitle {
+	
+
+	h2 {
+		margin: 20px auto;
+		display: inline;
+	}
+}
+
+#returnNavigationContainer{
+
+	.returnTitle{
+		margin: 30px 0 20px 0;
+	}
+
+	.returnNavigationMenu{
+		.returnProgress {
+			height:30px;
+			margin:0 0 30px 0;
+			background-color:$color-ultra;
+			li .progressStep{
+				color: $color-light;
+				display:block;
+				float:left;
+				width:33.33%;
+				height:30px;
+				line-height: 30px;
+				font-size:$size-big;
+				text-align: center;
+				text-transform: uppercase;
+				&.current {
+					background-color:$color-medium;
+					color:$white;
+				}
+				.index, .separator{ display: none;}
+			}
+		}
+	}
+}
+
+/* ORDER RECAP */
+
+.purchasedItemsTable, .returnedItemsTable{
+
+	margin-bottom: 30px;
+
+	div, span {
+		vertical-align: middle;
+	}
+
+	.cell{
+		display: inline-block;
+		width: 16%;
+		font-size: $size-midsmall;
+		text-align: center;
+		&.price{
+			text-align: right;
+		}
+	}
+	header {
+		
+		font-family: $_helvetica-bold;
+		text-transform: uppercase;
+		color: $color-medium;
+
+		.price{
+			right: 5px;
+			position: relative;
+		}
+	}
+	.productRow{
+		color: $color-light;
+	}
+
+	.macro { display: none;}
+}
+
+#searchorder main {
+	@import "searchorder";
+}
+
+#selection {
+	@import "selection";
+}
+
+#refund {
+	@import "refund";
+}
+
+#thankspage {
+	@import "thankspage";
+}
+
+/* CTA BOTTOM */
+#container { //se si rimuove questo selettore, si abbia la pietà di verificare che la cosa non influisca sul layer della newsletter
+	.buttonsRow{
+		@extend .column-12;
+		margin-bottom: 40px;
+
+		.nextStepButton{
+			@extend .primary;
+			float: right;
+
+			&.disabled {
+				@extend .disabled;
+
+			}
+		}
+		.error{
+			display: none;
+		}
+	}
+}

@@ -1,0 +1,175 @@
+// ==============
+// WAIT TO BUY PAGE
+// ==============
+
+.mainSection{
+	margin-top: 40px;
+}
+
+.waitToBuyContainer{
+
+	.orderTitle{
+		color: $color-dark;
+		margin-top: 20px;
+	}
+	.orderDetails{
+		color: $color-light;
+		margin-top: 20px;
+	}
+	.orderDesc{
+		color: $color-light;
+		margin-top: 5px;
+		margin-bottom: 15px;
+		text-transform: none;
+		@extend %knockout;
+	}
+	.orderControl{
+		
+		display: inline-block;
+		@extend %helvetica;
+		color: $color-medium;
+		margin-top: 10px;
+		font-size: $size-large-rem;
+
+		.myOrders{
+			color: $color-dark;
+			@extend %knockout-bold;
+		}
+	}
+
+	.buttonContainer{
+		margin: 20px 0;
+		.button.secondary{
+			margin-bottom: 20px;
+		}
+	}
+}
+
+.adviceFormWrapper{
+	background-color: $color-ultra;
+	color: $color-medium;
+	margin: 10px 0;
+
+	.adviceFormContainer{
+		color: $color-medium;
+		padding: 10px;
+
+		.adviceTitle{
+			margin-top: 10px;
+			color: $color-medium;
+		}
+
+		.adviceDescription{
+			margin-top: 10px;
+		}
+
+		.adviceForm{
+			margin-top: 10px;
+		}
+
+		#AdviceViewModel_Category_Wrapper .field-validation-error{
+			right: 20px;
+		}
+
+		#AdviceViewModel_Category_Wrapper {
+			width: 100%;
+			.fieldValue select{
+				width: 100%;
+			}
+			.fieldLabel{
+				margin-bottom: 5px;
+			}
+		}
+
+		#AdviceViewModel_Message_Wrapper .fieldLabel{
+			margin-bottom: 5px;
+		}
+
+		textarea{
+			width: 97.7%;
+			height: 150px;
+		}
+
+		button{
+			width: 100%;
+			@extend .primary;
+			margin: 0 auto;
+		}
+	}
+}
+
+.payEaseContainer{
+	.payEaseMobileForm{
+
+		
+		.national{
+			select {
+				font-size: $size-tiny-rem;
+				line-height: 30px;
+				padding: 0 10px;
+				text-transform: uppercase;
+				width: 100%;
+				
+			}
+		}
+
+		button{
+			@extend .primary;
+			width: 100%;
+			margin-top: 20px;
+		}
+
+		.field-validation-error{
+			font-size: $size-small-rem;
+			color: $red;
+		}
+	}
+}
+
+label[for="payEaseForm"] {
+	margin-left: 0px;
+}
+
+#payEaseForm_Wrapper{
+	margin-top: 40px;
+
+	.fieldLabel{
+		display: block;
+		margin-bottom: 20px;
+	}
+	.radioButton {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+		width: 20px;
+		height: 20px;
+		vertical-align: middle;
+	}
+	.radioButtonBox {
+		float: none;
+		margin-bottom: 40px;
+		
+		label {
+			background-repeat: no-repeat;
+			background-position: left bottom;
+			height: 54px;
+			margin-left: 20px;
+			display: block;
+		}
+
+
+		&.international{
+			label {
+
+				background-image: url("//media.yoox.biz/ytos/resources/THECORNER/cn/cc_Payease_small.png");
+			}
+		}
+		&.national {
+			label {
+				background-image: url("//media.yoox.biz/ytos/resources/THECORNER/cn/unionpay_small.png");
+				
+			}
+		}
+		
+	}
+}

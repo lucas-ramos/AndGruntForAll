@@ -1,0 +1,152 @@
+﻿// ================
+// ADDRESS FORM
+// ================
+
+// ADDRESS FORM SECTION
+.userAddressSubTitle {
+	@extend %helvetica;
+	font-size: $size-small;
+	color: $color-light;
+}
+.addNewAddressButtonWithForm {
+	margin-bottom: 10px;
+
+	.formPlaceholderContainer {
+		display: none;
+		margin-top: 10px;
+	}
+
+	&.selected {
+		.formPlaceholderContainer {
+			display: block;
+		}
+	}
+
+	*[data-ytos-addnewaddress] {
+		padding-top: 20px;
+		padding-bottom: 10px;
+		.radioButton {
+			@include pie-clearfix;
+		}
+		.radioIcon {
+			float: left;
+			margin-right: 10px;
+		}
+		label {
+			float: left;
+			line-height: $form-radiobutton-height;
+			@extend %helvetica;
+			font-size: $size-midsmall;
+		}
+	}
+
+	.shippingForm {
+		border-bottom: none;
+	}
+}
+
+// Address list (Delivery and Confirmation)
+.addNewAddressButtonWithForm, .userAddressesListWithForm, .shippingAddressForm, .billingAddressForm {
+	color: $color-medium;
+	@extend %helvetica;
+	.fieldRow {
+		&.text, &.placeholder, &.zipCode {
+			input {
+				@extend %helvetica;
+				font-size: $size-medium;
+			}
+		}
+		&.zipCodeJp {
+			.fieldValue {
+				@include pie-clearfix;
+			}
+			.separator, .findZip {
+				display: none;
+			}
+			.zipCode1, .zipCode2 {
+				float: left;
+				width: 48%;
+			}
+			.zipCode1 {
+				margin-right: 2.5%;
+			}
+		}
+	}
+}
+
+.userAddressesListWithForm {
+	.address {
+		padding: 20px 0 10px;
+
+		.formPlaceholderContainer {
+			display: none;
+		}
+
+		&.edit {
+			.formPlaceholderContainer {
+				display: block;
+			}
+		}
+
+		&.selected {
+			.editButton {
+				display: block;
+			}
+		}
+		&.edit { //sì
+			.editButton {
+				display: none;
+			}
+		}
+	}
+
+	.recap {
+		@include pie-clearfix;
+	}
+
+	.editButton {
+		@extend .secondary;
+		float: right;
+		display: none;
+		height: 30px;
+	}
+
+	.selectThisAddress {
+		float: left;
+		margin-right: 10px;
+	}
+
+	.closeButton  {
+		display: none;
+	}
+
+	.cardHolderData {
+		float: left;
+		font-size: $size-midsmall;
+		line-height: $form-radiobutton-height;
+		max-width: 455px;
+		.personalDetailsWrapper, .otherDetailsWrapper {
+			ul {
+				@include pie-clearfix;
+			}
+			li {
+				float: left;
+				.label {
+					display: none;
+				}
+			}
+			.streetWithNumber, .zipcode, .province {
+				@include appendDash;
+			}
+			.name, .city {
+				margin-right: 5px;
+			}
+		}
+	}
+}
+
+.selectThisAddress {
+	.text {
+		display: none;
+	}
+}

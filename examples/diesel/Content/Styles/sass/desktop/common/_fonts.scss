@@ -1,0 +1,25 @@
+// ================
+// THE SITE's FONTS
+// ================
+
+@font-face {
+	font-family: 'trade-gotich-medium';
+	src: url('#{$cdnFontsPath}/TradeGothicLTStd.eot');
+	src: url('#{$cdnFontsPath}/TradeGothicLTStd.eot?#iefix') format('eot'),
+	url('#{$cdnFontsPath}/TradeGothicLTStd.woff') format('woff'),
+	url('#{$cdnFontsPath}/TradeGothicLTStd.ttf') format('truetype'),
+	url('#{$cdnFontsPath}/TradeGothicLTStd.svg#TradeGothicLTStd') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'franklin-gothic-condensed';
+	src: url('#{$cdnFontsPath}/franklin_gothic_extra_condensed_bt-webfont.eot');
+	src: url('#{$cdnFontsPath}/franklin_gothic_extra_condensed_bt-webfont.eot?#iefix') format('eot'),
+	url('#{$cdnFontsPath}/franklin_gothic_extra_condensed_bt-webfont.woff') format('woff'),
+	url('#{$cdnFontsPath}/franklin_gothic_extra_condensed_bt-webfont.ttf') format('truetype'),
+	url('#{$cdnFontsPath}/franklin_gothic_extra_condensed_bt-webfont.svg#franklin_gothic_extra_condensed_bt-webfont') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}

@@ -1,0 +1,198 @@
+// =========
+// VARIABLES
+// =========
+
+// COMPASS SYSTEM VARIABLES
+
+/* Changing Susy default global settings */
+/*
+$susy: (
+	columns: 12, // Tells Susy to use 12 columns
+	gutters: 1/4, // Tells Susy dimension of empty space between an element's boundaries and the element's content
+	gutter-position: after,
+	container: auto, // Tells Susy that the container has a max-width of 1120px
+	global-box-sizing: border-box
+);*/
+
+// http://susy.readthedocs.org/en/latest/settings/
+
+$susy: (
+	// Number of columns in layout
+	columns: 12,
+
+	// Percentage width of gutters relative to columns
+	// 1: Gutters are same size as columns
+	gutters: .25,
+
+	// fluid: Grids calculated as % relative to container
+	// static: Grids calculated as multiple of column-width using em
+	math: fluid,
+
+	column-width: false, // false | value
+
+	// float: float layout
+	// isolate: Absolute positioning of floats
+	output: float,
+
+	// Where are gutters added to the layout
+	// before | after | split | inside | inside-static (requires column-width)
+	gutter-position: after,
+
+	flow: ltr, // Element Flow Direction: ltr | rtl
+
+	container: auto, // Absolute width or % or auto (100%)
+
+	// How to align container relative to parent
+	// left | center | right |
+	// Create Side margins: <length> [*2]
+	container-position: left,
+
+	// Float direction of last element
+	// from: Float to left
+	// to: Float in opposite direction (Used for Fluid Layouts)
+	last-flow: to,
+
+	// content-box | border-box (Include padding in element width)
+	global-box-sizing: border-box,
+
+	// Used for debugging
+	debug: (
+		// show or hide grid images
+		image: hide,
+
+		// Color of generated grid image
+		color: rgba(#656, .25),
+
+		// Show debug image as a background or overlay
+		output: background,
+
+		// Position of toggle to show and hide overlay option
+		toggle: top right,
+	),
+	use-custom: (
+		// false: Output background image to CSS
+		// true: Use provided background image for debugging
+		background-image: true,
+
+		// false: Output background options to CSS
+		// true: Look for background-size, -origin and -clip
+		background-options: false,
+
+		// false: Susy outputs box-sizing
+		// true: Look for existing box-sizing
+		box-sizing: true, // look for custom bix sizing mixin
+
+		// true: look for internal clearfix before using micro clearfix
+		clearfix: false,
+
+		// true: Look for rem mixin
+		// rem is relative to the font size of the root element
+		rem: false,
+	)
+);
+
+// Easy Susy setup
+// 12 Columns, Width of gutter 1, fluid layout, float layout
+// $susy: layout(12 1 fluid float outside);
+
+// Grids no-gutters - Eliminates the gutter between the nav items
+// $nogutters_susy_layout: layout(12 0 fluid float inside);
+
+// LAYOUT
+$inline-block-alignment: top;
+
+// DEFAULT TRANSITION DURATION AND FUNCTION
+$default-transition-duration: .5s;
+$default-transition-function: ease;
+
+// CDN PATHS
+$cdnPath: "//media.yoox.biz/ytos/resources/DIESEL";
+$cdnFontsPath: "//media.yoox.biz/ytos/resources/DIESEL/fonts";
+$cdnCardsPath: "//media.yoox.biz/ytos/resources/DIESEL/checkout/cards";
+
+//COLOR
+$white:             #fff;
+$black:             #000;
+$red: 				#d0021b;
+$redDiesel:         #ED1C24;
+$blackDiesel:       #191919;
+$light-black-border:#1d1d1d;
+$greyDiesel: 		#e8e8e8;
+$greyDBG:	 		#817d83;
+$backgroundDBG:		#767178;
+$light-greyDiesel: 	#e6e6e6;
+$gray-txt:          #808080;
+$gray-bg-dark:      #505050;
+$medium-gray-txt:   #999;
+$light-gray-border:	#d1d1d1;
+$borderBox: 		#bfbfbf;
+$borderBoxInfoTab: 	#bababa;
+$bgFilter:			#f7f7f7;
+$itemBackground: 	#e9e8ee;
+
+//COLOR SEARCH
+$searchBlack: $blackDiesel;
+$searchGrey: $gray-txt;
+$searchRed: #D0021B;
+$searcViolet: #0D004c;
+
+// FONTS (variables only, for definition see _fonts.scss)
+$_font-plain: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$_trade-font: "trade-gotich-medium";
+$_franklin-font: "franklin-gothic-condensed";
+$font-jp: Arial, Helvetica, "Hiragino Kaku Gothic ProN", Meiryo, "MS PGothic", sans-serif;
+
+%plain {
+	font-family: $_font-plain;
+}
+@mixin trade {
+    font-family: $_trade-font;
+    font-weight: normal;
+	.jp &{
+		font-family: $_trade-font, $font-jp;
+	}
+}
+@mixin franklin {
+    font-family: $_franklin-font;
+    font-weight: normal;
+	.jp &{
+		font-family: $_franklin-font, $font-jp;
+	}
+}
+@mixin listStyle{
+	content: "\2023";
+  	font-size: 21px;
+  	padding-right: 5px;
+}
+
+//Analisi : Breakpoints Media Queries
+$mediaQueryMobile: 'only screen and (max-width: 639px)';
+$mediaQueryDesktopCommon: 'only screen and (min-width : 640px)';
+$mediaQueryTablet: 'only screen and (min-width : 640px) and (max-width : 1023px) ';
+$mediaQueryDesktop: 'only screen and (min-width : 1024px)';
+$mediaQueryWideScreen: 'only screen and (min-width : 1224px)';
+
+$min-site:320px;
+$max-site:1920px;
+
+$itemConsoleHeight : 48px;
+$itemLabelsHeight : 45px;
+
+//z-index
+$z-index-body:   1;
+$z-index-headerElement:  $z-index-body + 1;
+$z-index-overlayer:  $z-index-body + 1;
+$z-index-layer:  $z-index-overlayer + 1;
+$z-index-navBar:  $z-index-layer + 1; 		 // nav bar sopra layer overlay
+$z-index-minicart: $z-index-navBar + 1;
+$z-index-cookie:  $z-index-minicart + 1;     // layer cookie - sempre terzultimo!
+$z-index-closeMenu:  $z-index-cookie + 1;    // layer chiusura menu mobile - sempre penultimo!
+$mfp-z-index-base:  $z-index-closeMenu + 1;	 // quello delle popup - sempre per ultimo!
+$zoomImage:  $mfp-z-index-base + 1;
+$upZoom:  $zoomImage + 1; //qualsiasi cosa che deve stare sopra allo zoom
+
+/* #### SELECT stilizzate (selectize) come ad es. Taglia/Colore #### */
+$selectizeHeight: 37px;
+$selectizePaddingTop: 20px;
+$selectizePaddingBottom: 20px;
+

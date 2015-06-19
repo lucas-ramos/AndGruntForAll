@@ -1,0 +1,63 @@
+﻿#checkmail  .priceRecap {
+	.row, .total {
+		display:none;
+	}
+}
+
+.priceRecap {
+
+	
+	padding: 10px 0;
+	border-top: 1px solid $color-light;
+
+	.row:first-child {
+		display:none;
+	}
+
+	.row {
+		@include pie-clearfix;
+		padding:10px 0;
+	}
+
+	.value {
+		float:right;
+	}
+
+	.price .value {
+		float:none;
+	}
+
+	.method {
+		display: block;
+		@include appendColon;
+	}
+
+	.deliveryRecap, .paymentRecap, .salestaxRecap, .giftRecap {
+		font-size: $size-medium;
+	}
+
+	.total {
+		font-size: $size-midlarge;
+		border-top: 1px solid $color-light;
+		text-align: right;
+		@extend %helvetica-bold;
+		text-transform: uppercase;
+		padding:20px 0 10px;
+
+		& .value {
+			float:none;
+		}
+	}
+
+	.subtotalRecap {
+		font-size: $size-midlarge;
+		text-align: right;
+		@extend %helvetica-bold;
+		text-transform: uppercase;
+		padding:20px 0 10px;
+
+		& .value {
+			float:none;
+		}
+	}
+}

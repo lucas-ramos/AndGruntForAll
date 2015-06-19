@@ -1,0 +1,321 @@
+// Vars and mixins inclusion
+@import "compass/reset/utilities";
+@import "desktop/common/normalize";
+@import "desktop/common/variables";
+@import "desktop/common/mixins";
+@import "desktop/vendor/grids/susy";
+
+$section : "item";
+
+// SIZE GUIDE LAYER
+.uiLayer-sizeGuideLink .mfp-content{
+	.inner{
+		@include bodyStyle($section);
+		h2{
+			@include H1Style($section);
+			text-transform: uppercase;
+			text-align: center;
+		}
+		table{
+			margin-top: 20px;
+			text-align: center;
+			width: 100%;
+			thead tr td{
+				padding: 10px 0;
+				@include H3Style($section);
+				text-transform: uppercase;
+				border: 1px solid $black;
+			}
+			tbody tr td{
+				padding: 5px 0;
+				border: 1px solid $black;
+			}
+		}
+	}
+}
+
+// solo per mobile è renderizzato in un altro div
+#information{
+	display: none;
+}
+
+.infos.wrap.visible-choice.changedHeight{
+	height: auto !important;
+}
+
+#infoItemBlocks{
+	.wishlistAndShareButtons ul:not(.share){
+		@include container();
+		@include microClearfix();
+	    position: relative;
+	    height: 37px;
+	    
+	    background-color: $white;
+	    border-top: 1px solid $greyDiesel;
+	    text-align: center;
+	    
+	    > li {
+	        height: 34px;
+	        padding: 8px 0;
+	        
+	        border-right: 1px solid $greyDiesel;
+	        &.sizeGuide{
+	        	text-transform: uppercase;
+	        	line-height: 22px;
+	        	@include span(4 of 12 no-gutters wide);
+	        	a{
+	        		@include H3Style($section);
+	        		color: $blackDiesel;
+	        	}
+	        }
+	        &.addToWish{
+	        	@include span(4 of 12 no-gutters wide);
+	        }
+	        &.itemSocialShare{
+	            border: 0;
+	            @include span(4 of 12 last);
+	        }
+	        &.infoButton{
+				display: none;
+			}
+	    }
+	}
+}
+
+.renderInfo{
+	.modelTitle{
+		display: none;
+	}
+	.infoTitle{
+		@include H2Style($section);
+		padding: 16px 10px;
+		border-bottom: 1px solid $blackDiesel;
+		.icon{
+			display: inline-block;
+			float: right;
+		}
+	}
+	ul.infoTabs{
+		padding: 10px 20px;
+		li{
+			border-bottom: 1px solid $borderBoxInfoTab;
+			color: $gray-txt;
+			&.open, &.open .descriptionHeader{
+				color: $blackDiesel;
+			}
+			.descriptionHeader{
+				@include H3Style($section);
+				padding: 15px 0;
+				.arrow{
+					// dentro icon.scss
+				}
+			}
+			.descriptionContent{
+				display: none;
+				@include bodyStyle($section);
+				margin-bottom: 25px;
+			}
+		}
+	}
+	.tagsContainer{
+		padding: 10px 20px;
+		@include container();
+		@include microClearfix();
+
+		.titleTag{
+			@include H6Style($section);
+			color: $blackDiesel;
+			@include span(2 no-gutters); 
+		}
+		.tags{
+			padding-top: 1px;
+			@include H7Style($section);
+			color: $blackDiesel;
+			@include span(10 no-gutters);
+		}
+	}
+}
+
+@media #{$mediaQueryDesktopCommon}{
+	#infoItemBlocks{
+		.renderInfo, .sizeGuide{
+			display: none;
+		}
+		.wishlistAndShareButtons{
+			margin-top: 10px;
+			ul:not(.share){
+				border-top: 0px;
+				> li {
+					border-top: 1px solid $greyDiesel;
+					height: 100%;
+			    }
+			}
+	    }
+	}
+
+	#information{ 
+		position: fixed;
+	    z-index: $z-index-headerElement;
+	    background-color: white;
+	    width: 74.5%;
+	    left: 0;
+	    .infoInnerContainer{
+	    	height: 440px;
+	    	overflow: auto;
+	    }
+	}
+
+	/* scrollbar personalizzata */
+	.mCSB_inside > .mCSB_container{
+		margin: 0;
+	}
+	.mCSB_scrollTools{
+		width: 12px;
+		opacity: 1;
+		.mCSB_draggerRail, .mCSB_dragger .mCSB_dragger_bar{
+			width: 12px;
+			border-radius: 0;
+		}
+		.mCSB_draggerRail{
+			background-color: $greyDiesel;
+		}
+		.mCSB_dragger .mCSB_dragger_bar, .mCSB_dragger .mCSB_dragger_bar:hover{
+			background-color: $greyDBG;
+		}
+		&.mCSB_scrollTools_onDrag{
+			.mCSB_dragger .mCSB_dragger_bar{
+				background-color: $greyDBG;
+			}
+		}
+	}
+} 
+
+@media #{$mediaQueryTablet}{
+	#infoItemBlocks .wishlistAndShareButtons ul:not(.share) > li {
+        &.addToWish, &.infoButton{
+        	@include span(4 of 12 no-gutters wide);
+        	display: inline-block;
+        }
+        &.itemSocialShare{
+        	border-top: 1px solid $greyDiesel;
+            @include span(4 of 12 last);
+        }
+        &.infoButton{
+        	cursor: pointer;
+        	border: 2px solid $blackDiesel;
+        	height: 100%;
+        	text-align: center;
+        	.text{
+        		font-size: 14px;
+        	}
+        	.icon{
+        		display: none;
+        		margin: -2px auto 0 auto;
+        	}
+        	&.open{
+        		background-color: $blackDiesel;
+        		.text{
+        			display: none;
+        		}
+        		.icon{
+        			display: block;
+        		}
+        	}
+        }
+	}
+	#information{
+	    .infoInnerContainer{
+	    	padding: 10px 13px 10px 0;
+	    }
+	}
+	.renderInfo ul.infoTabs{
+		padding: 0px 25px 0px 20px;
+	}
+} 
+
+@media #{$mediaQueryDesktop}{
+	#information { 
+		display: block;
+		@include span(4 no-gutters);
+		position: relative;
+		z-index: 0;
+		padding: 25px;
+		.infoInnerContainer{
+			overflow: inherit;
+		}
+	}
+	.renderInfo{
+		.infoTitle{
+			display: none;
+		}
+		.modelTitle{
+			display: block;
+			text-align: center;
+			.infoModelName{
+				@include H1Style($section);
+				font-size: 22px !important; // diminuito perchè si spacca
+			}
+			.infoMicroName{
+				@include H2Style($section);
+			}
+		}
+		ul.infoTabs{
+			padding: 10px 0;
+			li{
+				&:first-child{
+					border-top: 1px solid $borderBoxInfoTab;
+				}
+				.descriptionHeader{
+					height: 50px;
+					@include H4Style($section);
+					span{
+						display: inline-block;
+						&.title{
+							width: 85%;
+						}
+					}
+					.ru &{
+						font-size: 13px;
+					}
+				}
+				.descriptionContent{
+					overflow: auto;
+					max-height: 125px;	// questa è sulla base di 1024px, poi calcolato dinamicamente
+					/* scrollbar personalizzata */
+					&:not(.mCustomScrollbar){
+						padding-right: 20px;
+					}
+					.mCSB_inside > .mCSB_container{
+						margin-right: 20px;
+					}
+				}
+				.fr &[data-ytos-tab="Reasons"], .ru &[data-ytos-tab="Fitting"]{
+					.descriptionHeader span.title{
+						margin-top: -7px;
+					}
+				}
+				.ru &[data-ytos-tab="WashStory"] .descriptionHeader span.title{
+					margin-top: -15px;
+				}
+			}
+		}
+		.tagsContainer{
+			padding: 0;
+			.tags{
+				padding-top: 3px;
+			}
+		}
+	}
+	#infoItemBlocks .wishlistAndShareButtons ul:not(.share) > li{
+		&.infoButton{
+			display: none;
+		}		
+        &.addToWish, {
+        	@include span(6 of 12 no-gutters wide);
+        }
+        &.itemSocialShare{
+        	border-top: 1px solid $greyDiesel;
+            @include span(6 of 12 last);
+        }
+    }
+} 

@@ -1,0 +1,450 @@
+// =============
+// DELIVERY PAGE
+// =============
+
+
+@import "Desktop/partials/addressdrivencheckout/addressFormSection";
+
+.coContainer {
+	margin-bottom: 20px;
+}
+
+
+// GIFT SECTION
+.giftSectionContentWrapper {
+	//	padding: 25px 10px 0;
+	@include pie-clearfix;
+	padding: 0;
+	padding-top: 25px;
+	background-color: $color-top;
+	.giftSectionContent {
+		padding-right: 5px;
+	}
+	.fieldLabel {
+		color: $color-medium;
+	}
+	.fieldRow.checkbox {
+		@include pie-clearfix;
+		.fieldValue {
+			float: left;
+			margin-right: 10px;
+		}
+		.fieldLabel {
+			float: left;
+			font-size: $size-big;
+			width: 92%;
+			line-height: $form-checkbox-height;
+			@extend %knockout-bold;
+		}
+	}
+	.giftPackageWrapper {
+		margin-bottom: 20px;
+	}
+	.sprites-desktop-giftPackage, .sprites-desktop-giftPackageChina {
+		margin: 0 auto;
+	}
+	//Alo: specifico form perché il suo wrapper ha la stessa classe
+	form.giftDataForm {
+		@include pie-clearfix;
+		position: relative;
+	}
+
+	.giftOptionWrapper {
+		&.selected {
+			#GiftDataFormViewModel_Message_Wrapper, #GiftDataFormViewModel_ContactReceiver_Wrapper {
+				display: block;
+			}
+		}
+		&.sendEmail {
+			#GiftDataFormViewModel_Email_Wrapper {
+				.fieldLabel {
+					font-size: $size-large;
+				}
+				display: block;
+				input {
+					@extend %helvetica;
+					font-size: $size-medium;
+				}
+			}
+		}
+		.giftInfoButton, .giftInfoBox {
+			@extend %helvetica;
+			color: $color-light;
+			font-size: $size-smaller;
+			margin-left: $form-checkbox-width + $radio-checkbox-margin-right;
+		}
+		.giftInfoButton {
+			margin-top: 5px;
+			text-decoration: underline;
+			cursor: pointer;
+		}
+		.giftInfoBox, {
+			display: none;
+		}
+	}
+	.giftWithCodAlert  {
+		display: none;
+	}
+	#GiftDataFormViewModel_Message_Wrapper {
+		margin-top: 20px;
+		.fieldLabel {
+			text-transform: uppercase;
+			font-size: $size-large;
+			margin-bottom: 5px;
+		}
+		.description {
+			display: none;
+		}
+	}
+	.originalValue {
+		display: none;
+	}
+	.valueToPay {
+		position: absolute;
+		top: 0;
+		right: 0;
+		line-height: $form-checkbox-height;
+		@extend %helvetica-bold;
+		font-size: $size-small;
+		display: inline-block;
+		color: $color-medium;
+	}
+}
+#GiftDataFormViewModel_Message {
+	@extend %helvetica;
+	font-size: $size-small;
+	padding: 2%;
+	width: 96%;
+	border: 1px solid $color-extra;
+	resize: none;
+	height: 4em;
+}
+.giftSectionSubTitle {
+	@extend %helvetica;
+	font-size: $size-medium;
+	color: $color-medium;
+	margin-bottom: 20px;
+}
+#GiftDataFormViewModel_IsSelected_Wrapper {
+	width: 82%;
+	@extend %knockout-bold;
+	line-height: $form-checkbox-height;
+	min-height: 0;
+	margin-bottom: 0;
+	.fieldLabel {
+		color: $color-dark;
+	}
+
+}
+#GiftDataFormViewModel_Message_Wrapper,
+#GiftDataFormViewModel_ContactReceiver_Wrapper,
+#GiftDataFormViewModel_Email_Wrapper {
+	display: none;
+}
+
+#GiftDataFormViewModel_ContactReceiver_Wrapper {
+	margin-bottom: 0;
+}
+
+#ShippingAddressViewModel_CountryCode_Wrapper {
+	.labelFieldValue {
+		@include fake-input-field-desktop;
+	}
+
+	.text {
+		cursor: default;
+	}
+}
+
+// DELIVERY METHODS SECTION
+.deliveryMethodContent.coSectionContent {
+	position: relative;
+}
+.deliveryMethodsWrapper {
+	//position: relative;
+	padding-bottom: 40px;
+}
+
+.deliveryMethod {
+	$deliveryMethod-heigth: 40px;
+	$innerInputWrapper-padding-top: 9px;
+	$innerInputWrapper-padding-bottom: 7px;
+
+	@include pie-clearfix;
+	margin-top: 10px ;
+	margin-bottom: 25px;
+	&.disabled {
+		.innerInputWrapper label {
+			color: $color-extra;
+		}
+	}
+	.innerInputWrapper {
+		float: left;
+		width: 136px;
+		padding: $innerInputWrapper-padding-top 0 $innerInputWrapper-padding-bottom 10px;
+		border: 1px solid $color-extra;
+
+		@include pie-clearfix;
+		.radioButton {
+			float: left;
+			margin-right: 10px;
+		}
+		label {
+			cursor: pointer;
+			float: left;
+			font-size: $size-big;
+			color: $color-dark;
+			@extend %knockout-bold;
+			line-height: $form-radiobutton-height;
+			text-transform: uppercase;
+		}
+	}
+	.description, .originalValue, .valueToPay {
+		font-size: $size-medium;
+		html.JP & {
+			font-size: $size-small;
+		}
+		@extend %helvetica;
+		color: $color-medium;
+		height: $deliveryMethod-heigth;
+		line-height: $deliveryMethod-heigth;
+	}
+	.description {
+		float: left;
+		@extend .column-3;
+		padding-left: 62px; //riduzione spaziatura da griglia per padding dx del container
+
+		html.JP & {
+			width: 292px;
+			padding-left: 12px;
+		}
+
+		html.FR & {
+			width: 279px;
+			padding-left: 25px;
+		}
+
+	}
+	.originalValue, .valueToPay {
+		width: 84px;
+		float: left;
+		.price {
+			display: none;
+		}
+	}
+	.originalValue {
+		margin-right: 10px;
+	}
+	.valueToPay {
+		text-align: right;
+	}
+	&.withPromo .originalValue .price {
+		text-decoration: line-through;
+	}
+	.expressGuaranteed, .deliveryInformation {
+		clear: both;
+		font-size: $size-smaller;
+		@extend %helvetica;
+		color: $color-medium;
+		display: none;
+	}
+	.deliveryInformation {
+		position: absolute;
+		bottom: 10px;
+		margin: 0 10px 0 0;
+	}
+	&.selected {
+		.innerInputWrapper {
+			background-color: $color-extra;
+		}
+		& {
+			.deliveryInformation {
+				display: block;
+			}
+
+		}
+		&.withPromo {
+			.originalValue {
+				.price {
+					display: inline;
+				}
+			}
+		}
+
+		.valueToPay {
+			.price {
+				display: inline;
+			}
+		}
+	}
+}
+.nodeliverydaysWrapper {
+	font-size: $size-smaller;
+	@extend %helvetica;
+	@include pie-clearfix;
+	.whenDeliveryLabel {
+		float: left;
+		color: $color-dark;
+		margin-right: 5px;
+	}
+	.noDeliveryDays {
+		float: left;
+		.text {
+			color: $color-light;
+			text-decoration: underline;
+			cursor: pointer;
+			a {
+				color: $color-light;
+			}
+		}
+	}
+}
+// DELIVERY ON DEMAND SECTION (ONLY JP)
+
+.deliveryOnDemand {
+	.TitleDeliveryOnDemand {
+		display: none;
+	}
+	.DateDeliveryOnDemand, .TimeDeliveryOnDemand {
+		margin: 10px 0;
+		@include pie-clearfix;
+		label {
+			float: left;
+			font-size: $size-large;
+			line-height: $form-input-height;
+			color: $color-light;
+			width: 120px;
+		}
+		.prettyselect-wrap {
+			float: left;
+			width: 50%;
+		}
+	}
+
+}
+
+//FAST CHECKOUT
+.fastCheckoutSection {
+    .title {
+        font-size: $size-big;
+        color: $color-medium;
+        text-transform: uppercase;
+        @extend %knockout;
+    }
+}
+
+// INFO SECTION
+
+.privacyInfoSection {
+	color: $color-light;
+	font-size: $size-tiny;
+	html.CN & {
+		font-size: $size-smaller;
+	}
+	@extend %helvetica;
+}
+
+.cartButton {
+	@include pie-clearfix;
+	.nextPageButton {
+		@extend .primary;
+		float: right;
+		font-size: $size-big;
+		margin-top: 20px;
+	}
+}
+
+.whyTelephone {
+	display:none;
+}
+#ShippingAddressViewModel_Phone_Wrapper {
+
+	.fieldLabel {
+		display: inline;
+	}
+
+	.whyTelephone {
+		display:inline;
+		text-decoration:underline;
+		margin-left: 10px;
+		@include wrapInParenthesis;
+		color: $color-medium;
+		font-size: $size-small;
+	}
+}
+
+/*  RECAP ADDRESS  */
+.cardHolderData {
+	li {
+		float: left;
+		&.name, &.city {
+			margin-right: 5px;
+		}
+		&.streetWithNumber {
+			clear: both;
+		}
+		&.district {
+			:after {
+				content: "-";
+				margin: 0 2px;
+			}
+		}
+		.label {
+			display: none;
+		}
+
+		&.personalDetailsWrapper {
+			display: block;
+			width: 100%;
+		}
+	}	
+}
+
+/*  NEW ADDRESS  */
+.addNewAddressButtonWithForm {
+
+	*[data-ytos-addnewaddress] {
+		.radioButton {
+			display: inline-block;
+			float: left;
+		}
+		label {
+            padding-left: 40px;
+            position: relative;
+            left: -30px;
+            cursor: pointer;
+            display: inline-block;
+            @include zindex(input-elems);
+        }
+	}
+}
+
+/*  FORM NEW ADDRESS: exception for message error  */
+.shippingAddressForm{
+	.fieldRow{
+		margin-bottom: 5px;
+		min-height: 84px;
+
+		.prettyselect-drop {
+			li {
+				.RU &{
+					padding: 0 8px;
+				}
+			}
+			.RU &{
+				white-space: nowrap;
+				overflow-x: hidden;
+				font-size: $size-midsmall;
+			}
+		}
+		.prettyselect-label {
+			.RU &{
+				white-space: nowrap;
+				font-size: $size-mini;
+			}
+		}
+	}
+	.fastCheckoutSection .fieldRow{
+		min-height: 25px;
+	}
+}

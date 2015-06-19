@@ -1,0 +1,203 @@
+// FOOTER
+// ------
+@import "footer/cn";
+@import "footer/socialSection";
+@import "footer/cookieLayer";
+
+
+#siteFooter {
+    background-color: $color-dark;
+    color: $white;
+
+    a {
+        &, .text {
+            color: $white;
+        }
+		.icon {
+            @include opacity(1);
+        }
+
+        &:hover {
+            &, .text {
+                color: $color-light;
+            }
+			.icon {
+				@include opacity(0.7);
+			}
+        }
+	}
+
+	.viewAllWrapper { //exception
+		a:hover {
+			color: $color-dark;
+		}
+	}
+
+	#copyright {
+
+		font-size: $size-smaller;
+		@extend %helvetica;
+		padding: 10px 0;
+	}
+
+}
+
+.categoriesSection {
+	padding: 10px 0;
+
+	nav.categories {
+		$categories-height: 28px;
+
+		min-height: $categories-height;
+		line-height: $categories-height;
+
+		li {
+			font-size: $size-medium;
+			float: left;
+			padding-right: 30px;
+		}
+	}
+}
+
+
+.linkSection {
+	min-height: 171px;
+	border-top: 1px solid $color-medium;
+	padding: 20px 0 12px;
+
+	.shippingCountry {
+		.value {
+			display: block;
+			font-size: 0.5em;
+			margin: 10px 0;
+			@extend %knockout;
+
+			html.JP &{ font-size: 1em; }
+		}
+	}
+
+	.shippingTo .shippingCountry .text:after {
+	   content: ":";
+	}
+
+	#openMoreCountries {
+		color: $white;
+		font-size: $size-medium;
+	}
+
+	.newcomers, .customerService, .aboutUs {
+		text-align: right;
+
+		h3 {
+			margin-bottom: 5px;
+
+			html.JP & {font-size: $size-large;}
+		}
+
+		li {
+			margin-bottom: 6px;
+			font-size: $size-medium;
+		}
+	}
+
+	.customerService h3 {
+		
+		html.JP & { padding-bottom: 18px; }
+	}
+}
+
+.footerListContainer {
+	li {
+		margin-left: 5px;
+		float: left;
+		a {
+			font-size: $size-smaller;
+			span.text{
+				display:none;
+			}
+			span.icon{ 
+				display:block;
+				margin-left: 20px;
+			}
+		}
+	}
+}
+
+.socialContainer {
+	float: right;
+
+	h4 {
+		display: none;
+
+		.CN & {
+			display: block;
+			float: left;
+			height: 28px;
+			line-height: 36px;
+		}
+	}
+}
+
+.copyrightSection {
+	border-top: 1px solid $color-medium;
+	min-height: 35px;
+	line-height: 35px;
+	@extend %helvetica;
+
+	.copyright{
+		font-size:$size-smaller;
+	}
+
+	a {
+		color: $white;
+	}
+
+	.footerListContainer{
+
+		ul {
+			float: right;
+		}
+
+		li{
+			margin-left: 10px;
+		}
+	}
+}
+
+.nations {
+	float: left;
+}
+
+#viewMoreCountries {
+	display: none;
+	float: left;
+	@extend %knockout;
+	padding-top: 5px;
+	width: 100%;
+
+    a {
+        text-transform: uppercase;
+        font-size: $size-medium;
+    }
+
+	ul {
+		a {
+			margin-top: 10px;
+			display: block;
+		}
+	}
+
+	.button {
+		padding: 0;
+		height: 30px;
+		line-height: 30px;
+		margin-top: 42px;
+		color: $color-dark;
+	}
+}
+
+// Popup layer copyright
+.copyrightBody {
+	width: 380px;
+	font-size: 1.6em;
+}
