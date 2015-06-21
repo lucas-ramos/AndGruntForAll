@@ -1,3 +1,5 @@
+require 'sass-css-importer'
+
 # Store name -- sudirectory
 #yoox_os_name = "ytos"
 
@@ -6,7 +8,7 @@
 http_path = ENV['COMPASS_HTTP_PATH']
 
 # Path to project, starting from css/build
-project_path = ENV['COMPASS_PROJECT_PATH'].nil? ? "Content/Styles" : ENV['COMPASS_PROJECT_PATH'].gsub("\\","\/")
+project_path = ENV['COMPASS_PROJECT_PATH'].nil? ? "styles" : ENV['COMPASS_PROJECT_PATH'].gsub("\\","\/")
 
 # Subdirs, starting from projmect_path
 css_dir = "css"
@@ -18,11 +20,13 @@ javascripts_dir = "javascripts"
 generated_images_dir = "generated_images"
 
 # Generated images path on the web server
-http_generated_images_path = (environment == :production) ? http_path + "img" : "/Content/Styles/generated_images"
+http_generated_images_path = (environment == :production) ? http_path + "img" : "/styles/generated_images"
 
 # Output style and line comments
 output_style = (environment == :production) ? :compressed : :expanded
 line_comments = false #(environment == :production) ? false : true
+
+relative_assets = false
 
 # Add a function to read compass option
 module Sass::Script::Functions

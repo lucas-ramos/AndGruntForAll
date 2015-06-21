@@ -1,4 +1,12 @@
 @charset "UTF-8";
+/*
+    zindex
+    Mixin di definizione e utilizzo degli z-index.
+
+    La lista $indexes è crescente dall'alto al basso, e i suoi elementi andranno espressi al momento dell'uso del mixin.
+    Ovviamente l'uso da farne è di tipo semantico, per evitare l'espressione di numeri casuali all'interno dei vari css.
+
+*/
 /* effetto height:100% sugli elementi flottanti */
 @font-face {
   font-family: 'KnockoutLight';
@@ -43,7 +51,7 @@ button, .button, .menuShow, .crm-menu-main a, .crm-menu-secondary .crm-menu-leve
   font-weight: normal;
 }
 .JP button, .JP .button, .JP .menuShow, .JP .crm-menu-main a, .crm-menu-main .JP a, .JP .crm-menu-secondary .crm-menu-level-0 > li > a, .crm-menu-secondary .JP .crm-menu-level-0 > li > a, .JP .crm-contacts a, .crm-contacts .JP a, .JP .crm-back-top, .JP .crm-widget-backtop, .JP .mfp-content .crm-overlay-buttons button, .mfp-content .crm-overlay-buttons .JP button, .JP .mfp-content a, .mfp-content .JP a, .JP table tbody > tr:first-child td strong, table tbody > tr:first-child td .JP strong {
-  font-family: KnockoutLight, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+  font-family: KnockoutLight, "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", sans-serif;
 }
 .CN button, .CN .button, .CN .menuShow, .CN .crm-menu-main a, .crm-menu-main .CN a, .CN .crm-menu-secondary .crm-menu-level-0 > li > a, .crm-menu-secondary .CN .crm-menu-level-0 > li > a, .CN .crm-contacts a, .crm-contacts .CN a, .CN .crm-back-top, .CN .crm-widget-backtop, .CN .mfp-content .crm-overlay-buttons button, .mfp-content .crm-overlay-buttons .CN button, .CN .mfp-content a, .mfp-content .CN a, .CN table tbody > tr:first-child td strong, table tbody > tr:first-child td .CN strong {
   font-family: KnockoutLight, HelveticaCondensedLight, Arial, "Microsoft YaHei", "Microsoft YaHei Regular", SimHei, "SimHei Regular", sans-serif;
@@ -54,7 +62,7 @@ button, .button, .menuShow, .crm-menu-main a, .crm-menu-secondary .crm-menu-leve
   font-weight: normal;
 }
 .JP #searchBtn {
-  font-family: LatoRegular, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+  font-family: LatoRegular, "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", sans-serif;
 }
 
 /* ==========================================================================

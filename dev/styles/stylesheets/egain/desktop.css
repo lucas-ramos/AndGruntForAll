@@ -1,0 +1,1105 @@
+@charset "UTF-8";
+/*
+    zindex
+    Mixin di definizione e utilizzo degli z-index.
+
+    La lista $indexes è crescente dall'alto al basso, e i suoi elementi andranno espressi al momento dell'uso del mixin.
+    Ovviamente l'uso da farne è di tipo semantico, per evitare l'espressione di numeri casuali all'interno dei vari css.
+
+*/
+/* effetto height:100% sugli elementi flottanti */
+@font-face {
+  font-family: 'KnockoutLight';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.svg#KnockoutLight") format("svg");
+}
+@font-face {
+  font-family: 'KnockoutRegular';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.svg#KnockoutRegular") format("svg");
+}
+@font-face {
+  font-family: 'HelveticaCondensedLight';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.svg#KnockoutRegular") format("svg");
+}
+@font-face {
+  font-family: 'HelveticaCondensedBold';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.svg#KnockoutRegular") format("svg");
+}
+@font-face {
+  font-family: 'LatoRegular';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.svg#LatoRegular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'LatoBold';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.svg#LatoBold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* line 92, ../../sass/_fonts.scss */
+.RU button, .RU .button, .RU #crm-container form [type="submit"], #crm-container form .RU [type="submit"], .RU .crm-menu-main li a, .crm-menu-main li .RU a, .RU .crm-see-more, .RU .crm-article .crm-icons li, .crm-article .crm-icons .RU li, .RU .crm-article .article-2562, .crm-article .RU .article-2562, .RU .mfp-content .crm-article a, .mfp-content .crm-article .RU a, .RU .mfp-content .crm-overlay-buttons button, .mfp-content .crm-overlay-buttons .RU button, .RU #crm-wrapper, .RU .crm-form-field [type="file"] /deep/ [type="button"], .crm-form-field .RU [type="file"] /deep/ [type="button"], .RU table tbody > tr:first-child td strong, table tbody > tr:first-child td .RU strong {
+  font-family: Arial, Verdana, sans-serif;
+}
+
+/* line 96, ../../sass/_fonts.scss */
+.RU .crm-article-content a, .crm-article-content .RU a, .RU .crm-article-welcome > p > a {
+  font-family: Arial, Verdana, sans-serif;
+  font-weight: bold;
+}
+
+/* line 101, ../../sass/_fonts.scss */
+button, .button, #crm-container form [type="submit"], .crm-menu-main li a, .crm-see-more, .crm-article .crm-icons li, .crm-article .article-2562, .mfp-content .crm-article a, .mfp-content .crm-overlay-buttons button, #crm-wrapper, .crm-form-field [type="file"] /deep/ [type="button"], table tbody > tr:first-child td strong {
+  font-family: KnockoutLight, Arial, Verdana, sans-serif;
+  font-weight: normal;
+}
+/* line 105, ../../sass/_fonts.scss */
+.JP button, .JP .button, .JP #crm-container form [type="submit"], #crm-container form .JP [type="submit"], .JP .crm-menu-main li a, .crm-menu-main li .JP a, .JP .crm-see-more, .JP .crm-article .crm-icons li, .crm-article .crm-icons .JP li, .JP .crm-article .article-2562, .crm-article .JP .article-2562, .JP .mfp-content .crm-article a, .mfp-content .crm-article .JP a, .JP .mfp-content .crm-overlay-buttons button, .mfp-content .crm-overlay-buttons .JP button, .JP #crm-wrapper, .JP .crm-form-field [type="file"] /deep/ [type="button"], .crm-form-field .JP [type="file"] /deep/ [type="button"], .JP table tbody > tr:first-child td strong, table tbody > tr:first-child td .JP strong {
+  font-family: KnockoutLight, "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", sans-serif;
+}
+/* line 106, ../../sass/_fonts.scss */
+.CN button, .CN .button, .CN #crm-container form [type="submit"], #crm-container form .CN [type="submit"], .CN .crm-menu-main li a, .crm-menu-main li .CN a, .CN .crm-see-more, .CN .crm-article .crm-icons li, .crm-article .crm-icons .CN li, .CN .crm-article .article-2562, .crm-article .CN .article-2562, .CN .mfp-content .crm-article a, .mfp-content .crm-article .CN a, .CN .mfp-content .crm-overlay-buttons button, .mfp-content .crm-overlay-buttons .CN button, .CN #crm-wrapper, .CN .crm-form-field [type="file"] /deep/ [type="button"], .crm-form-field .CN [type="file"] /deep/ [type="button"], .CN table tbody > tr:first-child td strong, table tbody > tr:first-child td .CN strong {
+  font-family: KnockoutLight, HelveticaCondensedLight, Arial, "Microsoft YaHei", "Microsoft YaHei Regular", SimHei, "SimHei Regular", sans-serif;
+}
+
+/* line 110, ../../sass/_fonts.scss */
+.crm-article-content a, .crm-article-welcome > p > a {
+  font-family: KnockoutRegular, Arial, Verdana, sans-serif;
+  font-weight: normal;
+}
+/* line 114, ../../sass/_fonts.scss */
+.JP .crm-article-content a, .crm-article-content .JP a, .JP .crm-article-welcome > p > a {
+  font-family: KnockoutRegular, "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", sans-serif;
+}
+/* line 115, ../../sass/_fonts.scss */
+.CN .crm-article-content a, .crm-article-content .CN a, .CN .crm-article-welcome > p > a {
+  font-family: KnockoutLight, HelveticaCondensedLight, Arial, "Microsoft YaHei", "Microsoft YaHei Regular", SimHei, "SimHei Regular", sans-serif;
+}
+
+/* ==========================================================================
+   CALL TO ACTIONS
+   Use with:
+
+	@extend button				(extends button rules)
+	@extend .secondary			(extends .secondary rules)
+	@extend button.secondary	(extends .secondary rules, not button's)
+	@extend .ugly-button		(extends .ugly-button rules)
+
+	NOTE: THESE ARE CLASSES.
+	THEY WILL BE REPLICATED FOR EACH TIME THEY'RE INCLUDED.
+	Include this only when is necessary.
+	Include this in scss PARENTS ONLY.
+
+	========================================================================== */
+/* line 89, ../../sass/Desktop/_callToActions.scss */
+button {
+  border-style: solid;
+  border-width: 1px;
+  cursor: pointer;
+  display: block;
+  font-size: 1.6em;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  outline: none;
+  text-align: center;
+  text-transform: uppercase;
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 40px;
+}
+
+/* line 93, ../../sass/Desktop/_callToActions.scss */
+.button, #crm-container form [type="submit"], .crm-menu-main li a, .crm-see-more, .crm-article .crm-icons li, .crm-article .article-2562, .mfp-content .crm-article a, .mfp-content .crm-overlay-buttons button {
+  border-style: solid;
+  border-width: 1px;
+  cursor: pointer;
+  display: block;
+  font-size: 1.6em;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  outline: none;
+  text-align: center;
+  text-transform: uppercase;
+  padding-left: 15px;
+  padding-right: 15px;
+  line-height: 40px;
+  height: 38px;
+}
+
+/* line 99, ../../sass/Desktop/_callToActions.scss */
+button.primary, #crm-container form button[type="submit"], .mfp-content .crm-overlay-buttons button.crm-button-submit, .button.primary, #crm-container form [type="submit"], .crm-menu-main li a.primary, .primary.crm-see-more, .crm-article .crm-icons li.primary, .crm-article .primary.article-2562, .mfp-content .crm-article a.primary, .mfp-content .crm-overlay-buttons button.primary, .mfp-content .crm-overlay-buttons button.crm-button-submit {
+  background-color: #000;
+  color: #FFF;
+  border-color: #000;
+}
+/* line 49, ../../sass/Desktop/_callToActions.scss */
+button.primary:hover, #crm-container form button[type="submit"]:hover, .mfp-content .crm-overlay-buttons button.crm-button-submit:hover, .button.primary:hover, #crm-container form [type="submit"]:hover, .crm-menu-main li a.primary:hover, .primary.crm-see-more:hover, .crm-article .crm-icons li.primary:hover, .crm-article .primary.article-2562:hover, .mfp-content .crm-article a.primary:hover, .mfp-content .crm-overlay-buttons button.primary:hover, .mfp-content .crm-overlay-buttons button.crm-button-submit:hover {
+  background-color: #999;
+  border-color: #999;
+}
+/* line 103, ../../sass/Desktop/_callToActions.scss */
+button.secondary, button.crm-see-more, .crm-article button.article-2562, .mfp-content .crm-overlay-buttons button, .button.secondary, #crm-container form .secondary[type="submit"], #crm-container form .crm-menu-main li a[type="submit"], .crm-menu-main li #crm-container form a[type="submit"], #crm-container form [type="submit"].crm-see-more, #crm-container form .crm-article .crm-icons li[type="submit"], .crm-article .crm-icons #crm-container form li[type="submit"], #crm-container form .crm-article [type="submit"].article-2562, .crm-article #crm-container form [type="submit"].article-2562, #crm-container form .mfp-content .crm-article a[type="submit"], .mfp-content .crm-article #crm-container form a[type="submit"], #crm-container form .mfp-content .crm-overlay-buttons button[type="submit"], .mfp-content .crm-overlay-buttons #crm-container form button[type="submit"], .crm-menu-main li a, .crm-see-more, .crm-article .crm-icons li, .crm-article .article-2562, .mfp-content .crm-article a, .mfp-content .crm-overlay-buttons button {
+  background-color: #EBEBEB;
+  color: #333;
+  border-color: #CCC;
+}
+/* line 60, ../../sass/Desktop/_callToActions.scss */
+button.secondary:hover, button.crm-see-more:hover, .crm-article button.article-2562:hover, .mfp-content .crm-overlay-buttons button:hover, .button.secondary:hover, #crm-container form .secondary[type="submit"]:hover, #crm-container form .crm-menu-main li a[type="submit"]:hover, .crm-menu-main li #crm-container form a[type="submit"]:hover, #crm-container form [type="submit"].crm-see-more:hover, #crm-container form .crm-article .crm-icons li[type="submit"]:hover, .crm-article .crm-icons #crm-container form li[type="submit"]:hover, #crm-container form .crm-article [type="submit"].article-2562:hover, .crm-article #crm-container form [type="submit"].article-2562:hover, #crm-container form .mfp-content .crm-article a[type="submit"]:hover, .mfp-content .crm-article #crm-container form a[type="submit"]:hover, #crm-container form .mfp-content .crm-overlay-buttons button[type="submit"]:hover, .mfp-content .crm-overlay-buttons #crm-container form button[type="submit"]:hover, .crm-menu-main li a:hover, .crm-see-more:hover, .crm-article .crm-icons li:hover, .crm-article .article-2562:hover, .mfp-content .crm-article a:hover, .mfp-content .crm-overlay-buttons button:hover {
+  background-color: #FFF;
+}
+/* line 107, ../../sass/Desktop/_callToActions.scss */
+button.tertiary, .button.tertiary, #crm-container form .tertiary[type="submit"], .crm-menu-main li a.tertiary, .tertiary.crm-see-more, .crm-article .crm-icons li.tertiary, .crm-article .tertiary.article-2562, .mfp-content .crm-article a.tertiary, .mfp-content .crm-overlay-buttons button.tertiary {
+  background: none;
+  border: 0;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  text-transform: none;
+  text-decoration: underline;
+}
+/* line 111, ../../sass/Desktop/_callToActions.scss */
+button.disabled, button[disabled], .button.disabled, #crm-container form .disabled[type="submit"], .crm-menu-main li a.disabled, .disabled.crm-see-more, .crm-article .crm-icons li.disabled, .crm-article .disabled.article-2562, .mfp-content .crm-article a.disabled, .mfp-content .crm-overlay-buttons button.disabled, .button[disabled], #crm-container form [disabled][type="submit"], .crm-menu-main li a[disabled], [disabled].crm-see-more, .crm-article .crm-icons li[disabled], .crm-article [disabled].article-2562, .mfp-content .crm-article a[disabled], .mfp-content .crm-overlay-buttons button[disabled] {
+  background-color: #FFF;
+  color: #EBEBEB;
+  border-color: #EBEBEB;
+  cursor: default;
+}
+/* line 83, ../../sass/Desktop/_callToActions.scss */
+button.disabled:hover, button[disabled]:hover, .button.disabled:hover, #crm-container form .disabled[type="submit"]:hover, .crm-menu-main li a.disabled:hover, .disabled.crm-see-more:hover, .crm-article .crm-icons li.disabled:hover, .crm-article .disabled.article-2562:hover, .mfp-content .crm-article a.disabled:hover, .mfp-content .crm-overlay-buttons button.disabled:hover, .button[disabled]:hover, #crm-container form [disabled][type="submit"]:hover, .crm-menu-main li a[disabled]:hover, [disabled].crm-see-more:hover, .crm-article .crm-icons li[disabled]:hover, .crm-article [disabled].article-2562:hover, .mfp-content .crm-article a[disabled]:hover, .mfp-content .crm-overlay-buttons button[disabled]:hover {
+  background-color: #FFF;
+  border-color: #EBEBEB;
+}
+
+/* line 20, ../../sass/Desktop/Partials/_susyClasses.scss */
+.column-1 {
+  width: 74px;
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 20, ../../sass/Desktop/Partials/_susyClasses.scss */
+.column-2, .crm-contacts li.email, .crm-contacts li.phone {
+  width: 158px;
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 20, ../../sass/Desktop/Partials/_susyClasses.scss */
+.column-3 {
+  width: 242px;
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 20, ../../sass/Desktop/Partials/_susyClasses.scss */
+.column-4, #crm-menu {
+  width: 326px;
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 20, ../../sass/Desktop/Partials/_susyClasses.scss */
+.column-5, .crm-search-container form {
+  width: 410px;
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 20, ../../sass/Desktop/Partials/_susyClasses.scss */
+.column-6 {
+  width: 494px;
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 20, ../../sass/Desktop/Partials/_susyClasses.scss */
+.column-7 {
+  width: 578px;
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 20, ../../sass/Desktop/Partials/_susyClasses.scss */
+.column-8, #crm-main {
+  width: 662px;
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 20, ../../sass/Desktop/Partials/_susyClasses.scss */
+.column-9 {
+  width: 746px;
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 20, ../../sass/Desktop/Partials/_susyClasses.scss */
+.column-10 {
+  width: 830px;
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 20, ../../sass/Desktop/Partials/_susyClasses.scss */
+.column-11 {
+  width: 914px;
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 20, ../../sass/Desktop/Partials/_susyClasses.scss */
+.column-12 {
+  width: 998px;
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 34, ../../sass/Desktop/Partials/_susyClasses.scss */
+.prefix-1 {
+  padding-left: 84px;
+}
+
+/* line 34, ../../sass/Desktop/Partials/_susyClasses.scss */
+.prefix-2 {
+  padding-left: 168px;
+}
+
+/* line 34, ../../sass/Desktop/Partials/_susyClasses.scss */
+.prefix-3 {
+  padding-left: 252px;
+}
+
+/* line 34, ../../sass/Desktop/Partials/_susyClasses.scss */
+.prefix-4 {
+  padding-left: 336px;
+}
+
+/* line 34, ../../sass/Desktop/Partials/_susyClasses.scss */
+.prefix-5 {
+  padding-left: 420px;
+}
+
+/* line 34, ../../sass/Desktop/Partials/_susyClasses.scss */
+.prefix-6 {
+  padding-left: 504px;
+}
+
+/* line 34, ../../sass/Desktop/Partials/_susyClasses.scss */
+.prefix-7 {
+  padding-left: 588px;
+}
+
+/* line 34, ../../sass/Desktop/Partials/_susyClasses.scss */
+.prefix-8 {
+  padding-left: 672px;
+}
+
+/* line 34, ../../sass/Desktop/Partials/_susyClasses.scss */
+.prefix-9 {
+  padding-left: 756px;
+}
+
+/* line 34, ../../sass/Desktop/Partials/_susyClasses.scss */
+.prefix-10 {
+  padding-left: 840px;
+}
+
+/* line 34, ../../sass/Desktop/Partials/_susyClasses.scss */
+.prefix-11 {
+  padding-left: 924px;
+}
+
+/* line 46, ../../sass/Desktop/Partials/_susyClasses.scss */
+.omega, .crm-search-container form, .crm-contacts li.phone, #crm-main {
+  margin-right: 0 !important;
+}
+
+/* line 56, ../../sass/Desktop/Partials/_susyClasses.scss */
+.centralColumn, #crm-wrapper, #crm-container {
+  *zoom: 1;
+  width: 998px;
+  padding-left: 6px;
+  padding-right: 6px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  position: relative;
+}
+/* line 38, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+.centralColumn:after, #crm-wrapper:after, #crm-container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 1, ../../sass/Desktop/Partials/egain/_backToTop.scss */
+.crm-back-top, .crm-widget-backtop {
+  background-color: #EBEBEB;
+  margin: 15px 0;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-align: right;
+  display: block;
+  line-height: 2.5em;
+  display: none;
+}
+/* line 11, ../../sass/Desktop/Partials/egain/_backToTop.scss */
+.crm-back-top .text, .crm-widget-backtop .text {
+  color: #333;
+  margin-right: 25px;
+}
+
+/* line 22, ../../sass/Desktop/Partials/egain/_backToTop.scss */
+.crm-widget-backtop a {
+  color: #333;
+  margin-right: 25px;
+}
+
+/*
+	_FEEDBACK.SCSS
+	Gestione delle rating stars
+*/
+/* line 9, ../../sass/Desktop/Partials/egain/_feedback.scss */
+.crm-widget-feedback-stars {
+  *zoom: 1;
+  margin: 10px 0;
+}
+/* line 38, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+.crm-widget-feedback-stars:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 13, ../../sass/Desktop/Partials/egain/_feedback.scss */
+.crm-widget-feedback-stars > div {
+  background-color: #333;
+  color: #FFF;
+  width: 196px;
+  height: 36px;
+  float: right;
+}
+/* line 22, ../../sass/Desktop/Partials/egain/_feedback.scss */
+.crm-widget-feedback-stars .title {
+  line-height: 36px;
+  margin-left: 15px;
+  float: left;
+}
+/* line 28, ../../sass/Desktop/Partials/egain/_feedback.scss */
+.crm-widget-feedback-stars ul {
+  float: right;
+}
+/* line 32, ../../sass/Desktop/Partials/egain/_feedback.scss */
+.crm-widget-feedback-stars li {
+  display: block;
+  float: left;
+  width: 22px;
+  height: 36px;
+}
+/* line 39, ../../sass/Desktop/Partials/egain/_feedback.scss */
+.crm-widget-feedback-stars .one-star {
+  margin-top: 12px;
+  height: 12px;
+  width: 12px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  border: 0;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 0;
+  display: block;
+  background-color: #999;
+  display: block;
+}
+/* line 50, ../../sass/Desktop/Partials/egain/_feedback.scss */
+.crm-widget-feedback-stars ul:hover .one-star {
+  background-color: #FFF;
+}
+/* line 56, ../../sass/Desktop/Partials/egain/_feedback.scss */
+.crm-widget-feedback-stars li:hover ~ li .one-star {
+  background-color: #999;
+}
+/* line 61, ../../sass/Desktop/Partials/egain/_feedback.scss */
+.crm-widget-feedback-stars div[class^="feedback-answer"] {
+  line-height: 39px;
+  text-align: center;
+}
+
+/*
+	END _FEEDBACK.SCSS
+*/
+/* line 239, ../../sass/Desktop/vendor/svgzr/_sprites-svg.scss */
+.crm-contacts .email .icon {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.2%22%20baseProfile%3D%22tiny%22%20width%3D%2265%22%20height%3D%2265%22%20viewBox%3D%220%200%2037%2025%22%3E%3Cg%20fill%3D%22%23666%22%3E%3Cpath%20d%3D%22M35.077%200H2.167l16.456%2014.48M24.916%2011.71l11.967%2011.696V1.18%22%2F%3E%3Cpath%20d%3D%22M19.342%2016.723c-.205.18-.462.27-.72.27s-.513-.09-.72-.27l-4.12-3.642L1.573%2025h33.973l-12.15-11.86-4.055%203.583zM.118%201.18v22.105l11.9-11.634%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  width: 65px;
+  height: 65px;
+  background-repeat: no-repeat;
+}
+
+/* line 253, ../../sass/Desktop/vendor/svgzr/_sprites-svg.scss */
+.crm-contacts .phone .icon {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2265%22%20height%3D%2265%22%20viewBox%3D%220%200%20230%20200%22%3E%3Cg%20fill%3D%22%23666%22%3E%3Cpath%20d%3D%22M59.793%20145.312s-.024-2.45-2.477-2.877l-8.946.882%2010.86%2041.738%208.09-2.876s2.695-1.074%202.156-3.192l-9.683-33.676zM57.317%2047.124c2.452-.43%202.477-2.88%202.477-2.88l9.683-33.672c.54-2.12-2.157-3.19-2.157-3.19L59.23%204.5l-10.86%2041.74%208.947.882zM162.68%20182.18l8.09%202.875%2010.86-41.738-8.946-.882c-2.452.427-2.48%202.877-2.48%202.877l-9.682%2033.676c-.538%202.117%202.16%203.19%202.16%203.19zM170.205%2044.244s.026%202.45%202.48%202.88l8.945-.88L170.77%204.5l-8.09%202.878s-2.695%201.072-2.157%203.19l9.682%2033.674z%22%2F%3E%3Cpath%20d%3D%22M216.757%2014.995c-.537-2.357-2.745-3.523-2.745-3.523C194.252.74%20185.332.122%20185.332.122c-1.272-.286-2.107.023-2.107.023l-5.736%202%2011.15%2043.737%209.267-.763c6.594-.214%206.423%204.45%206.423%204.45l.022%2045.215-.022%2045.203s.17%204.664-6.423%204.45l-9.267-.768-11.154%2043.738%204.06%201.416c-.52.92-1.107%201.98-1.798%202.68-1.514%201.532-3.352%202.495-5.618%202.495H55.873c-2.268%200-4.106-.964-5.62-2.497-.69-.697-1.28-1.65-1.798-2.57l4.06-1.47-11.154-43.766-9.266.753c-6.593.215-6.422-4.455-6.422-4.455l-.025-45.207.025-45.216s-.17-4.665%206.422-4.452l9.267.762L52.513%202.145l-5.735-2s-.835-.31-2.11-.024c0%200-8.92.62-28.677%2011.352%200%200-2.208%201.166-2.746%203.523%200%200-13.973%2045.522-13.214%2079.788-.757%2034.257%2013.216%2079.78%2013.216%2079.78.54%202.354%202.744%203.52%202.744%203.52%2012.264%206.662%2020.35%209.425%2024.72%2010.563%201.022%202.728%202.467%205.128%204.51%207.202%202.864%202.907%206.448%204.15%2010.653%204.15H174.13c4.203%200%207.786-1.243%2010.648-4.15%202.045-2.073%203.49-4.59%204.512-7.318%204.372-1.14%2012.458-3.844%2024.722-10.505%200%200%202.204-1.137%202.74-3.493%200%200%2013.975-45.508%2013.22-79.765.758-34.264-13.215-79.772-13.215-79.772z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  width: 65px;
+  height: 65px;
+  background-repeat: no-repeat;
+}
+
+/* line 330, ../../sass/Desktop/vendor/svgzr/_sprites-svg.scss */
+#searchBtn {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.2%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%20410%20414%22%3E%3Cpath%20d%3D%22M410%20359.482l-108.61-108.61c16.067-25.293%2025.38-55.302%2025.38-87.487C326.77%2073.15%20253.62%200%20163.384%200S0%2073.148%200%20163.385%2073.148%20326.77%20163.384%20326.77c30.268%200%2058.604-8.238%2082.91-22.583l109.5%20109.5L410%20359.483zM61.107%20163.385c0-56.486%2045.79-102.275%20102.276-102.275%2056.487%200%20102.278%2045.79%20102.278%20102.275%200%2056.485-45.79%20102.276-102.277%20102.276-56.485%200-102.276-45.79-102.276-102.275z%22%20fill%3D%22%23FFF%22%2F%3E%3C%2Fsvg%3E");
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+}
+
+/* line 21, ../../sass/egain/desktop.scss */
+#description1 {
+  height: auto;
+}
+
+/* line 23, ../../sass/egain/desktop.scss */
+.size-medium, .crm-back-top, .crm-widget-backtop, .crm-widget-feedback-stars > div, .crm-menu-secondary a, .crm-article ul > li, .crm-form-field .text, .crm-form-field .form-error-message {
+  font-size: 16px;
+  font-size: 1.6rem;
+}
+
+/* line 28, ../../sass/egain/desktop.scss */
+#crm-wrapper {
+  -moz-transition: padding 0.8s ease;
+  -o-transition: padding 0.8s ease;
+  -webkit-transition: padding 0.8s ease;
+  transition: padding 0.8s ease;
+  padding-top: 111px;
+}
+/* line 35, ../../sass/egain/desktop.scss */
+#crm-wrapper.loginLayerOpen {
+  padding-top: 286px;
+}
+/* line 38, ../../sass/egain/desktop.scss */
+#crm-wrapper.cartLayerOpen {
+  padding-top: 391px;
+}
+/* line 41, ../../sass/egain/desktop.scss */
+#crm-wrapper.wishlistLayerOpen {
+  padding-top: 371px;
+}
+
+/* line 47, ../../sass/egain/desktop.scss */
+#crm-title {
+  width: 332px;
+  margin-right: 10px;
+  float: left;
+}
+/* line 52, ../../sass/egain/desktop.scss */
+#crm-title h1 {
+  background-color: #000;
+  font-size: 2.4em;
+  margin-left: 6px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+/* line 62, ../../sass/egain/desktop.scss */
+#crm-title a {
+  color: #FFF;
+}
+
+/* line 68, ../../sass/egain/desktop.scss */
+.crm-search-container {
+  float: left;
+  width: 656px;
+}
+/* line 72, ../../sass/egain/desktop.scss */
+.crm-search-container form {
+  float: right;
+  position: relative;
+}
+
+/* line 80, ../../sass/egain/desktop.scss */
+#searchString {
+  float: left;
+  width: 100%;
+  border: 1px solid #CCC;
+  color: #999;
+  background-color: #EBEBEB;
+}
+/* line 87, ../../sass/egain/desktop.scss */
+.RU #searchString {
+  font-size: 2em;
+}
+
+/* line 93, ../../sass/egain/desktop.scss */
+#searchBtn {
+  border: 0;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 0;
+  display: block;
+  text-indent: 150%;
+  cursor: pointer;
+  position: absolute;
+  top: 8px;
+  right: 7px;
+  background-color: transparent;
+}
+
+/* line 106, ../../sass/egain/desktop.scss */
+#crm-title, .crm-search-container {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+/* line 113, ../../sass/egain/desktop.scss */
+#crm-title h1, .crm-search-container {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+/* line 121, ../../sass/egain/desktop.scss */
+#crm-container {
+  float: left;
+  margin-bottom: 15px;
+}
+
+/* line 137, ../../sass/egain/desktop.scss */
+#crm-menu {
+  text-transform: uppercase;
+  color: #666;
+}
+/* line 142, ../../sass/egain/desktop.scss */
+#crm-menu .crm-contacts {
+  display: block;
+}
+
+/* line 148, ../../sass/egain/desktop.scss */
+.crm-menu-main li {
+  margin-bottom: 5px;
+}
+/* line 151, ../../sass/egain/desktop.scss */
+.crm-menu-main li a {
+  padding: 3px 15px;
+  color: #666;
+  text-align: left;
+  font-size: 2.4em;
+}
+/* line 159, ../../sass/egain/desktop.scss */
+.RU .crm-menu-main li a {
+  font-size: 1.8em;
+}
+
+/* line 166, ../../sass/egain/desktop.scss */
+.crm-menu-secondary {
+  background-color: #EBEBEB;
+  padding: 15px 0;
+}
+/* line 170, ../../sass/egain/desktop.scss */
+.crm-menu-secondary li {
+  border-top: solid 1px #CCC;
+}
+/* line 173, ../../sass/egain/desktop.scss */
+.crm-menu-secondary li:first-child {
+  border-top: none;
+}
+/* line 178, ../../sass/egain/desktop.scss */
+.crm-menu-secondary a {
+  line-height: 2em;
+  padding-left: 5px;
+  color: #666;
+}
+/* line 184, ../../sass/egain/desktop.scss */
+.crm-menu-secondary a::before {
+  content: '> ';
+}
+/* line 190, ../../sass/egain/desktop.scss */
+.crm-menu-secondary a:hover .text {
+  border-bottom: 1px solid #666;
+}
+
+/* line 197, ../../sass/egain/desktop.scss */
+.crm-menu-level-0 {
+  margin: 0 15px;
+}
+
+/* line 201, ../../sass/egain/desktop.scss */
+.crm-menu-level-1 {
+  display: none;
+}
+
+/* line 206, ../../sass/egain/desktop.scss */
+.crm-contacts {
+  display: none;
+  border-bottom: #FFF solid 2px;
+}
+/* line 211, ../../sass/egain/desktop.scss */
+.crm-contacts h1 {
+  display: none;
+}
+/* line 215, ../../sass/egain/desktop.scss */
+.crm-contacts ul {
+  *zoom: 1;
+  background-color: #EBEBEB;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: center;
+}
+/* line 38, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+.crm-contacts ul:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 232, ../../sass/egain/desktop.scss */
+.crm-contacts li:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  opacity: 0.7;
+}
+/* line 237, ../../sass/egain/desktop.scss */
+.crm-contacts a, .crm-contacts a:hover {
+  color: #666;
+}
+/* line 241, ../../sass/egain/desktop.scss */
+.crm-contacts a .text {
+  display: block;
+  font-size: 2em;
+}
+/* line 246, ../../sass/egain/desktop.scss */
+.crm-contacts a .icon {
+  display: block;
+  margin: auto;
+}
+/* line 265, ../../sass/egain/desktop.scss */
+.crm-contacts .r3 {
+  color: #999;
+}
+
+/* line 271, ../../sass/egain/desktop.scss */
+#crm-main {
+  color: #666;
+}
+/* line 276, ../../sass/egain/desktop.scss */
+#crm-main > * {
+  margin-left: 5px;
+}
+/* line 280, ../../sass/egain/desktop.scss */
+#crm-main .shippingReturns {
+  *zoom: 1;
+  margin-top: -5px;
+  margin-bottom: 30px;
+}
+/* line 38, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+#crm-main .shippingReturns:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 285, ../../sass/egain/desktop.scss */
+#crm-main .shippingReturns h2 {
+  display: none;
+}
+/* line 289, ../../sass/egain/desktop.scss */
+#crm-main .shippingReturns .contribution {
+  float: left;
+  width: 100%;
+  padding: 14px 0 6px;
+  border-bottom: 1px solid #999;
+}
+/* line 296, ../../sass/egain/desktop.scss */
+#crm-main .shippingReturns .FeesWarning {
+  float: left;
+  margin-top: 10px;
+}
+/* line 301, ../../sass/egain/desktop.scss */
+#crm-main .shippingReturns .ShippingCostsRange {
+  float: left;
+  margin-top: 16px;
+}
+/* line 306, ../../sass/egain/desktop.scss */
+#crm-main .shippingReturns .text {
+  float: left;
+}
+/* line 310, ../../sass/egain/desktop.scss */
+#crm-main .shippingReturns .costs {
+  float: right;
+}
+
+/* line 316, ../../sass/egain/desktop.scss */
+.crm-article-content {
+  font-size: 1.7em;
+}
+/* line 319, ../../sass/egain/desktop.scss */
+.crm-article-content p {
+  font-size: 100%;
+  margin-top: 10px;
+}
+/* line 324, ../../sass/egain/desktop.scss */
+.crm-article-content br {
+  margin-top: 7px;
+  display: block;
+  content: "";
+}
+/* line 330, ../../sass/egain/desktop.scss */
+.crm-article-content a {
+  color: #000;
+}
+/* line 334, ../../sass/egain/desktop.scss */
+.crm-article-content a:hover {
+  color: #999;
+}
+/* line 339, ../../sass/egain/desktop.scss */
+.crm-article-content img {
+  display: block;
+  margin: 10px auto 5px;
+}
+
+/* line 346, ../../sass/egain/desktop.scss */
+.crm-widget-hr hr {
+  border-style: solid;
+  border-width: 6px;
+  border-color: #CCC;
+  border-top-width: 0;
+  border-left-width: 0;
+  border-right-width: 0;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-margin-start: 0;
+  -webkit-margin-end: 0;
+}
+
+/* line 365, ../../sass/egain/desktop.scss */
+.crm-widget-hr-thin {
+  display: none;
+}
+
+/* line 369, ../../sass/egain/desktop.scss */
+.crm-see-more {
+  width: 100%;
+  padding: 0px;
+  margin: 10px 0;
+}
+/* line 377, ../../sass/egain/desktop.scss */
+.crm-see-more a, .crm-see-more a:hover {
+  color: #666;
+}
+
+/* line 383, ../../sass/egain/desktop.scss */
+.crm-seemore {
+  margin-top: 10px;
+}
+/* line 386, ../../sass/egain/desktop.scss */
+.crm-seemore h2 {
+  font-size: 2em;
+}
+
+/* line 391, ../../sass/egain/desktop.scss */
+.crm-article-welcome {
+  font-size: 1.6em;
+}
+/* line 394, ../../sass/egain/desktop.scss */
+.RU .crm-article-welcome {
+  font-size: 1.5em;
+}
+/* line 399, ../../sass/egain/desktop.scss */
+.crm-article-welcome header h1 {
+  font-size: 2.4em;
+}
+/* line 407, ../../sass/egain/desktop.scss */
+.crm-article-welcome > p > a:hover {
+  color: #999;
+}
+/* line 412, ../../sass/egain/desktop.scss */
+.crm-article-welcome p:nth-last-child(3) {
+  text-align: right;
+  margin-top: 10px;
+}
+/* line 416, ../../sass/egain/desktop.scss */
+.JP .crm-article-welcome p:nth-last-child(3) {
+  text-align: left;
+}
+/* line 421, ../../sass/egain/desktop.scss */
+.crm-article-welcome p {
+  font-size: 1.4em;
+}
+
+/* line 426, ../../sass/egain/desktop.scss */
+.crm-article {
+  color: #666;
+  margin: 15px 0 20px;
+  border-bottom: 6px solid #CCC;
+  padding-bottom: 20px;
+}
+/* line 433, ../../sass/egain/desktop.scss */
+.crm-article header h1 {
+  font-size: 2.4em;
+  margin: 10px 0;
+}
+/* line 437, ../../sass/egain/desktop.scss */
+.crm-article header h1 a {
+  color: #333;
+}
+/* line 440, ../../sass/egain/desktop.scss */
+.crm-article header h1 a:hover {
+  color: #000;
+}
+/* line 452, ../../sass/egain/desktop.scss */
+.crm-article .crm-icons li {
+  margin: 10px 0;
+  font-size: 1.3em;
+}
+/* line 458, ../../sass/egain/desktop.scss */
+.crm-article .crm-icons li a {
+  color: #666;
+}
+/* line 464, ../../sass/egain/desktop.scss */
+.crm-article .article-2562 {
+  margin: 20px 0 10px;
+  font-size: 1.3em;
+}
+/* line 470, ../../sass/egain/desktop.scss */
+.crm-article .article-2562 a {
+  color: #666;
+}
+/* line 475, ../../sass/egain/desktop.scss */
+.crm-article form {
+  margin-bottom: 20px;
+}
+/* line 482, ../../sass/egain/desktop.scss */
+.crm-article footer > section:not(.crm-widget-feedback-stars) li {
+  margin: 5px 20px;
+}
+/* line 487, ../../sass/egain/desktop.scss */
+.crm-article footer > section:not(.crm-widget-feedback-stars) a::before {
+  content: "> ";
+}
+/* line 491, ../../sass/egain/desktop.scss */
+.crm-article footer > section:not(.crm-widget-feedback-stars) a:hover {
+  color: #999;
+}
+
+/* line 499, ../../sass/egain/desktop.scss */
+.crm-section-index {
+  font-size: 1.6em;
+}
+/* line 502, ../../sass/egain/desktop.scss */
+.RU .crm-section-index {
+  font-size: 1.4em;
+}
+/* line 506, ../../sass/egain/desktop.scss */
+.crm-section-index h1 {
+  font-size: 2.4em;
+}
+/* line 510, ../../sass/egain/desktop.scss */
+.crm-section-index header {
+  margin-bottom: 10px;
+}
+/* line 514, ../../sass/egain/desktop.scss */
+.crm-section-index nav {
+  margin-bottom: 20px;
+}
+/* line 518, ../../sass/egain/desktop.scss */
+.crm-section-index li {
+  padding: 6px 20px;
+}
+/* line 521, ../../sass/egain/desktop.scss */
+.crm-section-index li:before {
+  content: "> ";
+}
+/* line 526, ../../sass/egain/desktop.scss */
+.crm-section-index a {
+  font-size: 1.1em;
+  color: #666;
+  border-bottom: 1px solid #666;
+}
+/* line 531, ../../sass/egain/desktop.scss */
+.crm-section-index a:hover {
+  color: #000;
+  border: none;
+}
+
+/* line 538, ../../sass/egain/desktop.scss */
+.crm-form-field {
+  margin: 10px 0;
+}
+/* line 545, ../../sass/egain/desktop.scss */
+.crm-form-field .form-error-message {
+  color: #900000;
+}
+/* line 550, ../../sass/egain/desktop.scss */
+.crm-form-field [type="file"] /deep/ [type="button"] {
+  border-style: solid;
+  border-width: 1px;
+  cursor: pointer;
+  display: block;
+  font-size: 1.6em;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  outline: none;
+  text-align: center;
+  text-transform: uppercase;
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 40px;
+  background-color: #EBEBEB;
+  color: #333;
+  border-color: #CCC;
+  font-size: 16px;
+}
+/* line 60, ../../sass/Desktop/_callToActions.scss */
+.crm-form-field [type="file"] /deep/ [type="button"]:hover {
+  background-color: #FFF;
+}
+
+/* line 557, ../../sass/egain/desktop.scss */
+#legalContainer > footer .newsletterLink {
+  display: none;
+}
+
+/* line 562, ../../sass/egain/desktop.scss */
+table {
+  border-bottom: 1px solid #CCC;
+  width: 100% !important;
+  margin: 5% 0 !important;
+}
+/* line 567, ../../sass/egain/desktop.scss */
+table tbody > tr:first-child td {
+  text-align: center;
+}
+/* line 569, ../../sass/egain/desktop.scss */
+table tbody > tr:first-child td strong {
+  text-align: center;
+}
+/* line 576, ../../sass/egain/desktop.scss */
+table tr {
+  border-bottom: 1px solid #CCC !important;
+}
+/* line 578, ../../sass/egain/desktop.scss */
+table tr:nth-of-type(odd) {
+  background: #FFF;
+}
+/* line 581, ../../sass/egain/desktop.scss */
+table tr td {
+  margin: 0;
+  padding: 1% 0;
+  width: auto !important;
+  text-align: center;
+  vertical-align: middle;
+}
+/* line 588, ../../sass/egain/desktop.scss */
+table tr td p span {
+  font-size: 10px !important;
+}
+
+/* line 599, ../../sass/egain/desktop.scss */
+#searchResults .empty {
+  font-size: 4em;
+  margin: 60px auto;
+  width: 60%;
+  text-align: center;
+}
+
+/*** POPUP ***/
+/* line 611, ../../sass/egain/desktop.scss */
+.mfp-content {
+  color: #FFF;
+  max-width: 80%;
+}
+/* line 614, ../../sass/egain/desktop.scss */
+.mfp-content h1 {
+  color: #FFF;
+  font-size: 1.6em;
+}
+/* line 619, ../../sass/egain/desktop.scss */
+.mfp-content header h1 {
+  font-size: 2.4em;
+  margin: 10px 0;
+}
+/* line 622, ../../sass/egain/desktop.scss */
+.mfp-content header h1 a {
+  color: #333;
+}
+/* line 625, ../../sass/egain/desktop.scss */
+.mfp-content header h1 a:hover {
+  color: #000;
+}
+/* line 630, ../../sass/egain/desktop.scss */
+.mfp-content header p {
+  font-size: 1.7em;
+}
+/* line 634, ../../sass/egain/desktop.scss */
+.mfp-content .crm-article {
+  font-size: 1.4em;
+  color: #FFF;
+  border-bottom: 3px solid #CCC;
+  float: left;
+  width: 100%;
+  position: relative;
+}
+/* line 642, ../../sass/egain/desktop.scss */
+.mfp-content .crm-article .crm-article-content {
+  font-size: 1.3em;
+  float: left;
+  width: 70%;
+}
+/* line 647, ../../sass/egain/desktop.scss */
+.mfp-content .crm-article a {
+  margin: 10px 0 0;
+  float: right;
+  bottom: 10px;
+  position: absolute;
+  right: 0;
+}
+/* line 658, ../../sass/egain/desktop.scss */
+.mfp-content .crm-overlay-buttons button {
+  float: left;
+}
+/* line 662, ../../sass/egain/desktop.scss */
+.mfp-content .crm-overlay-buttons button.crm-button-submit {
+  float: right;
+}
+
+/* line 673, ../../sass/egain/desktop.scss */
+.RU .eg-article-2110 table, .RU .eg-article-2113 table {
+  font-weight: normal !important;
+}
+
+/* line 685, ../../sass/egain/desktop.scss */
+.RU .eg-home .crm-article-content {
+  font-size: inherit;
+}
+/* line 689, ../../sass/egain/desktop.scss */
+.RU .eg-home .crm-icons li a {
+  font-size: 1.4em;
+}
+
+/* line 699, ../../sass/egain/desktop.scss */
+.eg-escalation h2 {
+  padding-top: 20px;
+}
+/* line 703, ../../sass/egain/desktop.scss */
+.eg-escalation p {
+  font-size: inherit;
+}
+/* line 708, ../../sass/egain/desktop.scss */
+.RU .eg-escalation h2 {
+  font-size: 3.5em;
+}
+/* line 711, ../../sass/egain/desktop.scss */
+.RU .eg-escalation .crm-article {
+  font-size: 1.6em;
+}
+/* line 715, ../../sass/egain/desktop.scss */
+.RU .eg-escalation .prettyselect-drop {
+  text-transform: uppercase;
+}

@@ -1,4 +1,12 @@
 @charset "UTF-8";
+/*
+    zindex
+    Mixin di definizione e utilizzo degli z-index.
+
+    La lista $indexes è crescente dall'alto al basso, e i suoi elementi andranno espressi al momento dell'uso del mixin.
+    Ovviamente l'uso da farne è di tipo semantico, per evitare l'espressione di numeri casuali all'interno dei vari css.
+
+*/
 /* effetto height:100% sugli elementi flottanti */
 @font-face {
   font-family: 'KnockoutLight';
@@ -43,7 +51,7 @@ button, .button, .generatedPdf {
   font-weight: normal;
 }
 .JP button, .JP .button, .JP .generatedPdf {
-  font-family: KnockoutLight, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+  font-family: KnockoutLight, "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", sans-serif;
 }
 .CN button, .CN .button, .CN .generatedPdf {
   font-family: KnockoutLight, HelveticaCondensedLight, Arial, "Microsoft YaHei", "Microsoft YaHei Regular", SimHei, "SimHei Regular", sans-serif;

@@ -1,4 +1,12 @@
 @charset "UTF-8";
+/*
+    zindex
+    Mixin di definizione e utilizzo degli z-index.
+
+    La lista $indexes è crescente dall'alto al basso, e i suoi elementi andranno espressi al momento dell'uso del mixin.
+    Ovviamente l'uso da farne è di tipo semantico, per evitare l'espressione di numeri casuali all'interno dei vari css.
+
+*/
 /* effetto height:100% sugli elementi flottanti */
 @font-face {
   font-family: 'KnockoutLight';
@@ -48,7 +56,7 @@ button, .button, #selection .keepedAllAlert a[href="/"] {
   font-weight: normal;
 }
 .JP button, .JP .button, .JP #selection .keepedAllAlert a[href="/"], #selection .keepedAllAlert .JP a[href="/"] {
-  font-family: KnockoutLight, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+  font-family: KnockoutLight, "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", sans-serif;
 }
 .CN button, .CN .button, .CN #selection .keepedAllAlert a[href="/"], #selection .keepedAllAlert .CN a[href="/"] {
   font-family: KnockoutLight, HelveticaCondensedLight, Arial, "Microsoft YaHei", "Microsoft YaHei Regular", SimHei, "SimHei Regular", sans-serif;
@@ -59,7 +67,7 @@ button, .button, #selection .keepedAllAlert a[href="/"] {
   font-weight: normal;
 }
 .JP #selection .changeBox h3, #selection .changeBox .JP h3 {
-  font-family: KnockoutRegular, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+  font-family: KnockoutRegular, "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", sans-serif;
 }
 .CN #selection .changeBox h3, #selection .changeBox .CN h3 {
   font-family: KnockoutLight, HelveticaCondensedLight, Arial, "Microsoft YaHei", "Microsoft YaHei Regular", SimHei, "SimHei Regular", sans-serif;
@@ -518,7 +526,7 @@ main > .centralColumn {
 }
 
 #refund .returnedItems h2 {
-  margin-bottom: 30px;
+  margin-bottom: 32px;
   display: none;
 }
 #refund .paymentRefundForm.paymentCreditCard {
@@ -555,6 +563,9 @@ main > .centralColumn {
 #thankspage .instructions {
   margin-top: 20px;
   *zoom: 1;
+}
+.JP #thankspage .instructions, .VN #thankspage .instructions, .RU #thankspage .instructions, .IN #thankspage .instructions, .ID #thankspage .instructions, .MY #thankspage .instructions, .SG #thankspage .instructions, .PH #thankspage .instructions, .TH #thankspage .instructions, .TW #thankspage .instructions, .CN #thankspage .instructions, .AU #thankspage .instructions, .HK #thankspage .instructions, .NZ #thankspage .instructions {
+  display: none;
 }
 #thankspage .instructions:after {
   content: "";

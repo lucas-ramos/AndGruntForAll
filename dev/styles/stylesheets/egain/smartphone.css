@@ -1,0 +1,696 @@
+@charset "UTF-8";
+/*
+    zindex
+    Mixin di definizione e utilizzo degli z-index.
+
+    La lista $indexes è crescente dall'alto al basso, e i suoi elementi andranno espressi al momento dell'uso del mixin.
+    Ovviamente l'uso da farne è di tipo semantico, per evitare l'espressione di numeri casuali all'interno dei vari css.
+
+*/
+/* effetto height:100% sugli elementi flottanti */
+@font-face {
+  font-family: 'KnockoutLight';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.svg#KnockoutLight") format("svg");
+}
+@font-face {
+  font-family: 'KnockoutRegular';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.svg#KnockoutRegular") format("svg");
+}
+@font-face {
+  font-family: 'HelveticaCondensedLight';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.svg#KnockoutRegular") format("svg");
+}
+@font-face {
+  font-family: 'HelveticaCondensedBold';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.svg#KnockoutRegular") format("svg");
+}
+@font-face {
+  font-family: 'LatoRegular';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.svg#LatoRegular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'LatoBold';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.svg#LatoBold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* line 92, ../../sass/_fonts.scss */
+.RU button, .RU .button, .RU .menuShow, .RU .crm-menu-main a, .crm-menu-main .RU a, .RU .crm-menu-secondary .crm-menu-level-0 > li > a, .crm-menu-secondary .RU .crm-menu-level-0 > li > a, .RU .crm-contacts a, .crm-contacts .RU a, .RU .crm-back-top, .RU .crm-widget-backtop, .RU .mfp-content .crm-overlay-buttons button, .mfp-content .crm-overlay-buttons .RU button, .RU .mfp-content a, .mfp-content .RU a, .RU table tbody > tr:first-child td strong, table tbody > tr:first-child td .RU strong, .RU #searchBtn {
+  font-family: Arial, Verdana, sans-serif;
+}
+
+/* line 101, ../../sass/_fonts.scss */
+button, .button, .menuShow, .crm-menu-main a, .crm-menu-secondary .crm-menu-level-0 > li > a, .crm-contacts a, .crm-back-top, .crm-widget-backtop, .mfp-content .crm-overlay-buttons button, .mfp-content a, table tbody > tr:first-child td strong {
+  font-family: KnockoutLight, Arial, Verdana, sans-serif;
+  font-weight: normal;
+}
+/* line 105, ../../sass/_fonts.scss */
+.JP button, .JP .button, .JP .menuShow, .JP .crm-menu-main a, .crm-menu-main .JP a, .JP .crm-menu-secondary .crm-menu-level-0 > li > a, .crm-menu-secondary .JP .crm-menu-level-0 > li > a, .JP .crm-contacts a, .crm-contacts .JP a, .JP .crm-back-top, .JP .crm-widget-backtop, .JP .mfp-content .crm-overlay-buttons button, .mfp-content .crm-overlay-buttons .JP button, .JP .mfp-content a, .mfp-content .JP a, .JP table tbody > tr:first-child td strong, table tbody > tr:first-child td .JP strong {
+  font-family: KnockoutLight, "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", sans-serif;
+}
+/* line 106, ../../sass/_fonts.scss */
+.CN button, .CN .button, .CN .menuShow, .CN .crm-menu-main a, .crm-menu-main .CN a, .CN .crm-menu-secondary .crm-menu-level-0 > li > a, .crm-menu-secondary .CN .crm-menu-level-0 > li > a, .CN .crm-contacts a, .crm-contacts .CN a, .CN .crm-back-top, .CN .crm-widget-backtop, .CN .mfp-content .crm-overlay-buttons button, .mfp-content .crm-overlay-buttons .CN button, .CN .mfp-content a, .mfp-content .CN a, .CN table tbody > tr:first-child td strong, table tbody > tr:first-child td .CN strong {
+  font-family: KnockoutLight, HelveticaCondensedLight, Arial, "Microsoft YaHei", "Microsoft YaHei Regular", SimHei, "SimHei Regular", sans-serif;
+}
+
+/* line 135, ../../sass/_fonts.scss */
+#searchBtn {
+  font-family: LatoRegular, Arial, Verdana, sans-serif;
+  font-weight: normal;
+}
+/* line 139, ../../sass/_fonts.scss */
+.JP #searchBtn {
+  font-family: LatoRegular, "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", sans-serif;
+}
+
+/* ==========================================================================
+   CALL TO ACTIONS
+   Use with:
+
+	@extend button				(extends button rules)
+	@extend .secondary			(extends .secondary rules)
+	@extend button.secondary	(extends .secondary rules, not button's)
+	@extend .ugly-button		(extends .ugly-button rules)
+
+	NOTE: THESE ARE CLASSES.
+	THEY WILL BE REPLICATED FOR EACH TIME THEY'RE INCLUDED.
+	Include this only when is necessary.
+	Include this in scss PARENTS ONLY.
+
+	========================================================================== */
+/* line 57, ../../sass/Smartphone/_callToActions.scss */
+button {
+  text-align: center;
+  cursor: pointer;
+  display: block;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  font-size: 1.9rem;
+  padding: 26px 12%;
+  border: 0;
+  outline: none;
+  width: 100%;
+}
+
+/* line 61, ../../sass/Smartphone/_callToActions.scss */
+.button, .menuShow, .crm-menu-main a, .crm-menu-secondary .crm-menu-level-0 > li > a, .crm-contacts a, .crm-back-top, .crm-widget-backtop, .mfp-content .crm-overlay-buttons button, .mfp-content a {
+  text-align: center;
+  cursor: pointer;
+  display: block;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  font-size: 1.9rem;
+  padding: 26px 12%;
+  border: 0;
+  outline: none;
+  width: 76%;
+}
+
+/* line 67, ../../sass/Smartphone/_callToActions.scss */
+button.primary, button.menuShow, .mfp-content .crm-overlay-buttons button.crm-button-submit, .button.primary, .menuShow, .crm-menu-main a.primary, .crm-menu-main a.menuShow, .crm-menu-secondary .crm-menu-level-0 > li > a.primary, .crm-menu-secondary .crm-menu-level-0 > li > a.menuShow, .crm-contacts a.primary, .crm-contacts a.menuShow, .primary.crm-back-top, .primary.crm-widget-backtop, .mfp-content .crm-overlay-buttons button.primary, .mfp-content .crm-overlay-buttons button.menuShow, .mfp-content .crm-overlay-buttons button.crm-button-submit, .mfp-content a.primary, .mfp-content a.menuShow {
+  background-color: #000;
+  color: #FFF;
+}
+/* line 71, ../../sass/Smartphone/_callToActions.scss */
+button.secondary, button.crm-back-top, button.crm-widget-backtop, .mfp-content .crm-overlay-buttons button, .button.secondary, .secondary.menuShow, .crm-menu-main a, .crm-menu-secondary .crm-menu-level-0 > li > a, .crm-contacts a, .crm-back-top, .crm-widget-backtop, .mfp-content .crm-overlay-buttons button, .mfp-content a {
+  background-color: #CCC;
+  color: #FFF;
+}
+/* line 75, ../../sass/Smartphone/_callToActions.scss */
+button.disabled, button[disabled], .button.disabled, .disabled.menuShow, .crm-menu-main a.disabled, .crm-menu-secondary .crm-menu-level-0 > li > a.disabled, .crm-contacts a.disabled, .disabled.crm-back-top, .disabled.crm-widget-backtop, .mfp-content .crm-overlay-buttons button.disabled, .mfp-content a.disabled, .button[disabled], [disabled].menuShow, .crm-menu-main a[disabled], .crm-menu-secondary .crm-menu-level-0 > li > a[disabled], .crm-contacts a[disabled], [disabled].crm-back-top, [disabled].crm-widget-backtop, .mfp-content .crm-overlay-buttons button[disabled], .mfp-content a[disabled] {
+  background-color: #FFF;
+  color: #EBEBEB;
+  cursor: default;
+}
+
+/* line 80, ../../sass/Smartphone/_callToActions.scss */
+#searchBtn {
+  padding: 0;
+  display: inline-block;
+  background-color: transparent;
+  text-transform: none;
+  text-decoration: underline;
+  width: auto;
+  text-align: left;
+  font-size: 1.3rem;
+}
+/* line 91, ../../sass/Smartphone/_callToActions.scss */
+#searchBtn:hover {
+  background-color: transparent;
+}
+
+/* line 1, ../../sass/Smartphone/Partials/egain/_backToTop.scss */
+.crm-back-top, .crm-widget-backtop {
+  background-color: #EBEBEB;
+  margin: 15px 0;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-align: center;
+  display: block;
+  line-height: 2.5em;
+  padding: 0;
+  width: 100%;
+}
+/* line 12, ../../sass/Smartphone/Partials/egain/_backToTop.scss */
+.crm-back-top .text, .crm-widget-backtop .text {
+  color: #333;
+}
+
+/* line 20, ../../sass/Smartphone/Partials/egain/_backToTop.scss */
+.crm-widget-backtop a {
+  color: #333;
+}
+
+/*
+	_FEEDBACK.SCSS
+	Gestione delle rating stars
+*/
+/* line 9, ../../sass/Smartphone/Partials/egain/_feedback.scss */
+.crm-widget-feedback-stars {
+  *zoom: 1;
+  margin: 10px 0;
+}
+/* line 38, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+.crm-widget-feedback-stars:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 13, ../../sass/Smartphone/Partials/egain/_feedback.scss */
+.crm-widget-feedback-stars > div {
+  background-color: #333;
+  color: #FFF;
+  width: 196px;
+  height: 36px;
+  float: right;
+}
+/* line 21, ../../sass/Smartphone/Partials/egain/_feedback.scss */
+.crm-widget-feedback-stars .title {
+  line-height: 36px;
+  float: left;
+}
+/* line 26, ../../sass/Smartphone/Partials/egain/_feedback.scss */
+.crm-widget-feedback-stars ul {
+  float: right;
+}
+/* line 30, ../../sass/Smartphone/Partials/egain/_feedback.scss */
+.crm-widget-feedback-stars li {
+  display: block;
+  float: left;
+  width: 22px;
+  height: 36px;
+}
+/* line 37, ../../sass/Smartphone/Partials/egain/_feedback.scss */
+.crm-widget-feedback-stars .one-star {
+  margin-top: 12px;
+  height: 12px;
+  width: 12px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  border: 0;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 0;
+  display: block;
+  background-color: #999;
+  display: block;
+}
+/* line 48, ../../sass/Smartphone/Partials/egain/_feedback.scss */
+.crm-widget-feedback-stars ul:hover .one-star {
+  background-color: #FFF;
+}
+/* line 54, ../../sass/Smartphone/Partials/egain/_feedback.scss */
+.crm-widget-feedback-stars li:hover ~ li .one-star {
+  background-color: #999;
+}
+/* line 59, ../../sass/Smartphone/Partials/egain/_feedback.scss */
+.crm-widget-feedback-stars div[class^="feedback-answer"] {
+  line-height: 39px;
+  text-align: center;
+}
+
+/*
+	END _FEEDBACK.SCSS
+*/
+/* line 260, ../../sass/Smartphone/vendor/svgzr/_sprites-svg.scss */
+#searchBtn {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2235%22%20height%3D%2235%22%20viewBox%3D%220%200%20410%20414%22%3E%3Cpath%20fill%3D%22%23333%22%20d%3D%22M410%20359.482l-108.61-108.61c16.067-25.293%2025.38-55.302%2025.38-87.487C326.77%2073.15%20253.62%200%20163.384%200S0%2073.148%200%20163.385%2073.148%20326.77%20163.384%20326.77c30.268%200%2058.604-8.238%2082.91-22.583l109.5%20109.5L410%20359.483zM61.107%20163.385c0-56.486%2045.79-102.275%20102.276-102.275%2056.487%200%20102.278%2045.79%20102.278%20102.275%200%2056.485-45.79%20102.276-102.277%20102.276-56.485%200-102.276-45.79-102.276-102.275z%22%2F%3E%3C%2Fsvg%3E");
+  width: 35px;
+  height: 35px;
+  background-repeat: no-repeat;
+}
+
+/* line 330, ../../sass/Smartphone/vendor/svgzr/_sprites-svg.scss */
+.crm-widget-feedback-stars a {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%20512%20512%22%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M256%2060.082l48.63%20149.668H462l-127.314%2092.5%2048.63%20149.668L256%20359.418l-127.315%2092.5%2048.63-149.668L50%20209.75h157.37%22%2F%3E%3C%2Fsvg%3E");
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+}
+
+/* line 17, ../../sass/egain/smartphone.scss */
+body.contactForm .crm-contacts, body.contactForm .menuShow, body.contactForm .showHide,
+body.contactForm .crm-menu-main, body.contactForm .crm-menu-secondary {
+  display: none !important;
+}
+
+/* line 23, ../../sass/egain/smartphone.scss */
+#headerContainer {
+  display: none;
+}
+
+/* line 27, ../../sass/egain/smartphone.scss */
+.crm-widget-hr, hr {
+  display: none;
+}
+
+/* line 31, ../../sass/egain/smartphone.scss */
+#crm-wrapper {
+  margin: 0 10px;
+}
+/* line 34, ../../sass/egain/smartphone.scss */
+#crm-wrapper header {
+  background: none;
+}
+/* line 38, ../../sass/egain/smartphone.scss */
+#crm-wrapper .crm-section-index header {
+  background-color: #EBEBEB;
+}
+/* line 42, ../../sass/egain/smartphone.scss */
+#crm-wrapper h1 {
+  text-align: center;
+  font-size: 3rem;
+}
+/* line 46, ../../sass/egain/smartphone.scss */
+#crm-wrapper h1 a {
+  color: #000;
+}
+/* line 51, ../../sass/egain/smartphone.scss */
+#crm-wrapper p {
+  margin: 0;
+}
+/* line 55, ../../sass/egain/smartphone.scss */
+#crm-wrapper input[type="text"], #crm-wrapper input[type="password"], #crm-wrapper input[type="email"], #crm-wrapper input[type="tel"] {
+  padding: 8px 12%;
+  border-bottom: 1px solid #CCC;
+  margin-bottom: 20px;
+}
+/* line 61, ../../sass/egain/smartphone.scss */
+#crm-wrapper textarea {
+  width: 98%;
+}
+/* line 65, ../../sass/egain/smartphone.scss */
+#crm-wrapper .crm-form-field-attachments {
+  line-height: 36px;
+}
+/* line 69, ../../sass/egain/smartphone.scss */
+#crm-wrapper .crm-form-field-topic {
+  margin: 0 0 13px;
+}
+
+/* line 75, ../../sass/egain/smartphone.scss */
+#crm-title h1 {
+  font-size: 4rem;
+  padding-top: 10px;
+}
+
+/* line 81, ../../sass/egain/smartphone.scss */
+.crm-section-index {
+  margin-bottom: 20px;
+  border-bottom: 4px solid #CCC;
+  padding-bottom: 20px;
+}
+/* line 86, ../../sass/egain/smartphone.scss */
+.crm-section-index header {
+  padding: 15px;
+  margin: 10px 0;
+}
+/* line 91, ../../sass/egain/smartphone.scss */
+.crm-section-index h1 {
+  font-size: 2.8rem;
+}
+/* line 95, ../../sass/egain/smartphone.scss */
+.crm-section-index p {
+  text-align: center;
+  font-size: 1.8rem;
+}
+/* line 100, ../../sass/egain/smartphone.scss */
+.crm-section-index a {
+  font-size: 1.7rem;
+}
+
+/* line 105, ../../sass/egain/smartphone.scss */
+#crm-main {
+  font-size: 1.6rem;
+}
+
+/* line 109, ../../sass/egain/smartphone.scss */
+.contribution {
+  margin: 10px 0;
+}
+/* line 111, ../../sass/egain/smartphone.scss */
+.contribution .label {
+  font-weight: bold;
+}
+
+/* SEARCH */
+/* line 118, ../../sass/egain/smartphone.scss */
+#searchString {
+  width: 60%;
+  float: left;
+  height: 39px;
+}
+
+/* line 124, ../../sass/egain/smartphone.scss */
+#searchBtn {
+  width: 12%;
+  border: 0;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 0;
+  display: block;
+  display: inline-block;
+  top: 20px;
+  position: relative;
+  float: right;
+}
+
+/* line 135, ../../sass/egain/smartphone.scss */
+.crm-search-container {
+  margin-bottom: 20px;
+  border-bottom: 3px solid #000;
+}
+/* line 139, ../../sass/egain/smartphone.scss */
+.crm-search-container form {
+  *zoom: 1;
+}
+/* line 38, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+.crm-search-container form:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* END SEARCH */
+/* MENU MAIN */
+/* line 147, ../../sass/egain/smartphone.scss */
+.menuShow {
+  margin: 5px 0 20px;
+  display: block;
+}
+/* line 152, ../../sass/egain/smartphone.scss */
+.menuShow .arrow {
+  float: right;
+  display: block;
+  width: 0;
+  height: 0;
+  border: 0 solid transparent;
+  border-bottom-color: #FFF;
+  border-width: 0 12px 12px 12px;
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+/* line 159, ../../sass/egain/smartphone.scss */
+.menuShow.open .arrow {
+  display: block;
+  width: 0;
+  height: 0;
+  border: 0 solid transparent;
+  border-bottom-color: #FFF;
+  border-width: 0 12px 12px 12px;
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+/* line 165, ../../sass/egain/smartphone.scss */
+.showHide {
+  display: none;
+}
+
+/* line 169, ../../sass/egain/smartphone.scss */
+.crm-menu-main a {
+  margin: 5px 0;
+}
+
+/* line 177, ../../sass/egain/smartphone.scss */
+.crm-menu-secondary .crm-menu-level-0 {
+  margin: 20px 0;
+}
+/* line 180, ../../sass/egain/smartphone.scss */
+.crm-menu-secondary .crm-menu-level-0 > li > a {
+  margin-bottom: 5px;
+}
+/* line 187, ../../sass/egain/smartphone.scss */
+.crm-menu-secondary .crm-menu-level-1 {
+  display: none;
+}
+
+/* END MENU MAIN */
+/* line 193, ../../sass/egain/smartphone.scss */
+.crm-contacts {
+  display: none;
+}
+/* line 196, ../../sass/egain/smartphone.scss */
+.crm-contacts a {
+  margin: 5px 0;
+}
+
+/* line 204, ../../sass/egain/smartphone.scss */
+#browsetopic_jsp #crm-menu, #articleappearance_jsp #crm-menu {
+  display: none;
+}
+/* line 208, ../../sass/egain/smartphone.scss */
+#crm-menu .crm-contacts {
+  display: block;
+}
+
+/* line 213, ../../sass/egain/smartphone.scss */
+.crm-article {
+  margin-bottom: 20px;
+  border-bottom: 3px solid #CCC;
+  padding-bottom: 20px;
+}
+/* line 219, ../../sass/egain/smartphone.scss */
+.crm-article header h1 {
+  font-size: 2.4rem;
+  padding-top: 10px;
+  line-height: 1em;
+}
+/* line 227, ../../sass/egain/smartphone.scss */
+.crm-article section:not(.crm-widget-feedback-stars) ul {
+  padding: 3px 12px;
+}
+/* line 231, ../../sass/egain/smartphone.scss */
+.crm-article section:not(.crm-widget-feedback-stars) li::before {
+  content: '> ';
+}
+/* line 235, ../../sass/egain/smartphone.scss */
+.crm-article section:not(.crm-widget-feedback-stars) a {
+  font-size: 1.4rem;
+  border-bottom: 1px solid #999;
+}
+
+/* line 242, ../../sass/egain/smartphone.scss */
+.crm-article-content {
+  margin: 5px 0 20px;
+}
+
+/* line 246, ../../sass/egain/smartphone.scss */
+.crm-widget-feedback-stars {
+  *zoom: 1;
+  background-color: #999;
+  text-align: center;
+  margin-bottom: 20px;
+}
+/* line 38, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+.crm-widget-feedback-stars:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 255, ../../sass/egain/smartphone.scss */
+.crm-widget-feedback-stars > div {
+  float: left;
+  width: 100%;
+  color: #FFF;
+  padding-right: 0 !important;
+  padding: 6px 0;
+}
+/* line 263, ../../sass/egain/smartphone.scss */
+.crm-widget-feedback-stars .title {
+  float: left;
+  width: 40%;
+  padding-top: 1px;
+}
+/* line 269, ../../sass/egain/smartphone.scss */
+.crm-widget-feedback-stars ul {
+  float: left;
+  width: 60%;
+}
+/* line 273, ../../sass/egain/smartphone.scss */
+.crm-widget-feedback-stars ul .one-star {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+}
+/* line 278, ../../sass/egain/smartphone.scss */
+.crm-widget-feedback-stars ul:hover .one-star {
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+}
+/* line 284, ../../sass/egain/smartphone.scss */
+.crm-widget-feedback-stars li {
+  float: left;
+  width: 33%;
+}
+/* line 290, ../../sass/egain/smartphone.scss */
+.crm-widget-feedback-stars li:hover ~ li .one-star {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+}
+/* line 297, ../../sass/egain/smartphone.scss */
+.crm-widget-feedback-stars a {
+  border: 0;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 0;
+  display: block;
+  display: block;
+  margin: auto;
+}
+
+/* line 306, ../../sass/egain/smartphone.scss */
+.crm-seemore h2 {
+  font-size: 2rem;
+  color: #666;
+}
+
+/* line 312, ../../sass/egain/smartphone.scss */
+.crm-back-top, .crm-widget-backtop {
+  font-size: 1.5rem;
+  margin-top: 15px;
+  height: 30px;
+  line-height: 32px;
+  text-align: center;
+}
+
+/* line 323, ../../sass/egain/smartphone.scss */
+table {
+  border-bottom: 1px solid #CCC;
+  width: 100% !important;
+  margin: 5% 0 !important;
+}
+/* line 328, ../../sass/egain/smartphone.scss */
+table tbody > tr:first-child td {
+  font-size: 1.4rem;
+  text-align: center;
+}
+/* line 331, ../../sass/egain/smartphone.scss */
+table tbody > tr:first-child td strong {
+  text-align: center;
+}
+/* line 338, ../../sass/egain/smartphone.scss */
+table tr {
+  border-bottom: 1px solid #CCC !important;
+}
+/* line 340, ../../sass/egain/smartphone.scss */
+table tr:nth-of-type(odd) {
+  background: #FFF;
+}
+/* line 343, ../../sass/egain/smartphone.scss */
+table tr td {
+  margin: 0;
+  padding: 1% 0;
+  width: auto !important;
+  text-align: center;
+  vertical-align: middle;
+  padding: 1% 0;
+}
+/* line 351, ../../sass/egain/smartphone.scss */
+table tr td p span {
+  font-size: 10px !important;
+}
+
+/*** POPUP ***/
+/* line 361, ../../sass/egain/smartphone.scss */
+.mfp-content {
+  color: #FFF;
+}
+/* line 363, ../../sass/egain/smartphone.scss */
+.mfp-content h1 {
+  color: #FFF;
+  font-size: 1.6em;
+}
+/* line 367, ../../sass/egain/smartphone.scss */
+.mfp-content header {
+  background: transparent;
+  border-bottom: 1px solid #CCC;
+  margin: 0 0 20px;
+  padding: 0 0 20px;
+}
+/* line 372, ../../sass/egain/smartphone.scss */
+.mfp-content header h1 {
+  font-size: 3em;
+  margin: 10px 0;
+}
+/* line 375, ../../sass/egain/smartphone.scss */
+.mfp-content header h1 a {
+  color: #333;
+}
+/* line 378, ../../sass/egain/smartphone.scss */
+.mfp-content header h1 a:hover {
+  color: #000;
+}
+/* line 383, ../../sass/egain/smartphone.scss */
+.mfp-content header p {
+  font-size: 1.7em;
+}
+/* line 387, ../../sass/egain/smartphone.scss */
+.mfp-content .crm-article {
+  font-size: 1.4em;
+  color: #FFF;
+  border-bottom: 3px solid #CCC;
+  float: left;
+  width: 100%;
+  position: relative;
+}
+/* line 395, ../../sass/egain/smartphone.scss */
+.mfp-content .crm-article .crm-article-content {
+  font-size: 1.3em;
+  float: left;
+  width: 70%;
+}
+/* line 402, ../../sass/egain/smartphone.scss */
+.mfp-content .crm-overlay-buttons button {
+  width: 100%;
+}
+/* line 406, ../../sass/egain/smartphone.scss */
+.mfp-content .crm-overlay-buttons button.crm-button-submit {
+  margin: 10px 0 0;
+}
+/* line 412, ../../sass/egain/smartphone.scss */
+.mfp-content a {
+  margin: 10px 0 0;
+  float: left;
+}

@@ -1,4 +1,12 @@
 @charset "UTF-8";
+/*
+    zindex
+    Mixin di definizione e utilizzo degli z-index.
+
+    La lista $indexes è crescente dall'alto al basso, e i suoi elementi andranno espressi al momento dell'uso del mixin.
+    Ovviamente l'uso da farne è di tipo semantico, per evitare l'espressione di numeri casuali all'interno dei vari css.
+
+*/
 /* effetto height:100% sugli elementi flottanti */
 @font-face {
   font-family: 'KnockoutLight';
@@ -48,7 +56,7 @@ button, .button, #user.thankyouregistration .gotoshopping a {
   font-weight: normal;
 }
 .JP button, .JP .button, .JP #user.thankyouregistration .gotoshopping a, #user.thankyouregistration .gotoshopping .JP a {
-  font-family: KnockoutLight, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+  font-family: KnockoutLight, "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", sans-serif;
 }
 .CN button, .CN .button, .CN #user.thankyouregistration .gotoshopping a, #user.thankyouregistration .gotoshopping .CN a {
   font-family: KnockoutLight, HelveticaCondensedLight, Arial, "Microsoft YaHei", "Microsoft YaHei Regular", SimHei, "SimHei Regular", sans-serif;
@@ -59,7 +67,7 @@ button, .button, #user.thankyouregistration .gotoshopping a {
   font-weight: normal;
 }
 .JP #overview .wishlistItem .info .brandName, #overview .wishlistItem .info .JP .brandName, .JP #overview .wishlistItem .info .microCategory, #overview .wishlistItem .info .JP .microCategory, .JP #overview .wishlistItem .info .discounted, #overview .wishlistItem .info .JP .discounted, .JP #overview .defaultMessage, #overview .JP .defaultMessage, .JP #wishlist .wishlistItem .info .brandName, #wishlist .wishlistItem .info .JP .brandName, .JP #wishlist .wishlistItem .info .microCategory, #wishlist .wishlistItem .info .JP .microCategory, .JP #wishlist .wishlistItem .info .discounted, #wishlist .wishlistItem .info .JP .discounted {
-  font-family: KnockoutRegular, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+  font-family: KnockoutRegular, "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", sans-serif;
 }
 .CN #overview .wishlistItem .info .brandName, #overview .wishlistItem .info .CN .brandName, .CN #overview .wishlistItem .info .microCategory, #overview .wishlistItem .info .CN .microCategory, .CN #overview .wishlistItem .info .discounted, #overview .wishlistItem .info .CN .discounted, .CN #overview .defaultMessage, #overview .CN .defaultMessage, .CN #wishlist .wishlistItem .info .brandName, #wishlist .wishlistItem .info .CN .brandName, .CN #wishlist .wishlistItem .info .microCategory, #wishlist .wishlistItem .info .CN .microCategory, .CN #wishlist .wishlistItem .info .discounted, #wishlist .wishlistItem .info .CN .discounted {
   font-family: KnockoutLight, HelveticaCondensedLight, Arial, "Microsoft YaHei", "Microsoft YaHei Regular", SimHei, "SimHei Regular", sans-serif;
@@ -70,7 +78,7 @@ button, .button, #user.thankyouregistration .gotoshopping a {
   font-weight: normal;
 }
 .JP #overview .order, #overview .JP .order, .JP #overview .addressList .container, #overview .addressList .JP .container, .JP #overview .creditCardsList .container, #overview .creditCardsList .JP .container, .JP #overview #profileContainer .content, #overview #profileContainer .JP .content, .JP #user.register .registrationForm .privacyContainer, #user.register .registrationForm .JP .privacyContainer, .JP #user.register .registrationForm .acceptFlags, #user.register .registrationForm .JP .acceptFlags {
-  font-family: LatoRegular, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+  font-family: LatoRegular, "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", sans-serif;
 }
 
 #overview .cardType .value, #overview .addressName, #overview .userInfo .label, #overview .orderNumber .label {
@@ -78,7 +86,7 @@ button, .button, #user.thankyouregistration .gotoshopping a {
   font-weight: normal;
 }
 .JP #overview .cardType .value, #overview .cardType .JP .value, .JP #overview .addressName, #overview .JP .addressName, .JP #overview .userInfo .label, #overview .userInfo .JP .label, .JP #overview .orderNumber .label, #overview .orderNumber .JP .label {
-  font-family: LatoBold, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+  font-family: LatoBold, "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", sans-serif;
 }
 
 /* ==========================================================================
@@ -143,12 +151,12 @@ button.disabled, button[disabled], .button.disabled, #user.thankyouregistration 
 }
 
 .sprites-creditcards-sprite, .sprites-creditcards-alipay, .sprites-creditcards-americanexpress, #overview .cardIcon.AmericanExpress, .sprites-creditcards-americanexpress_big, .sprites-creditcards-cartebleue, #overview .cardIcon.CarteBleue, .sprites-creditcards-cartebleue_big, .sprites-creditcards-cartebleuevisa_big, .sprites-creditcards-discover, .sprites-creditcards-discover_big, .sprites-creditcards-jcb, #overview .cardIcon.JCB, .sprites-creditcards-jcb_big, .sprites-creditcards-maestro, #overview .cardIcon.Switch, .sprites-creditcards-maestro_big, .sprites-creditcards-mastercard, #overview .cardIcon.Mastercard, .sprites-creditcards-mastercard_big, .sprites-creditcards-payease, .sprites-creditcards-paypal, .sprites-creditcards-paypal_big, .sprites-creditcards-postepay, .sprites-creditcards-postepay_big, .sprites-creditcards-visa, #overview .cardIcon.Visa, .sprites-creditcards-visa_big {
-  background-image: url('/Content/Styles/generated_images/sprites-creditcards-s9068ad9ed7.png');
+  background-image: url('/styles/generated_images/sprites-creditcards-s9068ad9ed7.png');
   background-repeat: no-repeat;
 }
 
 .sprites-smartphone-sprite, .sprites-smartphone-wechat-qrcode {
-  background-image: url('/Content/Styles/generated_images/sprites-smartphone-scb09bb9be0.png');
+  background-image: url('/styles/generated_images/sprites-smartphone-scb09bb9be0.png');
   background-repeat: no-repeat;
 }
 

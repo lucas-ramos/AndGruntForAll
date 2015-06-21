@@ -1,4 +1,12 @@
 @charset "UTF-8";
+/*
+    zindex
+    Mixin di definizione e utilizzo degli z-index.
+
+    La lista $indexes è crescente dall'alto al basso, e i suoi elementi andranno espressi al momento dell'uso del mixin.
+    Ovviamente l'uso da farne è di tipo semantico, per evitare l'espressione di numeri casuali all'interno dei vari css.
+
+*/
 /* effetto height:100% sugli elementi flottanti */
 @font-face {
   font-family: 'KnockoutLight';
@@ -48,7 +56,7 @@ button, #cart .emptyCartWrap .backToShoppingButton a, .button, #confirmation .go
   font-weight: normal;
 }
 .JP button, .JP #cart .emptyCartWrap .backToShoppingButton a, #cart .emptyCartWrap .backToShoppingButton .JP a, .JP .button, .JP #confirmation .goToDeliveryBtn a, #confirmation .goToDeliveryBtn .JP a, .JP #cart .coupon .couponCode, #cart .coupon .JP .couponCode, .JP #checkmail .radioButtonBox .text, #checkmail .radioButtonBox .JP .text, .JP #delivery #ShippingAddressViewModel_CountryCode_Wrapper, #delivery .JP #ShippingAddressViewModel_CountryCode_Wrapper, .JP #confirmation #billingDetails .billing .zipCode1, #confirmation #billingDetails .billing .JP .zipCode1, .JP #confirmation #billingDetails .billing .zipCode2, #confirmation #billingDetails .billing .JP .zipCode2, .JP #confirmation #billingDetails .country_CN #BillingAddressViewModel_CountryCode_Wrapper .description, #confirmation #billingDetails .country_CN #BillingAddressViewModel_CountryCode_Wrapper .JP .description, .JP #confirmation .coupon .couponCode, #confirmation .coupon .JP .couponCode, .JP #waittobuy .waitToBuyContainer .orderDesc, #waittobuy .waitToBuyContainer .JP .orderDesc {
-  font-family: KnockoutLight, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+  font-family: KnockoutLight, "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", sans-serif;
 }
 .CN button, .CN #cart .emptyCartWrap .backToShoppingButton a, #cart .emptyCartWrap .backToShoppingButton .CN a, .CN .button, .CN #confirmation .goToDeliveryBtn a, #confirmation .goToDeliveryBtn .CN a, .CN #cart .coupon .couponCode, #cart .coupon .CN .couponCode, .CN #checkmail .radioButtonBox .text, #checkmail .radioButtonBox .CN .text, .CN #delivery #ShippingAddressViewModel_CountryCode_Wrapper, #delivery .CN #ShippingAddressViewModel_CountryCode_Wrapper, .CN #confirmation #billingDetails .billing .zipCode1, #confirmation #billingDetails .billing .CN .zipCode1, .CN #confirmation #billingDetails .billing .zipCode2, #confirmation #billingDetails .billing .CN .zipCode2, .CN #confirmation #billingDetails .country_CN #BillingAddressViewModel_CountryCode_Wrapper .description, #confirmation #billingDetails .country_CN #BillingAddressViewModel_CountryCode_Wrapper .CN .description, .CN #confirmation .coupon .couponCode, #confirmation .coupon .CN .couponCode, .CN #waittobuy .waitToBuyContainer .orderDesc, #waittobuy .waitToBuyContainer .CN .orderDesc {
   font-family: KnockoutLight, HelveticaCondensedLight, Arial, "Microsoft YaHei", "Microsoft YaHei Regular", SimHei, "SimHei Regular", sans-serif;
@@ -59,7 +67,7 @@ button, #cart .emptyCartWrap .backToShoppingButton a, .button, #confirmation .go
   font-weight: normal;
 }
 .JP #confirmation #creditCardMethod.userWithCreditCards .newCreditCardButton.selected, #confirmation #creditCardMethod.userWithCreditCards .JP .newCreditCardButton.selected, .JP #confirmation #paymentDetails .paymentTitle, #confirmation #paymentDetails .JP .paymentTitle, .JP #thankyou .thankyouWrapper .orderTitle, #thankyou .thankyouWrapper .JP .orderTitle, .JP #waittobuy .waitToBuyContainer .orderControl .myOrders, #waittobuy .waitToBuyContainer .orderControl .JP .myOrders {
-  font-family: KnockoutRegular, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+  font-family: KnockoutRegular, "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", sans-serif;
 }
 .CN #confirmation #creditCardMethod.userWithCreditCards .newCreditCardButton.selected, #confirmation #creditCardMethod.userWithCreditCards .CN .newCreditCardButton.selected, .CN #confirmation #paymentDetails .paymentTitle, #confirmation #paymentDetails .CN .paymentTitle, .CN #thankyou .thankyouWrapper .orderTitle, #thankyou .thankyouWrapper .CN .orderTitle, .CN #waittobuy .waitToBuyContainer .orderControl .myOrders, #waittobuy .waitToBuyContainer .orderControl .CN .myOrders {
   font-family: KnockoutLight, HelveticaCondensedLight, Arial, "Microsoft YaHei", "Microsoft YaHei Regular", SimHei, "SimHei Regular", sans-serif;
@@ -80,7 +88,7 @@ button, #cart .emptyCartWrap .backToShoppingButton a, .button, #confirmation .go
   font-weight: normal;
 }
 .JP #cart .backToShoppingButton a, #cart .backToShoppingButton .JP a, .JP #cart .itemRow .deleteItem, #cart .itemRow .JP .deleteItem, .JP #delivery #returnBtn .button, #delivery #returnBtn .JP .button, .JP #delivery #returnBtn #confirmation .goToDeliveryBtn a, #delivery #returnBtn #confirmation .goToDeliveryBtn .JP a, .JP #confirmation .goToDeliveryBtn #delivery #returnBtn a, #confirmation .goToDeliveryBtn #delivery #returnBtn .JP a, .JP #cartRecap, .JP #cart .desc, #cart .JP .desc, .JP #cart .emptyCartWrap h2, #cart .emptyCartWrap .JP h2, .JP #cart .bannedBrandsLink, #cart .JP .bannedBrandsLink, .JP #cart #salesterm p, #cart #salesterm .JP p, .JP #checkmail .privacyContainer, #checkmail .JP .privacyContainer, .JP #checkmail .acceptFlags, #checkmail .JP .acceptFlags, .JP #delivery #deliveryContent, #delivery .JP #deliveryContent, .JP #confirmation #creditCardMethod .privacy, #confirmation #creditCardMethod .JP .privacy, .JP #confirmation #creditCardMethod .fastCheckoutSection, #confirmation #creditCardMethod .JP .fastCheckoutSection, .JP #confirmation .bannedBrandsLink, #confirmation .JP .bannedBrandsLink, .JP #confirmation #confirmationSalesTerms #salesTerm .salesTermContent, #confirmation #confirmationSalesTerms #salesTerm .JP .salesTermContent {
-  font-family: LatoRegular, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+  font-family: LatoRegular, "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", sans-serif;
 }
 
 #cartRecap .cartTotal, #cart .brandName, #cart .priceUpdater .discounted, #cart #subtotal, #cart #coupon h4, #cart .cartInfo h3, #cart .cartInfo p, #cart #totals, #cart #salesterm h4, #delivery #deliverySelectionBlock, #confirmation #paymentDetails .otherPaymentMethodsSection #paymentSelection .paymentMethod, #confirmation #coupon h4, #confirmation #confirmationSalesTerms #salesTerm .salesTermTitle {
@@ -88,7 +96,7 @@ button, #cart .emptyCartWrap .backToShoppingButton a, .button, #confirmation .go
   font-weight: normal;
 }
 .JP #cartRecap .cartTotal, #cartRecap .JP .cartTotal, .JP #cart .brandName, #cart .JP .brandName, .JP #cart .priceUpdater .discounted, #cart .priceUpdater .JP .discounted, .JP #cart #subtotal, #cart .JP #subtotal, .JP #cart #coupon h4, #cart #coupon .JP h4, .JP #cart .cartInfo h3, #cart .cartInfo .JP h3, .JP #cart .cartInfo p, #cart .cartInfo .JP p, .JP #cart #totals, #cart .JP #totals, .JP #cart #salesterm h4, #cart #salesterm .JP h4, .JP #delivery #deliverySelectionBlock, #delivery .JP #deliverySelectionBlock, .JP #confirmation #paymentDetails .otherPaymentMethodsSection #paymentSelection .paymentMethod, #confirmation #paymentDetails .otherPaymentMethodsSection #paymentSelection .JP .paymentMethod, .JP #confirmation #coupon h4, #confirmation #coupon .JP h4, .JP #confirmation #confirmationSalesTerms #salesTerm .salesTermTitle, #confirmation #confirmationSalesTerms #salesTerm .JP .salesTermTitle {
-  font-family: LatoBold, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+  font-family: LatoBold, "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", sans-serif;
 }
 
 /* ==========================================================================
@@ -173,12 +181,12 @@ button.disabled, #cart .emptyCartWrap .backToShoppingButton a.disabled, button[d
 }
 
 .sprites-creditcards-sprite, .sprites-creditcards-alipay, .sprites-creditcards-americanexpress, #confirmation #paymentDetails .userCreditCardsListWithForm .cardIcon.AmericanExpress, .sprites-creditcards-americanexpress_big, .sprites-creditcards-cartebleue, #confirmation #paymentDetails .userCreditCardsListWithForm .cardIcon.CarteBleue, .sprites-creditcards-cartebleue_big, .sprites-creditcards-cartebleuevisa_big, .sprites-creditcards-discover, .sprites-creditcards-discover_big, .sprites-creditcards-jcb, #confirmation #paymentDetails .userCreditCardsListWithForm .cardIcon.JCB, .sprites-creditcards-jcb_big, .sprites-creditcards-maestro, #confirmation #paymentDetails .userCreditCardsListWithForm .cardIcon.Switch, .sprites-creditcards-maestro_big, .sprites-creditcards-mastercard, #confirmation #paymentDetails .userCreditCardsListWithForm .cardIcon.Mastercard, .sprites-creditcards-mastercard_big, .sprites-creditcards-payease, .sprites-creditcards-paypal, .sprites-creditcards-paypal_big, .sprites-creditcards-postepay, .sprites-creditcards-postepay_big, .sprites-creditcards-visa, #confirmation #paymentDetails .userCreditCardsListWithForm .cardIcon.Visa, .sprites-creditcards-visa_big {
-  background-image: url('/Content/Styles/generated_images/sprites-creditcards-s9068ad9ed7.png');
+  background-image: url('/styles/generated_images/sprites-creditcards-s9068ad9ed7.png');
   background-repeat: no-repeat;
 }
 
 .sprites-smartphone-sprite, .sprites-smartphone-wechat-qrcode {
-  background-image: url('/Content/Styles/generated_images/sprites-smartphone-scb09bb9be0.png');
+  background-image: url('/styles/generated_images/sprites-smartphone-scb09bb9be0.png');
   background-repeat: no-repeat;
 }
 
@@ -404,7 +412,7 @@ button.disabled, #cart .emptyCartWrap .backToShoppingButton a.disabled, button[d
 #cart {
   /* stili comuni anche per l'oldcart */
   /* end stili comuni anche per l'oldcart */
-  /* questo ├¿ common con il oldcart */
+  /* questo è common con il oldcart */
 }
 #cart #oldCart {
   margin-bottom: 10px;
@@ -1080,7 +1088,7 @@ button.disabled, #cart .emptyCartWrap .backToShoppingButton a.disabled, button[d
 
 #confirmation {
   /* CONFIRMATION BUTTON */
-  /* Salvatore: non dovrebbe esserci gi├á una regola generica?  */
+  /* Salvatore: non dovrebbe esserci già una regola generica?  */
 }
 #confirmation .stileAree, #confirmation #giftDetails, #confirmation #shippingDetails, #confirmation #shippingMethodDetails, #confirmation #billingDetails, #confirmation #paymentDetails, #confirmation #coupon, #confirmation #confirmationSalesTerms {
   background-color: #EBEBEB;

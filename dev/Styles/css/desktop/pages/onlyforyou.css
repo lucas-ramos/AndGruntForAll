@@ -1,4 +1,12 @@
 @charset "UTF-8";
+/*
+    zindex
+    Mixin di definizione e utilizzo degli z-index.
+
+    La lista $indexes è crescente dall'alto al basso, e i suoi elementi andranno espressi al momento dell'uso del mixin.
+    Ovviamente l'uso da farne è di tipo semantico, per evitare l'espressione di numeri casuali all'interno dei vari css.
+
+*/
 /* effetto height:100% sugli elementi flottanti */
 @font-face {
   font-family: 'KnockoutLight';
@@ -48,7 +56,7 @@ button, .button, #breadcrumbs h2, #items .new_arrivals, #items .exclusive_collec
   font-weight: normal;
 }
 .JP button, .JP .button, .JP #breadcrumbs h2, #breadcrumbs .JP h2, .JP #items .new_arrivals, #items .JP .new_arrivals, .JP #items .exclusive_collection, #items .JP .exclusive_collection {
-  font-family: KnockoutLight, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+  font-family: KnockoutLight, "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", sans-serif;
 }
 .CN button, .CN .button, .CN #breadcrumbs h2, #breadcrumbs .CN h2, .CN #items .new_arrivals, #items .CN .new_arrivals, .CN #items .exclusive_collection, #items .CN .exclusive_collection {
   font-family: KnockoutLight, HelveticaCondensedLight, Arial, "Microsoft YaHei", "Microsoft YaHei Regular", SimHei, "SimHei Regular", sans-serif;
@@ -59,7 +67,7 @@ button, .button, #breadcrumbs h2, #items .new_arrivals, #items .exclusive_collec
   font-weight: normal;
 }
 .JP #itemCountWrap .totalResultsCount, #itemCountWrap .JP .totalResultsCount, .JP #items .brandName, #items .JP .brandName {
-  font-family: KnockoutRegular, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+  font-family: KnockoutRegular, "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", sans-serif;
 }
 .CN #itemCountWrap .totalResultsCount, #itemCountWrap .CN .totalResultsCount, .CN #items .brandName, #items .CN .brandName {
   font-family: KnockoutLight, HelveticaCondensedLight, Arial, "Microsoft YaHei", "Microsoft YaHei Regular", SimHei, "SimHei Regular", sans-serif;
@@ -331,50 +339,6 @@ button.disabled:hover, button[disabled]:hover, .button.disabled:hover, .button[d
   background-repeat: no-repeat;
 }
 
-/*
- * SmartLoadingBar v1.0
- * (c) 2014, 2015 Giorgio d'Agostino
- */
-#smartLoadingBar {
-  -moz-transition: opacity 0.5s ease-in 0.5s;
-  -o-transition: opacity 0.5s ease-in 0.5s;
-  -webkit-transition: opacity 0.5s ease-in;
-  -webkit-transition-delay: 0.5s;
-  transition: opacity 0.5s ease-in 0.5s;
-  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
-  opacity: 1;
-  width: 100%;
-  z-index: 21;
-}
-#smartLoadingBar, #smartLoadingBar .slow, #smartLoadingBar .fast {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 2px;
-}
-#smartLoadingBar .slow, #smartLoadingBar .fast {
-  background-color: #000;
-  width: 0%;
-}
-#smartLoadingBar.load .slow {
-  -moz-transition: width 30s ease;
-  -o-transition: width 30s ease;
-  -webkit-transition: width 30s ease;
-  transition: width 30s ease;
-  width: 100%;
-}
-#smartLoadingBar.finish {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
-  opacity: 0;
-}
-#smartLoadingBar.finish .fast {
-  -moz-transition: width 0.5s ease;
-  -o-transition: width 0.5s ease;
-  -webkit-transition: width 0.5s ease;
-  transition: width 0.5s ease;
-  width: 100%;
-}
-
 #banner-designer img {
   display: block;
 }
@@ -516,7 +480,7 @@ button.disabled:hover, button[disabled]:hover, .button.disabled:hover, .button[d
 }
 #banner-designer-desc [data-slot="LOGO_SR"] {
   top: 20px;
-  z-index: 8;
+  z-index: 10;
 }
 #banner-designer-desc [data-item="LOGO_SR"] {
   width: 499px;
@@ -534,7 +498,7 @@ button.disabled:hover, button[disabled]:hover, .button.disabled:hover, .button[d
   width: 499px;
   height: 100%;
   background-color: #FFF;
-  z-index: 9;
+  z-index: 11;
 }
 #banner-designer-desc .bd_text_scroll {
   padding-top: 65px;
@@ -679,7 +643,7 @@ button.disabled:hover, button[disabled]:hover, .button.disabled:hover, .button[d
   font-size: 1.6em;
   height: 40px;
 }
-#imgTypeWrap.invisible {
+[data-dept="tcnewarrivalsm"] #imgTypeWrap, [data-dept="tcnewarrivalsw"] #imgTypeWrap, #imgTypeWrap.invisible {
   visibility: hidden;
 }
 .JP #imgTypeWrap {
@@ -824,6 +788,9 @@ li[data-value="Ranking"] {
   display: none;
 }
 
+#items .markdown {
+  text-transform: uppercase;
+}
 #items .item {
   position: relative;
   height: 435px;
@@ -835,32 +802,32 @@ li[data-value="Ranking"] {
 }
 #items .mainImage {
   display: block;
-  z-index: 6;
+  z-index: 7;
 }
 #items .secondImage {
   display: block;
-  z-index: 5;
+  z-index: 6;
 }
 #items .image {
   height: 282px;
 }
 #items .image:hover .mainImage {
-  z-index: 5;
+  z-index: 6;
 }
 #items .image:hover .secondImage {
-  z-index: 6;
+  z-index: 7;
 }
 #items.alternativeView .mainImage {
-  z-index: 5;
+  z-index: 6;
 }
 #items.alternativeView .secondImage {
-  z-index: 6;
+  z-index: 7;
 }
 #items.alternativeView .image:hover .mainImage {
-  z-index: 6;
+  z-index: 7;
 }
 #items.alternativeView .image:hover .secondImage {
-  z-index: 5;
+  z-index: 6;
 }
 .show-courtesy #items {
   display: none;

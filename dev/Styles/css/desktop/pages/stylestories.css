@@ -1,4 +1,12 @@
 @charset "UTF-8";
+/*
+    zindex
+    Mixin di definizione e utilizzo degli z-index.
+
+    La lista $indexes è crescente dall'alto al basso, e i suoi elementi andranno espressi al momento dell'uso del mixin.
+    Ovviamente l'uso da farne è di tipo semantico, per evitare l'espressione di numeri casuali all'interno dei vari css.
+
+*/
 /* effetto height:100% sugli elementi flottanti */
 @font-face {
   font-family: 'KnockoutLight';
@@ -44,24 +52,24 @@
   font-weight: normal;
 }
 .JP #nav-menu li button, #nav-menu li .JP button {
-  font-family: KnockoutRegular, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+  font-family: KnockoutRegular, "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", sans-serif;
 }
 .CN #nav-menu li button, #nav-menu li .CN button {
   font-family: KnockoutLight, HelveticaCondensedLight, Arial, "Microsoft YaHei", "Microsoft YaHei Regular", SimHei, "SimHei Regular", sans-serif;
 }
 
 .svgfallback-sprite {
-  background-image: url('/Content/Styles/generated_images/svgfallback-s163386ba73.png');
+  background-image: url('/styles/generated_images/svgfallback-s163386ba73.png');
   background-repeat: no-repeat;
 }
 
 .sprites-desktop-sprite, .sprites-desktop-checkMark, .sprites-desktop-checkWhite, .sprites-desktop-cinesina, .sprites-desktop-fb_btn, .sprites-desktop-giftPackage, .sprites-desktop-giftPackageChina, .sprites-desktop-gplus_btn, .sprites-desktop-kaixin_btn, .sprites-desktop-pinit_btn, .sprites-desktop-plusone_btn, .sprites-desktop-seal, .sprites-desktop-small_i, .sprites-desktop-tweet_btn, .sprites-desktop-twitter_btn, .sprites-desktop-weiboo_btn {
-  background-image: url('/Content/Styles/generated_images/sprites-desktop-s6783407e58.png');
+  background-image: url('/styles/generated_images/sprites-desktop-s6783407e58.png');
   background-repeat: no-repeat;
 }
 
 .sprites-creditcards-sprite, .sprites-creditcards-alipay, .sprites-creditcards-americanexpress, .sprites-creditcards-americanexpress_big, .sprites-creditcards-cartebleue, .sprites-creditcards-cartebleue_big, .sprites-creditcards-cartebleuevisa_big, .sprites-creditcards-discover, .sprites-creditcards-discover_big, .sprites-creditcards-jcb, .sprites-creditcards-jcb_big, .sprites-creditcards-maestro, .sprites-creditcards-maestro_big, .sprites-creditcards-mastercard, .sprites-creditcards-mastercard_big, .sprites-creditcards-payease, .sprites-creditcards-paypal, .sprites-creditcards-paypal_big, .sprites-creditcards-postepay, .sprites-creditcards-postepay_big, .sprites-creditcards-visa, .sprites-creditcards-visa_big {
-  background-image: url('/Content/Styles/generated_images/sprites-creditcards-s9068ad9ed7.png');
+  background-image: url('/styles/generated_images/sprites-creditcards-s9068ad9ed7.png');
   background-repeat: no-repeat;
 }
 
@@ -310,7 +318,7 @@
   position: fixed;
   display: block;
   width: 100%;
-  z-index: 9;
+  z-index: 8;
   background-color: #FFF;
 }
 #top-menu h2 {

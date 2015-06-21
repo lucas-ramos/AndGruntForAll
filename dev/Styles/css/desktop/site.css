@@ -646,6 +646,14 @@ img.mfp-img {
   position: absolute !important;
 }
 
+/*
+    zindex
+    Mixin di definizione e utilizzo degli z-index.
+
+    La lista $indexes è crescente dall'alto al basso, e i suoi elementi andranno espressi al momento dell'uso del mixin.
+    Ovviamente l'uso da farne è di tipo semantico, per evitare l'espressione di numeri casuali all'interno dei vari css.
+
+*/
 /* effetto height:100% sugli elementi flottanti */
 @font-face {
   font-family: 'KnockoutLight';
@@ -690,7 +698,7 @@ img.mfp-img {
   font-family: Arial, Verdana, sans-serif;
 }
 
-.RU h1, .RU h2, .RU h3, .RU strong, .RU .priceUpdater .price, .priceUpdater .RU .price, .RU .uiLayer-newsletterLink button, .uiLayer-newsletterLink .RU button, .RU .uiLayer-newsletterLink #NewsletterViewModel_Email, .uiLayer-newsletterLink .RU #NewsletterViewModel_Email, .RU .uiLayer-newsletterLink #subscribeNewsletterSuccess p, .uiLayer-newsletterLink #subscribeNewsletterSuccess .RU p, .RU .uiLayer-newsletterLink #subscribeNewsletterSuccess .validation-summary-errors, .uiLayer-newsletterLink #subscribeNewsletterSuccess .RU .validation-summary-errors, .RU #mainMenu .level-1 > ul > li.tcpromotionsw, #mainMenu .RU .level-1 > ul > li.tcpromotionsw, .RU #mainMenu .level-1 > ul > li.tcpromotionsm, #mainMenu .RU .level-1 > ul > li.tcpromotionsm, .RU #mainMenu .level-1 > ul > li.tcsalesw, #mainMenu .RU .level-1 > ul > li.tcsalesw, .RU #mainMenu .level-1 > ul > li.tcsalesm, #mainMenu .RU .level-1 > ul > li.tcsalesm, .RU #mainMenu .level-2 > ul .menuItemSet .level-3 .title, #mainMenu .level-2 > ul .menuItemSet .level-3 .RU .title, .RU #miniCart .dataRow.Total, #miniCart .RU .dataRow.Total, .RU #miniCart .brandName, #miniCart .RU .brandName, .RU #headerLayer .headerLayerContent .title .text, #headerLayer .headerLayerContent .title .RU .text, .RU #miniWishList .brandName, #miniWishList .RU .brandName {
+.RU h1, .RU h2, .RU h3, .RU strong, .RU .priceUpdater .price, .priceUpdater .RU .price, .RU .uiLayer-newsletterLink button, .uiLayer-newsletterLink .RU button, .RU .uiLayer-newsletterLink #NewsletterViewModel_Email, .uiLayer-newsletterLink .RU #NewsletterViewModel_Email, .RU .uiLayer-newsletterLink #subscribeNewsletterSuccess p, .uiLayer-newsletterLink #subscribeNewsletterSuccess .RU p, .RU .uiLayer-newsletterLink #subscribeNewsletterSuccess .validation-summary-errors, .uiLayer-newsletterLink #subscribeNewsletterSuccess .RU .validation-summary-errors, .RU #mainMenu .level-1 > ul > li.tcpromotionsw, #mainMenu .RU .level-1 > ul > li.tcpromotionsw, .RU #mainMenu .level-1 > ul > li.tcpromotionsm, #mainMenu .RU .level-1 > ul > li.tcpromotionsm, .RU #mainMenu .level-1 > ul > li.tcsalesw, #mainMenu .RU .level-1 > ul > li.tcsalesw, .RU #mainMenu .level-1 > ul > li.tcsalesm, #mainMenu .RU .level-1 > ul > li.tcsalesm, .RU #mainMenu .level-2 > ul .menuItemSet .level-3 .title, #mainMenu .level-2 > ul .menuItemSet .level-3 .RU .title, .RU #miniCart .Total .totalPrices, #miniCart .Total .RU .totalPrices, .RU #miniCart .Total .label, #miniCart .Total .RU .label, .RU #miniCart .brandName, #miniCart .RU .brandName, .RU #headerLayer .headerLayerContent .title .text, #headerLayer .headerLayerContent .title .RU .text, .RU #miniWishList .brandName, #miniWishList .RU .brandName {
   font-family: Arial, Verdana, sans-serif;
   font-weight: bold;
 }
@@ -710,7 +718,7 @@ select, #miniCart .dataContainer > div, #suggestionContainer .suggestions, #mini
 .JP input[type="password"],
 .JP textarea,
 .JP select, .JP #miniCart .dataContainer > div, #miniCart .JP .dataContainer > div, .JP #suggestionContainer .suggestions, #suggestionContainer .JP .suggestions, .JP #miniWishList .microCategory, #miniWishList .JP .microCategory, .JP .linkSection .shippingCountry .value, .linkSection .shippingCountry .JP .value, .JP #viewMoreCountries, .JP #info404 {
-  font-family: KnockoutLight, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+  font-family: KnockoutLight, "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", sans-serif;
 }
 .CN button, .CN .button, .CN #miniCart .goToCartLink, #miniCart .CN .goToCartLink, .CN #miniCart .proceedWithCheckoutLink, #miniCart .CN .proceedWithCheckoutLink, .CN body, .CN h4, .CN h5, .CN h6, .CN .priceUpdater .price.full, .priceUpdater .CN .price.full, .CN input[type="text"],
 .CN input[type="tel"],
@@ -721,14 +729,14 @@ select, #miniCart .dataContainer > div, #suggestionContainer .suggestions, #mini
   font-family: KnockoutLight, HelveticaCondensedLight, Arial, "Microsoft YaHei", "Microsoft YaHei Regular", SimHei, "SimHei Regular", sans-serif;
 }
 
-h1, h2, h3, strong, .priceUpdater .price, .priceUpdater .price.discounted, .uiLayer-newsletterLink button, .uiLayer-newsletterLink #NewsletterViewModel_Email, .uiLayer-newsletterLink #subscribeNewsletterSuccess p, .uiLayer-newsletterLink #subscribeNewsletterSuccess .validation-summary-errors, #mainMenu .level-1 > ul > li.tcpromotionsw, #mainMenu .level-1 > ul > li.tcpromotionsm, #mainMenu .level-1 > ul > li.tcsalesw, #mainMenu .level-1 > ul > li.tcsalesm, #mainMenu .level-2 > ul .menuItemSet .level-3 .title, #miniCart .dataRow.Total, #miniCart .brandName, #headerLayer .headerLayerContent .title .text, #miniWishList .brandName {
+h1, h2, h3, strong, .priceUpdater .price, .priceUpdater .price.discounted, .uiLayer-newsletterLink button, .uiLayer-newsletterLink #NewsletterViewModel_Email, .uiLayer-newsletterLink #subscribeNewsletterSuccess p, .uiLayer-newsletterLink #subscribeNewsletterSuccess .validation-summary-errors, #mainMenu .level-1 > ul > li.tcpromotionsw, #mainMenu .level-1 > ul > li.tcpromotionsm, #mainMenu .level-1 > ul > li.tcsalesw, #mainMenu .level-1 > ul > li.tcsalesm, #mainMenu .level-2 > ul .menuItemSet .level-3 .title, #miniCart .Total .totalPrices, #miniCart .Total .label, #miniCart .brandName, #headerLayer .headerLayerContent .title .text, #miniWishList .brandName {
   font-family: KnockoutRegular, Arial, Verdana, sans-serif;
   font-weight: normal;
 }
-.JP h1, .JP h2, .JP h3, .JP strong, .JP .priceUpdater .price, .priceUpdater .JP .price, .JP .uiLayer-newsletterLink button, .uiLayer-newsletterLink .JP button, .JP .uiLayer-newsletterLink #NewsletterViewModel_Email, .uiLayer-newsletterLink .JP #NewsletterViewModel_Email, .JP .uiLayer-newsletterLink #subscribeNewsletterSuccess p, .uiLayer-newsletterLink #subscribeNewsletterSuccess .JP p, .JP .uiLayer-newsletterLink #subscribeNewsletterSuccess .validation-summary-errors, .uiLayer-newsletterLink #subscribeNewsletterSuccess .JP .validation-summary-errors, .JP #mainMenu .level-1 > ul > li.tcpromotionsw, #mainMenu .JP .level-1 > ul > li.tcpromotionsw, .JP #mainMenu .level-1 > ul > li.tcpromotionsm, #mainMenu .JP .level-1 > ul > li.tcpromotionsm, .JP #mainMenu .level-1 > ul > li.tcsalesw, #mainMenu .JP .level-1 > ul > li.tcsalesw, .JP #mainMenu .level-1 > ul > li.tcsalesm, #mainMenu .JP .level-1 > ul > li.tcsalesm, .JP #mainMenu .level-2 > ul .menuItemSet .level-3 .title, #mainMenu .level-2 > ul .menuItemSet .level-3 .JP .title, .JP #miniCart .dataRow.Total, #miniCart .JP .dataRow.Total, .JP #miniCart .brandName, #miniCart .JP .brandName, .JP #headerLayer .headerLayerContent .title .text, #headerLayer .headerLayerContent .title .JP .text, .JP #miniWishList .brandName, #miniWishList .JP .brandName {
-  font-family: KnockoutRegular, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+.JP h1, .JP h2, .JP h3, .JP strong, .JP .priceUpdater .price, .priceUpdater .JP .price, .JP .uiLayer-newsletterLink button, .uiLayer-newsletterLink .JP button, .JP .uiLayer-newsletterLink #NewsletterViewModel_Email, .uiLayer-newsletterLink .JP #NewsletterViewModel_Email, .JP .uiLayer-newsletterLink #subscribeNewsletterSuccess p, .uiLayer-newsletterLink #subscribeNewsletterSuccess .JP p, .JP .uiLayer-newsletterLink #subscribeNewsletterSuccess .validation-summary-errors, .uiLayer-newsletterLink #subscribeNewsletterSuccess .JP .validation-summary-errors, .JP #mainMenu .level-1 > ul > li.tcpromotionsw, #mainMenu .JP .level-1 > ul > li.tcpromotionsw, .JP #mainMenu .level-1 > ul > li.tcpromotionsm, #mainMenu .JP .level-1 > ul > li.tcpromotionsm, .JP #mainMenu .level-1 > ul > li.tcsalesw, #mainMenu .JP .level-1 > ul > li.tcsalesw, .JP #mainMenu .level-1 > ul > li.tcsalesm, #mainMenu .JP .level-1 > ul > li.tcsalesm, .JP #mainMenu .level-2 > ul .menuItemSet .level-3 .title, #mainMenu .level-2 > ul .menuItemSet .level-3 .JP .title, .JP #miniCart .Total .totalPrices, #miniCart .Total .JP .totalPrices, .JP #miniCart .Total .label, #miniCart .Total .JP .label, .JP #miniCart .brandName, #miniCart .JP .brandName, .JP #headerLayer .headerLayerContent .title .text, #headerLayer .headerLayerContent .title .JP .text, .JP #miniWishList .brandName, #miniWishList .JP .brandName {
+  font-family: KnockoutRegular, "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", sans-serif;
 }
-.CN h1, .CN h2, .CN h3, .CN strong, .CN .priceUpdater .price, .priceUpdater .CN .price, .CN .uiLayer-newsletterLink button, .uiLayer-newsletterLink .CN button, .CN .uiLayer-newsletterLink #NewsletterViewModel_Email, .uiLayer-newsletterLink .CN #NewsletterViewModel_Email, .CN .uiLayer-newsletterLink #subscribeNewsletterSuccess p, .uiLayer-newsletterLink #subscribeNewsletterSuccess .CN p, .CN .uiLayer-newsletterLink #subscribeNewsletterSuccess .validation-summary-errors, .uiLayer-newsletterLink #subscribeNewsletterSuccess .CN .validation-summary-errors, .CN #mainMenu .level-1 > ul > li.tcpromotionsw, #mainMenu .CN .level-1 > ul > li.tcpromotionsw, .CN #mainMenu .level-1 > ul > li.tcpromotionsm, #mainMenu .CN .level-1 > ul > li.tcpromotionsm, .CN #mainMenu .level-1 > ul > li.tcsalesw, #mainMenu .CN .level-1 > ul > li.tcsalesw, .CN #mainMenu .level-1 > ul > li.tcsalesm, #mainMenu .CN .level-1 > ul > li.tcsalesm, .CN #mainMenu .level-2 > ul .menuItemSet .level-3 .title, #mainMenu .level-2 > ul .menuItemSet .level-3 .CN .title, .CN #miniCart .dataRow.Total, #miniCart .CN .dataRow.Total, .CN #miniCart .brandName, #miniCart .CN .brandName, .CN #headerLayer .headerLayerContent .title .text, #headerLayer .headerLayerContent .title .CN .text, .CN #miniWishList .brandName, #miniWishList .CN .brandName {
+.CN h1, .CN h2, .CN h3, .CN strong, .CN .priceUpdater .price, .priceUpdater .CN .price, .CN .uiLayer-newsletterLink button, .uiLayer-newsletterLink .CN button, .CN .uiLayer-newsletterLink #NewsletterViewModel_Email, .uiLayer-newsletterLink .CN #NewsletterViewModel_Email, .CN .uiLayer-newsletterLink #subscribeNewsletterSuccess p, .uiLayer-newsletterLink #subscribeNewsletterSuccess .CN p, .CN .uiLayer-newsletterLink #subscribeNewsletterSuccess .validation-summary-errors, .uiLayer-newsletterLink #subscribeNewsletterSuccess .CN .validation-summary-errors, .CN #mainMenu .level-1 > ul > li.tcpromotionsw, #mainMenu .CN .level-1 > ul > li.tcpromotionsw, .CN #mainMenu .level-1 > ul > li.tcpromotionsm, #mainMenu .CN .level-1 > ul > li.tcpromotionsm, .CN #mainMenu .level-1 > ul > li.tcsalesw, #mainMenu .CN .level-1 > ul > li.tcsalesw, .CN #mainMenu .level-1 > ul > li.tcsalesm, #mainMenu .CN .level-1 > ul > li.tcsalesm, .CN #mainMenu .level-2 > ul .menuItemSet .level-3 .title, #mainMenu .level-2 > ul .menuItemSet .level-3 .CN .title, .CN #miniCart .Total .totalPrices, #miniCart .Total .CN .totalPrices, .CN #miniCart .Total .label, #miniCart .Total .CN .label, .CN #miniCart .brandName, #miniCart .CN .brandName, .CN #headerLayer .headerLayerContent .title .text, #headerLayer .headerLayerContent .title .CN .text, .CN #miniWishList .brandName, #miniWishList .CN .brandName {
   font-family: KnockoutLight, HelveticaCondensedLight, Arial, "Microsoft YaHei", "Microsoft YaHei Regular", SimHei, "SimHei Regular", sans-serif;
 }
 
@@ -742,7 +750,7 @@ h1, h2, h3, strong, .priceUpdater .price, .priceUpdater .price.discounted, .uiLa
   font-weight: normal;
 }
 .JP .halfSize #headerLayer .headerLayerContent .items .size .value, .halfSize #headerLayer .headerLayerContent .items .size .JP .value {
-  font-family: LatoRegular, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+  font-family: LatoRegular, "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", sans-serif;
 }
 
 /* ==========================================================================
@@ -836,17 +844,17 @@ button.disabled:hover, button[disabled]:hover, .button.disabled:hover, #miniCart
 }
 
 .svgfallback-sprite {
-  background-image: url('/Content/Styles/generated_images/svgfallback-s163386ba73.png');
+  background-image: url('/styles/generated_images/svgfallback-s163386ba73.png');
   background-repeat: no-repeat;
 }
 
 .sprites-desktop-sprite, .sprites-desktop-checkMark, .sprites-desktop-checkWhite, .sprites-desktop-cinesina, .sprites-desktop-fb_btn, .sprites-desktop-giftPackage, .sprites-desktop-giftPackageChina, .sprites-desktop-gplus_btn, .sprites-desktop-kaixin_btn, .sprites-desktop-pinit_btn, .sprites-desktop-plusone_btn, .sprites-desktop-seal, .trustwave .image, .sprites-desktop-small_i, .sprites-desktop-tweet_btn, .sprites-desktop-twitter_btn, .sprites-desktop-weiboo_btn {
-  background-image: url('/Content/Styles/generated_images/sprites-desktop-s6783407e58.png');
+  background-image: url('/styles/generated_images/sprites-desktop-s6783407e58.png');
   background-repeat: no-repeat;
 }
 
 .sprites-creditcards-sprite, .sprites-creditcards-alipay, .sprites-creditcards-americanexpress, .sprites-creditcards-americanexpress_big, .sprites-creditcards-cartebleue, .sprites-creditcards-cartebleue_big, .sprites-creditcards-cartebleuevisa_big, .sprites-creditcards-discover, .sprites-creditcards-discover_big, .sprites-creditcards-jcb, .sprites-creditcards-jcb_big, .sprites-creditcards-maestro, .sprites-creditcards-maestro_big, .sprites-creditcards-mastercard, .sprites-creditcards-mastercard_big, .sprites-creditcards-payease, .sprites-creditcards-paypal, .sprites-creditcards-paypal_big, .sprites-creditcards-postepay, .sprites-creditcards-postepay_big, .sprites-creditcards-visa, .sprites-creditcards-visa_big {
-  background-image: url('/Content/Styles/generated_images/sprites-creditcards-s9068ad9ed7.png');
+  background-image: url('/styles/generated_images/sprites-creditcards-s9068ad9ed7.png');
   background-repeat: no-repeat;
 }
 
@@ -1412,7 +1420,7 @@ input[type="password"].valid {
 .ielt9 input[type="tel"].valid, .ielt9 * [data-ytos-zipcodejp].valid ~ input[type="email"], * .ielt9 [data-ytos-zipcodejp].valid ~ input[type="email"],
 .ielt9 input[type="email"].valid, .ielt9 * [data-ytos-zipcodejp].valid ~ input[type="password"], * .ielt9 [data-ytos-zipcodejp].valid ~ input[type="password"],
 .ielt9 input[type="password"].valid, .no-svg .textSearch button, .textSearch .no-svg button, .ielt9 .textSearch button, .textSearch .ielt9 button, .no-svg .US #logo .icon, .US #logo .no-svg .icon, .ielt9 .US #logo .icon, .US #logo .ielt9 .icon, .no-svg .uiLayer-newsletterLink .nlTopBar .icon, .uiLayer-newsletterLink .nlTopBar .no-svg .icon, .no-svg #logo .icon, #logo .no-svg .icon, .ielt9 .uiLayer-newsletterLink .nlTopBar .icon, .uiLayer-newsletterLink .nlTopBar .ielt9 .icon, .ielt9 #logo .icon, #logo .ielt9 .icon, .no-svg .newsletterLink .icon, .newsletterLink .no-svg .icon, .ielt9 .newsletterLink .icon, .newsletterLink .ielt9 .icon, .no-svg .svg-shoppingbag, .no-svg .mainCartLink .icon, .mainCartLink .no-svg .icon, .ielt9 .svg-shoppingbag, .ielt9 .mainCartLink .icon, .mainCartLink .ielt9 .icon, .no-svg .socialSection .footerListContainer li.facebook .icon, .socialSection .footerListContainer li.facebook .no-svg .icon, .ielt9 .socialSection .footerListContainer li.facebook .icon, .socialSection .footerListContainer li.facebook .ielt9 .icon, .no-svg .socialSection .footerListContainer li.googleplus .icon, .socialSection .footerListContainer li.googleplus .no-svg .icon, .ielt9 .socialSection .footerListContainer li.googleplus .icon, .socialSection .footerListContainer li.googleplus .ielt9 .icon, .no-svg .socialSection .footerListContainer li.instagram .icon, .socialSection .footerListContainer li.instagram .no-svg .icon, .ielt9 .socialSection .footerListContainer li.instagram .icon, .socialSection .footerListContainer li.instagram .ielt9 .icon, .no-svg .socialSection .footerListContainer li.pinterest .icon, .socialSection .footerListContainer li.pinterest .no-svg .icon, .ielt9 .socialSection .footerListContainer li.pinterest .icon, .socialSection .footerListContainer li.pinterest .ielt9 .icon, .no-svg .socialSection .footerListContainer li.tumblr .icon, .socialSection .footerListContainer li.tumblr .no-svg .icon, .ielt9 .socialSection .footerListContainer li.tumblr .icon, .socialSection .footerListContainer li.tumblr .ielt9 .icon, .no-svg .socialSection .footerListContainer li.twitter .icon, .socialSection .footerListContainer li.twitter .no-svg .icon, .ielt9 .socialSection .footerListContainer li.twitter .icon, .socialSection .footerListContainer li.twitter .ielt9 .icon, .no-svg .socialSection .footerListContainer li.youtube .icon, .socialSection .footerListContainer li.youtube .no-svg .icon, .ielt9 .socialSection .footerListContainer li.youtube .icon, .socialSection .footerListContainer li.youtube .ielt9 .icon {
-  background-image: url('/Content/Styles/generated_images/desktop-fallback-s59a2bd1d81.png');
+  background-image: url('/styles/generated_images/desktop-fallback-s59a2bd1d81.png');
   background-repeat: no-repeat;
 }
 
@@ -1713,6 +1721,7 @@ svg {
 .loadingAnimation {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
   opacity: 0.8;
+  z-index: 24;
   background-color: #FFF;
   position: fixed;
   top: 0;
@@ -1862,6 +1871,50 @@ svg {
   animation: fade 0.75s infinite 0.6875s;
 }
 
+/*
+ * SmartLoadingBar v1.0
+ * (c) 2014, 2015 Giorgio d'Agostino
+ */
+#smartLoadingBar {
+  -moz-transition: opacity 0.5s ease-in 0.5s;
+  -o-transition: opacity 0.5s ease-in 0.5s;
+  -webkit-transition: opacity 0.5s ease-in;
+  -webkit-transition-delay: 0.5s;
+  transition: opacity 0.5s ease-in 0.5s;
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+  width: 100%;
+  z-index: 23;
+}
+#smartLoadingBar, #smartLoadingBar .slow, #smartLoadingBar .fast {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+}
+#smartLoadingBar .slow, #smartLoadingBar .fast {
+  background-color: #000;
+  width: 0%;
+}
+#smartLoadingBar.load .slow {
+  -moz-transition: width 30s ease;
+  -o-transition: width 30s ease;
+  -webkit-transition: width 30s ease;
+  transition: width 30s ease;
+  width: 100%;
+}
+#smartLoadingBar.finish {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+}
+#smartLoadingBar.finish .fast {
+  -moz-transition: width 0.5s ease;
+  -o-transition: width 0.5s ease;
+  -webkit-transition: width 0.5s ease;
+  transition: width 0.5s ease;
+  width: 100%;
+}
+
 .nicescroll-rails {
   cursor: pointer;
 }
@@ -1911,7 +1964,7 @@ svg {
   top: 40px;
   left: 0;
   width: 100%;
-  z-index: 7;
+  z-index: 9;
   background-color: #FFF;
   border-color: #EBEBEB;
   border-style: solid;
@@ -1960,7 +2013,7 @@ svg {
 }
 
 .desktop-checkbox-fallback-sprite, .no-svg .checkBox input[type="checkbox"] ~ .checkboxIcon, .checkBox .no-svg input[type="checkbox"] ~ .checkboxIcon, .ielt9 .checkBox input[type="checkbox"] ~ .checkboxIcon, .checkBox .ielt9 input[type="checkbox"] ~ .checkboxIcon {
-  background-image: url('/Content/Styles/generated_images/desktop-checkbox-fallback-sb706dbf1b4.png');
+  background-image: url('/styles/generated_images/desktop-checkbox-fallback-sb706dbf1b4.png');
   background-repeat: no-repeat;
 }
 
@@ -1991,7 +2044,7 @@ svg {
 }
 
 .desktop-radiobutton-fallback-sprite, .no-svg .radioButton input[type="radio"] ~ .radioIcon, .radioButton .no-svg input[type="radio"] ~ .radioIcon, .ielt9 .radioButton input[type="radio"] ~ .radioIcon, .radioButton .ielt9 input[type="radio"] ~ .radioIcon {
-  background-image: url('/Content/Styles/generated_images/desktop-radiobutton-fallback-s07cdb2da60.png');
+  background-image: url('/styles/generated_images/desktop-radiobutton-fallback-s07cdb2da60.png');
   background-repeat: no-repeat;
 }
 
@@ -2249,7 +2302,7 @@ html.RU .mfp-inline-holder .inner .uiLayer-removeSelectedWishListItems > div, ht
 
 .mfp-bg {
   opacity: 0.7;
-  z-index: 17;
+  z-index: 19;
   background-color: #FFF;
 }
 
@@ -2385,6 +2438,10 @@ html.RU .mfp-inline-holder .inner .uiLayer-removeSelectedWishListItems > div, ht
   font-size: 1.6em;
   max-width: 500px;
   min-width: 400px;
+}
+
+.uiLayer-salesTaxesDescrPopup {
+  font-size: 1.6em;
 }
 
 .uiLayer-getRecoveryPassword h1 {
@@ -2715,13 +2772,13 @@ body[data-gender="U"] #mainMenu > [data-target-gender="D"] {
   float: left;
   margin: 0 10px 0 0;
 }
-body.CN #mainMenu .level-1 > ul > li {
+.CN #mainMenu .level-1 > ul > li {
   margin: 0 6px 0 0;
 }
 #mainMenu .level-1 > ul > li > a:first-child, #mainMenu .level-1 > ul > li > div:first-child {
   padding: 0 10px;
 }
-body.RU #mainMenu .level-1 > ul > li > a:first-child, body.CN #mainMenu .level-1 > ul > li > a:first-child, body.RU #mainMenu .level-1 > ul > li > div:first-child, body.CN #mainMenu .level-1 > ul > li > div:first-child {
+.RU #mainMenu .level-1 > ul > li > a:first-child, .RU #mainMenu .level-1 > ul > li > div:first-child {
   padding: 0 2px;
 }
 #mainMenu .level-1 > ul > li > a:first-child > .text, #mainMenu .level-1 > ul > li > div:first-child > .text {
@@ -2730,6 +2787,9 @@ body.RU #mainMenu .level-1 > ul > li > a:first-child, body.CN #mainMenu .level-1
   color: #000;
   position: relative;
   top: 3px;
+}
+.CN #mainMenu .level-1 > ul > li > a:first-child > .text, .CN #mainMenu .level-1 > ul > li > div:first-child > .text {
+  font-size: 1.5em;
 }
 #mainMenu .level-1 > ul > li:hover, #mainMenu .level-1 > ul > li.showMenuLayer {
   background-color: #EBEBEB;
@@ -2807,16 +2867,9 @@ body.RU #mainMenu .level-1 > ul > li > a:first-child, body.CN #mainMenu .level-1
   float: left;
   margin-left: 7px;
 }
-body[data-gender="U"] #mainMenu .level-1[data-target-gender="D"], body[data-gender="D"] #mainMenu .level-1[data-target-gender="U"] {
-  display: none;
-}
 #mainMenu .layerMenuQtip {
   background-color: #EBEBEB;
   border-width: 0 0 1px 0;
-}
-
-.CN #mainMenu .level-1 > ul > li > a:first-child > .text {
-  font-size: 1.5em;
 }
 
 #mainMenu .level-1 ul li[data-target-code="giftguide"] {
@@ -2841,7 +2894,7 @@ body[data-gender="U"] #mainMenu .level-1[data-target-gender="D"], body[data-gend
 
 #ccareLayer {
   position: fixed;
-  z-index: 20;
+  z-index: 22;
   top: 160px;
   right: -80px;
   width: 120px;
@@ -2992,11 +3045,34 @@ body[data-gender="U"] #mainMenu .level-1[data-target-gender="D"], body[data-gend
   display: table;
   clear: both;
 }
-#miniCart .dataRow.Total {
-  font-size: 2em;
+#miniCart .Total {
+  position: relative;
+}
+#miniCart .Total .label {
+  float: left;
+  font-size: 1.3em;
+}
+.JP #miniCart .Total .label {
+  font-size: 1em;
+  line-height: 1.3em;
+}
+#miniCart .Total .totalPrices {
+  float: right;
+  font-size: 1.3em;
+}
+#miniCart .Total .totalPrices, #miniCart .Total .label {
   text-transform: uppercase;
   color: #000;
   margin-bottom: 7px;
+}
+#miniCart .Total .salesTaxesDescr {
+  display: none;
+}
+#miniCart .Total .salesTaxesDescrPopup {
+  position: absolute;
+  top: 1.3em;
+  cursor: pointer;
+  text-decoration: underline;
 }
 #miniCart .dataContainer {
   margin-top: 10px;
@@ -3026,15 +3102,6 @@ body[data-gender="U"] #mainMenu .level-1[data-target-gender="D"], body[data-gend
 .JP #miniCart .dataContainer .dataRow .dataRowLabel {
   font-size: 0.9em;
   line-height: 1.5em;
-}
-#miniCart .dataContainer .dataRow .cartTotal {
-  float: right;
-}
-#miniCart .dataContainer .dataRow .cartTotal .label {
-  display: none;
-}
-#miniCart .dataContainer .dataRow .cartTotal .salesTaxesDescrPopup {
-  display: none;
 }
 #miniCart .dataContainer .dataRow .dataRowContent {
   float: right;
@@ -3109,7 +3176,10 @@ body[data-gender="U"] #mainMenu .level-1[data-target-gender="D"], body[data-gend
 #miniCart .info {
   float: left;
   margin-left: 3px;
-  max-width: 129px;
+  max-width: 128px;
+}
+.JP #miniCart .info {
+  margin-left: 0;
 }
 #miniCart .info .microCategory, #miniCart .info .color, #miniCart .info .size, #miniCart .info .quantity, #miniCart .info .modelName {
   display: block;
@@ -3117,6 +3187,7 @@ body[data-gender="U"] #mainMenu .level-1[data-target-gender="D"], body[data-gend
   color: #999;
   clear: both;
   padding: 1px 0;
+  max-width: 120px;
 }
 #miniCart .info .microCategory .label, #miniCart .info .color .label, #miniCart .info .size .label, #miniCart .info .quantity .label, #miniCart .info .modelName .label {
   margin-right: 3px;
@@ -3309,7 +3380,7 @@ body[data-gender="U"] #mainMenu .level-1[data-target-gender="D"], body[data-gend
   position: absolute;
   text-align: left;
   width: 230px;
-  z-index: 12;
+  z-index: 14;
   line-height: 1.8em;
   color: #333;
 }
@@ -3326,7 +3397,7 @@ body[data-gender="U"] #mainMenu .level-1[data-target-gender="D"], body[data-gend
   top: 0;
   left: 0;
   right: 0;
-  z-index: 12;
+  z-index: 14;
 }
 
 #closingCrossLayer {
@@ -3348,7 +3419,7 @@ body[data-gender="U"] #mainMenu .level-1[data-target-gender="D"], body[data-gend
   position: absolute;
   top: 10px;
   right: 6px;
-  z-index: 15;
+  z-index: 17;
 }
 #headerLayer .closeCross .icon {
   display: block;
@@ -3402,7 +3473,7 @@ body[data-gender="U"] #mainMenu .level-1[data-target-gender="D"], body[data-gend
 #headerLayer.loginLayerOpen #headerLoginLayer {
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
-  z-index: 14;
+  z-index: 16;
 }
 #headerLayer.cartLayerOpen {
   height: 280px;
@@ -3410,7 +3481,7 @@ body[data-gender="U"] #mainMenu .level-1[data-target-gender="D"], body[data-gend
 #headerLayer.cartLayerOpen #headerCartLayer {
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
-  z-index: 14;
+  z-index: 16;
 }
 #headerLayer.wishlistLayerOpen {
   height: 260px;
@@ -3418,7 +3489,7 @@ body[data-gender="U"] #mainMenu .level-1[data-target-gender="D"], body[data-gend
 #headerLayer.wishlistLayerOpen #headerWishlistLayer {
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
-  z-index: 14;
+  z-index: 16;
 }
 #headerLayer #headerLoginLayer, #headerLayer #headerCartLayer, #headerLayer #headerWishlistLayer, #headerLayer .loadingLayer {
   position: absolute;
@@ -3437,7 +3508,7 @@ body[data-gender="U"] #mainMenu .level-1[data-target-gender="D"], body[data-gend
   opacity: 0;
 }
 #headerLayer .loadingLayer {
-  z-index: 16;
+  z-index: 18;
 }
 #headerLayer .mandatory {
   display: none;
@@ -3777,7 +3848,7 @@ body[data-gender="D"] #genderSelector [data-target-gender="D"] a {
   background-color: #EBEBEB;
   font-size: 1.8em;
   color: #666;
-  z-index: 10;
+  z-index: 12;
 }
 .cookiewLawLayer .cookieLawWrapper {
   width: 998px;

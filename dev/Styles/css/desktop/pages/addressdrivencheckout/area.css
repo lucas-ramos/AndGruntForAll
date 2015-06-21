@@ -1,4 +1,12 @@
 @charset "UTF-8";
+/*
+    zindex
+    Mixin di definizione e utilizzo degli z-index.
+
+    La lista $indexes è crescente dall'alto al basso, e i suoi elementi andranno espressi al momento dell'uso del mixin.
+    Ovviamente l'uso da farne è di tipo semantico, per evitare l'espressione di numeri casuali all'interno dei vari css.
+
+*/
 /* effetto height:100% sugli elementi flottanti */
 @font-face {
   font-family: 'KnockoutLight';
@@ -34,7 +42,7 @@
   font-weight: normal;
   font-style: normal;
 }
-.RU button, .RU .button, .RU .shippingForm .fastCheckoutSection .title, .shippingForm .fastCheckoutSection .RU .title, .RU .creditCardForm .fastCheckoutSection .title, .creditCardForm .fastCheckoutSection .RU .title, .RU #checkmail label, #checkmail .RU label, .RU #checkmail .coSectionContent .topDescription .title, #checkmail .coSectionContent .topDescription .RU .title, .RU #confirmation .addressesContentWrapper .orderRecapShipping h3 .title, #confirmation .addressesContentWrapper .orderRecapShipping h3 .RU .title, .RU #confirmation .addressesContentWrapper .giftRecap h3 .title, #confirmation .addressesContentWrapper .giftRecap h3 .RU .title, .RU #confirmation .addressesContentWrapper .selectedDeliveryMethod h3 .title, #confirmation .addressesContentWrapper .selectedDeliveryMethod h3 .RU .title, .RU #confirmation .addressesContentWrapper .billing .billingTitle, #confirmation .addressesContentWrapper .billing .RU .billingTitle, .RU #confirmation .addressesContentWrapper .fastCheckoutSection .title, #confirmation .addressesContentWrapper .fastCheckoutSection .RU .title, .RU #confirmation .addressesContentWrapper .selectedDeliveryMethod .deliveryInfo .deliveryType, #confirmation .addressesContentWrapper .selectedDeliveryMethod .deliveryInfo .RU .deliveryType, .RU #confirmation .creditCardSection .creditCardTitle .title, #confirmation .creditCardSection .creditCardTitle .RU .title, .RU #confirmation .creditCardSection .creditCardForm .fastCheckoutSection .title, #confirmation .creditCardSection .creditCardForm .fastCheckoutSection .RU .title, .RU #confirmation .otherPaymentMethodsSection .paymentMethodsTitle, #confirmation .otherPaymentMethodsSection .RU .paymentMethodsTitle, .RU #delivery .fastCheckoutSection .title, #delivery .fastCheckoutSection .RU .title, .RU #thankyou .thankyouWrapper .orderDesc, #thankyou .thankyouWrapper .RU .orderDesc, .RU #waittobuy .orderDesc, #waittobuy .RU .orderDesc, .CN .recapBox, .CN #faq .shippingReturns .contribution .text .text, #faq .shippingReturns .contribution .text .CN .text, .CN #cartRecap, .CN #cartRecap .item .microCategory, #cartRecap .item .CN .microCategory, .CN #cartRecap .item #cart .reviewSection .cartReview div.modelName, #cartRecap .item #cart .reviewSection .cartReview .CN div.modelName, .CN #cart .reviewSection .cartReview #cartRecap .item div.modelName, #cart .reviewSection .cartReview #cartRecap .item .CN div.modelName, .CN #cartRecap .item .description .label, #cartRecap .item .description .CN .label, .CN #cartRecap .item .description .text, #cartRecap .item .description .CN .text, .CN #cartRecap .item .description .value, #cartRecap .item .description .CN .value, .CN #cartRecap .item .description .classFamily, #cartRecap .item .description .CN .classFamily, .CN #cartRecap h3 .title, #cartRecap h3 .CN .title, .CN .checkoutLogout, .CN .shippingForm .fieldRow.text input, .shippingForm .fieldRow.text .CN input, .CN .shippingForm .fieldRow.zipCode input, .shippingForm .fieldRow.zipCode .CN input, .CN .creditCardForm .fieldRow.text input, .creditCardForm .fieldRow.text .CN input, .CN .creditCardForm .fieldRow.zipCode input, .creditCardForm .fieldRow.zipCode .CN input, .CN #cart .wishListContainer .wishListItems, #cart .wishListContainer .CN .wishListItems, .CN #cart .couponSection .bannedBrands a, #cart .couponSection .bannedBrands .CN a, .CN #cart .reviewSection .cartReview .microCategory, #cart .reviewSection .cartReview .CN .microCategory, .CN #cart .reviewSection .cartReview div.modelName, #cart .reviewSection .cartReview .CN div.modelName, .CN #cart .reviewSection .cartReview .selectionCol, #cart .reviewSection .cartReview .CN .selectionCol, .CN #cart .reviewSection .cartReview .addRemoveCol, #cart .reviewSection .cartReview .CN .addRemoveCol, .CN #cart .reviewSection .cartReview .addRemoveCol .deleteItemWrapper .deleteItem, #cart .reviewSection .cartReview .addRemoveCol .deleteItemWrapper .CN .deleteItem, .CN #cart #oldCart .oldCartHeader p, #cart #oldCart .oldCartHeader .CN p, .CN #checkmail .mandatory, #checkmail .CN .mandatory, .CN #checkmail .coSectionContent .topDescription, #checkmail .coSectionContent .CN .topDescription, .CN #checkmail #passwordRecoveryLink button, #checkmail #passwordRecoveryLink .CN button, .CN #checkmail .privacyContainer, #checkmail .CN .privacyContainer, .CN #checkmail .acceptFlags .fieldLabel label, #checkmail .acceptFlags .fieldLabel .CN label, .CN #confirmation .userAddressSubTitle, #confirmation .CN .userAddressSubTitle, .CN #confirmation .addNewAddressButtonWithForm *[data-ytos-addnewaddress] label, #confirmation .addNewAddressButtonWithForm *[data-ytos-addnewaddress] .CN label, .CN #confirmation .addNewAddressButtonWithForm, #confirmation .CN .addNewAddressButtonWithForm, .CN #confirmation .userAddressesListWithForm, #confirmation .CN .userAddressesListWithForm, .CN #confirmation .shippingAddressForm, #confirmation .CN .shippingAddressForm, .CN #confirmation .billingAddressForm, #confirmation .CN .billingAddressForm, .CN #confirmation .addNewAddressButtonWithForm .fieldRow.text input, #confirmation .addNewAddressButtonWithForm .fieldRow.text .CN input, .CN #confirmation .addNewAddressButtonWithForm .fieldRow.placeholder input, #confirmation .addNewAddressButtonWithForm .fieldRow.placeholder .CN input, .CN #confirmation .addNewAddressButtonWithForm .fieldRow.zipCode input, #confirmation .addNewAddressButtonWithForm .fieldRow.zipCode .CN input, .CN #confirmation .userAddressesListWithForm .fieldRow.text input, #confirmation .userAddressesListWithForm .fieldRow.text .CN input, .CN #confirmation .userAddressesListWithForm .fieldRow.placeholder input, #confirmation .userAddressesListWithForm .fieldRow.placeholder .CN input, .CN #confirmation .userAddressesListWithForm .fieldRow.zipCode input, #confirmation .userAddressesListWithForm .fieldRow.zipCode .CN input, .CN #confirmation .shippingAddressForm .fieldRow.text input, #confirmation .shippingAddressForm .fieldRow.text .CN input, .CN #confirmation .shippingAddressForm .fieldRow.placeholder input, #confirmation .shippingAddressForm .fieldRow.placeholder .CN input, .CN #confirmation .shippingAddressForm .fieldRow.zipCode input, #confirmation .shippingAddressForm .fieldRow.zipCode .CN input, .CN #confirmation .billingAddressForm .fieldRow.text input, #confirmation .billingAddressForm .fieldRow.text .CN input, .CN #confirmation .billingAddressForm .fieldRow.placeholder input, #confirmation .billingAddressForm .fieldRow.placeholder .CN input, .CN #confirmation .billingAddressForm .fieldRow.zipCode input, #confirmation .billingAddressForm .fieldRow.zipCode .CN input, .CN #confirmation .couponSection .bannedBrands a, #confirmation .couponSection .bannedBrands .CN a, .CN #confirmation .pageHeaderContainer .rememberReturn, #confirmation .pageHeaderContainer .CN .rememberReturn, .CN #confirmation .addressesContentWrapper .orderRecapShipping h3 .text, #confirmation .addressesContentWrapper .orderRecapShipping h3 .CN .text, .CN #confirmation .addressesContentWrapper .giftRecap h3 .text, #confirmation .addressesContentWrapper .giftRecap h3 .CN .text, .CN #confirmation .addressesContentWrapper .selectedDeliveryMethod h3 .text, #confirmation .addressesContentWrapper .selectedDeliveryMethod h3 .CN .text, .CN #confirmation .addressesContentWrapper .orderRecapShipping ul, #confirmation .addressesContentWrapper .orderRecapShipping .CN ul, .CN #confirmation .addressesContentWrapper .giftRecap ul, #confirmation .addressesContentWrapper .giftRecap .CN ul, .CN #confirmation .addressesContentWrapper .selectedDeliveryMethod ul, #confirmation .addressesContentWrapper .selectedDeliveryMethod .CN ul, .CN #confirmation .addressesContentWrapper .fieldRow.checkbox .fieldLabel, #confirmation .addressesContentWrapper .fieldRow.checkbox .CN .fieldLabel, .CN #confirmation .addressesContentWrapper .billingAsShippingButton, #confirmation .addressesContentWrapper .CN .billingAsShippingButton, .CN #confirmation .addressesContentWrapper .giftRecap .giftData, #confirmation .addressesContentWrapper .giftRecap .CN .giftData, .CN #confirmation .addressesContentWrapper .selectedDeliveryMethod .deliveryInfo, #confirmation .addressesContentWrapper .selectedDeliveryMethod .CN .deliveryInfo, .CN #confirmation .creditCardSection .creditCardTitle .modify, #confirmation .creditCardSection .creditCardTitle .CN .modify, .CN #confirmation .creditCardSection .cardContainer .cardInfo, #confirmation .creditCardSection .cardContainer .CN .cardInfo, .CN #confirmation .creditCardSection .cardContainer .cardAlerts, #confirmation .creditCardSection .cardContainer .CN .cardAlerts, .CN #confirmation .creditCardSection .cardContainer .cvvAndExpirationForm .fieldLabel, #confirmation .creditCardSection .cardContainer .cvvAndExpirationForm .CN .fieldLabel, .CN #confirmation .creditCardSection .cardContainer .cvvAndExpirationForm .cvvInfo, #confirmation .creditCardSection .cardContainer .cvvAndExpirationForm .CN .cvvInfo, .CN #confirmation .creditCardSection .cardContainer .formPlaceholderContainer .fieldRow .fieldValue, #confirmation .creditCardSection .cardContainer .formPlaceholderContainer .fieldRow .CN .fieldValue, .CN #confirmation .creditCardSection .cardContainer .formPlaceholderContainer .fieldRow.text input, #confirmation .creditCardSection .cardContainer .formPlaceholderContainer .fieldRow.text .CN input, .CN #confirmation .creditCardSection .cardContainer .formPlaceholderContainer .fieldRow.zipCode input, #confirmation .creditCardSection .cardContainer .formPlaceholderContainer .fieldRow.zipCode .CN input, .CN #confirmation .creditCardSection .newCreditCardButton label, #confirmation .creditCardSection .newCreditCardButton .CN label, .CN #confirmation .creditCardSection .creditCardForm, #confirmation .creditCardSection .CN .creditCardForm, .CN #confirmation .otherPaymentMethodsSection .paymentMethod .availableCards, #confirmation .otherPaymentMethodsSection .paymentMethod .CN .availableCards, .CN #confirmation .otherPaymentMethodsSection .paymentMethod .originalValue, #confirmation .otherPaymentMethodsSection .paymentMethod .CN .originalValue, .CN #confirmation .otherPaymentMethodsSection .paymentMethod .valueToPay, #confirmation .otherPaymentMethodsSection .paymentMethod .CN .valueToPay, .CN #confirmation .confirmationFooter .personalInfoLabel, #confirmation .confirmationFooter .CN .personalInfoLabel, .CN #delivery .userAddressSubTitle, #delivery .CN .userAddressSubTitle, .CN #delivery .addNewAddressButtonWithForm *[data-ytos-addnewaddress] label, #delivery .addNewAddressButtonWithForm *[data-ytos-addnewaddress] .CN label, .CN #delivery .addNewAddressButtonWithForm, #delivery .CN .addNewAddressButtonWithForm, .CN #delivery .userAddressesListWithForm, #delivery .CN .userAddressesListWithForm, .CN #delivery .shippingAddressForm, #delivery .CN .shippingAddressForm, .CN #delivery .billingAddressForm, #delivery .CN .billingAddressForm, .CN #delivery .addNewAddressButtonWithForm .fieldRow.text input, #delivery .addNewAddressButtonWithForm .fieldRow.text .CN input, .CN #delivery .addNewAddressButtonWithForm .fieldRow.placeholder input, #delivery .addNewAddressButtonWithForm .fieldRow.placeholder .CN input, .CN #delivery .addNewAddressButtonWithForm .fieldRow.zipCode input, #delivery .addNewAddressButtonWithForm .fieldRow.zipCode .CN input, .CN #delivery .userAddressesListWithForm .fieldRow.text input, #delivery .userAddressesListWithForm .fieldRow.text .CN input, .CN #delivery .userAddressesListWithForm .fieldRow.placeholder input, #delivery .userAddressesListWithForm .fieldRow.placeholder .CN input, .CN #delivery .userAddressesListWithForm .fieldRow.zipCode input, #delivery .userAddressesListWithForm .fieldRow.zipCode .CN input, .CN #delivery .shippingAddressForm .fieldRow.text input, #delivery .shippingAddressForm .fieldRow.text .CN input, .CN #delivery .shippingAddressForm .fieldRow.placeholder input, #delivery .shippingAddressForm .fieldRow.placeholder .CN input, .CN #delivery .shippingAddressForm .fieldRow.zipCode input, #delivery .shippingAddressForm .fieldRow.zipCode .CN input, .CN #delivery .billingAddressForm .fieldRow.text input, #delivery .billingAddressForm .fieldRow.text .CN input, .CN #delivery .billingAddressForm .fieldRow.placeholder input, #delivery .billingAddressForm .fieldRow.placeholder .CN input, .CN #delivery .billingAddressForm .fieldRow.zipCode input, #delivery .billingAddressForm .fieldRow.zipCode .CN input, .CN #delivery .giftSectionContentWrapper .giftOptionWrapper.sendEmail #GiftDataFormViewModel_Email_Wrapper input, #delivery .giftSectionContentWrapper .giftOptionWrapper.sendEmail #GiftDataFormViewModel_Email_Wrapper .CN input, .CN #delivery .giftSectionContentWrapper .giftOptionWrapper .giftInfoButton, #delivery .giftSectionContentWrapper .giftOptionWrapper .CN .giftInfoButton, .CN #delivery .giftSectionContentWrapper .giftOptionWrapper .giftInfoBox, #delivery .giftSectionContentWrapper .giftOptionWrapper .CN .giftInfoBox, .CN #delivery #GiftDataFormViewModel_Message, #delivery .CN #GiftDataFormViewModel_Message, .CN #delivery .giftSectionSubTitle, #delivery .CN .giftSectionSubTitle, .CN #delivery .deliveryMethod .description, #delivery .deliveryMethod .CN .description, .CN #delivery .deliveryMethod .originalValue, #delivery .deliveryMethod .CN .originalValue, .CN #delivery .deliveryMethod .valueToPay, #delivery .deliveryMethod .CN .valueToPay, .CN #delivery .deliveryMethod .expressGuaranteed, #delivery .deliveryMethod .CN .expressGuaranteed, .CN #delivery .deliveryMethod .deliveryInformation, #delivery .deliveryMethod .CN .deliveryInformation, .CN #delivery .nodeliverydaysWrapper, #delivery .CN .nodeliverydaysWrapper, .CN #delivery .privacyInfoSection, #delivery .CN .privacyInfoSection, .CN #thankyou .thankyouWrapper .orderControl, #thankyou .thankyouWrapper .CN .orderControl, .CN #thankyou .thankyouWrapper ul, #thankyou .thankyouWrapper .CN ul, .CN #thankyou .adviceFormWrapper .adviceFormContainer .adviceDescription, #thankyou .adviceFormWrapper .adviceFormContainer .CN .adviceDescription, .CN #thankyou .adviceForm .success, #thankyou .adviceForm .CN .success, .CN #waittobuy .orderControl, #waittobuy .CN .orderControl, .RU .recapBox, .RU #faq .shippingReturns .contribution .text .text, #faq .shippingReturns .contribution .text .RU .text, .RU #cartRecap, .RU #cartRecap .item .microCategory, #cartRecap .item .RU .microCategory, .RU #cartRecap .item #cart .reviewSection .cartReview div.modelName, #cartRecap .item #cart .reviewSection .cartReview .RU div.modelName, .RU #cart .reviewSection .cartReview #cartRecap .item div.modelName, #cart .reviewSection .cartReview #cartRecap .item .RU div.modelName, .RU #cartRecap .item .description .label, #cartRecap .item .description .RU .label, .RU #cartRecap .item .description .text, #cartRecap .item .description .RU .text, .RU #cartRecap .item .description .value, #cartRecap .item .description .RU .value, .RU #cartRecap .item .description .classFamily, #cartRecap .item .description .RU .classFamily, .RU #cartRecap h3 .title, #cartRecap h3 .RU .title, .RU .checkoutLogout, .RU .shippingForm .fieldRow.text input, .shippingForm .fieldRow.text .RU input, .RU .shippingForm .fieldRow.zipCode input, .shippingForm .fieldRow.zipCode .RU input, .RU .creditCardForm .fieldRow.text input, .creditCardForm .fieldRow.text .RU input, .RU .creditCardForm .fieldRow.zipCode input, .creditCardForm .fieldRow.zipCode .RU input, .RU #cart .wishListContainer .wishListItems, #cart .wishListContainer .RU .wishListItems, .RU #cart .couponSection .bannedBrands a, #cart .couponSection .bannedBrands .RU a, .RU #cart .reviewSection .cartReview .microCategory, #cart .reviewSection .cartReview .RU .microCategory, .RU #cart .reviewSection .cartReview div.modelName, #cart .reviewSection .cartReview .RU div.modelName, .RU #cart .reviewSection .cartReview .selectionCol, #cart .reviewSection .cartReview .RU .selectionCol, .RU #cart .reviewSection .cartReview .addRemoveCol, #cart .reviewSection .cartReview .RU .addRemoveCol, .RU #cart .reviewSection .cartReview .addRemoveCol .deleteItemWrapper .deleteItem, #cart .reviewSection .cartReview .addRemoveCol .deleteItemWrapper .RU .deleteItem, .RU #cart #oldCart .oldCartHeader p, #cart #oldCart .oldCartHeader .RU p, .RU #checkmail .mandatory, #checkmail .RU .mandatory, .RU #checkmail .coSectionContent .topDescription, #checkmail .coSectionContent .RU .topDescription, .RU #checkmail #passwordRecoveryLink button, #checkmail #passwordRecoveryLink .RU button, .RU #checkmail .privacyContainer, #checkmail .RU .privacyContainer, .RU #checkmail .acceptFlags .fieldLabel label, #checkmail .acceptFlags .fieldLabel .RU label, .RU #confirmation .userAddressSubTitle, #confirmation .RU .userAddressSubTitle, .RU #confirmation .addNewAddressButtonWithForm *[data-ytos-addnewaddress] label, #confirmation .addNewAddressButtonWithForm *[data-ytos-addnewaddress] .RU label, .RU #confirmation .addNewAddressButtonWithForm, #confirmation .RU .addNewAddressButtonWithForm, .RU #confirmation .userAddressesListWithForm, #confirmation .RU .userAddressesListWithForm, .RU #confirmation .shippingAddressForm, #confirmation .RU .shippingAddressForm, .RU #confirmation .billingAddressForm, #confirmation .RU .billingAddressForm, .RU #confirmation .addNewAddressButtonWithForm .fieldRow.text input, #confirmation .addNewAddressButtonWithForm .fieldRow.text .RU input, .RU #confirmation .addNewAddressButtonWithForm .fieldRow.placeholder input, #confirmation .addNewAddressButtonWithForm .fieldRow.placeholder .RU input, .RU #confirmation .addNewAddressButtonWithForm .fieldRow.zipCode input, #confirmation .addNewAddressButtonWithForm .fieldRow.zipCode .RU input, .RU #confirmation .userAddressesListWithForm .fieldRow.text input, #confirmation .userAddressesListWithForm .fieldRow.text .RU input, .RU #confirmation .userAddressesListWithForm .fieldRow.placeholder input, #confirmation .userAddressesListWithForm .fieldRow.placeholder .RU input, .RU #confirmation .userAddressesListWithForm .fieldRow.zipCode input, #confirmation .userAddressesListWithForm .fieldRow.zipCode .RU input, .RU #confirmation .shippingAddressForm .fieldRow.text input, #confirmation .shippingAddressForm .fieldRow.text .RU input, .RU #confirmation .shippingAddressForm .fieldRow.placeholder input, #confirmation .shippingAddressForm .fieldRow.placeholder .RU input, .RU #confirmation .shippingAddressForm .fieldRow.zipCode input, #confirmation .shippingAddressForm .fieldRow.zipCode .RU input, .RU #confirmation .billingAddressForm .fieldRow.text input, #confirmation .billingAddressForm .fieldRow.text .RU input, .RU #confirmation .billingAddressForm .fieldRow.placeholder input, #confirmation .billingAddressForm .fieldRow.placeholder .RU input, .RU #confirmation .billingAddressForm .fieldRow.zipCode input, #confirmation .billingAddressForm .fieldRow.zipCode .RU input, .RU #confirmation .couponSection .bannedBrands a, #confirmation .couponSection .bannedBrands .RU a, .RU #confirmation .pageHeaderContainer .rememberReturn, #confirmation .pageHeaderContainer .RU .rememberReturn, .RU #confirmation .addressesContentWrapper .orderRecapShipping h3 .text, #confirmation .addressesContentWrapper .orderRecapShipping h3 .RU .text, .RU #confirmation .addressesContentWrapper .giftRecap h3 .text, #confirmation .addressesContentWrapper .giftRecap h3 .RU .text, .RU #confirmation .addressesContentWrapper .selectedDeliveryMethod h3 .text, #confirmation .addressesContentWrapper .selectedDeliveryMethod h3 .RU .text, .RU #confirmation .addressesContentWrapper .orderRecapShipping ul, #confirmation .addressesContentWrapper .orderRecapShipping .RU ul, .RU #confirmation .addressesContentWrapper .giftRecap ul, #confirmation .addressesContentWrapper .giftRecap .RU ul, .RU #confirmation .addressesContentWrapper .selectedDeliveryMethod ul, #confirmation .addressesContentWrapper .selectedDeliveryMethod .RU ul, .RU #confirmation .addressesContentWrapper .fieldRow.checkbox .fieldLabel, #confirmation .addressesContentWrapper .fieldRow.checkbox .RU .fieldLabel, .RU #confirmation .addressesContentWrapper .billingAsShippingButton, #confirmation .addressesContentWrapper .RU .billingAsShippingButton, .RU #confirmation .addressesContentWrapper .giftRecap .giftData, #confirmation .addressesContentWrapper .giftRecap .RU .giftData, .RU #confirmation .addressesContentWrapper .selectedDeliveryMethod .deliveryInfo, #confirmation .addressesContentWrapper .selectedDeliveryMethod .RU .deliveryInfo, .RU #confirmation .creditCardSection .creditCardTitle .modify, #confirmation .creditCardSection .creditCardTitle .RU .modify, .RU #confirmation .creditCardSection .cardContainer .cardInfo, #confirmation .creditCardSection .cardContainer .RU .cardInfo, .RU #confirmation .creditCardSection .cardContainer .cardAlerts, #confirmation .creditCardSection .cardContainer .RU .cardAlerts, .RU #confirmation .creditCardSection .cardContainer .cvvAndExpirationForm .fieldLabel, #confirmation .creditCardSection .cardContainer .cvvAndExpirationForm .RU .fieldLabel, .RU #confirmation .creditCardSection .cardContainer .cvvAndExpirationForm .cvvInfo, #confirmation .creditCardSection .cardContainer .cvvAndExpirationForm .RU .cvvInfo, .RU #confirmation .creditCardSection .cardContainer .formPlaceholderContainer .fieldRow .fieldValue, #confirmation .creditCardSection .cardContainer .formPlaceholderContainer .fieldRow .RU .fieldValue, .RU #confirmation .creditCardSection .cardContainer .formPlaceholderContainer .fieldRow.text input, #confirmation .creditCardSection .cardContainer .formPlaceholderContainer .fieldRow.text .RU input, .RU #confirmation .creditCardSection .cardContainer .formPlaceholderContainer .fieldRow.zipCode input, #confirmation .creditCardSection .cardContainer .formPlaceholderContainer .fieldRow.zipCode .RU input, .RU #confirmation .creditCardSection .newCreditCardButton label, #confirmation .creditCardSection .newCreditCardButton .RU label, .RU #confirmation .creditCardSection .creditCardForm, #confirmation .creditCardSection .RU .creditCardForm, .RU #confirmation .otherPaymentMethodsSection .paymentMethod .availableCards, #confirmation .otherPaymentMethodsSection .paymentMethod .RU .availableCards, .RU #confirmation .otherPaymentMethodsSection .paymentMethod .originalValue, #confirmation .otherPaymentMethodsSection .paymentMethod .RU .originalValue, .RU #confirmation .otherPaymentMethodsSection .paymentMethod .valueToPay, #confirmation .otherPaymentMethodsSection .paymentMethod .RU .valueToPay, .RU #confirmation .confirmationFooter .personalInfoLabel, #confirmation .confirmationFooter .RU .personalInfoLabel, .RU #delivery .userAddressSubTitle, #delivery .RU .userAddressSubTitle, .RU #delivery .addNewAddressButtonWithForm *[data-ytos-addnewaddress] label, #delivery .addNewAddressButtonWithForm *[data-ytos-addnewaddress] .RU label, .RU #delivery .addNewAddressButtonWithForm, #delivery .RU .addNewAddressButtonWithForm, .RU #delivery .userAddressesListWithForm, #delivery .RU .userAddressesListWithForm, .RU #delivery .shippingAddressForm, #delivery .RU .shippingAddressForm, .RU #delivery .billingAddressForm, #delivery .RU .billingAddressForm, .RU #delivery .addNewAddressButtonWithForm .fieldRow.text input, #delivery .addNewAddressButtonWithForm .fieldRow.text .RU input, .RU #delivery .addNewAddressButtonWithForm .fieldRow.placeholder input, #delivery .addNewAddressButtonWithForm .fieldRow.placeholder .RU input, .RU #delivery .addNewAddressButtonWithForm .fieldRow.zipCode input, #delivery .addNewAddressButtonWithForm .fieldRow.zipCode .RU input, .RU #delivery .userAddressesListWithForm .fieldRow.text input, #delivery .userAddressesListWithForm .fieldRow.text .RU input, .RU #delivery .userAddressesListWithForm .fieldRow.placeholder input, #delivery .userAddressesListWithForm .fieldRow.placeholder .RU input, .RU #delivery .userAddressesListWithForm .fieldRow.zipCode input, #delivery .userAddressesListWithForm .fieldRow.zipCode .RU input, .RU #delivery .shippingAddressForm .fieldRow.text input, #delivery .shippingAddressForm .fieldRow.text .RU input, .RU #delivery .shippingAddressForm .fieldRow.placeholder input, #delivery .shippingAddressForm .fieldRow.placeholder .RU input, .RU #delivery .shippingAddressForm .fieldRow.zipCode input, #delivery .shippingAddressForm .fieldRow.zipCode .RU input, .RU #delivery .billingAddressForm .fieldRow.text input, #delivery .billingAddressForm .fieldRow.text .RU input, .RU #delivery .billingAddressForm .fieldRow.placeholder input, #delivery .billingAddressForm .fieldRow.placeholder .RU input, .RU #delivery .billingAddressForm .fieldRow.zipCode input, #delivery .billingAddressForm .fieldRow.zipCode .RU input, .RU #delivery .giftSectionContentWrapper .giftOptionWrapper.sendEmail #GiftDataFormViewModel_Email_Wrapper input, #delivery .giftSectionContentWrapper .giftOptionWrapper.sendEmail #GiftDataFormViewModel_Email_Wrapper .RU input, .RU #delivery .giftSectionContentWrapper .giftOptionWrapper .giftInfoButton, #delivery .giftSectionContentWrapper .giftOptionWrapper .RU .giftInfoButton, .RU #delivery .giftSectionContentWrapper .giftOptionWrapper .giftInfoBox, #delivery .giftSectionContentWrapper .giftOptionWrapper .RU .giftInfoBox, .RU #delivery #GiftDataFormViewModel_Message, #delivery .RU #GiftDataFormViewModel_Message, .RU #delivery .giftSectionSubTitle, #delivery .RU .giftSectionSubTitle, .RU #delivery .deliveryMethod .description, #delivery .deliveryMethod .RU .description, .RU #delivery .deliveryMethod .originalValue, #delivery .deliveryMethod .RU .originalValue, .RU #delivery .deliveryMethod .valueToPay, #delivery .deliveryMethod .RU .valueToPay, .RU #delivery .deliveryMethod .expressGuaranteed, #delivery .deliveryMethod .RU .expressGuaranteed, .RU #delivery .deliveryMethod .deliveryInformation, #delivery .deliveryMethod .RU .deliveryInformation, .RU #delivery .nodeliverydaysWrapper, #delivery .RU .nodeliverydaysWrapper, .RU #delivery .privacyInfoSection, #delivery .RU .privacyInfoSection, .RU #thankyou .thankyouWrapper .orderControl, #thankyou .thankyouWrapper .RU .orderControl, .RU #thankyou .thankyouWrapper ul, #thankyou .thankyouWrapper .RU ul, .RU #thankyou .adviceFormWrapper .adviceFormContainer .adviceDescription, #thankyou .adviceFormWrapper .adviceFormContainer .RU .adviceDescription, .RU #thankyou .adviceForm .success, #thankyou .adviceForm .RU .success, .RU #waittobuy .orderControl, #waittobuy .RU .orderControl, .CN .recapBox .title, .recapBox .CN .title, .CN .recapBox .subtitle, .recapBox .CN .subtitle, .CN #service .accordionWrap .accordionDescription strong, #service .accordionWrap .accordionDescription .CN strong, .CN #faq .availableDeliveryMethods .deliveryMethod, #faq .availableDeliveryMethods .CN .deliveryMethod, .CN #faq .shippingReturns .contribution .label, #faq .shippingReturns .contribution .CN .label, .CN #cartRecap .priceRecap .total, #cartRecap .priceRecap .CN .total, .CN #cartRecap .priceRecap .subtotalRecap, #cartRecap .priceRecap .CN .subtotalRecap, .CN #cart .reviewSection .cartReview .priceCol .price, #cart .reviewSection .cartReview .priceCol .CN .price, .CN #cart .reviewSection .sectionRecap .salesTaxDescr, #cart .reviewSection .sectionRecap .CN .salesTaxDescr, .CN #confirmation .creditCardSection .cardContainer .cardAlerts .preferredlabel, #confirmation .creditCardSection .cardContainer .cardAlerts .CN .preferredlabel, .CN #confirmation .creditCardSection .cardContainer.cardExpired .cardAlerts .expiredLabel, #confirmation .creditCardSection .cardContainer.cardExpired .cardAlerts .CN .expiredLabel, .CN #confirmation .confirmationFooter .personalInfoTitle, #confirmation .confirmationFooter .CN .personalInfoTitle, .CN #delivery .giftSectionContentWrapper .valueToPay, #delivery .giftSectionContentWrapper .CN .valueToPay, .RU #cart .reviewSection .cartReview .isLastItemInfo, #cart .reviewSection .cartReview .RU .isLastItemInfo {
+.RU button, .RU .button, .RU .shippingForm .fastCheckoutSection .title, .shippingForm .fastCheckoutSection .RU .title, .RU .creditCardForm .fastCheckoutSection .title, .creditCardForm .fastCheckoutSection .RU .title, .RU #checkmail label, #checkmail .RU label, .RU #checkmail .coSectionContent .topDescription .title, #checkmail .coSectionContent .topDescription .RU .title, .RU #confirmation .creditCardSection .creditCardTitle .title, #confirmation .creditCardSection .creditCardTitle .RU .title, .RU #confirmation .creditCardSection .creditCardForm .fastCheckoutSection .title, #confirmation .creditCardSection .creditCardForm .fastCheckoutSection .RU .title, .RU #confirmation .addressesContentWrapper .orderRecapShipping h3 .title, #confirmation .addressesContentWrapper .orderRecapShipping h3 .RU .title, .RU #confirmation .addressesContentWrapper .giftRecap h3 .title, #confirmation .addressesContentWrapper .giftRecap h3 .RU .title, .RU #confirmation .addressesContentWrapper .selectedDeliveryMethod h3 .title, #confirmation .addressesContentWrapper .selectedDeliveryMethod h3 .RU .title, .RU #confirmation .addressesContentWrapper .billing .billingTitle, #confirmation .addressesContentWrapper .billing .RU .billingTitle, .RU #confirmation .addressesContentWrapper .fastCheckoutSection .title, #confirmation .addressesContentWrapper .fastCheckoutSection .RU .title, .RU #confirmation .addressesContentWrapper .selectedDeliveryMethod .deliveryInfo .deliveryType, #confirmation .addressesContentWrapper .selectedDeliveryMethod .deliveryInfo .RU .deliveryType, .RU #confirmation .otherPaymentMethodsSection .paymentMethodsTitle, #confirmation .otherPaymentMethodsSection .RU .paymentMethodsTitle, .RU #delivery .fastCheckoutSection .title, #delivery .fastCheckoutSection .RU .title, .RU #thankyou .thankyouWrapper .orderDesc, #thankyou .thankyouWrapper .RU .orderDesc, .RU #waittobuy .orderDesc, #waittobuy .RU .orderDesc, .CN .recapBox, .CN #faq .shippingReturns .contribution .text .text, #faq .shippingReturns .contribution .text .CN .text, .CN #cartRecap, .CN #cartRecap .item .microCategory, #cartRecap .item .CN .microCategory, .CN #cartRecap .item #cart .reviewSection .cartReview div.modelName, #cartRecap .item #cart .reviewSection .cartReview .CN div.modelName, .CN #cart .reviewSection .cartReview #cartRecap .item div.modelName, #cart .reviewSection .cartReview #cartRecap .item .CN div.modelName, .CN #cartRecap .item .description .label, #cartRecap .item .description .CN .label, .CN #cartRecap .item .description .text, #cartRecap .item .description .CN .text, .CN #cartRecap .item .description .value, #cartRecap .item .description .CN .value, .CN #cartRecap .item .description .classFamily, #cartRecap .item .description .CN .classFamily, .CN #cartRecap h3 .title, #cartRecap h3 .CN .title, .CN .checkoutLogout, .CN .shippingForm .fieldRow.text input, .shippingForm .fieldRow.text .CN input, .CN .shippingForm .fieldRow.zipCode input, .shippingForm .fieldRow.zipCode .CN input, .CN .creditCardForm .fieldRow.text input, .creditCardForm .fieldRow.text .CN input, .CN .creditCardForm .fieldRow.zipCode input, .creditCardForm .fieldRow.zipCode .CN input, .CN #cart .wishListContainer .wishListItems, #cart .wishListContainer .CN .wishListItems, .CN #cart .couponSection .bannedBrands a, #cart .couponSection .bannedBrands .CN a, .CN #cart .reviewSection .cartReview .microCategory, #cart .reviewSection .cartReview .CN .microCategory, .CN #cart .reviewSection .cartReview div.modelName, #cart .reviewSection .cartReview .CN div.modelName, .CN #cart .reviewSection .cartReview .selectionCol, #cart .reviewSection .cartReview .CN .selectionCol, .CN #cart .reviewSection .cartReview .addRemoveCol, #cart .reviewSection .cartReview .CN .addRemoveCol, .CN #cart .reviewSection .cartReview .addRemoveCol .deleteItemWrapper .deleteItem, #cart .reviewSection .cartReview .addRemoveCol .deleteItemWrapper .CN .deleteItem, .CN #cart #oldCart .oldCartHeader p, #cart #oldCart .oldCartHeader .CN p, .CN #checkmail .mandatory, #checkmail .CN .mandatory, .CN #checkmail .coSectionContent .topDescription, #checkmail .coSectionContent .CN .topDescription, .CN #checkmail #passwordRecoveryLink button, #checkmail #passwordRecoveryLink .CN button, .CN #checkmail .privacyContainer, #checkmail .CN .privacyContainer, .CN #checkmail .acceptFlags .fieldLabel label, #checkmail .acceptFlags .fieldLabel .CN label, .CN #confirmation .userAddressSubTitle, #confirmation .CN .userAddressSubTitle, .CN #confirmation .addNewAddressButtonWithForm *[data-ytos-addnewaddress] label, #confirmation .addNewAddressButtonWithForm *[data-ytos-addnewaddress] .CN label, .CN #confirmation .addNewAddressButtonWithForm, #confirmation .CN .addNewAddressButtonWithForm, .CN #confirmation .userAddressesListWithForm, #confirmation .CN .userAddressesListWithForm, .CN #confirmation .shippingAddressForm, #confirmation .CN .shippingAddressForm, .CN #confirmation .billingAddressForm, #confirmation .CN .billingAddressForm, .CN #confirmation .addNewAddressButtonWithForm .fieldRow.text input, #confirmation .addNewAddressButtonWithForm .fieldRow.text .CN input, .CN #confirmation .addNewAddressButtonWithForm .fieldRow.placeholder input, #confirmation .addNewAddressButtonWithForm .fieldRow.placeholder .CN input, .CN #confirmation .addNewAddressButtonWithForm .fieldRow.zipCode input, #confirmation .addNewAddressButtonWithForm .fieldRow.zipCode .CN input, .CN #confirmation .userAddressesListWithForm .fieldRow.text input, #confirmation .userAddressesListWithForm .fieldRow.text .CN input, .CN #confirmation .userAddressesListWithForm .fieldRow.placeholder input, #confirmation .userAddressesListWithForm .fieldRow.placeholder .CN input, .CN #confirmation .userAddressesListWithForm .fieldRow.zipCode input, #confirmation .userAddressesListWithForm .fieldRow.zipCode .CN input, .CN #confirmation .shippingAddressForm .fieldRow.text input, #confirmation .shippingAddressForm .fieldRow.text .CN input, .CN #confirmation .shippingAddressForm .fieldRow.placeholder input, #confirmation .shippingAddressForm .fieldRow.placeholder .CN input, .CN #confirmation .shippingAddressForm .fieldRow.zipCode input, #confirmation .shippingAddressForm .fieldRow.zipCode .CN input, .CN #confirmation .billingAddressForm .fieldRow.text input, #confirmation .billingAddressForm .fieldRow.text .CN input, .CN #confirmation .billingAddressForm .fieldRow.placeholder input, #confirmation .billingAddressForm .fieldRow.placeholder .CN input, .CN #confirmation .billingAddressForm .fieldRow.zipCode input, #confirmation .billingAddressForm .fieldRow.zipCode .CN input, .CN #confirmation .couponSection .bannedBrands a, #confirmation .couponSection .bannedBrands .CN a, .CN #confirmation .creditCardSection .creditCardTitle .modify, #confirmation .creditCardSection .creditCardTitle .CN .modify, .CN #confirmation .creditCardSection .cardContainer .cardInfo, #confirmation .creditCardSection .cardContainer .CN .cardInfo, .CN #confirmation .creditCardSection .cardContainer .cardAlerts, #confirmation .creditCardSection .cardContainer .CN .cardAlerts, .CN #confirmation .creditCardSection .cardContainer .cvvAndExpirationForm .fieldLabel, #confirmation .creditCardSection .cardContainer .cvvAndExpirationForm .CN .fieldLabel, .CN #confirmation .creditCardSection .cardContainer .cvvAndExpirationForm .cvvInfo, #confirmation .creditCardSection .cardContainer .cvvAndExpirationForm .CN .cvvInfo, .CN #confirmation .creditCardSection .cardContainer .formPlaceholderContainer .fieldRow .fieldValue, #confirmation .creditCardSection .cardContainer .formPlaceholderContainer .fieldRow .CN .fieldValue, .CN #confirmation .creditCardSection .cardContainer .formPlaceholderContainer .fieldRow.text input, #confirmation .creditCardSection .cardContainer .formPlaceholderContainer .fieldRow.text .CN input, .CN #confirmation .creditCardSection .cardContainer .formPlaceholderContainer .fieldRow.zipCode input, #confirmation .creditCardSection .cardContainer .formPlaceholderContainer .fieldRow.zipCode .CN input, .CN #confirmation .creditCardSection .newCreditCardButton label, #confirmation .creditCardSection .newCreditCardButton .CN label, .CN #confirmation .creditCardSection .creditCardForm, #confirmation .creditCardSection .CN .creditCardForm, .CN #confirmation .pageHeaderContainer .rememberReturn, #confirmation .pageHeaderContainer .CN .rememberReturn, .CN #confirmation .addressesContentWrapper .orderRecapShipping h3 .text, #confirmation .addressesContentWrapper .orderRecapShipping h3 .CN .text, .CN #confirmation .addressesContentWrapper .giftRecap h3 .text, #confirmation .addressesContentWrapper .giftRecap h3 .CN .text, .CN #confirmation .addressesContentWrapper .selectedDeliveryMethod h3 .text, #confirmation .addressesContentWrapper .selectedDeliveryMethod h3 .CN .text, .CN #confirmation .addressesContentWrapper .orderRecapShipping ul, #confirmation .addressesContentWrapper .orderRecapShipping .CN ul, .CN #confirmation .addressesContentWrapper .giftRecap ul, #confirmation .addressesContentWrapper .giftRecap .CN ul, .CN #confirmation .addressesContentWrapper .selectedDeliveryMethod ul, #confirmation .addressesContentWrapper .selectedDeliveryMethod .CN ul, .CN #confirmation .addressesContentWrapper .fieldRow.checkbox .fieldLabel, #confirmation .addressesContentWrapper .fieldRow.checkbox .CN .fieldLabel, .CN #confirmation .addressesContentWrapper .billingAsShippingButton, #confirmation .addressesContentWrapper .CN .billingAsShippingButton, .CN #confirmation .addressesContentWrapper .giftRecap .giftData, #confirmation .addressesContentWrapper .giftRecap .CN .giftData, .CN #confirmation .addressesContentWrapper .selectedDeliveryMethod .deliveryInfo, #confirmation .addressesContentWrapper .selectedDeliveryMethod .CN .deliveryInfo, .CN #confirmation .otherPaymentMethodsSection .paymentMethod .availableCards, #confirmation .otherPaymentMethodsSection .paymentMethod .CN .availableCards, .CN #confirmation .otherPaymentMethodsSection .paymentMethod .originalValue, #confirmation .otherPaymentMethodsSection .paymentMethod .CN .originalValue, .CN #confirmation .otherPaymentMethodsSection .paymentMethod .valueToPay, #confirmation .otherPaymentMethodsSection .paymentMethod .CN .valueToPay, .CN #confirmation .confirmationFooter .personalInfoLabel, #confirmation .confirmationFooter .CN .personalInfoLabel, .CN #delivery .userAddressSubTitle, #delivery .CN .userAddressSubTitle, .CN #delivery .addNewAddressButtonWithForm *[data-ytos-addnewaddress] label, #delivery .addNewAddressButtonWithForm *[data-ytos-addnewaddress] .CN label, .CN #delivery .addNewAddressButtonWithForm, #delivery .CN .addNewAddressButtonWithForm, .CN #delivery .userAddressesListWithForm, #delivery .CN .userAddressesListWithForm, .CN #delivery .shippingAddressForm, #delivery .CN .shippingAddressForm, .CN #delivery .billingAddressForm, #delivery .CN .billingAddressForm, .CN #delivery .addNewAddressButtonWithForm .fieldRow.text input, #delivery .addNewAddressButtonWithForm .fieldRow.text .CN input, .CN #delivery .addNewAddressButtonWithForm .fieldRow.placeholder input, #delivery .addNewAddressButtonWithForm .fieldRow.placeholder .CN input, .CN #delivery .addNewAddressButtonWithForm .fieldRow.zipCode input, #delivery .addNewAddressButtonWithForm .fieldRow.zipCode .CN input, .CN #delivery .userAddressesListWithForm .fieldRow.text input, #delivery .userAddressesListWithForm .fieldRow.text .CN input, .CN #delivery .userAddressesListWithForm .fieldRow.placeholder input, #delivery .userAddressesListWithForm .fieldRow.placeholder .CN input, .CN #delivery .userAddressesListWithForm .fieldRow.zipCode input, #delivery .userAddressesListWithForm .fieldRow.zipCode .CN input, .CN #delivery .shippingAddressForm .fieldRow.text input, #delivery .shippingAddressForm .fieldRow.text .CN input, .CN #delivery .shippingAddressForm .fieldRow.placeholder input, #delivery .shippingAddressForm .fieldRow.placeholder .CN input, .CN #delivery .shippingAddressForm .fieldRow.zipCode input, #delivery .shippingAddressForm .fieldRow.zipCode .CN input, .CN #delivery .billingAddressForm .fieldRow.text input, #delivery .billingAddressForm .fieldRow.text .CN input, .CN #delivery .billingAddressForm .fieldRow.placeholder input, #delivery .billingAddressForm .fieldRow.placeholder .CN input, .CN #delivery .billingAddressForm .fieldRow.zipCode input, #delivery .billingAddressForm .fieldRow.zipCode .CN input, .CN #delivery .giftSectionContentWrapper .giftOptionWrapper.sendEmail #GiftDataFormViewModel_Email_Wrapper input, #delivery .giftSectionContentWrapper .giftOptionWrapper.sendEmail #GiftDataFormViewModel_Email_Wrapper .CN input, .CN #delivery .giftSectionContentWrapper .giftOptionWrapper .giftInfoButton, #delivery .giftSectionContentWrapper .giftOptionWrapper .CN .giftInfoButton, .CN #delivery .giftSectionContentWrapper .giftOptionWrapper .giftInfoBox, #delivery .giftSectionContentWrapper .giftOptionWrapper .CN .giftInfoBox, .CN #delivery #GiftDataFormViewModel_Message, #delivery .CN #GiftDataFormViewModel_Message, .CN #delivery .giftSectionSubTitle, #delivery .CN .giftSectionSubTitle, .CN #delivery .deliveryMethod .description, #delivery .deliveryMethod .CN .description, .CN #delivery .deliveryMethod .originalValue, #delivery .deliveryMethod .CN .originalValue, .CN #delivery .deliveryMethod .valueToPay, #delivery .deliveryMethod .CN .valueToPay, .CN #delivery .deliveryMethod .expressGuaranteed, #delivery .deliveryMethod .CN .expressGuaranteed, .CN #delivery .deliveryMethod .deliveryInformation, #delivery .deliveryMethod .CN .deliveryInformation, .CN #delivery .nodeliverydaysWrapper, #delivery .CN .nodeliverydaysWrapper, .CN #delivery .privacyInfoSection, #delivery .CN .privacyInfoSection, .CN #thankyou .thankyouWrapper .orderControl, #thankyou .thankyouWrapper .CN .orderControl, .CN #thankyou .thankyouWrapper ul, #thankyou .thankyouWrapper .CN ul, .CN #thankyou .adviceFormWrapper .adviceFormContainer .adviceDescription, #thankyou .adviceFormWrapper .adviceFormContainer .CN .adviceDescription, .CN #thankyou .adviceForm .success, #thankyou .adviceForm .CN .success, .CN #waittobuy .orderControl, #waittobuy .CN .orderControl, .RU .recapBox, .RU #faq .shippingReturns .contribution .text .text, #faq .shippingReturns .contribution .text .RU .text, .RU #cartRecap, .RU #cartRecap .item .microCategory, #cartRecap .item .RU .microCategory, .RU #cartRecap .item #cart .reviewSection .cartReview div.modelName, #cartRecap .item #cart .reviewSection .cartReview .RU div.modelName, .RU #cart .reviewSection .cartReview #cartRecap .item div.modelName, #cart .reviewSection .cartReview #cartRecap .item .RU div.modelName, .RU #cartRecap .item .description .label, #cartRecap .item .description .RU .label, .RU #cartRecap .item .description .text, #cartRecap .item .description .RU .text, .RU #cartRecap .item .description .value, #cartRecap .item .description .RU .value, .RU #cartRecap .item .description .classFamily, #cartRecap .item .description .RU .classFamily, .RU #cartRecap h3 .title, #cartRecap h3 .RU .title, .RU .checkoutLogout, .RU .shippingForm .fieldRow.text input, .shippingForm .fieldRow.text .RU input, .RU .shippingForm .fieldRow.zipCode input, .shippingForm .fieldRow.zipCode .RU input, .RU .creditCardForm .fieldRow.text input, .creditCardForm .fieldRow.text .RU input, .RU .creditCardForm .fieldRow.zipCode input, .creditCardForm .fieldRow.zipCode .RU input, .RU #cart .wishListContainer .wishListItems, #cart .wishListContainer .RU .wishListItems, .RU #cart .couponSection .bannedBrands a, #cart .couponSection .bannedBrands .RU a, .RU #cart .reviewSection .cartReview .microCategory, #cart .reviewSection .cartReview .RU .microCategory, .RU #cart .reviewSection .cartReview div.modelName, #cart .reviewSection .cartReview .RU div.modelName, .RU #cart .reviewSection .cartReview .selectionCol, #cart .reviewSection .cartReview .RU .selectionCol, .RU #cart .reviewSection .cartReview .addRemoveCol, #cart .reviewSection .cartReview .RU .addRemoveCol, .RU #cart .reviewSection .cartReview .addRemoveCol .deleteItemWrapper .deleteItem, #cart .reviewSection .cartReview .addRemoveCol .deleteItemWrapper .RU .deleteItem, .RU #cart #oldCart .oldCartHeader p, #cart #oldCart .oldCartHeader .RU p, .RU #checkmail .mandatory, #checkmail .RU .mandatory, .RU #checkmail .coSectionContent .topDescription, #checkmail .coSectionContent .RU .topDescription, .RU #checkmail #passwordRecoveryLink button, #checkmail #passwordRecoveryLink .RU button, .RU #checkmail .privacyContainer, #checkmail .RU .privacyContainer, .RU #checkmail .acceptFlags .fieldLabel label, #checkmail .acceptFlags .fieldLabel .RU label, .RU #confirmation .userAddressSubTitle, #confirmation .RU .userAddressSubTitle, .RU #confirmation .addNewAddressButtonWithForm *[data-ytos-addnewaddress] label, #confirmation .addNewAddressButtonWithForm *[data-ytos-addnewaddress] .RU label, .RU #confirmation .addNewAddressButtonWithForm, #confirmation .RU .addNewAddressButtonWithForm, .RU #confirmation .userAddressesListWithForm, #confirmation .RU .userAddressesListWithForm, .RU #confirmation .shippingAddressForm, #confirmation .RU .shippingAddressForm, .RU #confirmation .billingAddressForm, #confirmation .RU .billingAddressForm, .RU #confirmation .addNewAddressButtonWithForm .fieldRow.text input, #confirmation .addNewAddressButtonWithForm .fieldRow.text .RU input, .RU #confirmation .addNewAddressButtonWithForm .fieldRow.placeholder input, #confirmation .addNewAddressButtonWithForm .fieldRow.placeholder .RU input, .RU #confirmation .addNewAddressButtonWithForm .fieldRow.zipCode input, #confirmation .addNewAddressButtonWithForm .fieldRow.zipCode .RU input, .RU #confirmation .userAddressesListWithForm .fieldRow.text input, #confirmation .userAddressesListWithForm .fieldRow.text .RU input, .RU #confirmation .userAddressesListWithForm .fieldRow.placeholder input, #confirmation .userAddressesListWithForm .fieldRow.placeholder .RU input, .RU #confirmation .userAddressesListWithForm .fieldRow.zipCode input, #confirmation .userAddressesListWithForm .fieldRow.zipCode .RU input, .RU #confirmation .shippingAddressForm .fieldRow.text input, #confirmation .shippingAddressForm .fieldRow.text .RU input, .RU #confirmation .shippingAddressForm .fieldRow.placeholder input, #confirmation .shippingAddressForm .fieldRow.placeholder .RU input, .RU #confirmation .shippingAddressForm .fieldRow.zipCode input, #confirmation .shippingAddressForm .fieldRow.zipCode .RU input, .RU #confirmation .billingAddressForm .fieldRow.text input, #confirmation .billingAddressForm .fieldRow.text .RU input, .RU #confirmation .billingAddressForm .fieldRow.placeholder input, #confirmation .billingAddressForm .fieldRow.placeholder .RU input, .RU #confirmation .billingAddressForm .fieldRow.zipCode input, #confirmation .billingAddressForm .fieldRow.zipCode .RU input, .RU #confirmation .couponSection .bannedBrands a, #confirmation .couponSection .bannedBrands .RU a, .RU #confirmation .creditCardSection .creditCardTitle .modify, #confirmation .creditCardSection .creditCardTitle .RU .modify, .RU #confirmation .creditCardSection .cardContainer .cardInfo, #confirmation .creditCardSection .cardContainer .RU .cardInfo, .RU #confirmation .creditCardSection .cardContainer .cardAlerts, #confirmation .creditCardSection .cardContainer .RU .cardAlerts, .RU #confirmation .creditCardSection .cardContainer .cvvAndExpirationForm .fieldLabel, #confirmation .creditCardSection .cardContainer .cvvAndExpirationForm .RU .fieldLabel, .RU #confirmation .creditCardSection .cardContainer .cvvAndExpirationForm .cvvInfo, #confirmation .creditCardSection .cardContainer .cvvAndExpirationForm .RU .cvvInfo, .RU #confirmation .creditCardSection .cardContainer .formPlaceholderContainer .fieldRow .fieldValue, #confirmation .creditCardSection .cardContainer .formPlaceholderContainer .fieldRow .RU .fieldValue, .RU #confirmation .creditCardSection .cardContainer .formPlaceholderContainer .fieldRow.text input, #confirmation .creditCardSection .cardContainer .formPlaceholderContainer .fieldRow.text .RU input, .RU #confirmation .creditCardSection .cardContainer .formPlaceholderContainer .fieldRow.zipCode input, #confirmation .creditCardSection .cardContainer .formPlaceholderContainer .fieldRow.zipCode .RU input, .RU #confirmation .creditCardSection .newCreditCardButton label, #confirmation .creditCardSection .newCreditCardButton .RU label, .RU #confirmation .creditCardSection .creditCardForm, #confirmation .creditCardSection .RU .creditCardForm, .RU #confirmation .pageHeaderContainer .rememberReturn, #confirmation .pageHeaderContainer .RU .rememberReturn, .RU #confirmation .addressesContentWrapper .orderRecapShipping h3 .text, #confirmation .addressesContentWrapper .orderRecapShipping h3 .RU .text, .RU #confirmation .addressesContentWrapper .giftRecap h3 .text, #confirmation .addressesContentWrapper .giftRecap h3 .RU .text, .RU #confirmation .addressesContentWrapper .selectedDeliveryMethod h3 .text, #confirmation .addressesContentWrapper .selectedDeliveryMethod h3 .RU .text, .RU #confirmation .addressesContentWrapper .orderRecapShipping ul, #confirmation .addressesContentWrapper .orderRecapShipping .RU ul, .RU #confirmation .addressesContentWrapper .giftRecap ul, #confirmation .addressesContentWrapper .giftRecap .RU ul, .RU #confirmation .addressesContentWrapper .selectedDeliveryMethod ul, #confirmation .addressesContentWrapper .selectedDeliveryMethod .RU ul, .RU #confirmation .addressesContentWrapper .fieldRow.checkbox .fieldLabel, #confirmation .addressesContentWrapper .fieldRow.checkbox .RU .fieldLabel, .RU #confirmation .addressesContentWrapper .billingAsShippingButton, #confirmation .addressesContentWrapper .RU .billingAsShippingButton, .RU #confirmation .addressesContentWrapper .giftRecap .giftData, #confirmation .addressesContentWrapper .giftRecap .RU .giftData, .RU #confirmation .addressesContentWrapper .selectedDeliveryMethod .deliveryInfo, #confirmation .addressesContentWrapper .selectedDeliveryMethod .RU .deliveryInfo, .RU #confirmation .otherPaymentMethodsSection .paymentMethod .availableCards, #confirmation .otherPaymentMethodsSection .paymentMethod .RU .availableCards, .RU #confirmation .otherPaymentMethodsSection .paymentMethod .originalValue, #confirmation .otherPaymentMethodsSection .paymentMethod .RU .originalValue, .RU #confirmation .otherPaymentMethodsSection .paymentMethod .valueToPay, #confirmation .otherPaymentMethodsSection .paymentMethod .RU .valueToPay, .RU #confirmation .confirmationFooter .personalInfoLabel, #confirmation .confirmationFooter .RU .personalInfoLabel, .RU #delivery .userAddressSubTitle, #delivery .RU .userAddressSubTitle, .RU #delivery .addNewAddressButtonWithForm *[data-ytos-addnewaddress] label, #delivery .addNewAddressButtonWithForm *[data-ytos-addnewaddress] .RU label, .RU #delivery .addNewAddressButtonWithForm, #delivery .RU .addNewAddressButtonWithForm, .RU #delivery .userAddressesListWithForm, #delivery .RU .userAddressesListWithForm, .RU #delivery .shippingAddressForm, #delivery .RU .shippingAddressForm, .RU #delivery .billingAddressForm, #delivery .RU .billingAddressForm, .RU #delivery .addNewAddressButtonWithForm .fieldRow.text input, #delivery .addNewAddressButtonWithForm .fieldRow.text .RU input, .RU #delivery .addNewAddressButtonWithForm .fieldRow.placeholder input, #delivery .addNewAddressButtonWithForm .fieldRow.placeholder .RU input, .RU #delivery .addNewAddressButtonWithForm .fieldRow.zipCode input, #delivery .addNewAddressButtonWithForm .fieldRow.zipCode .RU input, .RU #delivery .userAddressesListWithForm .fieldRow.text input, #delivery .userAddressesListWithForm .fieldRow.text .RU input, .RU #delivery .userAddressesListWithForm .fieldRow.placeholder input, #delivery .userAddressesListWithForm .fieldRow.placeholder .RU input, .RU #delivery .userAddressesListWithForm .fieldRow.zipCode input, #delivery .userAddressesListWithForm .fieldRow.zipCode .RU input, .RU #delivery .shippingAddressForm .fieldRow.text input, #delivery .shippingAddressForm .fieldRow.text .RU input, .RU #delivery .shippingAddressForm .fieldRow.placeholder input, #delivery .shippingAddressForm .fieldRow.placeholder .RU input, .RU #delivery .shippingAddressForm .fieldRow.zipCode input, #delivery .shippingAddressForm .fieldRow.zipCode .RU input, .RU #delivery .billingAddressForm .fieldRow.text input, #delivery .billingAddressForm .fieldRow.text .RU input, .RU #delivery .billingAddressForm .fieldRow.placeholder input, #delivery .billingAddressForm .fieldRow.placeholder .RU input, .RU #delivery .billingAddressForm .fieldRow.zipCode input, #delivery .billingAddressForm .fieldRow.zipCode .RU input, .RU #delivery .giftSectionContentWrapper .giftOptionWrapper.sendEmail #GiftDataFormViewModel_Email_Wrapper input, #delivery .giftSectionContentWrapper .giftOptionWrapper.sendEmail #GiftDataFormViewModel_Email_Wrapper .RU input, .RU #delivery .giftSectionContentWrapper .giftOptionWrapper .giftInfoButton, #delivery .giftSectionContentWrapper .giftOptionWrapper .RU .giftInfoButton, .RU #delivery .giftSectionContentWrapper .giftOptionWrapper .giftInfoBox, #delivery .giftSectionContentWrapper .giftOptionWrapper .RU .giftInfoBox, .RU #delivery #GiftDataFormViewModel_Message, #delivery .RU #GiftDataFormViewModel_Message, .RU #delivery .giftSectionSubTitle, #delivery .RU .giftSectionSubTitle, .RU #delivery .deliveryMethod .description, #delivery .deliveryMethod .RU .description, .RU #delivery .deliveryMethod .originalValue, #delivery .deliveryMethod .RU .originalValue, .RU #delivery .deliveryMethod .valueToPay, #delivery .deliveryMethod .RU .valueToPay, .RU #delivery .deliveryMethod .expressGuaranteed, #delivery .deliveryMethod .RU .expressGuaranteed, .RU #delivery .deliveryMethod .deliveryInformation, #delivery .deliveryMethod .RU .deliveryInformation, .RU #delivery .nodeliverydaysWrapper, #delivery .RU .nodeliverydaysWrapper, .RU #delivery .privacyInfoSection, #delivery .RU .privacyInfoSection, .RU #thankyou .thankyouWrapper .orderControl, #thankyou .thankyouWrapper .RU .orderControl, .RU #thankyou .thankyouWrapper ul, #thankyou .thankyouWrapper .RU ul, .RU #thankyou .adviceFormWrapper .adviceFormContainer .adviceDescription, #thankyou .adviceFormWrapper .adviceFormContainer .RU .adviceDescription, .RU #thankyou .adviceForm .success, #thankyou .adviceForm .RU .success, .RU #waittobuy .orderControl, #waittobuy .RU .orderControl, .CN .recapBox .title, .recapBox .CN .title, .CN .recapBox .subtitle, .recapBox .CN .subtitle, .CN #service .accordionWrap .accordionDescription strong, #service .accordionWrap .accordionDescription .CN strong, .CN #faq .availableDeliveryMethods .deliveryMethod, #faq .availableDeliveryMethods .CN .deliveryMethod, .CN #faq .shippingReturns .contribution .label, #faq .shippingReturns .contribution .CN .label, .CN #cartRecap .priceRecap .total, #cartRecap .priceRecap .CN .total, .CN #cartRecap .priceRecap .subtotalRecap, #cartRecap .priceRecap .CN .subtotalRecap, .CN #cart .reviewSection .cartReview .priceCol .price, #cart .reviewSection .cartReview .priceCol .CN .price, .CN #cart .reviewSection .sectionRecap .salesTaxDescr, #cart .reviewSection .sectionRecap .CN .salesTaxDescr, .CN #confirmation .creditCardSection .cardContainer .cardAlerts .preferredlabel, #confirmation .creditCardSection .cardContainer .cardAlerts .CN .preferredlabel, .CN #confirmation .creditCardSection .cardContainer.cardExpired .cardAlerts .expiredLabel, #confirmation .creditCardSection .cardContainer.cardExpired .cardAlerts .CN .expiredLabel, .CN #confirmation .confirmationFooter .personalInfoTitle, #confirmation .confirmationFooter .CN .personalInfoTitle, .CN #delivery .giftSectionContentWrapper .valueToPay, #delivery .giftSectionContentWrapper .CN .valueToPay, .RU #cart .reviewSection .cartReview .isLastItemInfo, #cart .reviewSection .cartReview .RU .isLastItemInfo {
   font-family: Arial, Verdana, sans-serif;
 }
 
@@ -43,14 +51,14 @@
   font-weight: bold;
 }
 
-button, .button, .shippingForm .fastCheckoutSection .title, .creditCardForm .fastCheckoutSection .title, #checkmail label, #checkmail .coSectionContent .topDescription .title, #confirmation .addressesContentWrapper .orderRecapShipping h3 .title, #confirmation .addressesContentWrapper .giftRecap h3 .title, #confirmation .addressesContentWrapper .selectedDeliveryMethod h3 .title, #confirmation .addressesContentWrapper .billing .billingTitle, #confirmation .addressesContentWrapper .fastCheckoutSection .title, #confirmation .addressesContentWrapper .selectedDeliveryMethod .deliveryInfo .deliveryType, #confirmation .creditCardSection .creditCardTitle .title, #confirmation .creditCardSection .creditCardForm .fastCheckoutSection .title, #confirmation .otherPaymentMethodsSection .paymentMethodsTitle, #delivery .fastCheckoutSection .title, #thankyou .thankyouWrapper .orderDesc, #waittobuy .orderDesc {
+button, .button, .shippingForm .fastCheckoutSection .title, .creditCardForm .fastCheckoutSection .title, #checkmail label, #checkmail .coSectionContent .topDescription .title, #confirmation .creditCardSection .creditCardTitle .title, #confirmation .creditCardSection .creditCardForm .fastCheckoutSection .title, #confirmation .addressesContentWrapper .orderRecapShipping h3 .title, #confirmation .addressesContentWrapper .giftRecap h3 .title, #confirmation .addressesContentWrapper .selectedDeliveryMethod h3 .title, #confirmation .addressesContentWrapper .billing .billingTitle, #confirmation .addressesContentWrapper .fastCheckoutSection .title, #confirmation .addressesContentWrapper .selectedDeliveryMethod .deliveryInfo .deliveryType, #confirmation .otherPaymentMethodsSection .paymentMethodsTitle, #delivery .fastCheckoutSection .title, #thankyou .thankyouWrapper .orderDesc, #waittobuy .orderDesc {
   font-family: KnockoutLight, Arial, Verdana, sans-serif;
   font-weight: normal;
 }
-.JP button, .JP .button, .JP .shippingForm .fastCheckoutSection .title, .shippingForm .fastCheckoutSection .JP .title, .JP .creditCardForm .fastCheckoutSection .title, .creditCardForm .fastCheckoutSection .JP .title, .JP #checkmail label, #checkmail .JP label, .JP #checkmail .coSectionContent .topDescription .title, #checkmail .coSectionContent .topDescription .JP .title, .JP #confirmation .addressesContentWrapper .orderRecapShipping h3 .title, #confirmation .addressesContentWrapper .orderRecapShipping h3 .JP .title, .JP #confirmation .addressesContentWrapper .giftRecap h3 .title, #confirmation .addressesContentWrapper .giftRecap h3 .JP .title, .JP #confirmation .addressesContentWrapper .selectedDeliveryMethod h3 .title, #confirmation .addressesContentWrapper .selectedDeliveryMethod h3 .JP .title, .JP #confirmation .addressesContentWrapper .billing .billingTitle, #confirmation .addressesContentWrapper .billing .JP .billingTitle, .JP #confirmation .addressesContentWrapper .fastCheckoutSection .title, #confirmation .addressesContentWrapper .fastCheckoutSection .JP .title, .JP #confirmation .addressesContentWrapper .selectedDeliveryMethod .deliveryInfo .deliveryType, #confirmation .addressesContentWrapper .selectedDeliveryMethod .deliveryInfo .JP .deliveryType, .JP #confirmation .creditCardSection .creditCardTitle .title, #confirmation .creditCardSection .creditCardTitle .JP .title, .JP #confirmation .creditCardSection .creditCardForm .fastCheckoutSection .title, #confirmation .creditCardSection .creditCardForm .fastCheckoutSection .JP .title, .JP #confirmation .otherPaymentMethodsSection .paymentMethodsTitle, #confirmation .otherPaymentMethodsSection .JP .paymentMethodsTitle, .JP #delivery .fastCheckoutSection .title, #delivery .fastCheckoutSection .JP .title, .JP #thankyou .thankyouWrapper .orderDesc, #thankyou .thankyouWrapper .JP .orderDesc, .JP #waittobuy .orderDesc, #waittobuy .JP .orderDesc {
-  font-family: KnockoutLight, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+.JP button, .JP .button, .JP .shippingForm .fastCheckoutSection .title, .shippingForm .fastCheckoutSection .JP .title, .JP .creditCardForm .fastCheckoutSection .title, .creditCardForm .fastCheckoutSection .JP .title, .JP #checkmail label, #checkmail .JP label, .JP #checkmail .coSectionContent .topDescription .title, #checkmail .coSectionContent .topDescription .JP .title, .JP #confirmation .creditCardSection .creditCardTitle .title, #confirmation .creditCardSection .creditCardTitle .JP .title, .JP #confirmation .creditCardSection .creditCardForm .fastCheckoutSection .title, #confirmation .creditCardSection .creditCardForm .fastCheckoutSection .JP .title, .JP #confirmation .addressesContentWrapper .orderRecapShipping h3 .title, #confirmation .addressesContentWrapper .orderRecapShipping h3 .JP .title, .JP #confirmation .addressesContentWrapper .giftRecap h3 .title, #confirmation .addressesContentWrapper .giftRecap h3 .JP .title, .JP #confirmation .addressesContentWrapper .selectedDeliveryMethod h3 .title, #confirmation .addressesContentWrapper .selectedDeliveryMethod h3 .JP .title, .JP #confirmation .addressesContentWrapper .billing .billingTitle, #confirmation .addressesContentWrapper .billing .JP .billingTitle, .JP #confirmation .addressesContentWrapper .fastCheckoutSection .title, #confirmation .addressesContentWrapper .fastCheckoutSection .JP .title, .JP #confirmation .addressesContentWrapper .selectedDeliveryMethod .deliveryInfo .deliveryType, #confirmation .addressesContentWrapper .selectedDeliveryMethod .deliveryInfo .JP .deliveryType, .JP #confirmation .otherPaymentMethodsSection .paymentMethodsTitle, #confirmation .otherPaymentMethodsSection .JP .paymentMethodsTitle, .JP #delivery .fastCheckoutSection .title, #delivery .fastCheckoutSection .JP .title, .JP #thankyou .thankyouWrapper .orderDesc, #thankyou .thankyouWrapper .JP .orderDesc, .JP #waittobuy .orderDesc, #waittobuy .JP .orderDesc {
+  font-family: KnockoutLight, "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", sans-serif;
 }
-.CN button, .CN .button, .CN .shippingForm .fastCheckoutSection .title, .shippingForm .fastCheckoutSection .CN .title, .CN .creditCardForm .fastCheckoutSection .title, .creditCardForm .fastCheckoutSection .CN .title, .CN #checkmail label, #checkmail .CN label, .CN #checkmail .coSectionContent .topDescription .title, #checkmail .coSectionContent .topDescription .CN .title, .CN #confirmation .addressesContentWrapper .orderRecapShipping h3 .title, #confirmation .addressesContentWrapper .orderRecapShipping h3 .CN .title, .CN #confirmation .addressesContentWrapper .giftRecap h3 .title, #confirmation .addressesContentWrapper .giftRecap h3 .CN .title, .CN #confirmation .addressesContentWrapper .selectedDeliveryMethod h3 .title, #confirmation .addressesContentWrapper .selectedDeliveryMethod h3 .CN .title, .CN #confirmation .addressesContentWrapper .billing .billingTitle, #confirmation .addressesContentWrapper .billing .CN .billingTitle, .CN #confirmation .addressesContentWrapper .fastCheckoutSection .title, #confirmation .addressesContentWrapper .fastCheckoutSection .CN .title, .CN #confirmation .addressesContentWrapper .selectedDeliveryMethod .deliveryInfo .deliveryType, #confirmation .addressesContentWrapper .selectedDeliveryMethod .deliveryInfo .CN .deliveryType, .CN #confirmation .creditCardSection .creditCardTitle .title, #confirmation .creditCardSection .creditCardTitle .CN .title, .CN #confirmation .creditCardSection .creditCardForm .fastCheckoutSection .title, #confirmation .creditCardSection .creditCardForm .fastCheckoutSection .CN .title, .CN #confirmation .otherPaymentMethodsSection .paymentMethodsTitle, #confirmation .otherPaymentMethodsSection .CN .paymentMethodsTitle, .CN #delivery .fastCheckoutSection .title, #delivery .fastCheckoutSection .CN .title, .CN #thankyou .thankyouWrapper .orderDesc, #thankyou .thankyouWrapper .CN .orderDesc, .CN #waittobuy .orderDesc, #waittobuy .CN .orderDesc {
+.CN button, .CN .button, .CN .shippingForm .fastCheckoutSection .title, .shippingForm .fastCheckoutSection .CN .title, .CN .creditCardForm .fastCheckoutSection .title, .creditCardForm .fastCheckoutSection .CN .title, .CN #checkmail label, #checkmail .CN label, .CN #checkmail .coSectionContent .topDescription .title, #checkmail .coSectionContent .topDescription .CN .title, .CN #confirmation .creditCardSection .creditCardTitle .title, #confirmation .creditCardSection .creditCardTitle .CN .title, .CN #confirmation .creditCardSection .creditCardForm .fastCheckoutSection .title, #confirmation .creditCardSection .creditCardForm .fastCheckoutSection .CN .title, .CN #confirmation .addressesContentWrapper .orderRecapShipping h3 .title, #confirmation .addressesContentWrapper .orderRecapShipping h3 .CN .title, .CN #confirmation .addressesContentWrapper .giftRecap h3 .title, #confirmation .addressesContentWrapper .giftRecap h3 .CN .title, .CN #confirmation .addressesContentWrapper .selectedDeliveryMethod h3 .title, #confirmation .addressesContentWrapper .selectedDeliveryMethod h3 .CN .title, .CN #confirmation .addressesContentWrapper .billing .billingTitle, #confirmation .addressesContentWrapper .billing .CN .billingTitle, .CN #confirmation .addressesContentWrapper .fastCheckoutSection .title, #confirmation .addressesContentWrapper .fastCheckoutSection .CN .title, .CN #confirmation .addressesContentWrapper .selectedDeliveryMethod .deliveryInfo .deliveryType, #confirmation .addressesContentWrapper .selectedDeliveryMethod .deliveryInfo .CN .deliveryType, .CN #confirmation .otherPaymentMethodsSection .paymentMethodsTitle, #confirmation .otherPaymentMethodsSection .CN .paymentMethodsTitle, .CN #delivery .fastCheckoutSection .title, #delivery .fastCheckoutSection .CN .title, .CN #thankyou .thankyouWrapper .orderDesc, #thankyou .thankyouWrapper .CN .orderDesc, .CN #waittobuy .orderDesc, #waittobuy .CN .orderDesc {
   font-family: KnockoutLight, HelveticaCondensedLight, Arial, "Microsoft YaHei", "Microsoft YaHei Regular", SimHei, "SimHei Regular", sans-serif;
 }
 
@@ -59,13 +67,13 @@ button, .button, .shippingForm .fastCheckoutSection .title, .creditCardForm .fas
   font-weight: normal;
 }
 .JP #cartRecap .item .brandName, #cartRecap .item .JP .brandName, .JP #cart .wishListContainer .wishListItems .brandName, #cart .wishListContainer .wishListItems .JP .brandName, .JP #cart .wishListContainer .wishListItems .price, #cart .wishListContainer .wishListItems .JP .price, .JP #cart .couponSection .insertCouponLabel, #cart .couponSection .JP .insertCouponLabel, .JP #cart .reviewSection .cartReview .macroCategory, #cart .reviewSection .cartReview .JP .macroCategory, .JP #cart .reviewSection .cartReview .brandName, #cart .reviewSection .cartReview .JP .brandName, .JP #cart .reviewSection .sectionRecap, #cart .reviewSection .JP .sectionRecap, .JP #cart .totalValueWrap, #cart .JP .totalValueWrap, .JP #cart #oldCart .brandName, #cart #oldCart .JP .brandName, .JP #checkmail .radioButtonBox label, #checkmail .radioButtonBox .JP label, .JP #confirmation .couponSection .insertCouponLabel, #confirmation .couponSection .JP .insertCouponLabel, .JP #confirmation .cartTotalWrapper .cartTotal, #confirmation .cartTotalWrapper .JP .cartTotal, .JP #delivery .giftSectionContentWrapper .fieldRow.checkbox .fieldLabel, #delivery .giftSectionContentWrapper .fieldRow.checkbox .JP .fieldLabel, .JP #delivery #GiftDataFormViewModel_IsSelected_Wrapper, #delivery .JP #GiftDataFormViewModel_IsSelected_Wrapper, .JP #delivery .deliveryMethod .innerInputWrapper label, #delivery .deliveryMethod .innerInputWrapper .JP label, .JP #thankyou .thankyouWrapper .orderControl .orderNumber, #thankyou .thankyouWrapper .orderControl .JP .orderNumber, .JP #thankyou .thankyouWrapper .orderControl .myOrders, #thankyou .thankyouWrapper .orderControl .JP .myOrders, .JP #thankyou .thankyouWrapper .orderControl .overview, #thankyou .thankyouWrapper .orderControl .JP .overview, .JP #waittobuy .orderControl .myOrders, #waittobuy .orderControl .JP .myOrders {
-  font-family: KnockoutRegular, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+  font-family: KnockoutRegular, "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", sans-serif;
 }
 .CN #cartRecap .item .brandName, #cartRecap .item .CN .brandName, .CN #cart .wishListContainer .wishListItems .brandName, #cart .wishListContainer .wishListItems .CN .brandName, .CN #cart .wishListContainer .wishListItems .price, #cart .wishListContainer .wishListItems .CN .price, .CN #cart .couponSection .insertCouponLabel, #cart .couponSection .CN .insertCouponLabel, .CN #cart .reviewSection .cartReview .macroCategory, #cart .reviewSection .cartReview .CN .macroCategory, .CN #cart .reviewSection .cartReview .brandName, #cart .reviewSection .cartReview .CN .brandName, .CN #cart .reviewSection .sectionRecap, #cart .reviewSection .CN .sectionRecap, .CN #cart .totalValueWrap, #cart .CN .totalValueWrap, .CN #cart #oldCart .brandName, #cart #oldCart .CN .brandName, .CN #checkmail .radioButtonBox label, #checkmail .radioButtonBox .CN label, .CN #confirmation .couponSection .insertCouponLabel, #confirmation .couponSection .CN .insertCouponLabel, .CN #confirmation .cartTotalWrapper .cartTotal, #confirmation .cartTotalWrapper .CN .cartTotal, .CN #delivery .giftSectionContentWrapper .fieldRow.checkbox .fieldLabel, #delivery .giftSectionContentWrapper .fieldRow.checkbox .CN .fieldLabel, .CN #delivery #GiftDataFormViewModel_IsSelected_Wrapper, #delivery .CN #GiftDataFormViewModel_IsSelected_Wrapper, .CN #delivery .deliveryMethod .innerInputWrapper label, #delivery .deliveryMethod .innerInputWrapper .CN label, .CN #thankyou .thankyouWrapper .orderControl .orderNumber, #thankyou .thankyouWrapper .orderControl .CN .orderNumber, .CN #thankyou .thankyouWrapper .orderControl .myOrders, #thankyou .thankyouWrapper .orderControl .CN .myOrders, .CN #thankyou .thankyouWrapper .orderControl .overview, #thankyou .thankyouWrapper .orderControl .CN .overview, .CN #waittobuy .orderControl .myOrders, #waittobuy .orderControl .CN .myOrders {
   font-family: KnockoutLight, HelveticaCondensedLight, Arial, "Microsoft YaHei", "Microsoft YaHei Regular", SimHei, "SimHei Regular", sans-serif;
 }
 
-.recapBox, #faq .shippingReturns .contribution .text .text, #cartRecap, #cartRecap .item .microCategory, #cartRecap .item #cart .reviewSection .cartReview div.modelName, #cart .reviewSection .cartReview #cartRecap .item div.modelName, #cartRecap .item .description .label, #cartRecap .item .description .text, #cartRecap .item .description .value, #cartRecap .item .description .classFamily, #cartRecap h3 .title, .checkoutLogout, .shippingForm .fieldRow.text input, .shippingForm .fieldRow.zipCode input, .creditCardForm .fieldRow.text input, .creditCardForm .fieldRow.zipCode input, #cart .wishListContainer .wishListItems, #cart .couponSection .bannedBrands a, #cart .reviewSection .cartReview .microCategory, #cart .reviewSection .cartReview div.modelName, #cart .reviewSection .cartReview .selectionCol, #cart .reviewSection .cartReview .addRemoveCol, #cart .reviewSection .cartReview .addRemoveCol .deleteItemWrapper .deleteItem, #cart #oldCart .oldCartHeader p, #checkmail .mandatory, #checkmail .coSectionContent .topDescription, #checkmail #passwordRecoveryLink button, #checkmail .privacyContainer, #checkmail .acceptFlags .fieldLabel label, #confirmation .userAddressSubTitle, #confirmation .addNewAddressButtonWithForm *[data-ytos-addnewaddress] label, #confirmation .addNewAddressButtonWithForm, #confirmation .userAddressesListWithForm, #confirmation .shippingAddressForm, #confirmation .billingAddressForm, #confirmation .addNewAddressButtonWithForm .fieldRow.text input, #confirmation .addNewAddressButtonWithForm .fieldRow.placeholder input, #confirmation .addNewAddressButtonWithForm .fieldRow.zipCode input, #confirmation .userAddressesListWithForm .fieldRow.text input, #confirmation .userAddressesListWithForm .fieldRow.placeholder input, #confirmation .userAddressesListWithForm .fieldRow.zipCode input, #confirmation .shippingAddressForm .fieldRow.text input, #confirmation .shippingAddressForm .fieldRow.placeholder input, #confirmation .shippingAddressForm .fieldRow.zipCode input, #confirmation .billingAddressForm .fieldRow.text input, #confirmation .billingAddressForm .fieldRow.placeholder input, #confirmation .billingAddressForm .fieldRow.zipCode input, #confirmation .couponSection .bannedBrands a, #confirmation .pageHeaderContainer .rememberReturn, #confirmation .addressesContentWrapper .orderRecapShipping h3 .text, #confirmation .addressesContentWrapper .giftRecap h3 .text, #confirmation .addressesContentWrapper .selectedDeliveryMethod h3 .text, #confirmation .addressesContentWrapper .orderRecapShipping ul, #confirmation .addressesContentWrapper .giftRecap ul, #confirmation .addressesContentWrapper .selectedDeliveryMethod ul, #confirmation .addressesContentWrapper .fieldRow.checkbox .fieldLabel, #confirmation .addressesContentWrapper .billingAsShippingButton, #confirmation .addressesContentWrapper .giftRecap .giftData, #confirmation .addressesContentWrapper .selectedDeliveryMethod .deliveryInfo, #confirmation .creditCardSection .creditCardTitle .modify, #confirmation .creditCardSection .cardContainer .cardInfo, #confirmation .creditCardSection .cardContainer .cardAlerts, #confirmation .creditCardSection .cardContainer .cvvAndExpirationForm .fieldLabel, #confirmation .creditCardSection .cardContainer .cvvAndExpirationForm .cvvInfo, #confirmation .creditCardSection .cardContainer .formPlaceholderContainer .fieldRow .fieldValue, #confirmation .creditCardSection .cardContainer .formPlaceholderContainer .fieldRow.text input, #confirmation .creditCardSection .cardContainer .formPlaceholderContainer .fieldRow.zipCode input, #confirmation .creditCardSection .newCreditCardButton label, #confirmation .creditCardSection .creditCardForm, #confirmation .otherPaymentMethodsSection .paymentMethod .availableCards, #confirmation .otherPaymentMethodsSection .paymentMethod .originalValue, #confirmation .otherPaymentMethodsSection .paymentMethod .valueToPay, #confirmation .confirmationFooter .personalInfoLabel, #delivery .userAddressSubTitle, #delivery .addNewAddressButtonWithForm *[data-ytos-addnewaddress] label, #delivery .addNewAddressButtonWithForm, #delivery .userAddressesListWithForm, #delivery .shippingAddressForm, #delivery .billingAddressForm, #delivery .addNewAddressButtonWithForm .fieldRow.text input, #delivery .addNewAddressButtonWithForm .fieldRow.placeholder input, #delivery .addNewAddressButtonWithForm .fieldRow.zipCode input, #delivery .userAddressesListWithForm .fieldRow.text input, #delivery .userAddressesListWithForm .fieldRow.placeholder input, #delivery .userAddressesListWithForm .fieldRow.zipCode input, #delivery .shippingAddressForm .fieldRow.text input, #delivery .shippingAddressForm .fieldRow.placeholder input, #delivery .shippingAddressForm .fieldRow.zipCode input, #delivery .billingAddressForm .fieldRow.text input, #delivery .billingAddressForm .fieldRow.placeholder input, #delivery .billingAddressForm .fieldRow.zipCode input, #delivery .giftSectionContentWrapper .giftOptionWrapper.sendEmail #GiftDataFormViewModel_Email_Wrapper input, #delivery .giftSectionContentWrapper .giftOptionWrapper .giftInfoButton, #delivery .giftSectionContentWrapper .giftOptionWrapper .giftInfoBox, #delivery #GiftDataFormViewModel_Message, #delivery .giftSectionSubTitle, #delivery .deliveryMethod .description, #delivery .deliveryMethod .originalValue, #delivery .deliveryMethod .valueToPay, #delivery .deliveryMethod .expressGuaranteed, #delivery .deliveryMethod .deliveryInformation, #delivery .nodeliverydaysWrapper, #delivery .privacyInfoSection, #thankyou .thankyouWrapper .orderControl, #thankyou .thankyouWrapper ul, #thankyou .adviceFormWrapper .adviceFormContainer .adviceDescription, #thankyou .adviceForm .success, #waittobuy .orderControl {
+.recapBox, #faq .shippingReturns .contribution .text .text, #cartRecap, #cartRecap .item .microCategory, #cartRecap .item #cart .reviewSection .cartReview div.modelName, #cart .reviewSection .cartReview #cartRecap .item div.modelName, #cartRecap .item .description .label, #cartRecap .item .description .text, #cartRecap .item .description .value, #cartRecap .item .description .classFamily, #cartRecap h3 .title, .checkoutLogout, .shippingForm .fieldRow.text input, .shippingForm .fieldRow.zipCode input, .creditCardForm .fieldRow.text input, .creditCardForm .fieldRow.zipCode input, #cart .wishListContainer .wishListItems, #cart .couponSection .bannedBrands a, #cart .reviewSection .cartReview .microCategory, #cart .reviewSection .cartReview div.modelName, #cart .reviewSection .cartReview .selectionCol, #cart .reviewSection .cartReview .addRemoveCol, #cart .reviewSection .cartReview .addRemoveCol .deleteItemWrapper .deleteItem, #cart #oldCart .oldCartHeader p, #checkmail .mandatory, #checkmail .coSectionContent .topDescription, #checkmail #passwordRecoveryLink button, #checkmail .privacyContainer, #checkmail .acceptFlags .fieldLabel label, #confirmation .userAddressSubTitle, #confirmation .addNewAddressButtonWithForm *[data-ytos-addnewaddress] label, #confirmation .addNewAddressButtonWithForm, #confirmation .userAddressesListWithForm, #confirmation .shippingAddressForm, #confirmation .billingAddressForm, #confirmation .addNewAddressButtonWithForm .fieldRow.text input, #confirmation .addNewAddressButtonWithForm .fieldRow.placeholder input, #confirmation .addNewAddressButtonWithForm .fieldRow.zipCode input, #confirmation .userAddressesListWithForm .fieldRow.text input, #confirmation .userAddressesListWithForm .fieldRow.placeholder input, #confirmation .userAddressesListWithForm .fieldRow.zipCode input, #confirmation .shippingAddressForm .fieldRow.text input, #confirmation .shippingAddressForm .fieldRow.placeholder input, #confirmation .shippingAddressForm .fieldRow.zipCode input, #confirmation .billingAddressForm .fieldRow.text input, #confirmation .billingAddressForm .fieldRow.placeholder input, #confirmation .billingAddressForm .fieldRow.zipCode input, #confirmation .couponSection .bannedBrands a, #confirmation .creditCardSection .creditCardTitle .modify, #confirmation .creditCardSection .cardContainer .cardInfo, #confirmation .creditCardSection .cardContainer .cardAlerts, #confirmation .creditCardSection .cardContainer .cvvAndExpirationForm .fieldLabel, #confirmation .creditCardSection .cardContainer .cvvAndExpirationForm .cvvInfo, #confirmation .creditCardSection .cardContainer .formPlaceholderContainer .fieldRow .fieldValue, #confirmation .creditCardSection .cardContainer .formPlaceholderContainer .fieldRow.text input, #confirmation .creditCardSection .cardContainer .formPlaceholderContainer .fieldRow.zipCode input, #confirmation .creditCardSection .newCreditCardButton label, #confirmation .creditCardSection .creditCardForm, #confirmation .pageHeaderContainer .rememberReturn, #confirmation .addressesContentWrapper .orderRecapShipping h3 .text, #confirmation .addressesContentWrapper .giftRecap h3 .text, #confirmation .addressesContentWrapper .selectedDeliveryMethod h3 .text, #confirmation .addressesContentWrapper .orderRecapShipping ul, #confirmation .addressesContentWrapper .giftRecap ul, #confirmation .addressesContentWrapper .selectedDeliveryMethod ul, #confirmation .addressesContentWrapper .fieldRow.checkbox .fieldLabel, #confirmation .addressesContentWrapper .billingAsShippingButton, #confirmation .addressesContentWrapper .giftRecap .giftData, #confirmation .addressesContentWrapper .selectedDeliveryMethod .deliveryInfo, #confirmation .otherPaymentMethodsSection .paymentMethod .availableCards, #confirmation .otherPaymentMethodsSection .paymentMethod .originalValue, #confirmation .otherPaymentMethodsSection .paymentMethod .valueToPay, #confirmation .confirmationFooter .personalInfoLabel, #delivery .userAddressSubTitle, #delivery .addNewAddressButtonWithForm *[data-ytos-addnewaddress] label, #delivery .addNewAddressButtonWithForm, #delivery .userAddressesListWithForm, #delivery .shippingAddressForm, #delivery .billingAddressForm, #delivery .addNewAddressButtonWithForm .fieldRow.text input, #delivery .addNewAddressButtonWithForm .fieldRow.placeholder input, #delivery .addNewAddressButtonWithForm .fieldRow.zipCode input, #delivery .userAddressesListWithForm .fieldRow.text input, #delivery .userAddressesListWithForm .fieldRow.placeholder input, #delivery .userAddressesListWithForm .fieldRow.zipCode input, #delivery .shippingAddressForm .fieldRow.text input, #delivery .shippingAddressForm .fieldRow.placeholder input, #delivery .shippingAddressForm .fieldRow.zipCode input, #delivery .billingAddressForm .fieldRow.text input, #delivery .billingAddressForm .fieldRow.placeholder input, #delivery .billingAddressForm .fieldRow.zipCode input, #delivery .giftSectionContentWrapper .giftOptionWrapper.sendEmail #GiftDataFormViewModel_Email_Wrapper input, #delivery .giftSectionContentWrapper .giftOptionWrapper .giftInfoButton, #delivery .giftSectionContentWrapper .giftOptionWrapper .giftInfoBox, #delivery #GiftDataFormViewModel_Message, #delivery .giftSectionSubTitle, #delivery .deliveryMethod .description, #delivery .deliveryMethod .originalValue, #delivery .deliveryMethod .valueToPay, #delivery .deliveryMethod .expressGuaranteed, #delivery .deliveryMethod .deliveryInformation, #delivery .nodeliverydaysWrapper, #delivery .privacyInfoSection, #thankyou .thankyouWrapper .orderControl, #thankyou .thankyouWrapper ul, #thankyou .adviceFormWrapper .adviceFormContainer .adviceDescription, #thankyou .adviceForm .success, #waittobuy .orderControl {
   font-family: HelveticaCondensedLight, Arial, Verdana, sans-serif;
   font-weight: normal;
 }
@@ -80,7 +88,7 @@ button, .button, .shippingForm .fastCheckoutSection .title, .creditCardForm .fas
   font-weight: normal;
 }
 .JP #cart .reviewSection .cartReview .isLastItemInfo, #cart .reviewSection .cartReview .JP .isLastItemInfo {
-  font-family: LatoRegular, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+  font-family: LatoRegular, "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", sans-serif;
 }
 
 /* ==========================================================================
@@ -174,17 +182,17 @@ button.disabled:hover, button[disabled]:hover, .button.disabled:hover, .button[d
 }
 
 .svgfallback-sprite, .no-svg #cart .wishListContainer .bx-controls-direction .bx-prev, .ielt9 #cart .wishListContainer .bx-controls-direction .bx-prev, .no-svg #cart .wishListContainer .bx-controls-direction .bx-next, .ielt9 #cart .wishListContainer .bx-controls-direction .bx-next {
-  background-image: url('/Content/Styles/generated_images/svgfallback-s163386ba73.png');
+  background-image: url('/styles/generated_images/svgfallback-s163386ba73.png');
   background-repeat: no-repeat;
 }
 
 .sprites-desktop-sprite, .sprites-desktop-checkMark, .sprites-desktop-checkWhite, .sprites-desktop-cinesina, .sprites-desktop-fb_btn, .sprites-desktop-giftPackage, .sprites-desktop-giftPackageChina, .sprites-desktop-gplus_btn, .sprites-desktop-kaixin_btn, .sprites-desktop-pinit_btn, .sprites-desktop-plusone_btn, .sprites-desktop-seal, .sprites-desktop-small_i, .sprites-desktop-tweet_btn, .sprites-desktop-twitter_btn, .sprites-desktop-weiboo_btn {
-  background-image: url('/Content/Styles/generated_images/sprites-desktop-s6783407e58.png');
+  background-image: url('/styles/generated_images/sprites-desktop-s6783407e58.png');
   background-repeat: no-repeat;
 }
 
 .sprites-creditcards-sprite, .sprites-creditcards-alipay, #confirmation .otherPaymentMethodsSection .AvailablePaymentMethodsViewModel_500 .availableCards .image, .sprites-creditcards-americanexpress, .sprites-creditcards-americanexpress_big, #confirmation .cardIcon.AmericanExpress, .sprites-creditcards-cartebleue, .sprites-creditcards-cartebleue_big, #confirmation .cardIcon.CarteBleue, .sprites-creditcards-cartebleuevisa_big, .sprites-creditcards-discover, .sprites-creditcards-discover_big, .sprites-creditcards-jcb, .sprites-creditcards-jcb_big, #confirmation .cardIcon.JCB, .sprites-creditcards-maestro, .sprites-creditcards-maestro_big, #confirmation .cardIcon.Switch, .sprites-creditcards-mastercard, .sprites-creditcards-mastercard_big, #confirmation .cardIcon.Mastercard, .sprites-creditcards-payease, #confirmation .otherPaymentMethodsSection .AvailablePaymentMethodsViewModel_601 .availableCards .image, .sprites-creditcards-paypal, #confirmation .otherPaymentMethodsSection .AvailablePaymentMethodsViewModel_300 .availableCards .image, .sprites-creditcards-paypal_big, .sprites-creditcards-postepay, .sprites-creditcards-postepay_big, .sprites-creditcards-visa, .sprites-creditcards-visa_big, #confirmation .cardIcon.Visa {
-  background-image: url('/Content/Styles/generated_images/sprites-creditcards-s9068ad9ed7.png');
+  background-image: url('/styles/generated_images/sprites-creditcards-s9068ad9ed7.png');
   background-repeat: no-repeat;
 }
 
@@ -1273,7 +1281,7 @@ html.CN .checkoutLogout {
   float: left;
 }
 #cart .empty-cart-banners .banner-slot:first-child {
-  margin-right: 10px;
+  margin-right: 9px;
 }
 #cart .empty-cart-banners .banner-slot:first-child + .banner-slot {
   margin-right: 10px;
@@ -1677,6 +1685,7 @@ html.CN .checkoutLogout {
   font-size: 1.2em;
 }
 #cart .totalValueWrap {
+  position: relative;
   text-align: right;
   color: #666;
   font-size: 2.8em;
@@ -1689,8 +1698,20 @@ html.CN .checkoutLogout {
 #cart .totalValueWrap .label {
   margin-right: 25px;
 }
-#cart .totalValueWrap .salesTaxesDescrPopup {
+#cart .totalValueWrap .salesTaxesDescrPopup, #cart .totalValueWrap .salesTaxesDescr {
   display: none;
+  float: right;
+}
+#cart .totalValueWrap .salesTaxesInfo {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: 0.5em;
+  cursor: pointer;
+  color: #333;
+}
+#cart .totalValueWrap .salesTaxesInfo:hover {
+  color: #000;
 }
 #cart .salesTaxWrap {
   display: none;
@@ -1818,6 +1839,9 @@ html.CN .checkoutLogout {
 }
 #cart #oldCart .bx-prev {
   left: -15px;
+}
+#cart #smartLoadingBar .slow, #cart #smartLoadingBar .fast {
+  background-color: #FFF;
 }
 
 #checkmail .mainTitle {
@@ -2086,6 +2110,7 @@ html.CN .checkoutLogout {
   float: left;
   font-size: 1.5em;
   line-height: 17px;
+  max-width: 455px;
 }
 #confirmation .userAddressesListWithForm .cardHolderData .personalDetailsWrapper ul, #confirmation .userAddressesListWithForm .cardHolderData .otherDetailsWrapper ul {
   *zoom: 1;
@@ -2178,6 +2203,344 @@ html.CN .checkoutLogout {
 }
 #confirmation #noPromoBrands button {
   margin: 10px;
+}
+#confirmation .cardContentWrapper.fastCheckout .creditCardSection {
+  padding-bottom: 0;
+}
+#confirmation .cardContentWrapper.fastCheckout .creditCardSection .creditCardTitle .modify {
+  display: inline;
+}
+#confirmation .cardContentWrapper.fastCheckout .creditCardSection .cardContainer {
+  display: none;
+}
+#confirmation .cardContentWrapper.fastCheckout .creditCardSection .cardContainer.default, #confirmation .cardContentWrapper.fastCheckout .creditCardSection .cardContainer.selected {
+  display: block;
+}
+#confirmation .cardContentWrapper.fastCheckout .creditCardSection .newCreditCardButton {
+  display: none;
+}
+#confirmation .cardContentWrapper.fastCheckout .otherPaymentMethodsSection {
+  display: none;
+}
+#confirmation .cardContentWrapper.fastCheckout .couponSection {
+  padding-top: 0;
+  border: none;
+}
+#confirmation .creditCardSection {
+  padding-bottom: 20px;
+}
+#confirmation .creditCardSection.userNoCreditCards .creditCardForm {
+  margin: 0;
+  border: none;
+}
+#confirmation .creditCardSection.userNoCreditCards .newCreditCardButton {
+  padding-top: 20px;
+}
+#confirmation .creditCardSection .creditCardTitle {
+  font-size: 100%;
+  padding: 0 10px 3px 0;
+  border-bottom: 1px solid #999;
+}
+#confirmation .creditCardSection .creditCardTitle .title {
+  font-size: 2.2em;
+  color: #666;
+  text-transform: uppercase;
+  margin-right: 4px;
+}
+#confirmation .creditCardSection .creditCardTitle .modify {
+  display: none;
+  font-size: 1.3em;
+  color: #999;
+  cursor: pointer;
+  text-transform: lowercase;
+}
+#confirmation .creditCardSection .creditCardTitle .modify:before {
+  content: '(';
+}
+#confirmation .creditCardSection .creditCardTitle .modify:after {
+  content: ")";
+}
+#confirmation .creditCardSection .userCreditCardsListWithForm {
+  padding-right: 10px;
+  margin-top: 15px;
+}
+#confirmation .creditCardSection .cardContainer {
+  *zoom: 1;
+  padding: 20px 0;
+}
+#confirmation .creditCardSection .cardContainer:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#confirmation .creditCardSection .cardContainer .radioButton {
+  float: left;
+  margin-right: 10px;
+  margin-top: 26.5px;
+}
+#confirmation .creditCardSection .cardContainer .cardIcon {
+  float: left;
+  margin-right: 25px;
+}
+#confirmation .creditCardSection .cardContainer .inner {
+  *zoom: 1;
+}
+#confirmation .creditCardSection .cardContainer .inner:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#confirmation .creditCardSection .cardContainer .onlyCardInfo, #confirmation .creditCardSection .cardContainer .cardHolderData {
+  margin-top: 6px;
+}
+#confirmation .creditCardSection .cardContainer .onlyCardInfo {
+  float: left;
+  width: 160px;
+  margin-right: 10px;
+}
+#confirmation .creditCardSection .cardContainer .cardInfo {
+  *zoom: 1;
+  line-height: 21px;
+  font-size: 1.5em;
+  color: #666;
+  float: left;
+  width: 370px;
+  margin-right: 10px;
+}
+#confirmation .creditCardSection .cardContainer .cardInfo:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#confirmation .creditCardSection .cardContainer .cardInfo .label {
+  display: none;
+}
+#confirmation .creditCardSection .cardContainer .cardHolderData {
+  float: left;
+  width: 200px;
+}
+#confirmation .creditCardSection .cardContainer .cardHolderData .holderName {
+  display: list-item;
+}
+#confirmation .creditCardSection .cardContainer .zipcode, #confirmation .creditCardSection .cardContainer .city, #confirmation .creditCardSection .cardContainer .province, #confirmation .creditCardSection .cardContainer .country {
+  display: inline;
+}
+#confirmation .creditCardSection .cardContainer .zipcode:after {
+  content: "\00A0-\00A0";
+}
+#confirmation .creditCardSection .cardContainer .province .value:before {
+  content: '(';
+}
+#confirmation .creditCardSection .cardContainer .province .value:after {
+  content: ")";
+}
+#confirmation .creditCardSection .cardContainer .cardAlerts {
+  float: left;
+  width: 102px;
+  line-height: 21px;
+  font-size: 1.5em;
+  color: #666;
+}
+#confirmation .creditCardSection .cardContainer.cardExpired .cardAlerts .expiredLabel {
+  color: #900000;
+  text-transform: uppercase;
+}
+#confirmation .creditCardSection .cardContainer .cvvAndExpirationForm {
+  position: relative;
+}
+#confirmation .creditCardSection .cardContainer .cvvAndExpirationForm .fieldLabel, #confirmation .creditCardSection .cardContainer .cvvAndExpirationForm .cvvInfo {
+  font-size: 1.5em;
+  color: #666;
+}
+#confirmation .creditCardSection .cardContainer .cvvAndExpirationForm .fieldRow.checkbox {
+  *zoom: 1;
+}
+#confirmation .creditCardSection .cardContainer .cvvAndExpirationForm .fieldRow.checkbox:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#confirmation .creditCardSection .cardContainer .cvvAndExpirationForm .fieldRow.checkbox .fieldValue {
+  float: left;
+  margin-right: 10px;
+}
+#confirmation .creditCardSection .cardContainer .cvvAndExpirationForm .fieldRow.checkbox .fieldLabel {
+  float: left;
+  line-height: 21px;
+}
+#confirmation .creditCardSection .cardContainer .cvvAndExpirationForm .fieldRow.checkbox .fieldLabel label {
+  line-height: 21px;
+}
+#confirmation .creditCardSection .cardContainer.selected .formPlaceholderContainer {
+  display: block;
+}
+#confirmation .creditCardSection .cardContainer .formPlaceholderContainer {
+  display: none;
+  border-top: 1px solid #999;
+  margin-top: 15px;
+  padding-top: 20px;
+  border-bottom: 1px solid #999;
+  *zoom: 1;
+  padding-left: 27px;
+  clear: both;
+  width: 97%;
+  float: left;
+}
+#confirmation .creditCardSection .cardContainer .formPlaceholderContainer:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#confirmation .creditCardSection .cardContainer .formPlaceholderContainer .fieldRow.text input, #confirmation .creditCardSection .cardContainer .formPlaceholderContainer .fieldRow.zipCode input {
+  font-size: 1.6em;
+}
+#confirmation .creditCardSection .cardContainer .expirationDate {
+  clear: both;
+}
+#confirmation .creditCardSection .cardContainer .expirationDate .fieldValue {
+  *zoom: 1;
+}
+#confirmation .creditCardSection .cardContainer .expirationDate .fieldValue:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#confirmation .creditCardSection .cardContainer .expirationDate .selectTitle {
+  display: none;
+}
+#confirmation .creditCardSection .cardContainer .expirationDate .selectInput_wrapper {
+  width: 42%;
+  margin-right: 4%;
+  float: left;
+}
+#confirmation .creditCardSection .cardContainer .expirationDate .year {
+  margin-left: 4%;
+}
+#confirmation .creditCardSection .cardContainer .Cvv, #confirmation .creditCardSection .cardContainer .Issue {
+  width: 48%;
+}
+#confirmation .creditCardSection .cardContainer .Cvv input, #confirmation .creditCardSection .cardContainer .Issue input {
+  width: 40%;
+}
+#confirmation .creditCardSection .cardContainer .cvvInfo {
+  cursor: pointer;
+  position: absolute;
+  top: 24px;
+  left: 21%;
+  line-height: 40px;
+}
+#confirmation .creditCardSection .cardContainer.cardExpired .cvvInfo {
+  top: 108px;
+}
+#confirmation .creditCardSection .cardContainer .fastCheckoutSection .title {
+  display: none;
+}
+#confirmation .creditCardSection .newCreditCardButton {
+  *zoom: 1;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+#confirmation .creditCardSection .newCreditCardButton:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#confirmation .creditCardSection .newCreditCardButton .radioButton {
+  float: left;
+  margin-right: 10px;
+}
+#confirmation .creditCardSection .newCreditCardButton label {
+  float: left;
+  color: #666;
+  font-size: 1.5em;
+  line-height: 23px;
+  text-transform: uppercase;
+  padding-left: 40px;
+  position: relative;
+  left: -30px;
+  cursor: pointer;
+  display: inline-block;
+  z-index: 3;
+}
+#confirmation .creditCardSection .addingNewCard .trustwaveMessage {
+  display: none;
+}
+#confirmation .creditCardSection .privacy {
+  display: none;
+}
+#confirmation .creditCardSection .creditCardForm {
+  display: none;
+  color: #666;
+  position: relative;
+}
+#confirmation .creditCardSection .creditCardForm.addingNewCard {
+  display: block;
+}
+#confirmation .creditCardSection .creditCardForm .fieldRow {
+  min-height: 85px;
+  margin-bottom: 0;
+}
+#confirmation .creditCardSection .creditCardForm .lockedFields {
+  clear: both;
+}
+#confirmation .creditCardSection .creditCardForm .expirationDate {
+  clear: both;
+}
+#confirmation .creditCardSection .creditCardForm .expirationDate .fieldValue {
+  *zoom: 1;
+}
+#confirmation .creditCardSection .creditCardForm .expirationDate .fieldValue:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#confirmation .creditCardSection .creditCardForm .expirationDate .selectTitle {
+  display: none;
+}
+#confirmation .creditCardSection .creditCardForm .expirationDate .selectInput_wrapper {
+  width: 42%;
+  margin-left: 4%;
+  margin-right: 4%;
+  float: left;
+}
+#confirmation .creditCardSection .creditCardForm .expirationDate .fieldLabel, #confirmation .creditCardSection .creditCardForm .expirationDate .field-validation-container {
+  margin-left: 4%;
+}
+#confirmation .creditCardSection .creditCardForm .creditCardHolderTitle, #confirmation .creditCardSection .creditCardForm .creditCardHolderDescription {
+  display: none;
+}
+#confirmation .creditCardSection .creditCardForm .cvvInfo {
+  position: absolute;
+  right: 25px;
+  cursor: pointer;
+  font-size: 1.3em;
+  line-height: 1.8;
+}
+#confirmation .creditCardSection .creditCardForm .fastCheckoutSection {
+  padding-top: 15px;
+}
+#confirmation .creditCardSection .creditCardForm .fastCheckoutSection .title {
+  font-size: 2em;
+  color: #666;
+  text-transform: uppercase;
+}
+#confirmation .creditCardSection .creditCardForm .fastCheckoutSection .fieldRow {
+  min-height: 30px;
+}
+.RU #confirmation .creditCardSection .prettyselect-drop li {
+  padding: 0 8px;
+}
+.RU #confirmation .creditCardSection .prettyselect-drop {
+  white-space: nowrap;
+  overflow-x: hidden;
+  font-size: 1.5em;
+}
+.RU #confirmation .creditCardSection .prettyselect-label {
+  white-space: nowrap;
+  font-size: 1.1em;
+}
+#confirmation #CreditCardFormViewModel_Number_Wrapper {
+  margin-bottom: 34px;
 }
 #confirmation .pageHeaderContainer .rememberReturn {
   font-size: 1.6em;
@@ -2398,349 +2761,6 @@ html.CN .checkoutLogout {
 #confirmation #BillingAddressViewModel_Region_Wrapper .prettyselect-label.RU, .RU #confirmation #BillingAddressViewModel_Region_Wrapper .prettyselect-label, #confirmation #CreditCardFormViewModel_Province_Wrapper .prettyselect-label.RU, .RU #confirmation #CreditCardFormViewModel_Province_Wrapper .prettyselect-label {
   font-size: 1.2em;
 }
-#confirmation .cardContentWrapper.fastCheckout .creditCardSection {
-  padding-bottom: 0;
-}
-#confirmation .cardContentWrapper.fastCheckout .creditCardSection .creditCardTitle .modify {
-  display: inline;
-}
-#confirmation .cardContentWrapper.fastCheckout .creditCardSection .cardContainer {
-  display: none;
-}
-#confirmation .cardContentWrapper.fastCheckout .creditCardSection .cardContainer.default {
-  display: block;
-}
-#confirmation .cardContentWrapper.fastCheckout .creditCardSection .cardContainer.selected {
-  display: block;
-}
-#confirmation .cardContentWrapper.fastCheckout .creditCardSection .newCreditCardButton {
-  display: none;
-}
-#confirmation .cardContentWrapper.fastCheckout .otherPaymentMethodsSection {
-  display: none;
-}
-#confirmation .cardContentWrapper.fastCheckout .couponSection {
-  padding-top: 0;
-  border: none;
-}
-#confirmation .creditCardSection {
-  padding-bottom: 20px;
-}
-#confirmation .creditCardSection.userNoCreditCards .creditCardForm {
-  margin: 0;
-  border: none;
-}
-#confirmation .creditCardSection.userNoCreditCards .newCreditCardButton {
-  padding-top: 20px;
-}
-#confirmation .creditCardSection .creditCardTitle {
-  font-size: 100%;
-  padding: 0 10px 3px 0;
-  border-bottom: 1px solid #999;
-}
-#confirmation .creditCardSection .creditCardTitle .title {
-  font-size: 2.2em;
-  color: #666;
-  text-transform: uppercase;
-  margin-right: 4px;
-}
-#confirmation .creditCardSection .creditCardTitle .modify {
-  display: none;
-  font-size: 1.3em;
-  color: #999;
-  cursor: pointer;
-  text-transform: lowercase;
-}
-#confirmation .creditCardSection .creditCardTitle .modify:before {
-  content: '(';
-}
-#confirmation .creditCardSection .creditCardTitle .modify:after {
-  content: ")";
-}
-#confirmation .creditCardSection .userCreditCardsListWithForm {
-  padding-right: 10px;
-  margin-top: 15px;
-}
-#confirmation .creditCardSection .creditCardForm {
-  display: none;
-}
-#confirmation .creditCardSection .creditCardForm.addingNewCard {
-  display: block;
-}
-#confirmation .creditCardSection .creditCardForm .fastCheckoutSection {
-  padding-top: 15px;
-}
-#confirmation .creditCardSection .creditCardForm .fastCheckoutSection .title {
-  font-size: 2em;
-  color: #666;
-  text-transform: uppercase;
-}
-#confirmation .creditCardSection .creditCardForm .fastCheckoutSection .fieldRow {
-  min-height: 30px;
-}
-#confirmation .creditCardSection .cardContainer {
-  *zoom: 1;
-  padding: 20px 0;
-}
-#confirmation .creditCardSection .cardContainer:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-#confirmation .creditCardSection .cardContainer .radioButton {
-  float: left;
-  margin-right: 10px;
-  margin-top: 26.5px;
-}
-#confirmation .creditCardSection .cardContainer .cardIcon {
-  float: left;
-  margin-right: 25px;
-}
-#confirmation .creditCardSection .cardContainer .inner {
-  *zoom: 1;
-}
-#confirmation .creditCardSection .cardContainer .inner:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-#confirmation .creditCardSection .cardContainer .onlyCardInfo, #confirmation .creditCardSection .cardContainer .cardHolderData {
-  margin-top: 6px;
-}
-#confirmation .creditCardSection .cardContainer .onlyCardInfo {
-  float: left;
-  width: 160px;
-  margin-right: 10px;
-}
-#confirmation .creditCardSection .cardContainer .cardInfo {
-  *zoom: 1;
-  line-height: 21px;
-  font-size: 1.5em;
-  color: #666;
-  float: left;
-  width: 370px;
-  margin-right: 10px;
-}
-#confirmation .creditCardSection .cardContainer .cardInfo:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-#confirmation .creditCardSection .cardContainer .cardInfo .label {
-  display: none;
-}
-#confirmation .creditCardSection .cardContainer .cardHolderData {
-  float: left;
-  width: 200px;
-}
-#confirmation .creditCardSection .cardContainer .cardHolderData .holderName {
-  display: list-item;
-}
-#confirmation .creditCardSection .cardContainer .zipcode, #confirmation .creditCardSection .cardContainer .city, #confirmation .creditCardSection .cardContainer .province, #confirmation .creditCardSection .cardContainer .country {
-  display: inline;
-}
-#confirmation .creditCardSection .cardContainer .zipcode:after {
-  content: "\00A0-\00A0";
-}
-#confirmation .creditCardSection .cardContainer .province .value:before {
-  content: '(';
-}
-#confirmation .creditCardSection .cardContainer .province .value:after {
-  content: ")";
-}
-#confirmation .creditCardSection .cardContainer .cardAlerts {
-  float: left;
-  width: 102px;
-  line-height: 21px;
-  font-size: 1.5em;
-  color: #666;
-}
-#confirmation .creditCardSection .cardContainer.cardExpired .cardAlerts .expiredLabel {
-  color: #900000;
-  text-transform: uppercase;
-}
-#confirmation .creditCardSection .cardContainer .cvvAndExpirationForm {
-  position: relative;
-}
-#confirmation .creditCardSection .cardContainer .cvvAndExpirationForm .fieldLabel, #confirmation .creditCardSection .cardContainer .cvvAndExpirationForm .cvvInfo {
-  font-size: 1.5em;
-  color: #666;
-}
-#confirmation .creditCardSection .cardContainer .cvvAndExpirationForm .fieldRow.checkbox {
-  *zoom: 1;
-}
-#confirmation .creditCardSection .cardContainer .cvvAndExpirationForm .fieldRow.checkbox:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-#confirmation .creditCardSection .cardContainer .cvvAndExpirationForm .fieldRow.checkbox .fieldValue {
-  float: left;
-  margin-right: 10px;
-}
-#confirmation .creditCardSection .cardContainer .cvvAndExpirationForm .fieldRow.checkbox .fieldLabel {
-  float: left;
-  line-height: 21px;
-}
-#confirmation .creditCardSection .cardContainer .cvvAndExpirationForm .fieldRow.checkbox .fieldLabel label {
-  line-height: 21px;
-}
-#confirmation .creditCardSection .cardContainer.selected .formPlaceholderContainer {
-  display: block;
-}
-#confirmation .creditCardSection .cardContainer .formPlaceholderContainer {
-  display: none;
-  border-top: 1px solid #999;
-  margin-top: 15px;
-  padding-top: 20px;
-  border-bottom: 1px solid #999;
-  *zoom: 1;
-  padding-left: 27px;
-  clear: both;
-  width: 97%;
-  float: left;
-}
-#confirmation .creditCardSection .cardContainer .formPlaceholderContainer:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-#confirmation .creditCardSection .cardContainer .formPlaceholderContainer .fieldRow.text input, #confirmation .creditCardSection .cardContainer .formPlaceholderContainer .fieldRow.zipCode input {
-  font-size: 1.6em;
-}
-#confirmation .creditCardSection .cardContainer .expirationDate {
-  clear: both;
-}
-#confirmation .creditCardSection .cardContainer .expirationDate .fieldValue {
-  *zoom: 1;
-}
-#confirmation .creditCardSection .cardContainer .expirationDate .fieldValue:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-#confirmation .creditCardSection .cardContainer .expirationDate .selectTitle {
-  display: none;
-}
-#confirmation .creditCardSection .cardContainer .expirationDate .selectInput_wrapper {
-  width: 42%;
-  margin-right: 4%;
-  float: left;
-}
-#confirmation .creditCardSection .cardContainer .expirationDate .year {
-  margin-left: 4%;
-}
-#confirmation .creditCardSection .cardContainer .Cvv, #confirmation .creditCardSection .cardContainer .Issue {
-  width: 48%;
-}
-#confirmation .creditCardSection .cardContainer .Cvv input, #confirmation .creditCardSection .cardContainer .Issue input {
-  width: 40%;
-}
-#confirmation .creditCardSection .cardContainer .cvvInfo {
-  cursor: pointer;
-  position: absolute;
-  top: 24px;
-  left: 21%;
-  line-height: 40px;
-}
-#confirmation .creditCardSection .cardContainer.cardExpired .cvvInfo {
-  top: 108px;
-}
-#confirmation .creditCardSection .cardContainer .fastCheckoutSection .title {
-  display: none;
-}
-#confirmation .creditCardSection .newCreditCardButton {
-  *zoom: 1;
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
-#confirmation .creditCardSection .newCreditCardButton:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-#confirmation .creditCardSection .newCreditCardButton .radioButton {
-  float: left;
-  margin-right: 10px;
-}
-#confirmation .creditCardSection .newCreditCardButton label {
-  float: left;
-  color: #666;
-  font-size: 1.5em;
-  line-height: 23px;
-  text-transform: uppercase;
-  padding-left: 40px;
-  position: relative;
-  left: -30px;
-  cursor: pointer;
-  display: inline-block;
-  z-index: 999;
-}
-#confirmation .creditCardSection .addingNewCard .trustwaveMessage {
-  display: none;
-}
-#confirmation .creditCardSection .privacy {
-  display: none;
-}
-#confirmation .creditCardSection .creditCardForm {
-  color: #666;
-  position: relative;
-}
-#confirmation .creditCardSection .creditCardForm .fieldRow {
-  min-height: 85px;
-  margin-bottom: 0;
-}
-#confirmation .creditCardSection .creditCardForm .lockedFields {
-  clear: both;
-}
-#confirmation .creditCardSection .creditCardForm .expirationDate {
-  clear: both;
-}
-#confirmation .creditCardSection .creditCardForm .expirationDate .fieldValue {
-  *zoom: 1;
-}
-#confirmation .creditCardSection .creditCardForm .expirationDate .fieldValue:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-#confirmation .creditCardSection .creditCardForm .expirationDate .selectTitle {
-  display: none;
-}
-#confirmation .creditCardSection .creditCardForm .expirationDate .selectInput_wrapper {
-  width: 42%;
-  margin-left: 4%;
-  margin-right: 4%;
-  float: left;
-}
-#confirmation .creditCardSection .creditCardForm .expirationDate .fieldLabel, #confirmation .creditCardSection .creditCardForm .expirationDate .field-validation-container {
-  margin-left: 4%;
-}
-#confirmation .creditCardSection .creditCardForm .creditCardHolderTitle, #confirmation .creditCardSection .creditCardForm .creditCardHolderDescription {
-  display: none;
-}
-#confirmation .creditCardSection .creditCardForm .cvvInfo {
-  position: absolute;
-  right: 25px;
-  cursor: pointer;
-  font-size: 1.3em;
-  line-height: 1.8;
-}
-.RU #confirmation .creditCardSection .creditCardForm .prettyselect-drop li {
-  padding: 0 8px;
-}
-.RU #confirmation .creditCardSection .creditCardForm .prettyselect-drop {
-  white-space: nowrap;
-  overflow-x: hidden;
-  font-size: 1.5em;
-}
-.RU #confirmation .creditCardSection .creditCardForm .prettyselect-label {
-  white-space: nowrap;
-  font-size: 1.1em;
-}
-#confirmation .creditCardSection #CreditCardFormViewModel_Number_Wrapper {
-  margin-bottom: 34px;
-}
 #confirmation .otherPaymentMethodsSection .AvailablePaymentMethodsViewModel_1 {
   display: none;
 }
@@ -2886,8 +2906,11 @@ html.CN .checkoutLogout {
 #confirmation .cartTotalWrapper .cartTotal .totalPrices {
   display: inline;
 }
-#confirmation .cartTotalWrapper .cartTotal .salesTaxesDescrPopup {
+#confirmation .cartTotalWrapper .cartTotal .salesTaxesDescrPopup, #confirmation .cartTotalWrapper .cartTotal .salesTaxesInfo, #confirmation .cartTotalWrapper .cartTotal .salesTaxesDescr {
   display: none;
+}
+#confirmation .cartTotalWrapper .cartTotal .salesTaxesDescrPopup {
+  position: absolute;
 }
 #confirmation .cartButton {
   *zoom: 1;
@@ -3040,6 +3063,7 @@ html.CN #confirmation .confirmationFooter {
   float: left;
   font-size: 1.5em;
   line-height: 17px;
+  max-width: 455px;
 }
 #delivery .userAddressesListWithForm .cardHolderData .personalDetailsWrapper ul, #delivery .userAddressesListWithForm .cardHolderData .otherDetailsWrapper ul {
   *zoom: 1;
@@ -3441,7 +3465,7 @@ html.CN #delivery .privacyInfoSection {
   left: -30px;
   cursor: pointer;
   display: inline-block;
-  z-index: 999;
+  z-index: 3;
 }
 #delivery .shippingAddressForm .fieldRow {
   margin-bottom: 5px;

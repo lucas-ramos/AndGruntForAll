@@ -1,0 +1,428 @@
+@charset "UTF-8";
+/*
+    zindex
+    Mixin di definizione e utilizzo degli z-index.
+
+    La lista $indexes è crescente dall'alto al basso, e i suoi elementi andranno espressi al momento dell'uso del mixin.
+    Ovviamente l'uso da farne è di tipo semantico, per evitare l'espressione di numeri casuali all'interno dei vari css.
+
+*/
+/* effetto height:100% sugli elementi flottanti */
+@font-face {
+  font-family: 'KnockoutLight';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.svg#KnockoutLight") format("svg");
+}
+@font-face {
+  font-family: 'KnockoutRegular';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.svg#KnockoutRegular") format("svg");
+}
+@font-face {
+  font-family: 'HelveticaCondensedLight';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.svg#KnockoutRegular") format("svg");
+}
+@font-face {
+  font-family: 'HelveticaCondensedBold';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.svg#KnockoutRegular") format("svg");
+}
+@font-face {
+  font-family: 'LatoRegular';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.svg#LatoRegular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'LatoBold';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.svg#LatoBold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* line 92, ../../../sass/_fonts.scss */
+.RU button, .RU .button {
+  font-family: Arial, Verdana, sans-serif;
+}
+
+/* line 101, ../../../sass/_fonts.scss */
+button, .button {
+  font-family: KnockoutLight, Arial, Verdana, sans-serif;
+  font-weight: normal;
+}
+/* line 105, ../../../sass/_fonts.scss */
+.JP button, .JP .button {
+  font-family: KnockoutLight, "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", sans-serif;
+}
+/* line 106, ../../../sass/_fonts.scss */
+.CN button, .CN .button {
+  font-family: KnockoutLight, HelveticaCondensedLight, Arial, "Microsoft YaHei", "Microsoft YaHei Regular", SimHei, "SimHei Regular", sans-serif;
+}
+
+/* ==========================================================================
+   CALL TO ACTIONS
+   Use with:
+
+	@extend button				(extends button rules)
+	@extend .secondary			(extends .secondary rules)
+	@extend button.secondary	(extends .secondary rules, not button's)
+	@extend .ugly-button		(extends .ugly-button rules)
+
+	NOTE: THESE ARE CLASSES.
+	THEY WILL BE REPLICATED FOR EACH TIME THEY'RE INCLUDED.
+	Include this only when is necessary.
+	Include this in scss PARENTS ONLY.
+
+	========================================================================== */
+/* line 89, ../../../sass/Desktop/_callToActions.scss */
+button {
+  border-style: solid;
+  border-width: 1px;
+  cursor: pointer;
+  display: block;
+  font-size: 1.6em;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  outline: none;
+  text-align: center;
+  text-transform: uppercase;
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 40px;
+}
+
+/* line 93, ../../../sass/Desktop/_callToActions.scss */
+.button {
+  border-style: solid;
+  border-width: 1px;
+  cursor: pointer;
+  display: block;
+  font-size: 1.6em;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  outline: none;
+  text-align: center;
+  text-transform: uppercase;
+  padding-left: 15px;
+  padding-right: 15px;
+  line-height: 40px;
+  height: 38px;
+}
+
+/* line 99, ../../../sass/Desktop/_callToActions.scss */
+button.primary, main .content button[type=submit], .button.primary, main .content .button[type=submit] {
+  background-color: #000;
+  color: #FFF;
+  border-color: #000;
+}
+/* line 49, ../../../sass/Desktop/_callToActions.scss */
+button.primary:hover, main .content button[type=submit]:hover, .button.primary:hover, main .content .button[type=submit]:hover {
+  background-color: #999;
+  border-color: #999;
+}
+/* line 103, ../../../sass/Desktop/_callToActions.scss */
+button.secondary, .button.secondary {
+  background-color: #EBEBEB;
+  color: #333;
+  border-color: #CCC;
+}
+/* line 60, ../../../sass/Desktop/_callToActions.scss */
+button.secondary:hover, .button.secondary:hover {
+  background-color: #FFF;
+}
+/* line 107, ../../../sass/Desktop/_callToActions.scss */
+button.tertiary, .button.tertiary {
+  background: none;
+  border: 0;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  text-transform: none;
+  text-decoration: underline;
+}
+/* line 111, ../../../sass/Desktop/_callToActions.scss */
+button.disabled, button[disabled], .button.disabled, .button[disabled] {
+  background-color: #FFF;
+  color: #EBEBEB;
+  border-color: #EBEBEB;
+  cursor: default;
+}
+/* line 83, ../../../sass/Desktop/_callToActions.scss */
+button.disabled:hover, button[disabled]:hover, .button.disabled:hover, .button[disabled]:hover {
+  background-color: #FFF;
+  border-color: #EBEBEB;
+}
+
+/* line 20, ../../../sass/Desktop/Partials/_susyClasses.scss */
+.column-1 {
+  width: 74px;
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 20, ../../../sass/Desktop/Partials/_susyClasses.scss */
+.column-2 {
+  width: 158px;
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 20, ../../../sass/Desktop/Partials/_susyClasses.scss */
+.column-3 {
+  width: 242px;
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 20, ../../../sass/Desktop/Partials/_susyClasses.scss */
+.column-4 {
+  width: 326px;
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 20, ../../../sass/Desktop/Partials/_susyClasses.scss */
+.column-5 {
+  width: 410px;
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 20, ../../../sass/Desktop/Partials/_susyClasses.scss */
+.column-6, #AffiliationViewModel_Name_Wrapper,
+#AffiliationViewModel_Traffic_Wrapper,
+#AffiliationViewModel_Country_Wrapper, #AffiliationViewModel_Email_Wrapper,
+#AffiliationViewModel_Url_Wrapper,
+#AffiliationViewModel_Comment_Wrapper {
+  width: 494px;
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 20, ../../../sass/Desktop/Partials/_susyClasses.scss */
+.column-7 {
+  width: 578px;
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 20, ../../../sass/Desktop/Partials/_susyClasses.scss */
+.column-8 {
+  width: 662px;
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 20, ../../../sass/Desktop/Partials/_susyClasses.scss */
+.column-9 {
+  width: 746px;
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 20, ../../../sass/Desktop/Partials/_susyClasses.scss */
+.column-10 {
+  width: 830px;
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 20, ../../../sass/Desktop/Partials/_susyClasses.scss */
+.column-11 {
+  width: 914px;
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 20, ../../../sass/Desktop/Partials/_susyClasses.scss */
+.column-12 {
+  width: 998px;
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 34, ../../../sass/Desktop/Partials/_susyClasses.scss */
+.prefix-1 {
+  padding-left: 84px;
+}
+
+/* line 34, ../../../sass/Desktop/Partials/_susyClasses.scss */
+.prefix-2 {
+  padding-left: 168px;
+}
+
+/* line 34, ../../../sass/Desktop/Partials/_susyClasses.scss */
+.prefix-3 {
+  padding-left: 252px;
+}
+
+/* line 34, ../../../sass/Desktop/Partials/_susyClasses.scss */
+.prefix-4 {
+  padding-left: 336px;
+}
+
+/* line 34, ../../../sass/Desktop/Partials/_susyClasses.scss */
+.prefix-5 {
+  padding-left: 420px;
+}
+
+/* line 34, ../../../sass/Desktop/Partials/_susyClasses.scss */
+.prefix-6 {
+  padding-left: 504px;
+}
+
+/* line 34, ../../../sass/Desktop/Partials/_susyClasses.scss */
+.prefix-7 {
+  padding-left: 588px;
+}
+
+/* line 34, ../../../sass/Desktop/Partials/_susyClasses.scss */
+.prefix-8 {
+  padding-left: 672px;
+}
+
+/* line 34, ../../../sass/Desktop/Partials/_susyClasses.scss */
+.prefix-9 {
+  padding-left: 756px;
+}
+
+/* line 34, ../../../sass/Desktop/Partials/_susyClasses.scss */
+.prefix-10 {
+  padding-left: 840px;
+}
+
+/* line 34, ../../../sass/Desktop/Partials/_susyClasses.scss */
+.prefix-11 {
+  padding-left: 924px;
+}
+
+/* line 46, ../../../sass/Desktop/Partials/_susyClasses.scss */
+.omega, #AffiliationViewModel_Email_Wrapper,
+#AffiliationViewModel_Url_Wrapper,
+#AffiliationViewModel_Comment_Wrapper {
+  margin-right: 0 !important;
+}
+
+/* line 56, ../../../sass/Desktop/Partials/_susyClasses.scss */
+.centralColumn {
+  *zoom: 1;
+  width: 998px;
+  padding-left: 6px;
+  padding-right: 6px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  position: relative;
+}
+/* line 38, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+.centralColumn:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 10, ../../../sass/desktop/pages/affiliation.scss */
+main h2 {
+  margin: 20px auto;
+}
+/* line 14, ../../../sass/desktop/pages/affiliation.scss */
+main h3 {
+  margin: 30px 0;
+}
+/* line 18, ../../../sass/desktop/pages/affiliation.scss */
+main dl {
+  list-style: none;
+}
+/* line 22, ../../../sass/desktop/pages/affiliation.scss */
+main .fake-p {
+  font-size: 1.6em;
+}
+/* line 26, ../../../sass/desktop/pages/affiliation.scss */
+main .tabs {
+  position: relative;
+  min-height: 400px;
+  /* This part sucks */
+  clear: both;
+  margin: 25px 0;
+}
+/* line 32, ../../../sass/desktop/pages/affiliation.scss */
+main .tab {
+  float: left;
+}
+/* line 35, ../../../sass/desktop/pages/affiliation.scss */
+main .tab .tab-header {
+  padding: 10px;
+  margin-left: -1px;
+  position: relative;
+  left: 1px;
+  color: #999;
+  font-size: 1.6em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+/* line 46, ../../../sass/desktop/pages/affiliation.scss */
+main .tab [type=radio] {
+  display: none;
+}
+/* line 50, ../../../sass/desktop/pages/affiliation.scss */
+main .content {
+  position: absolute;
+  top: 28px;
+  left: 0;
+  background: white;
+  right: 0;
+  bottom: 0;
+  padding: 20px 0;
+  border-top: 6px solid #EBEBEB;
+}
+/* line 60, ../../../sass/desktop/pages/affiliation.scss */
+main .content form {
+  *zoom: 1;
+}
+/* line 38, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+main .content form:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 64, ../../../sass/desktop/pages/affiliation.scss */
+main .content [type=submit] {
+  float: left;
+  clear: left;
+}
+/* line 70, ../../../sass/desktop/pages/affiliation.scss */
+main .content.bloody-border-fix {
+  padding-right: 13px;
+  width: 998px;
+}
+/* line 75, ../../../sass/desktop/pages/affiliation.scss */
+main [type=radio]:checked ~ .tab-header {
+  z-index: 2;
+  color: #000;
+}
+/* line 79, ../../../sass/desktop/pages/affiliation.scss */
+main [type=radio]:checked ~ .tab-header ~ .content {
+  z-index: 1;
+}
+/* line 84, ../../../sass/desktop/pages/affiliation.scss */
+main .fieldLabel {
+  display: none;
+}
+
+/* line 106, ../../../sass/desktop/pages/affiliation.scss */
+.affiliationLayer .intro {
+  font-size: 1.6em;
+  text-transform: uppercase;
+  margin: 10px 0;
+}
+/* line 112, ../../../sass/desktop/pages/affiliation.scss */
+.affiliationLayer span.text {
+  font-size: 1.6em;
+}

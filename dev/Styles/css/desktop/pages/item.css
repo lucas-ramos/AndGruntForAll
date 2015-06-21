@@ -1,5 +1,14 @@
 @charset "UTF-8";
+/*
+    zindex
+    Mixin di definizione e utilizzo degli z-index.
+
+    La lista $indexes è crescente dall'alto al basso, e i suoi elementi andranno espressi al momento dell'uso del mixin.
+    Ovviamente l'uso da farne è di tipo semantico, per evitare l'espressione di numeri casuali all'interno dei vari css.
+
+*/
 /* effetto height:100% sugli elementi flottanti */
+@import url(CSS:Desktop/test.css);
 @font-face {
   font-family: 'KnockoutLight';
   src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.eot");
@@ -34,7 +43,7 @@
   font-weight: normal;
   font-style: normal;
 }
-.RU button, .RU .button, .RU .sizeGuideContainer .sizeGuideLink, .sizeGuideContainer .RU .sizeGuideLink, .RU #back a, #back .RU a, .RU .halfSize .colorSizeContainer .prettyselect-drop, .halfSize .colorSizeContainer .RU .prettyselect-drop, .RU .halfSize .selectSize.sizeSelected, .halfSize .RU .selectSize.sizeSelected, .RU .halfSize .sizeConversion, .halfSize .RU .sizeConversion, .RU .halfSize .selectedCombination, .halfSize .RU .selectedCombination {
+.RU button, .RU .button, .RU .sizeGuideContainer .sizeGuideLink, .sizeGuideContainer .RU .sizeGuideLink, .RU #back a, #back .RU a, .RU .halfSize .colorSizeContainer .selectSize.sizeSelected, .halfSize .colorSizeContainer .RU .selectSize.sizeSelected, .RU .halfSize .colorSizeContainer .selectSize .prettyselect-drop, .halfSize .colorSizeContainer .selectSize .RU .prettyselect-drop, .RU .halfSize .sizeConversion, .halfSize .RU .sizeConversion, .RU .halfSize .selectedCombination, .halfSize .RU .selectedCombination {
   font-family: Arial, Verdana, sans-serif;
 }
 
@@ -48,7 +57,7 @@ button, .button, .sizeGuideContainer .sizeGuideLink, #back a {
   font-weight: normal;
 }
 .JP button, .JP .button, .JP .sizeGuideContainer .sizeGuideLink, .sizeGuideContainer .JP .sizeGuideLink, .JP #back a, #back .JP a {
-  font-family: KnockoutLight, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+  font-family: KnockoutLight, "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", sans-serif;
 }
 .CN button, .CN .button, .CN .sizeGuideContainer .sizeGuideLink, .sizeGuideContainer .CN .sizeGuideLink, .CN #back a, #back .CN a {
   font-family: KnockoutLight, HelveticaCondensedLight, Arial, "Microsoft YaHei", "Microsoft YaHei Regular", SimHei, "SimHei Regular", sans-serif;
@@ -59,18 +68,18 @@ button, .button, .sizeGuideContainer .sizeGuideLink, #back a {
   font-weight: normal;
 }
 .JP .uiLayer-sizeGuideLink thead, .uiLayer-sizeGuideLink .JP thead, .JP #itemData .price, #itemData .JP .price, .JP #relatedItems .brandName, #relatedItems .JP .brandName {
-  font-family: KnockoutRegular, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+  font-family: KnockoutRegular, "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", sans-serif;
 }
 .CN .uiLayer-sizeGuideLink thead, .uiLayer-sizeGuideLink .CN thead, .CN #itemData .price, #itemData .CN .price, .CN #relatedItems .brandName, #relatedItems .CN .brandName {
   font-family: KnockoutLight, HelveticaCondensedLight, Arial, "Microsoft YaHei", "Microsoft YaHei Regular", SimHei, "SimHei Regular", sans-serif;
 }
 
-.halfSize .colorSizeContainer .prettyselect-drop, .halfSize .selectSize.sizeSelected, .halfSize .sizeConversion, .halfSize .selectedCombination {
+.halfSize .colorSizeContainer .selectSize.sizeSelected, .halfSize .colorSizeContainer .selectSize .prettyselect-drop, .halfSize .sizeConversion, .halfSize .selectedCombination {
   font-family: LatoRegular, Arial, Verdana, sans-serif;
   font-weight: normal;
 }
-.JP .halfSize .colorSizeContainer .prettyselect-drop, .halfSize .colorSizeContainer .JP .prettyselect-drop, .JP .halfSize .selectSize.sizeSelected, .halfSize .JP .selectSize.sizeSelected, .JP .halfSize .sizeConversion, .halfSize .JP .sizeConversion, .JP .halfSize .selectedCombination, .halfSize .JP .selectedCombination {
-  font-family: LatoRegular, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+.JP .halfSize .colorSizeContainer .selectSize.sizeSelected, .halfSize .colorSizeContainer .JP .selectSize.sizeSelected, .JP .halfSize .colorSizeContainer .selectSize .prettyselect-drop, .halfSize .colorSizeContainer .selectSize .JP .prettyselect-drop, .JP .halfSize .sizeConversion, .halfSize .JP .sizeConversion, .JP .halfSize .selectedCombination, .halfSize .JP .selectedCombination {
+  font-family: LatoRegular, "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", sans-serif;
 }
 
 /* ==========================================================================
@@ -300,17 +309,17 @@ button.disabled:hover, button[disabled]:hover, .button.disabled:hover, .sizeGuid
 }
 
 .svgfallback-sprite, .no-svg #zoomLayer .close .icon, .ielt9 #zoomLayer .close .icon {
-  background-image: url('/Content/Styles/generated_images/svgfallback-s163386ba73.png');
+  background-image: url('/styles/generated_images/svgfallback-s163386ba73.png');
   background-repeat: no-repeat;
 }
 
 .sprites-desktop-sprite, .sprites-desktop-checkMark, .sprites-desktop-checkWhite, .sprites-desktop-cinesina, .sprites-desktop-fb_btn, .sprites-desktop-giftPackage, .sprites-desktop-giftPackageChina, .sprites-desktop-gplus_btn, .sprites-desktop-kaixin_btn, .sprites-desktop-pinit_btn, .sprites-desktop-plusone_btn, .sprites-desktop-seal, .sprites-desktop-small_i, .sizeGuideContainer .icon, .sprites-desktop-tweet_btn, .sprites-desktop-twitter_btn, .sprites-desktop-weiboo_btn {
-  background-image: url('/Content/Styles/generated_images/sprites-desktop-s6783407e58.png');
+  background-image: url('/styles/generated_images/sprites-desktop-s6783407e58.png');
   background-repeat: no-repeat;
 }
 
 .sprites-creditcards-sprite, .sprites-creditcards-alipay, .sprites-creditcards-americanexpress, .sprites-creditcards-americanexpress_big, .sprites-creditcards-cartebleue, .sprites-creditcards-cartebleue_big, .sprites-creditcards-cartebleuevisa_big, .sprites-creditcards-discover, .sprites-creditcards-discover_big, .sprites-creditcards-jcb, .sprites-creditcards-jcb_big, .sprites-creditcards-maestro, .sprites-creditcards-maestro_big, .sprites-creditcards-mastercard, .sprites-creditcards-mastercard_big, .sprites-creditcards-payease, .sprites-creditcards-paypal, .sprites-creditcards-paypal_big, .sprites-creditcards-postepay, .sprites-creditcards-postepay_big, .sprites-creditcards-visa, .sprites-creditcards-visa_big {
-  background-image: url('/Content/Styles/generated_images/sprites-creditcards-s9068ad9ed7.png');
+  background-image: url('/styles/generated_images/sprites-creditcards-s9068ad9ed7.png');
   background-repeat: no-repeat;
 }
 
@@ -618,7 +627,7 @@ button.disabled:hover, button[disabled]:hover, .button.disabled:hover, .sizeGuid
 }
 
 .desktop-fallback-sprite, .no-svg #zoomLayer .zoomPrev, #zoomLayer .no-svg .zoomPrev, .ielt9 #zoomLayer .zoomPrev, #zoomLayer .ielt9 .zoomPrev, .no-svg #zoomLayer .zoomNext, #zoomLayer .no-svg .zoomNext, .ielt9 #zoomLayer .zoomNext, #zoomLayer .ielt9 .zoomNext, .no-svg #itemSocial .douban .icon, #itemSocial .douban .no-svg .icon, .ielt9 #itemSocial .douban .icon, #itemSocial .douban .ielt9 .icon, .no-svg #itemSocial .facebook .icon, #itemSocial .facebook .no-svg .icon, .ielt9 #itemSocial .facebook .icon, #itemSocial .facebook .ielt9 .icon, .no-svg #itemSocial .googleplus .icon, #itemSocial .googleplus .no-svg .icon, .ielt9 #itemSocial .googleplus .icon, #itemSocial .googleplus .ielt9 .icon, .no-svg #itemSocial .pinterest .icon, #itemSocial .pinterest .no-svg .icon, .ielt9 #itemSocial .pinterest .icon, #itemSocial .pinterest .ielt9 .icon, .no-svg #itemSocial .tumblr .icon, #itemSocial .tumblr .no-svg .icon, .ielt9 #itemSocial .tumblr .icon, #itemSocial .tumblr .ielt9 .icon, .no-svg #itemSocial .twitter .icon, #itemSocial .twitter .no-svg .icon, .ielt9 #itemSocial .twitter .icon, #itemSocial .twitter .ielt9 .icon, .no-svg #itemSocial .weibo .icon, #itemSocial .weibo .no-svg .icon, .ielt9 #itemSocial .weibo .icon, #itemSocial .weibo .ielt9 .icon {
-  background-image: url('/Content/Styles/generated_images/desktop-fallback-s59a2bd1d81.png');
+  background-image: url('/styles/generated_images/desktop-fallback-s59a2bd1d81.png');
   background-repeat: no-repeat;
 }
 
@@ -708,8 +717,125 @@ button.disabled:hover, button[disabled]:hover, .button.disabled:hover, .sizeGuid
   line-height: 1.8;
 }
 
+.colorSizeContainer {
+  *zoom: 1;
+}
+.colorSizeContainer:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.colorSizeContainer.withSizeGuide {
+  width: 89.5%;
+  float: left;
+}
+.colorSizeContainer .colors, .colorSizeContainer .sizes {
+  float: left;
+  width: 49.5%;
+}
+.colorSizeContainer .colors {
+  margin-right: 1%;
+}
+.colorSizeContainer .prettyselect-label {
+  padding: 0 5px;
+}
+.halfSize .colorSizeContainer .selectSize.sizeSelected {
+  font-size: 0.8em;
+}
+.colorSizeContainer .selectSize .prettyselect-label {
+  font-size: inherit;
+}
+.colorSizeContainer .selectSize .prettyselect-label .value {
+  float: left;
+}
+.colorSizeContainer .selectSize .prettyselect-label .label {
+  float: left;
+  line-height: 41px;
+}
+.colorSizeContainer .selectSize .prettyselect-drop {
+  white-space: normal;
+  font-size: 1.4em;
+}
+.halfSize .colorSizeContainer .selectSize .prettyselect-drop {
+  font-size: 1.1em;
+}
+.JP .colorSizeContainer .selectSize .prettyselect-drop {
+  font-size: 1.3em;
+}
+.RU .colorSizeContainer .selectSize .prettyselect-drop {
+  font-size: 1.2em;
+  text-transform: uppercase;
+}
+.colorSizeContainer .selectSize .prettyselect-drop li {
+  padding: 0 5px;
+}
+.colorSizeContainer .selectSize.shortLabel .prettyselect-label {
+  font-size: 1.7em;
+}
+.colorSizeContainer .selectSize.mediumLabel .prettyselect-label .value {
+  width: 17%;
+  font-size: 1.7em;
+}
+.colorSizeContainer .selectSize.mediumLabel .prettyselect-label .label {
+  width: 80%;
+  font-size: 1.7em;
+  text-align: center;
+}
+.colorSizeContainer .selectSize.largeLabel .prettyselect-label .value {
+  font-size: 1.7em;
+  width: 17%;
+}
+.colorSizeContainer .selectSize.largeLabel .prettyselect-label .label {
+  font-size: 1.1em;
+  width: 80%;
+  text-align: center;
+}
+.colorSizeContainer .selectSize.veryLargeLabel .prettyselect-label .value {
+  width: 17%;
+  font-size: 1.7em;
+}
+.colorSizeContainer .selectSize.veryLargeLabel .prettyselect-label .label {
+  font-size: 1em;
+  width: 80%;
+  text-align: center;
+}
+.colorSizeContainer .selectSize.largeSizeLabel .prettyselect-label .value {
+  font-size: 1.7em;
+  width: 30%;
+}
+.colorSizeContainer .selectSize.largeSizeLabel .prettyselect-label .label {
+  font-size: 1.1em;
+  width: 67%;
+  text-align: center;
+  line-height: 40px;
+}
+.DE .colorSizeContainer .selectSize.largeSizeLabel .prettyselect-label .label, .RU .colorSizeContainer .selectSize.largeSizeLabel .prettyselect-label .label {
+  word-wrap: break-word;
+  white-space: normal;
+  line-height: 12px;
+  text-align: center;
+  padding: 9px 0;
+  width: 60%;
+}
+.CN .colorSizeContainer .selectSize.largeSizeLabel .prettyselect-label .label, .JP .colorSizeContainer .selectSize.largeSizeLabel .prettyselect-label .label {
+  font-size: 1.2em;
+}
+.colorSizeContainer [data-prettyselect-elements="1"] {
+  cursor: default;
+}
+.colorSizeContainer [data-prettyselect-elements="1"] .prettyselect-drop {
+  border: none;
+}
+.colorSizeContainer [data-prettyselect-elements="1"] .prettyselect-drop li {
+  display: none;
+}
+.colorSizeContainer [data-prettyselect-elements="1"] .prettyselect-label {
+  background-image: none;
+  white-space: normal;
+}
+
 #item .uiLayer-addItem .inner, #item .uiLayer-addItemToWishList .inner {
-  padding: 40px 20px;
+  padding: 40px 23px;
   font-size: 1.8em;
 }
 
@@ -879,64 +1005,6 @@ button.disabled:hover, button[disabled]:hover, .button.disabled:hover, .sizeGuid
   content: " :";
 }
 
-.colorSizeContainer {
-  *zoom: 1;
-}
-.colorSizeContainer:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.colorSizeContainer.withSizeGuide {
-  width: 89.5%;
-  float: left;
-}
-.colorSizeContainer .colors, .colorSizeContainer .sizes {
-  float: left;
-  width: 49.5%;
-}
-.colorSizeContainer .colors {
-  margin-right: 1%;
-}
-.colorSizeContainer .oneOption .prettyselect-wrap .prettyselect-label {
-  font-size: 1.6em;
-}
-.JP .colorSizeContainer .oneOption .prettyselect-wrap .prettyselect-label {
-  font-size: 1.4em;
-}
-.colorSizeContainer .prettyselect-drop {
-  white-space: normal;
-}
-.halfSize .colorSizeContainer .prettyselect-drop {
-  font-size: 1.4em;
-}
-.DE .colorSizeContainer .prettyselect-drop li, .RU .colorSizeContainer .prettyselect-drop li {
-  line-height: normal;
-  padding: 10px 15px;
-  height: 21px;
-}
-.DE .colorSizeContainer .prettyselect-drop li span, .RU .colorSizeContainer .prettyselect-drop li span {
-  float: left;
-  width: 10%;
-}
-.DE .colorSizeContainer .prettyselect-drop li span.label, .RU .colorSizeContainer .prettyselect-drop li span.label {
-  margin-left: 4%;
-  width: 86%;
-}
-.colorSizeContainer [data-prettyselect-elements="1"] {
-  cursor: default;
-}
-.colorSizeContainer [data-prettyselect-elements="1"] .prettyselect-drop {
-  border: none;
-}
-.colorSizeContainer [data-prettyselect-elements="1"] .prettyselect-drop li {
-  display: none;
-}
-.colorSizeContainer [data-prettyselect-elements="1"] .prettyselect-label {
-  background-image: none;
-  white-space: normal;
-}
-
 .sizeGuideContainer {
   float: left;
   width: 10.5%;
@@ -966,43 +1034,6 @@ button.disabled:hover, button[disabled]:hover, .button.disabled:hover, .sizeGuid
   margin-top: 5px;
   color: #900000;
   font-size: 1.8em;
-}
-
-.halfSize .selectSize.sizeSelected {
-  font-size: 0.8em;
-}
-.selectSize .label {
-  margin-left: 5px;
-}
-.DE .selectSize .prettyselect-label .value, .RU .selectSize .prettyselect-label .value {
-  float: left;
-  width: 10%;
-}
-.selectSize .prettyselect-label .label {
-  font-size: 0.8em;
-}
-.DE .selectSize .prettyselect-label .label, .RU .selectSize .prettyselect-label .label {
-  font-size: 0.8em;
-  float: left;
-  white-space: normal;
-  line-height: normal;
-  width: 85%;
-  margin: 10px 4px;
-}
-.AT .selectSize .prettyselect-label .label {
-  font-size: 0.68em;
-}
-.JP .selectSize .prettyselect-label .label {
-  font-size: 0.7em;
-}
-.selectSize .prettyselect-drop .label {
-  color: #999;
-}
-.AT .selectSize .prettyselect-drop .label {
-  font-size: 0.9em;
-}
-.CN .selectSize .prettyselect-drop .label, .JP .selectSize .prettyselect-drop .label {
-  font-size: 0.76em;
 }
 
 .sizeWrapper {
@@ -1048,7 +1079,7 @@ button.disabled:hover, button[disabled]:hover, .button.disabled:hover, .sizeGuid
   content: " :";
 }
 .halfSize .selectedCombination {
-  font-size: 1.4em;
+  font-size: 1.1em;
 }
 
 button.addItem {
@@ -1242,7 +1273,7 @@ button.addItemToWishList {
 }
 #zoomLayer, #zoomLayer .zoomImageContainer {
   position: fixed;
-  z-index: 18;
+  z-index: 20;
 }
 #zoomLayer .zoomImageContainer img {
   display: block;
@@ -1257,7 +1288,7 @@ button.addItemToWishList {
 #zoomLayer .alternativeImages, #zoomLayer .zoomPrev, #zoomLayer .zoomNext, #zoomLayer .close {
   cursor: pointer;
   position: absolute;
-  z-index: 19;
+  z-index: 21;
 }
 #zoomLayer .close {
   right: 0;

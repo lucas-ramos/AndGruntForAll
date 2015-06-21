@@ -1,4 +1,12 @@
 @charset "UTF-8";
+/*
+    zindex
+    Mixin di definizione e utilizzo degli z-index.
+
+    La lista $indexes è crescente dall'alto al basso, e i suoi elementi andranno espressi al momento dell'uso del mixin.
+    Ovviamente l'uso da farne è di tipo semantico, per evitare l'espressione di numeri casuali all'interno dei vari css.
+
+*/
 /* effetto height:100% sugli elementi flottanti */
 @font-face {
   font-family: 'KnockoutLight';
@@ -48,7 +56,7 @@ button, .button {
   font-weight: normal;
 }
 .JP button, .JP .button {
-  font-family: KnockoutLight, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+  font-family: KnockoutLight, "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", sans-serif;
 }
 .CN button, .CN .button {
   font-family: KnockoutLight, HelveticaCondensedLight, Arial, "Microsoft YaHei", "Microsoft YaHei Regular", SimHei, "SimHei Regular", sans-serif;
@@ -59,7 +67,7 @@ button, .button {
   font-weight: normal;
 }
 .JP .productMiniDescr .brandAndMicro .brandName, .productMiniDescr .brandAndMicro .JP .brandName, .JP .itemInfoWrapper .itemInfo .descriptionHeader, .itemInfoWrapper .itemInfo .JP .descriptionHeader, .JP .itemInfoWrapper .itemInfo .compositionInfo .label, .itemInfoWrapper .itemInfo .compositionInfo .JP .label, .JP #relatedItems .topTitle, #relatedItems .JP .topTitle {
-  font-family: KnockoutRegular, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+  font-family: KnockoutRegular, "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", sans-serif;
 }
 .CN .productMiniDescr .brandAndMicro .brandName, .productMiniDescr .brandAndMicro .CN .brandName, .CN .itemInfoWrapper .itemInfo .descriptionHeader, .itemInfoWrapper .itemInfo .CN .descriptionHeader, .CN .itemInfoWrapper .itemInfo .compositionInfo .label, .itemInfoWrapper .itemInfo .compositionInfo .CN .label, .CN #relatedItems .topTitle, #relatedItems .CN .topTitle {
   font-family: KnockoutLight, HelveticaCondensedLight, Arial, "Microsoft YaHei", "Microsoft YaHei Regular", SimHei, "SimHei Regular", sans-serif;
@@ -70,7 +78,7 @@ button, .button {
   font-weight: normal;
 }
 .JP .productMiniDescr .microCategory, .productMiniDescr .JP .microCategory, .JP .itemInfoWrapper, .JP .button.soldOutMessage {
-  font-family: LatoRegular, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+  font-family: LatoRegular, "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", sans-serif;
 }
 
 .itemInfoWrapper .itemInfo .descriptionContent .label, .itemInfoWrapper .itemInfo .descriptionHeader {
@@ -78,7 +86,7 @@ button, .button {
   font-weight: normal;
 }
 .JP .itemInfoWrapper .itemInfo .descriptionContent .label, .itemInfoWrapper .itemInfo .descriptionContent .JP .label, .JP .itemInfoWrapper .itemInfo .descriptionHeader, .itemInfoWrapper .itemInfo .JP .descriptionHeader {
-  font-family: LatoBold, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+  font-family: LatoBold, "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", sans-serif;
 }
 
 /* ==========================================================================
@@ -339,7 +347,7 @@ button.disabled, button[disabled], .button.disabled, .button[disabled] {
 
 #zoomLayer {
   position: fixed;
-  z-index: 18;
+  z-index: 20;
   display: none;
 }
 #zoomLayer .overlayElements, #zoomLayer .alternativeImages {
@@ -440,4 +448,16 @@ button.disabled, button[disabled], .button.disabled, .button[disabled] {
 .RU .mfp-content .loginLayerTitle {
   font-size: 2.5rem;
   word-break: break-all;
+}
+
+#availabilityAlerts {
+  text-align: center;
+  color: #900000;
+  font-size: 1.9rem;
+}
+.RU #availabilityAlerts {
+  text-transform: lowercase;
+}
+#availabilityAlerts .lastItemAlert, #availabilityAlerts .limitedAvailAlert {
+  padding-top: 30px;
 }

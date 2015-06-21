@@ -15,13 +15,15 @@
 
 @import "Desktop/Partials/item/colorSizeSelection";
 
+@import "CSS:Desktop/test.css";
+
 $mainImageH: 551px;
 $mainImageW: 428px;
  
 #item {
 	.uiLayer-addItem, .uiLayer-addItemToWishList {
 		.inner {
-			padding: 40px 20px;
+			padding: 40px 23px;
 			font-size: $size-large;
 		}
 	}

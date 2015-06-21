@@ -1,0 +1,1119 @@
+@charset "UTF-8";
+/*
+    zindex
+    Mixin di definizione e utilizzo degli z-index.
+
+    La lista $indexes è crescente dall'alto al basso, e i suoi elementi andranno espressi al momento dell'uso del mixin.
+    Ovviamente l'uso da farne è di tipo semantico, per evitare l'espressione di numeri casuali all'interno dei vari css.
+
+*/
+/* effetto height:100% sugli elementi flottanti */
+@font-face {
+  font-family: 'KnockoutLight';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.svg#KnockoutLight") format("svg");
+}
+@font-face {
+  font-family: 'KnockoutRegular';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.svg#KnockoutRegular") format("svg");
+}
+@font-face {
+  font-family: 'HelveticaCondensedLight';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.svg#KnockoutRegular") format("svg");
+}
+@font-face {
+  font-family: 'HelveticaCondensedBold';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.svg#KnockoutRegular") format("svg");
+}
+@font-face {
+  font-family: 'LatoRegular';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.svg#LatoRegular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'LatoBold';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.svg#LatoBold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* line 96, ../../../sass/_fonts.scss */
+.RU .smallElemBottom h2, .smallElemBottom .RU h2, .RU #bottomSection h4, #bottomSection .RU h4 {
+  font-family: Arial, Verdana, sans-serif;
+  font-weight: bold;
+}
+
+/* line 110, ../../../sass/_fonts.scss */
+.smallElemBottom h2, #bottomSection h4 {
+  font-family: KnockoutRegular, Arial, Verdana, sans-serif;
+  font-weight: normal;
+}
+/* line 114, ../../../sass/_fonts.scss */
+.JP .smallElemBottom h2, .smallElemBottom .JP h2, .JP #bottomSection h4, #bottomSection .JP h4 {
+  font-family: KnockoutRegular, "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", sans-serif;
+}
+/* line 115, ../../../sass/_fonts.scss */
+.CN .smallElemBottom h2, .smallElemBottom .CN h2, .CN #bottomSection h4, #bottomSection .CN h4 {
+  font-family: KnockoutLight, HelveticaCondensedLight, Arial, "Microsoft YaHei", "Microsoft YaHei Regular", SimHei, "SimHei Regular", sans-serif;
+}
+
+/* line 264, svgfallback/*.png */
+.svgfallback-sprite {
+  background-image: url('/images/svgfallback-s163386ba73.png');
+  background-repeat: no-repeat;
+}
+
+/* line 224, sprites-desktop/*.png */
+.sprites-desktop-sprite, .sprites-desktop-checkMark, .sprites-desktop-checkWhite, .sprites-desktop-cinesina, .sprites-desktop-fb_btn, .sprites-desktop-giftPackage, .sprites-desktop-giftPackageChina, .sprites-desktop-gplus_btn, .sprites-desktop-kaixin_btn, .sprites-desktop-pinit_btn, .sprites-desktop-plusone_btn, .sprites-desktop-seal, .sprites-desktop-small_i, .sprites-desktop-tweet_btn, .sprites-desktop-twitter_btn, .sprites-desktop-weiboo_btn {
+  background-image: url('/images/sprites-desktop-s6783407e58.png');
+  background-repeat: no-repeat;
+}
+
+/* line 208, sprites-creditcards/*.png */
+.sprites-creditcards-sprite, .sprites-creditcards-alipay, .sprites-creditcards-americanexpress, .sprites-creditcards-americanexpress_big, .sprites-creditcards-cartebleue, .sprites-creditcards-cartebleue_big, .sprites-creditcards-cartebleuevisa_big, .sprites-creditcards-discover, .sprites-creditcards-discover_big, .sprites-creditcards-jcb, .sprites-creditcards-jcb_big, .sprites-creditcards-maestro, .sprites-creditcards-maestro_big, .sprites-creditcards-mastercard, .sprites-creditcards-mastercard_big, .sprites-creditcards-payease, .sprites-creditcards-paypal, .sprites-creditcards-paypal_big, .sprites-creditcards-postepay, .sprites-creditcards-postepay_big, .sprites-creditcards-visa, .sprites-creditcards-visa_big {
+  background-image: url('/images/sprites-creditcards-s9068ad9ed7.png');
+  background-repeat: no-repeat;
+}
+
+/* line 84, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-desktop-checkMark {
+  background-position: 0 0;
+  height: 15px;
+  width: 15px;
+}
+
+/* line 84, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-desktop-checkWhite {
+  background-position: 0 -15px;
+  height: 15px;
+  width: 15px;
+}
+
+/* line 84, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-desktop-cinesina {
+  background-position: 0 -30px;
+  height: 91px;
+  width: 119px;
+}
+
+/* line 84, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-desktop-fb_btn {
+  background-position: 0 -121px;
+  height: 20px;
+  width: 45px;
+}
+/* line 59, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-desktop-fb_btn:hover, .sprites-desktop-fb_btn.fb_btn-hover {
+  background-position: 0 -141px;
+}
+
+/* line 84, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-desktop-giftPackage {
+  background-position: 0 -161px;
+  height: 96px;
+  width: 112px;
+}
+
+/* line 84, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-desktop-giftPackageChina {
+  background-position: 0 -257px;
+  height: 88px;
+  width: 74px;
+}
+
+/* line 84, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-desktop-gplus_btn {
+  background-position: 0 -345px;
+  height: 20px;
+  width: 20px;
+}
+/* line 59, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-desktop-gplus_btn:hover, .sprites-desktop-gplus_btn.gplus_btn-hover {
+  background-position: 0 -365px;
+}
+
+/* line 84, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-desktop-kaixin_btn {
+  background-position: 0 -385px;
+  height: 19px;
+  width: 19px;
+}
+/* line 59, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-desktop-kaixin_btn:hover, .sprites-desktop-kaixin_btn.kaixin_btn-hover {
+  background-position: 0 -404px;
+}
+
+/* line 84, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-desktop-pinit_btn {
+  background-position: 0 -423px;
+  height: 20px;
+  width: 40px;
+}
+/* line 59, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-desktop-pinit_btn:hover, .sprites-desktop-pinit_btn.pinit_btn-hover {
+  background-position: 0 -443px;
+}
+
+/* line 84, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-desktop-plusone_btn {
+  background-position: 0 -463px;
+  height: 20px;
+  width: 32px;
+}
+/* line 59, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-desktop-plusone_btn:hover, .sprites-desktop-plusone_btn.plusone_btn-hover {
+  background-position: 0 -483px;
+}
+
+/* line 84, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-desktop-seal {
+  background-position: 0 -503px;
+  height: 54px;
+  width: 105px;
+}
+
+/* line 84, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-desktop-small_i {
+  background-position: 0 -557px;
+  height: 16px;
+  width: 2px;
+}
+
+/* line 84, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-desktop-tweet_btn {
+  background-position: 0 -573px;
+  height: 20px;
+  width: 59px;
+}
+/* line 59, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-desktop-tweet_btn:hover, .sprites-desktop-tweet_btn.tweet_btn-hover {
+  background-position: 0 -593px;
+}
+
+/* line 84, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-desktop-twitter_btn {
+  background-position: 0 -613px;
+  height: 20px;
+  width: 62px;
+}
+/* line 59, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-desktop-twitter_btn:hover, .sprites-desktop-twitter_btn.twitter_btn-hover {
+  background-position: 0 -633px;
+}
+
+/* line 84, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-desktop-weiboo_btn {
+  background-position: 0 -653px;
+  height: 19px;
+  width: 21px;
+}
+/* line 59, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-desktop-weiboo_btn:hover, .sprites-desktop-weiboo_btn.weiboo_btn-hover {
+  background-position: 0 -672px;
+}
+
+/* line 84, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-creditcards-alipay {
+  background-position: 0 0;
+  height: 30px;
+  width: 177px;
+}
+
+/* line 84, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-creditcards-americanexpress {
+  background-position: 0 -30px;
+  height: 42px;
+  width: 57px;
+}
+
+/* line 84, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-creditcards-americanexpress_big {
+  background-position: 0 -72px;
+  height: 70px;
+  width: 96px;
+}
+
+/* line 84, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-creditcards-cartebleue {
+  background-position: 0 -142px;
+  height: 42px;
+  width: 57px;
+}
+
+/* line 84, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-creditcards-cartebleue_big {
+  background-position: 0 -184px;
+  height: 70px;
+  width: 96px;
+}
+
+/* line 84, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-creditcards-cartebleuevisa_big {
+  background-position: 0 -254px;
+  height: 70px;
+  width: 96px;
+}
+
+/* line 84, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-creditcards-discover {
+  background-position: 0 -324px;
+  height: 42px;
+  width: 57px;
+}
+
+/* line 84, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-creditcards-discover_big {
+  background-position: 0 -366px;
+  height: 70px;
+  width: 96px;
+}
+
+/* line 84, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-creditcards-jcb {
+  background-position: 0 -436px;
+  height: 42px;
+  width: 57px;
+}
+
+/* line 84, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-creditcards-jcb_big {
+  background-position: 0 -478px;
+  height: 70px;
+  width: 96px;
+}
+
+/* line 84, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-creditcards-maestro {
+  background-position: 0 -548px;
+  height: 42px;
+  width: 57px;
+}
+
+/* line 84, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-creditcards-maestro_big {
+  background-position: 0 -590px;
+  height: 70px;
+  width: 96px;
+}
+
+/* line 84, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-creditcards-mastercard {
+  background-position: 0 -660px;
+  height: 42px;
+  width: 57px;
+}
+
+/* line 84, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-creditcards-mastercard_big {
+  background-position: 0 -702px;
+  height: 70px;
+  width: 96px;
+}
+
+/* line 84, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-creditcards-payease {
+  background-position: 0 -772px;
+  height: 30px;
+  width: 100px;
+}
+
+/* line 84, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-creditcards-paypal {
+  background-position: 0 -802px;
+  height: 42px;
+  width: 57px;
+}
+
+/* line 84, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-creditcards-paypal_big {
+  background-position: 0 -844px;
+  height: 70px;
+  width: 96px;
+}
+
+/* line 84, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-creditcards-postepay {
+  background-position: 0 -914px;
+  height: 42px;
+  width: 57px;
+}
+
+/* line 84, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-creditcards-postepay_big {
+  background-position: 0 -956px;
+  height: 70px;
+  width: 96px;
+}
+
+/* line 84, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-creditcards-visa {
+  background-position: 0 -1026px;
+  height: 42px;
+  width: 57px;
+}
+
+/* line 84, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.sprites-creditcards-visa_big {
+  background-position: 0 -1068px;
+  height: 70px;
+  width: 96px;
+}
+
+/* line 20, ../../../sass/Desktop/Partials/_susyClasses.scss */
+.column-1 {
+  width: 74px;
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 20, ../../../sass/Desktop/Partials/_susyClasses.scss */
+.column-2 {
+  width: 158px;
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 20, ../../../sass/Desktop/Partials/_susyClasses.scss */
+.column-3 {
+  width: 242px;
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 20, ../../../sass/Desktop/Partials/_susyClasses.scss */
+.column-4 {
+  width: 326px;
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 20, ../../../sass/Desktop/Partials/_susyClasses.scss */
+.column-5 {
+  width: 410px;
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 20, ../../../sass/Desktop/Partials/_susyClasses.scss */
+.column-6 {
+  width: 494px;
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 20, ../../../sass/Desktop/Partials/_susyClasses.scss */
+.column-7 {
+  width: 578px;
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 20, ../../../sass/Desktop/Partials/_susyClasses.scss */
+.column-8 {
+  width: 662px;
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 20, ../../../sass/Desktop/Partials/_susyClasses.scss */
+.column-9 {
+  width: 746px;
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 20, ../../../sass/Desktop/Partials/_susyClasses.scss */
+.column-10 {
+  width: 830px;
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 20, ../../../sass/Desktop/Partials/_susyClasses.scss */
+.column-11 {
+  width: 914px;
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 20, ../../../sass/Desktop/Partials/_susyClasses.scss */
+.column-12 {
+  width: 998px;
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 34, ../../../sass/Desktop/Partials/_susyClasses.scss */
+.prefix-1 {
+  padding-left: 84px;
+}
+
+/* line 34, ../../../sass/Desktop/Partials/_susyClasses.scss */
+.prefix-2 {
+  padding-left: 168px;
+}
+
+/* line 34, ../../../sass/Desktop/Partials/_susyClasses.scss */
+.prefix-3 {
+  padding-left: 252px;
+}
+
+/* line 34, ../../../sass/Desktop/Partials/_susyClasses.scss */
+.prefix-4 {
+  padding-left: 336px;
+}
+
+/* line 34, ../../../sass/Desktop/Partials/_susyClasses.scss */
+.prefix-5 {
+  padding-left: 420px;
+}
+
+/* line 34, ../../../sass/Desktop/Partials/_susyClasses.scss */
+.prefix-6 {
+  padding-left: 504px;
+}
+
+/* line 34, ../../../sass/Desktop/Partials/_susyClasses.scss */
+.prefix-7 {
+  padding-left: 588px;
+}
+
+/* line 34, ../../../sass/Desktop/Partials/_susyClasses.scss */
+.prefix-8 {
+  padding-left: 672px;
+}
+
+/* line 34, ../../../sass/Desktop/Partials/_susyClasses.scss */
+.prefix-9 {
+  padding-left: 756px;
+}
+
+/* line 34, ../../../sass/Desktop/Partials/_susyClasses.scss */
+.prefix-10 {
+  padding-left: 840px;
+}
+
+/* line 34, ../../../sass/Desktop/Partials/_susyClasses.scss */
+.prefix-11 {
+  padding-left: 924px;
+}
+
+/* line 46, ../../../sass/Desktop/Partials/_susyClasses.scss */
+.omega {
+  margin-right: 0 !important;
+}
+
+/* line 56, ../../../sass/Desktop/Partials/_susyClasses.scss */
+.centralColumn {
+  *zoom: 1;
+  width: 998px;
+  padding-left: 6px;
+  padding-right: 6px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  position: relative;
+}
+/* line 38, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+.centralColumn:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 127, ../../../sass/Desktop/vendor/svgzr/_sprites-svg.scss */
+.svg-arrow-circle-left, #bottomSection .bx-prev {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20width%3D%2221%22%20height%3D%2221%22%20viewBox%3D%220%200%20400%20400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Ccircle%20fill%3D%22%23EBEBEB%22%20cx%3D%22200%22%20cy%3D%22200%22%20r%3D%22200%22%2F%3E%3Cpath%20fill%3D%22%23666%22%20d%3D%22M93.054%20200l-.027.025L227.81%20334.807l35.165-35.164L163.33%20200l99.643-99.642-35.164-35.165-134.783%20134.78%22%2F%3E%3C%2Fsvg%3E");
+  width: 21px;
+  height: 21px;
+  background-repeat: no-repeat;
+}
+
+/* line 134, ../../../sass/Desktop/vendor/svgzr/_sprites-svg.scss */
+.svg-arrow-circle-right, #bottomSection .bx-next {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20width%3D%2221%22%20height%3D%2221%22%20viewBox%3D%220%200%20400%20400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Ccircle%20fill%3D%22%23EBEBEB%22%20cx%3D%22199.782%22%20cy%3D%22200.453%22%20r%3D%22200%22%2F%3E%3Cpath%20fill%3D%22%23666%22%20d%3D%22M301.755%20200.427l-134.78-134.78-35.165%2035.164%2099.64%2099.643-99.64%2099.643%2035.163%2035.163%20134.782-134.782-.026-.025%22%2F%3E%3C%2Fsvg%3E");
+  width: 21px;
+  height: 21px;
+  background-repeat: no-repeat;
+}
+
+/* line 169, ../../../sass/Desktop/vendor/svgzr/_sprites-svg.scss */
+.svg-arrow-thin-left {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20version%3D%221.2%22%20baseProfile%3D%22tiny%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2230%22%20viewBox%3D%220%200%2070.867%20128.977%22%3E%3Cpath%20fill%3D%22%23999%22%20d%3D%22M0%2061.712L63.966.032l6.748%207-57.02%2054.984%2057.173%2060.234-7.053%206.693%22%2F%3E%3C%2Fsvg%3E");
+  width: 16px;
+  height: 30px;
+  background-repeat: no-repeat;
+}
+
+/* line 176, ../../../sass/Desktop/vendor/svgzr/_sprites-svg.scss */
+.svg-arrow-thin-right {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20version%3D%221.2%22%20baseProfile%3D%22tiny%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2230%22%20viewBox%3D%220%200%2070.866%20128.977%22%3E%3Cpath%20fill%3D%22%23999%22%20d%3D%22M7.052%20128.943L0%20122.25l57.174-60.234L.152%207.03%206.9.034l63.966%2061.68%22%2F%3E%3C%2Fsvg%3E");
+  width: 16px;
+  height: 30px;
+  background-repeat: no-repeat;
+}
+
+/* line 218, ../../../sass/Desktop/vendor/svgzr/_sprites-svg.scss */
+.svg-ccare-icon-box {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20width%3D%22100%22%20height%3D%2230%22%20viewBox%3D%220%200%20355%20140%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%23333%22%3E%3Cpath%20d%3D%22M94.832%2018h136.4l28.72-18h-136.4M235%20140.398l25-19.19V7.143l-25%2014.39M5%2080.998C5%2068.688%2014.988%2059%2027.264%2059H46v9.672l21.588-12.466L46%2043.742V54H27.264C12.23%2054%200%2065.93%200%2080.998%200%2096.068%2012.23%20108%2027.264%20108H85v-5H27.264C14.988%20103%205%2093.312%205%2080.998zM327.734%2054H269v5h58.734C340.012%2059%20350%2068.688%20350%2080.998%20350%2093.312%20340.012%20103%20327.734%20103H308v-9.74l-21.588%2012.467L308%20118.19V108h19.734C342.77%20108%20355%2096.068%20355%2080.998%20355%2065.93%20342.77%2054%20327.734%2054zM94%20140h137V22H94v118zm44-71h49v24h-49V69z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  width: 100px;
+  height: 30px;
+  background-repeat: no-repeat;
+}
+
+/* line 225, ../../../sass/Desktop/vendor/svgzr/_sprites-svg.scss */
+.svg-ccare-icon-lock {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20width%3D%2235%22%20height%3D%2245%22%20viewBox%3D%220%200%2085%20140%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23333%22%20d%3D%22M76%2055V30.804C76%2014.394%2060.305%200%2042.5%200%2024.696%200%209%2014.554%209%2031.145V55H0v85h85V55h-9zM24%2031.145c0-8.58%208.75-16.69%2018.5-16.69%208.77%200%2018.5%207.142%2018.5%2016.35V55H24V31.145zM63%20117h-9v-7h9v7zm0-27H33v27h-8V82h38v8z%22%2F%3E%3C%2Fsvg%3E");
+  width: 35px;
+  height: 45px;
+  background-repeat: no-repeat;
+}
+
+/* line 232, ../../../sass/Desktop/vendor/svgzr/_sprites-svg.scss */
+.svg-ccare-icon-tc {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20width%3D%2243%22%20height%3D%2230%22%20viewBox%3D%220%200%20300%20280%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%23333%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M236.1%20216.852h63.754v63.665H236.1zM-.146.516h300v61.17H63.324v218.83H-.145%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  width: 43px;
+  height: 30px;
+  background-repeat: no-repeat;
+}
+
+/* line 456, desktop-fallback/*.png */
+.desktop-fallback-sprite, .no-svg .svg-arrow-circle-left, .no-svg #bottomSection .bx-prev, #bottomSection .no-svg .bx-prev, .ielt9 .svg-arrow-circle-left, .ielt9 #bottomSection .bx-prev, #bottomSection .ielt9 .bx-prev, .no-svg .svg-arrow-circle-right, .no-svg #bottomSection .bx-next, #bottomSection .no-svg .bx-next, .ielt9 .svg-arrow-circle-right, .ielt9 #bottomSection .bx-next, #bottomSection .ielt9 .bx-next, .no-svg .svg-arrow-thin-left, .ielt9 .svg-arrow-thin-left, .no-svg .svg-arrow-thin-right, .ielt9 .svg-arrow-thin-right, .no-svg .svg-ccare-icon-box, .ielt9 .svg-ccare-icon-box, .no-svg .svg-ccare-icon-lock, .ielt9 .svg-ccare-icon-lock, .no-svg .svg-ccare-icon-tc, .ielt9 .svg-ccare-icon-tc {
+  background-image: url('/images/desktop-fallback-s59a2bd1d81.png');
+  background-repeat: no-repeat;
+}
+
+/* line 6, ../../../sass/Desktop/vendor/svgzr/_sprites-fallback.scss */
+.no-svg .svg-arrow-circle-left, .no-svg #bottomSection .bx-prev, #bottomSection .no-svg .bx-prev, .ielt9 .svg-arrow-circle-left, .ielt9 #bottomSection .bx-prev, #bottomSection .ielt9 .bx-prev {
+  background-position: 0 -85px;
+  width: 21px;
+  height: 21px;
+}
+
+/* line 6, ../../../sass/Desktop/vendor/svgzr/_sprites-fallback.scss */
+.no-svg .svg-arrow-circle-right, .no-svg #bottomSection .bx-next, #bottomSection .no-svg .bx-next, .ielt9 .svg-arrow-circle-right, .ielt9 #bottomSection .bx-next, #bottomSection .ielt9 .bx-next {
+  background-position: 0 -106px;
+  width: 21px;
+  height: 21px;
+}
+
+/* line 6, ../../../sass/Desktop/vendor/svgzr/_sprites-fallback.scss */
+.no-svg .svg-arrow-thin-left, .ielt9 .svg-arrow-thin-left {
+  background-position: 0 -219px;
+  width: 16px;
+  height: 30px;
+}
+
+/* line 6, ../../../sass/Desktop/vendor/svgzr/_sprites-fallback.scss */
+.no-svg .svg-arrow-thin-right, .ielt9 .svg-arrow-thin-right {
+  background-position: 0 -249px;
+  width: 16px;
+  height: 30px;
+}
+
+/* line 6, ../../../sass/Desktop/vendor/svgzr/_sprites-fallback.scss */
+.no-svg .svg-ccare-icon-box, .ielt9 .svg-ccare-icon-box {
+  background-position: 0 -446px;
+  width: 100px;
+  height: 30px;
+}
+
+/* line 6, ../../../sass/Desktop/vendor/svgzr/_sprites-fallback.scss */
+.no-svg .svg-ccare-icon-lock, .ielt9 .svg-ccare-icon-lock {
+  background-position: 0 -476px;
+  width: 35px;
+  height: 45px;
+}
+
+/* line 6, ../../../sass/Desktop/vendor/svgzr/_sprites-fallback.scss */
+.no-svg .svg-ccare-icon-tc, .ielt9 .svg-ccare-icon-tc {
+  background-position: 0 -521px;
+  width: 43px;
+  height: 30px;
+}
+
+/* line 36, ../../../sass/desktop/pages/home.scss */
+.has-slider .bx-wrapper {
+  position: relative;
+}
+/* line 41, ../../../sass/desktop/pages/home.scss */
+.has-slider .bx-prev, .has-slider .bx-next {
+  color: transparent;
+  cursor: pointer;
+  display: block;
+  position: absolute;
+  top: 0;
+  -moz-transition: opacity 0.2s ease-out;
+  -o-transition: opacity 0.2s ease-out;
+  -webkit-transition: opacity 0.2s ease-out;
+  transition: opacity 0.2s ease-out;
+}
+
+/* line 54, ../../../sass/desktop/pages/home.scss */
+.wholeWidth {
+  margin-bottom: 4px;
+  height: 40px;
+  line-height: 40px;
+  border-style: solid;
+  border-width: 1px 0;
+  text-align: center;
+  cursor: pointer;
+}
+/* line 67, ../../../sass/desktop/pages/home.scss */
+.wholeWidth.primary {
+  background-color: #000;
+  border-color: #000;
+  color: #FFF;
+}
+/* line 73, ../../../sass/desktop/pages/home.scss */
+.wholeWidth.secondary {
+  background-color: #EBEBEB;
+  border-color: #CCC;
+  color: #333;
+}
+
+/* line 9, ../../../sass/Desktop/Partials/Home/_promoTablet.scss */
+#promoTabletWrapper .promoTablet .bannerElem {
+  display: block;
+}
+/* line 13, ../../../sass/Desktop/Partials/Home/_promoTablet.scss */
+#promoTabletWrapper .promoTablet .bannerElem .textWrapper {
+  margin-left: 10px;
+  width: 340px;
+  position: relative;
+}
+/* line 18, ../../../sass/Desktop/Partials/Home/_promoTablet.scss */
+#promoTabletWrapper .promoTablet .bannerElem .textWrapper h4 {
+  top: 10px;
+  position: absolute;
+}
+/* line 22, ../../../sass/Desktop/Partials/Home/_promoTablet.scss */
+#promoTabletWrapper .promoTablet .bannerElem .textWrapper h2 {
+  padding-top: 30px;
+}
+/* line 24, ../../../sass/Desktop/Partials/Home/_promoTablet.scss */
+html.CN #promoTabletWrapper .promoTablet .bannerElem .textWrapper h2 {
+  line-height: 1.4em;
+}
+/* line 25, ../../../sass/Desktop/Partials/Home/_promoTablet.scss */
+html.JP #promoTabletWrapper .promoTablet .bannerElem .textWrapper h2 {
+  line-height: 1em;
+}
+/* line 27, ../../../sass/Desktop/Partials/Home/_promoTablet.scss */
+#promoTabletWrapper .promoTablet .bannerElem .textWrapper h3 {
+  margin-top: 3px;
+  text-transform: none;
+}
+/* line 30, ../../../sass/Desktop/Partials/Home/_promoTablet.scss */
+html.JP #promoTabletWrapper .promoTablet .bannerElem .textWrapper h3 {
+  font-size: 2.2;
+}
+/* line 33, ../../../sass/Desktop/Partials/Home/_promoTablet.scss */
+#promoTabletWrapper .promoTablet .bannerElem .textWrapper h5 {
+  margin-top: 101px;
+  text-transform: none;
+}
+
+/* line 7, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+.banner-slider {
+  overflow: hidden;
+}
+/* line 10, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+.banner-slider h5, .banner-slider h6 {
+  text-transform: none;
+}
+/* line 14, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+.banner-slider h2 {
+  line-height: 0.9;
+  text-transform: none;
+}
+/* line 19, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+.banner-slider h3 {
+  margin-top: 3px;
+}
+/* line 23, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+.banner-slider h5 {
+  margin-top: 10px;
+}
+/* line 27, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+.banner-slider .bx-next {
+  right: -2000px;
+}
+/* line 31, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+.banner-slider .arrow {
+  background-position: center;
+  border-style: solid;
+  border-color: #999;
+  position: absolute;
+  top: 50%;
+  margin-top: -35px;
+  width: 30px;
+  height: 50px;
+  -moz-transition: opacity 0.2s ease;
+  -o-transition: opacity 0.2s ease;
+  -webkit-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+}
+/* line 44, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+.banner-slider .arrow.visible {
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+}
+/* line 49, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+.banner-slider .innerarrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -15px;
+  margin-left: -8px;
+}
+/* line 58, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+.banner-slider .bx-prev .arrow {
+  border-width: 2px 0 2px 2px;
+  right: 0;
+}
+/* line 65, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+.banner-slider .bx-next .arrow {
+  border-width: 2px 2px 2px 0;
+  left: 0;
+}
+/* line 71, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+.banner-slider .opacityFiller {
+  background-color: #FFF;
+  width: 100%;
+  -moz-transition: opacity 0.2s ease-out;
+  -o-transition: opacity 0.2s ease-out;
+  -webkit-transition: opacity 0.2s ease-out;
+  transition: opacity 0.2s ease-out;
+}
+/* line 77, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+.banner-slider .bx-prev, .banner-slider .bx-next {
+  width: 2000px;
+}
+
+/* line 85, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+#big-banner .bannerElem {
+  display: block;
+  width: 1400px;
+  height: 500px;
+  margin: auto;
+}
+
+/* line 94, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+#topSection.banner-slider .bx-prev .arrow {
+  right: -2px;
+}
+
+/* line 97, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+#topSection.banner-slider .bx-next .arrow {
+  left: 4px;
+}
+
+/* line 104, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+.topSlider h2, .topSlider h3, .topSlider h4, .topSlider h5 {
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  opacity: 0;
+}
+/* line 112, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+.topSlider .currentSlide h2, .topSlider .currentSlide h3, .topSlider .currentSlide h4, .topSlider .currentSlide h5 {
+  opacity: 1;
+}
+/* line 117, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+.topSlider li {
+  *zoom: 1;
+}
+/* line 38, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+.topSlider li:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 120, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+.topSlider li .banner {
+  float: left;
+  position: relative;
+  margin-right: 4px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+/* line 128, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+.topSlider li .banner.smallElemTop, .topSlider li .banner.smallElemBottom {
+  margin-right: 0px;
+}
+
+/* line 137, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+#big-banner .textWrapper, .completeElem .textWrapper, .bigElem .textWrapper {
+  width: 280px;
+  margin-left: 10px;
+}
+/* line 142, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+#big-banner h2, .completeElem h2, .bigElem h2 {
+  padding-top: 80px;
+}
+/* line 146, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+#big-banner h4, .completeElem h4, .bigElem h4 {
+  position: absolute;
+  top: 58px;
+}
+
+/* line 152, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+.completeElem {
+  width: 998px;
+  height: 500px;
+}
+
+/* line 157, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+.bigElem {
+  width: 660px;
+  height: 500px;
+}
+
+/* line 164, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+.smallElemTop {
+  width: 334px;
+  height: 330px;
+  margin-bottom: 4px;
+}
+/* line 169, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+.smallElemTop .textWrapper {
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
+  width: 310px;
+}
+/* line 176, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+.JP .smallElemTop h2 {
+  line-height: 1em;
+}
+/* line 181, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+.JP .smallElemTop h5 {
+  line-height: 1.2em;
+}
+
+/* line 187, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+.smallElemBottom {
+  width: 334px;
+  height: 166px;
+}
+/* line 191, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+.smallElemBottom .textWrapper {
+  position: absolute;
+  left: 185px;
+  top: 8px;
+  width: 144px;
+}
+/* line 198, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+.smallElemBottom h2 {
+  font-size: 2.2em;
+}
+/* line 201, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+.JP .smallElemBottom h2 {
+  font-size: 2.2em;
+  line-height: 1.2em;
+}
+/* line 208, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+.JP .smallElemBottom h5 {
+  font-size: 1.7em;
+  line-height: 1.2em;
+}
+
+/* line 222, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+.middleSlider h4, .middleSlider h2, .middleSlider p {
+  padding: 10px 0 0 10px;
+}
+/* line 226, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+.middleSlider h2 {
+  line-height: 0.9em;
+}
+/* line 231, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+html.desktop .middleSlider p {
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+}
+/* line 237, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+html.desktop .middleSlider a:hover p {
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+}
+
+/* line 244, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+.sliderColumn {
+  float: left;
+  margin-right: 4px;
+}
+/* line 248, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+.sliderColumn a {
+  display: block;
+  position: relative;
+}
+
+/* line 254, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+.shortElem {
+  width: 328px;
+  height: 250px;
+  margin-bottom: 4px;
+}
+
+/* line 260, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+.tallElem {
+  width: 328px;
+  height: 504px;
+}
+
+/* line 270, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+#topSection {
+  max-height: 500px;
+}
+/* line 273, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+#topSection .bx-prev, #topSection .bx-next, #topSection .opacityFiller {
+  height: 500px;
+}
+/* line 276, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+#topSection .bx-prev .arrow, #topSection .bx-next .arrow, #topSection .opacityFiller .arrow {
+  background-color: #FFF;
+}
+/* line 281, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+#topSection .bx-prev {
+  left: -2006px;
+}
+/* line 285, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+#topSection .opacityFiller {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+}
+
+/* line 293, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+#middleSection {
+  max-height: 554px;
+}
+/* line 296, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+#middleSection .bx-prev, #middleSection .bx-next, #middleSection .opacityFiller {
+  height: 508px;
+}
+/* line 300, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+#middleSection .bx-prev {
+  left: -2005px;
+}
+/* line 304, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+#middleSection .opacityFiller {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8;
+}
+/* line 307, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+#middleSection .opacityFiller:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
+  opacity: 0.9;
+}
+/* line 311, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+#middleSection .opacityFiller.max-opacity {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=98);
+  opacity: 0.98;
+}
+
+/* line 317, ../../../sass/Desktop/Partials/Home/_homesliders.scss */
+.RU #middleSection h2 {
+  font-size: 3em;
+}
+
+/* line 8, ../../../sass/Desktop/Partials/Home/_styleradar.scss */
+#bottomSection img {
+  display: block;
+  margin: auto;
+}
+/* line 13, ../../../sass/Desktop/Partials/Home/_styleradar.scss */
+#bottomSection h4 {
+  text-align: center;
+}
+/* line 18, ../../../sass/Desktop/Partials/Home/_styleradar.scss */
+#bottomSection .bx-next, #bottomSection .bx-prev {
+  top: 50%;
+}
+/* line 22, ../../../sass/Desktop/Partials/Home/_styleradar.scss */
+#bottomSection .bx-prev {
+  left: -30px;
+}
+/* line 27, ../../../sass/Desktop/Partials/Home/_styleradar.scss */
+#bottomSection .bx-next {
+  right: -30px;
+}
+
+/* line 34, ../../../sass/Desktop/Partials/Home/_styleradar.scss */
+.minisearch-wrapper {
+  padding: 30px 6px 40px;
+}
+
+/* line 38, ../../../sass/Desktop/Partials/Home/_styleradar.scss */
+.minisearch-product {
+  float: left;
+}
+
+/* line 17, ../../../sass/Desktop/Partials/Home/_cCareBand.scss */
+#cCareBand {
+  margin: 6px 0;
+}
+/* line 21, ../../../sass/Desktop/Partials/Home/_cCareBand.scss */
+#cCareBand a {
+  display: block;
+  height: 75px;
+  background: #EBEBEB;
+}
+/* line 27, ../../../sass/Desktop/Partials/Home/_cCareBand.scss */
+#cCareBand .icon {
+  float: left;
+  display: block;
+  position: relative;
+  width: 90px;
+  height: 75px;
+  background-position: center;
+}
+/* line 36, ../../../sass/Desktop/Partials/Home/_cCareBand.scss */
+#cCareBand .text {
+  float: left;
+  display: block;
+  border-left: 1px solid #CCC;
+  margin: 15px 0;
+  padding-left: 15px;
+  height: 45px;
+  font-size: 1.7em;
+  line-height: 19px;
+}
+/* line 48, ../../../sass/Desktop/Partials/Home/_cCareBand.scss */
+#cCareBand .first-line {
+  margin-top: 10px;
+}
+/* line 53, ../../../sass/Desktop/Partials/Home/_cCareBand.scss */
+#cCareBand .svgelem {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+/* line 59, ../../../sass/Desktop/Partials/Home/_cCareBand.scss */
+#cCareBand .svg-ccare-icon-tc {
+  margin-top: -15px;
+  margin-left: -21.5px;
+}
+/* line 66, ../../../sass/Desktop/Partials/Home/_cCareBand.scss */
+#cCareBand .svg-ccare-icon-lock {
+  margin-top: -22.5px;
+  margin-left: -17.5px;
+}
+/* line 73, ../../../sass/Desktop/Partials/Home/_cCareBand.scss */
+#cCareBand .svg-ccare-icon-box {
+  margin-top: -15px;
+  margin-left: -50px;
+}

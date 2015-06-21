@@ -1,4 +1,12 @@
 @charset "UTF-8";
+/*
+    zindex
+    Mixin di definizione e utilizzo degli z-index.
+
+    La lista $indexes è crescente dall'alto al basso, e i suoi elementi andranno espressi al momento dell'uso del mixin.
+    Ovviamente l'uso da farne è di tipo semantico, per evitare l'espressione di numeri casuali all'interno dei vari css.
+
+*/
 /* effetto height:100% sugli elementi flottanti */
 @font-face {
   font-family: 'KnockoutLight';
@@ -48,7 +56,7 @@ button, .button, #crm-container form [type="submit"], .crm-menu-main li a, .crm-
   font-weight: normal;
 }
 .JP button, .JP .button, .JP #crm-container form [type="submit"], #crm-container form .JP [type="submit"], .JP .crm-menu-main li a, .crm-menu-main li .JP a, .JP .crm-see-more, .JP .crm-article .crm-icons li, .crm-article .crm-icons .JP li, .JP .crm-article .article-2562, .crm-article .JP .article-2562, .JP .mfp-content .crm-article a, .mfp-content .crm-article .JP a, .JP .mfp-content .crm-overlay-buttons button, .mfp-content .crm-overlay-buttons .JP button, .JP #crm-wrapper, .JP .crm-form-field [type="file"] /deep/ [type="button"], .crm-form-field .JP [type="file"] /deep/ [type="button"], .JP table tbody > tr:first-child td strong, table tbody > tr:first-child td .JP strong {
-  font-family: KnockoutLight, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+  font-family: KnockoutLight, "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", sans-serif;
 }
 .CN button, .CN .button, .CN #crm-container form [type="submit"], #crm-container form .CN [type="submit"], .CN .crm-menu-main li a, .crm-menu-main li .CN a, .CN .crm-see-more, .CN .crm-article .crm-icons li, .crm-article .crm-icons .CN li, .CN .crm-article .article-2562, .crm-article .CN .article-2562, .CN .mfp-content .crm-article a, .mfp-content .crm-article .CN a, .CN .mfp-content .crm-overlay-buttons button, .mfp-content .crm-overlay-buttons .CN button, .CN #crm-wrapper, .CN .crm-form-field [type="file"] /deep/ [type="button"], .crm-form-field .CN [type="file"] /deep/ [type="button"], .CN table tbody > tr:first-child td strong, table tbody > tr:first-child td .CN strong {
   font-family: KnockoutLight, HelveticaCondensedLight, Arial, "Microsoft YaHei", "Microsoft YaHei Regular", SimHei, "SimHei Regular", sans-serif;
@@ -59,7 +67,7 @@ button, .button, #crm-container form [type="submit"], .crm-menu-main li a, .crm-
   font-weight: normal;
 }
 .JP .crm-article-content a, .crm-article-content .JP a, .JP .crm-article-welcome > p > a {
-  font-family: KnockoutRegular, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+  font-family: KnockoutRegular, "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", sans-serif;
 }
 .CN .crm-article-content a, .crm-article-content .CN a, .CN .crm-article-welcome > p > a {
   font-family: KnockoutLight, HelveticaCondensedLight, Arial, "Microsoft YaHei", "Microsoft YaHei Regular", SimHei, "SimHei Regular", sans-serif;

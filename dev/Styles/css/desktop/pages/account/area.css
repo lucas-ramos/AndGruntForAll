@@ -1,4 +1,12 @@
 @charset "UTF-8";
+/*
+    zindex
+    Mixin di definizione e utilizzo degli z-index.
+
+    La lista $indexes è crescente dall'alto al basso, e i suoi elementi andranno espressi al momento dell'uso del mixin.
+    Ovviamente l'uso da farne è di tipo semantico, per evitare l'espressione di numeri casuali all'interno dei vari css.
+
+*/
 /* effetto height:100% sugli elementi flottanti */
 @font-face {
   font-family: 'KnockoutLight';
@@ -48,7 +56,7 @@ button, .button, .banner-slot .line3, .wishlistItem .fakeButton, #overview .side
   font-weight: normal;
 }
 .JP button, .JP .button, .JP .banner-slot .line3, .banner-slot .JP .line3, .JP .wishlistItem .fakeButton, .wishlistItem .JP .fakeButton, .JP #overview .sidebar-content .backToShop a, #overview .sidebar-content .backToShop .JP a, .JP #orders .returnBtn a, #orders .returnBtn .JP a, .JP #orders #ordersList .backToShop a, #orders #ordersList .backToShop .JP a, .JP #orders .payNowBtn, #orders .JP .payNowBtn, .JP #premiere .deletePremiereButton, #premiere .JP .deletePremiereButton, .JP .orderDetailsWrapper .orderStatus .container, .orderDetailsWrapper .orderStatus .JP .container, .JP #searchorder .orderStatus .container, #searchorder .orderStatus .JP .container {
-  font-family: KnockoutLight, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+  font-family: KnockoutLight, "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", sans-serif;
 }
 .CN button, .CN .button, .CN .banner-slot .line3, .banner-slot .CN .line3, .CN .wishlistItem .fakeButton, .wishlistItem .CN .fakeButton, .CN #overview .sidebar-content .backToShop a, #overview .sidebar-content .backToShop .CN a, .CN #orders .returnBtn a, #orders .returnBtn .CN a, .CN #orders #ordersList .backToShop a, #orders #ordersList .backToShop .CN a, .CN #orders .payNowBtn, #orders .CN .payNowBtn, .CN #premiere .deletePremiereButton, #premiere .CN .deletePremiereButton, .CN .orderDetailsWrapper .orderStatus .container, .orderDetailsWrapper .orderStatus .CN .container, .CN #searchorder .orderStatus .container, #searchorder .orderStatus .CN .container {
   font-family: KnockoutLight, HelveticaCondensedLight, Arial, "Microsoft YaHei", "Microsoft YaHei Regular", SimHei, "SimHei Regular", sans-serif;
@@ -59,7 +67,7 @@ button, .button, .banner-slot .line3, .wishlistItem .fakeButton, #overview .side
   font-weight: normal;
 }
 .JP .wishlistItem .brandName, .wishlistItem .JP .brandName, .JP .wishlistItem .lastItemAvailable, .wishlistItem .JP .lastItemAvailable, .JP .orderDetailsWrapper .orderHeader, .orderDetailsWrapper .JP .orderHeader, .JP .orderDetailsWrapper .item .description .brand, .orderDetailsWrapper .item .description .JP .brand, .JP .orderDetailsWrapper .paymentDeliveryContainer .orderDetailRecap .orderTotalContainer, .orderDetailsWrapper .paymentDeliveryContainer .orderDetailRecap .JP .orderTotalContainer, .JP #addressbook .container .inner .defaultMessage .text, #addressbook .container .inner .defaultMessage .JP .text, .JP #creditcardwallet .container .inner .defaultMessage .text, #creditcardwallet .container .inner .defaultMessage .JP .text, .JP #creditcardwallet .container .inner .expiredAlert, #creditcardwallet .container .inner .JP .expiredAlert, .JP #overview .userOrders .orderNumber .label, #overview .userOrders .orderNumber .JP .label, .JP #orders #ordersList #listHeader, #orders #ordersList .JP #listHeader, .JP #orders #ordersList #listItems .orderStatus, #orders #ordersList #listItems .JP .orderStatus, .JP #searchorder .orderHeader, #searchorder .JP .orderHeader, .JP #searchorder .item .brand, #searchorder .item .JP .brand, .JP #searchorder .orderTotalContainer, #searchorder .JP .orderTotalContainer, .JP #premiere #wlNumberItems, #premiere .JP #wlNumberItems {
-  font-family: KnockoutRegular, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+  font-family: KnockoutRegular, "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", sans-serif;
 }
 .CN .wishlistItem .brandName, .wishlistItem .CN .brandName, .CN .wishlistItem .lastItemAvailable, .wishlistItem .CN .lastItemAvailable, .CN .orderDetailsWrapper .orderHeader, .orderDetailsWrapper .CN .orderHeader, .CN .orderDetailsWrapper .item .description .brand, .orderDetailsWrapper .item .description .CN .brand, .CN .orderDetailsWrapper .paymentDeliveryContainer .orderDetailRecap .orderTotalContainer, .orderDetailsWrapper .paymentDeliveryContainer .orderDetailRecap .CN .orderTotalContainer, .CN #addressbook .container .inner .defaultMessage .text, #addressbook .container .inner .defaultMessage .CN .text, .CN #creditcardwallet .container .inner .defaultMessage .text, #creditcardwallet .container .inner .defaultMessage .CN .text, .CN #creditcardwallet .container .inner .expiredAlert, #creditcardwallet .container .inner .CN .expiredAlert, .CN #overview .userOrders .orderNumber .label, #overview .userOrders .orderNumber .CN .label, .CN #orders #ordersList #listHeader, #orders #ordersList .CN #listHeader, .CN #orders #ordersList #listItems .orderStatus, #orders #ordersList #listItems .CN .orderStatus, .CN #searchorder .orderHeader, #searchorder .CN .orderHeader, .CN #searchorder .item .brand, #searchorder .item .CN .brand, .CN #searchorder .orderTotalContainer, #searchorder .CN .orderTotalContainer, .CN #premiere #wlNumberItems, #premiere .CN #wlNumberItems {
   font-family: KnockoutLight, HelveticaCondensedLight, Arial, "Microsoft YaHei", "Microsoft YaHei Regular", SimHei, "SimHei Regular", sans-serif;
@@ -313,17 +321,17 @@ button.disabled:hover, button[disabled]:hover, .button.disabled:hover, .banner-s
 }
 
 .svgfallback-sprite {
-  background-image: url('/Content/Styles/generated_images/svgfallback-s163386ba73.png');
+  background-image: url('/styles/generated_images/svgfallback-s163386ba73.png');
   background-repeat: no-repeat;
 }
 
 .sprites-desktop-sprite, .sprites-desktop-checkMark, .sprites-desktop-checkWhite, .sprites-desktop-cinesina, .sprites-desktop-fb_btn, .sprites-desktop-giftPackage, .sprites-desktop-giftPackageChina, .sprites-desktop-gplus_btn, .sprites-desktop-kaixin_btn, .sprites-desktop-pinit_btn, .sprites-desktop-plusone_btn, .sprites-desktop-seal, .sprites-desktop-small_i, .sprites-desktop-tweet_btn, .sprites-desktop-twitter_btn, .sprites-desktop-weiboo_btn {
-  background-image: url('/Content/Styles/generated_images/sprites-desktop-s6783407e58.png');
+  background-image: url('/styles/generated_images/sprites-desktop-s6783407e58.png');
   background-repeat: no-repeat;
 }
 
 .sprites-creditcards-sprite, .sprites-creditcards-alipay, #creditcardwallet .Alipay, .sprites-creditcards-americanexpress, #creditcardwallet .AmericanExpress, .sprites-creditcards-americanexpress_big, .sprites-creditcards-cartebleue, #creditcardwallet .CarteBleue, .sprites-creditcards-cartebleue_big, .sprites-creditcards-cartebleuevisa_big, .sprites-creditcards-discover, #creditcardwallet .Discover, .sprites-creditcards-discover_big, .sprites-creditcards-jcb, #creditcardwallet .JCB, .sprites-creditcards-jcb_big, .sprites-creditcards-maestro, #creditcardwallet .Switch, .sprites-creditcards-maestro_big, .sprites-creditcards-mastercard, #creditcardwallet .Mastercard, .sprites-creditcards-mastercard_big, .sprites-creditcards-payease, #creditcardwallet .PayEase, .sprites-creditcards-paypal, #creditcardwallet .Paypal, .sprites-creditcards-paypal_big, .sprites-creditcards-postepay, #creditcardwallet .PostePay, .sprites-creditcards-postepay_big, .sprites-creditcards-visa, #creditcardwallet .Visa, .sprites-creditcards-visa_big {
-  background-image: url('/Content/Styles/generated_images/sprites-creditcards-s9068ad9ed7.png');
+  background-image: url('/styles/generated_images/sprites-creditcards-s9068ad9ed7.png');
   background-repeat: no-repeat;
 }
 
@@ -637,61 +645,12 @@ button.disabled:hover, button[disabled]:hover, .button.disabled:hover, .banner-s
   margin: 10px auto;
 }
 
-/*
- * SmartLoadingBar v1.0
- * (c) 2014, 2015 Giorgio d'Agostino
- */
-#smartLoadingBar {
-  -moz-transition: opacity 0.5s ease-in 0.5s;
-  -o-transition: opacity 0.5s ease-in 0.5s;
-  -webkit-transition: opacity 0.5s ease-in;
-  -webkit-transition-delay: 0.5s;
-  transition: opacity 0.5s ease-in 0.5s;
-  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
-  opacity: 1;
-  width: 100%;
-  z-index: 21;
-}
-#smartLoadingBar, #smartLoadingBar .slow, #smartLoadingBar .fast {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 2px;
-}
-#smartLoadingBar .slow, #smartLoadingBar .fast {
-  background-color: #000;
-  width: 0%;
-}
-#smartLoadingBar.load .slow {
-  -moz-transition: width 30s ease;
-  -o-transition: width 30s ease;
-  -webkit-transition: width 30s ease;
-  transition: width 30s ease;
-  width: 100%;
-}
-#smartLoadingBar.finish {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
-  opacity: 0;
-}
-#smartLoadingBar.finish .fast {
-  -moz-transition: width 0.5s ease;
-  -o-transition: width 0.5s ease;
-  -webkit-transition: width 0.5s ease;
-  transition: width 0.5s ease;
-  width: 100%;
-}
-
 .wishlistItem {
   width: 242px;
   float: left;
   margin-right: 10px;
   margin-bottom: 10px;
   min-height: 495px;
-}
-.wishlistItem:nth-child(4n) {
-  float: left;
-  margin-right: 0;
-  *margin-right: -10px;
 }
 .RU .wishlistItem {
   min-height: 530px;
@@ -863,13 +822,6 @@ button.disabled:hover, button[disabled]:hover, .button.disabled:hover, .banner-s
 }
 .RU .wishlistItem .modifyItemInWishList .label {
   line-height: 1em;
-}
-
-#smartLoadingBar, #smartLoadingBar .slow, #smartLoadingBar .fast {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 2px;
 }
 
 .orderDetailsWrapper {
@@ -1317,7 +1269,7 @@ html.IE #creditcardwallet .container .inner .cardHolderData .cardHolderAddress .
   float: left;
   margin-left: 5px;
 }
-#overview #wishListContainer .priceUpdater.updated {
+#overview #wishListContainer .priceUpdater {
   margin-top: 5px;
   height: 32px;
 }
@@ -1352,6 +1304,11 @@ html.IE #creditcardwallet .container .inner .cardHolderData .cardHolderAddress .
   content: "";
   display: table;
   clear: both;
+}
+#overview .wishListItems .wishlistItem:nth-child(3n) {
+  float: left;
+  margin-right: 0;
+  *margin-right: -10px;
 }
 #overview .wishListItems .wishlistItem .inner {
   min-height: 515px;
@@ -1424,6 +1381,11 @@ html.JP #overview button, html.JP #overview .button, html.JP #overview .banner-s
 }
 #wishlist main .buttonsRow button.disabled, #wishlist main .buttonsRow .button.disabled, #wishlist main .buttonsRow .banner-slot .disabled.line3, .banner-slot #wishlist main .buttonsRow .disabled.line3, #wishlist main .buttonsRow .wishlistItem .disabled.fakeButton, .wishlistItem #wishlist main .buttonsRow .disabled.fakeButton, #wishlist main .buttonsRow #overview .sidebar-content .backToShop a.disabled, #overview .sidebar-content .backToShop #wishlist main .buttonsRow a.disabled, #wishlist main .buttonsRow #orders .returnBtn a.disabled, #orders .returnBtn #wishlist main .buttonsRow a.disabled, #wishlist main .buttonsRow #orders #ordersList .backToShop a.disabled, #orders #ordersList .backToShop #wishlist main .buttonsRow a.disabled, #wishlist main .buttonsRow #orders .disabled.payNowBtn, #orders #wishlist main .buttonsRow .disabled.payNowBtn, #wishlist main .buttonsRow #premiere .disabled.deletePremiereButton, #premiere #wishlist main .buttonsRow .disabled.deletePremiereButton {
   display: none;
+}
+#wishlist .wishlistItem:nth-child(4n) {
+  float: left;
+  margin-right: 0;
+  *margin-right: -10px;
 }
 #wishlist .orderItemsInWishList .label {
   float: left;
@@ -2294,7 +2256,7 @@ html.JP #user.login main h2 {
 #searchorder #OrderInfoNoAuthViewModel_OrderNumber_Wrapper {
   margin: 20px 0 0;
   	/*
-  	Gio: nella my return la dimensione ├¿ 1.6em (size-medium).
+  	Gio: nella my return la dimensione è 1.6em (size-medium).
   	Decidere quale usare su entrambi e tenere uniformato di conseguenza
   
   	.fieldLabel {
@@ -2531,7 +2493,6 @@ html.JP #user.login main h2 {
 }
 #premiere .listPremieresContainer .departmentBanner {
   display: block;
-  background-color: green;
   width: 100%;
   height: 160px;
   font-size: 1.8em;

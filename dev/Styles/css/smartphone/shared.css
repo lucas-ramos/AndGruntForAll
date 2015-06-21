@@ -522,6 +522,14 @@ img.mfp-img {
   padding-top: 0;
 }
 
+/*
+    zindex
+    Mixin di definizione e utilizzo degli z-index.
+
+    La lista $indexes è crescente dall'alto al basso, e i suoi elementi andranno espressi al momento dell'uso del mixin.
+    Ovviamente l'uso da farne è di tipo semantico, per evitare l'espressione di numeri casuali all'interno dei vari css.
+
+*/
 /* effetto height:100% sugli elementi flottanti */
 @font-face {
   font-family: 'KnockoutLight';
@@ -557,7 +565,7 @@ img.mfp-img {
   font-weight: normal;
   font-style: normal;
 }
-.RU button, .RU .button, .RU #miniCart .proceedWithCheckoutLink, #miniCart .RU .proceedWithCheckoutLink, .RU #miniCart .goToCartLink, #miniCart .RU .goToCartLink, .RU body, .RU h4, .RU h5, .RU h6, .RU input[type="text"], .RU input[type="password"], .RU input[type="email"], .RU input[type="tel"], .RU select, .RU #info404, .RU #toolbar .mainCartLink .count, #toolbar .mainCartLink .RU .count, #copyright {
+.RU button, .RU .button, .RU #miniCart .proceedWithCheckoutLink, #miniCart .RU .proceedWithCheckoutLink, .RU #miniCart .goToCartLink, #miniCart .RU .goToCartLink, .RU body, .RU h4, .RU h5, .RU h6, .RU input[type="text"], .RU input[type="password"], .RU input[type="email"], .RU input[type="tel"], .RU select, .RU #info404, .RU #toolbar .mainCartLink .count, #toolbar .mainCartLink .RU .count, #copyright, #footerLinks {
   font-family: Arial, Verdana, sans-serif;
 }
 
@@ -571,7 +579,7 @@ button, .button, #miniCart .proceedWithCheckoutLink, #miniCart .goToCartLink, bo
   font-weight: normal;
 }
 .JP button, .JP .button, .JP #miniCart .proceedWithCheckoutLink, #miniCart .JP .proceedWithCheckoutLink, .JP #miniCart .goToCartLink, #miniCart .JP .goToCartLink, .JP body, .JP h4, .JP h5, .JP h6, .JP input[type="text"], .JP input[type="password"], .JP input[type="email"], .JP input[type="tel"], .JP select, .JP #info404 {
-  font-family: KnockoutLight, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+  font-family: KnockoutLight, "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", sans-serif;
 }
 .CN button, .CN .button, .CN #miniCart .proceedWithCheckoutLink, #miniCart .CN .proceedWithCheckoutLink, .CN #miniCart .goToCartLink, #miniCart .CN .goToCartLink, .CN body, .CN h4, .CN h5, .CN h6, .CN input[type="text"], .CN input[type="password"], .CN input[type="email"], .CN input[type="tel"], .CN select, .CN #info404 {
   font-family: KnockoutLight, HelveticaCondensedLight, Arial, "Microsoft YaHei", "Microsoft YaHei Regular", SimHei, "SimHei Regular", sans-serif;
@@ -582,7 +590,7 @@ h1, h2, h3 {
   font-weight: normal;
 }
 .JP h1, .JP h2, .JP h3 {
-  font-family: KnockoutRegular, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+  font-family: KnockoutRegular, "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", sans-serif;
 }
 .CN h1, .CN h2, .CN h3 {
   font-family: KnockoutLight, HelveticaCondensedLight, Arial, "Microsoft YaHei", "Microsoft YaHei Regular", SimHei, "SimHei Regular", sans-serif;
@@ -593,7 +601,7 @@ h1, h2, h3 {
   font-weight: normal;
 }
 .JP #toolbar .mainCartLink .count, #toolbar .mainCartLink .JP .count {
-  font-family: LatoRegular, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+  font-family: LatoRegular, "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", sans-serif;
 }
 
 #headerPromotions .promotions ul {
@@ -601,7 +609,7 @@ h1, h2, h3 {
   font-weight: normal;
 }
 .JP #headerPromotions .promotions ul, #headerPromotions .promotions .JP ul {
-  font-family: LatoBold, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+  font-family: LatoBold, "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", sans-serif;
 }
 
 /* ==========================================================================
@@ -698,12 +706,12 @@ button.disabled, button[disabled], .button.disabled, #miniCart .disabled.proceed
 }
 
 .sprites-creditcards-sprite, .sprites-creditcards-alipay, .sprites-creditcards-americanexpress, .sprites-creditcards-americanexpress_big, .sprites-creditcards-cartebleue, .sprites-creditcards-cartebleue_big, .sprites-creditcards-cartebleuevisa_big, .sprites-creditcards-discover, .sprites-creditcards-discover_big, .sprites-creditcards-jcb, .sprites-creditcards-jcb_big, .sprites-creditcards-maestro, .sprites-creditcards-maestro_big, .sprites-creditcards-mastercard, .sprites-creditcards-mastercard_big, .sprites-creditcards-payease, .sprites-creditcards-paypal, .sprites-creditcards-paypal_big, .sprites-creditcards-postepay, .sprites-creditcards-postepay_big, .sprites-creditcards-visa, .sprites-creditcards-visa_big {
-  background-image: url('/Content/Styles/generated_images/sprites-creditcards-s9068ad9ed7.png');
+  background-image: url('/styles/generated_images/sprites-creditcards-s9068ad9ed7.png');
   background-repeat: no-repeat;
 }
 
 .sprites-smartphone-sprite, .sprites-smartphone-wechat-qrcode {
-  background-image: url('/Content/Styles/generated_images/sprites-smartphone-scb09bb9be0.png');
+  background-image: url('/styles/generated_images/sprites-smartphone-scb09bb9be0.png');
   background-repeat: no-repeat;
 }
 
@@ -1164,7 +1172,7 @@ a:hover, .link:hover {
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 21;
+  z-index: 23;
 }
 
 /* ==========================================================================
@@ -1378,7 +1386,7 @@ option.disabled {
 
 .mfp-bg {
   opacity: 0.9;
-  z-index: 17;
+  z-index: 19;
 }
 
 .mfp-close-btn-in .mfp-close {
@@ -1697,7 +1705,7 @@ header a, header .link, header a:hover {
   background-color: #666;
   font-size: 1.8rem;
   color: #EBEBEB;
-  z-index: 10;
+  z-index: 12;
 }
 .cookiewLawLayer .cookieLawWrapper {
   position: relative;
@@ -1758,13 +1766,20 @@ header a, header .link, header a:hover {
   background-color: #FFF;
   font-size: 1.1rem;
   text-align: center;
-  padding: 20px 0;
+  padding: 20px 0 10px 0;
 }
 #copyright .copyrightLink {
   color: #000;
 }
 #copyright, #copyright .copyrightLink {
   color: #999;
+}
+
+#footerLinks {
+  text-align: center;
+  color: #000;
+  font-size: 1.1rem;
+  padding-bottom: 20px;
 }
 
 .uiLayer-copyrightLink {

@@ -1,0 +1,51 @@
+@charset "UTF-8";
+/*
+    zindex
+    Mixin di definizione e utilizzo degli z-index.
+
+    La lista $indexes è crescente dall'alto al basso, e i suoi elementi andranno espressi al momento dell'uso del mixin.
+    Ovviamente l'uso da farne è di tipo semantico, per evitare l'espressione di numeri casuali all'interno dei vari css.
+
+*/
+/* effetto height:100% sugli elementi flottanti */
+/* line 1, ../../../sass/Desktop/Partials/_sidebar.scss */
+#container {
+  *zoom: 1;
+}
+/* line 38, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+#container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 3, ../../../sass/Desktop/Partials/_sidebar.scss */
+#container .sideMenu {
+  background: #666;
+  float: left;
+  width: 200px;
+}
+/* line 7, ../../../sass/Desktop/Partials/_sidebar.scss */
+#container .sideMenu ul {
+  padding-left: 10px;
+}
+/* line 10, ../../../sass/Desktop/Partials/_sidebar.scss */
+#container .sideMenu .level-0 > ul {
+  padding-left: 0;
+}
+/* line 12, ../../../sass/Desktop/Partials/_sidebar.scss */
+#container .sideMenu .level-0 > ul > li > div:first-child {
+  padding: 10px;
+}
+/* line 16, ../../../sass/Desktop/Partials/_sidebar.scss */
+#container .sideMenu a {
+  display: block;
+  padding: 10px;
+}
+/* line 19, ../../../sass/Desktop/Partials/_sidebar.scss */
+#container .sideMenu a:hover {
+  background-color: #666;
+}
+/* line 24, ../../../sass/Desktop/Partials/_sidebar.scss */
+#container main {
+  margin-left: 200px;
+}

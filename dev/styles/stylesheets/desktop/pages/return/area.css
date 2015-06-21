@@ -1,0 +1,783 @@
+@charset "UTF-8";
+/*
+    zindex
+    Mixin di definizione e utilizzo degli z-index.
+
+    La lista $indexes è crescente dall'alto al basso, e i suoi elementi andranno espressi al momento dell'uso del mixin.
+    Ovviamente l'uso da farne è di tipo semantico, per evitare l'espressione di numeri casuali all'interno dei vari css.
+
+*/
+/* effetto height:100% sugli elementi flottanti */
+@font-face {
+  font-family: 'KnockoutLight';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.svg#KnockoutLight") format("svg");
+}
+@font-face {
+  font-family: 'KnockoutRegular';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.svg#KnockoutRegular") format("svg");
+}
+@font-face {
+  font-family: 'HelveticaCondensedLight';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.svg#KnockoutRegular") format("svg");
+}
+@font-face {
+  font-family: 'HelveticaCondensedBold';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.svg#KnockoutRegular") format("svg");
+}
+@font-face {
+  font-family: 'LatoRegular';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.svg#LatoRegular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'LatoBold';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.svg#LatoBold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* line 92, ../../../../sass/_fonts.scss */
+.RU button, .RU .button, .RU #selection .keepedAllAlert a[href="/"], #selection .keepedAllAlert .RU a[href="/"], .CN #selection .changeBox ul label, #selection .changeBox ul .CN label, .RU #selection .changeBox ul label, #selection .changeBox ul .RU label {
+  font-family: Arial, Verdana, sans-serif;
+}
+
+/* line 96, ../../../../sass/_fonts.scss */
+.RU #selection .changeBox h3, #selection .changeBox .RU h3 {
+  font-family: Arial, Verdana, sans-serif;
+  font-weight: bold;
+}
+
+/* line 101, ../../../../sass/_fonts.scss */
+button, .button, #selection .keepedAllAlert a[href="/"] {
+  font-family: KnockoutLight, Arial, Verdana, sans-serif;
+  font-weight: normal;
+}
+/* line 105, ../../../../sass/_fonts.scss */
+.JP button, .JP .button, .JP #selection .keepedAllAlert a[href="/"], #selection .keepedAllAlert .JP a[href="/"] {
+  font-family: KnockoutLight, "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", sans-serif;
+}
+/* line 106, ../../../../sass/_fonts.scss */
+.CN button, .CN .button, .CN #selection .keepedAllAlert a[href="/"], #selection .keepedAllAlert .CN a[href="/"] {
+  font-family: KnockoutLight, HelveticaCondensedLight, Arial, "Microsoft YaHei", "Microsoft YaHei Regular", SimHei, "SimHei Regular", sans-serif;
+}
+
+/* line 110, ../../../../sass/_fonts.scss */
+#selection .changeBox h3 {
+  font-family: KnockoutRegular, Arial, Verdana, sans-serif;
+  font-weight: normal;
+}
+/* line 114, ../../../../sass/_fonts.scss */
+.JP #selection .changeBox h3, #selection .changeBox .JP h3 {
+  font-family: KnockoutRegular, "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", sans-serif;
+}
+/* line 115, ../../../../sass/_fonts.scss */
+.CN #selection .changeBox h3, #selection .changeBox .CN h3 {
+  font-family: KnockoutLight, HelveticaCondensedLight, Arial, "Microsoft YaHei", "Microsoft YaHei Regular", SimHei, "SimHei Regular", sans-serif;
+}
+
+/* line 119, ../../../../sass/_fonts.scss */
+#selection .changeBox ul label {
+  font-family: HelveticaCondensedLight, Arial, Verdana, sans-serif;
+  font-weight: normal;
+}
+
+/* ==========================================================================
+   CALL TO ACTIONS
+   Use with:
+
+	@extend button				(extends button rules)
+	@extend .secondary			(extends .secondary rules)
+	@extend button.secondary	(extends .secondary rules, not button's)
+	@extend .ugly-button		(extends .ugly-button rules)
+
+	NOTE: THESE ARE CLASSES.
+	THEY WILL BE REPLICATED FOR EACH TIME THEY'RE INCLUDED.
+	Include this only when is necessary.
+	Include this in scss PARENTS ONLY.
+
+	========================================================================== */
+/* line 89, ../../../../sass/Desktop/_callToActions.scss */
+button {
+  border-style: solid;
+  border-width: 1px;
+  cursor: pointer;
+  display: block;
+  font-size: 1.6em;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  outline: none;
+  text-align: center;
+  text-transform: uppercase;
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 40px;
+}
+
+/* line 93, ../../../../sass/Desktop/_callToActions.scss */
+.button, #selection .keepedAllAlert a[href="/"] {
+  border-style: solid;
+  border-width: 1px;
+  cursor: pointer;
+  display: block;
+  font-size: 1.6em;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  outline: none;
+  text-align: center;
+  text-transform: uppercase;
+  padding-left: 15px;
+  padding-right: 15px;
+  line-height: 40px;
+  height: 38px;
+}
+
+/* line 99, ../../../../sass/Desktop/_callToActions.scss */
+button.primary, #searchorder main .buttonsRow button.nextStepButton, #container .buttonsRow button.nextStepButton, .button.primary, #searchorder main .buttonsRow .button.nextStepButton, #selection .keepedAllAlert a[href="/"], #container .buttonsRow .button.nextStepButton {
+  background-color: #000;
+  color: #FFF;
+  border-color: #000;
+}
+/* line 49, ../../../../sass/Desktop/_callToActions.scss */
+button.primary:hover, #searchorder main .buttonsRow button.nextStepButton:hover, #container .buttonsRow button.nextStepButton:hover, .button.primary:hover, #searchorder main .buttonsRow .button.nextStepButton:hover, #selection .keepedAllAlert a[href="/"]:hover, #container .buttonsRow .button.nextStepButton:hover {
+  background-color: #999;
+  border-color: #999;
+}
+/* line 103, ../../../../sass/Desktop/_callToActions.scss */
+button.secondary, .button.secondary, #selection .keepedAllAlert a.secondary[href="/"] {
+  background-color: #EBEBEB;
+  color: #333;
+  border-color: #CCC;
+}
+/* line 60, ../../../../sass/Desktop/_callToActions.scss */
+button.secondary:hover, .button.secondary:hover, #selection .keepedAllAlert a.secondary[href="/"]:hover {
+  background-color: #FFF;
+}
+/* line 107, ../../../../sass/Desktop/_callToActions.scss */
+button.tertiary, .button.tertiary, #selection .keepedAllAlert a.tertiary[href="/"] {
+  background: none;
+  border: 0;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  text-transform: none;
+  text-decoration: underline;
+}
+/* line 111, ../../../../sass/Desktop/_callToActions.scss */
+button.disabled, #container .buttonsRow button.nextStepButton.disabled, button[disabled], .button.disabled, #selection .keepedAllAlert a.disabled[href="/"], #container .buttonsRow .button.nextStepButton.disabled, .button[disabled], #selection .keepedAllAlert a[disabled][href="/"] {
+  background-color: #FFF;
+  color: #EBEBEB;
+  border-color: #EBEBEB;
+  cursor: default;
+}
+/* line 83, ../../../../sass/Desktop/_callToActions.scss */
+button.disabled:hover, #container .buttonsRow button.nextStepButton.disabled:hover, button[disabled]:hover, .button.disabled:hover, #selection .keepedAllAlert a.disabled[href="/"]:hover, #container .buttonsRow .button.nextStepButton.disabled:hover, .button[disabled]:hover, #selection .keepedAllAlert a[disabled][href="/"]:hover {
+  background-color: #FFF;
+  border-color: #EBEBEB;
+}
+
+/* line 20, ../../../../sass/Desktop/Partials/_susyClasses.scss */
+.column-1 {
+  width: 74px;
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 20, ../../../../sass/Desktop/Partials/_susyClasses.scss */
+.column-2 {
+  width: 158px;
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 20, ../../../../sass/Desktop/Partials/_susyClasses.scss */
+.column-3 {
+  width: 242px;
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 20, ../../../../sass/Desktop/Partials/_susyClasses.scss */
+.column-4 {
+  width: 326px;
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 20, ../../../../sass/Desktop/Partials/_susyClasses.scss */
+.column-5 {
+  width: 410px;
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 20, ../../../../sass/Desktop/Partials/_susyClasses.scss */
+.column-6, #refund .paymentRefundForm .fieldRow, #refund .ibanExplanationBox {
+  width: 494px;
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 20, ../../../../sass/Desktop/Partials/_susyClasses.scss */
+.column-7 {
+  width: 578px;
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 20, ../../../../sass/Desktop/Partials/_susyClasses.scss */
+.column-8 {
+  width: 662px;
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 20, ../../../../sass/Desktop/Partials/_susyClasses.scss */
+.column-9 {
+  width: 746px;
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 20, ../../../../sass/Desktop/Partials/_susyClasses.scss */
+.column-10 {
+  width: 830px;
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 20, ../../../../sass/Desktop/Partials/_susyClasses.scss */
+.column-11 {
+  width: 914px;
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 20, ../../../../sass/Desktop/Partials/_susyClasses.scss */
+.column-12, #container .buttonsRow {
+  width: 998px;
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 34, ../../../../sass/Desktop/Partials/_susyClasses.scss */
+.prefix-1 {
+  padding-left: 84px;
+}
+
+/* line 34, ../../../../sass/Desktop/Partials/_susyClasses.scss */
+.prefix-2 {
+  padding-left: 168px;
+}
+
+/* line 34, ../../../../sass/Desktop/Partials/_susyClasses.scss */
+.prefix-3 {
+  padding-left: 252px;
+}
+
+/* line 34, ../../../../sass/Desktop/Partials/_susyClasses.scss */
+.prefix-4 {
+  padding-left: 336px;
+}
+
+/* line 34, ../../../../sass/Desktop/Partials/_susyClasses.scss */
+.prefix-5 {
+  padding-left: 420px;
+}
+
+/* line 34, ../../../../sass/Desktop/Partials/_susyClasses.scss */
+.prefix-6 {
+  padding-left: 504px;
+}
+
+/* line 34, ../../../../sass/Desktop/Partials/_susyClasses.scss */
+.prefix-7 {
+  padding-left: 588px;
+}
+
+/* line 34, ../../../../sass/Desktop/Partials/_susyClasses.scss */
+.prefix-8 {
+  padding-left: 672px;
+}
+
+/* line 34, ../../../../sass/Desktop/Partials/_susyClasses.scss */
+.prefix-9 {
+  padding-left: 756px;
+}
+
+/* line 34, ../../../../sass/Desktop/Partials/_susyClasses.scss */
+.prefix-10 {
+  padding-left: 840px;
+}
+
+/* line 34, ../../../../sass/Desktop/Partials/_susyClasses.scss */
+.prefix-11 {
+  padding-left: 924px;
+}
+
+/* line 46, ../../../../sass/Desktop/Partials/_susyClasses.scss */
+.omega, #refund .formGeneric .fieldRow.Swift, #refund .formJP .fieldRow.BankName, #refund .formJP .fieldRow.BranchName, #refund .formJP .fieldRow.AccountNumber, #refund .formCN .fieldRow.BankCity, #refund .formCN .fieldRow.BranchName, #refund .ibanExplanationBox {
+  margin-right: 0 !important;
+}
+
+/* line 56, ../../../../sass/Desktop/Partials/_susyClasses.scss */
+.centralColumn {
+  *zoom: 1;
+  width: 998px;
+  padding-left: 6px;
+  padding-right: 6px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  position: relative;
+}
+/* line 38, ../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+.centralColumn:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* SIDEBAR */
+/* line 14, ../../../../sass/desktop/pages/return/area.scss */
+main > .centralColumn {
+  margin-top: 20px;
+}
+
+/* line 21, ../../../../sass/desktop/pages/return/area.scss */
+#returnTitle h2 {
+  margin: 20px auto;
+  display: inline;
+}
+
+/* line 29, ../../../../sass/desktop/pages/return/area.scss */
+#returnNavigationContainer .returnTitle {
+  margin: 30px 0 20px 0;
+}
+/* line 34, ../../../../sass/desktop/pages/return/area.scss */
+#returnNavigationContainer .returnNavigationMenu .returnProgress {
+  height: 30px;
+  margin: 0 0 30px 0;
+  background-color: #EBEBEB;
+}
+/* line 38, ../../../../sass/desktop/pages/return/area.scss */
+#returnNavigationContainer .returnNavigationMenu .returnProgress li .progressStep {
+  color: #999;
+  display: block;
+  float: left;
+  width: 33.33%;
+  height: 30px;
+  line-height: 30px;
+  font-size: 2em;
+  text-align: center;
+  text-transform: uppercase;
+}
+/* line 48, ../../../../sass/desktop/pages/return/area.scss */
+#returnNavigationContainer .returnNavigationMenu .returnProgress li .progressStep.current {
+  background-color: #666;
+  color: #FFF;
+}
+/* line 52, ../../../../sass/desktop/pages/return/area.scss */
+#returnNavigationContainer .returnNavigationMenu .returnProgress li .progressStep .index, #returnNavigationContainer .returnNavigationMenu .returnProgress li .progressStep .separator {
+  display: none;
+}
+
+/* ORDER RECAP */
+/* line 60, ../../../../sass/desktop/pages/return/area.scss */
+.purchasedItemsTable, .returnedItemsTable {
+  margin-bottom: 30px;
+}
+/* line 64, ../../../../sass/desktop/pages/return/area.scss */
+.purchasedItemsTable div, .purchasedItemsTable span, .returnedItemsTable div, .returnedItemsTable span {
+  vertical-align: middle;
+}
+/* line 68, ../../../../sass/desktop/pages/return/area.scss */
+.purchasedItemsTable .cell, .returnedItemsTable .cell {
+  display: inline-block;
+  width: 16%;
+  font-size: 1.5em;
+  text-align: center;
+}
+/* line 73, ../../../../sass/desktop/pages/return/area.scss */
+.purchasedItemsTable .cell.price, .returnedItemsTable .cell.price {
+  text-align: right;
+}
+/* line 77, ../../../../sass/desktop/pages/return/area.scss */
+.purchasedItemsTable header, .returnedItemsTable header {
+  font-family: HelveticaCondensedBold, Arial, Verdana, sans-serif;
+  text-transform: uppercase;
+  color: #666;
+}
+/* line 83, ../../../../sass/desktop/pages/return/area.scss */
+.purchasedItemsTable header .price, .returnedItemsTable header .price {
+  right: 5px;
+  position: relative;
+}
+/* line 88, ../../../../sass/desktop/pages/return/area.scss */
+.purchasedItemsTable .productRow, .returnedItemsTable .productRow {
+  color: #999;
+}
+/* line 92, ../../../../sass/desktop/pages/return/area.scss */
+.purchasedItemsTable .macro, .returnedItemsTable .macro {
+  display: none;
+}
+
+/* line 5, ../../../../sass/desktop/pages/return/_searchorder.scss */
+#searchorder main > .centralColumn {
+  min-height: 380px;
+  margin-bottom: 40px;
+  color: #666;
+}
+/* line 11, ../../../../sass/desktop/pages/return/_searchorder.scss */
+#searchorder main .searchOrderForm {
+  width: 100%;
+}
+/* line 13, ../../../../sass/desktop/pages/return/_searchorder.scss */
+#searchorder main .searchOrderForm form {
+  *zoom: 1;
+}
+/* line 38, ../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+#searchorder main .searchOrderForm form:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 19, ../../../../sass/desktop/pages/return/_searchorder.scss */
+#searchorder main #returnOrderFormViewModel_OrderNumber_Wrapper {
+  width: 100%;
+  margin: 0;
+  min-height: 40px;
+}
+/* line 23, ../../../../sass/desktop/pages/return/_searchorder.scss */
+#searchorder main #returnOrderFormViewModel_OrderNumber_Wrapper .fieldLabel {
+  display: none;
+}
+/* line 26, ../../../../sass/desktop/pages/return/_searchorder.scss */
+#searchorder main .returnSearchDescription {
+  margin-bottom: 15px;
+}
+/* line 30, ../../../../sass/desktop/pages/return/_searchorder.scss */
+#searchorder main .returnInstruction {
+  color: #666;
+  font-size: 1.6em;
+}
+/* line 33, ../../../../sass/desktop/pages/return/_searchorder.scss */
+#searchorder main .returnInstruction strong {
+  margin: 10px 0;
+}
+/* line 38, ../../../../sass/desktop/pages/return/_searchorder.scss */
+#searchorder main .field-validation-container {
+  *zoom: 1;
+  clear: both;
+}
+/* line 38, ../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+#searchorder main .field-validation-container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 43, ../../../../sass/desktop/pages/return/_searchorder.scss */
+#searchorder main .validation-summary-errors {
+  font-size: 1.7em;
+  color: #900000;
+  margin-top: 20px;
+}
+/* line 49, ../../../../sass/desktop/pages/return/_searchorder.scss */
+#searchorder main .buttonsRow {
+  width: 200px;
+  margin-top: 30px;
+}
+/* line 53, ../../../../sass/desktop/pages/return/_searchorder.scss */
+#searchorder main .buttonsRow .nextStepButton {
+  float: none;
+  display: inline-block;
+  width: 200px;
+}
+
+/* line 99, ../../../../sass/desktop/pages/return/area.scss */
+#selection {
+  /* MESSAGE */
+}
+/* line 7, ../../../../sass/desktop/pages/return/_selection.scss */
+#selection .selectReturnDesc {
+  margin-bottom: 30px;
+  color: #999;
+}
+/* line 14, ../../../../sass/desktop/pages/return/_selection.scss */
+#selection .purchasedItemsTable .macro {
+  display: none;
+}
+/* line 18, ../../../../sass/desktop/pages/return/_selection.scss */
+#selection .purchasedItemsTable .cell.returnType {
+  text-align: left;
+}
+/* line 22, ../../../../sass/desktop/pages/return/_selection.scss */
+#selection .purchasedItemsTable .returnType .option {
+  margin: 5px 0;
+}
+/* line 24, ../../../../sass/desktop/pages/return/_selection.scss */
+#selection .purchasedItemsTable .returnType .option .radioButton {
+  display: inline-block;
+}
+/* line 27, ../../../../sass/desktop/pages/return/_selection.scss */
+#selection .purchasedItemsTable .returnType .option .text {
+  cursor: pointer;
+  margin-left: 5px;
+}
+/* line 33, ../../../../sass/desktop/pages/return/_selection.scss */
+#selection .purchasedItemsTable .productRow {
+  margin-bottom: 30px;
+}
+/* line 38, ../../../../sass/desktop/pages/return/_selection.scss */
+#selection .changeBox {
+  margin-top: 30px;
+  *zoom: 1;
+}
+/* line 38, ../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+#selection .changeBox:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 42, ../../../../sass/desktop/pages/return/_selection.scss */
+#selection .changeBox h2 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+/* line 47, ../../../../sass/desktop/pages/return/_selection.scss */
+#selection .changeBox h3 {
+  font-size: 1.8em;
+  color: #999;
+  text-transform: none;
+}
+/* line 53, ../../../../sass/desktop/pages/return/_selection.scss */
+#selection .changeBox ul {
+  margin-bottom: 15px;
+}
+/* line 55, ../../../../sass/desktop/pages/return/_selection.scss */
+#selection .changeBox ul .radioButton {
+  width: 20px;
+  display: inline-block;
+}
+/* line 59, ../../../../sass/desktop/pages/return/_selection.scss */
+#selection .changeBox ul label {
+  color: #999;
+  font-size: 1.4em;
+  line-height: 20px;
+  position: relative;
+  top: 3px;
+}
+/* line 72, ../../../../sass/desktop/pages/return/_selection.scss */
+#selection .ordersVisibilityBox {
+  font-size: 1.6em;
+}
+/* line 78, ../../../../sass/desktop/pages/return/_selection.scss */
+#selection .motivationListBox {
+  position: relative;
+  *zoom: 1;
+}
+/* line 38, ../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+#selection .motivationListBox:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 82, ../../../../sass/desktop/pages/return/_selection.scss */
+#selection .motivationListBox > .clearfix {
+  float: left;
+}
+/* line 86, ../../../../sass/desktop/pages/return/_selection.scss */
+#selection .motivationListBox .motivationListContainer, #selection .motivationListBox .imageContainer {
+  float: right;
+}
+/* line 90, ../../../../sass/desktop/pages/return/_selection.scss */
+#selection .motivationListBox .imageContainer {
+  margin-right: 20px;
+}
+/* line 97, ../../../../sass/desktop/pages/return/_selection.scss */
+#selection .ordersVisibilityBox {
+  margin-bottom: 20px;
+}
+/* line 102, ../../../../sass/desktop/pages/return/_selection.scss */
+#selection .keepedAllAlert {
+  color: #999;
+  display: none;
+}
+/* line 106, ../../../../sass/desktop/pages/return/_selection.scss */
+#selection .keepedAllAlert p {
+  font-size: 2.4em;
+}
+/* line 110, ../../../../sass/desktop/pages/return/_selection.scss */
+#selection .keepedAllAlert a[href="/"] {
+  margin-top: 20px;
+  width: 170px;
+}
+
+/* line 6, ../../../../sass/desktop/pages/return/_refund.scss */
+#refund .returnedItems h2 {
+  margin-bottom: 32px;
+  display: none;
+}
+/* line 15, ../../../../sass/desktop/pages/return/_refund.scss */
+#refund .paymentRefundForm.paymentCreditCard {
+  font-size: 1.6em;
+}
+/* line 19, ../../../../sass/desktop/pages/return/_refund.scss */
+#refund .paymentRefundForm label {
+  display: none;
+}
+/* line 22, ../../../../sass/desktop/pages/return/_refund.scss */
+#refund .paymentRefundForm .fieldRow {
+  margin-bottom: 0;
+}
+/* line 26, ../../../../sass/desktop/pages/return/_refund.scss */
+#refund .paymentRefundForm p:first-child:not(.action) {
+  margin: 10px 0;
+}
+/* line 73, ../../../../sass/desktop/pages/return/_refund.scss */
+.CN #refund .ibanExplanationBox {
+  display: none;
+}
+/* line 77, ../../../../sass/desktop/pages/return/_refund.scss */
+#refund .ibanExplanationBox .action {
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 13px;
+}
+/* line 83, ../../../../sass/desktop/pages/return/_refund.scss */
+#refund .ibanExplanationBox .ibanExplanationBody {
+  display: none;
+  margin: 13px 0 25px 0;
+}
+
+/* line 8, ../../../../sass/desktop/pages/return/_thankspage.scss */
+#thankspage .head {
+  text-align: center;
+}
+/* line 10, ../../../../sass/desktop/pages/return/_thankspage.scss */
+#thankspage .head h3 {
+  margin-bottom: 5px;
+}
+/* line 15, ../../../../sass/desktop/pages/return/_thankspage.scss */
+#thankspage .instructions {
+  margin-top: 20px;
+  *zoom: 1;
+}
+/* line 17, ../../../../sass/desktop/pages/return/_thankspage.scss */
+.JP #thankspage .instructions, .VN #thankspage .instructions, .RU #thankspage .instructions, .IN #thankspage .instructions, .ID #thankspage .instructions, .MY #thankspage .instructions, .SG #thankspage .instructions, .PH #thankspage .instructions, .TH #thankspage .instructions, .TW #thankspage .instructions, .CN #thankspage .instructions, .AU #thankspage .instructions, .HK #thankspage .instructions, .NZ #thankspage .instructions {
+  display: none;
+}
+/* line 38, ../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+#thankspage .instructions:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 22, ../../../../sass/desktop/pages/return/_thankspage.scss */
+#thankspage .instructions h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  height: 50px;
+  line-height: 50px;
+}
+/* line 32, ../../../../sass/desktop/pages/return/_thankspage.scss */
+#thankspage .instructions .steps h3 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+/* line 36, ../../../../sass/desktop/pages/return/_thankspage.scss */
+#thankspage .instructions .steps p {
+  font-size: 1.6em;
+}
+/* line 39, ../../../../sass/desktop/pages/return/_thankspage.scss */
+#thankspage .instructions .steps .lostLabel a {
+  font-size: 1.6em;
+  margin-top: 10px;
+  display: block;
+}
+/* line 47, ../../../../sass/desktop/pages/return/_thankspage.scss */
+#thankspage .step {
+  text-align: center;
+  vertical-align: top;
+  background-color: #EBEBEB;
+  height: 242px;
+}
+/* line 53, ../../../../sass/desktop/pages/return/_thankspage.scss */
+#thankspage .step .icon {
+  display: inline-block;
+  margin-bottom: 20px;
+  background-repeat: no-repeat;
+}
+/* line 59, ../../../../sass/desktop/pages/return/_thankspage.scss */
+#thankspage .step .inner {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+/* line 71, ../../../../sass/desktop/pages/return/_thankspage.scss */
+#thankspage .step1 .icon {
+  background-image: url("//media.yoox.biz/ytos/resources/THECORNER/img/return/delivery-step1.png");
+  width: 52px;
+  height: 34px;
+}
+/* line 82, ../../../../sass/desktop/pages/return/_thankspage.scss */
+#thankspage .step2 .icon {
+  background-image: url("//media.yoox.biz/ytos/resources/THECORNER/img/return/delivery-step2.png");
+  width: 38px;
+  height: 29px;
+}
+/* line 94, ../../../../sass/desktop/pages/return/_thankspage.scss */
+#thankspage .step3 .icon {
+  background-image: url("//media.yoox.biz/ytos/resources/THECORNER/img/return/delivery-step3.png");
+  width: 64px;
+  height: 29px;
+}
+/* line 101, ../../../../sass/desktop/pages/return/_thankspage.scss */
+#thankspage .returnInfo {
+  margin-top: 20px;
+}
+/* line 103, ../../../../sass/desktop/pages/return/_thankspage.scss */
+#thankspage .returnInfo > h3 {
+  text-align: center;
+  margin: 20px 0;
+}
+/* line 111, ../../../../sass/desktop/pages/return/_thankspage.scss */
+#thankspage .returnInfo .allInfo p {
+  margin-top: 5px;
+}
+/* line 117, ../../../../sass/desktop/pages/return/_thankspage.scss */
+#thankspage .shoppingLinkBox {
+  margin: 30px 0;
+}
+/* line 121, ../../../../sass/desktop/pages/return/_thankspage.scss */
+#thankspage .mfp-content .inner {
+  font-size: 1.6em;
+}
+/* line 125, ../../../../sass/desktop/pages/return/_thankspage.scss */
+#thankspage .lostPopupBody {
+  display: none;
+}
+
+/* CTA BOTTOM */
+/* line 113, ../../../../sass/desktop/pages/return/area.scss */
+#container .buttonsRow {
+  margin-bottom: 40px;
+}
+/* line 117, ../../../../sass/desktop/pages/return/area.scss */
+#container .buttonsRow .nextStepButton {
+  float: right;
+}
+/* line 126, ../../../../sass/desktop/pages/return/area.scss */
+#container .buttonsRow .error {
+  display: none;
+}
