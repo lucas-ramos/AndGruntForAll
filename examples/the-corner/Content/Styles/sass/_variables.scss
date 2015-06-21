@@ -41,7 +41,7 @@ $grid-padding: 6px;
 $base-font-size: 10px;
 $container-style: static;
 $grid-width: 998px;
-
+$total-c
 
 // LAYOUT
 
@@ -238,8 +238,8 @@ $header-firstline-height-mobile: 31px;
     zindex
     Mixin di definizione e utilizzo degli z-index.
 
-    La lista $indexes è crescente dall'alto al basso, e i suoi elementi andranno espressi al momento dell'uso del mixin.
-    Ovviamente l'uso da farne è di tipo semantico, per evitare l'espressione di numeri casuali all'interno dei vari css.
+    La lista $indexes Ã¨ crescente dall'alto al basso, e i suoi elementi andranno espressi al momento dell'uso del mixin.
+    Ovviamente l'uso da farne Ã¨ di tipo semantico, per evitare l'espressione di numeri casuali all'interno dei vari css.
 
 */
 $indexes:
