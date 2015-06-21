@@ -1,0 +1,126 @@
+// ======================
+// MY RETURNS PAGE STYLES
+// ======================
+
+#accountTitle h4, #accountNavigationMenu, #crossBanner {
+	display: none;
+}
+
+#returnDetailsFormViewModel_ReturnNumber_Wrapper {
+	.fieldLabel {
+		margin-bottom: 10px;
+	}
+
+	.req {
+		display: none;
+	}
+}
+
+.searchReturnForm {
+	margin-top: 20px;
+	color: $color-medium;
+
+	button {
+		@extend button.primary;
+		width: 20%;
+	}
+
+	.returnDetails {
+		margin: 30px 0;
+	}
+
+	.buttonsRow {
+		margin-top: 35px;
+	}
+}
+
+.return {
+	line-height: 2em;
+}
+
+.products {
+	clear: both;
+	padding-top: 20px;
+
+	p {
+		text-align: left;
+		font-size: inherit;
+		margin: 0;
+		padding: 0;
+	}
+
+	table {
+		width: 100%;
+	}
+
+	thead {
+		text-transform: uppercase;
+		font-size: $size-large;
+		border-bottom: 1px solid $color-extra;
+		line-height: 25px;
+	}
+
+	tbody {
+		color: $color-light;
+		font-size: $size-medium;
+	}
+
+	.price {
+		color: $color-dark;
+
+		&.full {
+			text-decoration: line-through;
+		}
+	}
+
+	td {
+		text-align: center;
+		padding: 20px 0;
+	}
+
+	.brandBox {
+		color: $color-dark;
+	}
+
+	.imageBox{
+		float:left;
+		padding: 0 20px;
+	}
+
+	dl {
+		@include pie-clearfix;
+	}
+
+	dt, dd {
+		width: 49%;
+	}
+
+	dt {
+		margin-right: 1%;
+		text-align: right;
+		float: left;
+		@include appendColon;
+	}
+
+	dd {
+		margin-left: 1%;
+		text-align: left;
+		display: inline-block;
+	}
+
+	.macro {
+		display: none;
+	}
+}
+
+.contact {
+	display: none;
+}
+
+.recap {
+	border-top: 1px solid $color-extra;
+	border-bottom: 1px solid $color-extra;
+	text-align: right;
+	padding: 10px 0;
+	text-transform: uppercase;
+}

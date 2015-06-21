@@ -1,0 +1,34 @@
+// =================
+// USER REGISTRATION
+// =================
+
+
+#registrationSuccessfullContent{
+	font-size: $size-large;
+	color: $color-medium;
+	padding-top: 10px;
+
+	ul{
+		list-style: disc;
+		margin: 10px*2 0;
+		list-style-position: inside;
+
+		li {padding-bottom: 10px;}
+	}
+
+	.buttonsRow {
+		@extend .column-6;
+		margin-bottom: 30px;
+	
+		.gotoshopping {
+			@extend button.primary;
+			width: 50%;
+			text-align: center;
+			cursor: pointer;
+			color: $white; text-transform: uppercase;
+
+			a {padding: 10px 0; color: $white; text-transform: uppercase; display: block;}
+		}
+		
+	}
+}

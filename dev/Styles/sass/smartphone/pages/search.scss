@@ -1,0 +1,283 @@
+﻿// =========================
+// SEARCH RESULT PAGE STYLES
+// =========================
+@import "compass/css3";
+
+@import "variables";
+@import "fonts";
+@import "Smartphone/callToActions";
+
+@import "Smartphone/vendor/svgzr/sprites-svg";
+
+@import "Smartphone/Partials/search/textsearch";
+
+
+#searchTopBanner {
+	a {
+		display: block;
+	}
+
+	img {
+		display: block;
+		width: 100%;
+	}
+}
+
+.fakeSelect {
+	line-height: $form-select-height;
+	height: $form-select-height;
+	color: $white;
+	@extend %svg-arrow-white-down;
+	background-color: $black;
+	background-position: 90% center;
+	font-size: $size-midlarge-rem;
+	text-align: left;
+	text-transform: none;
+	border: 1px solid $black;
+	padding: 0 0 0 5px;
+}
+
+//eccezione per select piccola la metà
+#sortRule {
+	background-position: 90% center;
+	padding-right: 25%;
+}
+
+#topBar {
+
+	margin-top: 10px;
+
+
+	.sortRules {
+		float: left;
+		width: 48%;
+
+		html.JP & {
+			font-size: 0.9rem;
+		}
+	}
+	.showFilters_btn {
+		float: right;
+		width: 48%;
+
+	
+
+		&.pressed {
+			&::after {
+				@extend %svg-arrow-white-up;
+			}
+		}
+	}
+}
+
+#filterContainer {
+	$transition-time: 0.6s;
+	$transition-type: ease-in-out;
+
+	background: $black;
+	max-height: 500px;
+	overflow: hidden;
+	position: relative;
+	top: -1px;
+
+	@include transition(
+		padding $transition-time $transition-type,
+		max-height $transition-time $transition-type
+	);
+
+	&.close {
+		max-height: 0;
+	}
+}
+
+
+#count {
+	height: 38px;
+	line-height: 38px;
+	text-align: center;
+	font-size: $size-medium-rem;
+	color: $color-medium;
+
+}
+
+.refinement {
+	padding: 10px 0;
+
+
+	border-bottom: 1px solid $white;
+
+	&:last-child {
+		border-bottom: none;
+	}
+
+	select {
+		width: 100%;
+		color: $white;
+		@extend %svg-arrow-white-down;
+		background-color: $black;
+		height: $form-select-height; // che la svg lo sovrascrive
+		border-color: $black;
+		text-transform: uppercase;
+	}
+}
+
+#products {
+	> a {
+		@include pie-clearfix;
+	}
+
+	.product {
+		float: left; 
+		width: 50%;
+		text-align: center;
+		padding: 15px 0 30px;
+
+		a {
+			display: block;
+		}
+
+		.image {
+			min-height: 230px;
+		}
+
+		&.soldOut {
+			a {
+				@include opacity(0.2);
+			}
+
+			.priceUpdater {
+				display: none;
+			}
+		}
+
+		&:last-child {
+			border: none;
+		}
+	}
+
+	.image img {
+		width: 100%;
+	}
+
+	.brandName {
+		@extend %lato-bold;
+		font-size: $size-small-rem;
+		line-height: $size-medium-rem;
+		min-height: 2* $size-medium-rem;
+	}
+
+	.microCategory {
+		@extend %lato;
+		font-size: $size-tiny-rem;
+		text-transform: uppercase;
+		line-height: $size-smaller-rem;
+		min-height: 2* $size-smaller-rem;
+		display: block;
+	}
+
+	.priceUpdater {
+		@extend %lato;
+		font-size: $size-medium-rem;
+	}
+
+	.price {
+		display: block;
+	}
+
+	&.even-items {
+		.product {
+			&:nth-last-child(2) {
+				border: none;
+			}
+		}
+	}
+}
+
+#courtesy {
+	display: none;
+	margin: 20px 0;
+
+	.show-courtesy & {
+		display: block;
+	}
+
+	.buttons {
+		display: none; //?
+	}
+}
+
+#pagination {
+	background: $color-ultra;
+
+	.pagination {
+		@include pie-clearfix;
+
+		p {
+			display: none;
+		}
+
+		ul {
+			@include display-flex;
+			@include justify-content(center);
+			padding: 17px 0 7px;
+		}
+
+		li {
+			background-color: $color-extra;
+			margin: 0 1px;
+
+			a {
+				@extend %lato;
+				color: $white;
+				display: block;
+				padding: 12px 0;
+				width: 42px;
+				font-size: $size-midsmall-rem;
+				text-align: center;
+			}
+
+			&.lastPage {
+				background-color: $color-light;
+				margin-right: 0;
+			}
+
+			&.firstPage {
+				background-color: $color-light;
+				margin-left: 0;
+			}
+
+			&.selected {
+				background-color: $color-ultra;
+
+				a {
+					@extend %lato-bold;
+					color: $black;
+				}
+			}
+		}
+	}
+
+	.previousPage, .nextPage {
+		display: none;
+	}
+}
+
+#topPage {
+	margin: 10px 0;
+}
+
+#emptySearch {
+	p {
+		margin: 30px 0;
+		text-align: center;
+	}
+	.button {
+		margin: 10px 0;
+
+		html.JP & {
+			font-size: $size-midlarge-rem;
+		}
+	}
+}
+
+#sortRule option[value="Ranking"] { display: none; }

@@ -1,0 +1,46 @@
+// FOOTER LAYER
+// ------
+
+/* LAYER COOKIE LAW */
+.cookiewLawLayer {
+	position: fixed;
+	bottom:0;
+	left: 0;
+	right: 0;
+	background-color:$color-medium;
+	font-size:$size-large-rem;
+	color:$color-ultra;
+	@include zindex(layer-cookieLaw);
+	.cookieLawWrapper{
+		position: relative;
+		@extend .centralColumn;
+		margin-top:10px;
+		margin-bottom:10px;
+
+		.cookieLawContent {
+			margin-right: 10px + $svg-closeX-cookielaw-width;
+			a {
+				color:$color-ultra;
+				text-decoration: underline;
+				&:hover {color:$color-extra;}
+			}
+		}
+	}
+	
+	button {
+		position: absolute;
+		right: 0;
+		top: 0;
+		@extend %svg-closeX-cookielaw;
+		background-color: transparent;
+		border: none;
+		cursor: pointer;
+		@include imageReplacement();
+	}
+}
+
+
+
+
+
+

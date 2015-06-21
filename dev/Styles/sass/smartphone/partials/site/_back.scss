@@ -1,0 +1,14 @@
+// ========
+// BACK LINE
+// ========
+
+#back {
+	background-color: $black;
+	text-transform: uppercase;
+	font-size: $size-smaller-rem;
+	a {
+		display: inline-block;
+		color: $white;
+		text-align: center;
+	}
+}

@@ -1,0 +1,23 @@
+// ===========================================================
+// SPRITES PARTIAL
+// ===========================================================
+
+// ---------- !!! ---------- //
+// IMPORTANT DISCLAIMER:
+// DO NOT @import THIS PARTIAL IN OTHER PARTIALS.
+// Use it always on the first .scss parent that will have his generated .css (such as: home, site, etc)
+// ---------- !!! ---------- //
+
+@import "svgfallback/*.png"; 		//this needs to change in something like "svgfallback-desktop", if possible
+@import "sprites-desktop/*.png";
+@import "sprites-creditcards/*.png";
+@include all-sprites-desktop-sprites(true);
+@include all-sprites-creditcards-sprites(true);
+
+
+// Helper for svg fallbacks (ie8 and lower/unsupported browsers)
+@mixin svg-fallback($filename){
+	.no-svg &, .ielt9 & {
+		@include svgfallback-sprite($filename);
+	}
+}

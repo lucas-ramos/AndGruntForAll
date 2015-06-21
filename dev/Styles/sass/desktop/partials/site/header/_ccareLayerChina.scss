@@ -1,0 +1,132 @@
+#ccareLayer {
+	$width: 120px;
+	$height-closed: 165px;
+	$height-open: 245px;
+	$top: 160px;
+	$right-open: 0px;
+	$right-close: -80px;
+	$animation-time: 0.5s;
+
+	position: fixed;
+	@include zindex(layer-ccare);
+	top: $top;
+	right: $right-close;
+	width: $width;
+	height: $height-closed;
+	background-color: $color-dark;
+	color: $white;
+	overflow: hidden;
+	
+	@include transition(all $animation-time ease-in);
+	@include border-top-left-radius(20px);
+	@include border-bottom-left-radius(20px);
+
+	.arrow {
+		padding: 6px 0px;
+		cursor: pointer;
+	}
+
+	.inner {
+		@include pie-clearfix;
+		@include transition(left $animation-time ease-in);
+		position: relative;
+		left: 0;
+		width: 159px;
+	}
+
+
+	%svg-arrow-white-left {
+		margin-top: 5px;
+		margin-left: 4px;
+		@include transition(all $animation-time ease-in);
+	}
+
+	.ccare {
+		border-top: 1px solid $white; 
+		border-bottom: 1px solid $white; 
+		@include pie-clearfix;
+	}
+
+	.sprites-desktop-cinesina {
+	}
+
+	.ccareContactWrap {
+		@include pie-clearfix;
+		padding: 10px 0;
+		display: block;
+	}
+
+	.contact {
+		float: left;
+		margin-left: 9px;
+
+		.text {
+			font-size: $size-large;
+			height: 17px;
+		}
+
+		.phone {
+			font-size: $size-medium;
+		}
+	}
+
+	.fashionadvisor a {
+		@include pie-clearfix;
+		padding: 10px 0;
+		display: block;
+		.text {
+			float: left;
+			font-size: $size-medium;
+			margin-left: 16px;
+			margin-top: 5px;
+		}
+	}
+
+	%svg-ccare-telephone {
+		float: left;
+		margin-left: 10px;
+		margin-top: 4px;
+	}
+
+	%svg-ccare-manichino {
+		float: left;
+		margin-left: 19px;
+	}
+
+	.vertical {
+		float: left;
+		> section {padding-top: 10px;}
+	}
+	h1 {
+		padding-top: 10px;
+		cursor: pointer;
+		width: 30px;
+		padding-left: 10px;
+		display: block;
+		border-top: 1px solid $white;
+		font-size: $size-grand;
+		line-height: 1.4em;
+	}
+
+	a, a:hover, h1 {
+		color: $white;
+	}
+
+	&.open {
+		right: $right-open;
+		height: $height-open;
+		@include transition(all $animation-time ease-in);
+
+		.fashionadvisor, .ccare {
+			display: block;
+		}
+
+		%svg-arrow-white-left {
+			@include transform(rotate(-180deg));
+		}
+
+		.inner {
+			left: -40px;
+		}
+	}
+}

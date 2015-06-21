@@ -1,0 +1,21 @@
+@import 'compass/utilities/sprites';
+@import 'desktop-radiobutton-fallback/*.png';
+
+// Helper for svg fallbacks (ie8 and lower/unsupported browsers)
+@mixin desktop-radiobutton-fallback($fileName){
+	.no-svg &, .ielt9 & {
+		@include desktop-radiobutton-fallback-sprite($fileName);
+		width: desktop-radiobutton-fallback-sprite-width($fileName);
+		height: desktop-radiobutton-fallback-sprite-height($fileName);
+	}
+}
+
+
+%svg-radio-checked {
+    @include desktop-radiobutton-fallback(radio-checked);
+}
+
+%svg-radio-unchecked {
+    @include desktop-radiobutton-fallback(radio-unchecked);
+}
+

@@ -1,0 +1,22 @@
+// ===================
+// 404 PAGE STYLES
+// ===================
+
+#info404 {
+	margin: 20px 0;
+	font-size: $size-medium;
+	@extend %knockout;
+
+	.sorry {
+		font-size: $size-big;
+		margin-bottom: 20px;
+	}
+
+	.backToHome {
+		margin-top: 20px;
+
+		a {
+			text-decoration:underline;
+		}
+	}
+}

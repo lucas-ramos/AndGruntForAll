@@ -1,0 +1,49 @@
+// =================
+// LOGIN PAGE STYLES
+// =================
+
+main {
+	margin: 30px 0;
+
+	h2 {
+		padding-bottom: 50px;
+		html.JP & { font-size: $size-mega; }
+	}
+	h3 {padding-bottom: 30px; }
+}
+
+
+.loginContainer {
+
+
+	.mandatory, p, label {display: none;}
+
+	.buttonsRow {
+		float: right;
+		min-width: 148px;
+
+		button { 
+			@extend button.primary;
+			width: 100%;
+		}			
+	}
+}
+
+.registrationContainer {
+	.button {
+		margin-top: $gutter-width;
+	}
+	p {line-height: $size-tiny;}
+}
+
+
+#passwordRecoveryLink {
+	float: left;
+	button {
+		@extend .secondary;		
+
+		.JP & {
+			font-size: 1.3em;
+		}		
+	}
+}

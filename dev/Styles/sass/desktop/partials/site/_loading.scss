@@ -1,0 +1,82 @@
+// =================
+// LOADING ANIMATION
+// =================
+
+// VARIABLES
+// ---------
+// @import "compass/css3/animation";
+
+$spinnerElementColor: $black;
+$spinnerBeginOpacity: 1;
+$spinnerEndOpacity: 0.2;
+$spinnerAnimationDuration: 0.75s;
+$spinnerNumberOfBars: 12;
+$spinnerBarDelay: $spinnerAnimationDuration / $spinnerNumberOfBars;
+
+// CSS ANIMATION KEYFRAMES
+// -----------------------
+
+@include keyframes(fade) {
+	from {
+		@include opacity($spinnerBeginOpacity);
+	}
+	to {
+		@include opacity($spinnerEndOpacity);
+	}
+}
+
+// The loading animation container
+.loadingAnimation {
+
+	// Rules shared between "css animated" and "legacy" animations
+	@include opacity(0.8);
+	@include zindex(loading-overlay);
+	background-color: $white;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	// Legacy browsers animations (no css)
+	.ielt9 & {
+		background-image: url('https://media.yoox.biz/ytos/resources/BASE/img/loading_spinner.gif');
+		background-position: center center;
+		background-repeat: no-repeat;
+
+		.spinner, .se {
+			display: none;
+		}
+	}
+
+	// Modern browsers animations (css powered)
+	.spinner {
+		position: absolute;
+		width: 20px;
+		height: 20px;
+		display: block;
+		top: 50%;
+		left: 50%;
+		margin: -10px 0 0 -10px;
+
+		.se {
+			width: 7%;
+			height: 25%;
+			background: $spinnerElementColor;
+			position: absolute;
+			left: 33.3%;
+			top: 37%;
+			@include opacity(0);
+			@include border-radius(50px);
+			@include box-shadow(0 0 3px rgba(0, 0, 0, 0.2));
+		}
+
+		@for $i from 1 through $spinnerNumberOfBars {
+			.b#{$i} {
+				@include transform(rotate(#{($i - 1) * 30}deg) translate(0, -142%));
+				@include animation(fade $spinnerAnimationDuration infinite ($spinnerBarDelay * ($i - 1)));
+			}
+		}
+	}
+}

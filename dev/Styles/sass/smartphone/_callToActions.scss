@@ -1,0 +1,100 @@
+/* ==========================================================================
+   CALL TO ACTIONS
+   Use with:
+
+	@extend button				(extends button rules)
+	@extend .secondary			(extends .secondary rules)
+	@extend button.secondary	(extends .secondary rules, not button's)
+	@extend .ugly-button		(extends .ugly-button rules)
+
+	NOTE: THESE ARE CLASSES.
+	THEY WILL BE REPLICATED FOR EACH TIME THEY'RE INCLUDED.
+	Include this only when is necessary.
+	Include this in scss PARENTS ONLY.
+
+	========================================================================== */
+// Generic button, can be used both with <button/> and <a class="button"/>
+
+// THESE ARE USED ONLY FOR BUTTON GEN
+// DO NOT USE THESE (except evaluated exception)
+@mixin __buttonGen($isClassButton: false) {
+	text-align: center;
+	cursor: pointer;
+	display: block;
+	@extend %knockout;
+	@include transition(all 0.2s ease);
+	text-transform: uppercase;
+	font-size: $size-expanse-rem;
+	padding: $mobile-button-vertical-padding $mobile-button-horizontal-padding;
+	border: 0;
+
+	outline: none;
+
+	@if $isClassButton == true {
+		width: $mobile-button-class-width;
+	} @else {
+		width: $mobile-button-width;
+	}
+}
+
+@mixin __primaryGen {
+	background-color: $black;
+	color: $white;
+}
+
+@mixin __secondaryGen {
+	background-color: $color-extra;
+	color: $white;
+}
+
+
+@mixin __disabledGen {
+	background-color: $white;
+	color: $color-ultra;
+	cursor: default;
+}
+
+button {
+	@include __buttonGen($isClassButton: false);
+}
+
+.button {
+	@include __buttonGen($isClassButton: true);
+}
+
+button, .button {
+	
+	&.primary {
+		@include __primaryGen;
+	}
+
+	&.secondary {
+		@include __secondaryGen;
+	}
+
+	&.disabled, &[disabled] {
+		@include __disabledGen;
+	}
+}
+
+%button-tertiary {
+	padding: 0;
+	display: inline-block;
+	background-color: transparent;
+	text-transform: none;
+	text-decoration: underline;
+	width: auto;
+	text-align: left;
+	@extend %lato;
+	font-size: $size-smaller-rem;
+
+	&:hover {
+		background-color: transparent; //potremmo semplicemente non esprimerlo, ma così evitiamo problemi
+	}
+}
+
+%resetButton {
+	width: auto;
+	background-color: transparent;
+	padding: 0;
+}

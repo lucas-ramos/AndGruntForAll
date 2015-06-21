@@ -1,0 +1,164 @@
+// ==============
+// CHECKMAIL PAGE
+// ==============
+
+form.loginForm {
+	padding: 0 20px;
+
+	#passwordRecoveryLink {
+		display:none;
+	}
+
+	button.submit {
+		@extend .primary;
+		width: 100%;
+		margin-bottom: 20px;
+	}
+}
+
+
+div.registrationForm  {
+	padding: 0 20px;
+
+
+	button.submit {
+		@extend .primary;
+		width: 100%;
+		margin: 20px 0;
+	}
+
+	.fieldRow.radioGroup {
+		.field-validation-error {
+			color: $red;
+			font-size: $size-smaller-rem;
+			text-indent: 0;
+			top: 20px;
+			height: auto;
+			width: auto;
+		}
+	}
+}
+
+
+#registeredUserSection, #newUserSection {
+	background-color: $color-background;
+	padding: 10px 0;
+}
+
+#newUserSection {
+	margin-top: 10px;
+}
+
+#RegistrationViewModel_Gender_Wrapper {
+	margin: 30px 0;
+
+	.radioButtonBox  {
+		width: 45%;		
+	}
+
+	.fieldLabel {
+		display: block;
+
+		label {
+			display: none;
+		}
+	}
+
+}
+
+.radioButtonBox {
+	.text {
+		@extend %knockout;
+	}
+}
+
+#RegistrationViewModel_BirthDate_Wrapper {
+
+	.fieldValue {
+		@include pie-clearfix;
+	}
+
+	.fieldLabel {
+		display: block;
+	}
+
+
+	label {
+		display: none;
+	}
+}
+
+.validation-summary-errors {
+	margin: 10px 0;
+
+	.JP & {
+		font-size: $size-smaller-rem;
+	}
+}
+
+.selectInput_wrapper {
+	width:33%;
+	float: left;
+
+	&:nth-child(2) {
+		// https://www.youtube.com/watch?v=dsUXAEzaC3Q
+		width:34%;
+	}
+}
+
+.allowPrivacy {
+	display: none;
+}
+
+.privacyContainer {
+	max-height: 130px;
+}
+
+%jp-alerts-style {
+	font-size: $size-tiny-rem;
+}
+
+.docomo {
+	.JP & {
+		@extend %jp-alerts-style;
+		display: block;
+		margin: 20px 0;
+	}
+}
+
+.privacyContainer, .acceptFlags {
+	margin: 10px 0;
+	overflow: auto;
+	font-size: $size-mini-rem;
+	@extend %lato;
+
+	.JP & {
+		@extend %jp-alerts-style;
+	}
+}
+
+
+.acceptFlags {
+
+	.yLetter {
+		@include pie-clearfix;
+		margin-bottom: 20px;
+	}
+
+	.dataProfiling {
+		@include pie-clearfix;
+	}
+	
+	.flagContent {
+		float: left;
+	}
+
+	.description {
+		padding-left: 30px;
+	}
+
+	.fieldRow  {
+		margin-top: 0;
+		margin-bottom: 30px;
+	}
+}

@@ -1,0 +1,90 @@
+// FOOTER SOCIAL ICON and NEWSLETTER
+// ------
+
+.socialSection {
+	background: $color-deep;
+	min-height: 68px;
+	line-height: 68px;
+
+	a, h3, .mail {
+		float: left;
+	}
+
+	h3 {
+		padding-top:2px;
+	}
+
+	svg {
+		display: table-cell;
+		vertical-align: middle;
+	}
+
+	.socialIcons svg {
+		padding-left: 10px;
+	}
+
+	.footerListContainer {
+		margin-top: 20px;
+
+		ul {
+			float: left;
+		}
+
+		li {
+			&.facebook	 	.icon {@extend %svg-social-facebook;}
+			&.twitter	 	.icon {@extend %svg-social-twitter;}
+			&.youtube	 	.icon {@extend %svg-social-youtube;}
+			&.pinterest  	.icon {@extend %svg-social-pinterest;}
+			&.tumblr	 	.icon {@extend %svg-social-tumblr;}
+			&.googleplus 	.icon {@extend %svg-social-googleplus;}
+			&.instagram		.icon {@extend %svg-social-instagram;}
+			&.wechat			  {display: none;}
+			&.weibo			.text {display: none;}
+		}
+	}
+}
+
+.newsletterLink {
+	.icon, .text {
+		float: left;
+		position:relative;
+	}
+
+	.icon {
+		@extend %svg-mail-icon;
+		margin-top: 20px;
+	}
+
+	.text {
+		height: 68px;
+		line-height: 66px;
+		margin-left: 15px;
+	}
+}
+
+
+.socialBottomSection {
+	.socialActions {
+		padding: 17px 0;
+
+		&, > div {
+			float: left;
+		}
+
+		> div {
+			margin-right: 20px;
+			overflow: hidden;
+		}
+	}
+
+	.sprites-desktop-twitter_btn {
+		iframe {
+			@include opacity(0);
+		}
+	}
+
+	.sprites-desktop-gplus_btn {
+		width: 32px; //overwrites the sprite width
+	}
+}
+

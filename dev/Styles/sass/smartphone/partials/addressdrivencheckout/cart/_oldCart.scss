@@ -1,0 +1,92 @@
+﻿// ================
+// OLD CART
+// ================
+
+#oldCart {
+	margin-bottom: 10px;
+	border-bottom: 1px solid $color-light;
+	background-color: $color-background	;
+	padding: 12px 20px;
+
+	.closeCross {
+		@extend %svg-closeX;
+		float: right;
+		margin-top: 10px;
+	}
+}
+
+.oldCartHeader {
+	@include pie-clearfix;
+	margin-bottom: 10px;
+}
+
+.oldCartItem {
+	background-color: $white;
+}
+
+.info, .productsSlider {
+	@include pie-clearfix;
+}
+
+.image, .desc {
+	float: left;
+	width: 48%;
+}
+
+.image {
+	a {
+		display: block;
+	}
+
+	img {
+		width: 100%;
+	}
+}
+
+.desc {
+	@extend %lato;
+	padding-top: 10px;
+}
+
+.addToCart {
+	@extend .primary;
+	margin: 0 auto;
+}
+
+
+.price {
+	display:block;
+}
+
+.actions {
+	padding-top: 10px;
+}	
+
+.bx-wrapper {
+	position: relative;
+}
+
+.bx-controls {
+	a {
+		display: block;
+		position: absolute;
+		top: 30%;
+	}
+}
+
+.JP & {
+	button, .button {
+		font-size: $size-tiny;
+	}
+}
+
+
+.bx-next {
+	@extend %svg-arrow-circle-right;
+	right: 2px;
+}
+
+.bx-prev {
+	@extend %svg-arrow-circle-left;
+	left: 2px;
+}

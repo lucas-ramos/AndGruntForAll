@@ -1,0 +1,60 @@
+// =================
+// ORDER SEARCH PAGE
+// =================
+
+> .centralColumn {
+	min-height: 380px;
+	margin-bottom: 40px;
+	color: $color-medium;
+}
+
+.searchOrderForm {
+	width: 100%;
+	form {
+		@include pie-clearfix;
+	}
+	
+}
+
+#returnOrderFormViewModel_OrderNumber_Wrapper{
+	width: 100%;
+	margin: 0;
+	min-height: 40px;
+	.fieldLabel{ display:none; }
+}
+
+.returnSearchDescription{
+	margin-bottom: 15px;
+}
+
+.returnInstruction{
+	color: $color-medium;
+	font-size: $size-medium;
+	strong {
+		margin: 10px 0;
+	}
+}
+
+.field-validation-container {
+	@include pie-clearfix;
+	clear:both;
+}
+
+.validation-summary-errors{
+	font-size: $size-midlarge;
+	color: $red;
+	margin-top: 20px;
+}
+
+.buttonsRow {
+	width: 200px;
+	margin-top: 30px;
+
+	.nextStepButton{
+		@extend .primary;
+		float: none;
+		display: inline-block;
+		width: 200px;
+	}
+}
+

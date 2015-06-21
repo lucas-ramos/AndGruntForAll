@@ -1,0 +1,193 @@
+@charset "UTF-8";
+/* effetto height:100% sugli elementi flottanti */
+@font-face {
+  font-family: 'KnockoutLight';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.svg#KnockoutLight") format("svg");
+}
+@font-face {
+  font-family: 'KnockoutRegular';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.svg#KnockoutRegular") format("svg");
+}
+@font-face {
+  font-family: 'HelveticaCondensedLight';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.svg#KnockoutRegular") format("svg");
+}
+@font-face {
+  font-family: 'HelveticaCondensedBold';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.svg#KnockoutRegular") format("svg");
+}
+@font-face {
+  font-family: 'LatoRegular';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.svg#LatoRegular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'LatoBold';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.svg#LatoBold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+.RU button, .RU .button, .RU .generatedPdf, .CN #legalarea article, #legalarea .CN article, .RU #legalarea article, #legalarea .RU article {
+  font-family: Arial, Verdana, sans-serif;
+}
+
+button, .button, .generatedPdf {
+  font-family: KnockoutLight, Arial, Verdana, sans-serif;
+  font-weight: normal;
+}
+.JP button, .JP .button, .JP .generatedPdf {
+  font-family: KnockoutLight, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+}
+.CN button, .CN .button, .CN .generatedPdf {
+  font-family: KnockoutLight, HelveticaCondensedLight, Arial, "Microsoft YaHei", "Microsoft YaHei Regular", SimHei, "SimHei Regular", sans-serif;
+}
+
+#legalarea article {
+  font-family: HelveticaCondensedLight, Arial, Verdana, sans-serif;
+  font-weight: normal;
+}
+
+/* ==========================================================================
+   CALL TO ACTIONS
+   Use with:
+
+	@extend button				(extends button rules)
+	@extend .secondary			(extends .secondary rules)
+	@extend button.secondary	(extends .secondary rules, not button's)
+	@extend .ugly-button		(extends .ugly-button rules)
+
+	NOTE: THESE ARE CLASSES.
+	THEY WILL BE REPLICATED FOR EACH TIME THEY'RE INCLUDED.
+	Include this only when is necessary.
+	Include this in scss PARENTS ONLY.
+
+	========================================================================== */
+button {
+  text-align: center;
+  cursor: pointer;
+  display: block;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  font-size: 1.9rem;
+  padding: 26px 12%;
+  border: 0;
+  outline: none;
+  width: 100%;
+}
+
+.button, .generatedPdf {
+  text-align: center;
+  cursor: pointer;
+  display: block;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  font-size: 1.9rem;
+  padding: 26px 12%;
+  border: 0;
+  outline: none;
+  width: 76%;
+}
+
+button.primary, .button.primary, .primary.generatedPdf {
+  background-color: #000;
+  color: #FFF;
+}
+button.secondary, .button.secondary, .generatedPdf {
+  background-color: #CCC;
+  color: #FFF;
+}
+button.disabled, button[disabled], .button.disabled, .disabled.generatedPdf, .button[disabled], [disabled].generatedPdf {
+  background-color: #FFF;
+  color: #EBEBEB;
+  cursor: default;
+}
+
+/* ==========================================================================
+   Menus
+   ========================================================================== */
+.menuSingleLine, #legalMenu a {
+  display: block;
+  background-color: #000;
+  font-size: 1.9rem;
+  padding: 25px 0;
+  text-transform: uppercase;
+  text-align: center;
+  border-bottom: 1px solid #FFF;
+}
+.menuSingleLine span, #legalMenu a span, .menuSingleLine a, #legalMenu a a, .menuSingleLine a:hover, #legalMenu a a:hover {
+  color: #FFF;
+}
+
+.RU h2 {
+  font-size: 2rem;
+}
+
+#container h2 {
+  word-break: break-word;
+  line-height: 3.7rem;
+}
+
+#legalMenu h2.inverse {
+  padding: 20px 0;
+  color: #333;
+  background-color: #FFF;
+}
+#legalMenu a {
+  background-color: #EBEBEB;
+  border-bottom: 1px solid #F6F6F6;
+}
+#legalMenu a.selected {
+  background-color: #666;
+  color: #EBEBEB;
+}
+.US #legalMenu nav, .GB #legalMenu nav, .RU #legalMenu nav {
+  font-size: 0.9em;
+}
+.RU #legalMenu nav {
+  font-size: 0.7em;
+}
+
+#legalarea article {
+  margin: 30px 0;
+}
+#legalarea article h2 {
+  margin-bottom: 20px;
+}
+.JP #legalarea article h2 {
+  font-size: 2.3rem;
+}
+#legalarea article p {
+  margin: 10px 0;
+}
+#legalarea article td {
+  padding: 5px;
+}
+#legalarea article ul {
+  list-style: square;
+  padding-left: 15px;
+}
+
+.GB .printButton, .US .printButton, .DE .printButton, .ES .printButton {
+  font-size: 1.3em;
+}
+
+.printButton {
+  display: none;
+}
+
+.generatedPdf {
+  display: block;
+}

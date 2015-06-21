@@ -1,0 +1,131 @@
+﻿// ================
+// FULL CART
+// ================
+
+.svg-arrow-circle-left {
+	@extend %svg-arrow-circle-left;
+}
+
+.svg-arrow-circle-right {
+	@extend %svg-arrow-circle-right;
+}
+
+#oldCart {
+	background-color: $color-extra;
+	padding: 12px 20px;
+	overflow: hidden;
+	position: relative;
+
+	.closeCross {
+		@extend %svg-cross-30x30-666;
+		position: absolute;
+		cursor: pointer;
+		top: 0;
+		right: 0;
+	}
+
+	.oldCartHeader {
+		margin: 10px 0;
+		position: relative;
+
+		p {
+			@extend %helvetica;
+			color: $color-dark;
+			width: 530px;
+		}
+	}
+
+	.productsSlider {
+		@include pie-clearfix;
+		width: 100%;
+	}
+
+	.oldCartItem {
+		background-color: $white;
+		padding: 10px 0;
+		width: 45%;
+		float: left;
+		margin-right: 10px;
+	}
+
+	.info{
+		@include pie-clearfix;
+	}
+
+	.image {
+		float: left;
+		width: 37%;
+
+		img {
+			width: 100%;
+		}
+	}
+
+	.description {
+		float: left;
+		width: 63%;
+		color: $color-medium;
+	}
+
+	.info .label {
+		@include appendColon;
+		margin-right: 5px;
+	}
+
+
+	.priceUpdater {
+		height: 36px;
+		.price {
+			display: block;
+			color: $color-dark;
+		}
+	}
+
+	.brandName {
+		@extend %knockout-bold;
+		line-height: 1;
+		text-transform: uppercase;
+		font-size: $size-big;
+		display: block;
+		height: 2em;
+	}
+
+	.microCategory, .color, .size, .price {
+		font-size: $size-midlarge;
+		line-height: $size-mini;
+	}
+
+	.addToCart {
+		@extend .primary;
+		margin: 0 auto;
+	}
+
+	.arrow {
+		display: block;
+	}
+
+	.bx-wrapper {
+		position: relative;
+	}
+
+	.bx-controls {
+		position: absolute;
+		top: 40%;
+		width: 100%;
+	}
+
+	.bx-prev, .bx-next {
+		position: absolute;
+		display: block;
+	}
+	
+	$arrow-sbordo: -15px;
+
+	.bx-next {
+		right: $arrow-sbordo;
+	}
+
+	.bx-prev {
+		left: $arrow-sbordo;
+	}
+}

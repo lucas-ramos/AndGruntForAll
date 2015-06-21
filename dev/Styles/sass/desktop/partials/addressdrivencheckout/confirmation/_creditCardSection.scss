@@ -1,0 +1,370 @@
+﻿// ================
+// CREDIT CARD SECTION
+// ================
+
+.cardContentWrapper {
+	&.fastCheckout {
+		.creditCardSection {
+			padding-bottom: 0;
+			.creditCardTitle {
+				.modify {
+					display: inline;
+				}
+			}
+			.cardContainer {
+				display: none;
+				&.default,  &.selected {
+					display: block;
+				}
+			}
+			.newCreditCardButton {
+				display: none;
+			}
+		}
+		.otherPaymentMethodsSection {
+			display: none;
+		}
+		.couponSection {
+			padding-top: 0;
+			border: none;
+		}
+	}
+}
+.creditCardSection {
+	padding-bottom: 20px;
+	&.userNoCreditCards {
+		.creditCardForm {
+			margin: 0;
+			border: none;
+		}
+		.newCreditCardButton {
+			padding-top: 20px;
+		}
+	}
+	.creditCardTitle {
+		font-size: 100%;
+		@include confMiniSectionTitle-spacing;
+		.title {
+			@include confMiniSectionTitle-text;
+			margin-right: 4px;
+		}
+		.modify {
+			display: none;
+			@extend %helvetica;
+			font-size: $size-smaller;
+			color: $color-light;
+			cursor: pointer;
+			@include wrapInParenthesis;
+			text-transform: lowercase;
+
+		}
+	}
+	.userCreditCardsListWithForm {
+		@include confMiniSectionContent-spacing;
+	}
+	
+	.cardContainer {
+		$card-image-width: 96px;
+		$card-image-height: 70px;
+		$card-image-margin-right: 25px;
+		$cardInfo-width: 370px;
+		$onlyCardInfo-width: 160px;
+		$onlyCardInfo-margin-right: 10px;
+
+		@include pie-clearfix;
+		padding: 20px 0;
+		.radioButton {
+			float: left;
+			margin-right: $radio-checkbox-margin-right;
+			margin-top: ($card-image-height - $form-radiobutton-height) / 2 ;
+		}
+
+		.cardIcon {
+			float: left;
+			margin-right: $card-image-margin-right;
+		}
+		.inner {
+			@include pie-clearfix;
+		}
+		.onlyCardInfo, .cardHolderData {
+			margin-top: 6px;
+		}
+		.onlyCardInfo {
+			float: left;
+			width: $onlyCardInfo-width;
+			margin-right: $onlyCardInfo-margin-right;
+		}
+
+		.cardInfo {
+
+			@include pie-clearfix;
+			@include confMiniSectionContent-text;
+			float: left;
+			width: $cardInfo-width;
+			margin-right: 10px;
+			.label {
+				display: none;
+			}
+			
+			
+
+		}
+
+		.cardHolderData {
+			float: left;
+			width: $cardInfo-width - $onlyCardInfo-width - $onlyCardInfo-margin-right;
+			.holderName {
+				display: list-item;
+			}
+		}
+		.zipcode, .city, .province, .country {
+			display: inline;
+		}
+		.zipcode {
+			@include appendDash;
+		}
+		.province .value {
+			@include wrapInParenthesis;
+		}
+		.cardAlerts {
+            // display: none;
+            float: left;
+            width: 102px;
+            @include confMiniSectionContent-text;
+            .preferredlabel {
+            	@extend %helvetica-bold;
+            }
+        }
+        &.cardExpired {
+        	.cardAlerts {
+        		.expiredLabel {
+        			color: $red;
+        			@extend %helvetica-bold;
+        			text-transform: uppercase;
+        		}
+        	}
+        }
+        // CVV MINISECTION
+        .cvvAndExpirationForm {
+        	position: relative;
+        	.fieldLabel, .cvvInfo {
+        		font-size: $size-midsmall;
+        		color: $color-medium;
+        		@extend %helvetica;
+        	}
+        	.fieldRow.checkbox {
+        		@include setCheckboxInline;
+        	}
+
+        }
+        &.selected {
+        	.formPlaceholderContainer {
+        		display: block;
+        	}
+        }
+        .formPlaceholderContainer {
+        	display: none;
+        	border-top: 1px solid $color-light;
+        	margin-top: 15px;
+        	padding-top: 20px;
+        	border-bottom: 1px solid $color-light;
+        	@include pie-clearfix;
+        	padding-left: $form-radiobutton-width + $radio-checkbox-margin-right;
+        	clear: both;
+        	width: 97%;
+        	float: left;
+        	.fieldRow {
+        		.fieldValue {
+        			@extend %helvetica;
+        		}
+        		&.text, &.zipCode {
+        			input {
+        				@extend %helvetica;
+        				font-size: $size-medium;
+        			}
+        		}
+        	}
+        	
+        }
+        .expirationDate {
+        	clear: both;
+        	.fieldValue {
+        		@include pie-clearfix;
+        	}
+        	.selectTitle {
+        		display: none;
+        	}
+        	.selectInput_wrapper {
+        		width: 42%;
+        		margin-right: 4%;
+        		float: left;
+        	}
+
+        	.year { margin-left: 4%; }
+        }
+        .Cvv, .Issue {
+        	width: 48%;
+        	input {
+        		width: 40%;
+        	}
+        }
+        .cvvInfo {
+        	cursor: pointer;
+        	position: absolute;
+        	top: $input-label-min-height;
+        	left: 21%;
+        	line-height: $form-input-height + ($form-input-border * 2);
+        }
+        &.cardExpired {
+        	.cvvInfo {
+        		top: $input-totalHeight + $input-label-min-height;
+        	}
+        }
+        .fastCheckoutSection {
+        	.title {
+        		display: none;
+        	}
+        }
+    }
+    .newCreditCardButton {
+    	@include pie-clearfix;
+    	margin-top: 20px;
+    	margin-bottom: 10px;
+    	.radioButton {
+    		float: left;
+    		margin-right: $radio-checkbox-margin-right;
+    	}
+    	label {
+    		float: left;
+    		color: $color-medium;
+    		font-size: $size-midsmall;
+    		line-height: 23px;
+    		text-transform: uppercase;
+    		@extend %helvetica;
+    		padding-left: 40px;
+    		position: relative;
+    		left: -30px;
+    		cursor: pointer;
+    		display: inline-block;
+    		@include zindex(input-elems);
+    	}
+    }
+    .addingNewCard {
+    	.trustwaveMessage {
+    		display: none;
+    	}
+    }
+    .privacy {
+    	display: none;
+    }
+
+
+    .creditCardForm {
+    	display: none;
+    	color: $color-medium;
+    	@extend %helvetica;
+    	position: relative;
+    	&.addingNewCard {
+    		display: block;
+    	}
+
+    	
+    	.fieldRow{
+    		min-height: 85px;
+    		margin-bottom: 0;
+    	}
+
+    	.lockedFields {
+    		clear: both;
+    	}
+    	.expirationDate {
+    		clear: both;
+    		.fieldValue {
+    			@include pie-clearfix;
+    		}
+    		.selectTitle {
+    			display: none;
+    		}
+    		.selectInput_wrapper {
+    			width: $fieldRow-width;
+    			margin-left: $fieldRow-margin;
+    			margin-right: $fieldRow-margin;
+    			float: left;
+    		}
+    		.fieldLabel, .field-validation-container {
+    			margin-left: $fieldRow-margin;
+    		}
+    	}
+    	.creditCardHolderTitle, .creditCardHolderDescription {
+    		display: none;
+    	}
+    	.cvvInfo {
+    		position: absolute;
+    		right: 25px;
+    		cursor: pointer;
+    		font-size: $size-smaller;
+    		line-height: 1.8;
+    	}
+
+
+		.fastCheckoutSection {
+			padding-top: 15px;
+
+			.title {
+				font-size: $size-big;
+				color: $color-medium;
+				text-transform: uppercase;
+				@extend %knockout;
+			}
+
+			.fieldRow{
+				min-height: 30px;
+			}
+		}
+    }
+
+    .prettyselect-drop {
+    	li {
+    		.RU &{
+    			padding: 0 8px;
+    		}
+    	}
+    	.RU &{
+    		white-space: nowrap;
+    		overflow-x: hidden;
+    		font-size: $size-midsmall;
+    	}
+    }
+    .prettyselect-label {
+    	.RU &{
+    		white-space: nowrap;
+    		font-size: $size-mini;
+    	}
+    }
+}
+
+#CreditCardFormViewModel_Number_Wrapper {
+	margin-bottom: 34px;
+}
+
+
+.cardIcon {
+	&.Visa {
+		@extend .sprites-creditcards-visa_big;
+	}
+	&.Mastercard {
+		@extend .sprites-creditcards-mastercard_big;
+	}
+	&.AmericanExpress {
+		@extend .sprites-creditcards-americanexpress_big;
+	}
+	&.CarteBleue {
+		@extend .sprites-creditcards-cartebleue_big;
+	}
+	&.JCB {
+		@extend .sprites-creditcards-jcb_big;
+	}
+	&.Switch {
+		@extend .sprites-creditcards-maestro_big;
+	}
+}

@@ -1,0 +1,108 @@
+// ===========================
+// TEXT SEARCH AND FAYT STYLES
+// ===========================
+
+.search {
+	position: relative;
+	&.hasNoFaytResults {
+		.faytQtip {
+			border: none;
+		}
+	}
+}
+.textSearch {
+	margin-left: 15px;
+	margin-right: 10px;
+	height: $header-secondline-height;
+
+	input[type='text'] {
+		width: $menu-textsearch-width;
+		margin: {
+			top: ($header-secondline-height - $menu-textsearch-height) / 2;
+			right:10px
+		};
+		padding: 0 2px;
+		font-size: 1.6em;
+		background-color: $black;
+		color: $white;
+		border: none;
+		border-bottom: 1px solid $white;
+		height: $menu-textsearch-height;
+		line-height: $menu-textsearch-height;
+		outline: none;
+
+		@include input-placeholder {
+			color: $white;
+			@include opacity(1);
+		}
+	}
+
+	button {
+		@include imageReplacement;
+		@extend %svg-lens-24x24;
+		@extend .tertiary;
+		display: inline-block;
+	}
+}
+
+.findAsYouType {
+	line-height: $size-large;
+	color: $color-dark;
+	cursor: pointer;
+	li {
+		font-size: $size-medium;
+		text-transform: uppercase;
+		a {
+			padding: 12px 10px;
+			display: block;
+			&:hover {
+				background-color: $color-top;
+			}
+		}
+		&.theOne {
+			a {
+				background-color: $color-top;
+			}
+		}
+	}
+}
+
+#suggestionContainer {
+	
+	position: relative;
+
+	.suggestionTitle {
+		display: none;
+	}
+
+	.suggestions {
+
+		top: 10px;
+		right: -11px;
+
+		padding: 0 10px;
+		list-style-type: none;
+
+		@extend %knockout;
+		
+		background-color: $white;
+		border: 1px solid $color-extra;
+		height: auto;
+		margin-top: 2px;
+		position: absolute;
+		text-align: left;
+		width: 230px; //fix?
+		@include zindex(header);
+		line-height: $size-large;
+		color: $color-dark;
+		
+		& a {
+			padding: 12px 0;
+			font-size: $size-medium;
+			cursor: pointer;
+			text-transform: uppercase;
+			display:block;
+		}
+	}
+
+}

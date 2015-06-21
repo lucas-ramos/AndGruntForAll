@@ -1,0 +1,443 @@
+@charset "UTF-8";
+/* effetto height:100% sugli elementi flottanti */
+@font-face {
+  font-family: 'KnockoutLight';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.svg#KnockoutLight") format("svg");
+}
+@font-face {
+  font-family: 'KnockoutRegular';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.svg#KnockoutRegular") format("svg");
+}
+@font-face {
+  font-family: 'HelveticaCondensedLight';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.svg#KnockoutRegular") format("svg");
+}
+@font-face {
+  font-family: 'HelveticaCondensedBold';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.svg#KnockoutRegular") format("svg");
+}
+@font-face {
+  font-family: 'LatoRegular';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.svg#LatoRegular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'LatoBold';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.svg#LatoBold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+.RU button, .RU .button, .RU .productMiniDescr .microCategory, .productMiniDescr .RU .microCategory, .RU .itemInfoWrapper {
+  font-family: Arial, Verdana, sans-serif;
+}
+
+.RU .productMiniDescr .brandAndMicro .brandName, .productMiniDescr .brandAndMicro .RU .brandName, .RU .itemInfoWrapper .itemInfo .descriptionHeader, .itemInfoWrapper .itemInfo .RU .descriptionHeader, .RU .itemInfoWrapper .itemInfo .compositionInfo .label, .itemInfoWrapper .itemInfo .compositionInfo .RU .label, .RU #relatedItems .topTitle, #relatedItems .RU .topTitle, .RU .itemInfoWrapper .itemInfo .descriptionContent .label, .itemInfoWrapper .itemInfo .descriptionContent .RU .label {
+  font-family: Arial, Verdana, sans-serif;
+  font-weight: bold;
+}
+
+button, .button {
+  font-family: KnockoutLight, Arial, Verdana, sans-serif;
+  font-weight: normal;
+}
+.JP button, .JP .button {
+  font-family: KnockoutLight, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+}
+.CN button, .CN .button {
+  font-family: KnockoutLight, HelveticaCondensedLight, Arial, "Microsoft YaHei", "Microsoft YaHei Regular", SimHei, "SimHei Regular", sans-serif;
+}
+
+.productMiniDescr .brandAndMicro .brandName, .itemInfoWrapper .itemInfo .descriptionHeader, .itemInfoWrapper .itemInfo .compositionInfo .label, #relatedItems .topTitle {
+  font-family: KnockoutRegular, Arial, Verdana, sans-serif;
+  font-weight: normal;
+}
+.JP .productMiniDescr .brandAndMicro .brandName, .productMiniDescr .brandAndMicro .JP .brandName, .JP .itemInfoWrapper .itemInfo .descriptionHeader, .itemInfoWrapper .itemInfo .JP .descriptionHeader, .JP .itemInfoWrapper .itemInfo .compositionInfo .label, .itemInfoWrapper .itemInfo .compositionInfo .JP .label, .JP #relatedItems .topTitle, #relatedItems .JP .topTitle {
+  font-family: KnockoutRegular, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+}
+.CN .productMiniDescr .brandAndMicro .brandName, .productMiniDescr .brandAndMicro .CN .brandName, .CN .itemInfoWrapper .itemInfo .descriptionHeader, .itemInfoWrapper .itemInfo .CN .descriptionHeader, .CN .itemInfoWrapper .itemInfo .compositionInfo .label, .itemInfoWrapper .itemInfo .compositionInfo .CN .label, .CN #relatedItems .topTitle, #relatedItems .CN .topTitle {
+  font-family: KnockoutLight, HelveticaCondensedLight, Arial, "Microsoft YaHei", "Microsoft YaHei Regular", SimHei, "SimHei Regular", sans-serif;
+}
+
+.productMiniDescr .microCategory, .itemInfoWrapper, .button.soldOutMessage {
+  font-family: LatoRegular, Arial, Verdana, sans-serif;
+  font-weight: normal;
+}
+.JP .productMiniDescr .microCategory, .productMiniDescr .JP .microCategory, .JP .itemInfoWrapper, .JP .button.soldOutMessage {
+  font-family: LatoRegular, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+}
+
+.itemInfoWrapper .itemInfo .descriptionContent .label, .itemInfoWrapper .itemInfo .descriptionHeader {
+  font-family: LatoBold, Arial, Verdana, sans-serif;
+  font-weight: normal;
+}
+.JP .itemInfoWrapper .itemInfo .descriptionContent .label, .itemInfoWrapper .itemInfo .descriptionContent .JP .label, .JP .itemInfoWrapper .itemInfo .descriptionHeader, .itemInfoWrapper .itemInfo .JP .descriptionHeader {
+  font-family: LatoBold, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+}
+
+/* ==========================================================================
+   CALL TO ACTIONS
+   Use with:
+
+	@extend button				(extends button rules)
+	@extend .secondary			(extends .secondary rules)
+	@extend button.secondary	(extends .secondary rules, not button's)
+	@extend .ugly-button		(extends .ugly-button rules)
+
+	NOTE: THESE ARE CLASSES.
+	THEY WILL BE REPLICATED FOR EACH TIME THEY'RE INCLUDED.
+	Include this only when is necessary.
+	Include this in scss PARENTS ONLY.
+
+	========================================================================== */
+button {
+  text-align: center;
+  cursor: pointer;
+  display: block;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  font-size: 1.9rem;
+  padding: 26px 12%;
+  border: 0;
+  outline: none;
+  width: 100%;
+}
+
+.button {
+  text-align: center;
+  cursor: pointer;
+  display: block;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  font-size: 1.9rem;
+  padding: 26px 12%;
+  border: 0;
+  outline: none;
+  width: 76%;
+}
+
+button.primary, .buttonBox button.addToCart, .button.primary, .buttonBox .button.addToCart {
+  background-color: #000;
+  color: #FFF;
+}
+button.secondary, .buttonBox button.addItemToWishList, .button.secondary, .buttonBox .button.addItemToWishList {
+  background-color: #CCC;
+  color: #FFF;
+}
+button.disabled, button[disabled], .button.disabled, .button[disabled] {
+  background-color: #FFF;
+  color: #EBEBEB;
+  cursor: default;
+}
+
+.colorSizeContainer .wrap select {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%22167.5%20189.745%20412.51%20412.51%22%3E%3Cpath%20d%3D%22M373.755%20525.965l.038.046L580.01%20319.79l-53.802-53.8-152.453%20152.454-152.452-152.452-53.803%2053.8%20206.215%20206.22%22%20fill%3D%22%23FFF%22%2F%3E%3C%2Fsvg%3E");
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+}
+
+.svg-zoom {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%20410%20414%22%3E%3Cpath%20d%3D%22M410%20359.482l-108.61-108.61c16.066-25.293%2025.38-55.302%2025.38-87.487C326.77%2073.15%20253.62%200%20163.384%200S0%2073.148%200%20163.385%2073.148%20326.77%20163.384%20326.77c30.268%200%2058.604-8.237%2082.91-22.582l109.5%20109.5L410%20359.482zM61.107%20163.385c0-56.486%2045.79-102.275%20102.276-102.275%2056.487%200%20102.278%2045.79%20102.278%20102.275%200%2056.485-45.79%20102.276-102.277%20102.276-56.485%200-102.276-45.79-102.276-102.275z%22%20fill%3D%22%23CCC%22%2F%3E%3C%2Fsvg%3E");
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+}
+
+.productMiniDescr {
+  color: #262626;
+  font-size: 1.6rem;
+  padding: 1em 0;
+  text-align: center;
+}
+.productMiniDescr .brandAndMicro .brandName {
+  text-transform: uppercase;
+  font-size: 2.4rem;
+  margin-top: 6px;
+}
+.productMiniDescr .microCategory {
+  font-size: 1.5rem;
+}
+.productMiniDescr .priceUpdater {
+  font-size: 2.4rem;
+}
+.productMiniDescr .priceUpdater .full {
+  color: #666;
+}
+.productMiniDescr .priceUpdater > span {
+  display: block;
+}
+
+.itemInfoWrapper {
+  background-color: #EBEBEB;
+  text-align: center;
+  color: #666;
+  padding: 15px 0;
+  margin-top: 10px;
+}
+.itemInfoWrapper .itemInfo .descriptionHeader, .itemInfoWrapper .itemInfo .compositionInfo .label {
+  display: block;
+  font-size: 1.6rem;
+}
+.itemInfoWrapper .itemInfo .descriptionContent, .itemInfoWrapper .itemInfo .compositionInfo .text {
+  font-size: 1.4rem;
+}
+.itemInfoWrapper .itemInfo .descriptionContent .label, .itemInfoWrapper .itemInfo .descriptionHeader {
+  text-transform: uppercase;
+}
+.itemInfoWrapper .itemInfo .descriptionHeader {
+  margin-bottom: 5px;
+}
+.itemInfoWrapper .itemInfo .itemdescription {
+  margin-bottom: 10px;
+}
+.itemInfoWrapper .itemInfo .productCode {
+  margin-bottom: 10px;
+}
+.itemInfoWrapper .itemInfo .localizedAttributes {
+  margin-bottom: 10px;
+}
+.itemInfoWrapper .itemInfo .localizedAttributes .text:after {
+  content: ":";
+}
+.FR .itemInfoWrapper .itemInfo .localizedAttributes .text:after {
+  content: " :";
+}
+.itemInfoWrapper .itemInfo .compositionInfo .label {
+  margin-bottom: 5px;
+}
+.itemInfoWrapper .itemInfo .tabs {
+  padding: 0 10px;
+}
+.itemInfoWrapper .itemInfo .tabs [data-ytos-tab="ShippingReturns"] {
+  display: none;
+}
+
+.selectionWrapper, .soldOutMessage {
+  border-top: 1px #FFF solid;
+}
+
+.selectColorSizeAlert {
+  display: none;
+  margin-top: 5px;
+  color: #900000;
+  font-size: 1.8em;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.selectColorSizeAlert.active {
+  display: block;
+}
+
+.colorSizeContainer {
+  *zoom: 1;
+}
+.colorSizeContainer:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.colorSizeContainer .wrap {
+  width: 49.5%;
+  float: left;
+}
+.colorSizeContainer .wrap select {
+  width: 100%;
+  line-height: 65px;
+  height: 65px;
+  background-color: #CCC;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: #FFF;
+}
+.colorSizeContainer .wrap .selectionTitle, .colorSizeContainer .wrap .selectionLabel {
+  display: none;
+}
+.colorSizeContainer .colors.wrap {
+  margin-right: 1%;
+}
+
+.buttonBox {
+  position: relative;
+  padding-top: 20px;
+}
+.buttonBox button {
+  width: 100%;
+  margin: 10px 0;
+}
+.RU .buttonBox .addItemToWishList {
+  font-size: 1.7em;
+}
+
+.button.soldOutMessage {
+  cursor: default;
+  font-size: 1.1rem;
+  background-color: transparent;
+  color: #000;
+  padding-top: 5px;
+}
+.button.soldOutMessage:hover {
+  background-color: transparent;
+}
+
+#productImage {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+#productImage .mainImageWrapper {
+  position: relative;
+}
+#productImage .svg-zoom {
+  position: absolute;
+  right: 0;
+}
+#productImage img {
+  display: block;
+  margin: 0 auto;
+  width: 230px;
+}
+
+#alternativeImagesWrapper .alternativeImages {
+  *zoom: 1;
+  max-width: 400px;
+  margin: 0 auto;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+#alternativeImagesWrapper .alternativeImages:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#alternativeImagesWrapper .alternativeImages li {
+  width: 16%;
+  margin: 0 2%;
+  min-height: 70px;
+}
+#alternativeImagesWrapper .alternativeImages li img {
+  width: 100%;
+}
+#alternativeImagesWrapper .alternativeImages li.selected {
+  border-bottom: 3px solid #333;
+}
+
+#zoomLayer {
+  position: fixed;
+  z-index: 18;
+  display: none;
+}
+#zoomLayer .overlayElements, #zoomLayer .alternativeImages {
+  display: none;
+}
+#zoomLayer .overlayElements {
+  width: 60px;
+  height: 60px;
+  display: block;
+  top: 10px;
+  right: 10px;
+  position: fixed;
+  background-color: #000;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+}
+#zoomLayer .overlayElements .close .icon {
+  fill: white;
+}
+#zoomLayer .overlayElements .close .icon svg {
+  width: 28px;
+  height: 28px;
+  top: 15px;
+  left: 15px;
+  position: relative;
+}
+
+.zoomImageContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.zoomImageContainer img {
+  height: 1000px;
+}
+.zoomImageContainer.noScroll {
+  overflow: hidden;
+}
+.zoomImageContainer.nativeScroll {
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+  -moz-overflow-scrolling: touch;
+  -ms-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+  overflow-y: scroll;
+}
+
+.loginLayer h1 {
+  font-size: 2.8rem;
+  color: #FFF;
+}
+
+#relatedItems {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+#relatedItems .topTitle {
+  text-align: center;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+#relatedItems .linkOverlay {
+  display: none;
+}
+#relatedItems .relatedItems {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  margin: 20px 0 10px;
+}
+#relatedItems .relatedItem {
+  width: 25%;
+}
+#relatedItems .image a {
+  display: block;
+}
+#relatedItems img {
+  width: 100%;
+}
+#relatedItems .secondImage {
+  display: none;
+}
+
+.mfp-content .loginLayer .validation-summary-errors {
+  padding: 5px 0;
+  margin-bottom: 10px;
+  color: #900000;
+}
+.mfp-content #loginSuccessfullMessage {
+  display: none;
+}
+.mfp-content .loginLayerDescription {
+  margin: 10px 0;
+}
+.RU .mfp-content .loginLayerTitle {
+  font-size: 2.5rem;
+  word-break: break-all;
+}

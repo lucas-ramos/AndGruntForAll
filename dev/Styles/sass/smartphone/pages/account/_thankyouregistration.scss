@@ -1,0 +1,17 @@
+// =================
+// REGISTER PAGE STYLES
+// =================
+
+#registrationSuccessfullContent {
+	ul {
+		font-size: $size-medium;
+	}
+}
+
+
+.gotoshopping a {
+	@extend .button;
+	@extend .secondary;
+
+	margin: 10px 0;
+}

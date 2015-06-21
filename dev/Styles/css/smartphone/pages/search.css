@@ -1,0 +1,404 @@
+@charset "UTF-8";
+/* effetto height:100% sugli elementi flottanti */
+@font-face {
+  font-family: 'KnockoutLight';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.svg#KnockoutLight") format("svg");
+}
+@font-face {
+  font-family: 'KnockoutRegular';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.svg#KnockoutRegular") format("svg");
+}
+@font-face {
+  font-family: 'HelveticaCondensedLight';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.svg#KnockoutRegular") format("svg");
+}
+@font-face {
+  font-family: 'HelveticaCondensedBold';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.svg#KnockoutRegular") format("svg");
+}
+@font-face {
+  font-family: 'LatoRegular';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.svg#LatoRegular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'LatoBold';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.svg#LatoBold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+.RU button, .RU .button, .RU #products .microCategory, #products .RU .microCategory, .RU #products .priceUpdater, #products .RU .priceUpdater, .RU #pagination .pagination li a, #pagination .pagination li .RU a {
+  font-family: Arial, Verdana, sans-serif;
+}
+
+.RU #products .brandName, #products .RU .brandName, .RU #pagination .pagination li.selected a, #pagination .pagination li.selected .RU a {
+  font-family: Arial, Verdana, sans-serif;
+  font-weight: bold;
+}
+
+button, .button {
+  font-family: KnockoutLight, Arial, Verdana, sans-serif;
+  font-weight: normal;
+}
+.JP button, .JP .button {
+  font-family: KnockoutLight, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+}
+.CN button, .CN .button {
+  font-family: KnockoutLight, HelveticaCondensedLight, Arial, "Microsoft YaHei", "Microsoft YaHei Regular", SimHei, "SimHei Regular", sans-serif;
+}
+
+#products .microCategory, #products .priceUpdater, #pagination .pagination li a {
+  font-family: LatoRegular, Arial, Verdana, sans-serif;
+  font-weight: normal;
+}
+.JP #products .microCategory, #products .JP .microCategory, .JP #products .priceUpdater, #products .JP .priceUpdater, .JP #pagination .pagination li a, #pagination .pagination li .JP a {
+  font-family: LatoRegular, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+}
+
+#products .brandName, #pagination .pagination li.selected a {
+  font-family: LatoBold, Arial, Verdana, sans-serif;
+  font-weight: normal;
+}
+.JP #products .brandName, #products .JP .brandName, .JP #pagination .pagination li.selected a, #pagination .pagination li.selected .JP a {
+  font-family: LatoBold, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+}
+
+/* ==========================================================================
+   CALL TO ACTIONS
+   Use with:
+
+	@extend button				(extends button rules)
+	@extend .secondary			(extends .secondary rules)
+	@extend button.secondary	(extends .secondary rules, not button's)
+	@extend .ugly-button		(extends .ugly-button rules)
+
+	NOTE: THESE ARE CLASSES.
+	THEY WILL BE REPLICATED FOR EACH TIME THEY'RE INCLUDED.
+	Include this only when is necessary.
+	Include this in scss PARENTS ONLY.
+
+	========================================================================== */
+button {
+  text-align: center;
+  cursor: pointer;
+  display: block;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  font-size: 1.9rem;
+  padding: 26px 12%;
+  border: 0;
+  outline: none;
+  width: 100%;
+}
+
+.button {
+  text-align: center;
+  cursor: pointer;
+  display: block;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  font-size: 1.9rem;
+  padding: 26px 12%;
+  border: 0;
+  outline: none;
+  width: 76%;
+}
+
+button.primary, .button.primary {
+  background-color: #000;
+  color: #FFF;
+}
+button.secondary, .button.secondary {
+  background-color: #CCC;
+  color: #FFF;
+}
+button.disabled, button[disabled], .button.disabled, .button[disabled] {
+  background-color: #FFF;
+  color: #EBEBEB;
+  cursor: default;
+}
+
+.fakeSelect, .refinement select {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%22167.5%20189.745%20412.51%20412.51%22%3E%3Cpath%20d%3D%22M373.755%20525.965l.038.046L580.01%20319.79l-53.802-53.8-152.453%20152.454-152.452-152.452-53.803%2053.8%20206.215%20206.22%22%20fill%3D%22%23FFF%22%2F%3E%3C%2Fsvg%3E");
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+}
+
+#topBar .showFilters_btn.pressed::after {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.2%22%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%20400%20400%22%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M200%20106.054l-.025-.028L65.193%20240.81l35.164%2035.165L200%20176.33l99.643%2099.643%2035.165-35.164-134.783-134.784%22%2F%3E%3C%2Fsvg%3E");
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+}
+
+#textsearch button[type="submit"] {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2235%22%20height%3D%2235%22%20viewBox%3D%220%200%20410%20414%22%3E%3Cpath%20fill%3D%22%23333%22%20d%3D%22M410%20359.482l-108.61-108.61c16.067-25.293%2025.38-55.302%2025.38-87.487C326.77%2073.15%20253.62%200%20163.384%200S0%2073.148%200%20163.385%2073.148%20326.77%20163.384%20326.77c30.268%200%2058.604-8.238%2082.91-22.583l109.5%20109.5L410%20359.483zM61.107%20163.385c0-56.486%2045.79-102.275%20102.276-102.275%2056.487%200%20102.278%2045.79%20102.278%20102.275%200%2056.485-45.79%20102.276-102.277%20102.276-56.485%200-102.276-45.79-102.276-102.275z%22%2F%3E%3C%2Fsvg%3E");
+  width: 35px;
+  height: 35px;
+  background-repeat: no-repeat;
+}
+
+#textsearch form {
+  *zoom: 1;
+  position: relative;
+}
+#textsearch form:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#textsearch input[type="text"] {
+  box-sizing: border-box;
+  height: 52px;
+  line-height: 52px;
+  padding-left: 60px;
+  background: #EBEBEB;
+  border: none;
+  text-align: left;
+  width: 100%;
+}
+#textsearch button[type="submit"] {
+  border: 0;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 0;
+  display: block;
+  position: absolute;
+  height: 52px;
+  width: 60px;
+  top: 0;
+  left: 0;
+  background-position: center center;
+  background-color: #EBEBEB;
+}
+
+#searchTopBanner a {
+  display: block;
+}
+#searchTopBanner img {
+  display: block;
+  width: 100%;
+}
+
+.fakeSelect {
+  line-height: 38px;
+  height: 38px;
+  color: #FFF;
+  background-color: #000;
+  background-position: 90% center;
+  font-size: 1.7rem;
+  text-align: left;
+  text-transform: none;
+  border: 1px solid #000;
+  padding: 0 0 0 5px;
+}
+
+#sortRule {
+  background-position: 90% center;
+  padding-right: 25%;
+}
+
+#topBar {
+  margin-top: 10px;
+}
+#topBar .sortRules {
+  float: left;
+  width: 48%;
+}
+html.JP #topBar .sortRules {
+  font-size: 0.9rem;
+}
+#topBar .showFilters_btn {
+  float: right;
+  width: 48%;
+}
+
+#filterContainer {
+  background: #000;
+  max-height: 500px;
+  overflow: hidden;
+  position: relative;
+  top: -1px;
+  -moz-transition: padding 0.6s ease-in-out, max-height 0.6s ease-in-out;
+  -o-transition: padding 0.6s ease-in-out, max-height 0.6s ease-in-out;
+  -webkit-transition: padding 0.6s ease-in-out, max-height 0.6s ease-in-out;
+  transition: padding 0.6s ease-in-out, max-height 0.6s ease-in-out;
+}
+#filterContainer.close {
+  max-height: 0;
+}
+
+#count {
+  height: 38px;
+  line-height: 38px;
+  text-align: center;
+  font-size: 1.6rem;
+  color: #666;
+}
+
+.refinement {
+  padding: 10px 0;
+  border-bottom: 1px solid #FFF;
+}
+.refinement:last-child {
+  border-bottom: none;
+}
+.refinement select {
+  width: 100%;
+  color: #FFF;
+  background-color: #000;
+  height: 38px;
+  border-color: #000;
+  text-transform: uppercase;
+}
+
+#products > a {
+  *zoom: 1;
+}
+#products > a:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#products .product {
+  float: left;
+  width: 50%;
+  text-align: center;
+  padding: 15px 0 30px;
+}
+#products .product a {
+  display: block;
+}
+#products .product .image {
+  min-height: 230px;
+}
+#products .product.soldOut a {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
+  opacity: 0.2;
+}
+#products .product.soldOut .priceUpdater {
+  display: none;
+}
+#products .product:last-child {
+  border: none;
+}
+#products .image img {
+  width: 100%;
+}
+#products .brandName {
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+  min-height: 3.2rem;
+}
+#products .microCategory {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  line-height: 1.3rem;
+  min-height: 2.6rem;
+  display: block;
+}
+#products .priceUpdater {
+  font-size: 1.6rem;
+}
+#products .price {
+  display: block;
+}
+#products.even-items .product:nth-last-child(2) {
+  border: none;
+}
+
+#courtesy {
+  display: none;
+  margin: 20px 0;
+}
+.show-courtesy #courtesy {
+  display: block;
+}
+#courtesy .buttons {
+  display: none;
+}
+
+#pagination {
+  background: #EBEBEB;
+}
+#pagination .pagination {
+  *zoom: 1;
+}
+#pagination .pagination:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#pagination .pagination p {
+  display: none;
+}
+#pagination .pagination ul {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  padding: 17px 0 7px;
+}
+#pagination .pagination li {
+  background-color: #CCC;
+  margin: 0 1px;
+}
+#pagination .pagination li a {
+  color: #FFF;
+  display: block;
+  padding: 12px 0;
+  width: 42px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+#pagination .pagination li.lastPage {
+  background-color: #999;
+  margin-right: 0;
+}
+#pagination .pagination li.firstPage {
+  background-color: #999;
+  margin-left: 0;
+}
+#pagination .pagination li.selected {
+  background-color: #EBEBEB;
+}
+#pagination .pagination li.selected a {
+  color: #000;
+}
+#pagination .previousPage, #pagination .nextPage {
+  display: none;
+}
+
+#topPage {
+  margin: 10px 0;
+}
+
+#emptySearch p {
+  margin: 30px 0;
+  text-align: center;
+}
+#emptySearch .button {
+  margin: 10px 0;
+}
+html.JP #emptySearch .button {
+  font-size: 1.7rem;
+}
+
+#sortRule option[value="Ranking"] {
+  display: none;
+}

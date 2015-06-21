@@ -1,0 +1,183 @@
+@charset "UTF-8";
+/* effetto height:100% sugli elementi flottanti */
+@font-face {
+  font-family: 'KnockoutLight';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.svg#KnockoutLight") format("svg");
+}
+@font-face {
+  font-family: 'KnockoutRegular';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.svg#KnockoutRegular") format("svg");
+}
+@font-face {
+  font-family: 'HelveticaCondensedLight';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.svg#KnockoutRegular") format("svg");
+}
+@font-face {
+  font-family: 'HelveticaCondensedBold';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.svg#KnockoutRegular") format("svg");
+}
+@font-face {
+  font-family: 'LatoRegular';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.svg#LatoRegular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'LatoBold';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.svg#LatoBold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+.RU button, .RU .button, .RU #landing.irisvanherpen .btnShop, #landing.irisvanherpen .RU .btnShop, .RU #landing.irisvanherpen .disclaimer1, #landing.irisvanherpen .RU .disclaimer1, .RU #landing.irisvanherpen .disclaimer2, #landing.irisvanherpen .RU .disclaimer2 {
+  font-family: Arial, Verdana, sans-serif;
+}
+
+button, .button, #landing.irisvanherpen .btnShop {
+  font-family: KnockoutLight, Arial, Verdana, sans-serif;
+  font-weight: normal;
+}
+.JP button, .JP .button, .JP #landing.irisvanherpen .btnShop, #landing.irisvanherpen .JP .btnShop {
+  font-family: KnockoutLight, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+}
+.CN button, .CN .button, .CN #landing.irisvanherpen .btnShop, #landing.irisvanherpen .CN .btnShop {
+  font-family: KnockoutLight, HelveticaCondensedLight, Arial, "Microsoft YaHei", "Microsoft YaHei Regular", SimHei, "SimHei Regular", sans-serif;
+}
+
+#landing.irisvanherpen .disclaimer1, #landing.irisvanherpen .disclaimer2 {
+  font-family: LatoRegular, Arial, Verdana, sans-serif;
+  font-weight: normal;
+}
+.JP #landing.irisvanherpen .disclaimer1, #landing.irisvanherpen .JP .disclaimer1, .JP #landing.irisvanherpen .disclaimer2, #landing.irisvanherpen .JP .disclaimer2 {
+  font-family: LatoRegular, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+}
+
+/* ==========================================================================
+   CALL TO ACTIONS
+   Use with:
+
+	@extend button				(extends button rules)
+	@extend .secondary			(extends .secondary rules)
+	@extend button.secondary	(extends .secondary rules, not button's)
+	@extend .ugly-button		(extends .ugly-button rules)
+
+	NOTE: THESE ARE CLASSES.
+	THEY WILL BE REPLICATED FOR EACH TIME THEY'RE INCLUDED.
+	Include this only when is necessary.
+	Include this in scss PARENTS ONLY.
+
+	========================================================================== */
+button {
+  text-align: center;
+  cursor: pointer;
+  display: block;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  font-size: 1.9rem;
+  padding: 26px 12%;
+  border: 0;
+  outline: none;
+  width: 100%;
+}
+
+.button, #landing.irisvanherpen .btnShop {
+  text-align: center;
+  cursor: pointer;
+  display: block;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  font-size: 1.9rem;
+  padding: 26px 12%;
+  border: 0;
+  outline: none;
+  width: 76%;
+}
+
+button.primary, #landing.irisvanherpen button.btnShop, .button.primary, #landing.irisvanherpen .btnShop {
+  background-color: #000;
+  color: #FFF;
+}
+button.secondary, .button.secondary, #landing.irisvanherpen .secondary.btnShop {
+  background-color: #CCC;
+  color: #FFF;
+}
+button.disabled, button[disabled], .button.disabled, #landing.irisvanherpen .disabled.btnShop, .button[disabled], #landing.irisvanherpen [disabled].btnShop {
+  background-color: #FFF;
+  color: #EBEBEB;
+  cursor: default;
+}
+
+#landing.irisvanherpen #videoWrapper {
+  position: relative;
+}
+#landing.irisvanherpen #videoWrapper .coverImag {
+  width: 100%;
+  height: 257px;
+  position: absolute;
+  background-position: center top;
+  background-size: 100% auto;
+  background-image: url("//ytos-resources-eu-west-1-183330696032.s3.amazonaws.com/ytos/resources/THECORNER/landing/iris-van-herpen/irisvideo_mob_uk.jpg?v={$i}");
+}
+.CN #landing.irisvanherpen #videoWrapper .coverImag {
+  background-image: url("//ytos-resources-eu-west-1-183330696032.s3.amazonaws.com/ytos/resources/THECORNER/landing/iris-van-herpen/irisvideo_mob_cn.jpg?v={$i}");
+}
+.DE #landing.irisvanherpen #videoWrapper .coverImag {
+  background-image: url("//ytos-resources-eu-west-1-183330696032.s3.amazonaws.com/ytos/resources/THECORNER/landing/iris-van-herpen/irisvideo_mob_de.jpg?v={$i}");
+}
+.ES #landing.irisvanherpen #videoWrapper .coverImag {
+  background-image: url("//ytos-resources-eu-west-1-183330696032.s3.amazonaws.com/ytos/resources/THECORNER/landing/iris-van-herpen/irisvideo_mob_es.jpg?v={$i}");
+}
+.FR #landing.irisvanherpen #videoWrapper .coverImag {
+  background-image: url("//ytos-resources-eu-west-1-183330696032.s3.amazonaws.com/ytos/resources/THECORNER/landing/iris-van-herpen/irisvideo_mob_fr.jpg?v={$i}");
+}
+.IT #landing.irisvanherpen #videoWrapper .coverImag {
+  background-image: url("//ytos-resources-eu-west-1-183330696032.s3.amazonaws.com/ytos/resources/THECORNER/landing/iris-van-herpen/irisvideo_mob_it.jpg?v={$i}");
+}
+.JP #landing.irisvanherpen #videoWrapper .coverImag {
+  background-image: url("//ytos-resources-eu-west-1-183330696032.s3.amazonaws.com/ytos/resources/THECORNER/landing/iris-van-herpen/irisvideo_mob_jp.jpg?v={$i}");
+}
+.RU #landing.irisvanherpen #videoWrapper .coverImag {
+  background-image: url("//ytos-resources-eu-west-1-183330696032.s3.amazonaws.com/ytos/resources/THECORNER/landing/iris-van-herpen/irisvideo_mob_ru.jpg?v={$i}");
+}
+.GB #landing.irisvanherpen #videoWrapper .coverImag {
+  background-image: url("//ytos-resources-eu-west-1-183330696032.s3.amazonaws.com/ytos/resources/THECORNER/landing/iris-van-herpen/irisvideo_mob_uk.jpg?v={$i}");
+}
+#landing.irisvanherpen #videoWrapper .videoContainer {
+  width: 100%;
+  height: 257px;
+}
+#landing.irisvanherpen .disclaimer1 {
+  padding: 20px;
+  color: #666;
+  font-size: 1.6em;
+  line-height: 26px;
+  text-align: center;
+}
+#landing.irisvanherpen .disclaimer2 {
+  padding: 20px;
+  color: #666;
+  font-size: 1.6em;
+  line-height: 26px;
+  text-align: center;
+}
+#landing.irisvanherpen .img2 {
+  margin-bottom: 7px;
+  display: block;
+}
+#landing.irisvanherpen .btnShop {
+  border-bottom: 1px solid #fff;
+}
+#landing.irisvanherpen img {
+  width: 100%;
+}

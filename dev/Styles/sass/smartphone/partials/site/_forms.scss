@@ -1,0 +1,261 @@
+/* ==========================================================================
+FORMS UTILITY
+
+========================================================================== */
+$svg-asterisco-width: 16px;
+$svg-asterisco-height: 16px;
+$svg-error-width: 16px;
+$svg-error-height: 16px;
+$svg-error-right: 8px;
+$inputText-height: 28px; //da rimuovere asap
+
+$inputRadio-height: $svg-radio-checked-width + 40px;
+$input-field-inner-height: 20px;
+
+$validation-icon-top-position: $mobile-button-vertical-padding;
+$validation-icon-left-position: 96%;
+
+
+textarea {
+	@include border-radius(0);
+}
+
+
+form {
+	input:focus, textarea:focus {
+		outline: none;
+	}
+
+	.mandatory, [data-ytos-password-strength], [data-ytos-securepasswordinfo], [data-ytos-password-container] .passwordLength {
+		display: none;
+	}
+
+	// INPUT TEXT, MAIL, ETC.
+	[data-ytos-input-container] {
+		position: relative;
+		
+		.fieldLabel {
+			display: none;
+		}
+	}
+	
+	.fieldRow {
+		margin-bottom: 13px;
+	}
+}
+
+
+
+// INPUT FIELDS
+input:-webkit-autofill {
+	-webkit-box-shadow: 0 0 0px 1000px $white inset;
+}
+
+input[type="text"], input[type="password"], input[type="email"], input[type="tel"] {
+	@extend %knockout;
+	font-size: $size-expanse-rem;
+	text-align: center;
+	border: 0;
+	height: $input-field-inner-height;
+	line-height: $input-field-inner-height;
+
+	padding: $mobile-button-vertical-padding $mobile-button-horizontal-padding;
+	width: $mobile-button-class-width;
+
+	@include border-radius(0px); //serve per rimuovere la stondatura
+
+	* [data-ytos-zipcodejp].valid ~ &, &.valid {
+		@extend %svg-input-valid;
+		height: $input-field-inner-height;
+		width: $mobile-button-class-width;
+		background-position: $validation-icon-left-position $validation-icon-top-position;
+	}
+
+	* [data-ytos-zipcodejp].invalid ~ &, &.invalid {
+		@extend %svg-input-invalid;
+		height: $input-field-inner-height;
+		width: $mobile-button-class-width;
+		background-position: $validation-icon-left-position $validation-icon-top-position;
+	}
+}
+
+
+.fieldRow:not(.dateSelect) .field-validation-error {
+	@include imageReplacement;
+	position: absolute;
+
+	&[data-ytos-validatedrule="valRequired"] {
+		background-image: none;
+		width: $svg-asterisco-width;
+		height: $svg-asterisco-height;
+		top: ($inputText-height  - $svg-asterisco-height) / 2;
+	}
+	&:not([data-ytos-validatedrule="valRequired"]) {
+		background-image: none;
+		width: $svg-error-width;
+		height: $svg-error-height;
+		top: ($inputText-height  - $svg-error-height) / 2;
+	}
+}
+
+.fieldRow.dateSelect .field-validation-error {
+	color: $red;
+	margin-top: 2px;
+	font-size: $size-smaller-rem;
+	position: absolute;
+	top: $form-input-height;
+}
+
+
+
+// ERRORI DELLE FORM
+.validation-summary-errors {
+	font-size: $size-midlarge-rem;
+	color: $red;
+	text-align: center;
+
+	.mfp-content & {
+		color: $white;
+	}
+}
+
+.selectTitle {
+	display: none;
+}
+
+
+
+// RADIO GROUP
+.fieldRow.radioGroup {
+	@include pie-clearfix;
+
+	.radioButtonBox {
+		float: left; 
+	}
+
+	.radioButton {
+		display: block;
+		float: left; 
+	}
+
+	.input {
+		@include pie-clearfix;
+	}
+	
+	label {
+		font-size: $size-expanse-rem;
+		margin-left: 8px;
+		line-height: $svg-radio-checked-height;
+	}
+
+	.field-validation-error {
+		&[data-ytos-validatedrule="valRequired"] {
+			top: 0px;
+		}
+		&:not([data-ytos-validatedrule="valRequired"]) {
+			top: 0px;
+		}
+	}
+}
+
+
+
+// RADIO
+.radioButton {
+	position: relative;
+	
+	input[type="radio"] {
+
+		width: $svg-radio-checked-width;
+		height: $svg-radio-checked-height;
+		opacity: 0;
+		@include zindex(input-elems);
+		cursor: pointer;
+		position: absolute;
+		top: 0;
+		left: 0;
+		margin: 0;
+		
+		& ~ .radioIcon {
+			@include zindex(input);
+			display: block;
+			@extend %svg-radio-unchecked;
+		}
+
+		&:checked ~ .radioIcon {
+			@extend %svg-radio-checked;
+		}
+
+	}
+
+}
+
+
+
+// CHECKBOX
+.checkBox { 
+
+	position: relative;
+
+	input[type="checkbox"] {
+
+		width: $svg-checkbox-checked-width;
+		height: $svg-checkbox-checked-height;
+		opacity: 0;
+		@include zindex(input-elems);
+		cursor: pointer;
+		position: absolute;
+		top: 0;
+		left: 0;
+		margin: 0;
+		
+		& ~ .checkboxIcon {
+			@include zindex(input);
+			display: block;
+			@extend %svg-checkbox-unchecked;
+		}
+
+		&:checked ~ .checkboxIcon {
+			@extend %svg-checkbox-checked;
+		}
+
+	}
+}
+
+
+
+// FORGOT YOUR PASSWORD 
+// Compare come errore nei form, per questo è qua
+.passwordRecoveryLink {
+	display: none;
+}
+
+
+
+// SELECT
+select {
+	width: 100%;
+	background-color: $white;
+	@include appearance(none);
+	@include border-radius(0);
+	@extend %knockout;
+	@extend %svg-arrow-black-down;
+	background-position: 96% center;
+	font-size: $size-midlarge-rem;
+
+	line-height: $form-select-height;
+	height: $form-select-height;
+
+	border: 1px solid $color-light;
+	padding: {
+		left: 5px;
+		right: 12%;
+	}
+}
+
+option {
+
+	&.disabled {
+		display: none;
+	}
+}

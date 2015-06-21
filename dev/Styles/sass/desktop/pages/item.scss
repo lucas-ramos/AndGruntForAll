@@ -1,0 +1,659 @@
+// ========================
+// ITEM PAGE STYLES
+// ========================
+@import "variables";
+@import "fonts";
+@import "Desktop/callToActions";
+
+@import "Desktop/Partials/susyClasses";
+@import "Desktop/Partials/sprites";
+
+@import "Desktop/vendor/svgzr/sprites-svg";
+@import "Desktop/vendor/svgzr/sprites-fallback";
+
+@import "Desktop/Partials/item/sizeGuide";
+
+@import "Desktop/Partials/item/colorSizeSelection";
+
+$mainImageH: 551px;
+$mainImageW: 428px;
+ 
+#item {
+	.uiLayer-addItem, .uiLayer-addItemToWishList {
+		.inner {
+			padding: 40px 20px;
+			font-size: $size-large;
+		}
+	}
+}
+
+#back {
+	min-height: 17px;
+	margin: 5px auto;
+	font-size: $size-midlarge;
+	color: $color-light;
+
+	a {
+		text-transform: uppercase;
+		@extend %knockout;
+		color: $color-medium;
+
+		&:hover {
+			color: $black;
+		}
+
+		&.disabled {
+			display: none;
+		}
+	}
+
+	.text {
+		padding-left:5px;
+		margin-left: 13px;
+		position: relative;
+
+		&:after, &:before {
+			right: 100%;
+			border: solid transparent;
+			border-color: none;
+			content: " ";
+			height: 0;	width: 0;
+			position: absolute;
+			pointer-events: none;
+		}
+
+		&:after {
+			border-right-color: $white;
+			border-width: 3px;
+			top: 50%;
+			margin-top: -3px;
+		}
+
+		&:before {
+			border-right-color: $color-medium;
+			border-width: 4px;
+			top: 50%;
+			margin-top: -4px;
+		}
+	}
+
+}
+
+
+#itemCentral {
+	margin-bottom: 10px;
+}
+
+
+#alternatives {
+	height: $mainImageH;
+}
+
+
+#productImage {
+
+	.soldOutItem & {
+		cursor: default;
+
+		.plus {
+			display: none;
+		}
+	}
+
+	cursor: pointer;
+	position: relative;
+	height: $mainImageH;
+
+	.mainImage {
+		margin-right: 10px;
+		margin-left: 25px;
+
+		width: $mainImageW;
+		height: $mainImageH;
+		overflow:hidden;
+	}
+
+	.plus{
+		$plus-width: 70px;
+		$plus-height: 50px;
+
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin: {
+			top: -($plus-height /2);
+			left: -($plus-width /2);
+		}
+		width: $plus-width;
+		height:$plus-height;
+
+		line-height:56px;
+
+		cursor: pointer;
+		display: block;
+		background: $color-medium;
+		color: $white;
+		font-size: 7em;
+		text-align: center;
+
+		@include opacity(0);
+		@include transition( opacity 0.1s linear );
+	}
+
+	&:hover, &.hover {
+		.plus {
+			@include opacity( 0.5 );
+			text-decoration: none;
+		}
+	}
+}
+
+.tabs {
+	height:175px;
+	margin: 10px 0 0;
+
+	li {
+		border-bottom: 1px solid #CCC;
+		padding: 5px 0;
+	}
+
+	.arrow {
+		@include triangle(  $black ,   12px , 6px ,  180  );
+		float:right;
+		margin: 7px 0;
+	}
+
+	.open {
+		display:block;
+		.arrow {
+			@include triangle(  $black ,   12px , 6px ,  0  );
+		}
+	}
+
+	.descriptionHeader  {
+		font-size: $size-big;
+		color: $color-dark;
+		height: 20px;
+		line-height: 20px;
+		cursor:pointer;
+	}
+
+	.descriptionContent {
+		font-size: $size-midsmall;
+		color: $color-medium;
+		height: 90px;
+		clear: both;
+		padding-top: 5px;
+		margin-right: 3px;
+		overflow-y: auto;
+		display: none;
+		.JP &{
+			line-height: 1.2em;
+		}
+	}
+
+	.productCode, .compositionInfo {
+		.label {
+			@include appendColon;
+			margin-right: 3px;
+		}
+	}
+
+	.localizedAttributes {
+		.text {
+			@include appendColon;
+			margin-right: 3px;
+		}
+	}
+}
+
+
+
+// Size guide
+$size-guide-width: 100%- $color-size-container-width;
+
+.sizeGuideContainer {
+	float: left;
+	width: $size-guide-width;
+	height: 40px;
+
+	.sizeGuideLink {
+		$size-guide-dimension: 38px;
+
+		@extend .button;
+		@extend .secondary;
+		padding: 0;
+		float: right;
+		width: $size-guide-dimension;
+		height: $size-guide-dimension;
+	}
+
+	.text {
+		@include imageReplacement;
+	}
+
+	.icon {
+		@extend .sprites-desktop-small_i;
+		display: block;
+		margin: 10px auto;
+	}
+}
+
+// Possibilità di recuperarlo con qtip
+.selectColorAlert ,.selectSizeAlert {
+	display: none;
+	margin-top: 5px;
+	color: $red;
+	font-size: $size-large;
+}
+
+
+
+.sizeWrapper {
+	@include pie-clearfix;
+}
+
+.sizeConversion {
+	padding: 7px 0 10px;
+	font-size: $size-small;
+	color: $color-medium;
+	line-height: 1.4em;
+
+	.halfSize & {@extend %lato;}
+}
+
+#itemData {
+	.price {
+		font-size: $size-large;
+		@extend %knockout-bold;
+
+		.JP & {
+			font-size: $size-major;
+		}
+	}
+
+	// richiesta dei commerciali: con questo comportamento ce ne stiamo fottendo dello stilare il caso "disabled"
+	.addToCart {
+		@extend .primary;
+		cursor: pointer;
+	}
+
+	// richiesta dei commerciali: con questo comportamento ce ne stiamo fottendo dello stilare il caso "disabled"
+	.addItemToWishList {
+		@extend .secondary;
+		cursor: pointer;
+	}
+}
+
+
+.selectedCombination {
+	font-size: $size-medium;
+	margin: 12px 0;
+
+	.title, .selection {
+		display: inline;
+	}
+
+	.title {
+		@include appendColon;
+	}
+
+	.halfSize & {@extend %lato; font-size: $size-mini;}
+}
+
+button.addItem {
+	@extend .primary;
+	width: 100%;
+	margin: 5px 0;
+	height: 57px;
+	text-align: left;
+	font-size: $size-grand;
+}
+
+button.addItemToWishList {
+	@extend .secondary;
+	width: 100%;
+	height: 47px;
+	text-align: left;
+	font-size: $size-midlarge;
+}
+
+
+
+// SOLD OUT MESSAGE
+.button.notAvailMessage {
+	$soldout-height: 55px;
+
+	font-size: $size-super;
+	height: $soldout-height;
+	line-height: $soldout-height;
+
+	//for ie8 compliancy
+	cursor: default;
+	&:hover {
+		background-color: $color-ultra;
+	}
+}
+
+
+
+// CORRELATI
+#relatedItems {
+	float: left;
+	width: 100%;
+	margin-bottom: 50px;
+
+	.topTitle {
+		border: none;
+		cursor: default;
+		font-size: $size-mega;
+		color: $color-medium;
+		padding: 3px 0;
+
+		&:hover {
+			background-color: $color-ultra;
+		}
+	}
+
+	.relatedItem {
+		@extend .column-3;
+
+		&.omega {
+			@extend .omega;
+		}
+	}
+
+	img, .brandName, .micro, .itemPrice {
+		display: block;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	.brandName {
+		font-size: $size-super;
+		@extend %knockout-bold;
+	}
+
+	.micro {
+		font-size: $size-large;
+		margin-bottom: 3px;
+	}
+
+	.itemPrice {
+		.price {
+			font-size: $size-midlarge;
+			color: $black;
+		}
+	}
+
+	.salesLine, .macro, .ItemDescription {
+		display: none;
+	}
+}
+
+
+
+// BANNERS IN ITEM PAGE
+.banner-slot {
+	float: left;
+	position: relative;
+	padding-bottom: 10px;
+}
+
+.banner-text {
+	position: absolute;
+	top: 0;
+	left: 10px;
+	margin-top: 11px;
+	height: 349px; //questo riguarda solo il banner di dipartimento, vedere l'altro caso col codice 8
+
+	h2, p ,h3 {
+		color: $color-medium;
+		padding-right: 11px;
+	}
+
+	h3 {
+		margin-bottom: 5px;
+	}
+
+	button {
+		margin: 15px 0;
+		float: left; //serve per evitare il cursor in punti inaspettati
+	}
+}
+
+
+
+// IMMAGINI ALTERNATIVE LATERALI
+.alternativeImages {
+	margin: 10px 0;
+
+	li {
+		$thumbImageW: 50px;
+		$thumbImageH: 63px;
+
+		width: $thumbImageW;
+		height: $thumbImageH;
+
+		overflow: hidden;
+
+		padding: 10px 20px;
+
+		cursor: pointer;
+		@include opacity(0.5);
+
+		&.selected, &:hover {
+			@include opacity(1);
+		}
+	}
+
+}
+
+.microCategory, .seasonContainer, .seasonLabel, .seasonPremise {
+	float: left;
+}
+
+.seasonPremise {
+	@include appendColon;
+	margin-right: 6px;
+}
+
+.seasonContainer {
+	border-left: 1px solid $black;
+	margin-left: 5px;
+	padding-left: 5px;
+}
+
+.productInfo {
+
+	.brandNameTitle {
+		line-height: 0.8em; //carlo dice: uhhhh ( e .sizeGuide ?) // Gio: eh?
+	}
+
+	a:hover {
+		color: $color-medium;
+	}
+
+	.typeSeason {
+		font-size: $size-big;
+		margin: 7px 0;
+		@include pie-clearfix;
+	}
+
+	.priceUpdater {
+		margin-bottom: 10px;
+	}
+
+	// Bollini
+	.specialAttributes {
+		font-size: $size-medium;
+		font-style: italic;
+	}
+
+	.descriptionHeader {
+		text-transform: uppercase;
+	}
+
+}
+
+#infoThumbSelection {
+	clear: both;
+}
+
+
+#itemSocial {
+	@include pie-clearfix;
+	margin: 20px 0;
+
+	.share-label{
+		float: left;
+		margin-right: 20px;
+		font-size: $size-large;
+	}
+
+	.share, & li {
+		float: left;
+	}
+
+
+	.share li {
+		width: 55px;
+	}
+
+	.icon {
+		display: block;
+		cursor: pointer;
+		margin: 0 auto;
+	}
+
+	.text {
+		display: none;
+	}
+
+	.facebook .icon { @extend %svg-social-share-facebook; }
+	.tumblr .icon { @extend %svg-social-share-tumblr; }
+	.twitter .icon { @extend %svg-social-share-twitter; }
+	.googleplus .icon { @extend %svg-social-share-googleplus; }
+	.pinterest .icon { @extend %svg-social-share-pinterest; }
+	.weibo .icon { @extend %svg-social-share-weibo; }
+	.douban .icon { @extend %svg-social-share-douban; }
+
+}
+
+
+// ZOOM
+#zoomLayer {
+	display: none;
+	background-color: $white;
+
+	.overlayElements {
+		position: absolute;
+	}
+
+	&, .zoomImageContainer {
+		position: fixed;
+		@include zindex(item-zoom);
+	}
+
+	.zoomImageContainer {
+		img {
+			display: block;
+			margin: 0 auto;
+		}
+	}
+
+	&, .overlayElements, .zoomImageContainer {
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+
+	.alternativeImages, .zoomPrev, .zoomNext, .close {
+		cursor: pointer;
+		position: absolute;
+		@include zindex(item-zoom-elems);
+	}
+
+	.close {
+		$zoom-close-cross-dim: 40px;
+
+		right: 0;
+		padding: 15px 20px;
+
+		.icon {
+			@include svg-fallback(close-cross-#{$zoom-close-cross-dim});
+			width: $zoom-close-cross-dim;
+			height: $zoom-close-cross-dim;
+		}
+
+		svg {
+			width: $zoom-close-cross-dim;
+			height: $zoom-close-cross-dim;
+		}
+
+		g {
+			fill: $color-medium;
+		}
+	}
+
+	.alternativeImages {
+		bottom: 0;
+	}
+
+	.zoomPrev, .zoomNext, .close {
+		@include opacity(0.5);
+
+		&:hover {
+			@include opacity(1);
+		}
+	}
+
+	.zoomPrev {
+		top: 50%;
+		left: 130px;
+		@extend %svg-arrow-zoom-left;
+	}
+
+	.zoomNext {
+		top: 50%;
+		right: 130px;
+		@extend %svg-arrow-zoom-right;
+	}
+}
+
+
+
+
+// PONDERARE SE QUESTE DUE CLASSI DEBBANO ESSERE MESSE IN HELPERS.SCSS
+// Hide the scroll bars in the box
+.noScroll {
+	overflow: hidden;
+}
+
+// Use native scroll on Macs and iPads
+.nativeScroll {
+	overflow: scroll;
+	@include nativeScroll;
+}
+
+
+
+
+
+
+
+//TO HIDE
+.colorSizeContainer {
+	.selectionTitle, .selectionLabel {
+		display:none;
+	}
+}
+
+.alternativeImages {
+
+	img.clone {
+		display:none;
+	}
+
+}

@@ -1,0 +1,87 @@
+// =======
+// REFUNDS 
+// =======
+.returnedItems{
+
+	h2{
+		margin-bottom: 30px;
+		display: none;
+	}
+}
+
+
+.paymentRefundForm{
+
+	&.paymentCreditCard {
+		font-size: $size-medium;
+	}
+	
+	label {
+		display: none;
+	}
+	.fieldRow {
+		@extend .column-6;
+		margin-bottom: 0;
+	}
+	p:first-child:not(.action){
+		margin: 10px 0;
+	}
+}
+
+.formGeneric .fieldRow{
+	
+	&.Swift{
+		@extend .omega;
+	}
+}
+
+.formIT .fieldRow{
+
+	&.Iban{
+		// @extend .omega;
+	}
+
+}
+
+.formJP .fieldRow{
+
+	&.BankName{
+		@extend .omega;
+	}
+	&.BranchName{
+		@extend .omega;
+	}
+	&.AccountNumber{
+		@extend .omega;
+	}
+}
+
+.formCN .fieldRow{
+
+	&.BankCity{
+		@extend .omega;
+	}
+	&.BranchName{
+		@extend .omega;
+	}
+}
+
+.ibanExplanationBox{
+	@extend .column-6;
+	@extend .omega;
+
+	.CN & {
+		display: none;
+	}
+	
+	.action {
+		cursor: pointer;
+		display: inline-block;
+		margin-top: 13px;
+	}
+
+	.ibanExplanationBody{
+		display: none;
+		margin: 13px 0 25px 0;
+	}
+}

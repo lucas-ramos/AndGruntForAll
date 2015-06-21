@@ -1,0 +1,145 @@
+﻿#items {
+
+	.markdown {
+		text-transform: uppercase;
+	}
+
+	.item {
+		position: relative;
+		height: 435px;
+	}
+
+	%single-image-positioning {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	.mainImage {
+		@extend %single-image-positioning;
+		display: block;
+		@include zindex(sr-shown-image);
+	}
+
+	.secondImage {
+		@extend %single-image-positioning;
+		display: block;
+		@include zindex(sr-hidden-image);
+	}
+
+	.image {
+		height: 282px;
+
+		&:hover {
+			.mainImage {
+				@include zindex(sr-hidden-image);
+			}
+
+			.secondImage {
+				@include zindex(sr-shown-image);
+			}
+		}
+	}
+
+	&.alternativeView {
+		.mainImage {
+			@include zindex(sr-hidden-image);
+		}
+
+		.secondImage {
+			@include zindex(sr-shown-image);
+		}
+
+		.image {
+			&:hover {
+				.mainImage {
+					@include zindex(sr-shown-image);
+				}
+
+				.secondImage {
+					@include zindex(sr-hidden-image);
+				}
+			}
+		}
+	}
+
+	.show-courtesy & {
+		display: none;
+	}
+
+	.itemContentWrapper {
+		float: left;
+		padding: 0 0 10px 5px;
+	}
+
+	.brandName {
+		font-size: $size-super;
+		@extend %knockout-bold;
+	}
+
+	.microCategory {
+		display: block;
+		font-size: $size-large;
+	}
+
+	.priceContainer {
+		float: left;
+	}
+
+	.price {
+		font-size: $size-midlarge;
+	}
+
+
+
+	.extendedInfo {
+		float: left;
+		width: 100%;
+		margin-top: 5px;
+		color: $color-medium;
+		font-size: $size-small;
+		@extend %helvetica;
+	}
+
+	.new_arrivals, .exclusive_collection {
+		font-style: italic;
+		float: left;
+		font-size: $size-medium;
+		@extend %knockout;
+		margin-top: 5px;
+	}
+
+	.color, .size {
+		.label {
+			@include appendColon;
+		}
+	}
+
+	.color {
+		.value {
+			margin-left: 5px;
+		}
+	}
+
+	.size {
+		ul, li, div {
+			display: inline;
+		}
+
+
+		li {
+			margin-right: 5px;
+		}
+	}
+
+	.soldOut {
+		@include opacity(0.2);
+		pointer-events: none;
+
+		.itemContentWrapper {
+			> div {
+				display: none;
+			}
+		}
+	}
+}

@@ -1,0 +1,177 @@
+// ========
+// MAGNIFIC POPUP
+// ========
+
+.mfp-inline-holder, .mfp-ajax-holder {
+	.mfp-content {
+		width: auto;
+		color:$white;
+		overflow:hidden;
+		background: $color-medium;
+		padding: 10px;
+	}
+
+	.message {
+		.text {  //il mex di conferma e' stampato dentro uno span, tutti gli altri testi sono dentro dei p
+			font-size: $size-medium;
+		}
+	}
+
+	.inner {
+		padding: 30px 10px;
+		position: relative;
+	}
+}
+
+.mfp-bg {
+	opacity: 0.9;
+	@include zindex(magnificPopup);
+}
+
+.mfp-close-btn-in {
+	.mfp-close {
+		color:$white;
+	}
+}
+
+.mfp-iframe-holder {
+	.mfp-close {
+		top: 0;
+	}
+}
+
+.mfp-arrow, .mfp-close {
+	@include opacity(1);
+
+	&:hover, &:focus {
+		@include opacity(0.7);
+	}
+}
+
+.mfp-content button.mfp-close {
+	@include imageReplacement();
+	@extend %svg-closeX-white;
+
+	svg {
+		margin: 0 auto;
+	}
+}
+
+#UiConfirm {
+	.buttonsRow {
+		@include pie-clearfix;
+		width: 100%;
+		margin: 20px 0 0;
+	}
+
+	.cancel {
+		@extend .secondary;
+	}
+
+	.proceed {
+		@extend .primary;
+		margin-bottom: 10px;
+	}
+}
+
+// LOGIN LAYER IN ITEM
+
+.loginLayer {
+	button {
+		width: 100%;
+		margin: 10px 0;
+	}
+	#passwordRecoveryLink {
+		display: none;
+	}
+	.submit {
+		@extend .primary;
+	}
+}
+
+// RECOVERY PASSWORD IN ITEM
+
+.recoveryPasswordForm {
+	h1 {
+		font-size: $size-grand-rem;
+	}
+	button {
+		width: 100%;
+		margin: 10px 0;
+	}
+	.close {
+		@extend .secondary;
+	}
+	.submit {
+		@extend .primary;
+	}
+}
+
+// ADD ITEM TO WISHLIST
+.uiLayer-addItem, .uiLayer-addItemToWishList {
+	.inner {
+		padding: 40px 20px;
+		font-size: $size-large-rem;
+	}
+}
+
+// CVV LAYER IN CONFIRMATION
+.uiLayer-cvvInfoPopup {
+	.title {
+		color: $white;
+		font-size: $size-super-rem;
+	}
+	.container{
+		text-align: center;
+		font-size: $size-medium-rem;
+	}
+	.description{
+		margin: 10px 0;
+	}
+	.cvvExample{
+		margin-bottom: 10px;
+	}
+	.cvvImage{
+		margin-bottom: 5px;
+
+	}
+}
+
+.uiLayer-couponInfoPopup {
+	.couponTitle {
+		color: $white;
+		font-size: $size-super-rem;
+	}
+	.couponInfo{
+		text-align: center;
+		font-size: $size-medium-rem;
+	}
+	.couponDescription{
+		margin-top: 10px;
+	}
+}
+
+.uiLayer-paymentMethods{
+	.warningMessage{
+		text-align: center;
+		font-size: $size-medium-rem;
+	}
+}
+
+.finalizationWarningMessage{
+	text-align: center;
+	font-size: $size-medium-rem;
+}
+
+.uiLayer-coupon .inner div{
+	text-align: center;
+	font-size: $size-medium-rem;
+}
+
+
+#confirmation{
+	.waitframeLabelMessage{
+		text-align: center;
+		font-size: $size-medium-rem;
+	}
+}

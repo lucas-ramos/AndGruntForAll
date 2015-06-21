@@ -1,0 +1,178 @@
+// =============
+// PREMIERE PAGE
+// =============
+
+.svg-cross-30x30-666 {
+	@extend %svg-cross-30x30-666;
+}
+
+.introduction{
+	color: $color-light;
+	margin: 10px 0;
+}
+
+#wlNumberItems{
+	color: $color-dark;
+	@extend %knockout-bold;
+}
+
+#wlNumberItems{
+	margin-top: 15px;
+}
+
+.showHideCornersContainer{
+	text-align: right;
+	.showHideCorners{
+		display: inline-block;
+	}
+}
+
+.cornersContainer{
+	display: none;
+	position: relative;
+
+	.close {
+		position: absolute;
+		right: 6px;
+		top: 15px;
+		cursor: pointer;
+	}
+}
+
+.departmentsContainer {
+	@include pie-clearfix;
+	margin: 15px 0;
+	padding: 15px 0;
+	border-top: 1px solid $color-light;
+	border-bottom: 1px solid $color-light;
+
+	.col {
+		@extend .column-3;
+		&:last-child {
+			@include omega-margin; //due to ie8
+		}
+	}
+}
+
+.panel {
+	position: relative;
+}
+
+.listPremieresContainer{
+	margin-top: 15px;
+	margin-bottom: 10px;
+	@include pie-clearfix;
+
+	.premiere {
+		@extend .column-3;
+		margin-bottom: 10px;
+
+		&:nth-child(4n){
+			@include omega-margin; //due to ie8
+		}
+	}
+
+	.inner {
+		border: 1px solid $color-ultra;
+	}
+	.lowerpart {
+		margin: 10px;
+	}
+	.departmentLogo {
+		width: 100%;
+		height: 45px;
+		line-height: 45px;
+		text-align: center;
+		display: block;
+		font-size: $size-large;
+
+	}
+	.departmentBanner {
+		display: block;
+		width: 100%;
+		height: 160px;
+		font-size: $size-large;
+
+	}
+
+	.shop{
+		margin: 10px 0;
+	}
+	.alert {
+
+		width: 90%;
+		margin: 0 auto;
+		border-top: 1 px solid $color-light;
+
+		p {
+			height: 21px;
+			line-height: 21px;
+			margin-left: 30px;
+
+		}
+	}
+
+	.bx-wrapper {
+		position: relative;
+
+		.bx-prev {
+			position: absolute;
+			top: 50%;
+			left: 0;
+		}
+
+		.bx-next {
+			position: absolute;
+			top: 50%;
+			right: 0;
+		}
+	}
+}
+
+.EnableAlert {
+
+	min-height: 0;
+
+	.fieldValue {
+		float: left;
+		margin-right: 10px;
+	}
+	
+}
+
+button.savePremiereButton {
+	@extend .tertiary;
+
+	font-size: $size-large;
+	color: $color-light;
+	text-decoration: none;
+	text-transform: capitalize;
+
+	&:hover { color: $color-dark; }
+	
+}
+
+.deletePremiereButton {
+	@extend .button;
+	@extend .secondary;
+	width: 100%;
+
+	.text {
+		position: relative;
+		bottom: 1px;
+	}
+}
+
+.premiere .items {
+	width: 100%;
+	height: 233px;
+	overflow: hidden;
+	@include pie-clearfix;
+
+	li {
+		img {
+			margin: 0 auto;
+			display: block;
+		}
+	}
+}

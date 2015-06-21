@@ -1,0 +1,485 @@
+﻿// ================
+// RECAP DX IN TUTTO IL CHECKOUT
+// ================
+
+.recapBox {
+	background-color: $color-ultra;
+	padding: 3px 10px;
+	color: $color-medium;
+	@extend %helvetica;	
+
+
+	.title {
+		@extend %helvetica-bold;
+		font-size: $size-midsmall;
+		text-transform: uppercase;
+		padding-bottom: 12px;
+	}
+
+	.subtitle {
+		@extend %helvetica-bold;
+		font-size: $size-midsmall;
+		padding-bottom: 5px;
+	}
+
+	&:first-child {
+		padding-top: 0;
+	}
+
+	.description {
+		float: left;
+		width: 230px;
+		padding-right: 20px;
+		font-size: $size-midsmall;
+	}
+
+	.boxWrapper {	
+		padding-bottom: 30px;
+	}
+
+	.boxContainer {
+		padding: 20px 0;
+
+		&.last {
+			border-bottom: 1px solid $color-light;
+		}
+
+		.boxContent {
+			@include pie-clearfix;
+			font-size: $size-midsmall;
+			line-height: $size-medium;
+
+			&.longContent {
+				height: 300px;
+				padding-right: 20px;
+				line-height: 17px;
+				overflow-y: auto;
+				p {
+					font-size: inherit;
+				}
+			}
+		}
+	}
+}
+
+
+
+
+/*Service*/
+#service {
+	border:none;
+	margin-bottom: 0;
+	padding-bottom: 0;
+	.infoCustomerCare {
+		display: none;
+	}
+	.CustomerCareBox {
+		border-bottom: 1px solid $color-light;
+	}
+	.confirmationCustomerCare {
+		#confirmation & {
+			display: block;
+		}
+	}
+	.deliveryCustomerCare {
+		#delivery & {
+			display: block;
+		}
+	}
+	.accordionWrap {		
+		margin: 15px 0;
+
+		.accordion {
+			@include pie-clearfix;
+		}
+
+		.accordionTitle {
+			cursor: pointer;
+			margin-bottom: 10px;
+			margin-bottom: 10px;
+			font-size: $size-midsmall;
+			width: 75%;
+			float:left;
+			
+		}
+
+		.accordionTitleIcon {
+			margin-top: -9px;
+			//background-color: red;
+			float:right;
+			@include transition(transform 0.5s ease-in);
+			cursor: pointer;
+
+		}
+
+		.accordionDescription {
+			display:none;
+			font-size: $size-small;
+			line-height: $size-midsmall;
+			strong {
+				@extend %helvetica-bold;
+			}
+		}
+	}
+
+	.selected {
+		.accordionTitleIcon {
+			@include transform(rotate(90deg));
+		}
+	}
+}
+
+
+/*Why register*/
+#whyregister {
+
+	.title {
+		margin-top: 20px;
+	}
+	
+	.boxContainer {
+		border-bottom: 1px solid $color-light;
+	}
+}
+
+
+
+/*FAQ*/
+#faq {
+	.boxContainer {
+		padding: 20px 0;
+	}
+	.availableDeliveryMethods{	
+		.originalValue, .expressGuaranteed {
+			display:none;
+		}
+
+		.deliveryMethod {
+			/*@extend .title;*/
+			@extend %helvetica-bold;
+			font-size: $size-midsmall;
+			text-transform: uppercase;
+			padding-bottom: 12px;
+			padding: 8px 0 5px;
+		}
+
+		.availableDeliveryMethod {
+			@include pie-clearfix;
+		}
+
+		.paymentMethod {
+			float:left;
+		}
+
+		.valueToPay {
+			float:right;
+			/*@extend .description;*/
+			font-size: $size-midsmall;
+		}
+	}
+
+	.boxContent strong {
+		font-size: $size-tiny;
+	}
+
+	.shippingReturns {
+		min-height: 200px;
+		.DE &{ min-height: 150px; }
+		.DE &{ min-height: 150px; }
+		.US &{ min-height: 250px; }
+		h2{
+			display:none;
+		}
+		.contribution{
+			margin: 20px 0;
+			.label{
+				@extend %helvetica-bold;
+				font-size: $size-midsmall;
+				text-transform: uppercase;
+				padding-bottom: 12px;
+				padding: 8px 0 5px;
+				display: block;
+				.FR &, .IT &, .JP &, .ES &{ display: inline-block; }
+			}
+			.text .text{
+				@extend %helvetica;
+				font-size: $size-midsmall;
+				padding-bottom: 12px;
+				float: left;
+			}
+			.costs {
+				font-size: $size-midsmall;
+				float: right; 
+				position: relative;
+
+				.emptyCartWrap & {
+					.discounted, .total {
+						float: left;
+					}
+
+					.discounted {
+						text-decoration: line-through;
+						margin-right: 5px;
+					}
+				}
+
+			}
+			&.idContribution_3 {
+				.CN &{ margin-top: 30px; }
+				.JP &{ margin-bottom: 60px; }
+				.GB &{ margin-bottom: 65px; }
+				.costs{	
+					top: 10px; 
+					.FR &{  top: -23px; }
+				}
+				.label{ 
+					float: left; 
+					.DE &{
+						font-size: $size-small;
+						letter-spacing: -0.6px;
+					} 
+					.FR &{
+						line-height: 20px;
+					}
+					.ES &{ font-size: $size-small; }
+				}
+			}
+			&.idContribution_2 {
+				.DE &{ margin-top: 60px; }
+				.IT &{ margin-top: 65px; }
+				.label{ 
+					.JP &{ font-size: $size-smaller; } 
+				}
+				.text .text{
+					.JP &{ font-size: $size-smaller; } 
+				}
+			}
+			&.idContribution_42 .label{ display: block; }
+		} 
+		.FeesWarning{
+			font-size: $size-small;
+			line-height: $size-small;
+			margin-top: 10px;
+			float: left;
+		}
+		.ShippingCostsRange{
+			font-size: $size-mini;
+			line-height: $size-small;
+		}
+	}
+}
+
+
+/*Security*/
+#security {
+
+	.availablePaymentMethod {
+		@include pie-clearfix;
+		font-size: $size-midsmall;
+		margin:3px 0;
+	
+		.originalValue, .text, .image {
+			display:none;
+		}
+		.paymentMethod {
+			float: left;
+			width: 230px;
+			padding-right: 20px;
+			margin: 3px 0;
+		}
+
+	}
+
+	img {
+		margin: 10px 0;
+	}
+
+}
+
+
+/*Cart recap*/
+#cartRecap {
+
+	margin-bottom: 2px;
+	background-color: $color-ultra;
+	padding: 0 10px;
+	color: $color-medium;
+	@extend %helvetica; 
+	padding-top: 10px;
+
+	@import "priceRecap";
+	
+	.cartInfoRecap, .orderRecapShipping {
+		display: none;
+	}
+
+	.recapTitle {
+		@include pie-clearfix;
+		padding-bottom: 5px;
+
+		h4 {
+			float: left;
+			color: $color-medium;
+		}
+		a {
+			float: right;
+			line-height: 2em;
+			color: $color-light;
+			font-size: $size-smaller;
+			text-decoration: underline;
+			@include wrapInParenthesis;
+		}		
+	}
+
+	.item {
+		@include pie-clearfix;
+		padding: 16px 0;
+		border-top: 1px solid $color-light;
+			
+		img {
+			float: left;
+			padding-right: 10px;
+		}
+		
+		.brandName {
+			color: $color-dark;
+			font-size: $size-large;
+			@extend %knockout-bold;
+		}
+
+		.modelName {
+			display:none;
+		}
+
+		.microCategory {
+			margin: 3px 0;
+			font-size: $size-small;
+			@extend %helvetica;
+			color: $color-dark;
+		}
+
+		.macroCategory {
+			display:none;
+		}
+
+		.names {
+			line-height: 1.8em;
+		}
+
+		.description {		
+			line-height: 1.8em;
+				
+			.label, .text, .value, .classFamily {
+				color: $color-medium;
+				@extend %helvetica;
+				font-size: $size-small;				
+				margin-right: 5px;
+				line-height: 1.2em;
+			}	
+			
+			.label, .text {
+				@include appendColon;
+			}				
+		}
+		#proposition65, .proposition65 {
+			clear: both;
+			line-height: 1.2;
+			font-size: $size-smaller;
+			padding: 5px 0;
+		}
+
+		.itemPrice {
+			float: right;
+			font-size: $size-midlarge;
+			color: $color-medium;
+
+			.price {
+				display:block;
+			}
+
+		}
+	}
+
+	> .cartTotal  {
+		display: none;
+	}
+
+	.cartInfoUpdater {
+		.cartTotal {
+			display: inline;
+
+			.label {
+				display: none;
+			}
+
+			.totalPrices {
+				display: inline;
+			}
+		}
+	}
+
+	.salesTaxesDescrPopup {
+		display:none;
+	}	
+
+	h3 {
+		font-size: inherit;
+		text-transform: inherit;
+
+		.title {
+			text-transform: inherit;
+			font-size: $size-midsmall;
+			color: $color-medium;
+			@extend %helvetica;
+			@include appendColon;
+		}
+	}
+
+	.deliveryTimeInfo, .SalesTax {
+			display:none;
+		}
+
+	.delivery {
+		@include pie-clearfix;
+		margin: 1px 0;
+		.deliveryInfo{
+			display:inline;
+		}
+		.price {
+			float:right;
+			font-size: $size-midsmall;
+		}
+	}
+
+	.payment {
+		@include pie-clearfix;
+		margin: 12px 0;
+		.label {
+			display:block;
+			font-size: $size-midsmall;
+			@include appendColon;
+		}
+		.text {
+			font-size: $size-midsmall;
+		}
+		.price {
+			float:right;
+			font-size: $size-midsmall;
+		}
+	}
+
+	
+
+}
+
+
+
+#checkmail  {
+	
+	#cartRecap {
+		.cartInfoUpdater {
+			border:none;
+		}
+	}
+
+}

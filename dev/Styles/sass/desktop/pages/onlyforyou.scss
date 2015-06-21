@@ -1,0 +1,42 @@
+﻿// =========================
+// SEARCH RESULT PAGE STYLES
+// =========================
+@import "compass/css3";
+
+@import "variables";
+@import "fonts";
+@import "Desktop/callToActions";
+
+@import "Desktop/Partials/susyClasses";
+
+@import "Desktop/vendor/svgzr/sprites-svg";
+
+.svg-circle-logo {
+	@extend %svg-circle-logo;
+}
+
+// TOP BANNERS
+@import "Desktop/Partials/search/bannersOnTop"; // non serve così, ma lasciamolo come placeholder
+
+// TOP REFINEMENTS
+@import "Desktop/Partials/search/topBar";
+
+// CENTRAL AREA
+#centralContainer {
+	margin-top: 15px;
+}
+
+#bottomPaginationWrap {
+	float: left;
+	width: 100%;
+}
+
+// CENTRAL PAGINATION BARS
+@import "Desktop/Partials/search/centralPaginations";
+
+#pagination {
+	display: none;
+}
+
+// ITEMS IN SEARCH RESULT
+@import "Desktop/Partials/search/centralItems";

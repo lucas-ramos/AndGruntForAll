@@ -1,0 +1,96 @@
+﻿// ========================
+// STYLES STORIES
+// ========================
+@import "variables";
+@import "fonts";
+@import "Desktop/Partials/sprites";
+
+#top-menu {
+	border-bottom: 3px solid $black;
+	h2 {margin-top: 20px;}
+	position: fixed;
+	display: block;
+	width: 100%;
+	@include zindex(style-stories-menu);
+	background-color: $white;
+}
+
+#nav-menu {
+	width: 606px;
+	margin: 0 auto;
+	li {
+		text-align: center;
+		float: left;
+		display: block;
+		margin-left: 4px;
+	    width: 32%;
+		button {
+			width: 100%;
+			@extend %knockout-bold;
+			&.active {
+
+				background-color: $color-light;
+				border: none;
+			}
+		}
+	}
+}
+
+.sectionpage{
+	text-align: center;
+	p {color: $color-medium; margin: 3px auto 17px;}
+}
+
+.spacer {display: block; height: 140px;}
+
+.fixheight {
+	height: 474px;
+	margin-top: 20px;
+}
+
+.longheight {
+	margin-top: 20px;
+}
+
+#special {
+	
+	.imgContainer {
+		position: relative;
+		height: 411px;
+		margin-bottom: 10px;
+
+		&:hover .covering {
+			height: 121px;
+		}
+
+		.covering {
+			@include transition(height 0.3s ease-in-out);
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			height: 64px;
+			background-color: rgba(0, 0, 0, .5);
+			overflow: hidden;
+		}
+
+		h4, p {
+			width: 95%;
+			margin: 10px auto;
+			text-align: left;
+			color: $white;
+		}
+
+		h4 { min-height: 44px; }
+	
+		p {	margin: 0 auto; }
+	}
+}
+
+
+// ================
+// BX SLIDER
+// ================
+
+
+
+@import "Desktop/Partials/stylestories/stylesliders";

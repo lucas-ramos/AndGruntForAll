@@ -1,0 +1,18 @@
+/* ==========================================================================
+   Menus
+   ========================================================================== */
+
+.menuSingleLine {
+
+	display: block;
+	background-color: $black;
+	font-size: $size-expanse-rem;
+	padding: 25px 0;
+	text-transform: uppercase;
+	text-align: center;
+	border-bottom: 1px solid $white;
+
+	span, a, a:hover {
+		color: $white;
+	}
+}

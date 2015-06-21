@@ -1,0 +1,19 @@
+/* ==========================================================================
+   Prices styles
+   ========================================================================== */
+
+.price {
+	// Line-through the price when it's discounted
+	&.full {
+		text-decoration: line-through;
+	}
+	// Hides the currency when the placeholder is converted in letters (?)
+	&.free .currency {
+			display: none;
+		} // DA VALUTARE (from _footer.scss)
+}
+
+/* One markdown to rule them all */
+.markdown {
+	display:none;
+}

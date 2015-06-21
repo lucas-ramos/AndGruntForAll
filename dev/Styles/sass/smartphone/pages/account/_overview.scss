@@ -1,0 +1,156 @@
+// ==========================
+// OVERVIEW SMARTPHONE
+// ==========================
+
+@import "wishlistItem";
+
+%sections-common-style {
+	 padding: 15px 0 25px;
+ }
+
+%overview-box {
+	@extend %lato;
+	font-size: $size-smaller-rem;
+	background-color: $white;
+	border-bottom: 1px solid $color-extra;
+
+	margin-bottom: 10px;
+	padding: 16px 20px;
+}
+
+#ordersContainer, #addressBookContainer, #cardWalletContainer, #profileContainer, #wishListContainer {
+	@extend %sections-common-style;
+}
+
+.order, .addressList .container, .creditCardsList .container, #profileContainer .content  {
+	@extend %overview-box;
+}
+
+.creditCardsList .container {
+	position: relative;
+}
+
+.cardType .value, .addressName, .userInfo .label, .orderNumber .label {
+	@extend %lato-bold;
+}
+
+#cardWalletContainer{
+	.CN & {
+		display: none;
+	}
+}
+
+.colButtons,
+.customerCareBtn,
+.buttonsRow,
+.shippingCountryAlertContainer,
+.wishlistItem .itemAdditionalInfos,
+.removeItemFromWishList,
+.cardHolderData,
+.cardType .label,
+.cardNumber .label,
+.notDefaultMessage {
+	display: none;
+}
+
+h3 {
+	margin: 10px 0;
+}
+
+section {
+	.button {
+		margin-top: 10px;
+	}
+}
+
+.addItem {
+	@extend .primary;
+	width: 100%;
+}
+
+
+.userInfo, .size, .cardExpire {
+	.label {
+		@include appendColon;
+	}
+}
+
+.defaultMessage {
+	@extend %knockout-bold;
+}
+
+.expiredAlert {
+	color: $red;
+}
+
+
+.cardIcon {
+
+	position: absolute;
+	right: 20px;
+
+	&.Visa {
+		@extend .sprites-creditcards-visa;
+	}
+	&.Mastercard {
+		@extend .sprites-creditcards-mastercard;
+	}
+	&.AmericanExpress {
+		@extend .sprites-creditcards-americanexpress;
+	}
+	&.CarteBleue {
+		@extend .sprites-creditcards-cartebleue;
+	}
+	&.JCB {
+		@extend .sprites-creditcards-jcb;
+	}
+	&.Switch {
+		@extend .sprites-creditcards-maestro;
+	}
+}
+
+
+
+
+// WISHLIST SLIDER RULES
+
+.bx-wrapper {
+	position: relative;
+
+	//eccezioni puntuali nel caso in cui gli item siano nello slider
+	.wishlistItem {
+		padding: 12px 0;
+		border: 0;
+		background-color: $white;
+
+		.actions .addToCart {
+			float: none;
+			width: 94%;
+			margin: {
+				left: auto;
+				right: auto;
+			}
+		}
+	}
+}
+
+.bx-controls {
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	margin-top: -($svg-arrow-circle-right-height/2);
+}
+
+.bx-next, .bx-prev {
+	@include imageReplacement;
+}
+
+.bx-next {
+	@extend %svg-arrow-circle-right;
+	float: right;
+}
+
+.bx-prev {
+	 @extend %svg-arrow-circle-left;
+	 float: left;
+}

@@ -1,0 +1,534 @@
+@charset "UTF-8";
+/* effetto height:100% sugli elementi flottanti */
+@font-face {
+  font-family: 'KnockoutLight';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.svg#KnockoutLight") format("svg");
+}
+@font-face {
+  font-family: 'KnockoutRegular';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.svg#KnockoutRegular") format("svg");
+}
+@font-face {
+  font-family: 'HelveticaCondensedLight';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.svg#KnockoutRegular") format("svg");
+}
+@font-face {
+  font-family: 'HelveticaCondensedBold';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.svg#KnockoutRegular") format("svg");
+}
+@font-face {
+  font-family: 'LatoRegular';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.svg#LatoRegular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'LatoBold';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.svg#LatoBold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+.RU #nav-menu li button, #nav-menu li .RU button {
+  font-family: Arial, Verdana, sans-serif;
+  font-weight: bold;
+}
+
+#nav-menu li button {
+  font-family: KnockoutRegular, Arial, Verdana, sans-serif;
+  font-weight: normal;
+}
+.JP #nav-menu li button, #nav-menu li .JP button {
+  font-family: KnockoutRegular, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+}
+.CN #nav-menu li button, #nav-menu li .CN button {
+  font-family: KnockoutLight, HelveticaCondensedLight, Arial, "Microsoft YaHei", "Microsoft YaHei Regular", SimHei, "SimHei Regular", sans-serif;
+}
+
+.svgfallback-sprite {
+  background-image: url('/Content/Styles/generated_images/svgfallback-s163386ba73.png');
+  background-repeat: no-repeat;
+}
+
+.sprites-desktop-sprite, .sprites-desktop-checkMark, .sprites-desktop-checkWhite, .sprites-desktop-cinesina, .sprites-desktop-fb_btn, .sprites-desktop-giftPackage, .sprites-desktop-giftPackageChina, .sprites-desktop-gplus_btn, .sprites-desktop-kaixin_btn, .sprites-desktop-pinit_btn, .sprites-desktop-plusone_btn, .sprites-desktop-seal, .sprites-desktop-small_i, .sprites-desktop-tweet_btn, .sprites-desktop-twitter_btn, .sprites-desktop-weiboo_btn {
+  background-image: url('/Content/Styles/generated_images/sprites-desktop-s6783407e58.png');
+  background-repeat: no-repeat;
+}
+
+.sprites-creditcards-sprite, .sprites-creditcards-alipay, .sprites-creditcards-americanexpress, .sprites-creditcards-americanexpress_big, .sprites-creditcards-cartebleue, .sprites-creditcards-cartebleue_big, .sprites-creditcards-cartebleuevisa_big, .sprites-creditcards-discover, .sprites-creditcards-discover_big, .sprites-creditcards-jcb, .sprites-creditcards-jcb_big, .sprites-creditcards-maestro, .sprites-creditcards-maestro_big, .sprites-creditcards-mastercard, .sprites-creditcards-mastercard_big, .sprites-creditcards-payease, .sprites-creditcards-paypal, .sprites-creditcards-paypal_big, .sprites-creditcards-postepay, .sprites-creditcards-postepay_big, .sprites-creditcards-visa, .sprites-creditcards-visa_big {
+  background-image: url('/Content/Styles/generated_images/sprites-creditcards-s9068ad9ed7.png');
+  background-repeat: no-repeat;
+}
+
+.sprites-desktop-checkMark {
+  background-position: 0 0;
+  height: 15px;
+  width: 15px;
+}
+
+.sprites-desktop-checkWhite {
+  background-position: 0 -15px;
+  height: 15px;
+  width: 15px;
+}
+
+.sprites-desktop-cinesina {
+  background-position: 0 -30px;
+  height: 91px;
+  width: 119px;
+}
+
+.sprites-desktop-fb_btn {
+  background-position: 0 -121px;
+  height: 20px;
+  width: 45px;
+}
+.sprites-desktop-fb_btn:hover, .sprites-desktop-fb_btn.fb_btn-hover {
+  background-position: 0 -141px;
+}
+
+.sprites-desktop-giftPackage {
+  background-position: 0 -161px;
+  height: 96px;
+  width: 112px;
+}
+
+.sprites-desktop-giftPackageChina {
+  background-position: 0 -257px;
+  height: 88px;
+  width: 74px;
+}
+
+.sprites-desktop-gplus_btn {
+  background-position: 0 -345px;
+  height: 20px;
+  width: 20px;
+}
+.sprites-desktop-gplus_btn:hover, .sprites-desktop-gplus_btn.gplus_btn-hover {
+  background-position: 0 -365px;
+}
+
+.sprites-desktop-kaixin_btn {
+  background-position: 0 -385px;
+  height: 19px;
+  width: 19px;
+}
+.sprites-desktop-kaixin_btn:hover, .sprites-desktop-kaixin_btn.kaixin_btn-hover {
+  background-position: 0 -404px;
+}
+
+.sprites-desktop-pinit_btn {
+  background-position: 0 -423px;
+  height: 20px;
+  width: 40px;
+}
+.sprites-desktop-pinit_btn:hover, .sprites-desktop-pinit_btn.pinit_btn-hover {
+  background-position: 0 -443px;
+}
+
+.sprites-desktop-plusone_btn {
+  background-position: 0 -463px;
+  height: 20px;
+  width: 32px;
+}
+.sprites-desktop-plusone_btn:hover, .sprites-desktop-plusone_btn.plusone_btn-hover {
+  background-position: 0 -483px;
+}
+
+.sprites-desktop-seal {
+  background-position: 0 -503px;
+  height: 54px;
+  width: 105px;
+}
+
+.sprites-desktop-small_i {
+  background-position: 0 -557px;
+  height: 16px;
+  width: 2px;
+}
+
+.sprites-desktop-tweet_btn {
+  background-position: 0 -573px;
+  height: 20px;
+  width: 59px;
+}
+.sprites-desktop-tweet_btn:hover, .sprites-desktop-tweet_btn.tweet_btn-hover {
+  background-position: 0 -593px;
+}
+
+.sprites-desktop-twitter_btn {
+  background-position: 0 -613px;
+  height: 20px;
+  width: 62px;
+}
+.sprites-desktop-twitter_btn:hover, .sprites-desktop-twitter_btn.twitter_btn-hover {
+  background-position: 0 -633px;
+}
+
+.sprites-desktop-weiboo_btn {
+  background-position: 0 -653px;
+  height: 19px;
+  width: 21px;
+}
+.sprites-desktop-weiboo_btn:hover, .sprites-desktop-weiboo_btn.weiboo_btn-hover {
+  background-position: 0 -672px;
+}
+
+.sprites-creditcards-alipay {
+  background-position: 0 0;
+  height: 30px;
+  width: 177px;
+}
+
+.sprites-creditcards-americanexpress {
+  background-position: 0 -30px;
+  height: 42px;
+  width: 57px;
+}
+
+.sprites-creditcards-americanexpress_big {
+  background-position: 0 -72px;
+  height: 70px;
+  width: 96px;
+}
+
+.sprites-creditcards-cartebleue {
+  background-position: 0 -142px;
+  height: 42px;
+  width: 57px;
+}
+
+.sprites-creditcards-cartebleue_big {
+  background-position: 0 -184px;
+  height: 70px;
+  width: 96px;
+}
+
+.sprites-creditcards-cartebleuevisa_big {
+  background-position: 0 -254px;
+  height: 70px;
+  width: 96px;
+}
+
+.sprites-creditcards-discover {
+  background-position: 0 -324px;
+  height: 42px;
+  width: 57px;
+}
+
+.sprites-creditcards-discover_big {
+  background-position: 0 -366px;
+  height: 70px;
+  width: 96px;
+}
+
+.sprites-creditcards-jcb {
+  background-position: 0 -436px;
+  height: 42px;
+  width: 57px;
+}
+
+.sprites-creditcards-jcb_big {
+  background-position: 0 -478px;
+  height: 70px;
+  width: 96px;
+}
+
+.sprites-creditcards-maestro {
+  background-position: 0 -548px;
+  height: 42px;
+  width: 57px;
+}
+
+.sprites-creditcards-maestro_big {
+  background-position: 0 -590px;
+  height: 70px;
+  width: 96px;
+}
+
+.sprites-creditcards-mastercard {
+  background-position: 0 -660px;
+  height: 42px;
+  width: 57px;
+}
+
+.sprites-creditcards-mastercard_big {
+  background-position: 0 -702px;
+  height: 70px;
+  width: 96px;
+}
+
+.sprites-creditcards-payease {
+  background-position: 0 -772px;
+  height: 30px;
+  width: 100px;
+}
+
+.sprites-creditcards-paypal {
+  background-position: 0 -802px;
+  height: 42px;
+  width: 57px;
+}
+
+.sprites-creditcards-paypal_big {
+  background-position: 0 -844px;
+  height: 70px;
+  width: 96px;
+}
+
+.sprites-creditcards-postepay {
+  background-position: 0 -914px;
+  height: 42px;
+  width: 57px;
+}
+
+.sprites-creditcards-postepay_big {
+  background-position: 0 -956px;
+  height: 70px;
+  width: 96px;
+}
+
+.sprites-creditcards-visa {
+  background-position: 0 -1026px;
+  height: 42px;
+  width: 57px;
+}
+
+.sprites-creditcards-visa_big {
+  background-position: 0 -1068px;
+  height: 70px;
+  width: 96px;
+}
+
+#top-menu {
+  border-bottom: 3px solid #000;
+  position: fixed;
+  display: block;
+  width: 100%;
+  z-index: 9;
+  background-color: #FFF;
+}
+#top-menu h2 {
+  margin-top: 20px;
+}
+
+#nav-menu {
+  width: 606px;
+  margin: 0 auto;
+}
+#nav-menu li {
+  text-align: center;
+  float: left;
+  display: block;
+  margin-left: 4px;
+  width: 32%;
+}
+#nav-menu li button {
+  width: 100%;
+}
+#nav-menu li button.active {
+  background-color: #999;
+  border: none;
+}
+
+.sectionpage {
+  text-align: center;
+}
+.sectionpage p {
+  color: #666;
+  margin: 3px auto 17px;
+}
+
+.spacer {
+  display: block;
+  height: 140px;
+}
+
+.fixheight {
+  height: 474px;
+  margin-top: 20px;
+}
+
+.longheight {
+  margin-top: 20px;
+}
+
+#special .imgContainer {
+  position: relative;
+  height: 411px;
+  margin-bottom: 10px;
+}
+#special .imgContainer:hover .covering {
+  height: 121px;
+}
+#special .imgContainer .covering {
+  -moz-transition: height 0.3s ease-in-out;
+  -o-transition: height 0.3s ease-in-out;
+  -webkit-transition: height 0.3s ease-in-out;
+  transition: height 0.3s ease-in-out;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 64px;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+#special .imgContainer h4, #special .imgContainer p {
+  width: 95%;
+  margin: 10px auto;
+  text-align: left;
+  color: #FFF;
+}
+#special .imgContainer h4 {
+  min-height: 44px;
+}
+#special .imgContainer p {
+  margin: 0 auto;
+}
+
+.has-slider .bx-wrapper {
+  position: relative;
+}
+.has-slider .bx-prev, .has-slider .bx-next {
+  color: transparent;
+  cursor: pointer;
+  display: block;
+  position: absolute;
+  top: 0;
+  -moz-transition: opacity 0.2s ease-out;
+  -o-transition: opacity 0.2s ease-out;
+  -webkit-transition: opacity 0.2s ease-out;
+  transition: opacity 0.2s ease-out;
+}
+
+.banner-slider {
+  overflow: hidden;
+  text-align: center;
+}
+.banner-slider .sliderImg {
+  height: 411px;
+}
+.banner-slider .sliderImg:hover .imgHoverText {
+  opacity: 1;
+}
+html.desktop .banner-slider .sliderImg p {
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+html.desktop .banner-slider .sliderImg :hover p {
+  color: green;
+  opacity: 1;
+}
+.banner-slider .imgHoverText {
+  -moz-transition: opacity 0.3s ease-in-out;
+  -o-transition: opacity 0.3s ease-in-out;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  height: 100%;
+}
+.banner-slider .imgHoverText h2, .banner-slider .imgHoverText h3, .banner-slider .imgHoverText h4, .banner-slider .imgHoverText p {
+  text-align: left;
+  width: 70%;
+  margin-left: 10px;
+}
+.banner-slider .imgHoverText h2 {
+  padding-top: 70px;
+  line-height: 0.8em;
+}
+.banner-slider .bx-prev, .banner-slider .bx-next, .banner-slider .opacityFiller {
+  height: 411px;
+}
+.banner-slider .bx-next {
+  right: -2000px;
+}
+.banner-slider .bx-prev {
+  left: -2000px;
+}
+.banner-slider .opacityFiller {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8;
+}
+.banner-slider .opacityFiller:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
+  opacity: 0.9;
+}
+.banner-slider .opacityFiller.max-opacity {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=98);
+  opacity: 0.98;
+}
+.banner-slider .arrow {
+  background-position: center;
+  border-style: solid;
+  border-color: #999;
+  position: absolute;
+  top: 50%;
+  margin-top: -35px;
+  width: 30px;
+  height: 50px;
+  background-color: #FFF;
+  -moz-transition: opacity 0.2s ease;
+  -o-transition: opacity 0.2s ease;
+  -webkit-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+}
+.banner-slider .arrow.visible {
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+}
+.banner-slider .bx-prev .arrow {
+  border-width: 2px 0 2px 2px;
+  right: 0;
+}
+.banner-slider .bx-next .arrow {
+  border-width: 2px 2px 2px 0;
+  left: 0;
+}
+.banner-slider .opacityFiller {
+  background-color: #FFF;
+  width: 100%;
+  -moz-transition: opacity 0.2s ease-out;
+  -o-transition: opacity 0.2s ease-out;
+  -webkit-transition: opacity 0.2s ease-out;
+  transition: opacity 0.2s ease-out;
+}
+.banner-slider .bx-prev, .banner-slider .bx-next {
+  width: 2000px;
+}
+
+.bx-viewport {
+  float: left;
+  margin-right: 4px;
+}
+.bx-viewport a {
+  display: block;
+  position: relative;
+}
+
+.largeElem {
+  width: 998px;
+  height: 411px;
+}
+
+.mediumElem {
+  float: left;
+  width: 662px;
+  height: 411px;
+}
+
+.smallElem {
+  float: left;
+  width: 336px;
+  height: 411px;
+}

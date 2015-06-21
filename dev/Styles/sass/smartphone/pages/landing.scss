@@ -1,0 +1,63 @@
+﻿@import "variables";
+@import "fonts";
+@import "Smartphone/callToActions";
+
+
+$i:2;
+$videoWidth: 100%;
+$videoHeight: 257px;
+
+#landing.irisvanherpen{
+
+	#videoWrapper {
+		position: relative;
+		.coverImag{
+			width: $videoWidth;
+			height: $videoHeight;
+			position: absolute;
+			background-position: center top;
+    		background-size: 100% auto;
+			background-image: url("//ytos-resources-eu-west-1-183330696032.s3.amazonaws.com/ytos/resources/THECORNER/landing/iris-van-herpen/irisvideo_mob_uk.jpg?v={$i}");
+			.CN &{background-image: url("//ytos-resources-eu-west-1-183330696032.s3.amazonaws.com/ytos/resources/THECORNER/landing/iris-van-herpen/irisvideo_mob_cn.jpg?v={$i}");}
+			.DE &{background-image: url("//ytos-resources-eu-west-1-183330696032.s3.amazonaws.com/ytos/resources/THECORNER/landing/iris-van-herpen/irisvideo_mob_de.jpg?v={$i}");}
+			.ES &{background-image: url("//ytos-resources-eu-west-1-183330696032.s3.amazonaws.com/ytos/resources/THECORNER/landing/iris-van-herpen/irisvideo_mob_es.jpg?v={$i}");}
+			.FR &{background-image: url("//ytos-resources-eu-west-1-183330696032.s3.amazonaws.com/ytos/resources/THECORNER/landing/iris-van-herpen/irisvideo_mob_fr.jpg?v={$i}");}
+			.IT &{background-image: url("//ytos-resources-eu-west-1-183330696032.s3.amazonaws.com/ytos/resources/THECORNER/landing/iris-van-herpen/irisvideo_mob_it.jpg?v={$i}");}
+			.JP &{background-image: url("//ytos-resources-eu-west-1-183330696032.s3.amazonaws.com/ytos/resources/THECORNER/landing/iris-van-herpen/irisvideo_mob_jp.jpg?v={$i}");}
+			.RU &{background-image: url("//ytos-resources-eu-west-1-183330696032.s3.amazonaws.com/ytos/resources/THECORNER/landing/iris-van-herpen/irisvideo_mob_ru.jpg?v={$i}");}
+			.GB &{background-image: url("//ytos-resources-eu-west-1-183330696032.s3.amazonaws.com/ytos/resources/THECORNER/landing/iris-van-herpen/irisvideo_mob_uk.jpg?v={$i}");}
+		}
+		.videoContainer{
+			width: $videoWidth;
+			height: $videoHeight;
+		}
+	}
+	.disclaimer1{
+		padding: 20px;
+		color: $color-medium;
+		font-size: $size-medium;
+		line-height: 26px;
+		text-align: center;
+		@extend %lato;
+	}
+	.disclaimer2{
+		padding: 20px;
+		color: $color-medium;
+		font-size: $size-medium;
+		line-height: 26px;
+		text-align: center;
+		@extend %lato;
+	}
+	.img2{
+		margin-bottom: 7px;
+		display: block;
+	}
+	.btnShop{
+		@extend .button;
+		@extend .primary;
+		border-bottom: 1px solid #fff;
+	}
+	img {
+		width: 100%;
+	}
+}

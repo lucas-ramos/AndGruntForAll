@@ -1,0 +1,68 @@
+/*
+	_FEEDBACK.SCSS
+	Gestione delle rating stars
+*/
+
+$feedback-height: 36px;
+$feedback-circle-radius: 6px;
+
+.crm-widget-feedback-stars {
+	@include pie-clearfix;
+	margin: 10px 0;
+
+	> div {
+		background-color: $color-dark;
+		color: $white;
+		@extend .size-medium;
+		width: 196px;
+		height: $feedback-height;
+		float: right;
+	}
+
+	.title {
+		line-height: $feedback-height;
+		margin-left: 15px;
+		float: left;
+	}
+
+	ul {
+		float: right;
+	}
+
+	li {
+		display: block;
+		float: left;
+		width: 22px;
+		height: $feedback-height;
+	}
+
+	.one-star {
+		margin-top: $feedback-height *.5 - $feedback-circle-radius;
+		height: $feedback-circle-radius *2; 
+		width: $feedback-circle-radius * 2;
+		@include border-radius($feedback-circle-radius);
+		@include imageReplacement;
+		background-color: $color-light;
+		display: block;
+	}
+
+	ul:hover {
+		.one-star {
+			background-color: $white;
+		}
+	}
+
+	li:hover ~ li {
+		.one-star {
+			background-color: $color-light;
+		}
+	}
+
+	div[class^="feedback-answer"] {
+		line-height: 39px;
+		text-align: center;
+	}
+}
+/*
+	END _FEEDBACK.SCSS
+*/

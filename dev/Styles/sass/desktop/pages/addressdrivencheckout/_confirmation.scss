@@ -1,0 +1,511 @@
+// =================
+// CONFIRMATION PAGE
+// =================
+
+$confMiniSection-padding-side: 10px;
+$confMiniSectionContent-margin-top: 15px;
+$confMiniSection-width: 320px;
+$confMiniSection-checkbox-margin-right: 10px;
+$confMiniSection-checkbox-label-width: $confMiniSection-width - $confMiniSection-padding-side - $confMiniSection-checkbox-margin-right - $form-checkbox-width;
+
+
+
+@mixin confMiniSectionContent-spacing {
+    padding-right: $confMiniSection-padding-side;
+    margin-top: $confMiniSectionContent-margin-top;
+}
+@mixin confMiniSectionContent-text {
+    line-height: 21px;
+    font-size: $size-midsmall;
+    color: $color-medium;
+    @extend %helvetica;
+}
+@mixin confMiniSectionContent {
+    @include confMiniSectionContent-spacing;
+    @include confMiniSectionContent-text;
+}
+@mixin confMiniSectionTitle-spacing {
+    padding: 0 $confMiniSection-padding-side 3px 0;
+    border-bottom: 1px solid $color-light;
+}
+
+@mixin confMiniSectionTitle-text {
+    @extend %knockout;
+    font-size: $size-grand;
+    color: $color-medium;
+    text-transform: uppercase;
+}
+
+@mixin confMiniSectionTitle {
+    @include confMiniSectionTitle-spacing;
+    @include confMiniSectionTitle-text;
+}
+
+@import "Desktop/partials/addressdrivencheckout/addressFormSection";
+@import "Desktop/partials/addressdrivencheckout/couponSection";
+@import "Desktop/partials/addressdrivencheckout/confirmation/creditCardSection";
+
+
+.pageHeaderContainer {
+    .rememberReturn {
+        @extend %helvetica;
+        font-size: $size-medium;
+        color: $color-light;
+        padding: 10px 0;
+    }
+}
+
+.coContainer {
+    margin-bottom: 10px;
+}
+
+.coSectionContent {
+    @include pie-clearfix;
+}
+.confMiniSection {
+    float: left;
+    width: $confMiniSection-width;
+    //  margin: 0 10px ;
+}
+.confMiniSectionRow {
+    @include pie-clearfix;
+    margin-bottom: 20px;
+}
+.cartButtonsWrapper {
+    clear: both;
+}
+.addressesContentWrapper {
+    // RECAP SHIPPING ADDRESS
+    .orderRecapShipping, .giftRecap, .selectedDeliveryMethod {
+        h3 {
+            font-size: 100%;
+            @include confMiniSectionTitle-spacing;
+            .title {
+                @include confMiniSectionTitle-text;
+                margin-right: 4px;
+            }
+            .text {
+                font-size: $size-smaller;
+                color: $color-light;
+                text-transform: lowercase;
+                @include wrapInParenthesis;
+                @extend %helvetica;
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        }
+        ul {
+            @include confMiniSectionContent;
+        }
+    }
+    // RECAP BILLING ADDRESS
+    .billing {
+        .billingTitle {
+            @include confMiniSectionTitle;
+        }
+        .billingContent {
+            padding-right: $confMiniSection-padding-side;
+            margin-top: $confMiniSectionContent-margin-top;
+        }
+        &.billingAsShipping {
+            .billingAddress {
+                display: none;
+            }
+        }
+        .userAddressesListWithForm {
+            .cardHolderData {
+				max-width: 191px;
+            }
+			.editButton {
+				padding: 0;
+				text-align: center;
+				width: 82px;
+				overflow: hidden;
+			}
+        }
+
+    }
+    .billingAddress {
+        &.hasntAddresses.yesGift {
+            .billingForm {
+                border: none;
+                margin: 0;
+                padding: 0;
+            }
+        }
+        &.yesGift {
+            .userAddressesListWithForm {
+                .address {
+                    padding-top: 0;
+                }
+            }
+        }
+        .billingForm {
+            border-width: 1px 0;
+            border-style: solid;
+            border-color: $color-light;
+            margin: 20px 0;
+            padding: 20px 0;
+        }
+
+        *[data-ytos-addnewaddress] .radioButton::after {display: inline;}
+    }
+
+    .fastCheckoutSection {
+        padding-top: 15px;
+        .title {
+            font-size: $size-big;
+            color: $color-medium;
+            text-transform: uppercase;
+            @extend %knockout;
+        }
+    }
+    .fieldRow.checkbox {
+        @include pie-clearfix;
+        min-height: 0;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        .fieldValue  {
+            float: left;
+            margin-right: $confMiniSection-checkbox-margin-right;
+            line-height: $form-checkbox-height;
+        }
+        .fieldLabel {
+            float: left;
+            line-height: $form-checkbox-height;
+            width: $confMiniSection-checkbox-label-width;
+            @extend %helvetica;
+            font-size: $size-small;
+            color: $color-medium;
+        }
+    }
+    .billingAsShippingButton {
+        @include pie-clearfix;
+        margin-bottom: 10px;
+        @extend %helvetica;
+        .checkBox  {
+            float: left;
+            margin-right: $confMiniSection-checkbox-margin-right;
+            line-height: $form-checkbox-line-height;
+        }
+        label {
+            float: left;
+            line-height: 21px;
+            width: $confMiniSection-checkbox-label-width;
+            font-size: $size-small;
+            color: $color-medium;
+
+            .RU & {
+                line-height: normal;
+            }
+        }
+    }
+
+    #BillingAddressViewModel_CountryCode_Wrapper {
+		.description {
+			display: none;
+		}
+	}
+
+    .country_CN {
+        #BillingAddressViewModel_CountryCode_Wrapper {
+			.prettyselect-wrap {
+				display: none;
+			}
+
+			.description {
+				@include fake-input-field-desktop;
+			}
+		}
+    }
+
+    // GIFT RECAP
+    .giftRecap {
+        .notificationEmail, .message, .giftAmounts {
+            display: none;
+        }
+        .giftData {
+            @include confMiniSectionContent;
+        }
+    }
+    .selectedDeliveryMethod {
+        .price {
+            display: none;
+        }
+        .deliveryInfo {
+            @include confMiniSectionContent;
+            .deliveryType {
+                display: block;
+                text-transform: uppercase;
+                font-size: $size-small;
+                @extend %knockout;
+            }
+            .deliveryTimeInfo {
+                display: block;
+            }
+        }
+    }
+}
+
+//PAYMENT SECTION
+
+#BillingAddressViewModel_Region_Wrapper, #CreditCardFormViewModel_Province_Wrapper {
+    .prettyselect-drop {
+        li {
+            .RU &{
+                padding: 0 8px;
+            }
+        }
+        .RU &{
+            white-space: nowrap;
+            overflow-x: hidden;
+            font-size: $size-medium;
+        }
+    }
+    .prettyselect-label {
+        &.RU, .RU & { // WUT?
+            font-size: $size-tiny;
+        }
+    }
+}
+
+
+// OTHER PAYMENT METHODS SECTION
+
+.otherPaymentMethodsSection {
+    .AvailablePaymentMethodsViewModel_1 {
+        display: none;
+    }
+    .paymentMethodsTitle {
+        @include confMiniSectionTitle;
+    }
+    .paymentMethodsContent {
+        margin-top: $confMiniSectionContent-margin-top;
+    }
+        .paymentMethod {
+            $paymentMethod-heigth: 40px;
+            $innerInputWrapper-padding-top: 12px;
+            $innerInputWrapper-padding-bottom: 3px;
+            $innerInputWrapper-width: 146px;
+
+            @include pie-clearfix;
+            margin-top: 10px;
+            margin-bottom: 25px;
+            &.disabled {
+                .innerInputWrapper label {
+                    color: $color-extra;
+                }
+                &.selected {
+                    .innerInputWrapper label {
+                        color: $color-dark;
+                    }
+                }
+            }
+            .innerInputWrapper {
+                float: left;
+                width: $innerInputWrapper-width;
+                min-height: 25px;
+                padding: $innerInputWrapper-padding-top 0 $innerInputWrapper-padding-bottom 10px;
+                border: 1px solid $color-extra;
+                @include pie-clearfix;
+                .radioButton {
+                    float: left;
+                    margin-right: $radio-checkbox-margin-right;
+                }
+                label {
+                    float: left;
+                    color: $color-dark;
+                    font-size: $size-big;
+                    line-height: $form-radiobutton-height;
+                    text-transform: uppercase;
+                    width: $innerInputWrapper-width - $form-radiobutton-width - $radio-checkbox-margin-right;
+                }
+            }
+            .originalValue, .valueToPay {
+                color: $color-medium;
+            }
+            .availableCards, .originalValue, .valueToPay {
+                font-size: $size-medium;
+                @extend %helvetica;
+                height: $paymentMethod-heigth;
+                line-height: $paymentMethod-heigth;
+            }
+            .availableCards {
+                float: left;
+                width: 378px;
+                padding-left: 20px;
+                font-size: $size-smaller;
+                line-height: 1.2;
+                color: $color-light;
+                img {display: none;}
+            }
+            .valueToPay {
+				@extend .omega;
+                width: 84px;
+                float: left;
+                .price {
+                    display: none;
+                }
+            }
+            .originalValue {
+                display: none;
+            }
+            &.AvailablePaymentMethodsViewModel_2{
+                .availableCards{
+                    display: none;
+                }
+            }
+            &.withPromo .originalValue .price {
+                text-decoration: line-through;
+            }
+            &.selected {
+                .innerInputWrapper {
+                    background-color: $color-extra;
+                }
+                .valueToPay {
+                    .price {
+                        display: inline;
+                    }
+                }
+                &.AvailablePaymentMethodsViewModel_2{
+                    .originalValue {
+                        display: block;
+                        float: left;
+                        width: 368px;
+                        padding: 0 10px 0 20px;
+                        font-size: $size-small;
+                        line-height: 1.2;
+                        color: $color-light;
+                        margin-top: 10px;
+                        .price{ display: none; }
+                        .text{
+                            
+                        }
+                    }
+                    .availableCards{
+                        display: none;
+                    }
+                }
+            }
+        }
+        // Paypal method
+        .AvailablePaymentMethodsViewModel_300 {
+            .availableCards {
+                .image {
+                    display: block;
+                    @extend .sprites-creditcards-paypal;
+                }
+            }
+        }
+        // Alipay method
+        .AvailablePaymentMethodsViewModel_500 {
+            .availableCards {
+                .image {
+                    display: block;
+                    @extend .sprites-creditcards-alipay;
+                }
+            }
+        }
+        // PayEase method
+        .AvailablePaymentMethodsViewModel_601 {
+            .availableCards {
+                .image {
+                    display: block;
+                    @extend .sprites-creditcards-payease;
+                }
+            }
+        }
+
+   
+}
+// COUPON SECTION
+
+.couponSection {
+    padding-top: 20px;
+    border-top: 1px solid $color-light;
+}
+
+
+// CART TOTAL SECTION
+
+.cartTotalWrapper {
+    @include pie-clearfix;
+    padding: 20px 0;
+    .cartTotal {
+        float: right;
+        color: $color-medium;
+        font-size: $size-huge;
+        @extend %knockout-bold;
+        .label {
+            text-transform: uppercase;
+            margin-right: 10px;
+        }
+        .totalPrices{
+            display: inline;
+        }
+        .salesTaxesDescrPopup, .salesTaxesInfo, .salesTaxesDescr {
+            display: none;
+        }
+
+        .salesTaxesDescrPopup {
+            // per ovviare al fatto che gli viene dato un display:block inline e rompe gli allineamenti
+            position: absolute;
+        }
+    }
+}
+// BUTTON SECTION
+
+.cartButton {
+    @include pie-clearfix;
+    .nextPageButton {
+        @extend .primary;
+        float: right;
+        font-size: $size-big;
+        margin-top: 20px;
+    }
+}
+
+// SELL CONDITIONS SECTION
+
+.sellConditionsWrapper {
+    font-size: $size-medium;
+    color: $color-light;
+    margin-top: 30px;
+}
+
+// CONFIRMATION FOOTER
+
+.confirmationFooter {
+    margin-top: 45px;
+    padding-top: 17px;
+    color: $color-light;
+    border-top: 1px solid $color-light;
+    font-size: $size-tiny;
+    margin-bottom: 20px;
+    html.CN & {
+        font-size: $size-small;
+    }
+    line-height: 1.2;
+    .personalInfoTitle {
+        @extend %helvetica-bold;
+        margin-bottom: 15px;
+    }
+    .personalInfoLabel {
+        @extend %helvetica;
+    }
+}
+
+.maxCod_error {
+    display: none;
+    font-size: $size-medium;
+}
+.uiLayer-CODPopup {
+    .maxCod_error {
+        display: block;
+        font-size: $size-medium;
+    } 
+}
+
+.selectThisCreditCard .text {
+    display: none;
+}

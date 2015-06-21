@@ -1,0 +1,784 @@
+// =================
+// CONFIRMATION PAGE
+// =================
+
+.stileAree{
+	background-color: $color-ultra;
+	padding: 0 20px 20px 20px;
+	margin-top: 10px;
+}
+
+
+#cartRecap{
+	padding: 0;
+	.cartTotal {
+	  margin: 5px 0;
+	}
+	a{
+		@include wrapInParenthesis;
+	}
+} 
+
+#cartDetails{
+	.subSectionTitle h3{
+		font-size: $size-huge-rem;
+		color: $color-dark;
+	}
+}
+
+.subSectionTitle {
+	h3{
+		font-size: $size-big-rem;
+		color: $black;
+		padding: 20px 0;
+		.JP &{
+			font-size: $size-expanse-rem;
+		}
+	}
+}
+
+#giftDetails {
+	@extend .stileAree;
+	.giftRecap {
+		font-size: $size-small-rem;
+		@extend %helvetica;
+		margin-bottom: 20px;
+
+		h3, .giftAmounts {
+			display:none;
+		}
+		.label {
+			@include appendColon;
+		}
+
+		&.noMessage {
+			.notificationEmail, .message {
+				display:none;
+			}
+		}
+	}
+}
+
+
+#shippingDetails {
+
+	@extend .stileAree;
+
+	#selectedAddress h3 {
+		display:none;
+	} 
+}
+
+#rememberReturn, #selectedAddress {
+	margin: 10px 0;
+	font-size: $size-small-rem;
+	@extend %helvetica;
+}
+
+#rememberReturn{
+	margin-top: 0;
+}
+
+#shippingMethodDetails {
+	@extend .stileAree;
+
+	h3 .edit, .deliveryTimeInfo, .price {
+		display:none;
+	}
+
+	#selectedDeliveryMethod {
+		margin-bottom: 20px;
+		@extend %helvetica;
+
+		h3 {
+			font-size: $size-medium-rem;
+			display:inline;
+			@include appendColon;
+		}
+
+		.deliveryInfo {
+			display:inline;
+		}
+	}
+}
+
+
+#billingDetails {
+	@extend .stileAree;
+
+	.billing  {
+		@extend %helvetica;
+
+		.addNewAddressButton {		
+			margin-top: 20px;
+
+			label {
+				font-size: $size-small-rem;
+				@extend %helvetica;
+			}	
+		}
+
+		.zipCode1, .zipCode2   {
+			float: left;
+			width: 48%;
+			font-size: $size-midlarge-rem;
+			text-align: center;
+			border: 0;
+			height: 72px;
+			line-height: 72px;
+			@extend %knockout;
+			@include border-radius(0); //serve per rimuovere la stondatura
+			padding: 0;
+		}
+
+		.zipCode2  { margin-left: 4%; }
+
+		.findZip {
+			font-size: $size-smaller-rem;
+			float: right;
+			margin-top: 15px;
+		}
+
+		.separator { 
+			display:none; 
+			// .JP &{ display: block;}
+		}
+
+		#BillingAddressViewModel_PostalCode_Wrapper { 
+			@include pie-clearfix; 
+
+
+		}
+
+
+
+
+		.loadAddressTitle {	display:none; }
+
+		select { width: 100%; }
+
+		.userAddresses { margin-top: 20px; }
+
+		&.billingAsShipping .billingAddress{ display:none; }
+
+		.billingAsShippingButton  {
+			font-size: $size-small-rem;
+			@include pie-clearfix;
+
+			.checkBox {
+				float:left;
+				margin-right: 10px;
+			}
+			label{ 
+				line-height: 28px; 
+				display: table;
+				.IT &{ font-size: $size-smaller-rem; }
+				.FR &{ font-size: $size-smaller-rem; }
+			}
+		}
+
+		.userAddressesListWithForm { margin: 20px 0; }
+
+		.address  {
+			@extend %helvetica;
+			font-size: $size-small-rem;
+			@include pie-clearfix;
+			padding: 15px 0;
+			border-top: 1px dotted $color-extra;
+
+			.editButton, .closeButton, .label {	display:none; }
+
+			.selectThisAddress { margin-bottom: 10px; }
+
+			.name, .surname, .selectThisAddress {
+				float: left;
+				margin-right: 10px;
+			}
+
+			.streetWithNumber {	clear:both;	}
+
+			.streetWithNumber, .zipcode, .city, .province, .country {
+				margin-left: 27px;
+			}
+		}
+
+		.fastCheckoutSection {	display:none; }
+	}
+
+	.addNewAddressButtonWithForm  {
+		@extend %helvetica;		
+	
+		.input { @include pie-clearfix;	}
+
+		.radioIcon {
+			float:left;
+			margin-right: 10px;
+		}
+
+		label {
+			float:left;
+			font-size: $size-small-rem;
+		}
+
+		button {
+			@extend .secondary;
+			width: 100%;
+			color: $white;
+		}
+
+		&.selected {
+			button {
+				display: none;
+			}
+		}
+	}
+
+	#BillingAddressViewModel_CountryCode_Wrapper .description {	display:none; }
+
+	.country_CN {
+		#BillingAddressViewModel_CountryCode_Wrapper  select {
+			display:none;
+		}
+	
+		#BillingAddressViewModel_CountryCode_Wrapper  .description {
+			@include fake-input-field-smartphone;
+		}
+	}
+}
+
+#creditCardMethod {
+	.addingNewCard{
+		padding-bottom: 1px;
+		background-color: $color-ultra;
+	}
+
+	&.userWithCreditCards {
+		.newCreditCardButton.selected {
+			@extend %knockout-bold;
+			background-color: transparent;
+			border-bottom: 1px dotted $color-extra;
+			color: $black;
+			font-size: $size-midlarge-rem;
+			margin-top: 25px;
+			padding: 5px 0;
+			text-align: left;
+
+			&:hover {
+				background-color: transparent;
+			}
+		}
+	}
+
+	.privacy {
+		font-size: $size-tiny-rem;
+		display:none;
+		@extend %lato;
+	}
+
+	.creditCardForm {
+		@extend %helvetica;
+
+		&, .creditCardHolderTitle, .creditCardHolderDescription, .trustwaveMessage {
+			display: none;
+		}
+
+		.cvvInfoPopup  {
+			font-size: $size-medium-rem;
+			text-align: right;
+		}
+
+		.availableCardTypes {
+			.title, .text {
+				font-size: $size-small-rem;
+			}
+
+			.radioButton {
+				float: left;
+				margin-right: 20px;
+			}
+
+			.cardType {
+				margin: 10px 0;
+			}
+		}
+	}
+
+	.fastCheckoutSection {
+		@extend %lato;
+		font-size: $size-mini-rem;
+
+		.fieldLabel {
+			display: block;
+			line-height: 21px;
+			float: left;
+			max-width: 85%;
+		}
+
+		.fieldValue {
+			float: left;
+			margin-right: 10px;
+		}
+
+		.fieldRow  {
+			@include pie-clearfix;
+		}
+
+		.title {
+			display: none;
+			font-size: $size-large-rem;
+			text-transform: uppercase;
+			margin: 25px 0 10px;
+		}
+
+		.disabled .fieldLabel {
+			color: $color-extra;
+		}
+	}
+}
+
+
+
+#CreditCardFormViewModel_ExpirationDate_Wrapper, #CvvAndExpirationFormViewModel_ExpirationDate_Wrapper{
+	margin: 10px 0;
+	@include pie-clearfix;
+
+	select { width: 100%; }
+	.month {
+		float:left;
+		width: 48%;
+	}
+
+	.year {
+		float:right;
+		width: 48%;
+	}
+}
+
+
+
+
+
+#paymentDetails {
+	@extend .stileAree;
+
+	.paymentTitle {
+		@extend %knockout-bold;
+		text-transform: uppercase;
+		padding: 5px 0;
+		margin-bottom: 10px;
+		border-bottom: 1px dotted $color-extra;
+		font-size: $size-midlarge-rem;
+
+		.editPayment {
+			@extend %helvetica;
+			@include wrapInParenthesis;
+			text-transform: lowercase;
+			margin-left:10px;
+			display:none;
+		}
+	}
+
+	.paymentMethod {
+		@include pie-clearfix;
+		padding:10px 0;
+		font-size: $size-small-rem;
+		@extend %helvetica;
+		// border-top: 1px solid $color-light;
+		height: 17px;
+
+		&.AvailablePaymentMethodsViewModel_1 {	display:none;	}
+	
+		.originalValue, .text, .availableCards { display:none; }
+
+		.radioButton { float:left; }
+
+		.label {
+			float:left;
+			max-width: 60%;
+			margin-left: 10px; 
+			line-height: 23px;
+			font-size: $size-smaller-rem;
+		}
+
+		.valueToPay {
+			float:right;
+			line-height: 23px;
+		}
+	}
+
+	.otherPaymentMethodsSection {
+		margin-top: 20px;
+
+		.paymentTitle{ 
+			margin: 0;
+			text-align: center;
+			font-size: $size-big-rem;
+			margin-bottom: 20px;
+			border: none;
+		}
+		
+		#paymentSelection .paymentMethod {
+			@extend %lato-bold;
+			font-size: $size-small-rem;
+			text-transform: uppercase;
+			padding: 20px 0;
+
+			&.disabled .label {
+				color:$color-light;
+			}
+
+			&:not(:last-child)/*:not(.AvailablePaymentMethodsViewModel_1)*/ { //questo selettore nascosto probabilmente non serve, nel caso in cui ci fossero dei problemi nei test, provare a rimuoverlo
+				border-bottom: 1px solid $color-light;
+			}
+		}
+	} 
+
+	.newCreditCardButton {	
+		@extend .secondary; 
+		color: $white;
+
+		.JP &{
+			font-size: $size-smaller-rem;
+		}
+	}
+
+
+	.userCreditCardsListWithForm {
+
+		.cardIcon {	
+
+			&.Visa {
+				@extend .sprites-creditcards-visa;
+			}
+			&.Mastercard {
+				@extend .sprites-creditcards-mastercard;
+			}
+			&.AmericanExpress {
+				@extend .sprites-creditcards-americanexpress;
+			}
+			&.CarteBleue {
+				@extend .sprites-creditcards-cartebleue;
+			}
+			&.JCB {
+				@extend .sprites-creditcards-jcb;
+			}
+			&.Switch {
+				@extend .sprites-creditcards-maestro;
+			}
+			//	&.Discover {
+			//		@extend .sprites-creditcards-discover;
+			//	}
+			//	&.Paypal {
+			//		@extend .sprites-creditcards-paypal;
+			//	}
+			//	&.Postepay {
+			//		@extend .sprites-creditcards-postepay;
+			//	}
+		}
+	
+		.cardContainer {
+			@extend %helvetica;
+			font-size: $size-small-rem;
+			@include pie-clearfix;
+			// border-bottom: 1px dotted $color-extra;
+
+			.cardAlerts{
+				margin: 10px 0;
+
+				.preferredlabel { padding-left: 28px; }
+			}
+
+			.selectThisCreditCard{
+				label .text{
+					display:none;
+				}
+			}
+
+			#CvvAndExpirationFormViewModel_Issue_Wrapper {
+				width: 100%;
+				margin-right: 25px;
+			}
+
+			.cvvInfoPopup  {
+				font-size: $size-medium-rem;
+				text-align: right;
+				margin-bottom: 20px;
+			}
+
+			.radioButton {
+				float:left;
+				margin-right: 10px;
+				margin-top: 10px;
+			}
+
+			.cartType {
+				display:none;
+			}	
+
+			.cardNumber {
+				@extend %helvetica-bold;
+				line-height: 40px;
+				.hiddenNumbers{
+					line-height: 20px;
+				}
+			}
+
+			.cardNumber .label {
+				display:none;
+			}
+
+			.cardIcon {
+				float:right;
+			}
+
+			.cardHolderData {
+				margin-left: 28px;
+				line-height: 20px;
+				.label {
+					display:none;
+				}
+
+				.holderName {
+					@extend %helvetica-bold;
+				}
+
+				.zipcode, .city, .province, .country {
+					display:inline;
+				}
+			}
+
+			.preferredlabel {
+				@extend %helvetica-bold;
+				display: block;
+			}
+
+			.expiredLabel {
+				color: $red;
+				display: block;
+				margin-left: 30px;
+			}
+
+			.expirationDate  {
+				margin-left: 28px;
+				margin-bottom: 5px;
+				@include pie-clearfix;
+
+				select {
+					width:100%;
+				}
+
+				.month {
+					float:left;
+					width: 48%;
+				}
+
+				.year {
+					float:right;
+					width: 48%;
+				}
+			}
+			#CvvAndExpirationFormViewModel_ExpirationDate_Wrapper.expirationDate  {
+				margin-left: 0;
+				margin-bottom: 10px;
+			}
+		}
+	}
+}
+
+.userNoCreditCards {
+	.newCreditCardButton.selected {
+		display: none;
+	}
+
+	.editPayment {
+		display: none;
+	}
+}
+
+#paymentDetails{
+
+	.fastCheckout {
+		.cardContainer  {
+			display:none;
+
+			&.selected {
+				display:block;
+			}
+		}
+
+		.newCreditCardButton  {
+			display: none;
+		
+			&.selected {
+				display: block;
+			}
+		}
+
+		.otherPaymentMethodsSection  {
+			display:none;
+
+			&.selected {
+				display:block;
+			}
+		}
+
+		.editPayment  {
+			display:inline;
+
+			&.selected {
+				display:none;
+			}
+		}
+	}
+}
+//eccezioni sul simbolo delle form non valide (presente in forms.scss)
+#CreditCardFormViewModel_ExpirationDate_Wrapper, #CvvAndExpirationFormViewModel_ExpirationDate_Wrapper {
+	.field-validation-error {
+		background-image: none;
+		width: 100%;
+		float: left;
+		position: initial;
+		padding-top: 5px;
+		text-indent: 0;
+		color: $red;
+		font-size: $size-small-rem;
+	}
+}
+
+#coupon {
+	@extend .stileAree;
+	text-align: center;
+	h4 {
+		@extend %lato-bold;
+		font-size: $size-small-rem;
+		display: inline;
+		margin-right: 10px;
+	}
+
+	.bannedBrands {
+		display: inline;
+		font-size: $size-small-rem;
+		line-height: 24px;
+
+		& div {
+			display: inline;
+		}
+	}
+
+	.couponTitle {
+		text-align: center;
+		margin-bottom: 3px;
+		display: inline-block;
+		margin-top: 15px;
+	}
+}
+
+
+.bannedBrandsLink {
+	@extend %lato;
+	margin-top: 15px;
+	font-size: $size-tiny-rem;
+	text-align: center;
+	padding: 0 10px;
+}
+
+.coupon {
+	button {
+		@extend .primary;
+		width: 100%;
+	}
+
+	.couponApplied {
+		display:none;
+	}
+
+	.couponCode {
+		@include fake-input-field-smartphone;
+	}
+}
+
+
+#promotions {
+	margin: 20px 0;
+	font-size: $size-medium-rem;
+
+	.shortDescription {
+		display: none;
+	}
+
+}
+
+
+
+
+
+
+
+/* CONFIRMATION BUTTON */
+
+#confirmationButtons {
+	.cartButtonsWrapper {
+		margin: 20px;
+		.nextPageButton { @extend .primary; }
+	}
+}
+
+
+#confirmationSalesTerms {
+	@extend .stileAree;
+	background-color: $white;
+	padding-top: 1px;
+
+	#salesTerm {
+		background-color: $color-background;
+		max-height: 265px;
+		overflow: auto;
+		padding: 20px;
+
+		.contentWrap{
+			padding: 15px;
+		}
+
+		.salesTermTitle {
+			@extend %lato-bold;
+			font-size: $size-mini-rem;
+			margin-bottom: 10px;
+			padding-bottom: 5px;
+			border-bottom: 1px solid $color-light;
+		}
+		.salesTermContent {
+			@extend %lato;
+			font-size: $size-mini-rem;
+			max-height: 220px;
+			overflow: auto;
+		}
+	}
+}
+
+.goToDeliveryBtn { 
+	a {
+		@extend .button;
+		@extend .secondary;
+		color: $white;
+		display: block;
+	}
+}
+
+
+.maxCod_error {
+    display: none;
+    font-size: $size-medium;
+}
+.uiLayer-CODPopup {
+    .maxCod_error {
+        display: block;
+        font-size: $size-medium;
+    } 
+}
+
+#BillingAddressViewModel_Phone_Wrapper{ margin-bottom: 0; }
+
+/* Salvatore: non dovrebbe esserci già una regola generica?  */
+.field-validation-error{
+	margin: 5px 0;
+}

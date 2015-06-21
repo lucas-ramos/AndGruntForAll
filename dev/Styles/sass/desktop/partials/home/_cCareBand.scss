@@ -1,0 +1,79 @@
+﻿// ================
+// TOP AND MIDDLE SLIDER IN HOME PAGE
+// ================
+
+.svg-ccare-icon-tc {
+	@extend %svg-ccare-icon-tc;
+}
+
+.svg-ccare-icon-lock {
+	@extend %svg-ccare-icon-lock;
+}
+
+.svg-ccare-icon-box {
+	@extend %svg-ccare-icon-box;
+}
+
+#cCareBand {
+	margin: 6px 0;
+	$height: 75px;
+
+	a {
+		display: block;
+		height: $height;
+		background: $color-ultra;	
+	}
+
+	.icon {
+		float: left;
+		display: block;
+		position: relative;
+		width: 90px;
+		height: $height;
+		background-position: center;
+	}
+
+	.text {
+		$margin: 15px;
+		float: left;
+		display: block;
+		border-left: 1px solid $color-extra;
+		margin: $margin 0;
+		padding-left: 15px;
+		height: $height - ($margin * 2);
+		font-size: $size-midlarge;
+		line-height: 19px;
+	}
+
+	.first-line {
+		margin-top: 10px;
+		
+	}
+
+	.svgelem {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+	}
+
+	.svg-ccare-icon-tc {
+		margin: {
+			top: -($svg-ccare-icon-tc-height/2);
+			left: -($svg-ccare-icon-tc-width/2);
+		}
+	}
+
+	.svg-ccare-icon-lock {
+		margin: {
+			top: -($svg-ccare-icon-lock-height/2);
+			left: -($svg-ccare-icon-lock-width/2);
+		}
+	}
+
+	.svg-ccare-icon-box {
+		margin: {
+			top: -($svg-ccare-icon-box-height/2);
+			left: -($svg-ccare-icon-box-width/2);
+		}
+	}
+}

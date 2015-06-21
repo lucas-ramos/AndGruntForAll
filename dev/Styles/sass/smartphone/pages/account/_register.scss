@@ -1,0 +1,122 @@
+// =================
+// REGISTER PAGE STYLES
+// =================
+
+
+.descr_reg {
+	padding-bottom: 20px;
+}
+
+
+
+.selectInput_wrapper {
+	width:33%;
+	float: left;
+
+	&:nth-child(2) {
+		// https://www.youtube.com/watch?v=dsUXAEzaC3Q
+		width:34%;
+	}
+
+	// eccezione puntuale sulle select grandi un terzo
+	select {
+		background-position: 92% center;
+		padding-right: 30%;
+	}
+}
+
+#RegistrationViewModel_BirthDate_Wrapper {
+	&, .fieldValue {
+		@include pie-clearfix;
+	}
+
+	.fieldValue {
+		margin-bottom: 20px;
+	}
+}
+
+.validation-summary-errors {
+	margin: 20px 0;
+}
+
+.radioButtonBox {
+	width: 46%;
+	
+}
+
+.fieldRow.radioGroup {
+	margin: {
+		top: 30px;
+		bottom: 30px;
+	}
+
+	.field-validation-error {
+		color: $red;
+		font-size: $size-smaller-rem;
+		text-indent: 0;
+		top: 20px;
+		height: auto;
+		width: auto;
+	}
+
+}
+
+.acceptFlags {
+	.checkbox {
+		width: $form-checkbox-width;
+		float: left;
+	}
+
+	.flag {
+		margin: 10px 0;
+		min-height: $form-checkbox-height;
+	}
+
+	.description {
+		margin-left: 40px;
+	}
+
+	.fieldRow {
+		margin: 0px;
+	}
+}
+
+.flagContent {
+	float: left;
+}
+
+.buttonsRow {
+	button {
+		width: 100%;
+		@extend .primary;
+	}
+}
+
+.privacyContainer {
+	max-height: 130px;
+}
+
+%jp-alerts-style {
+	font-size: $size-tiny-rem;
+}
+
+.registrationForm {
+	.privacyContainer, .acceptFlags {
+		margin: 10px 0;
+		overflow: auto;
+		@extend %lato;
+		font-size: $size-mini-rem;
+
+		.JP & {
+			@extend %jp-alerts-style;
+		}
+	}
+}
+
+.docomo {
+	.JP & {
+		@extend %jp-alerts-style;
+		margin: 20px 0;
+		display: block;
+	}
+}

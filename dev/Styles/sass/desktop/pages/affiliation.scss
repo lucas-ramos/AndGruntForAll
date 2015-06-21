@@ -1,0 +1,115 @@
+// ===================
+// AFFILIATION PAGE STYLES
+// ===================
+@import "variables";
+@import "fonts";
+@import "Desktop/callToActions";
+@import "Desktop/Partials/susyClasses";
+
+main {
+	h2 {
+		margin: 20px auto;
+	}
+
+	h3 {
+		margin: 30px 0;
+	}
+	
+	dl {
+		list-style: none;
+	}
+
+	.fake-p {
+		font-size: $size-medium;
+	}
+
+	.tabs {
+		position: relative;   
+		min-height: 400px; /* This part sucks */
+		clear: both;
+		margin: 25px 0;
+	}
+	.tab {
+		float: left;
+
+		.tab-header {
+			padding: 10px; 
+			margin-left: -1px; 
+			position: relative;
+			left: 1px; 
+			color: $color-light;
+			font-size: $size-medium;
+			text-transform: uppercase;
+			cursor: pointer;
+		}
+
+		[type=radio] {
+			display: none;   
+		}
+	}
+	.content {
+		position: absolute;
+		top: 28px;
+		left: 0;
+		background: white;
+		right: 0;
+		bottom: 0;
+		padding: 20px 0;
+		border-top: 6px solid $color-ultra;
+
+		form {
+			@include pie-clearfix;
+		}
+
+		[type=submit] {
+			@extend .primary;
+			float: left;
+			clear: left;
+		}
+
+		&.bloody-border-fix {
+			padding-right: 13px;
+			width: 998px;
+		}
+	}
+	[type=radio]:checked ~ .tab-header {
+		@include zindex(input);
+		color: $black;
+
+		& ~ .content {
+			@include zindex(body);
+		}
+	}
+
+	.fieldLabel {
+		display: none;
+	}
+
+}
+
+
+
+#AffiliationViewModel_Name_Wrapper,
+#AffiliationViewModel_Traffic_Wrapper,
+#AffiliationViewModel_Country_Wrapper {
+	@extend .column-6;
+}
+
+#AffiliationViewModel_Email_Wrapper,
+#AffiliationViewModel_Url_Wrapper,
+#AffiliationViewModel_Comment_Wrapper {
+	@extend .column-6;
+	@extend .omega;
+}
+
+.affiliationLayer {
+	.intro {
+		font-size: $size-medium;
+		text-transform: uppercase;
+		margin: 10px 0;
+	}
+
+	span.text {
+		font-size: $size-medium;
+	}
+}

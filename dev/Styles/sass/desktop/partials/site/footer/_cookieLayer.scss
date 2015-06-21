@@ -1,0 +1,46 @@
+// COOKIE LAW LAYER (only in GB)
+// ------
+
+.cookiewLawLayer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: $color-ultra;
+	font-size: $size-large;
+	color: $color-medium;
+	@include zindex(layer-cookieLaw);
+
+	.cookieLawWrapper {
+		width: 998px;
+		margin: 0 auto;
+		position: relative;
+	}
+
+	.cookieLawContent {
+		width: 914px;
+		margin: 10px 18px 10px 0;
+
+		a {
+			color:$color-medium;
+			text-decoration: underline;
+			&:hover {color:$color-dark;}
+		}
+	}
+
+	.title {
+		 @include appendColon;
+	}
+
+	button {
+		cursor: pointer;
+		position: absolute;
+		right: 0;
+		top: 0;
+
+		@include imageReplacement;
+		@extend %svg-cross-18x18-999;
+	}
+}
+
+

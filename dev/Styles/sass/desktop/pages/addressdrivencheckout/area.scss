@@ -1,0 +1,185 @@
+// =========
+// CHECKOUT SECTION 
+// =========
+
+@import "variables";
+@import "fonts";
+@import "Desktop/callToActions";
+@import "Desktop/Partials/sprites";
+@import "Desktop/Partials/susyClasses";
+@import "Desktop/vendor/svgzr/sprites-svg";
+
+@import "Desktop/Partials/addressdrivencheckout/sidebar/recapDX";
+
+$checkoutHeaderHeight: 44px;
+$radio-checkbox-margin-right: 10px;
+
+$fieldRow-width: 42%;
+$fieldRow-margin: (100% - ($fieldRow-width * 2)) / 4;
+
+.svg-arrow-down {
+	@extend %svg-arrow-down;
+}
+
+.mainWrapper {
+	padding-bottom: 30px;
+}
+
+#container {
+	padding-top: $checkoutHeaderHeight; //Il CO ha un header differente
+}
+
+// Su ie8 il footer si incazza e cerca di conquistare tutta la pagina
+#siteFooter {
+	clear: both;
+}
+
+.coSectionTitle {
+	background-color: $color-medium;
+	padding: 12px 10px;
+	border: 1px solid $color-light;
+		
+	& h3 {
+		color: $white;
+	}
+}
+
+.coSectionContent {	
+	padding: 12px 10px;
+	border: 1px solid #ccc;
+	border-top: none;
+}
+.pageHeaderContainer {
+	padding-top: 25px;
+	.pageHeaderTitle {
+		@include pie-clearfix;
+		.activeSection, .centralElem, .notActiveSection {
+			float: left;
+			text-transform: uppercase;
+		}
+		.activeSection {
+			color: $color-dark;
+		}
+		.notActiveSection, .centralElem {
+			color: $color-extra;
+		}
+		.centralElem {
+			margin: 0 10px;
+		}
+	}
+}
+.free .currency {
+	display:none;
+}
+// LOGOUT (DELIVERY AND CONFIRMATION)
+.checkoutLogout {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	@extend %helvetica;
+	font-size: $size-small;
+	html.CN & {
+		font-size: $size-midsmall;
+	}
+	color: $color-medium;
+	.logout {
+		color: $black;
+		cursor: pointer;
+	}
+}
+
+//Elimino i placeholder dai form di billing e shipping
+/* .billingForm, .shippingForm {
+	input[placeholder] {
+		@include input-placeholder {
+			color: transparent;
+		}
+	}
+} */
+
+// FORM SU DUE COLONNE (DELIVERY E CONFIRMATION)
+.shippingForm, .creditCardForm {
+	@include pie-clearfix;
+	border-width: 1px 0;
+	border-style: solid;
+	border-color: $color-light;
+	padding: 20px 0;
+	margin: 20px 0;
+	.fieldRow {
+		&.text, &.label, &.select, &.zipCode, &.placeholder, &.creditCardTypeDropDownList {
+			width: $fieldRow-width;
+			margin-left: $fieldRow-margin;
+			margin-right: $fieldRow-margin;
+			float: left;
+		}
+		&.text, &.zipCode {
+			input {
+				@extend %helvetica;
+				font-size: $size-medium;
+			}
+		}
+
+		&.disabled {
+			@include opacity(0.5);
+		}
+	}
+	.fastCheckoutSection {
+		@include pie-clearfix;
+		clear: both;
+		margin-left: $fieldRow-margin;
+		padding-top: 15px;
+
+		.title {
+			@extend %knockout;
+			text-transform: uppercase;
+			font-size: $size-grand;
+		}
+	}
+	.fieldRow.checkbox {
+		@include pie-clearfix;
+		min-height: 0;
+		margin-bottom: 10px;
+		margin-top: 10px;
+		.fieldValue {
+			float: left;
+			margin-right: 10px;
+		}
+		.fieldLabel {
+			float: left;
+			line-height: $form-checkbox-height;
+		}
+	}
+}
+
+
+#cart {	
+	@import "cart";
+}
+
+
+#checkmail {
+	@import "checkmail";
+}
+
+#confirmation {
+	@import "confirmation";
+}
+
+#delivery {
+	@import "delivery";
+}
+
+#payment {
+	@import "payment";
+}
+
+#thankyou {
+	@import "thankyou";
+}
+
+#waittobuy {
+	@import "waittobuy";
+}
+
+#waitframe {
+	@import "waitframe";
+}

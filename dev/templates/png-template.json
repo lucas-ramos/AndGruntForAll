@@ -1,0 +1,19 @@
+{
+    "svg" : {
+        "importsTemplate": "",
+        "generalVarsTemplate": "",
+        "itemVarsTemplate": "$<%= className %>-width: <%= width %>;\n$<%= className %>-height: <%= height %>;\n",
+        "generalTemplate": "",
+        "itemTemplate": ".<%= className %> {\n\tbackground-image: url('data:image/svg+xml;base64,<%= base64 %>');\n<%= size %>}\n\n",
+        "allItemsTemplate": "<%= allClasses %> {\n\tbackground-repeat: no-repeat;\n}",
+        "sizeTemplate": "\twidth: $<%= className %>-width;\n\theight: $<%= className %>-height;\n"
+    },
+    "fallback" : {
+        "importsTemplate": "@import 'compass/utilities/sprites';\n@import '<%= dir %>*<%= ext %>';\n\n",
+		"generalVarsTemplate": "",
+		"itemVarsTemplate": "$<%= className %>-width: <%= lastDir %>-sprite-width(<%= fileName %>);\n$<%= className %>-height: <%= lastDir %>-sprite-height(<%= fileName %>);\n",
+        "generalTemplate": "// Helper for png sprites\n@mixin <%= mixinName %>($fileName){\n\t@include <%= lastDir %>-sprite($fileName);\n\twidth: <%= lastDir %>-sprite-width($fileName);\n\theight: <%= lastDir %>-sprite-height($fileName);\n}\n",
+        "itemTemplate": ".<%= className %> {\n\t@include <%= mixinName %>(<%= fileName %>);\n}\n",
+        "allItemsTemplate": ""
+    }
+}

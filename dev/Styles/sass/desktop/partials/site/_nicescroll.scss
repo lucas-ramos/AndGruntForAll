@@ -1,0 +1,14 @@
+
+// "fattens" the nice scroll cursor
+.nicescroll-rails {
+	cursor: pointer;
+	
+	div {
+		@include transition(padding 0.2s);
+		background-color: $color-light;
+
+		&:hover, &:active {
+			padding: 3px;
+		}
+	}
+}

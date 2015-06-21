@@ -1,0 +1,25 @@
+/* Layer */
+
+.uiLayer-removeSelectedWishListItems .mfp-content,
+.uiLayer-addAllItemsFromWishList .mfp-content,
+.uiLayer-addSelectedWishListItemsToCart .mfp-content,
+.uiLayer-addItem .mfp-content {
+	font-size: $size-medium;
+	list-style: none;
+
+	.label, li, .error {
+		padding: 0 20px;
+	}
+}
+
+
+
+.notifyLastItemInfo .label{
+	display: none;
+}
+
+.uiLayer-uiConfirmationAlert{
+	.inner{
+		padding: 30px;
+	}
+}

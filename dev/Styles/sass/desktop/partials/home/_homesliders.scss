@@ -1,0 +1,320 @@
+﻿// ================
+// TOP AND MIDDLE SLIDER IN HOME PAGE
+// ================
+
+// COMMON
+
+.banner-slider {
+	overflow: hidden;
+
+	h5, h6 {
+		text-transform: none;
+	}
+
+	h2 {
+		line-height: 0.9;
+		text-transform: none;
+	}
+
+	h3 {
+		 margin-top: 3px;
+	}
+
+	h5 {
+		margin-top: 10px;
+	}
+
+	.bx-next {
+		right: -2000px;
+	}
+
+	.arrow {
+		background-position: center;
+		border-style: solid;
+		border-color: $color-light;
+		position: absolute;
+		top: 50%;
+		margin-top: -35px;
+		width: 30px;
+		height: 50px;
+
+		@include transition(opacity 0.2s ease);
+		@include opacity(0);
+
+		&.visible{
+			@include opacity(1);
+		}
+	}
+
+	.innerarrow {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-top: -($svg-arrow-thin-left-height/2);
+		margin-left: -($svg-arrow-thin-left-width/2);
+	}
+
+	.bx-prev {
+		.arrow  {
+			border-width: 2px 0 2px 2px;
+			right: 0;
+		}
+	}
+
+	.bx-next {
+		.arrow  {
+			border-width: 2px 2px 2px 0;
+			left: 0;
+		}
+	}
+
+	.opacityFiller {
+		background-color: $white;
+		width: 100%;
+		@include transition(opacity 0.2s ease-out);
+	}
+
+	.bx-prev, .bx-next {
+		width: 2000px;
+	} 
+}
+
+
+// BANNERONE
+#big-banner {
+	.bannerElem {
+		display: block;
+		width: 1400px;
+		height: 500px;
+		margin: auto;
+	}
+}
+
+
+#topSection.banner-slider .bx-prev .arrow {
+	right: -2px;
+}
+#topSection.banner-slider .bx-next .arrow {
+	left: 4px;
+}
+
+// TOP SLIDER
+
+.topSlider {
+	h2, h3, h4, h5 {
+		@include transition(all 1s ease);
+		opacity: 0;
+	}
+
+	
+
+	.currentSlide {
+		h2, h3, h4, h5 {
+			opacity: 1;
+		}
+	}
+
+	li  {
+		@include pie-clearfix;
+
+		.banner {
+			float: left;
+			position: relative;
+			margin-right: 4px;
+			background-color: transparent;
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+
+			&.smallElemTop, &.smallElemBottom {
+				margin-right: 0px;
+			}
+
+		}
+	}
+}
+
+#big-banner, .completeElem, .bigElem {
+	.textWrapper {
+		width: 280px;
+		margin-left: 10px;
+	}
+
+	h2 {
+		padding-top: 80px;
+	}
+
+	h4 {
+		position: absolute;
+		top: 58px;
+	}
+}
+
+.completeElem {
+	width: 998px;
+	height: 500px;
+}
+
+.bigElem {
+	width: 660px;
+	height: 500px;
+}
+
+$banner-width: 334px;
+
+.smallElemTop {
+	width: $banner-width;
+	height: 330px;
+	margin-bottom: 4px;
+
+	.textWrapper {
+		position: absolute;
+		bottom: 20px;
+		left: 10px;
+		width: 310px;
+	}
+	h2 {
+		.JP &{ 
+			line-height: 1em;
+		}
+	}
+	h5 {
+		.JP &{ 
+			line-height: 1.2em;
+		}
+	}
+}
+
+.smallElemBottom {
+	width: $banner-width;
+	height: 166px;
+
+	.textWrapper {
+		position: absolute;
+		left: 185px;
+		top: 8px;
+		width: 144px;
+	}
+
+	h2 {
+		font-size: 2.2em;
+		@extend %knockout-bold;
+		.JP &{ 
+			font-size: 2.2em; 
+			line-height: 1.2em;
+		}
+	}
+	h5 {
+
+		.JP &{ 
+			font-size: 1.7em; 
+			line-height: 1.2em;
+		}
+	}
+}
+
+
+
+// MIDDLE SLIDER
+
+.middleSlider {
+
+
+	h4, h2, p {
+		padding: 10px 0 0 10px;
+	}
+
+	h2 {
+		line-height: 0.9em;
+	}
+
+	html.desktop & {
+		p {
+			@include transition(all 0.3s ease);
+			@include opacity(0);
+		}
+
+		a:hover {
+			p {
+				@include opacity(1);
+			}
+		}
+	}
+}
+
+.sliderColumn {
+	float: left;
+	margin-right: 4px;
+
+	a {
+		display: block;
+		position: relative;
+	}
+}
+
+.shortElem {
+	width: 328px;
+	height: 250px;
+	margin-bottom: 4px;
+}
+
+.tallElem {
+	width: 328px;
+	height: 504px;
+}
+
+
+
+
+
+// TOP SECTION SPECIFIC RULES
+#topSection {
+	max-height: 500px;
+
+	.bx-prev, .bx-next, .opacityFiller {
+		height: $firstline-slide-height;
+
+		.arrow {
+			background-color: $white;
+		}
+	}
+
+	.bx-prev {
+		left: -2006px;
+	}
+
+	.opacityFiller { //NECESSARIO per ie8, serve ad impedire di rendere cliccabili gli elementi laterali dello slider
+		@include opacity(0);
+	}
+}
+
+
+
+// MIDDLE SECTION SPECIFIC RULES
+#middleSection {
+	max-height: 554px;
+
+	.bx-prev, .bx-next, .opacityFiller {
+		height: $secondline-slide-height;
+	}
+
+	.bx-prev {
+		left: -2005px;
+	}
+
+	.opacityFiller {
+		@include opacity(0.8);
+
+		&:hover {
+			@include opacity(0.9);
+		}
+
+		&.max-opacity {
+			@include opacity(0.98);
+		}
+	}
+}
+
+.RU #middleSection h2 {
+	font-size: 3em;
+}
+

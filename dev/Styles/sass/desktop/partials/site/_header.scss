@@ -1,0 +1,514 @@
+// HEADER
+// ------
+$contentWrapper-padding-top: 25px;
+$contentWrapper-padding-bottom: 10px;
+@import "header/headerMenu";
+@import "header/ccareLayerChina";
+@import "header/shoppingbagLayer";
+@import "header/loginLayer";
+@import "header/textSearch";
+
+
+.svg-shoppingbag {
+	@extend %svg-shoppingbag;
+}
+
+.svg-arrow-white-left {
+	@extend %svg-arrow-white-left;
+}
+
+.svg-ccare-telephone {
+	@extend %svg-ccare-telephone;
+}
+
+.svg-ccare-manichino {
+	@extend %svg-ccare-manichino;
+}
+
+.svg-cross-30x30-666 {
+	@extend %svg-cross-30x30-666;
+}
+
+.svg-arrow-left {
+	@extend %svg-arrow-left;
+}
+
+.svg-arrow-right {
+	@extend %svg-arrow-right;
+}
+
+
+// HEADER POSITIONING
+
+#siteHeader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	@include zindex(header);
+}
+
+
+// HIDDEN LAYER CONTAINED IN HEADER
+
+#closingCrossLayer {
+	height: 100%;
+}
+
+#headerLayer {
+	position: relative;
+	background-color: $color-ultra;
+	height: 0;
+	overflow: hidden;
+	@include transition(height 0.8s ease);
+
+	.closeCross {
+		cursor: pointer;
+		position: absolute;
+		top: 10px;
+		right: 6px;
+		@include zindex(headerLayerCross);
+
+		.icon {
+			display: block;
+		}
+	}
+
+	.headerLayerContent {
+		@include pie-clearfix;
+
+		.items .size {
+			.value { .halfSize & {@extend %lato; font-size: 0.8em;}	}
+		}
+
+		.title {
+			@include pie-clearfix;
+			margin-bottom: 10px;
+
+			.icon {
+				float: left;
+				margin-right: 10px;
+			}
+
+			.text {
+				@extend %knockout-bold;
+				float: left;
+				font-size: $size-massive;
+				text-transform: uppercase;
+			}
+
+			.link {
+				a {
+					float: left;
+					font-size: $size-big;
+					margin-left: 9px;
+					margin-top: 7px;
+					color: $color-light;
+
+					&:hover {
+						color: $color-dark;
+					}
+				}
+			}
+		}
+	}
+
+	&.loginLayerOpen {
+		height: $login-layer-height;
+
+		.serverSideErrors {
+			position: absolute;
+			top: -17px;
+		}
+
+		#headerLoginLayer {
+			@include opacity(1);
+			@include zindex(headerLayer);
+		}
+	}
+
+	&.cartLayerOpen {
+		height: $cart-layer-height;
+
+		#headerCartLayer {
+			@include opacity(1);
+			@include zindex(headerLayer);
+		}
+	}
+
+	&.wishlistLayerOpen {
+		height: $wishlist-layer-height;
+
+		#headerWishlistLayer {
+			@include opacity(1);
+			@include zindex(headerLayer);
+		}
+	}
+
+	#headerLoginLayer, #headerCartLayer, #headerWishlistLayer, .loadingLayer {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	}
+
+	#headerLoginLayer, #headerCartLayer, #headerWishlistLayer {
+		overflow: hidden;
+		@include transition(opacity 0.8s ease);
+		@include opacity(0);
+	}
+
+	.loadingLayer {
+		@include zindex(headerLayerLoading);
+	}
+
+	.mandatory {
+		display: none;
+	}
+
+	.contentWrapper {
+		padding-top: $contentWrapper-padding-top;
+		padding-bottom: $contentWrapper-padding-bottom;
+	}
+}
+
+.ielt9 { //maledetto ie8.
+
+	.loginLayerOpen {
+		#headerCartLayer, #headerWishlistLayer {
+			display: none;
+		}
+	}
+
+	.cartLayerOpen {
+		#headerLoginLayer, #headerWishlistLayer {
+			display: none;
+		}
+	}
+
+	.wishlistLayerOpen {
+		#headerLoginLayer, #headerCartLayer {
+			display: none;
+		}
+	}
+}
+
+#miniWishList {
+	$info-width: 55%;
+	$image-width: 100% - $info-width;
+
+	.items {
+		@include pie-clearfix;
+		height: 147px; //?
+		overflow-y: hidden;
+	}
+
+	li {
+		$margin: 5px;
+		$padding: 10px;
+		$width: ($grid-width - ($margin * 8) - ($padding * 8)) / 4;
+
+		width: $width;
+		margin: 0 $margin $padding;
+
+		padding: $padding;
+
+		float: left;
+		background-color: $white;
+	}
+
+	.wishlistItem {
+		//necessarie per sovrascrivere le regole dell'account
+		width: auto;
+		float: none;
+		margin: 0;
+		min-height: 0;
+
+		.priceUpdater { //necessaria per sovrascrivere le regole dell'account
+			color: $black;
+		}
+
+		> div {
+			float: left;
+		}
+	}
+
+	.info {
+		width: $info-width;
+
+		> div , > span {
+			float: left;
+			width: 100%;
+
+			//necessarie per sovrascrivere le regole dell'account
+			height: auto;
+			margin: 0;
+		}
+	}
+
+	.image {
+		width: $image-width;
+	}
+
+	.brandName {
+		@extend %knockout-bold;
+		font-size: $size-medium;
+	}
+
+	.microCategory, .limitedAvail, .lastAvail {
+		font-size: $size-midsmall;
+		padding-top: 5px;
+	}
+
+	.microCategory {
+		//necessarie per sovrascrivere le regole dell'account
+		@extend %knockout;
+		line-height: 1.0;
+
+		display: block;
+		width: 100%;
+		color: $color-light;
+	}
+
+	.priceUpdater {
+		font-size: $size-large;
+		padding-top: 5px;
+
+		.price {
+			display: block;
+		}
+
+
+	}
+
+	.bx-wrapper {
+		position: relative;
+	}
+
+	.bx-prev, .bx-next {
+		position: absolute;
+		top: 50%;
+		margin-top: - ($svg-arrow-left-height / 2);
+	}
+
+	.bx-prev {
+		left: - $svg-arrow-left-width;
+	}
+
+	.bx-next {
+		right: - $svg-arrow-right-width;
+	}
+
+}
+
+#siteHeader #passwordRecoveryLink {
+	position: absolute;
+	top: 52px;
+	left: 252px;
+	margin-top: 10px;
+
+	& button {
+		@extend .tertiary;
+	}
+}
+
+
+// PAGE POSITIONING BASED ON HEADER
+
+#container {
+	padding-top: $header-height;
+	@include transition(padding 0.8s ease);
+
+	&.loginLayerOpen {
+		padding-top: $header-height + $login-layer-height;
+	}
+	&.cartLayerOpen {
+		padding-top: $header-height + $cart-layer-height;
+	}
+	&.wishlistLayerOpen {
+		padding-top: $header-height + $wishlist-layer-height;
+	}
+}
+
+
+// THECORNER.COM LOGO
+
+#logo {
+	height: $header-secondline-height;
+	position: relative;
+
+	&, .icon, .text {
+		display: block;
+	}
+
+	.icon {
+		@extend %svg-logo;
+		position: absolute;
+		top: 50%;
+		margin-top: -($svg-logo-height/2);
+		.US &{
+			@extend %svg-logo-r;
+		}
+	}
+
+
+	.text {
+		text-indent: -9999999px;
+	}
+}
+
+.logoContainer {
+	@extend .column-7;
+	.RU & { @extend .column-6; }
+}
+
+.search {
+	@extend .column-3;
+	@extend .omega;
+	width: 252px; //column-3 + margin
+}
+
+#genderSelector {
+	@extend .column-2; @extend .omega;
+	.RU & { @extend .column-3; @extend .omega; }
+}
+
+
+// HEADER LINES
+
+.headerLine {
+
+	&.first{
+		background-color: $white;
+		min-height: $header-firstline-height;
+		line-height: $header-firstline-height;
+
+		.userSection {
+			float: left;
+			margin-right: 10px;
+		}
+	}
+
+	&.second {
+		background-color: $black;
+		color: $white;
+		height: $header-secondline-height;
+	}
+
+	&.third {
+		background-color: $color-top;
+		border-bottom: $header-thirdline-border solid $color-ultra;
+		min-height: $header-thirdline-height;
+		line-height: $header-thirdline-height;
+	}
+}
+
+
+#genderSelector {
+	font-size: $size-medium;
+
+	li {
+		float: left;
+		width: 50%;
+		text-align: center;
+		border-width: 0 1px;
+		border-style: solid;
+		border-color: $color-ultra;
+		margin-right: -2px;
+	}
+
+	.selected {
+		background-color: $color-top;
+		color: $black;
+	}
+
+	a {
+		color: $white;
+		text-transform: uppercase;
+		display: block;
+		height: $header-secondline-height;
+		line-height: $header-secondline-height;
+	}
+}
+
+//selected
+body[data-gender="U"] #genderSelector [data-target-gender="U"],
+body[data-gender="D"] #genderSelector [data-target-gender="D"] {
+	pointer-events: none;
+	cursor: default;
+	background: $color-top;
+	border: none;
+
+	a {
+		color: $black;
+	}
+}
+
+
+#header-promotions {
+	float: left;
+	position: absolute;
+	font-size: $size-medium;
+	overflow-y: hidden;
+	height: $header-firstline-height;
+
+	.loadingAnimation {
+		display: none; //elimina l'orribile layer di caricamento sul promotion
+	}
+}
+
+#toolbar-container {
+	float: left;
+	width: 100%;
+}
+
+#toolbar {
+	float: right;
+	font-size: $size-midsmall;
+
+	ul {
+		float: left;
+	}
+
+	li {
+		float: left;
+		margin-right: 10px;
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+	}
+
+}
+
+.wishListLink {
+	.count {
+		display: none;
+	}
+}
+
+.mainCartLink {
+	.icon {
+		float: right;
+		@extend %svg-shoppingbag;
+	}
+
+	.count {
+		@include wrapInParenthesis;
+	}
+
+	.cartlinkitems0 .count {
+		display: none;
+	}
+}
+
+.userLogged, .userNotLogged, .cartSection {
+	text-transform: uppercase;
+
+	.welcome {
+		text-transform: none;
+		color: $color-medium;
+	}
+}

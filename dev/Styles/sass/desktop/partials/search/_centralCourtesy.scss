@@ -1,0 +1,36 @@
+﻿#courtesy {
+	display: none;
+
+	.show-courtesy & {
+		display: block;
+	}
+
+	margin: 6px 0 0 16px;
+
+	h4 {
+		border-width: 1px 0;
+		border-style: solid;
+		border-color: $color-light;
+		padding: 15px 0;
+	}
+
+	.buttons {
+		@include pie-clearfix;
+		width: 60%;
+		margin: auto;
+	}
+
+	.button {
+		width: 49%;
+		margin: 25px 0;
+		padding: 0;
+
+		&.primary {
+			float: left;
+		}
+
+		&.secondary {
+			float: right;
+		}
+	}
+}

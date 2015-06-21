@@ -1,0 +1,340 @@
+// ========================
+// ITEM PAGE STYLES
+// ========================
+@import "variables";
+@import "fonts";
+@import "Smartphone/callToActions";
+@import "Smartphone/vendor/svgzr/sprites-svg";
+
+.svg-zoom {
+	@extend %svg-zoom;
+}
+
+
+.productMiniDescr {
+	color: $color-deep;
+	font-size: $size-medium-rem;
+	padding: 1em 0;
+	text-align: center;
+	.brandAndMicro {
+		.brandName {
+			text-transform: uppercase;
+			font-size: $size-super-rem;
+			@extend %knockout-bold;
+			margin-top: 6px;
+		}
+	}
+	.microCategory {
+		@extend %lato;
+		font-size: $size-midsmall-rem;
+
+	}
+	.priceUpdater {
+		font-size: $size-super-rem;
+		.full {
+			color: $color-medium;;
+		}
+		> span {
+			display: block;
+		}
+	}
+}
+.itemInfoWrapper {
+	background-color: $color-ultra;
+	text-align: center;
+	@extend %lato;
+	color: $color-medium;
+	padding: 15px 0;
+	margin-top: 10px;
+	.itemInfo {
+		.descriptionHeader, .compositionInfo .label {
+			display: block;
+			font-size: $size-medium-rem;
+			@extend %knockout-bold;
+		}
+		.descriptionContent, .compositionInfo .text {
+			font-size: $size-small-rem;
+		}
+		.descriptionContent .label, .descriptionHeader{
+			@extend %lato-bold;
+			text-transform: uppercase;
+
+		}
+		.descriptionHeader{
+			margin-bottom: 5px;
+		}
+		.itemdescription{
+			margin-bottom: 10px;
+		}
+		.productCode{
+			margin-bottom: 10px;
+		}
+		.localizedAttributes{
+			margin-bottom: 10px;
+			.text{
+				@include appendColon
+			}
+		}
+		.compositionInfo .label{
+			margin-bottom: 5px;
+		}
+		.tabs {
+			padding: 0 10px;
+			[data-ytos-tab="ShippingReturns"] {
+				display: none;
+			}
+		}
+	}
+}
+.selectionWrapper, .soldOutMessage {
+	border-top: 1px $white solid;
+}
+
+$select-height: 65px;
+
+.selectColorSizeAlert {
+	display: none;
+	margin-top: 5px;
+	color: $red;
+	font-size: $size-large;
+	position: absolute;
+	top: 0;
+	right: 0;
+	&.active {
+		display: block;
+	}
+}
+
+.colorSizeContainer {
+	@include pie-clearfix;
+	.wrap {
+		width: 49.5%;
+		float: left;
+		select {
+			width: 100%;
+			line-height: $select-height;
+			height: $select-height;
+			background-color: $color-extra;
+			font-size: $size-big-rem;
+			text-transform: uppercase;
+			color: $white;
+			@extend %svg-arrow-white-down;
+		}
+		.selectionTitle, .selectionLabel {
+			display: none;
+		}
+	}
+	.colors.wrap {
+		margin-right: 1%;
+	}
+}
+
+.buttonBox {
+	position: relative;
+	padding-top: 20px;
+	button {
+		width: 100%;
+		margin: 10px 0;
+	}
+
+	.addToCart {
+		@extend .primary;
+	}
+
+	.addItemToWishList {
+		@extend .secondary;
+
+		.RU & {
+			font-size: $size-midlarge;
+		}
+	}
+}
+
+.button.soldOutMessage {
+	cursor: default;
+	font-size: $size-mini-rem;
+	@extend %lato;
+	background-color: transparent;
+	color: $black;
+	padding-top: 5px;
+	&:hover {
+		background-color: transparent;
+	}
+}
+
+#productImage {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	overflow: hidden;
+	.mainImageWrapper {
+		position: relative;
+	}
+	%svg-zoom {
+		position: absolute;
+		right: 0;
+	}
+	img {
+		display: block;
+		margin: 0 auto;
+		width: 230px;
+	}
+}
+#alternativeImagesWrapper {
+	.alternativeImages {
+		@include pie-clearfix;
+		max-width: 400px;
+		margin: 0 auto;
+		@include display-flex;
+		@include justify-content(center);
+		li {
+			
+			width: 16%;
+			margin: 0 2%;
+			min-height: 70px;
+			img {
+				width: 100%;
+			}
+			&.selected {
+				border-bottom: 3px solid $color-dark;
+			}
+		}
+	}
+}
+#zoomLayer {
+	position: fixed;
+	@include zindex(item-zoom);
+	display: none;
+	.overlayElements, .alternativeImages {
+		display: none;
+	}
+	.overlayElements{
+		width: 60px;
+		height: 60px;
+		display: block;
+		top: 10px;
+		right: 10px;
+		position: fixed;
+		background-color: $black;
+		@include opacity(0.5);
+		.close{
+			.icon{
+				fill: white;
+				svg{
+					width: 28px;
+					height: 28px;
+					top: 15px;
+					left: 15px;
+					position: relative;
+				}
+			}
+		}
+	}
+}
+.zoomImageContainer {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	img{
+		height: 1000px;
+	}
+	
+	&.noScroll {
+		overflow: hidden;
+	}
+	&.nativeScroll {
+		overflow: scroll;
+		@include nativeScroll;
+	}
+}
+
+
+.loginLayer {
+	h1 {
+		font-size: $size-huge-rem;
+		color: $white;
+	}
+}
+
+#relatedItems{
+	margin-top: 30px;
+	margin-bottom: 20px;
+
+	.topTitle {
+		text-align: center;
+		font-size: $size-big-rem;
+		text-transform: uppercase;
+		@extend %knockout-bold;
+	}
+
+	.linkOverlay{
+		display: none;
+	}
+
+	.relatedItems{
+		@include display-flex;
+		@include justify-content(space-between);
+		margin: 20px 0 10px;
+	}
+
+	.relatedItem {
+		width: 25%;
+	}
+
+	.image {
+		a {
+			display: block;
+		}
+	}
+
+	img {
+		width: 100%;
+	}
+
+	.secondImage {
+		display: none;
+	}
+}
+
+
+.mfp-content {
+	.loginLayer {
+		.validation-summary-errors {
+			padding: 5px 0;
+			margin-bottom: 10px;
+			color: $red;
+		}
+	}
+
+	#loginSuccessfullMessage {
+		display: none;
+	}
+
+	.loginLayerDescription{
+		margin: 10px 0;
+	}
+
+	.loginLayerTitle{
+		.RU & {
+			font-size: $size-jumbo-rem;
+			word-break: break-all;
+		}
+	}
+}
+
+
+#availabilityAlerts {
+    text-align: center;
+    color: $red;
+    font-size:$size-expanse-rem; 
+
+    .RU & {
+        text-transform: lowercase;
+        }
+
+	.lastItemAlert, .limitedAvailAlert {
+		padding-top: 30px;
+	}
+}
+

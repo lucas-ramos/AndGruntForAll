@@ -1,0 +1,1319 @@
+@charset "UTF-8";
+/* effetto height:100% sugli elementi flottanti */
+@font-face {
+  font-family: 'KnockoutLight';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.svg#KnockoutLight") format("svg");
+}
+@font-face {
+  font-family: 'KnockoutRegular';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.svg#KnockoutRegular") format("svg");
+}
+@font-face {
+  font-family: 'HelveticaCondensedLight';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.svg#KnockoutRegular") format("svg");
+}
+@font-face {
+  font-family: 'HelveticaCondensedBold';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.svg#KnockoutRegular") format("svg");
+}
+@font-face {
+  font-family: 'LatoRegular';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.svg#LatoRegular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'LatoBold';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.svg#LatoBold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+.RU button, .RU .button, .RU .sizeGuideContainer .sizeGuideLink, .sizeGuideContainer .RU .sizeGuideLink, .RU #back a, #back .RU a, .RU .halfSize .colorSizeContainer .prettyselect-drop, .halfSize .colorSizeContainer .RU .prettyselect-drop, .RU .halfSize .selectSize.sizeSelected, .halfSize .RU .selectSize.sizeSelected, .RU .halfSize .sizeConversion, .halfSize .RU .sizeConversion, .RU .halfSize .selectedCombination, .halfSize .RU .selectedCombination {
+  font-family: Arial, Verdana, sans-serif;
+}
+
+.RU .uiLayer-sizeGuideLink thead, .uiLayer-sizeGuideLink .RU thead, .RU #itemData .price, #itemData .RU .price, .RU #relatedItems .brandName, #relatedItems .RU .brandName {
+  font-family: Arial, Verdana, sans-serif;
+  font-weight: bold;
+}
+
+button, .button, .sizeGuideContainer .sizeGuideLink, #back a {
+  font-family: KnockoutLight, Arial, Verdana, sans-serif;
+  font-weight: normal;
+}
+.JP button, .JP .button, .JP .sizeGuideContainer .sizeGuideLink, .sizeGuideContainer .JP .sizeGuideLink, .JP #back a, #back .JP a {
+  font-family: KnockoutLight, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+}
+.CN button, .CN .button, .CN .sizeGuideContainer .sizeGuideLink, .sizeGuideContainer .CN .sizeGuideLink, .CN #back a, #back .CN a {
+  font-family: KnockoutLight, HelveticaCondensedLight, Arial, "Microsoft YaHei", "Microsoft YaHei Regular", SimHei, "SimHei Regular", sans-serif;
+}
+
+.uiLayer-sizeGuideLink thead, #itemData .price, #relatedItems .brandName {
+  font-family: KnockoutRegular, Arial, Verdana, sans-serif;
+  font-weight: normal;
+}
+.JP .uiLayer-sizeGuideLink thead, .uiLayer-sizeGuideLink .JP thead, .JP #itemData .price, #itemData .JP .price, .JP #relatedItems .brandName, #relatedItems .JP .brandName {
+  font-family: KnockoutRegular, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+}
+.CN .uiLayer-sizeGuideLink thead, .uiLayer-sizeGuideLink .CN thead, .CN #itemData .price, #itemData .CN .price, .CN #relatedItems .brandName, #relatedItems .CN .brandName {
+  font-family: KnockoutLight, HelveticaCondensedLight, Arial, "Microsoft YaHei", "Microsoft YaHei Regular", SimHei, "SimHei Regular", sans-serif;
+}
+
+.halfSize .colorSizeContainer .prettyselect-drop, .halfSize .selectSize.sizeSelected, .halfSize .sizeConversion, .halfSize .selectedCombination {
+  font-family: LatoRegular, Arial, Verdana, sans-serif;
+  font-weight: normal;
+}
+.JP .halfSize .colorSizeContainer .prettyselect-drop, .halfSize .colorSizeContainer .JP .prettyselect-drop, .JP .halfSize .selectSize.sizeSelected, .halfSize .JP .selectSize.sizeSelected, .JP .halfSize .sizeConversion, .halfSize .JP .sizeConversion, .JP .halfSize .selectedCombination, .halfSize .JP .selectedCombination {
+  font-family: LatoRegular, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+}
+
+/* ==========================================================================
+   CALL TO ACTIONS
+   Use with:
+
+	@extend button				(extends button rules)
+	@extend .secondary			(extends .secondary rules)
+	@extend button.secondary	(extends .secondary rules, not button's)
+	@extend .ugly-button		(extends .ugly-button rules)
+
+	NOTE: THESE ARE CLASSES.
+	THEY WILL BE REPLICATED FOR EACH TIME THEY'RE INCLUDED.
+	Include this only when is necessary.
+	Include this in scss PARENTS ONLY.
+
+	========================================================================== */
+button {
+  border-style: solid;
+  border-width: 1px;
+  cursor: pointer;
+  display: block;
+  font-size: 1.6em;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  outline: none;
+  text-align: center;
+  text-transform: uppercase;
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 40px;
+}
+
+.button, .sizeGuideContainer .sizeGuideLink {
+  border-style: solid;
+  border-width: 1px;
+  cursor: pointer;
+  display: block;
+  font-size: 1.6em;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  outline: none;
+  text-align: center;
+  text-transform: uppercase;
+  padding-left: 15px;
+  padding-right: 15px;
+  line-height: 40px;
+  height: 38px;
+}
+
+button.primary, #itemData button.addToCart, button.addItem, .button.primary, .sizeGuideContainer .primary.sizeGuideLink, .sizeGuideContainer #itemData .sizeGuideLink.addToCart, #itemData .sizeGuideContainer .sizeGuideLink.addToCart, .sizeGuideContainer button.sizeGuideLink.addItem, #itemData .button.addToCart, button.button.addItem {
+  background-color: #000;
+  color: #FFF;
+  border-color: #000;
+}
+button.primary:hover, #itemData button.addToCart:hover, button.addItem:hover, .button.primary:hover, .sizeGuideContainer .primary.sizeGuideLink:hover, .sizeGuideContainer #itemData .sizeGuideLink.addToCart:hover, #itemData .sizeGuideContainer .sizeGuideLink.addToCart:hover, .sizeGuideContainer button.sizeGuideLink.addItem:hover, #itemData .button.addToCart:hover, button.button.addItem:hover {
+  background-color: #999;
+  border-color: #999;
+}
+button.secondary, .sizeGuideContainer button.sizeGuideLink, #itemData button.addItemToWishList, button.addItemToWishList, .button.secondary, .sizeGuideContainer .sizeGuideLink, #itemData .button.addItemToWishList, #itemData .sizeGuideContainer .addItemToWishList.sizeGuideLink, .sizeGuideContainer #itemData .addItemToWishList.sizeGuideLink, button.button.addItemToWishList {
+  background-color: #EBEBEB;
+  color: #333;
+  border-color: #CCC;
+}
+button.secondary:hover, .sizeGuideContainer button.sizeGuideLink:hover, #itemData button.addItemToWishList:hover, button.addItemToWishList:hover, .button.secondary:hover, .sizeGuideContainer .sizeGuideLink:hover, #itemData .button.addItemToWishList:hover, #itemData .sizeGuideContainer .addItemToWishList.sizeGuideLink:hover, .sizeGuideContainer #itemData .addItemToWishList.sizeGuideLink:hover, button.button.addItemToWishList:hover {
+  background-color: #FFF;
+}
+button.tertiary, .button.tertiary, .sizeGuideContainer .tertiary.sizeGuideLink {
+  background: none;
+  border: 0;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  text-transform: none;
+  text-decoration: underline;
+}
+button.disabled, button[disabled], .button.disabled, .sizeGuideContainer .disabled.sizeGuideLink, .button[disabled], .sizeGuideContainer [disabled].sizeGuideLink {
+  background-color: #FFF;
+  color: #EBEBEB;
+  border-color: #EBEBEB;
+  cursor: default;
+}
+button.disabled:hover, button[disabled]:hover, .button.disabled:hover, .sizeGuideContainer .disabled.sizeGuideLink:hover, .button[disabled]:hover, .sizeGuideContainer [disabled].sizeGuideLink:hover {
+  background-color: #FFF;
+  border-color: #EBEBEB;
+}
+
+.column-1 {
+  width: 74px;
+  float: left;
+  margin-right: 10px;
+}
+
+.column-2 {
+  width: 158px;
+  float: left;
+  margin-right: 10px;
+}
+
+.column-3, #relatedItems .relatedItem {
+  width: 242px;
+  float: left;
+  margin-right: 10px;
+}
+
+.column-4 {
+  width: 326px;
+  float: left;
+  margin-right: 10px;
+}
+
+.column-5 {
+  width: 410px;
+  float: left;
+  margin-right: 10px;
+}
+
+.column-6 {
+  width: 494px;
+  float: left;
+  margin-right: 10px;
+}
+
+.column-7 {
+  width: 578px;
+  float: left;
+  margin-right: 10px;
+}
+
+.column-8 {
+  width: 662px;
+  float: left;
+  margin-right: 10px;
+}
+
+.column-9 {
+  width: 746px;
+  float: left;
+  margin-right: 10px;
+}
+
+.column-10 {
+  width: 830px;
+  float: left;
+  margin-right: 10px;
+}
+
+.column-11 {
+  width: 914px;
+  float: left;
+  margin-right: 10px;
+}
+
+.column-12 {
+  width: 998px;
+  float: left;
+  margin-right: 10px;
+}
+
+.prefix-1 {
+  padding-left: 84px;
+}
+
+.prefix-2 {
+  padding-left: 168px;
+}
+
+.prefix-3 {
+  padding-left: 252px;
+}
+
+.prefix-4 {
+  padding-left: 336px;
+}
+
+.prefix-5 {
+  padding-left: 420px;
+}
+
+.prefix-6 {
+  padding-left: 504px;
+}
+
+.prefix-7 {
+  padding-left: 588px;
+}
+
+.prefix-8 {
+  padding-left: 672px;
+}
+
+.prefix-9 {
+  padding-left: 756px;
+}
+
+.prefix-10 {
+  padding-left: 840px;
+}
+
+.prefix-11 {
+  padding-left: 924px;
+}
+
+.omega, #relatedItems .relatedItem.omega {
+  margin-right: 0 !important;
+}
+
+.centralColumn {
+  *zoom: 1;
+  width: 998px;
+  padding-left: 6px;
+  padding-right: 6px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  position: relative;
+}
+.centralColumn:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.svgfallback-sprite, .no-svg #zoomLayer .close .icon, .ielt9 #zoomLayer .close .icon {
+  background-image: url('/Content/Styles/generated_images/svgfallback-s163386ba73.png');
+  background-repeat: no-repeat;
+}
+
+.sprites-desktop-sprite, .sprites-desktop-checkMark, .sprites-desktop-checkWhite, .sprites-desktop-cinesina, .sprites-desktop-fb_btn, .sprites-desktop-giftPackage, .sprites-desktop-giftPackageChina, .sprites-desktop-gplus_btn, .sprites-desktop-kaixin_btn, .sprites-desktop-pinit_btn, .sprites-desktop-plusone_btn, .sprites-desktop-seal, .sprites-desktop-small_i, .sizeGuideContainer .icon, .sprites-desktop-tweet_btn, .sprites-desktop-twitter_btn, .sprites-desktop-weiboo_btn {
+  background-image: url('/Content/Styles/generated_images/sprites-desktop-s6783407e58.png');
+  background-repeat: no-repeat;
+}
+
+.sprites-creditcards-sprite, .sprites-creditcards-alipay, .sprites-creditcards-americanexpress, .sprites-creditcards-americanexpress_big, .sprites-creditcards-cartebleue, .sprites-creditcards-cartebleue_big, .sprites-creditcards-cartebleuevisa_big, .sprites-creditcards-discover, .sprites-creditcards-discover_big, .sprites-creditcards-jcb, .sprites-creditcards-jcb_big, .sprites-creditcards-maestro, .sprites-creditcards-maestro_big, .sprites-creditcards-mastercard, .sprites-creditcards-mastercard_big, .sprites-creditcards-payease, .sprites-creditcards-paypal, .sprites-creditcards-paypal_big, .sprites-creditcards-postepay, .sprites-creditcards-postepay_big, .sprites-creditcards-visa, .sprites-creditcards-visa_big {
+  background-image: url('/Content/Styles/generated_images/sprites-creditcards-s9068ad9ed7.png');
+  background-repeat: no-repeat;
+}
+
+.sprites-desktop-checkMark {
+  background-position: 0 0;
+  height: 15px;
+  width: 15px;
+}
+
+.sprites-desktop-checkWhite {
+  background-position: 0 -15px;
+  height: 15px;
+  width: 15px;
+}
+
+.sprites-desktop-cinesina {
+  background-position: 0 -30px;
+  height: 91px;
+  width: 119px;
+}
+
+.sprites-desktop-fb_btn {
+  background-position: 0 -121px;
+  height: 20px;
+  width: 45px;
+}
+.sprites-desktop-fb_btn:hover, .sprites-desktop-fb_btn.fb_btn-hover {
+  background-position: 0 -141px;
+}
+
+.sprites-desktop-giftPackage {
+  background-position: 0 -161px;
+  height: 96px;
+  width: 112px;
+}
+
+.sprites-desktop-giftPackageChina {
+  background-position: 0 -257px;
+  height: 88px;
+  width: 74px;
+}
+
+.sprites-desktop-gplus_btn {
+  background-position: 0 -345px;
+  height: 20px;
+  width: 20px;
+}
+.sprites-desktop-gplus_btn:hover, .sprites-desktop-gplus_btn.gplus_btn-hover {
+  background-position: 0 -365px;
+}
+
+.sprites-desktop-kaixin_btn {
+  background-position: 0 -385px;
+  height: 19px;
+  width: 19px;
+}
+.sprites-desktop-kaixin_btn:hover, .sprites-desktop-kaixin_btn.kaixin_btn-hover {
+  background-position: 0 -404px;
+}
+
+.sprites-desktop-pinit_btn {
+  background-position: 0 -423px;
+  height: 20px;
+  width: 40px;
+}
+.sprites-desktop-pinit_btn:hover, .sprites-desktop-pinit_btn.pinit_btn-hover {
+  background-position: 0 -443px;
+}
+
+.sprites-desktop-plusone_btn {
+  background-position: 0 -463px;
+  height: 20px;
+  width: 32px;
+}
+.sprites-desktop-plusone_btn:hover, .sprites-desktop-plusone_btn.plusone_btn-hover {
+  background-position: 0 -483px;
+}
+
+.sprites-desktop-seal {
+  background-position: 0 -503px;
+  height: 54px;
+  width: 105px;
+}
+
+.sprites-desktop-small_i, .sizeGuideContainer .icon {
+  background-position: 0 -557px;
+  height: 16px;
+  width: 2px;
+}
+
+.sprites-desktop-tweet_btn {
+  background-position: 0 -573px;
+  height: 20px;
+  width: 59px;
+}
+.sprites-desktop-tweet_btn:hover, .sprites-desktop-tweet_btn.tweet_btn-hover {
+  background-position: 0 -593px;
+}
+
+.sprites-desktop-twitter_btn {
+  background-position: 0 -613px;
+  height: 20px;
+  width: 62px;
+}
+.sprites-desktop-twitter_btn:hover, .sprites-desktop-twitter_btn.twitter_btn-hover {
+  background-position: 0 -633px;
+}
+
+.sprites-desktop-weiboo_btn {
+  background-position: 0 -653px;
+  height: 19px;
+  width: 21px;
+}
+.sprites-desktop-weiboo_btn:hover, .sprites-desktop-weiboo_btn.weiboo_btn-hover {
+  background-position: 0 -672px;
+}
+
+.sprites-creditcards-alipay {
+  background-position: 0 0;
+  height: 30px;
+  width: 177px;
+}
+
+.sprites-creditcards-americanexpress {
+  background-position: 0 -30px;
+  height: 42px;
+  width: 57px;
+}
+
+.sprites-creditcards-americanexpress_big {
+  background-position: 0 -72px;
+  height: 70px;
+  width: 96px;
+}
+
+.sprites-creditcards-cartebleue {
+  background-position: 0 -142px;
+  height: 42px;
+  width: 57px;
+}
+
+.sprites-creditcards-cartebleue_big {
+  background-position: 0 -184px;
+  height: 70px;
+  width: 96px;
+}
+
+.sprites-creditcards-cartebleuevisa_big {
+  background-position: 0 -254px;
+  height: 70px;
+  width: 96px;
+}
+
+.sprites-creditcards-discover {
+  background-position: 0 -324px;
+  height: 42px;
+  width: 57px;
+}
+
+.sprites-creditcards-discover_big {
+  background-position: 0 -366px;
+  height: 70px;
+  width: 96px;
+}
+
+.sprites-creditcards-jcb {
+  background-position: 0 -436px;
+  height: 42px;
+  width: 57px;
+}
+
+.sprites-creditcards-jcb_big {
+  background-position: 0 -478px;
+  height: 70px;
+  width: 96px;
+}
+
+.sprites-creditcards-maestro {
+  background-position: 0 -548px;
+  height: 42px;
+  width: 57px;
+}
+
+.sprites-creditcards-maestro_big {
+  background-position: 0 -590px;
+  height: 70px;
+  width: 96px;
+}
+
+.sprites-creditcards-mastercard {
+  background-position: 0 -660px;
+  height: 42px;
+  width: 57px;
+}
+
+.sprites-creditcards-mastercard_big {
+  background-position: 0 -702px;
+  height: 70px;
+  width: 96px;
+}
+
+.sprites-creditcards-payease {
+  background-position: 0 -772px;
+  height: 30px;
+  width: 100px;
+}
+
+.sprites-creditcards-paypal {
+  background-position: 0 -802px;
+  height: 42px;
+  width: 57px;
+}
+
+.sprites-creditcards-paypal_big {
+  background-position: 0 -844px;
+  height: 70px;
+  width: 96px;
+}
+
+.sprites-creditcards-postepay {
+  background-position: 0 -914px;
+  height: 42px;
+  width: 57px;
+}
+
+.sprites-creditcards-postepay_big {
+  background-position: 0 -956px;
+  height: 70px;
+  width: 96px;
+}
+
+.sprites-creditcards-visa {
+  background-position: 0 -1026px;
+  height: 42px;
+  width: 57px;
+}
+
+.sprites-creditcards-visa_big {
+  background-position: 0 -1068px;
+  height: 70px;
+  width: 96px;
+}
+
+#zoomLayer .zoomPrev {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2250%22%20height%3D%2250%22%20viewBox%3D%220%200%20400%20400%22%3E%3Ccircle%20fill%3D%22%23FFF%22%20cx%3D%22200%22%20cy%3D%22200%22%20r%3D%22200%22%2F%3E%3Cpath%20d%3D%22M93.054%20200l-.027.025L227.81%20334.807l35.165-35.164L163.33%20200l99.643-99.642-35.164-35.165-134.783%20134.78%22%2F%3E%3C%2Fsvg%3E");
+  width: 50px;
+  height: 50px;
+  background-repeat: no-repeat;
+}
+
+#zoomLayer .zoomNext {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.2%22%20width%3D%2250%22%20height%3D%2250%22%20viewBox%3D%220%200%20400%20400%22%3E%3Ccircle%20fill%3D%22%23FFF%22%20cx%3D%22199.782%22%20cy%3D%22200.453%22%20r%3D%22200%22%2F%3E%3Cpath%20d%3D%22M301.755%20200.427l-134.78-134.78-35.165%2035.164%2099.64%2099.643-99.64%2099.643%2035.163%2035.163%20134.782-134.782-.026-.025%22%2F%3E%3C%2Fsvg%3E");
+  width: 50px;
+  height: 50px;
+  background-repeat: no-repeat;
+}
+
+#itemSocial .douban .icon {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20shape-rendering%3D%22geometricPrecision%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2215%22%20height%3D%2215%22%20viewBox%3D%220%200%2015%2015%22%3E%3Cpath%20d%3D%22M12.338%209.765h1.484V3.447H1.26v6.317h1.32l1.122%203.603H0V14.8h15v-1.433h-3.716l1.054-3.602zm-8.55-4.69h7.583v3.02H3.79v-3.02zm5.375%208.292h-3.34L4.7%209.767h5.517l-1.054%203.6zM0%200h14.997v1.658H0z%22%2F%3E%3C%2Fsvg%3E");
+  width: 15px;
+  height: 15px;
+  background-repeat: no-repeat;
+}
+
+#itemSocial .facebook .icon {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.2%22%20baseProfile%3D%22tiny%22%20width%3D%2212%22%20height%3D%2215%22%20viewBox%3D%220%200%2012%2025%22%3E%3Cpath%20d%3D%22M8.71%203.877c.884-.17%202.68.305%202.68.305L12%20.318s-1.188-.27-4-.305C5.186-.02%203.56%201.37%202.983%202.42c-.576%201.05-.474%201.695-.474%203.05%200%20.286%200%201.308%200%202.747H0v3.627h2.508c0%205.69%200%2013.086%200%2013.086h4.814s0-7.494%200-13.086h3.627l.44-3.627H7.32c0-1.183%200-2.016%200-2.27%200-1.358.508-1.9%201.39-2.07z%22%2F%3E%3C%2Fsvg%3E");
+  width: 12px;
+  height: 15px;
+  background-repeat: no-repeat;
+}
+
+#itemSocial .googleplus .icon {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.2%22%20baseProfile%3D%22tiny%22%20width%3D%2226%22%20height%3D%2215%22%20viewBox%3D%220%200%2026%2025%22%3E%3Cpath%20d%3D%22M25.716%205.395h-3.372v3.372h-1.686V5.395h-3.37V3.71h3.37V.336h1.686V3.71h3.372v1.685zM16.184%2019.34c0%202.527-2.307%205.604-8.113%205.604-4.245%200-7.786-1.83-7.786-4.912%200-2.378%201.505-5.464%208.538-5.464-1.044-.852-1.3-2.042-.663-3.33-4.12%200-6.228-2.422-6.228-5.496C1.932%202.734%204.17%200%208.732%200c1.152%200%207.31%200%207.31%200l-1.634%201.714h-1.92c1.355.775%202.074%202.372%202.074%204.132%200%201.616-.89%202.925-2.16%203.906-2.253%201.742-1.676%202.715.685%204.437%202.328%201.744%203.097%203.09%203.097%205.15zM11.626%205.957C11.286%203.37%209.6%201.247%207.632%201.19c-1.97-.06-3.29%201.92-2.95%204.507.34%202.586%202.21%204.394%204.18%204.453%201.97.058%203.103-1.606%202.764-4.193zm2.03%2013.643c0-2.128-1.94-4.155-5.197-4.155-2.936-.032-5.422%201.854-5.422%204.04%200%202.232%202.12%204.09%205.054%204.09%203.752%200%205.564-1.744%205.564-3.975z%22%2F%3E%3C%2Fsvg%3E");
+  width: 26px;
+  height: 15px;
+  background-repeat: no-repeat;
+}
+
+#itemSocial .pinterest .icon {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.2%22%20baseProfile%3D%22tiny%22%20width%3D%2219%22%20height%3D%2215%22%20viewBox%3D%220%200%2019%2025%22%3E%3Cpath%20d%3D%22M10.075.21C3.377.21%200%205.01%200%209.015c0%202.425.918%204.582%202.887%205.386.323.132.612.005.706-.353.065-.25.22-.872.288-1.132.095-.354.06-.478-.202-.786-.567-.67-.93-1.537-.93-2.765%200-3.563%202.666-6.752%206.94-6.752%203.786%200%205.866%202.313%205.866%205.402%200%204.065-1.8%207.496-4.47%207.496-1.475%200-2.578-1.22-2.225-2.716.423-1.786%201.243-3.713%201.243-5.002%200-1.154-.62-2.116-1.9-2.116-1.508%200-2.72%201.56-2.72%203.648%200%201.33.45%202.23.45%202.23S4.39%2018.097%204.12%2019.242c-.54%202.28-.08%205.076-.042%205.358.023.167.238.207.335.08.14-.182%201.935-2.398%202.545-4.613.173-.627.992-3.875.992-3.875.49.935%201.92%201.758%203.443%201.758%204.532%200%207.606-4.132%207.606-9.662C19%204.104%2015.457.21%2010.074.21z%22%2F%3E%3C%2Fsvg%3E");
+  width: 19px;
+  height: 15px;
+  background-repeat: no-repeat;
+}
+
+#itemSocial .tumblr .icon {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.2%22%20baseProfile%3D%22tiny%22%20width%3D%2215%22%20height%3D%2215%22%20viewBox%3D%220%200%2015%2025%22%3E%3Cpath%20d%3D%22M4.944.294c-.155%201.257-.44%202.292-.85%203.106-.413.814-.96%201.51-1.64%202.09S.954%206.52%200%206.83v3.475h2.672v8.55c0%201.115.116%201.966.35%202.552.233.587.653%201.14%201.258%201.662.604.52%201.335.92%202.192%201.202.856.28%201.842.422%202.956.422.982%200%201.896-.1%202.74-.295.845-.198%201.788-.542%202.83-1.032V19.53c-1.222.804-2.45%201.205-3.685%201.205-.695%200-1.313-.16-1.852-.485-.407-.24-.687-.56-.836-.962-.15-.4-.225-1.31-.225-2.725v-6.258h5.793v-3.83H8.4V.295H4.945z%22%2F%3E%3C%2Fsvg%3E");
+  width: 15px;
+  height: 15px;
+  background-repeat: no-repeat;
+}
+
+#itemSocial .twitter .icon {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.2%22%20baseProfile%3D%22tiny%22%20width%3D%2232%22%20height%3D%2215%22%20viewBox%3D%220%200%2032%2025%22%3E%3Cpath%20d%3D%22M31.338%202.95c-1.13.5-2.342.84-3.615.992%201.3-.78%202.298-2.012%202.768-3.482-1.216.722-2.562%201.245-3.995%201.527C25.345.764%2023.71%200%2021.9%200c-3.476%200-6.293%202.817-6.293%206.293%200%20.493.055.974.163%201.435-5.23-.263-9.868-2.768-12.972-6.576-.542.93-.852%202.01-.852%203.164%200%202.183%201.11%204.11%202.8%205.238-1.032-.033-2.002-.316-2.85-.787%200%20.026%200%20.053%200%20.08%200%203.048%202.168%205.592%205.047%206.17-.528.144-1.084.22-1.658.22-.405%200-.8-.04-1.184-.11.802%202.5%203.126%204.318%205.88%204.37-2.154%201.687-4.868%202.692-7.816%202.692-.508%200-1.01-.03-1.5-.09%202.784%201.787%206.092%202.83%209.646%202.83%2011.575%200%2017.905-9.59%2017.905-17.907%200-.272-.006-.544-.018-.814%201.23-.89%202.297-1.997%203.14-3.26z%22%2F%3E%3C%2Fsvg%3E");
+  width: 32px;
+  height: 15px;
+  background-repeat: no-repeat;
+}
+
+#itemSocial .weibo .icon {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2215%22%20height%3D%2215%22%20viewBox%3D%220%200%2015%2015%22%3E%3Cpath%20d%3D%22M0%208.066C0%206.778.736%205.39%202.208%203.9c.937-.927%201.88-1.575%202.833-1.943.45-.185.837-.276%201.166-.276.36%200%20.648.11.864.325.208.208.313.496.313.864%200%20.248-.048.535-.144.864-.033.112-.02.182.035.21.056.028.12.03.19.006l.12-.048c.77-.32%201.45-.48%202.042-.48.592%200%201.016.168%201.272.504.12.176.18.385.18.625%200%20.25-.064.533-.193.853-.056.08-.065.148-.03.204.037.056.068.092.097.108.028.016.086.036.174.06.496.152.92.4%201.272.745.353.344.528.772.528%201.284%200%20.472-.164.955-.492%201.447s-.774.942-1.34%201.352c-.562.407-1.275.743-2.135%201.008-.86.264-1.774.396-2.742.396-1.048%200-2.04-.153-2.97-.462-.934-.308-1.708-.768-2.324-1.38S0%208.85%200%208.066zm1.5.577c.08.81.58%201.452%201.5%201.933.736.392%201.572.588%202.51.588.23%200%20.47-.012.72-.036%201.223-.12%202.244-.508%203.06-1.164.736-.6%201.104-1.26%201.104-1.98%200-.072-.004-.144-.012-.216-.08-.8-.58-1.44-1.5-1.92-.743-.394-1.584-.59-2.52-.59-.232%200-.468.01-.708.035-.808.08-1.54.284-2.197.612s-1.16.733-1.513%201.213c-.304.424-.456.86-.456%201.308%200%20.072.004.144.012.217zm1.92.744c-.103-.233-.155-.468-.155-.708%200-.28.072-.562.216-.84.25-.513.665-.897%201.25-1.153.36-.16.724-.24%201.092-.24.216%200%20.432.028.648.084.608.16%201.044.49%201.31.985.135.256.203.52.203.792%200%20.256-.06.516-.18.78-.248.567-.684.984-1.31%201.248-.35.152-.703.23-1.055.23-.272%200-.54-.045-.804-.134-.585-.183-.99-.532-1.213-1.043zm.673-.23c.048.2.168.342.36.42.104.05.212.073.324.073.096%200%20.192-.016.288-.048.225-.072.396-.204.517-.395.08-.13.12-.257.12-.385%200-.056-.012-.115-.036-.18-.048-.192-.168-.328-.36-.408-.104-.04-.208-.06-.312-.06-.096%200-.196.016-.3.048-.216.07-.38.2-.492.384-.088.128-.132.26-.132.396%200%20.057.007.108.023.156zm1.693-.946c.024.072.076.124.156.156.04.017.078.024.114.024s.074-.007.114-.024c.088-.032.152-.084.192-.155.04-.07.048-.144.024-.216-.024-.072-.073-.124-.144-.156-.072-.024-.15-.022-.234.006-.084.028-.146.078-.186.15-.025.048-.036.097-.036.145v.07zM9.64.757c-.01-.04-.013-.08-.013-.12%200-.104.03-.204.096-.3.08-.128.196-.212.35-.252.27-.056.542-.084.814-.084.408%200%20.81.06%201.2.18.665.216%201.237.588%201.717%201.116.48.528.793%201.14.937%201.836.057.28.085.552.085.816%200%20.408-.064.8-.192%201.176v.012c-.048.144-.14.252-.276.324-.088.04-.176.06-.264.06-.056%200-.116-.008-.18-.024-.152-.048-.26-.14-.324-.276-.04-.088-.06-.172-.06-.25%200-.065.007-.126.022-.18v-.013c.088-.272.132-.552.132-.84%200-.184-.016-.376-.048-.576-.104-.495-.328-.93-.672-1.307-.345-.376-.752-.64-1.225-.792-.28-.08-.56-.12-.84-.12-.193%200-.39.02-.59.06-.04.01-.08.013-.12.013-.11%200-.216-.032-.312-.096-.127-.09-.207-.21-.24-.36zm.48%201.885c-.01-.04-.014-.08-.014-.12%200-.08.024-.163.072-.25.072-.113.176-.185.313-.217.152-.032.3-.048.445-.048.536%200%20.996.21%201.38.636.232.265.384.565.456.9.025.137.037.27.037.397%200%20.192-.032.384-.096.576-.04.128-.12.22-.24.276-.07.04-.143.06-.215.06-.057%200-.108-.01-.156-.025-.13-.04-.226-.12-.29-.24-.03-.073-.047-.145-.047-.217%200-.056.008-.108.023-.156.032-.112.048-.216.048-.313%200-.225-.083-.425-.252-.6-.176-.21-.392-.313-.647-.313-.08%200-.16.008-.24.024-.04.01-.076.013-.108.013-.088%200-.172-.028-.252-.084-.112-.07-.185-.17-.216-.3z%22%2F%3E%3C%2Fsvg%3E");
+  width: 15px;
+  height: 15px;
+  background-repeat: no-repeat;
+}
+
+.desktop-fallback-sprite, .no-svg #zoomLayer .zoomPrev, #zoomLayer .no-svg .zoomPrev, .ielt9 #zoomLayer .zoomPrev, #zoomLayer .ielt9 .zoomPrev, .no-svg #zoomLayer .zoomNext, #zoomLayer .no-svg .zoomNext, .ielt9 #zoomLayer .zoomNext, #zoomLayer .ielt9 .zoomNext, .no-svg #itemSocial .douban .icon, #itemSocial .douban .no-svg .icon, .ielt9 #itemSocial .douban .icon, #itemSocial .douban .ielt9 .icon, .no-svg #itemSocial .facebook .icon, #itemSocial .facebook .no-svg .icon, .ielt9 #itemSocial .facebook .icon, #itemSocial .facebook .ielt9 .icon, .no-svg #itemSocial .googleplus .icon, #itemSocial .googleplus .no-svg .icon, .ielt9 #itemSocial .googleplus .icon, #itemSocial .googleplus .ielt9 .icon, .no-svg #itemSocial .pinterest .icon, #itemSocial .pinterest .no-svg .icon, .ielt9 #itemSocial .pinterest .icon, #itemSocial .pinterest .ielt9 .icon, .no-svg #itemSocial .tumblr .icon, #itemSocial .tumblr .no-svg .icon, .ielt9 #itemSocial .tumblr .icon, #itemSocial .tumblr .ielt9 .icon, .no-svg #itemSocial .twitter .icon, #itemSocial .twitter .no-svg .icon, .ielt9 #itemSocial .twitter .icon, #itemSocial .twitter .ielt9 .icon, .no-svg #itemSocial .weibo .icon, #itemSocial .weibo .no-svg .icon, .ielt9 #itemSocial .weibo .icon, #itemSocial .weibo .ielt9 .icon {
+  background-image: url('/Content/Styles/generated_images/desktop-fallback-s59a2bd1d81.png');
+  background-repeat: no-repeat;
+}
+
+.no-svg #zoomLayer .zoomPrev, #zoomLayer .no-svg .zoomPrev, .ielt9 #zoomLayer .zoomPrev, #zoomLayer .ielt9 .zoomPrev {
+  background-position: 0 -346px;
+  width: 50px;
+  height: 50px;
+}
+
+.no-svg #zoomLayer .zoomNext, #zoomLayer .no-svg .zoomNext, .ielt9 #zoomLayer .zoomNext, #zoomLayer .ielt9 .zoomNext {
+  background-position: 0 -396px;
+  width: 50px;
+  height: 50px;
+}
+
+.no-svg #itemSocial .douban .icon, #itemSocial .douban .no-svg .icon, .ielt9 #itemSocial .douban .icon, #itemSocial .douban .ielt9 .icon {
+  background-position: 0 -1188px;
+  width: 15px;
+  height: 15px;
+}
+
+.no-svg #itemSocial .facebook .icon, #itemSocial .facebook .no-svg .icon, .ielt9 #itemSocial .facebook .icon, #itemSocial .facebook .ielt9 .icon {
+  background-position: 0 -1203px;
+  width: 12px;
+  height: 15px;
+}
+
+.no-svg #itemSocial .googleplus .icon, #itemSocial .googleplus .no-svg .icon, .ielt9 #itemSocial .googleplus .icon, #itemSocial .googleplus .ielt9 .icon {
+  background-position: 0 -1218px;
+  width: 26px;
+  height: 15px;
+}
+
+.no-svg #itemSocial .pinterest .icon, #itemSocial .pinterest .no-svg .icon, .ielt9 #itemSocial .pinterest .icon, #itemSocial .pinterest .ielt9 .icon {
+  background-position: 0 -1233px;
+  width: 19px;
+  height: 15px;
+}
+
+.no-svg #itemSocial .tumblr .icon, #itemSocial .tumblr .no-svg .icon, .ielt9 #itemSocial .tumblr .icon, #itemSocial .tumblr .ielt9 .icon {
+  background-position: 0 -1248px;
+  width: 15px;
+  height: 15px;
+}
+
+.no-svg #itemSocial .twitter .icon, #itemSocial .twitter .no-svg .icon, .ielt9 #itemSocial .twitter .icon, #itemSocial .twitter .ielt9 .icon {
+  background-position: 0 -1263px;
+  width: 32px;
+  height: 15px;
+}
+
+.no-svg #itemSocial .weibo .icon, #itemSocial .weibo .no-svg .icon, .ielt9 #itemSocial .weibo .icon, #itemSocial .weibo .ielt9 .icon {
+  background-position: 0 -1278px;
+  width: 15px;
+  height: 15px;
+}
+
+.uiLayer-sizeGuideLink .mfp-content {
+  width: 400px;
+}
+.uiLayer-sizeGuideLink h2 {
+  color: #FFF;
+}
+.uiLayer-sizeGuideLink .sizeGuide > div {
+  font-size: 1.6em;
+  margin: 10px 0;
+}
+.uiLayer-sizeGuideLink table {
+  width: 100%;
+  text-align: center;
+  margin: 20px 0 10px;
+}
+.uiLayer-sizeGuideLink thead {
+  border-bottom: 3px solid #999;
+}
+.uiLayer-sizeGuideLink thead td {
+  font-size: 2em;
+}
+.uiLayer-sizeGuideLink tbody td {
+  font-size: 1.8em;
+}
+.uiLayer-sizeGuideLink tr {
+  border-bottom: 1px solid #999;
+}
+.uiLayer-sizeGuideLink td {
+  width: 50%;
+  line-height: 1.8;
+}
+
+#item .uiLayer-addItem .inner, #item .uiLayer-addItemToWishList .inner {
+  padding: 40px 20px;
+  font-size: 1.8em;
+}
+
+#back {
+  min-height: 17px;
+  margin: 5px auto;
+  font-size: 1.7em;
+  color: #999;
+}
+#back a {
+  text-transform: uppercase;
+  color: #666;
+}
+#back a:hover {
+  color: #000;
+}
+#back a.disabled {
+  display: none;
+}
+#back .text {
+  padding-left: 5px;
+  margin-left: 13px;
+  position: relative;
+}
+#back .text:after, #back .text:before {
+  right: 100%;
+  border: solid transparent;
+  border-color: none;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+#back .text:after {
+  border-right-color: #FFF;
+  border-width: 3px;
+  top: 50%;
+  margin-top: -3px;
+}
+#back .text:before {
+  border-right-color: #666;
+  border-width: 4px;
+  top: 50%;
+  margin-top: -4px;
+}
+
+#itemCentral {
+  margin-bottom: 10px;
+}
+
+#alternatives {
+  height: 551px;
+}
+
+#productImage {
+  cursor: pointer;
+  position: relative;
+  height: 551px;
+}
+.soldOutItem #productImage {
+  cursor: default;
+}
+.soldOutItem #productImage .plus {
+  display: none;
+}
+#productImage .mainImage {
+  margin-right: 10px;
+  margin-left: 25px;
+  width: 428px;
+  height: 551px;
+  overflow: hidden;
+}
+#productImage .plus {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -25px;
+  margin-left: -35px;
+  width: 70px;
+  height: 50px;
+  line-height: 56px;
+  cursor: pointer;
+  display: block;
+  background: #666;
+  color: #FFF;
+  font-size: 7em;
+  text-align: center;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -moz-transition: opacity 0.1s linear;
+  -o-transition: opacity 0.1s linear;
+  -webkit-transition: opacity 0.1s linear;
+  transition: opacity 0.1s linear;
+}
+#productImage:hover .plus, #productImage.hover .plus {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+  text-decoration: none;
+}
+
+.tabs {
+  height: 175px;
+  margin: 10px 0 0;
+}
+.tabs li {
+  border-bottom: 1px solid #CCC;
+  padding: 5px 0;
+}
+.tabs .arrow {
+  display: block;
+  width: 0;
+  height: 0;
+  border: 0 solid transparent;
+  border-top-color: #000;
+  border-width: 6px 6px 0 6px;
+  float: right;
+  margin: 7px 0;
+}
+.tabs .open {
+  display: block;
+}
+.tabs .open .arrow {
+  display: block;
+  width: 0;
+  height: 0;
+  border: 0 solid transparent;
+  border-bottom-color: #000;
+  border-width: 0 6px 6px 6px;
+}
+.tabs .descriptionHeader {
+  font-size: 2em;
+  color: #333;
+  height: 20px;
+  line-height: 20px;
+  cursor: pointer;
+}
+.tabs .descriptionContent {
+  font-size: 1.5em;
+  color: #666;
+  height: 90px;
+  clear: both;
+  padding-top: 5px;
+  margin-right: 3px;
+  overflow-y: auto;
+  display: none;
+}
+.JP .tabs .descriptionContent {
+  line-height: 1.2em;
+}
+.tabs .productCode .label, .tabs .compositionInfo .label {
+  margin-right: 3px;
+}
+.tabs .productCode .label:after, .tabs .compositionInfo .label:after {
+  content: ":";
+}
+.FR .tabs .productCode .label:after, .FR .tabs .compositionInfo .label:after {
+  content: " :";
+}
+.tabs .localizedAttributes .text {
+  margin-right: 3px;
+}
+.tabs .localizedAttributes .text:after {
+  content: ":";
+}
+.FR .tabs .localizedAttributes .text:after {
+  content: " :";
+}
+
+.colorSizeContainer {
+  *zoom: 1;
+}
+.colorSizeContainer:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.colorSizeContainer.withSizeGuide {
+  width: 89.5%;
+  float: left;
+}
+.colorSizeContainer .colors, .colorSizeContainer .sizes {
+  float: left;
+  width: 49.5%;
+}
+.colorSizeContainer .colors {
+  margin-right: 1%;
+}
+.colorSizeContainer .oneOption .prettyselect-wrap .prettyselect-label {
+  font-size: 1.6em;
+}
+.JP .colorSizeContainer .oneOption .prettyselect-wrap .prettyselect-label {
+  font-size: 1.4em;
+}
+.colorSizeContainer .prettyselect-drop {
+  white-space: normal;
+}
+.halfSize .colorSizeContainer .prettyselect-drop {
+  font-size: 1.4em;
+}
+.DE .colorSizeContainer .prettyselect-drop li, .RU .colorSizeContainer .prettyselect-drop li {
+  line-height: normal;
+  padding: 10px 15px;
+  height: 21px;
+}
+.DE .colorSizeContainer .prettyselect-drop li span, .RU .colorSizeContainer .prettyselect-drop li span {
+  float: left;
+  width: 10%;
+}
+.DE .colorSizeContainer .prettyselect-drop li span.label, .RU .colorSizeContainer .prettyselect-drop li span.label {
+  margin-left: 4%;
+  width: 86%;
+}
+.colorSizeContainer [data-prettyselect-elements="1"] {
+  cursor: default;
+}
+.colorSizeContainer [data-prettyselect-elements="1"] .prettyselect-drop {
+  border: none;
+}
+.colorSizeContainer [data-prettyselect-elements="1"] .prettyselect-drop li {
+  display: none;
+}
+.colorSizeContainer [data-prettyselect-elements="1"] .prettyselect-label {
+  background-image: none;
+  white-space: normal;
+}
+
+.sizeGuideContainer {
+  float: left;
+  width: 10.5%;
+  height: 40px;
+}
+.sizeGuideContainer .sizeGuideLink {
+  padding: 0;
+  float: right;
+  width: 38px;
+  height: 38px;
+}
+.sizeGuideContainer .text {
+  border: 0;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 0;
+  display: block;
+}
+.sizeGuideContainer .icon {
+  display: block;
+  margin: 10px auto;
+}
+
+.selectColorAlert, .selectSizeAlert {
+  display: none;
+  margin-top: 5px;
+  color: #900000;
+  font-size: 1.8em;
+}
+
+.halfSize .selectSize.sizeSelected {
+  font-size: 0.8em;
+}
+.selectSize .label {
+  margin-left: 5px;
+}
+.DE .selectSize .prettyselect-label .value, .RU .selectSize .prettyselect-label .value {
+  float: left;
+  width: 10%;
+}
+.selectSize .prettyselect-label .label {
+  font-size: 0.8em;
+}
+.DE .selectSize .prettyselect-label .label, .RU .selectSize .prettyselect-label .label {
+  font-size: 0.8em;
+  float: left;
+  white-space: normal;
+  line-height: normal;
+  width: 85%;
+  margin: 10px 4px;
+}
+.AT .selectSize .prettyselect-label .label {
+  font-size: 0.68em;
+}
+.JP .selectSize .prettyselect-label .label {
+  font-size: 0.7em;
+}
+.selectSize .prettyselect-drop .label {
+  color: #999;
+}
+.AT .selectSize .prettyselect-drop .label {
+  font-size: 0.9em;
+}
+.CN .selectSize .prettyselect-drop .label, .JP .selectSize .prettyselect-drop .label {
+  font-size: 0.76em;
+}
+
+.sizeWrapper {
+  *zoom: 1;
+}
+.sizeWrapper:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.sizeConversion {
+  padding: 7px 0 10px;
+  font-size: 1.4em;
+  color: #666;
+  line-height: 1.4em;
+}
+
+#itemData .price {
+  font-size: 1.8em;
+}
+.JP #itemData .price {
+  font-size: 2.3em;
+}
+#itemData .addToCart {
+  cursor: pointer;
+}
+#itemData .addItemToWishList {
+  cursor: pointer;
+}
+
+.selectedCombination {
+  font-size: 1.6em;
+  margin: 12px 0;
+}
+.selectedCombination .title, .selectedCombination .selection {
+  display: inline;
+}
+.selectedCombination .title:after {
+  content: ":";
+}
+.FR .selectedCombination .title:after {
+  content: " :";
+}
+.halfSize .selectedCombination {
+  font-size: 1.4em;
+}
+
+button.addItem {
+  width: 100%;
+  margin: 5px 0;
+  height: 57px;
+  text-align: left;
+  font-size: 2.2em;
+}
+
+button.addItemToWishList {
+  width: 100%;
+  height: 47px;
+  text-align: left;
+  font-size: 1.7em;
+}
+
+.button.notAvailMessage, .sizeGuideContainer .notAvailMessage.sizeGuideLink {
+  font-size: 2.4em;
+  height: 55px;
+  line-height: 55px;
+  cursor: default;
+}
+.button.notAvailMessage:hover, .sizeGuideContainer .notAvailMessage.sizeGuideLink:hover {
+  background-color: #EBEBEB;
+}
+
+#relatedItems {
+  float: left;
+  width: 100%;
+  margin-bottom: 50px;
+}
+#relatedItems .topTitle {
+  border: none;
+  cursor: default;
+  font-size: 2.6em;
+  color: #666;
+  padding: 3px 0;
+}
+#relatedItems .topTitle:hover {
+  background-color: #EBEBEB;
+}
+#relatedItems img, #relatedItems .brandName, #relatedItems .micro, #relatedItems .itemPrice {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+#relatedItems .brandName {
+  font-size: 2.4em;
+}
+#relatedItems .micro {
+  font-size: 1.8em;
+  margin-bottom: 3px;
+}
+#relatedItems .itemPrice .price {
+  font-size: 1.7em;
+  color: #000;
+}
+#relatedItems .salesLine, #relatedItems .macro, #relatedItems .ItemDescription {
+  display: none;
+}
+
+.banner-slot {
+  float: left;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.banner-text {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  margin-top: 11px;
+  height: 349px;
+}
+.banner-text h2, .banner-text p, .banner-text h3 {
+  color: #666;
+  padding-right: 11px;
+}
+.banner-text h3 {
+  margin-bottom: 5px;
+}
+.banner-text button {
+  margin: 15px 0;
+  float: left;
+}
+
+.alternativeImages {
+  margin: 10px 0;
+}
+.alternativeImages li {
+  width: 50px;
+  height: 63px;
+  overflow: hidden;
+  padding: 10px 20px;
+  cursor: pointer;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+}
+.alternativeImages li.selected, .alternativeImages li:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+}
+
+.microCategory, .seasonContainer, .seasonLabel, .seasonPremise {
+  float: left;
+}
+
+.seasonPremise {
+  margin-right: 6px;
+}
+.seasonPremise:after {
+  content: ":";
+}
+.FR .seasonPremise:after {
+  content: " :";
+}
+
+.seasonContainer {
+  border-left: 1px solid #000;
+  margin-left: 5px;
+  padding-left: 5px;
+}
+
+.productInfo .brandNameTitle {
+  line-height: 0.8em;
+}
+.productInfo a:hover {
+  color: #666;
+}
+.productInfo .typeSeason {
+  font-size: 2em;
+  margin: 7px 0;
+  *zoom: 1;
+}
+.productInfo .typeSeason:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.productInfo .priceUpdater {
+  margin-bottom: 10px;
+}
+.productInfo .specialAttributes {
+  font-size: 1.6em;
+  font-style: italic;
+}
+.productInfo .descriptionHeader {
+  text-transform: uppercase;
+}
+
+#infoThumbSelection {
+  clear: both;
+}
+
+#itemSocial {
+  *zoom: 1;
+  margin: 20px 0;
+}
+#itemSocial:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#itemSocial .share-label {
+  float: left;
+  margin-right: 20px;
+  font-size: 1.8em;
+}
+#itemSocial .share, #itemSocial li {
+  float: left;
+}
+#itemSocial .share li {
+  width: 55px;
+}
+#itemSocial .icon {
+  display: block;
+  cursor: pointer;
+  margin: 0 auto;
+}
+#itemSocial .text {
+  display: none;
+}
+
+#zoomLayer {
+  display: none;
+  background-color: #FFF;
+}
+#zoomLayer .overlayElements {
+  position: absolute;
+}
+#zoomLayer, #zoomLayer .zoomImageContainer {
+  position: fixed;
+  z-index: 18;
+}
+#zoomLayer .zoomImageContainer img {
+  display: block;
+  margin: 0 auto;
+}
+#zoomLayer, #zoomLayer .overlayElements, #zoomLayer .zoomImageContainer {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+#zoomLayer .alternativeImages, #zoomLayer .zoomPrev, #zoomLayer .zoomNext, #zoomLayer .close {
+  cursor: pointer;
+  position: absolute;
+  z-index: 19;
+}
+#zoomLayer .close {
+  right: 0;
+  padding: 15px 20px;
+}
+#zoomLayer .close .icon {
+  width: 40px;
+  height: 40px;
+}
+.no-svg #zoomLayer .close .icon, .ielt9 #zoomLayer .close .icon {
+  background-position: 0 -205px;
+}
+#zoomLayer .close svg {
+  width: 40px;
+  height: 40px;
+}
+#zoomLayer .close g {
+  fill: #666;
+}
+#zoomLayer .alternativeImages {
+  bottom: 0;
+}
+#zoomLayer .zoomPrev, #zoomLayer .zoomNext, #zoomLayer .close {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+}
+#zoomLayer .zoomPrev:hover, #zoomLayer .zoomNext:hover, #zoomLayer .close:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+}
+#zoomLayer .zoomPrev {
+  top: 50%;
+  left: 130px;
+}
+#zoomLayer .zoomNext {
+  top: 50%;
+  right: 130px;
+}
+
+.noScroll {
+  overflow: hidden;
+}
+
+.nativeScroll {
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+  -moz-overflow-scrolling: touch;
+  -ms-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+  overflow-y: scroll;
+}
+
+.colorSizeContainer .selectionTitle, .colorSizeContainer .selectionLabel {
+  display: none;
+}
+
+.alternativeImages img.clone {
+  display: none;
+}

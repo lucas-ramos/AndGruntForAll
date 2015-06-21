@@ -1,0 +1,364 @@
+﻿// ================
+// FULL CART
+// ================
+
+@import "Desktop/partials/addressdrivencheckout/couponSection";
+
+.cartButtonsWrapper {
+
+	@include pie-clearfix;
+	margin: 23px 0;
+
+	.backToShoppingButton a {
+		float:left;
+		border:none;
+		text-transform: none;
+		font-size: $size-expanse;
+		color: $color-light;
+		padding-left: 0;
+		text-decoration: underline;
+	}
+
+	.nextPageButton {
+		@extend .primary;
+		width: 217px;
+		float:right;
+		font-size: $size-big;
+		line-height: 18px;
+	}
+
+}
+
+
+
+.reviewSection {
+
+	/*Titoli colonne review*/
+	.itemTitlesWrap {		
+		@include pie-clearfix;
+		text-transform: uppercase;
+		font-size: $size-expanse;
+		color: $color-medium;
+		
+		
+	}
+	.itemTitles {
+		@include pie-clearfix;
+		border-bottom: 1px solid $color-light;
+		padding-bottom: 5px;
+		padding-top: 7px;
+
+		.itemTitle  {
+			width: 316px; /*Dimensioni fisse?*/
+			float: left;
+			margin-right: 10px;
+		}
+
+		.optionTitle  {
+			width: 210px;
+			float: left;
+			margin-right: 10px;
+		}
+
+		.priceTitle  {
+			text-align: right;
+			width: 93px;
+			float: right;				
+		}
+	}
+	/*Titoli colonne review*/
+
+
+	/*Review prodotto*/
+	.cartReview  {
+
+		.itemRow {
+			border-bottom: 1px solid $color-light;
+			padding: 17px 0;
+			position: relative;
+			height: 110px;
+		}		
+		.imageCol {
+			height: 110px; /*Fix dimensioni?*/
+			width: 87px;
+			position: absolute;
+			left: 0;
+		}
+
+		.descCol {
+			color: $color-dark;
+			margin-left: 10px;
+			width: 230px;
+			position: absolute;
+			height: 110px;
+			left: 87px;
+
+
+		}
+
+		.isLastItemInfo {
+			font-size: $size-tiny;
+			margin-top: 10px;
+			color: $color-medium;
+			@extend %lato;
+			font-style: italic;
+		}
+
+
+		.microCategory {
+			font-size: $size-midlarge;
+			margin-top: 10px;
+			@extend %helvetica;
+		}
+
+		div.modelName { //sta roba puzza di errore lato F31, ma vabbè, fixiamo il bug...
+			@extend .microCategory;
+		}
+
+		.macroCategory, .brandName {
+			font-size: $size-big;
+			@extend %knockout-bold;
+		}
+
+		.brandName {
+			margin: 0 0 5%;
+		}
+
+		.selectionCol {
+			color: $color-medium;
+			width: 210px;
+			position: absolute;
+			left: 326px;
+			font-size: $size-medium;
+			@extend %helvetica;
+			line-height: 21px;
+
+			.label {
+				margin-right: 10px;
+				width: 74px;
+				float:left;
+				@include appendColon;
+			}
+
+			.value {
+				margin-right: 3px;
+			}
+
+		}
+
+		.addRemoveCol {
+			color: $color-medium;
+			width: 210px;
+			position: absolute;
+			left: 326px;
+			top: 59px;
+			font-size: $size-medium;
+			@extend %helvetica;
+			line-height: 21px;
+
+			.label {
+				margin-right: 10px;
+				width: 74px;
+				float:left;
+			}
+
+			.decrease, .quantity, .increase  {
+				display: inline;
+				vertical-align: text-top;
+			}
+			.decrease, .increase  {
+				@extend .button.secondary;
+				height: 20px;
+				width: 20px;
+				line-height: 17px;
+				padding: 0;
+				margin: 0;
+				vertical-align: text-bottom;
+
+				.text {
+					display: block;
+					height: 15px;
+					width: 17px;
+					font-family: $_knockout;  /*E un simbolo grafico più che un testo, non voglio adattamenti per nazione*/
+				}
+
+				&.disabled {
+					display:none;
+				}
+			}
+			.quantity {
+				float: left;
+				line-height: 21px;
+				margin-right: 5px;					
+			}	
+			
+			.label {
+				@include appendColon;
+			}						
+
+			.deleteItemWrapper {
+				margin-top: 10px;
+
+				.deleteItem {
+					border: none;
+					background: none;
+					font-size: 0.8em;
+					text-transform: none;
+					padding: 0;
+					text-decoration: underline;
+					color: $color-medium;
+					height: inherit;
+					@extend %helvetica;
+				}
+			}
+		}
+
+		.priceCol {
+			width: 93px;
+			position: absolute;
+			right: 0;
+			text-align: right;
+
+			font-size: $size-medium;
+			color: $color-medium;
+
+
+			.full, .discounted  {
+				display: block;
+				margin: 0;
+			}
+
+			.price {
+				@extend %helvetica-bold;
+			}
+		}
+
+		
+	}
+	/*Review prodotto*/
+
+
+	
+	
+	
+	/*Recap prezzi*/
+	.sectionRecap {
+		text-align: right;
+		color: $color-medium;
+		text-transform: uppercase;
+		padding: 5px 0;
+		@extend %knockout-bold;
+		font-size: inherit;
+		
+		.itemsInCart {
+			display:none;
+		}
+
+		.subtotalPrice {
+			padding: 10px 0;
+			border-bottom: 1px solid $color-light;
+			/*font-size: $size-grand;*/
+		}
+
+		.ProductSubtotal {
+			font-size: $size-grand;			
+		}
+
+		.totalPrices{
+			display: inline;
+		}
+
+		.cartTotal {
+			display: block;
+			margin:10px 0;
+
+		}
+
+		.label {
+			margin-right: 25px;
+		}
+
+		.SalesTax {
+			font-size: $size-grand;
+		}
+
+		.salesTaxDescr {
+			font-size: $size-tiny;
+			@extend %helvetica-bold;
+		}
+
+	}
+	/*Recap prezzi*/
+
+}
+
+/*Total price section*/
+.totalValueWrap {
+	position: relative;
+	text-align: right;
+	color: $color-medium;
+	font-size: $size-huge;
+	text-transform: uppercase;
+	@extend %knockout-bold;
+	padding: 25px 0 15px 0;
+
+	.totalPrices {
+		display: inline;
+	}
+
+	.label {
+		margin-right: 25px;
+	}
+
+	.salesTaxesDescrPopup, .salesTaxesDescr {
+		display: none;
+		float: right; //necessario, sennò va in banana
+	}
+
+	.salesTaxesInfo {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		font-size: 0.5em; //fattore proporzionale
+		cursor: pointer;
+		color: $color-dark;
+
+		&:hover {
+			color: $black;
+		}
+	}
+
+}
+/*Total price section*/
+
+/*Sales tax*/
+.salesTaxWrap {
+	display:none;
+
+	.US & {
+		display:block;
+		padding: 0 0 15px 0;
+		/*border-bottom: 1px solid $color-light;*/
+	}
+
+	.salesTaxDescr {
+		font-size: 1em;
+	}
+
+}
+
+#popup-salestax {
+	
+	.mfp-close {
+		margin: 10px;
+	}
+
+	.salesTaxCalculator {
+		padding: 20px;
+	}
+
+	form button {
+		@extend .primary;
+		width: 100%;
+	}
+}

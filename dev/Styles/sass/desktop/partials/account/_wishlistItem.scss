@@ -1,0 +1,200 @@
+
+$wishlist-item-inner-margin: $gutter-width;
+$wishlist-item-outer-width: $column-width*3;
+$wishlist-item-inner-width: $wishlist-item-outer-width - 2*$wishlist-item-inner-margin;
+$height-box: 495px;
+$height-box-RU: 530px;
+
+.wishlistItem {
+	@include column-3;
+	margin-bottom: $gutter-width;
+	min-height:$height-box;
+
+	.RU & { min-height:$height-box-RU; }
+
+	.inner {
+		
+		border: 1px solid #EBEBEB;
+		min-height:$height-box;
+
+		.RU & { min-height:$height-box-RU; }
+
+		img {
+			margin: 0 auto;
+			display: block;
+		}
+
+		.info {
+			height: 227px;
+			padding: $wishlist-item-inner-margin;
+		}
+	}
+
+	&.soldout {
+		.color, .size {display: none;}
+		img {@include opacity (0.5);}
+		.priceUpdater {margin-bottom: 44px;}
+	}
+	.brandName {
+		font-size: $size-big;
+		@extend %knockout-bold;
+		margin-bottom: 5px;
+		height: 40px;
+	}
+
+	.actions {
+		@include pie-clearfix;
+		position: relative;
+
+		.RU & { font-size: 7px; }
+
+		.checkBox {
+			top: 10px;
+			left: 10px;
+		}
+	}
+
+	.microCategory, .color, .size, .wishListInsertedDate, .priceUpdater {
+		font-size: $size-medium;
+		color: $color-medium;
+		@extend %helvetica;
+	}
+
+	.priceUpdater {margin: 10px 0;}
+
+
+	.color, .size {
+		.label {
+			margin-right: 5px;
+		}
+	}
+
+	.wishListInsertedDate {
+		display: none;
+	}
+
+	.microCategory, .size, .priceUpdater {
+		line-height: 18px;
+	}
+
+	.fakeButton {
+		@extend .button;
+		@extend .button.secondary;
+		cursor: default;
+		&:hover{background-color: $color-ultra;}
+	}
+
+	.addToCart {
+		@extend .button.primary;
+		width: 100%;
+
+		.IT & { font-size: 1.5em; }
+	}
+
+	.notifyLastItemInfo {
+		display: none;
+	}
+
+	.lastItemAvailable {
+		margin-top: $gutter-width;
+		padding-top: $gutter-width;
+		border-top: 1px solid $color-ultra;
+		color: $color-dark;
+		font-size: $size-medium;
+		//height: 21px;
+		line-height: 15px;
+		display: block;
+		text-transform: uppercase;
+		@extend %knockout-bold;
+
+		@include pie-clearfix;
+
+		.RU & { 
+			line-height: 12px;
+		}
+
+	} 
+
+	.removeItemFromWishList {
+		position: absolute;
+		top: 0px;
+		right: 10px;
+		display: none;
+		background: none;
+		border: none;
+		padding: 0;
+
+		.text {
+			display: none;
+		}
+		.icon {
+			@extend %svg-cross-18x18-999;
+			display: block;
+		}
+	}
+
+	.size, .color {
+		.label {
+			@include appendColon;
+		}
+	}
+
+	.classFamily {
+		margin-left: 5px;
+	}
+
+	&:hover {
+		.removeItemFromWishList {
+			display: block;
+		}
+	}
+
+	.modifyItemInWishList  {
+		margin-top: $gutter-width;
+		padding-top: $gutter-width;
+		border-top: 1px solid $color-ultra;
+		color: $color-medium;
+		font-size: $size-medium;
+		//height: 21px;
+		line-height: 21px;
+
+		@include pie-clearfix;
+
+		.checkBox {
+			display: block;
+			float: left;
+			width: $form-checkbox-width;
+			height: $form-checkbox-height;
+		}
+
+		.label {
+			$label-margin: $gutter-width;
+			float: left;
+			width: $wishlist-item-inner-width - $form-checkbox-width - $label-margin;
+			margin-left: $label-margin;
+			
+			
+			/* eccezioni una riga IT FR CN nessun valore*/
+			
+
+			/* eccezioni due righe */
+			.GB & { 
+				padding-top: 2px;
+				line-height: 0.8em; 
+			}
+			.DE &{ 
+				line-height: 1em; 
+			}
+			.ES & { 
+				padding-top: 2px;
+				line-height: 0.9em;
+			}
+			.JP & { line-height: 1.3em; }
+
+
+			/* eccezioni quattro righe */
+			.RU & { line-height: 1em; } 
+
+		}
+	}
+}

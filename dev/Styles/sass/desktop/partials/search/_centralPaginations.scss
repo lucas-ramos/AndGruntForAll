@@ -1,0 +1,139 @@
+﻿
+
+// TOP PAGINATION
+#reset, #viewAll {
+	float: left;
+}
+
+#reset .resetFilters, #viewAll .viewAllButton {
+	@extend .button.tertiary;
+	display: block;
+	font-size: $size-midsmall;
+	text-decoration: underline;
+	color: $color-medium;
+	margin: 10px 0;
+
+	&:hover {
+		color: $black;
+	}
+}
+
+// TOP AND BOTTOM PAGINATION
+#pagination {
+	margin: 7px 0;
+	float:right;
+	font-size: $size-medium;
+
+	p {
+		display: none;
+	}
+
+	li {
+		float:left;
+		border-right: 1px solid $color-ultra;
+		padding: 5px 0px;
+
+		&:hover {
+			background-color: $color-ultra;
+		}
+
+		a {
+			padding: 5px 10px;
+			color: $color-medium;
+		}
+
+		&.selected {
+			background-color: $color-ultra;
+
+			a {
+				cursor: default;
+			}
+		}
+	}
+}
+
+// BREADCRUMBS
+#breadcrumbs {
+	@include pie-clearfix;
+	margin: 10px 0;
+
+	%text-styling {
+		float: left;
+		font-size: $size-midsmall;
+		line-height: $size-tiny;
+		text-transform: uppercase;
+	}
+
+	.season, .gender, .department, .macroMarchio {
+		display: none;
+	}
+
+	.close { // da cambiare con .icon quando si avrà il dom nuovo (questo sarà da rimuovere)
+		@extend %svg-cross-11x11-ebebeb;
+		margin: 3px 0 3px 5px;
+	}
+
+	h2 {
+		@extend %text-styling;
+		@extend %knockout;
+		@include appendColon;
+	}
+
+	li {
+		@extend %text-styling;
+		@include border-radius(35px);
+		background-color: $color-dark;
+		color: $color-ultra;
+		cursor: pointer;
+		margin-left: 5px;
+		margin-bottom: 2px;
+		padding: 0 12px;
+
+		&::after { // da cambiare con .icon quando si avrà il dom nuovo (questo sarà da rimuovere)
+			@extend .close;
+			content: '';
+			float: right;
+		}
+	}
+}
+
+// BOTTOM PAGINATION
+#bottomPaginationWrap {
+	border-top: 1px solid $color-ultra;
+}
+
+// GO TO TOP BUTTON
+#goToTop{
+	$button-dim: 130px;
+
+	.JP & {
+		$button-dim: 180px;
+	}
+
+	background-color: $color-ultra;
+	cursor: pointer;
+	font-size: $size-medium;
+	float: left;
+	padding: 10px 12px;
+	width: $button-dim;
+
+	.icon {
+		float: right;
+		@extend %svg-arrow-circle-up;
+	}
+
+	.label {
+		color: $color-medium;
+		float: left;
+		text-align: center;
+		text-transform: uppercase;
+		line-height: $svg-arrow-circle-up-height;
+		width: $button-dim - $svg-arrow-circle-up-width;
+	}
+
+	&:hover {
+		.label {
+			color: $color-dark;
+		}
+	}
+}

@@ -1,0 +1,1915 @@
+@charset "UTF-8";
+/* effetto height:100% sugli elementi flottanti */
+@font-face {
+  font-family: 'KnockoutLight';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knoc29jl.svg#KnockoutLight") format("svg");
+}
+@font-face {
+  font-family: 'KnockoutRegular';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/knock49l.svg#KnockoutRegular") format("svg");
+}
+@font-face {
+  font-family: 'HelveticaCondensedLight';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_light-webfont.svg#KnockoutRegular") format("svg");
+}
+@font-face {
+  font-family: 'HelveticaCondensedBold';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.woff") format("woff"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/helvetica_condensed_bold-webfont.svg#KnockoutRegular") format("svg");
+}
+@font-face {
+  font-family: 'LatoRegular';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-regular-webfont.svg#LatoRegular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'LatoBold';
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.eot");
+  src: url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.eot?#iefix") format("embedded-opentype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.woff2") format("woff2"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.ttf") format("truetype"), url("//media.yoox.biz/ytos/resources/THECORNER/font/lato-bold-webfont.svg#LatoBold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+.RU button, .RU #cart .emptyCartWrap .backToShoppingButton a, #cart .emptyCartWrap .backToShoppingButton .RU a, .RU .button, .RU #confirmation .goToDeliveryBtn a, #confirmation .goToDeliveryBtn .RU a, .RU #cart .coupon .couponCode, #cart .coupon .RU .couponCode, .RU #checkmail .radioButtonBox .text, #checkmail .radioButtonBox .RU .text, .RU #delivery #ShippingAddressViewModel_CountryCode_Wrapper, #delivery .RU #ShippingAddressViewModel_CountryCode_Wrapper, .RU #confirmation #billingDetails .billing .zipCode1, #confirmation #billingDetails .billing .RU .zipCode1, .RU #confirmation #billingDetails .billing .zipCode2, #confirmation #billingDetails .billing .RU .zipCode2, .RU #confirmation #billingDetails .country_CN #BillingAddressViewModel_CountryCode_Wrapper .description, #confirmation #billingDetails .country_CN #BillingAddressViewModel_CountryCode_Wrapper .RU .description, .RU #confirmation .coupon .couponCode, #confirmation .coupon .RU .couponCode, .RU #waittobuy .waitToBuyContainer .orderDesc, #waittobuy .waitToBuyContainer .RU .orderDesc, .CN #confirmation #giftDetails .giftRecap, #confirmation #giftDetails .CN .giftRecap, .CN #confirmation #rememberReturn, #confirmation .CN #rememberReturn, .CN #confirmation #selectedAddress, #confirmation .CN #selectedAddress, .CN #confirmation #shippingMethodDetails #selectedDeliveryMethod, #confirmation #shippingMethodDetails .CN #selectedDeliveryMethod, .CN #confirmation #billingDetails .billing, #confirmation #billingDetails .CN .billing, .CN #confirmation #billingDetails .billing .addNewAddressButton label, #confirmation #billingDetails .billing .addNewAddressButton .CN label, .CN #confirmation #billingDetails .billing .address, #confirmation #billingDetails .billing .CN .address, .CN #confirmation #billingDetails .addNewAddressButtonWithForm, #confirmation #billingDetails .CN .addNewAddressButtonWithForm, .CN #confirmation #creditCardMethod .creditCardForm, #confirmation #creditCardMethod .CN .creditCardForm, .CN #confirmation #paymentDetails .paymentTitle .editPayment, #confirmation #paymentDetails .paymentTitle .CN .editPayment, .CN #confirmation #paymentDetails .paymentMethod, #confirmation #paymentDetails .CN .paymentMethod, .CN #confirmation #paymentDetails .userCreditCardsListWithForm .cardContainer, #confirmation #paymentDetails .userCreditCardsListWithForm .CN .cardContainer, .CN #waittobuy .waitToBuyContainer .orderControl, #waittobuy .waitToBuyContainer .CN .orderControl, .RU #confirmation #giftDetails .giftRecap, #confirmation #giftDetails .RU .giftRecap, .RU #confirmation #rememberReturn, #confirmation .RU #rememberReturn, .RU #confirmation #selectedAddress, #confirmation .RU #selectedAddress, .RU #confirmation #shippingMethodDetails #selectedDeliveryMethod, #confirmation #shippingMethodDetails .RU #selectedDeliveryMethod, .RU #confirmation #billingDetails .billing, #confirmation #billingDetails .RU .billing, .RU #confirmation #billingDetails .billing .addNewAddressButton label, #confirmation #billingDetails .billing .addNewAddressButton .RU label, .RU #confirmation #billingDetails .billing .address, #confirmation #billingDetails .billing .RU .address, .RU #confirmation #billingDetails .addNewAddressButtonWithForm, #confirmation #billingDetails .RU .addNewAddressButtonWithForm, .RU #confirmation #creditCardMethod .creditCardForm, #confirmation #creditCardMethod .RU .creditCardForm, .RU #confirmation #paymentDetails .paymentTitle .editPayment, #confirmation #paymentDetails .paymentTitle .RU .editPayment, .RU #confirmation #paymentDetails .paymentMethod, #confirmation #paymentDetails .RU .paymentMethod, .RU #confirmation #paymentDetails .userCreditCardsListWithForm .cardContainer, #confirmation #paymentDetails .userCreditCardsListWithForm .RU .cardContainer, .RU #waittobuy .waitToBuyContainer .orderControl, #waittobuy .waitToBuyContainer .RU .orderControl, .CN #confirmation #paymentDetails .userCreditCardsListWithForm .cardContainer .cardNumber, #confirmation #paymentDetails .userCreditCardsListWithForm .cardContainer .CN .cardNumber, .CN #confirmation #paymentDetails .userCreditCardsListWithForm .cardContainer .cardHolderData .holderName, #confirmation #paymentDetails .userCreditCardsListWithForm .cardContainer .cardHolderData .CN .holderName, .CN #confirmation #paymentDetails .userCreditCardsListWithForm .cardContainer .preferredlabel, #confirmation #paymentDetails .userCreditCardsListWithForm .cardContainer .CN .preferredlabel, .RU #cart .backToShoppingButton a, #cart .backToShoppingButton .RU a, .RU #cart .itemRow .deleteItem, #cart .itemRow .RU .deleteItem, .RU #delivery #returnBtn .button, #delivery #returnBtn .RU .button, .RU #delivery #returnBtn #confirmation .goToDeliveryBtn a, #delivery #returnBtn #confirmation .goToDeliveryBtn .RU a, .RU #confirmation .goToDeliveryBtn #delivery #returnBtn a, #confirmation .goToDeliveryBtn #delivery #returnBtn .RU a, .RU #cartRecap, .RU #cart .desc, #cart .RU .desc, .RU #cart .emptyCartWrap h2, #cart .emptyCartWrap .RU h2, .RU #cart .bannedBrandsLink, #cart .RU .bannedBrandsLink, .RU #cart #salesterm p, #cart #salesterm .RU p, .RU #checkmail .privacyContainer, #checkmail .RU .privacyContainer, .RU #checkmail .acceptFlags, #checkmail .RU .acceptFlags, .RU #delivery #deliveryContent, #delivery .RU #deliveryContent, .RU #confirmation #creditCardMethod .privacy, #confirmation #creditCardMethod .RU .privacy, .RU #confirmation #creditCardMethod .fastCheckoutSection, #confirmation #creditCardMethod .RU .fastCheckoutSection, .RU #confirmation .bannedBrandsLink, #confirmation .RU .bannedBrandsLink, .RU #confirmation #confirmationSalesTerms #salesTerm .salesTermContent, #confirmation #confirmationSalesTerms #salesTerm .RU .salesTermContent, #thankyou .thankyouWrapper .orderDesc, #thankyou .thankyouWrapper .orderDetails, #thankyou .thankyouWrapper .orderControl {
+  font-family: Arial, Verdana, sans-serif;
+}
+
+.RU #confirmation #creditCardMethod.userWithCreditCards .newCreditCardButton.selected, #confirmation #creditCardMethod.userWithCreditCards .RU .newCreditCardButton.selected, .RU #confirmation #paymentDetails .paymentTitle, #confirmation #paymentDetails .RU .paymentTitle, .RU #thankyou .thankyouWrapper .orderTitle, #thankyou .thankyouWrapper .RU .orderTitle, .RU #waittobuy .waitToBuyContainer .orderControl .myOrders, #waittobuy .waitToBuyContainer .orderControl .RU .myOrders, .RU #confirmation #paymentDetails .userCreditCardsListWithForm .cardContainer .cardNumber, #confirmation #paymentDetails .userCreditCardsListWithForm .cardContainer .RU .cardNumber, .RU #confirmation #paymentDetails .userCreditCardsListWithForm .cardContainer .cardHolderData .holderName, #confirmation #paymentDetails .userCreditCardsListWithForm .cardContainer .cardHolderData .RU .holderName, .RU #confirmation #paymentDetails .userCreditCardsListWithForm .cardContainer .preferredlabel, #confirmation #paymentDetails .userCreditCardsListWithForm .cardContainer .RU .preferredlabel, .RU #cartRecap .cartTotal, #cartRecap .RU .cartTotal, .RU #cart .brandName, #cart .RU .brandName, .RU #cart .priceUpdater .discounted, #cart .priceUpdater .RU .discounted, .RU #cart #subtotal, #cart .RU #subtotal, .RU #cart #coupon h4, #cart #coupon .RU h4, .RU #cart .cartInfo h3, #cart .cartInfo .RU h3, .RU #cart .cartInfo p, #cart .cartInfo .RU p, .RU #cart #totals, #cart .RU #totals, .RU #cart #salesterm h4, #cart #salesterm .RU h4, .RU #delivery #deliverySelectionBlock, #delivery .RU #deliverySelectionBlock, .RU #confirmation #paymentDetails .otherPaymentMethodsSection #paymentSelection .paymentMethod, #confirmation #paymentDetails .otherPaymentMethodsSection #paymentSelection .RU .paymentMethod, .RU #confirmation #coupon h4, #confirmation #coupon .RU h4, .RU #confirmation #confirmationSalesTerms #salesTerm .salesTermTitle, #confirmation #confirmationSalesTerms #salesTerm .RU .salesTermTitle {
+  font-family: Arial, Verdana, sans-serif;
+  font-weight: bold;
+}
+
+button, #cart .emptyCartWrap .backToShoppingButton a, .button, #confirmation .goToDeliveryBtn a, #cart .coupon .couponCode, #checkmail .radioButtonBox .text, #delivery #ShippingAddressViewModel_CountryCode_Wrapper, #confirmation #billingDetails .billing .zipCode1, #confirmation #billingDetails .billing .zipCode2, #confirmation #billingDetails .country_CN #BillingAddressViewModel_CountryCode_Wrapper .description, #confirmation .coupon .couponCode, #waittobuy .waitToBuyContainer .orderDesc {
+  font-family: KnockoutLight, Arial, Verdana, sans-serif;
+  font-weight: normal;
+}
+.JP button, .JP #cart .emptyCartWrap .backToShoppingButton a, #cart .emptyCartWrap .backToShoppingButton .JP a, .JP .button, .JP #confirmation .goToDeliveryBtn a, #confirmation .goToDeliveryBtn .JP a, .JP #cart .coupon .couponCode, #cart .coupon .JP .couponCode, .JP #checkmail .radioButtonBox .text, #checkmail .radioButtonBox .JP .text, .JP #delivery #ShippingAddressViewModel_CountryCode_Wrapper, #delivery .JP #ShippingAddressViewModel_CountryCode_Wrapper, .JP #confirmation #billingDetails .billing .zipCode1, #confirmation #billingDetails .billing .JP .zipCode1, .JP #confirmation #billingDetails .billing .zipCode2, #confirmation #billingDetails .billing .JP .zipCode2, .JP #confirmation #billingDetails .country_CN #BillingAddressViewModel_CountryCode_Wrapper .description, #confirmation #billingDetails .country_CN #BillingAddressViewModel_CountryCode_Wrapper .JP .description, .JP #confirmation .coupon .couponCode, #confirmation .coupon .JP .couponCode, .JP #waittobuy .waitToBuyContainer .orderDesc, #waittobuy .waitToBuyContainer .JP .orderDesc {
+  font-family: KnockoutLight, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+}
+.CN button, .CN #cart .emptyCartWrap .backToShoppingButton a, #cart .emptyCartWrap .backToShoppingButton .CN a, .CN .button, .CN #confirmation .goToDeliveryBtn a, #confirmation .goToDeliveryBtn .CN a, .CN #cart .coupon .couponCode, #cart .coupon .CN .couponCode, .CN #checkmail .radioButtonBox .text, #checkmail .radioButtonBox .CN .text, .CN #delivery #ShippingAddressViewModel_CountryCode_Wrapper, #delivery .CN #ShippingAddressViewModel_CountryCode_Wrapper, .CN #confirmation #billingDetails .billing .zipCode1, #confirmation #billingDetails .billing .CN .zipCode1, .CN #confirmation #billingDetails .billing .zipCode2, #confirmation #billingDetails .billing .CN .zipCode2, .CN #confirmation #billingDetails .country_CN #BillingAddressViewModel_CountryCode_Wrapper .description, #confirmation #billingDetails .country_CN #BillingAddressViewModel_CountryCode_Wrapper .CN .description, .CN #confirmation .coupon .couponCode, #confirmation .coupon .CN .couponCode, .CN #waittobuy .waitToBuyContainer .orderDesc, #waittobuy .waitToBuyContainer .CN .orderDesc {
+  font-family: KnockoutLight, HelveticaCondensedLight, Arial, "Microsoft YaHei", "Microsoft YaHei Regular", SimHei, "SimHei Regular", sans-serif;
+}
+
+#confirmation #creditCardMethod.userWithCreditCards .newCreditCardButton.selected, #confirmation #paymentDetails .paymentTitle, #thankyou .thankyouWrapper .orderTitle, #waittobuy .waitToBuyContainer .orderControl .myOrders {
+  font-family: KnockoutRegular, Arial, Verdana, sans-serif;
+  font-weight: normal;
+}
+.JP #confirmation #creditCardMethod.userWithCreditCards .newCreditCardButton.selected, #confirmation #creditCardMethod.userWithCreditCards .JP .newCreditCardButton.selected, .JP #confirmation #paymentDetails .paymentTitle, #confirmation #paymentDetails .JP .paymentTitle, .JP #thankyou .thankyouWrapper .orderTitle, #thankyou .thankyouWrapper .JP .orderTitle, .JP #waittobuy .waitToBuyContainer .orderControl .myOrders, #waittobuy .waitToBuyContainer .orderControl .JP .myOrders {
+  font-family: KnockoutRegular, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+}
+.CN #confirmation #creditCardMethod.userWithCreditCards .newCreditCardButton.selected, #confirmation #creditCardMethod.userWithCreditCards .CN .newCreditCardButton.selected, .CN #confirmation #paymentDetails .paymentTitle, #confirmation #paymentDetails .CN .paymentTitle, .CN #thankyou .thankyouWrapper .orderTitle, #thankyou .thankyouWrapper .CN .orderTitle, .CN #waittobuy .waitToBuyContainer .orderControl .myOrders, #waittobuy .waitToBuyContainer .orderControl .CN .myOrders {
+  font-family: KnockoutLight, HelveticaCondensedLight, Arial, "Microsoft YaHei", "Microsoft YaHei Regular", SimHei, "SimHei Regular", sans-serif;
+}
+
+#confirmation #giftDetails .giftRecap, #confirmation #rememberReturn, #confirmation #selectedAddress, #confirmation #shippingMethodDetails #selectedDeliveryMethod, #confirmation #billingDetails .billing, #confirmation #billingDetails .billing .addNewAddressButton label, #confirmation #billingDetails .billing .address, #confirmation #billingDetails .addNewAddressButtonWithForm, #confirmation #creditCardMethod .creditCardForm, #confirmation #paymentDetails .paymentTitle .editPayment, #confirmation #paymentDetails .paymentMethod, #confirmation #paymentDetails .userCreditCardsListWithForm .cardContainer, #waittobuy .waitToBuyContainer .orderControl {
+  font-family: HelveticaCondensedLight, Arial, Verdana, sans-serif;
+  font-weight: normal;
+}
+
+#confirmation #paymentDetails .userCreditCardsListWithForm .cardContainer .cardNumber, #confirmation #paymentDetails .userCreditCardsListWithForm .cardContainer .cardHolderData .holderName, #confirmation #paymentDetails .userCreditCardsListWithForm .cardContainer .preferredlabel {
+  font-family: HelveticaCondensedBold, Arial, Verdana, sans-serif;
+  font-weight: normal;
+}
+
+#cart .backToShoppingButton a, #cart .itemRow .deleteItem, #delivery #returnBtn .button, #delivery #returnBtn #confirmation .goToDeliveryBtn a, #confirmation .goToDeliveryBtn #delivery #returnBtn a, #cartRecap, #cart .desc, #cart .emptyCartWrap h2, #cart .itemRow .desc, #cart .bannedBrandsLink, #cart #salesterm p, #checkmail .privacyContainer, #checkmail .acceptFlags, #delivery #deliveryContent, #confirmation #creditCardMethod .privacy, #confirmation #creditCardMethod .fastCheckoutSection, #confirmation .bannedBrandsLink, #confirmation #confirmationSalesTerms #salesTerm .salesTermContent {
+  font-family: LatoRegular, Arial, Verdana, sans-serif;
+  font-weight: normal;
+}
+.JP #cart .backToShoppingButton a, #cart .backToShoppingButton .JP a, .JP #cart .itemRow .deleteItem, #cart .itemRow .JP .deleteItem, .JP #delivery #returnBtn .button, #delivery #returnBtn .JP .button, .JP #delivery #returnBtn #confirmation .goToDeliveryBtn a, #delivery #returnBtn #confirmation .goToDeliveryBtn .JP a, .JP #confirmation .goToDeliveryBtn #delivery #returnBtn a, #confirmation .goToDeliveryBtn #delivery #returnBtn .JP a, .JP #cartRecap, .JP #cart .desc, #cart .JP .desc, .JP #cart .emptyCartWrap h2, #cart .emptyCartWrap .JP h2, .JP #cart .bannedBrandsLink, #cart .JP .bannedBrandsLink, .JP #cart #salesterm p, #cart #salesterm .JP p, .JP #checkmail .privacyContainer, #checkmail .JP .privacyContainer, .JP #checkmail .acceptFlags, #checkmail .JP .acceptFlags, .JP #delivery #deliveryContent, #delivery .JP #deliveryContent, .JP #confirmation #creditCardMethod .privacy, #confirmation #creditCardMethod .JP .privacy, .JP #confirmation #creditCardMethod .fastCheckoutSection, #confirmation #creditCardMethod .JP .fastCheckoutSection, .JP #confirmation .bannedBrandsLink, #confirmation .JP .bannedBrandsLink, .JP #confirmation #confirmationSalesTerms #salesTerm .salesTermContent, #confirmation #confirmationSalesTerms #salesTerm .JP .salesTermContent {
+  font-family: LatoRegular, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+}
+
+#cartRecap .cartTotal, #cart .brandName, #cart .priceUpdater .discounted, #cart #subtotal, #cart #coupon h4, #cart .cartInfo h3, #cart .cartInfo p, #cart #totals, #cart #salesterm h4, #delivery #deliverySelectionBlock, #confirmation #paymentDetails .otherPaymentMethodsSection #paymentSelection .paymentMethod, #confirmation #coupon h4, #confirmation #confirmationSalesTerms #salesTerm .salesTermTitle {
+  font-family: LatoBold, Arial, Verdana, sans-serif;
+  font-weight: normal;
+}
+.JP #cartRecap .cartTotal, #cartRecap .JP .cartTotal, .JP #cart .brandName, #cart .JP .brandName, .JP #cart .priceUpdater .discounted, #cart .priceUpdater .JP .discounted, .JP #cart #subtotal, #cart .JP #subtotal, .JP #cart #coupon h4, #cart #coupon .JP h4, .JP #cart .cartInfo h3, #cart .cartInfo .JP h3, .JP #cart .cartInfo p, #cart .cartInfo .JP p, .JP #cart #totals, #cart .JP #totals, .JP #cart #salesterm h4, #cart #salesterm .JP h4, .JP #delivery #deliverySelectionBlock, #delivery .JP #deliverySelectionBlock, .JP #confirmation #paymentDetails .otherPaymentMethodsSection #paymentSelection .paymentMethod, #confirmation #paymentDetails .otherPaymentMethodsSection #paymentSelection .JP .paymentMethod, .JP #confirmation #coupon h4, #confirmation #coupon .JP h4, .JP #confirmation #confirmationSalesTerms #salesTerm .salesTermTitle, #confirmation #confirmationSalesTerms #salesTerm .JP .salesTermTitle {
+  font-family: LatoBold, "ÒâíÒéñÒâ¬Òé¬", Meiryo, "ÒâÆÒâ®Òé«ÒâÄÞºÆÒé┤ Pro W3", "Hiragino Kaku Gothic Pro", "´╝¡´╝│ ´╝░Òé┤ÒéÀÒââÒé»", sans-serif;
+}
+
+/* ==========================================================================
+   CALL TO ACTIONS
+   Use with:
+
+	@extend button				(extends button rules)
+	@extend .secondary			(extends .secondary rules)
+	@extend button.secondary	(extends .secondary rules, not button's)
+	@extend .ugly-button		(extends .ugly-button rules)
+
+	NOTE: THESE ARE CLASSES.
+	THEY WILL BE REPLICATED FOR EACH TIME THEY'RE INCLUDED.
+	Include this only when is necessary.
+	Include this in scss PARENTS ONLY.
+
+	========================================================================== */
+button, #cart .emptyCartWrap .backToShoppingButton a {
+  text-align: center;
+  cursor: pointer;
+  display: block;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  font-size: 1.9rem;
+  padding: 26px 12%;
+  border: 0;
+  outline: none;
+  width: 100%;
+}
+
+.button, #confirmation .goToDeliveryBtn a {
+  text-align: center;
+  cursor: pointer;
+  display: block;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  font-size: 1.9rem;
+  padding: 26px 12%;
+  border: 0;
+  outline: none;
+  width: 76%;
+}
+
+button.primary, #cart button.addToCart, #cart .emptyCartWrap .backToShoppingButton a, #cart button.nextPageButton, #cart .coupon button, #checkmail form.loginForm button.submit, #checkmail form.loginForm #cart .emptyCartWrap .backToShoppingButton a.submit, #cart .emptyCartWrap .backToShoppingButton #checkmail form.loginForm a.submit, #checkmail div.registrationForm button.submit, #checkmail div.registrationForm #cart .emptyCartWrap .backToShoppingButton a.submit, #cart .emptyCartWrap .backToShoppingButton #checkmail div.registrationForm a.submit, #delivery button.nextPageButton, #confirmation .coupon button, #confirmation #confirmationButtons .cartButtonsWrapper button.nextPageButton, #confirmation #confirmationButtons .cartButtonsWrapper #cart .emptyCartWrap .backToShoppingButton a.nextPageButton, #cart .emptyCartWrap .backToShoppingButton #confirmation #confirmationButtons .cartButtonsWrapper a.nextPageButton, #thankyou .adviceFormWrapper .adviceFormContainer button, #waittobuy .adviceFormWrapper .adviceFormContainer button, #waittobuy .payEaseContainer .payEaseMobileForm button, .sessionLogin button.submit, .button.primary, #cart .button.addToCart, #cart #confirmation .goToDeliveryBtn a.addToCart, #confirmation .goToDeliveryBtn #cart a.addToCart, #cart .emptyCartWrap .backToShoppingButton a.button, #cart .emptyCartWrap .backToShoppingButton #confirmation .goToDeliveryBtn a, #confirmation .goToDeliveryBtn #cart .emptyCartWrap .backToShoppingButton a, #cart .button.nextPageButton, #cart #confirmation .goToDeliveryBtn a.nextPageButton, #confirmation .goToDeliveryBtn #cart a.nextPageButton, #cart .coupon button.button, #checkmail form.loginForm button.button.submit, #checkmail div.registrationForm button.button.submit, #delivery .button.nextPageButton, #delivery #confirmation .goToDeliveryBtn a.nextPageButton, #confirmation .goToDeliveryBtn #delivery a.nextPageButton, #confirmation .coupon button.button, #confirmation #confirmationButtons .cartButtonsWrapper .button.nextPageButton, #confirmation #confirmationButtons .cartButtonsWrapper .goToDeliveryBtn a.nextPageButton, #confirmation .goToDeliveryBtn #confirmationButtons .cartButtonsWrapper a.nextPageButton, #confirmation .goToDeliveryBtn a.primary, #confirmation .goToDeliveryBtn .sessionLogin a.submit, .sessionLogin #confirmation .goToDeliveryBtn a.submit, #thankyou .adviceFormWrapper .adviceFormContainer button.button, #waittobuy .adviceFormWrapper .adviceFormContainer button.button, #waittobuy .payEaseContainer .payEaseMobileForm button.button, .sessionLogin .button.submit {
+  background-color: #000;
+  color: #FFF;
+}
+button.secondary, #cart .emptyCartWrap .backToShoppingButton a.secondary, #cart .emptyCartWrap .backToShoppingButton #confirmation #paymentDetails a.newCreditCardButton, #confirmation #paymentDetails #cart .emptyCartWrap .backToShoppingButton a.newCreditCardButton, #cart .emptyCartWrap .backToShoppingButton #confirmation .goToDeliveryBtn a, #confirmation .goToDeliveryBtn #cart .emptyCartWrap .backToShoppingButton a, #delivery .addNewAddressButtonWithForm button, #delivery .addNewAddressButtonWithForm #cart .emptyCartWrap .backToShoppingButton a, #cart .emptyCartWrap .backToShoppingButton #delivery .addNewAddressButtonWithForm a, #confirmation #billingDetails .addNewAddressButtonWithForm button, #confirmation #billingDetails .addNewAddressButtonWithForm #cart .emptyCartWrap .backToShoppingButton a, #cart .emptyCartWrap .backToShoppingButton #confirmation #billingDetails .addNewAddressButtonWithForm a, #confirmation #paymentDetails button.newCreditCardButton, .button.secondary, #delivery .addNewAddressButtonWithForm button.button, #delivery .addNewAddressButtonWithForm #cart .emptyCartWrap .backToShoppingButton a.button, #cart .emptyCartWrap .backToShoppingButton #delivery .addNewAddressButtonWithForm a.button, #delivery .addNewAddressButtonWithForm #cart .emptyCartWrap .backToShoppingButton #confirmation .goToDeliveryBtn a, #cart .emptyCartWrap .backToShoppingButton #confirmation .goToDeliveryBtn #delivery .addNewAddressButtonWithForm a, #delivery .addNewAddressButtonWithForm #confirmation .goToDeliveryBtn #cart .emptyCartWrap .backToShoppingButton a, #confirmation .goToDeliveryBtn #cart .emptyCartWrap .backToShoppingButton #delivery .addNewAddressButtonWithForm a, #confirmation #billingDetails .addNewAddressButtonWithForm button.button, #confirmation #billingDetails .addNewAddressButtonWithForm #cart .emptyCartWrap .backToShoppingButton a.button, #cart .emptyCartWrap .backToShoppingButton #confirmation #billingDetails .addNewAddressButtonWithForm a.button, #cart .emptyCartWrap .backToShoppingButton #confirmation #billingDetails .addNewAddressButtonWithForm .goToDeliveryBtn a, #cart .emptyCartWrap .backToShoppingButton #confirmation .goToDeliveryBtn #billingDetails .addNewAddressButtonWithForm a, #confirmation #billingDetails .addNewAddressButtonWithForm .goToDeliveryBtn #cart .emptyCartWrap .backToShoppingButton a, #confirmation .goToDeliveryBtn #cart .emptyCartWrap .backToShoppingButton #billingDetails .addNewAddressButtonWithForm a, #confirmation #paymentDetails .button.newCreditCardButton, #confirmation #paymentDetails .goToDeliveryBtn a.newCreditCardButton, #confirmation .goToDeliveryBtn #paymentDetails a.newCreditCardButton, #confirmation .goToDeliveryBtn a {
+  background-color: #CCC;
+  color: #FFF;
+}
+button.disabled, #cart .emptyCartWrap .backToShoppingButton a.disabled, button[disabled], #cart .emptyCartWrap .backToShoppingButton a[disabled], .button.disabled, #confirmation .goToDeliveryBtn a.disabled, .button[disabled], #confirmation .goToDeliveryBtn a[disabled] {
+  background-color: #FFF;
+  color: #EBEBEB;
+  cursor: default;
+}
+
+#cart .backToShoppingButton a, #cart .itemRow .deleteItem, #delivery #returnBtn .button, #delivery #returnBtn #confirmation .goToDeliveryBtn a, #confirmation .goToDeliveryBtn #delivery #returnBtn a {
+  padding: 0;
+  display: inline-block;
+  background-color: transparent;
+  text-transform: none;
+  text-decoration: underline;
+  width: auto;
+  text-align: left;
+  font-size: 1.3rem;
+}
+#cart .backToShoppingButton a:hover, #cart .itemRow .deleteItem:hover, #delivery #returnBtn .button:hover, #delivery #returnBtn #confirmation .goToDeliveryBtn a:hover, #confirmation .goToDeliveryBtn #delivery #returnBtn a:hover {
+  background-color: transparent;
+}
+
+#cart .itemRow .editItemQuantity button, #cart .itemRow .editItemQuantity .emptyCartWrap .backToShoppingButton a, #cart .emptyCartWrap .backToShoppingButton .itemRow .editItemQuantity a {
+  width: auto;
+  background-color: transparent;
+  padding: 0;
+}
+
+.sprites-creditcards-sprite, .sprites-creditcards-alipay, .sprites-creditcards-americanexpress, #confirmation #paymentDetails .userCreditCardsListWithForm .cardIcon.AmericanExpress, .sprites-creditcards-americanexpress_big, .sprites-creditcards-cartebleue, #confirmation #paymentDetails .userCreditCardsListWithForm .cardIcon.CarteBleue, .sprites-creditcards-cartebleue_big, .sprites-creditcards-cartebleuevisa_big, .sprites-creditcards-discover, .sprites-creditcards-discover_big, .sprites-creditcards-jcb, #confirmation #paymentDetails .userCreditCardsListWithForm .cardIcon.JCB, .sprites-creditcards-jcb_big, .sprites-creditcards-maestro, #confirmation #paymentDetails .userCreditCardsListWithForm .cardIcon.Switch, .sprites-creditcards-maestro_big, .sprites-creditcards-mastercard, #confirmation #paymentDetails .userCreditCardsListWithForm .cardIcon.Mastercard, .sprites-creditcards-mastercard_big, .sprites-creditcards-payease, .sprites-creditcards-paypal, .sprites-creditcards-paypal_big, .sprites-creditcards-postepay, .sprites-creditcards-postepay_big, .sprites-creditcards-visa, #confirmation #paymentDetails .userCreditCardsListWithForm .cardIcon.Visa, .sprites-creditcards-visa_big {
+  background-image: url('/Content/Styles/generated_images/sprites-creditcards-s9068ad9ed7.png');
+  background-repeat: no-repeat;
+}
+
+.sprites-smartphone-sprite, .sprites-smartphone-wechat-qrcode {
+  background-image: url('/Content/Styles/generated_images/sprites-smartphone-scb09bb9be0.png');
+  background-repeat: no-repeat;
+}
+
+.sprites-creditcards-alipay {
+  background-position: 0 0;
+  height: 30px;
+  width: 177px;
+}
+
+.sprites-creditcards-americanexpress, #confirmation #paymentDetails .userCreditCardsListWithForm .cardIcon.AmericanExpress {
+  background-position: 0 -30px;
+  height: 42px;
+  width: 57px;
+}
+
+.sprites-creditcards-americanexpress_big {
+  background-position: 0 -72px;
+  height: 70px;
+  width: 96px;
+}
+
+.sprites-creditcards-cartebleue, #confirmation #paymentDetails .userCreditCardsListWithForm .cardIcon.CarteBleue {
+  background-position: 0 -142px;
+  height: 42px;
+  width: 57px;
+}
+
+.sprites-creditcards-cartebleue_big {
+  background-position: 0 -184px;
+  height: 70px;
+  width: 96px;
+}
+
+.sprites-creditcards-cartebleuevisa_big {
+  background-position: 0 -254px;
+  height: 70px;
+  width: 96px;
+}
+
+.sprites-creditcards-discover {
+  background-position: 0 -324px;
+  height: 42px;
+  width: 57px;
+}
+
+.sprites-creditcards-discover_big {
+  background-position: 0 -366px;
+  height: 70px;
+  width: 96px;
+}
+
+.sprites-creditcards-jcb, #confirmation #paymentDetails .userCreditCardsListWithForm .cardIcon.JCB {
+  background-position: 0 -436px;
+  height: 42px;
+  width: 57px;
+}
+
+.sprites-creditcards-jcb_big {
+  background-position: 0 -478px;
+  height: 70px;
+  width: 96px;
+}
+
+.sprites-creditcards-maestro, #confirmation #paymentDetails .userCreditCardsListWithForm .cardIcon.Switch {
+  background-position: 0 -548px;
+  height: 42px;
+  width: 57px;
+}
+
+.sprites-creditcards-maestro_big {
+  background-position: 0 -590px;
+  height: 70px;
+  width: 96px;
+}
+
+.sprites-creditcards-mastercard, #confirmation #paymentDetails .userCreditCardsListWithForm .cardIcon.Mastercard {
+  background-position: 0 -660px;
+  height: 42px;
+  width: 57px;
+}
+
+.sprites-creditcards-mastercard_big {
+  background-position: 0 -702px;
+  height: 70px;
+  width: 96px;
+}
+
+.sprites-creditcards-payease {
+  background-position: 0 -772px;
+  height: 30px;
+  width: 100px;
+}
+
+.sprites-creditcards-paypal {
+  background-position: 0 -802px;
+  height: 42px;
+  width: 57px;
+}
+
+.sprites-creditcards-paypal_big {
+  background-position: 0 -844px;
+  height: 70px;
+  width: 96px;
+}
+
+.sprites-creditcards-postepay {
+  background-position: 0 -914px;
+  height: 42px;
+  width: 57px;
+}
+
+.sprites-creditcards-postepay_big {
+  background-position: 0 -956px;
+  height: 70px;
+  width: 96px;
+}
+
+.sprites-creditcards-visa, #confirmation #paymentDetails .userCreditCardsListWithForm .cardIcon.Visa {
+  background-position: 0 -1026px;
+  height: 42px;
+  width: 57px;
+}
+
+.sprites-creditcards-visa_big {
+  background-position: 0 -1068px;
+  height: 70px;
+  width: 96px;
+}
+
+.sprites-smartphone-wechat-qrcode {
+  background-position: 0 0;
+  height: 150px;
+  width: 150px;
+}
+
+#cart .bx-prev {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20width%3D%2221%22%20height%3D%2221%22%20viewBox%3D%220%200%20400%20400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Ccircle%20fill%3D%22%23EBEBEB%22%20cx%3D%22200%22%20cy%3D%22200%22%20r%3D%22200%22%2F%3E%3Cpath%20fill%3D%22%23666%22%20d%3D%22M93.054%20200l-.027.025L227.81%20334.807l35.165-35.164L163.33%20200l99.643-99.642-35.164-35.165-134.783%20134.78%22%2F%3E%3C%2Fsvg%3E");
+  width: 21px;
+  height: 21px;
+  background-repeat: no-repeat;
+}
+
+#cart .bx-next {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20width%3D%2221%22%20height%3D%2221%22%20viewBox%3D%220%200%20400%20400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Ccircle%20fill%3D%22%23EBEBEB%22%20cx%3D%22199.782%22%20cy%3D%22200.453%22%20r%3D%22200%22%2F%3E%3Cpath%20fill%3D%22%23666%22%20d%3D%22M301.755%20200.427l-134.78-134.78-35.165%2035.164%2099.64%2099.643-99.64%2099.643%2035.163%2035.163%20134.782-134.782-.026-.025%22%2F%3E%3C%2Fsvg%3E");
+  width: 21px;
+  height: 21px;
+  background-repeat: no-repeat;
+}
+
+#cart #oldCart .closeCross {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%20375%20375%22%3E%3Cpath%20d%3D%22M290.562%200L186.455%20106.057%2080.397%201.95%200%2083.854%20106.057%20187.96%201.95%20294.02l81.904%2080.396%20104.107-106.06%20106.06%20104.11%2080.395-81.903-106.058-104.108%20104.11-106.058%22%20fill%3D%22%23666%22%2F%3E%3C%2Fsvg%3E");
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+}
+
+#cart .itemRow .editItemQuantity .decrease .icon {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2218%22%20height%3D%2218%22%20viewBox%3D%220%200%20512%20512%22%3E%3Cpath%20d%3D%22M256%2050C142.23%2050%2050%20142.23%2050%20256s92.23%20206%20206%20206%20206-92.23%20206-206S369.77%2050%20256%2050zm126.6%20243.432H135.4V224.57h247.2v68.862z%22%20fill%3D%22%23333%22%2F%3E%3C%2Fsvg%3E");
+  width: 18px;
+  height: 18px;
+  background-repeat: no-repeat;
+}
+
+#cart .itemRow .editItemQuantity .increase .icon {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2218%22%20height%3D%2218%22%20viewBox%3D%220%200%20512%20512%22%3E%3Cpath%20d%3D%22M256%2050C142.23%2050%2050%20142.23%2050%20256s92.23%20206%20206%20206%20206-92.23%20206-206S369.77%2050%20256%2050zm126.6%20243.432h-89.17V382.6h-68.86v-89.168H135.4V224.57h89.17V135.4h68.86v89.17h89.17v68.862z%22%20fill%3D%22%23333%22%2F%3E%3C%2Fsvg%3E");
+  width: 18px;
+  height: 18px;
+  background-repeat: no-repeat;
+}
+
+#container {
+  margin: 0;
+}
+
+.serverSideErrors {
+  padding: 10px 0;
+}
+
+.checkoutPageTitle {
+  padding: 20px 25px 10px;
+}
+
+.miniTitle {
+  color: #000;
+  font-size: 2rem;
+  padding: 23px 10px;
+}
+
+#cartRecap {
+  padding: 10px 0;
+  font-size: 1.2rem;
+  line-height: 22px;
+  text-align: center;
+}
+#cartRecap .cartTotal {
+  background-color: #f7f5de;
+  font-size: 1.4rem;
+  padding: 8px 0;
+}
+#cartRecap .cartTotal .label {
+  text-transform: uppercase;
+}
+#cartRecap .totalPrices {
+  display: inline;
+  margin-left: 5px;
+}
+#cartRecap .itemsInCart {
+  display: inline;
+  margin-right: 5px;
+}
+#cartRecap a {
+  color: #000;
+  text-transform: uppercase;
+}
+#cartRecap .salesTaxesDescrPopup {
+  display: none;
+}
+
+.free .currency {
+  display: none;
+}
+
+#cart {
+  /* stili comuni anche per l'oldcart */
+  /* end stili comuni anche per l'oldcart */
+  /* questo ├¿ common con il oldcart */
+}
+#cart #oldCart {
+  margin-bottom: 10px;
+  border-bottom: 1px solid #999;
+  background-color: #EBEBEB;
+  padding: 12px 20px;
+}
+#cart #oldCart .closeCross {
+  float: right;
+  margin-top: 10px;
+}
+#cart .oldCartHeader {
+  *zoom: 1;
+  margin-bottom: 10px;
+}
+#cart .oldCartHeader:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#cart .oldCartItem {
+  background-color: #FFF;
+}
+#cart .info, #cart .productsSlider {
+  *zoom: 1;
+}
+#cart .info:after, #cart .productsSlider:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#cart .image, #cart .desc {
+  float: left;
+  width: 48%;
+}
+#cart .image a {
+  display: block;
+}
+#cart .image img {
+  width: 100%;
+}
+#cart .desc {
+  padding-top: 10px;
+}
+#cart .addToCart {
+  margin: 0 auto;
+}
+#cart .price {
+  display: block;
+}
+#cart .actions {
+  padding-top: 10px;
+}
+#cart .bx-wrapper {
+  position: relative;
+}
+#cart .bx-controls a {
+  display: block;
+  position: absolute;
+  top: 30%;
+}
+.JP #cart button, .JP #cart .emptyCartWrap .backToShoppingButton a, .JP #cart .button, .JP #cart #confirmation .goToDeliveryBtn a, #confirmation .goToDeliveryBtn .JP #cart a {
+  font-size: 1.2em;
+}
+#cart .bx-next {
+  right: 2px;
+}
+#cart .bx-prev {
+  left: 2px;
+}
+#cart .cartButtonsWrapper {
+  margin: 20px 0;
+}
+#cart .backToShoppingButton a {
+  display: block;
+  text-align: center;
+}
+#cart .emptyCartWrap {
+  margin-bottom: 66px;
+}
+#cart .emptyCartWrap h2 {
+  text-transform: none;
+  padding: 30px 25px;
+  font-size: 2.2rem;
+}
+#cart .emptyCartWrap .backToShoppingButton a {
+  text-decoration: none;
+  width: auto;
+}
+#cart .noItemsFooter {
+  position: relative;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+#cart .nextPageButton {
+  width: 100%;
+  margin: 10px 0 17px;
+}
+#cart .desc > div:not(.brandName):not(.microCategory):not(.size):not(.color):not(.priceUpdater):not(.editItemQuantity) {
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-top: 10px;
+}
+#cart .brandName, #cart .microCategory, #cart .size, #cart .color, #cart .priceUpdater, #cart .editItemQuantity {
+  font-size: 1.4rem;
+  display: block;
+  line-height: 2rem;
+}
+#cart .microCategory .label, #cart .size .label, #cart .color .label, #cart .priceUpdater .label, #cart .editItemQuantity .label {
+  margin-right: 5px;
+}
+#cart .microCategory .label:after, #cart .size .label:after, #cart .color .label:after, #cart .priceUpdater .label:after, #cart .editItemQuantity .label:after {
+  content: ":";
+}
+.FR #cart .microCategory .label:after, .FR #cart .size .label:after, .FR #cart .color .label:after, .FR #cart .priceUpdater .label:after, .FR #cart .editItemQuantity .label:after {
+  content: " :";
+}
+#cart .size {
+  margin-top: 10px;
+}
+#cart .itemRow .image, #cart .itemRow .desc {
+  width: 48%;
+  float: left;
+}
+#cart .priceUpdater .price {
+  display: block;
+}
+#cart .itemRow {
+  padding: 10px 0;
+  margin-bottom: 20px;
+}
+#cart .itemRow.lastItem .increase {
+  display: none;
+}
+#cart .itemRow .inner-article {
+  *zoom: 1;
+}
+#cart .itemRow .inner-article:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#cart .itemRow .image a {
+  display: block;
+}
+#cart .itemRow .image img {
+  width: 100%;
+}
+#cart .itemRow .deleteItem {
+  margin-top: 15px;
+}
+#cart .itemRow .deleteItem .text {
+  padding-right: 5px;
+}
+#cart .itemRow .disabled {
+  display: none;
+}
+#cart .itemRow .editItemQuantity {
+  *zoom: 1;
+}
+#cart .itemRow .editItemQuantity:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#cart .itemRow .editItemQuantity button, #cart .itemRow .editItemQuantity .emptyCartWrap .backToShoppingButton a, #cart .emptyCartWrap .backToShoppingButton .itemRow .editItemQuantity a {
+  margin: 0 5px;
+}
+#cart .itemRow .editItemQuantity button, #cart .itemRow .editItemQuantity .emptyCartWrap .backToShoppingButton a, #cart .emptyCartWrap .backToShoppingButton .itemRow .editItemQuantity a, #cart .itemRow .editItemQuantity .quantity, #cart .itemRow .editItemQuantity .label {
+  float: left;
+}
+#cart .itemRow .editItemQuantity .text {
+  display: none;
+}
+#cart .itemRow .editItemQuantity .icon {
+  display: block;
+}
+#cart #subtotal, #cart #coupon {
+  background-color: #EBEBEB;
+}
+#cart #subtotal {
+  text-transform: uppercase;
+  font-size: 1.6rem;
+}
+#cart #subtotal .ProductSubtotal {
+  *zoom: 1;
+  padding: 23px 3% 21px;
+  margin: 0 5%;
+  border-bottom: 1px solid #CCC;
+}
+#cart #subtotal .ProductSubtotal:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#cart #subtotal .label {
+  float: left;
+}
+#cart #subtotal .totalPrices {
+  float: right;
+}
+#cart #coupon {
+  padding: 23px 3% 21px;
+}
+#cart #coupon h4 {
+  font-size: 1.4rem;
+  display: inline;
+  margin-right: 10px;
+}
+#cart #coupon .bannedBrands {
+  display: inline;
+  font-size: 1.4rem;
+  line-height: 24px;
+}
+#cart #coupon .bannedBrands div {
+  display: inline;
+}
+#cart #coupon .couponTitle {
+  text-align: center;
+  margin-bottom: 3px;
+}
+#cart .bannedBrandsLink {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  text-align: center;
+}
+#cart .coupon button, #cart .coupon .emptyCartWrap .backToShoppingButton a, #cart .emptyCartWrap .backToShoppingButton .coupon a {
+  width: 100%;
+}
+#cart .coupon .couponApplied {
+  display: none;
+}
+#cart .coupon .couponCode {
+  display: block;
+  width: 76%;
+  height: 20px;
+  line-height: 20px;
+  padding: 26px 12%;
+  text-align: center;
+  background-color: #FFF;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  opacity: 0.7;
+  font-size: 1.9rem;
+}
+#cart #promotions {
+  margin: 20px 0;
+  font-size: 1.6rem;
+}
+#cart #promotions .shortDescription {
+  display: none;
+}
+#cart .cartInfo h3, #cart .cartInfo p, #cart #totals {
+  font-size: 1.4rem;
+  text-align: left;
+  text-transform: uppercase;
+}
+#cart .cartInfo .deliveryTimeInfo {
+  font-size: 1rem;
+}
+#cart .paymentMethod .text, #cart .deliveryInfo {
+  float: left;
+  max-width: 50%;
+}
+#cart .paymentMethod .label {
+  width: 100%;
+}
+#cart .deliveryInfo span {
+  display: block;
+}
+#cart #totals {
+  margin: 10px 0;
+  *zoom: 1;
+}
+#cart #totals:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#cart #totals .row {
+  *zoom: 1;
+  border-bottom: 1px solid #CCC;
+  padding: 23px 3%;
+}
+#cart #totals .row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#cart #totals .row-total {
+  background-color: #f7f5de;
+}
+#cart #totals .label {
+  float: left;
+}
+#cart #totals .totalPrices {
+  float: right;
+  max-width: 50%;
+}
+#cart #totals .salesTaxesDescrPopup {
+  display: none;
+}
+#cart #totals .price {
+  float: right;
+}
+#cart #nextPrev {
+  margin-bottom: 30px;
+}
+#cart #salesterm {
+  margin: 50px 0 25px;
+  background-color: #EBEBEB;
+  padding: 10px;
+}
+#cart #salesterm h4 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #999;
+}
+#cart #salesterm p {
+  font-size: 1.1rem;
+  max-height: 250px;
+  overflow: auto;
+}
+#cart .mfp-content {
+  font-size: 1.6rem;
+}
+
+#checkmail form.loginForm {
+  padding: 0 20px;
+}
+#checkmail form.loginForm #passwordRecoveryLink {
+  display: none;
+}
+#checkmail form.loginForm button.submit, #checkmail form.loginForm #cart .emptyCartWrap .backToShoppingButton a.submit, #cart .emptyCartWrap .backToShoppingButton #checkmail form.loginForm a.submit {
+  width: 100%;
+  margin-bottom: 20px;
+}
+#checkmail div.registrationForm {
+  padding: 0 20px;
+}
+#checkmail div.registrationForm button.submit, #checkmail div.registrationForm #cart .emptyCartWrap .backToShoppingButton a.submit, #cart .emptyCartWrap .backToShoppingButton #checkmail div.registrationForm a.submit {
+  width: 100%;
+  margin: 20px 0;
+}
+#checkmail div.registrationForm .fieldRow.radioGroup .field-validation-error {
+  color: #900000;
+  font-size: 1.3rem;
+  text-indent: 0;
+  top: 20px;
+  height: auto;
+  width: auto;
+}
+#checkmail #registeredUserSection, #checkmail #newUserSection {
+  background-color: #EBEBEB;
+  padding: 10px 0;
+}
+#checkmail #newUserSection {
+  margin-top: 10px;
+}
+#checkmail #RegistrationViewModel_Gender_Wrapper {
+  margin: 30px 0;
+}
+#checkmail #RegistrationViewModel_Gender_Wrapper .radioButtonBox {
+  width: 45%;
+}
+#checkmail #RegistrationViewModel_Gender_Wrapper .fieldLabel {
+  display: block;
+}
+#checkmail #RegistrationViewModel_Gender_Wrapper .fieldLabel label {
+  display: none;
+}
+#checkmail #RegistrationViewModel_BirthDate_Wrapper .fieldValue {
+  *zoom: 1;
+}
+#checkmail #RegistrationViewModel_BirthDate_Wrapper .fieldValue:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#checkmail #RegistrationViewModel_BirthDate_Wrapper .fieldLabel {
+  display: block;
+}
+#checkmail #RegistrationViewModel_BirthDate_Wrapper label {
+  display: none;
+}
+#checkmail .validation-summary-errors {
+  margin: 10px 0;
+}
+.JP #checkmail .validation-summary-errors {
+  font-size: 1.3rem;
+}
+#checkmail .selectInput_wrapper {
+  width: 33%;
+  float: left;
+}
+#checkmail .selectInput_wrapper:nth-child(2) {
+  width: 34%;
+}
+#checkmail .allowPrivacy {
+  display: none;
+}
+#checkmail .privacyContainer {
+  max-height: 130px;
+}
+.JP #checkmail .docomo, .JP #checkmail .privacyContainer, .JP #checkmail .acceptFlags {
+  font-size: 1.2rem;
+}
+.JP #checkmail .docomo {
+  display: block;
+  margin: 20px 0;
+}
+#checkmail .privacyContainer, #checkmail .acceptFlags {
+  margin: 10px 0;
+  overflow: auto;
+  font-size: 1.1rem;
+}
+#checkmail .acceptFlags .yLetter {
+  *zoom: 1;
+  margin-bottom: 20px;
+}
+#checkmail .acceptFlags .yLetter:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#checkmail .acceptFlags .dataProfiling {
+  *zoom: 1;
+}
+#checkmail .acceptFlags .dataProfiling:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#checkmail .acceptFlags .flagContent {
+  float: left;
+}
+#checkmail .acceptFlags .description {
+  padding-left: 30px;
+}
+#checkmail .acceptFlags .fieldRow {
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+#delivery #deliveryContent {
+  background-color: #EBEBEB;
+  font-size: 1.2rem;
+}
+#delivery #giftOption, #delivery .selectAddressWrapper, #delivery .deliveryMethodsWrapper {
+  border-bottom: 10px solid #FFF;
+}
+#delivery #giftOption {
+  background-color: #CCC;
+  padding-bottom: 15px;
+}
+#delivery .selectAddressWrapper, #delivery .deliveryMethodsWrapper {
+  padding-bottom: 25px;
+}
+#delivery .giftSectionSubTitle {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+}
+#delivery #userAddressesWrap .loadAddressTitle {
+  display: none;
+}
+#delivery .addNewAddressButtonWithForm button, #delivery .addNewAddressButtonWithForm #cart .emptyCartWrap .backToShoppingButton a, #cart .emptyCartWrap .backToShoppingButton #delivery .addNewAddressButtonWithForm a {
+  width: 100%;
+  margin-top: 20px;
+}
+#delivery .addNewAddressButtonWithForm.selected button, #delivery .addNewAddressButtonWithForm.selected #cart .emptyCartWrap .backToShoppingButton a, #cart .emptyCartWrap .backToShoppingButton #delivery .addNewAddressButtonWithForm.selected a {
+  display: none;
+}
+#delivery #ShippingAddressViewModel_BillingAsShipping_Wrapper {
+  display: none;
+}
+#delivery .fastCheckoutSection {
+  *zoom: 1;
+  margin-top: 20px;
+}
+#delivery .fastCheckoutSection:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#delivery .fastCheckoutSection .SaveInMyAccount {
+  *zoom: 1;
+}
+#delivery .fastCheckoutSection .SaveInMyAccount:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#delivery .fastCheckoutSection .title {
+  display: none;
+}
+#delivery .fastCheckoutSection .fieldLabel {
+  display: block;
+  float: left;
+  line-height: 21px;
+  font-size: 1.1rem;
+  max-width: 85%;
+}
+#delivery .fastCheckoutSection .fieldValue {
+  float: left;
+  margin-right: 10px;
+}
+#delivery #deliverySelectionBlock {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+#delivery #deliverySelectionBlock .deliveryInformation {
+  display: none;
+}
+#delivery #deliverySelectionBlock .deliveryMethod {
+  *zoom: 1;
+  padding: 20px 0;
+}
+#delivery #deliverySelectionBlock .deliveryMethod:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#delivery #deliverySelectionBlock .deliveryMethod.disabled > * {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+}
+#delivery #deliverySelectionBlock .deliveryMethod:not(:first-child) {
+  border-top: 1px solid #999;
+}
+#delivery #deliverySelectionBlock .description, #delivery #deliverySelectionBlock .originalValue, #delivery #deliverySelectionBlock .expressGuaranteed {
+  display: none;
+}
+#delivery #deliverySelectionBlock .radioButton {
+  float: left;
+  margin-right: 15px;
+}
+#delivery #deliverySelectionBlock label {
+  float: left;
+  max-width: 75%;
+}
+:not(.JP) #delivery #deliverySelectionBlock label:after {
+  content: "\00A0-\00A0";
+}
+#delivery #deliverySelectionBlock .valueToPay {
+  float: left;
+  margin-left: 4px;
+}
+#delivery #deliveryMethodsInfoWrap .deliveryInfo {
+  display: none;
+  background-color: #CCC;
+  padding: 20px 10px;
+  line-height: 1.9rem;
+}
+#delivery #ShippingAddressViewModel_PostalCode_Wrapper {
+  *zoom: 1;
+}
+#delivery #ShippingAddressViewModel_PostalCode_Wrapper:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#delivery #ShippingAddressViewModel_PostalCode_Wrapper .separator {
+  float: left;
+}
+#delivery #ShippingAddressViewModel_PostalCode_Wrapper input.zipCode1 {
+  width: 48%;
+  float: left;
+}
+#delivery #ShippingAddressViewModel_PostalCode_Wrapper input.zipCode2 {
+  width: 48%;
+  float: right;
+}
+#delivery #ShippingAddressViewModel_PostalCode_Wrapper input.zipCode1, #delivery #ShippingAddressViewModel_PostalCode_Wrapper input.zipCode2 {
+  padding-right: 0;
+  padding-left: 0;
+}
+#delivery #ShippingAddressViewModel_PostalCode_Wrapper .separator {
+  display: none;
+}
+#delivery #ShippingAddressViewModel_PostalCode_Wrapper .findZip {
+  display: none;
+}
+.JP #delivery #ShippingAddressViewModel_PostalCode_Wrapper .findZip {
+  display: block;
+  float: left;
+  width: 100%;
+  font-size: 1.4rem;
+  text-align: right;
+  padding: 16px 0 20px;
+}
+#delivery #giftWrapping #GiftDataFormViewModel_ContactReceiver_Wrapper {
+  *zoom: 1;
+}
+#delivery #giftWrapping #GiftDataFormViewModel_ContactReceiver_Wrapper:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#delivery #giftWrapping .originalValue, #delivery #giftWrapping .valueToPay {
+  display: none;
+}
+#delivery #giftWrapping .checkBox {
+  float: left;
+  margin-right: 20px;
+}
+#delivery #giftWrapping .giftInfoBox {
+  display: none;
+}
+#delivery #giftWrapping .giftOptionWrapper {
+  line-height: 21px;
+  margin: 10px 0;
+}
+#delivery #giftWrapping .giftOptionWrapper .giftInfoButton {
+  display: inline;
+  margin-left: 10px;
+}
+#delivery #giftWrapping .giftOptionWrapper.selected #GiftDataFormViewModel_Message_Wrapper, #delivery #giftWrapping .giftOptionWrapper.selected #GiftDataFormViewModel_ContactReceiver_Wrapper {
+  display: block;
+}
+#delivery #giftWrapping .giftOptionWrapper.sendEmail #GiftDataFormViewModel_Email_Wrapper {
+  display: block;
+}
+#delivery #giftWrapping .giftOptionWrapper textarea {
+  width: 98%;
+  height: 70px;
+}
+#delivery #GiftDataFormViewModel_IsSelected_Wrapper {
+  width: 60%;
+  display: inline;
+}
+#delivery #GiftDataFormViewModel_IsSelected_Wrapper div {
+  display: inline;
+}
+#delivery #GiftDataFormViewModel_Message_Wrapper {
+  margin-top: 10px;
+}
+#delivery #GiftDataFormViewModel_Message_Wrapper .description {
+  line-height: 1.6rem;
+  padding-bottom: 10px;
+}
+#delivery #GiftDataFormViewModel_Message_Wrapper, #delivery #GiftDataFormViewModel_ContactReceiver_Wrapper, #delivery #GiftDataFormViewModel_Email_Wrapper {
+  display: none;
+}
+#delivery #GiftDataFormViewModel_ContactReceiver_Wrapper .fieldLabel {
+  display: block;
+  float: left;
+  width: 80%;
+}
+#delivery #ShippingAddressViewModel_CountryCode_Wrapper {
+  display: block;
+  width: 76%;
+  height: 20px;
+  line-height: 20px;
+  padding: 26px 12%;
+  text-align: center;
+  background-color: #FFF;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  opacity: 0.7;
+  font-size: 1.9rem;
+}
+#delivery .uiLayer-giftDataForm .mfp-content {
+  font-size: 1.6rem;
+}
+#delivery #returnBtn {
+  padding: 17px;
+  margin-bottom: 10px;
+}
+#delivery #returnBtn .button, #delivery #returnBtn #confirmation .goToDeliveryBtn a, #confirmation .goToDeliveryBtn #delivery #returnBtn a {
+  width: 100%;
+  text-align: center;
+}
+
+#confirmation {
+  /* CONFIRMATION BUTTON */
+  /* Salvatore: non dovrebbe esserci gi├á una regola generica?  */
+}
+#confirmation .stileAree, #confirmation #giftDetails, #confirmation #shippingDetails, #confirmation #shippingMethodDetails, #confirmation #billingDetails, #confirmation #paymentDetails, #confirmation #coupon, #confirmation #confirmationSalesTerms {
+  background-color: #EBEBEB;
+  padding: 0 20px 20px 20px;
+  margin-top: 10px;
+}
+#confirmation #cartRecap {
+  padding: 0;
+}
+#confirmation #cartRecap .cartTotal {
+  margin: 5px 0;
+}
+#confirmation #cartRecap a:before {
+  content: '(';
+}
+#confirmation #cartRecap a:after {
+  content: ")";
+}
+#confirmation #cartDetails .subSectionTitle h3 {
+  font-size: 2.8rem;
+  color: #333;
+}
+#confirmation .subSectionTitle h3 {
+  font-size: 2rem;
+  color: #000;
+  padding: 20px 0;
+}
+.JP #confirmation .subSectionTitle h3 {
+  font-size: 1.9rem;
+}
+#confirmation #giftDetails .giftRecap {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+}
+#confirmation #giftDetails .giftRecap h3, #confirmation #giftDetails .giftRecap .giftAmounts {
+  display: none;
+}
+#confirmation #giftDetails .giftRecap .label:after {
+  content: ":";
+}
+.FR #confirmation #giftDetails .giftRecap .label:after {
+  content: " :";
+}
+#confirmation #giftDetails .giftRecap.noMessage .notificationEmail, #confirmation #giftDetails .giftRecap.noMessage .message {
+  display: none;
+}
+#confirmation #shippingDetails #selectedAddress h3 {
+  display: none;
+}
+#confirmation #rememberReturn, #confirmation #selectedAddress {
+  margin: 10px 0;
+  font-size: 1.4rem;
+}
+#confirmation #rememberReturn {
+  margin-top: 0;
+}
+#confirmation #shippingMethodDetails h3 .edit, #confirmation #shippingMethodDetails .deliveryTimeInfo, #confirmation #shippingMethodDetails .price {
+  display: none;
+}
+#confirmation #shippingMethodDetails #selectedDeliveryMethod {
+  margin-bottom: 20px;
+}
+#confirmation #shippingMethodDetails #selectedDeliveryMethod h3 {
+  font-size: 1.6rem;
+  display: inline;
+}
+#confirmation #shippingMethodDetails #selectedDeliveryMethod h3:after {
+  content: ":";
+}
+.FR #confirmation #shippingMethodDetails #selectedDeliveryMethod h3:after {
+  content: " :";
+}
+#confirmation #shippingMethodDetails #selectedDeliveryMethod .deliveryInfo {
+  display: inline;
+}
+#confirmation #billingDetails .billing .addNewAddressButton {
+  margin-top: 20px;
+}
+#confirmation #billingDetails .billing .addNewAddressButton label {
+  font-size: 1.4rem;
+}
+#confirmation #billingDetails .billing .zipCode1, #confirmation #billingDetails .billing .zipCode2 {
+  float: left;
+  width: 48%;
+  font-size: 1.7rem;
+  text-align: center;
+  border: 0;
+  height: 72px;
+  line-height: 72px;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  padding: 0;
+}
+#confirmation #billingDetails .billing .zipCode2 {
+  margin-left: 4%;
+}
+#confirmation #billingDetails .billing .findZip {
+  font-size: 1.3rem;
+  float: right;
+  margin-top: 15px;
+}
+#confirmation #billingDetails .billing .separator {
+  display: none;
+}
+#confirmation #billingDetails .billing #BillingAddressViewModel_PostalCode_Wrapper {
+  *zoom: 1;
+}
+#confirmation #billingDetails .billing #BillingAddressViewModel_PostalCode_Wrapper:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#confirmation #billingDetails .billing .loadAddressTitle {
+  display: none;
+}
+#confirmation #billingDetails .billing select {
+  width: 100%;
+}
+#confirmation #billingDetails .billing .userAddresses {
+  margin-top: 20px;
+}
+#confirmation #billingDetails .billing.billingAsShipping .billingAddress {
+  display: none;
+}
+#confirmation #billingDetails .billing .billingAsShippingButton {
+  font-size: 1.4rem;
+  *zoom: 1;
+}
+#confirmation #billingDetails .billing .billingAsShippingButton:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#confirmation #billingDetails .billing .billingAsShippingButton .checkBox {
+  float: left;
+  margin-right: 10px;
+}
+#confirmation #billingDetails .billing .billingAsShippingButton label {
+  line-height: 28px;
+  display: table;
+}
+.IT #confirmation #billingDetails .billing .billingAsShippingButton label {
+  font-size: 1.3rem;
+}
+.FR #confirmation #billingDetails .billing .billingAsShippingButton label {
+  font-size: 1.3rem;
+}
+#confirmation #billingDetails .billing .userAddressesListWithForm {
+  margin: 20px 0;
+}
+#confirmation #billingDetails .billing .address {
+  font-size: 1.4rem;
+  *zoom: 1;
+  padding: 15px 0;
+  border-top: 1px dotted #CCC;
+}
+#confirmation #billingDetails .billing .address:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#confirmation #billingDetails .billing .address .editButton, #confirmation #billingDetails .billing .address .closeButton, #confirmation #billingDetails .billing .address .label {
+  display: none;
+}
+#confirmation #billingDetails .billing .address .selectThisAddress {
+  margin-bottom: 10px;
+}
+#confirmation #billingDetails .billing .address .name, #confirmation #billingDetails .billing .address .surname, #confirmation #billingDetails .billing .address .selectThisAddress {
+  float: left;
+  margin-right: 10px;
+}
+#confirmation #billingDetails .billing .address .streetWithNumber {
+  clear: both;
+}
+#confirmation #billingDetails .billing .address .streetWithNumber, #confirmation #billingDetails .billing .address .zipcode, #confirmation #billingDetails .billing .address .city, #confirmation #billingDetails .billing .address .province, #confirmation #billingDetails .billing .address .country {
+  margin-left: 27px;
+}
+#confirmation #billingDetails .billing .fastCheckoutSection {
+  display: none;
+}
+#confirmation #billingDetails .addNewAddressButtonWithForm .input {
+  *zoom: 1;
+}
+#confirmation #billingDetails .addNewAddressButtonWithForm .input:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#confirmation #billingDetails .addNewAddressButtonWithForm .radioIcon {
+  float: left;
+  margin-right: 10px;
+}
+#confirmation #billingDetails .addNewAddressButtonWithForm label {
+  float: left;
+  font-size: 1.4rem;
+}
+#confirmation #billingDetails .addNewAddressButtonWithForm button, #confirmation #billingDetails .addNewAddressButtonWithForm #cart .emptyCartWrap .backToShoppingButton a, #cart .emptyCartWrap .backToShoppingButton #confirmation #billingDetails .addNewAddressButtonWithForm a {
+  width: 100%;
+  color: #FFF;
+}
+#confirmation #billingDetails .addNewAddressButtonWithForm.selected button, #confirmation #billingDetails .addNewAddressButtonWithForm.selected #cart .emptyCartWrap .backToShoppingButton a, #cart .emptyCartWrap .backToShoppingButton #confirmation #billingDetails .addNewAddressButtonWithForm.selected a {
+  display: none;
+}
+#confirmation #billingDetails #BillingAddressViewModel_CountryCode_Wrapper .description {
+  display: none;
+}
+#confirmation #billingDetails .country_CN #BillingAddressViewModel_CountryCode_Wrapper select {
+  display: none;
+}
+#confirmation #billingDetails .country_CN #BillingAddressViewModel_CountryCode_Wrapper .description {
+  display: block;
+  width: 76%;
+  height: 20px;
+  line-height: 20px;
+  padding: 26px 12%;
+  text-align: center;
+  background-color: #FFF;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  opacity: 0.7;
+  font-size: 1.9rem;
+}
+#confirmation #creditCardMethod .addingNewCard {
+  padding-bottom: 1px;
+  background-color: #EBEBEB;
+}
+#confirmation #creditCardMethod.userWithCreditCards .newCreditCardButton.selected {
+  background-color: transparent;
+  border-bottom: 1px dotted #CCC;
+  color: #000;
+  font-size: 1.7rem;
+  margin-top: 25px;
+  padding: 5px 0;
+  text-align: left;
+}
+#confirmation #creditCardMethod.userWithCreditCards .newCreditCardButton.selected:hover {
+  background-color: transparent;
+}
+#confirmation #creditCardMethod .privacy {
+  font-size: 1.2rem;
+  display: none;
+}
+#confirmation #creditCardMethod .creditCardForm, #confirmation #creditCardMethod .creditCardForm .creditCardHolderTitle, #confirmation #creditCardMethod .creditCardForm .creditCardHolderDescription, #confirmation #creditCardMethod .creditCardForm .trustwaveMessage {
+  display: none;
+}
+#confirmation #creditCardMethod .creditCardForm .cvvInfoPopup {
+  font-size: 1.6rem;
+  text-align: right;
+}
+#confirmation #creditCardMethod .creditCardForm .availableCardTypes .title, #confirmation #creditCardMethod .creditCardForm .availableCardTypes .text {
+  font-size: 1.4rem;
+}
+#confirmation #creditCardMethod .creditCardForm .availableCardTypes .radioButton {
+  float: left;
+  margin-right: 20px;
+}
+#confirmation #creditCardMethod .creditCardForm .availableCardTypes .cardType {
+  margin: 10px 0;
+}
+#confirmation #creditCardMethod .fastCheckoutSection {
+  font-size: 1.1rem;
+}
+#confirmation #creditCardMethod .fastCheckoutSection .fieldLabel {
+  display: block;
+  line-height: 21px;
+  float: left;
+  max-width: 85%;
+}
+#confirmation #creditCardMethod .fastCheckoutSection .fieldValue {
+  float: left;
+  margin-right: 10px;
+}
+#confirmation #creditCardMethod .fastCheckoutSection .fieldRow {
+  *zoom: 1;
+}
+#confirmation #creditCardMethod .fastCheckoutSection .fieldRow:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#confirmation #creditCardMethod .fastCheckoutSection .title {
+  display: none;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  margin: 25px 0 10px;
+}
+#confirmation #creditCardMethod .fastCheckoutSection .disabled .fieldLabel {
+  color: #CCC;
+}
+#confirmation #CreditCardFormViewModel_ExpirationDate_Wrapper, #confirmation #CvvAndExpirationFormViewModel_ExpirationDate_Wrapper {
+  margin: 10px 0;
+  *zoom: 1;
+}
+#confirmation #CreditCardFormViewModel_ExpirationDate_Wrapper:after, #confirmation #CvvAndExpirationFormViewModel_ExpirationDate_Wrapper:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#confirmation #CreditCardFormViewModel_ExpirationDate_Wrapper select, #confirmation #CvvAndExpirationFormViewModel_ExpirationDate_Wrapper select {
+  width: 100%;
+}
+#confirmation #CreditCardFormViewModel_ExpirationDate_Wrapper .month, #confirmation #CvvAndExpirationFormViewModel_ExpirationDate_Wrapper .month {
+  float: left;
+  width: 48%;
+}
+#confirmation #CreditCardFormViewModel_ExpirationDate_Wrapper .year, #confirmation #CvvAndExpirationFormViewModel_ExpirationDate_Wrapper .year {
+  float: right;
+  width: 48%;
+}
+#confirmation #paymentDetails .paymentTitle {
+  text-transform: uppercase;
+  padding: 5px 0;
+  margin-bottom: 10px;
+  border-bottom: 1px dotted #CCC;
+  font-size: 1.7rem;
+}
+#confirmation #paymentDetails .paymentTitle .editPayment {
+  text-transform: lowercase;
+  margin-left: 10px;
+  display: none;
+}
+#confirmation #paymentDetails .paymentTitle .editPayment:before {
+  content: '(';
+}
+#confirmation #paymentDetails .paymentTitle .editPayment:after {
+  content: ")";
+}
+#confirmation #paymentDetails .paymentMethod {
+  *zoom: 1;
+  padding: 10px 0;
+  font-size: 1.4rem;
+  height: 17px;
+}
+#confirmation #paymentDetails .paymentMethod:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#confirmation #paymentDetails .paymentMethod.AvailablePaymentMethodsViewModel_1 {
+  display: none;
+}
+#confirmation #paymentDetails .paymentMethod .originalValue, #confirmation #paymentDetails .paymentMethod .text, #confirmation #paymentDetails .paymentMethod .availableCards {
+  display: none;
+}
+#confirmation #paymentDetails .paymentMethod .radioButton {
+  float: left;
+}
+#confirmation #paymentDetails .paymentMethod .label {
+  float: left;
+  max-width: 60%;
+  margin-left: 10px;
+  line-height: 23px;
+  font-size: 1.3rem;
+}
+#confirmation #paymentDetails .paymentMethod .valueToPay {
+  float: right;
+  line-height: 23px;
+}
+#confirmation #paymentDetails .otherPaymentMethodsSection {
+  margin-top: 20px;
+}
+#confirmation #paymentDetails .otherPaymentMethodsSection .paymentTitle {
+  margin: 0;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  border: none;
+}
+#confirmation #paymentDetails .otherPaymentMethodsSection #paymentSelection .paymentMethod {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  padding: 20px 0;
+}
+#confirmation #paymentDetails .otherPaymentMethodsSection #paymentSelection .paymentMethod.disabled .label {
+  color: #999;
+}
+#confirmation #paymentDetails .otherPaymentMethodsSection #paymentSelection .paymentMethod:not(:last-child) {
+  border-bottom: 1px solid #999;
+}
+#confirmation #paymentDetails .newCreditCardButton {
+  color: #FFF;
+}
+.JP #confirmation #paymentDetails .newCreditCardButton {
+  font-size: 1.3rem;
+}
+#confirmation #paymentDetails .userCreditCardsListWithForm .cardContainer {
+  font-size: 1.4rem;
+  *zoom: 1;
+}
+#confirmation #paymentDetails .userCreditCardsListWithForm .cardContainer:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#confirmation #paymentDetails .userCreditCardsListWithForm .cardContainer .cardAlerts {
+  margin: 10px 0;
+}
+#confirmation #paymentDetails .userCreditCardsListWithForm .cardContainer .cardAlerts .preferredlabel {
+  padding-left: 28px;
+}
+#confirmation #paymentDetails .userCreditCardsListWithForm .cardContainer .selectThisCreditCard label .text {
+  display: none;
+}
+#confirmation #paymentDetails .userCreditCardsListWithForm .cardContainer #CvvAndExpirationFormViewModel_Issue_Wrapper {
+  width: 100%;
+  margin-right: 25px;
+}
+#confirmation #paymentDetails .userCreditCardsListWithForm .cardContainer .cvvInfoPopup {
+  font-size: 1.6rem;
+  text-align: right;
+  margin-bottom: 20px;
+}
+#confirmation #paymentDetails .userCreditCardsListWithForm .cardContainer .radioButton {
+  float: left;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+#confirmation #paymentDetails .userCreditCardsListWithForm .cardContainer .cartType {
+  display: none;
+}
+#confirmation #paymentDetails .userCreditCardsListWithForm .cardContainer .cardNumber {
+  line-height: 40px;
+}
+#confirmation #paymentDetails .userCreditCardsListWithForm .cardContainer .cardNumber .hiddenNumbers {
+  line-height: 20px;
+}
+#confirmation #paymentDetails .userCreditCardsListWithForm .cardContainer .cardNumber .label {
+  display: none;
+}
+#confirmation #paymentDetails .userCreditCardsListWithForm .cardContainer .cardIcon {
+  float: right;
+}
+#confirmation #paymentDetails .userCreditCardsListWithForm .cardContainer .cardHolderData {
+  margin-left: 28px;
+  line-height: 20px;
+}
+#confirmation #paymentDetails .userCreditCardsListWithForm .cardContainer .cardHolderData .label {
+  display: none;
+}
+#confirmation #paymentDetails .userCreditCardsListWithForm .cardContainer .cardHolderData .zipcode, #confirmation #paymentDetails .userCreditCardsListWithForm .cardContainer .cardHolderData .city, #confirmation #paymentDetails .userCreditCardsListWithForm .cardContainer .cardHolderData .province, #confirmation #paymentDetails .userCreditCardsListWithForm .cardContainer .cardHolderData .country {
+  display: inline;
+}
+#confirmation #paymentDetails .userCreditCardsListWithForm .cardContainer .preferredlabel {
+  display: block;
+}
+#confirmation #paymentDetails .userCreditCardsListWithForm .cardContainer .expiredLabel {
+  color: #900000;
+  display: block;
+  margin-left: 30px;
+}
+#confirmation #paymentDetails .userCreditCardsListWithForm .cardContainer .expirationDate {
+  margin-left: 28px;
+  margin-bottom: 5px;
+  *zoom: 1;
+}
+#confirmation #paymentDetails .userCreditCardsListWithForm .cardContainer .expirationDate:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#confirmation #paymentDetails .userCreditCardsListWithForm .cardContainer .expirationDate select {
+  width: 100%;
+}
+#confirmation #paymentDetails .userCreditCardsListWithForm .cardContainer .expirationDate .month {
+  float: left;
+  width: 48%;
+}
+#confirmation #paymentDetails .userCreditCardsListWithForm .cardContainer .expirationDate .year {
+  float: right;
+  width: 48%;
+}
+#confirmation #paymentDetails .userCreditCardsListWithForm .cardContainer #CvvAndExpirationFormViewModel_ExpirationDate_Wrapper.expirationDate {
+  margin-left: 0;
+  margin-bottom: 10px;
+}
+#confirmation .userNoCreditCards .newCreditCardButton.selected {
+  display: none;
+}
+#confirmation .userNoCreditCards .editPayment {
+  display: none;
+}
+#confirmation #paymentDetails .fastCheckout .cardContainer {
+  display: none;
+}
+#confirmation #paymentDetails .fastCheckout .cardContainer.selected {
+  display: block;
+}
+#confirmation #paymentDetails .fastCheckout .newCreditCardButton {
+  display: none;
+}
+#confirmation #paymentDetails .fastCheckout .newCreditCardButton.selected {
+  display: block;
+}
+#confirmation #paymentDetails .fastCheckout .otherPaymentMethodsSection {
+  display: none;
+}
+#confirmation #paymentDetails .fastCheckout .otherPaymentMethodsSection.selected {
+  display: block;
+}
+#confirmation #paymentDetails .fastCheckout .editPayment {
+  display: inline;
+}
+#confirmation #paymentDetails .fastCheckout .editPayment.selected {
+  display: none;
+}
+#confirmation #CreditCardFormViewModel_ExpirationDate_Wrapper .field-validation-error, #confirmation #CvvAndExpirationFormViewModel_ExpirationDate_Wrapper .field-validation-error {
+  background-image: none;
+  width: 100%;
+  float: left;
+  position: initial;
+  padding-top: 5px;
+  text-indent: 0;
+  color: #900000;
+  font-size: 1.4rem;
+}
+#confirmation #coupon {
+  text-align: center;
+}
+#confirmation #coupon h4 {
+  font-size: 1.4rem;
+  display: inline;
+  margin-right: 10px;
+}
+#confirmation #coupon .bannedBrands {
+  display: inline;
+  font-size: 1.4rem;
+  line-height: 24px;
+}
+#confirmation #coupon .bannedBrands div {
+  display: inline;
+}
+#confirmation #coupon .couponTitle {
+  text-align: center;
+  margin-bottom: 3px;
+  display: inline-block;
+  margin-top: 15px;
+}
+#confirmation .bannedBrandsLink {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 0 10px;
+}
+#confirmation .coupon button, #confirmation .coupon #cart .emptyCartWrap .backToShoppingButton a, #cart .emptyCartWrap .backToShoppingButton #confirmation .coupon a {
+  width: 100%;
+}
+#confirmation .coupon .couponApplied {
+  display: none;
+}
+#confirmation .coupon .couponCode {
+  display: block;
+  width: 76%;
+  height: 20px;
+  line-height: 20px;
+  padding: 26px 12%;
+  text-align: center;
+  background-color: #FFF;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  opacity: 0.7;
+  font-size: 1.9rem;
+}
+#confirmation #promotions {
+  margin: 20px 0;
+  font-size: 1.6rem;
+}
+#confirmation #promotions .shortDescription {
+  display: none;
+}
+#confirmation #confirmationButtons .cartButtonsWrapper {
+  margin: 20px;
+}
+#confirmation #confirmationSalesTerms {
+  background-color: #FFF;
+  padding-top: 1px;
+}
+#confirmation #confirmationSalesTerms #salesTerm {
+  background-color: #EBEBEB;
+  max-height: 265px;
+  overflow: auto;
+  padding: 20px;
+}
+#confirmation #confirmationSalesTerms #salesTerm .contentWrap {
+  padding: 15px;
+}
+#confirmation #confirmationSalesTerms #salesTerm .salesTermTitle {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #999;
+}
+#confirmation #confirmationSalesTerms #salesTerm .salesTermContent {
+  font-size: 1.1rem;
+  max-height: 220px;
+  overflow: auto;
+}
+#confirmation .goToDeliveryBtn a {
+  color: #FFF;
+  display: block;
+}
+#confirmation .maxCod_error {
+  display: none;
+  font-size: 1.6em;
+}
+#confirmation .uiLayer-CODPopup .maxCod_error {
+  display: block;
+  font-size: 1.6em;
+}
+#confirmation #BillingAddressViewModel_Phone_Wrapper {
+  margin-bottom: 0;
+}
+#confirmation .field-validation-error {
+  margin: 5px 0;
+}
+
+#thankyou .thankyouWrapper .orderTitle {
+  color: #000;
+  font-size: 3rem;
+  text-align: center;
+  padding: 19px 0;
+}
+#thankyou .thankyouWrapper .orderDesc, #thankyou .thankyouWrapper .orderDetails, #thankyou .thankyouWrapper .orderControl {
+  font-size: 1.3rem;
+  color: #333;
+  text-transform: none;
+}
+#thankyou .thankyouWrapper .orderDesc {
+  margin: 1em 0;
+}
+#thankyou .thankyouWrapper .orderDetails {
+  margin-top: 1em;
+}
+#thankyou .thankyouWrapper .orderDetails .orderNumber {
+  color: #333;
+  font-weight: bold;
+}
+#thankyou .thankyouWrapper .orderControl {
+  border-top: 1px solid #333;
+  padding-top: 20px;
+  line-height: 20px;
+  margin-top: 20px;
+}
+#thankyou .adviceFormWrapper {
+  background-color: #EBEBEB;
+  color: #666;
+  margin: 10px 0;
+}
+#thankyou .adviceFormWrapper .adviceFormContainer {
+  color: #666;
+  padding: 10px;
+}
+#thankyou .adviceFormWrapper .adviceFormContainer .adviceTitle {
+  margin-top: 10px;
+  color: #666;
+}
+#thankyou .adviceFormWrapper .adviceFormContainer .adviceDescription {
+  margin-top: 10px;
+}
+#thankyou .adviceFormWrapper .adviceFormContainer .adviceForm {
+  margin-top: 10px;
+}
+#thankyou .adviceFormWrapper .adviceFormContainer #AdviceViewModel_Category_Wrapper .field-validation-error {
+  right: 20px;
+}
+#thankyou .adviceFormWrapper .adviceFormContainer #AdviceViewModel_Category_Wrapper {
+  width: 100%;
+}
+#thankyou .adviceFormWrapper .adviceFormContainer #AdviceViewModel_Category_Wrapper .fieldValue select {
+  width: 100%;
+}
+#thankyou .adviceFormWrapper .adviceFormContainer #AdviceViewModel_Category_Wrapper .fieldLabel {
+  margin-bottom: 5px;
+}
+#thankyou .adviceFormWrapper .adviceFormContainer #AdviceViewModel_Message_Wrapper .fieldLabel {
+  margin-bottom: 5px;
+}
+#thankyou .adviceFormWrapper .adviceFormContainer textarea {
+  width: 97.7%;
+  height: 150px;
+}
+#thankyou .adviceFormWrapper .adviceFormContainer button, #thankyou .adviceFormWrapper .adviceFormContainer #cart .emptyCartWrap .backToShoppingButton a, #cart .emptyCartWrap .backToShoppingButton #thankyou .adviceFormWrapper .adviceFormContainer a {
+  width: 100%;
+  margin: 0 auto;
+}
+#thankyou .adviceForm .success {
+  font-size: 1.6rem;
+}
+
+#waittobuy .mainSection {
+  margin-top: 40px;
+}
+#waittobuy .waitToBuyContainer .orderTitle {
+  color: #333;
+  margin-top: 20px;
+}
+#waittobuy .waitToBuyContainer .orderDetails {
+  color: #999;
+  margin-top: 20px;
+}
+#waittobuy .waitToBuyContainer .orderDesc {
+  color: #999;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  text-transform: none;
+}
+#waittobuy .waitToBuyContainer .orderControl {
+  display: inline-block;
+  color: #666;
+  margin-top: 10px;
+  font-size: 1.8rem;
+}
+#waittobuy .waitToBuyContainer .orderControl .myOrders {
+  color: #333;
+}
+#waittobuy .waitToBuyContainer .buttonContainer {
+  margin: 20px 0;
+}
+#waittobuy .waitToBuyContainer .buttonContainer .button.secondary, #waittobuy .waitToBuyContainer .buttonContainer #delivery .addNewAddressButtonWithForm button.button, #delivery .addNewAddressButtonWithForm #waittobuy .waitToBuyContainer .buttonContainer button.button, #waittobuy .waitToBuyContainer .buttonContainer #delivery .addNewAddressButtonWithForm #cart .emptyCartWrap .backToShoppingButton a.button, #delivery .addNewAddressButtonWithForm #cart .emptyCartWrap .backToShoppingButton #waittobuy .waitToBuyContainer .buttonContainer a.button, #waittobuy .waitToBuyContainer .buttonContainer #cart .emptyCartWrap .backToShoppingButton #delivery .addNewAddressButtonWithForm a.button, #cart .emptyCartWrap .backToShoppingButton #delivery .addNewAddressButtonWithForm #waittobuy .waitToBuyContainer .buttonContainer a.button, #waittobuy .waitToBuyContainer .buttonContainer #confirmation #billingDetails .addNewAddressButtonWithForm button.button, #confirmation #billingDetails .addNewAddressButtonWithForm #waittobuy .waitToBuyContainer .buttonContainer button.button, #waittobuy .waitToBuyContainer .buttonContainer #confirmation #billingDetails .addNewAddressButtonWithForm #cart .emptyCartWrap .backToShoppingButton a.button, #confirmation #billingDetails .addNewAddressButtonWithForm #cart .emptyCartWrap .backToShoppingButton #waittobuy .waitToBuyContainer .buttonContainer a.button, #waittobuy .waitToBuyContainer .buttonContainer #cart .emptyCartWrap .backToShoppingButton #confirmation #billingDetails .addNewAddressButtonWithForm a.button, #cart .emptyCartWrap .backToShoppingButton #confirmation #billingDetails .addNewAddressButtonWithForm #waittobuy .waitToBuyContainer .buttonContainer a.button, #waittobuy .waitToBuyContainer .buttonContainer #confirmation #paymentDetails .button.newCreditCardButton, #confirmation #paymentDetails #waittobuy .waitToBuyContainer .buttonContainer .button.newCreditCardButton, #waittobuy .waitToBuyContainer .buttonContainer #confirmation .goToDeliveryBtn a, #confirmation .goToDeliveryBtn #waittobuy .waitToBuyContainer .buttonContainer a {
+  margin-bottom: 20px;
+}
+#waittobuy .adviceFormWrapper {
+  background-color: #EBEBEB;
+  color: #666;
+  margin: 10px 0;
+}
+#waittobuy .adviceFormWrapper .adviceFormContainer {
+  color: #666;
+  padding: 10px;
+}
+#waittobuy .adviceFormWrapper .adviceFormContainer .adviceTitle {
+  margin-top: 10px;
+  color: #666;
+}
+#waittobuy .adviceFormWrapper .adviceFormContainer .adviceDescription {
+  margin-top: 10px;
+}
+#waittobuy .adviceFormWrapper .adviceFormContainer .adviceForm {
+  margin-top: 10px;
+}
+#waittobuy .adviceFormWrapper .adviceFormContainer #AdviceViewModel_Category_Wrapper .field-validation-error {
+  right: 20px;
+}
+#waittobuy .adviceFormWrapper .adviceFormContainer #AdviceViewModel_Category_Wrapper {
+  width: 100%;
+}
+#waittobuy .adviceFormWrapper .adviceFormContainer #AdviceViewModel_Category_Wrapper .fieldValue select {
+  width: 100%;
+}
+#waittobuy .adviceFormWrapper .adviceFormContainer #AdviceViewModel_Category_Wrapper .fieldLabel {
+  margin-bottom: 5px;
+}
+#waittobuy .adviceFormWrapper .adviceFormContainer #AdviceViewModel_Message_Wrapper .fieldLabel {
+  margin-bottom: 5px;
+}
+#waittobuy .adviceFormWrapper .adviceFormContainer textarea {
+  width: 97.7%;
+  height: 150px;
+}
+#waittobuy .adviceFormWrapper .adviceFormContainer button, #waittobuy .adviceFormWrapper .adviceFormContainer #cart .emptyCartWrap .backToShoppingButton a, #cart .emptyCartWrap .backToShoppingButton #waittobuy .adviceFormWrapper .adviceFormContainer a {
+  width: 100%;
+  margin: 0 auto;
+}
+#waittobuy .payEaseContainer .payEaseMobileForm .national select {
+  font-size: 1.2rem;
+  line-height: 30px;
+  padding: 0 10px;
+  text-transform: uppercase;
+  width: 100%;
+}
+#waittobuy .payEaseContainer .payEaseMobileForm button, #waittobuy .payEaseContainer .payEaseMobileForm #cart .emptyCartWrap .backToShoppingButton a, #cart .emptyCartWrap .backToShoppingButton #waittobuy .payEaseContainer .payEaseMobileForm a {
+  width: 100%;
+  margin-top: 20px;
+}
+#waittobuy .payEaseContainer .payEaseMobileForm .field-validation-error {
+  font-size: 1.4rem;
+  color: #900000;
+}
+#waittobuy label[for="payEaseForm"] {
+  margin-left: 0px;
+}
+#waittobuy #payEaseForm_Wrapper {
+  margin-top: 40px;
+}
+#waittobuy #payEaseForm_Wrapper .fieldLabel {
+  display: block;
+  margin-bottom: 20px;
+}
+#waittobuy #payEaseForm_Wrapper .radioButton {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+#waittobuy #payEaseForm_Wrapper .radioButtonBox {
+  float: none;
+  margin-bottom: 40px;
+}
+#waittobuy #payEaseForm_Wrapper .radioButtonBox label {
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  height: 54px;
+  margin-left: 20px;
+  display: block;
+}
+#waittobuy #payEaseForm_Wrapper .radioButtonBox.international label {
+  background-image: url("//media.yoox.biz/ytos/resources/THECORNER/cn/cc_Payease_small.png");
+}
+#waittobuy #payEaseForm_Wrapper .radioButtonBox.national label {
+  background-image: url("//media.yoox.biz/ytos/resources/THECORNER/cn/unionpay_small.png");
+}
+
+#waitFrame .waitMessage {
+  font-size: 1.9rem;
+}
+
+/*Popup session*/
+.sessionLogin .logoutBox a {
+  display: block;
+}
+.sessionLogin .submit {
+  margin-top: 10px;
+  width: 100%;
+}
+
+#noPromoBrands {
+  padding: 20px;
+  font-size: 1.6rem;
+}
+#noPromoBrands .mfp-close {
+  margin: 10px;
+}

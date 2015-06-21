@@ -1,0 +1,82 @@
+/* ==========================================================================
+   thecorner.com base mood & style
+   ========================================================================== */
+
+
+html { //rem uses html font-size for calcs
+	font-size: 10px;
+
+	&.RU {font-size:8px;}
+	&.UA {font-size:8px;} //UKRAINE
+	&.JP {font-size:9px;}
+	&.CN {font-size:9px;}
+}
+
+body {
+	@include zindex(body);
+	line-height: 1.231;
+	-webkit-font-smoothing: antialiased;
+	@extend %knockout;
+}
+
+
+/* ==========================================================================
+   Basic HTML tags
+   ========================================================================== */
+
+h1, h2, h3 {
+	@extend %knockout-bold;
+	word-break: normal;
+	text-align: center;
+}
+
+h4, h5, h6 {
+	@extend %knockout;
+}
+
+h1 { }
+
+h2 { font-size: $size-giant-rem; }
+
+h3 { font-size: $size-huge-rem; }
+
+h4 { font-size: $size-big-rem; }
+
+h5 { font-size: $size-large-rem; }
+
+h6 { font-size: $size-medium-rem; }
+
+strong {
+	.RU & {
+		font-weight: bold;
+	}
+}
+
+#{headings()} {
+	color: $color-dark;
+	text-transform: uppercase;
+
+	&.inverse {
+		background: $black;
+		color: $white;
+	}
+}
+
+p {
+	font-size: $size-medium-rem;
+	line-height: 1.231;
+
+	&.inverse {
+		color: $white;
+	}
+}
+
+a, .link {
+	text-decoration: none;
+	color: $color-dark;
+	cursor: pointer;
+
+	&:hover {
+		color: $black;
+	}
+}
